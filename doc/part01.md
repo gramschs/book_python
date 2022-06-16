@@ -12,9 +12,9 @@ kernelspec:
   name: python3
 ---
 
-
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 from IPython.display import IFrame
 ```
 
@@ -102,11 +102,10 @@ bitte zuerst auf das Raketensymbol oben rechts und auf Live Code, um eine
 interaktive Code-Zelle erzeugen zu lassen. Beim ersten Start des Live Codes kann
 es etwas länger dauern. Sie erkennen, dass die Code-Zelle interaktiv geworden
 ist, wenn die Knöpfe `run`, `restart` und `restart & run all` erschienen sind.
-Dann geben Sie Ihren Code  (nach der Kommentarzeile) ein und drücken auf run. 
+Dann geben Sie Ihren Code  (nach der Kommentarzeile) ein und drücken auf run.
 
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
-
 ```
 
 Selbstverständlich beherrscht Python auch Klammerregeln. Probieren Sie es aus!
@@ -122,9 +121,9 @@ Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen.
 3 * (7-10) + 5
 ```
 ````
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
-
 ```
 
 ## Grundlegende Begriffe beim Programmieren
@@ -260,9 +259,9 @@ Kopieren Sie die Zeile `print('Hallo Welt')` in die nächste Code-Zelle unter di
 print('Hallo Simone')
 ```
 ````
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
-
 ```
 
 Heute werden nur noch die sogenannten **höheren Programmiersprachen** verwendet
@@ -337,15 +336,19 @@ im Deutschen. Aber ansonsten funktioniert alles wie erwartet:
 ```{code-cell} ipython3
 2.3 + 4.6
 ```
+
 ```{code-cell} ipython3
 1.4 - 5.2
 ```
+
 ```{code-cell} ipython3
 (-3.8) * 3.1
 ```
+
 ```{code-cell} ipython3
 2.4 / 0.3
 ```
+
 ```{code-cell} ipython3
 2.5**10
 ```
@@ -353,7 +356,8 @@ im Deutschen. Aber ansonsten funktioniert alles wie erwartet:
 Das folgende Video fasst Zahlen in Python zusammen.
 
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 IFrame(width=560, height=315, src="https://www.youtube.com/embed/VtiDkRDPA_c")
 ```
 
@@ -375,7 +379,8 @@ Auf Strings und ihre Anwendungen kommen wir später noch zurück. Wenn Sie berei
 jetzt mehr erfahren wollen, können Sie sich folgendes Video ansehen.
 
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 IFrame(width=560, height=315, src="https://www.youtube.com/embed/sTEf4_mrLvw")
 ```
 
@@ -404,6 +409,7 @@ wurde, können wir sie verwenden:
 ```{code-cell} ipython3
 x * 3
 ```
+
 ```{code-cell} ipython3
 x + 17.8
 ```
@@ -423,9 +429,9 @@ n
 ```
 Der Interpreter zeigt in rot eine Fehlermeldung an: "NameError: name 'n' is not defined". Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
 ````
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
-
 
 ```
 
@@ -433,7 +439,8 @@ Gerne können Sie sich auch folgendes Video auf YouTube ansehen, das eine
 Einführung in das Thema Variablen in Python gibt.
 
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 IFrame(width=560, height=315, src="https://www.youtube.com/embed/jfOLXKPGXJ0")
 ```
 
@@ -479,7 +486,8 @@ Der Zuweisungsoperator ist äußerst wichtig in der Python-Programmierung. Daher
 empfehle ich Ihnen folgende Video.
 
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 IFrame( width=560, height=315, src="https://www.youtube.com/embed/XKFQ2_et5k8")
 ```
 
@@ -524,11 +532,12 @@ gemeint ist.
 :class: miniexercise
 Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
 ```
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 
-
 ```
+
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
@@ -605,13 +614,13 @@ Kopieren Sie diesen Code in die nächste Code-Zelle und probieren Sie es aus!
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 
-
 ```
 
 In dem folgenden Video sehen Sie weitere Erläuterungen zur input()-Funktion.
 
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 IFrame(width=560, height=315, src="https://www.youtube.com/embed/I9h1c-121Uk")
 ```
 
@@ -645,14 +654,14 @@ Probieren Sie gerne beide Varianten in der nächsten Code-Zelle aus.
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 
-
 ```
 
 Wenn Sie mehr über das sogenannte Type-Casting erfahren wollen, finden Sie
 Details in diesem Video:
 
 ```{code-cell} ipython3
-:tags: ["remove-input"]
+:tags: [remove-input]
+
 IFrame(width=560, height=315, src="https://www.youtube.com/embed/u_ECGvn1Z2c")
 ```
 
@@ -663,11 +672,3 @@ theoretisch. Zuerst haben wir uns mit grundlegenden Fachbegriffen der
 theoretischen Informatik und dem EVA-Prinzip beschäftigt. Aber bereits mit den
 ersten Funktionen in Python wie `input()` und `print()` sowie der Benutzung von
 Variablen können wir erste Python-Skripte programmieren.
-
-
-
-
-
-
-
-
