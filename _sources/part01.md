@@ -83,7 +83,6 @@ Kommentar `# Hier Ihr Code`. Alles was nach dem Hashtag # kommt, wird von Python
 ignoriert. Die sogenannten Kommentare, die durch das Hashtag-Zeichen eingeleitet
 werden, sind für uns Menschen bestimmt.
 
-```{hint}
 Wenn Sie dieses Skript in einem Jupyter Notebook durcharbeiten, können Sie
 direkt in die nächste Code-Zelle (nach der Kommentarzeile) Ihren Python-Code
 schreiben und ausführen lassen. Wenn Sie dieses Skript Online lesen, klicken Sie
@@ -92,7 +91,6 @@ interaktive Code-Zelle erzeugen zu lassen. Beim ersten Start des Live Codes kann
 es etwas länger dauern. Sie erkennen, dass die Code-Zelle interaktiv geworden
 ist, wenn die Knöpfe `run`, `restart` und `restart & run all` erschienen sind.
 Dann geben Sie Ihren Code  (nach der Kommentarzeile) ein und drücken auf run. 
-```
 
 ```{code-cell} ipython3
 # Hier Ihr Code
@@ -100,23 +98,22 @@ Dann geben Sie Ihren Code  (nach der Kommentarzeile) ein und drücken auf run.
 ```
 
 Selbstverständlich beherrscht Python auch Klammerregeln. Probieren Sie es aus!
-Kleinere Übungen zum sofortigen Ausprobieren sind in sogenannten Mini-Übungen.
-Erst kommt der Text der Übungsaufgabe, dann eine leere Code-Zelle mit dem
+Kleinere Übungen zum sofortigen Ausprobieren sind in sogenannten **Mini-Übungen**.
+Erst kommt der Text der Aufgabe, dann eine leere Code-Zelle mit dem
 Kommentar `# Hier Ihr Code` und zum Abschluss die Lösung. Anfangs ist die Lösung
 verdeckt, aber Sie können Sie jederzeit aufklappen, um Ihre Lösung zu
 kontrollieren.
 
-```{exercise}
-:label: part01_miniexercise01
+```{admonition} Mini-Übung
+:class: miniexercise
 Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen. 
 ```
 ```{code-cell} ipython3
 # Hier Ihr Code
 
 ```
-````{solution} part01_miniexercise01
-:label: part01_minisolution01
-:class: dropdown
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
 3 * (7-10) + 5
 ```
@@ -151,15 +148,14 @@ Bitte schauen Sie sich jetzt kurz um. Welche Hardware fällt Ihnen auf, wenn Sie
 den Blick schweifen lassen? Tragen Sie in die nächste Text-Zelle Ihre Hardware
 ein.
 
-```{exercise}
-:label: part01_miniexercise02
+```{admonition} Mini-Übung
+:class: miniexercise
 Notieren Sie sich Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:
 * xxx
 * xxx
 ```
-````{solution} part01_miniexercise02
-:label: part01_minisolution02
-:class: dropdown
+````{admonition} Lösung
+:class: minisolution, toggle
 * Monitor
 * Maus
 * Tastatur
@@ -223,17 +219,16 @@ und run ausführen):
 print('Hallo Welt')
 ```
 
-```{exercise}
-:label: part01_miniexercise03
+```{admonition} Mini-Übung
+:class: miniexercise
 Kopieren Sie die Zeile `print('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in Python :-)
 ```
 ```{code-cell} ipython3
 # Hier Ihr Code
 
 ```
-````{solution} part01_miniexercise03
-:label: part01_minisolution03
-:class: dropdown
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
 print('Hallo Simone')
 ```
@@ -260,17 +255,16 @@ gerade laufenden Interpreter angewiesen ist, oft als Skript bezeichnet. Im
 Alltag geht diese Unterscheidung meist unter und wir verwenden den Begriff
 Programm auch für Python-Skripte.
 
-```{exercise}
-:label: part01_miniexercise04
+```{admonition} Mini-Übung
+:class: miniexercise
 Recherchieren Sie im Internet und notieren Sie Ihre Antworten.
 
 1. Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
 2. Stellen Sie eine Vermutung auf: in welcher Programmiersprache können die schnelleren Programme geschrieben werden?
 3. Raten Sie: welche Programmiersprachen sind leichter zu lernen und warum?
 ```
-````{solution} part01_miniexercise04
-:label: part01_minisolution04
-:class: dropdown
+````{admonition} Lösung
+:class: minisolution, toggle
 * Antwort 1:
 Compiler-Sprache: C, C++, Fortran
 Interpreter-Sprache: Java, Matlab, Python
@@ -419,17 +413,16 @@ zuweist.
 Variablen müssen initialisiert (erstmalig mit einem Wert versehen) werden, bevor
 sie verwendet werden können, sonst tritt ein Fehler auf. 
 
-```{exercise}
-:label: part01_miniexercise05
+```{admonition} Mini-Übung
+:class: miniexercise
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `run` vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```
 ```{code-cell} ipython3
 # Hier Ihr Code
 
 ```
-````{solution} part01_miniexercise05
-:label: part01_minisolution05
-:class: dropdown
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
 n
 ```
@@ -495,17 +488,16 @@ Kommandos an den Python-Interpreter. Würden Sie diese als Variablennamen
 benutzen, wüsste der Python-Interpreter nicht, ob das Kommando oder die Variable
 gemeint ist.
 
-```{exercise}
-:label: part01_miniexercise06
+```{admonition} Mini-Übung
+:class: miniexercise
 Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
 ```
 ```{code-cell} ipython3
 # Hier Ihr Code
 
 ```
-````{solution} part01_miniexercise06
-:label: part01_minisolution06
-:class: dropdown
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
 alter = 21
 rentenalter = 67
