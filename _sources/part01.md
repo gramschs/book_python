@@ -43,12 +43,6 @@ Was ist überhaupt Python? Wikipedia erklärt
   werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch
   Einrückungen strukturiert.
 
-Wenn Sie das dazugehörige Jupyter Notebook in Python (Jupyter Lab) öffnen,
-können Sie Code-Zellen direkt ausführen lassen. 
-
-Ansonsten kopieren Sie bitte den Inhalt der Code-Zellen in Ihr Python-Programm,
-um die nachfolgenden Ausführungen direkt nachvollziehen zu können.
-
 Addition:
 
 ```python
@@ -79,18 +73,21 @@ Potenzierung:
 3**2
 ```
 
-In diesem interaktiven Vorlesungsskript können Sie Python direkt ausprobieren. In
-der gleich folgenden Code-Zelle ist Platz für Ihren Python-Code. Die Code-Zelle ist
-zunächst mit einem Kommentar beschriftet, in diese Fall mit dem Kommentar `# Hier Ihr Code`. Alles was nach dem Hashtag kommt, wird von Python ignoriert. Die sogenannten
-Kommentare, die durch das Hashtag-Zeichen eingeleitet werden, sind für uns
-Menschen bestimmt.
+In diesem interaktiven Vorlesungsskript können Sie Python direkt ausprobieren.
+In der gleich folgenden Code-Zelle ist Platz für Ihren Python-Code. Die
+Code-Zelle ist zunächst mit einem Kommentar beschriftet, in diese Fall mit dem
+Kommentar `# Hier Ihr Code`. Alles was nach dem Hashtag kommt, wird von Python
+ignoriert. Die sogenannten Kommentare, die durch das Hashtag-Zeichen eingeleitet
+werden, sind für uns Menschen bestimmt.
 
 Wenn Sie dieses Skript in einem Jupyter Notebook durcharbeiten, können Sie
-direkt in die nächste Code-Zelle Ihren Python-Code schreiben und ausführen
-lassen. Wenn Sie dieses Skript Online lesen, klicken Sie bitte zuerst auf das
-Raketensymbol oben rechts und auf Live Code, um eine interaktive Code-Zelle
-rzeugen zu lassen. Beim ersten Start des Live Codes kann es etwas länger dauern.
-Dann geben Sie Ihren Code ein und drücken auf Run. 
+direkt in die nächste Code-Zelle (nach der Kommentarzeile) Ihren Python-Code
+schreiben und ausführen lassen. Wenn Sie dieses Skript Online lesen, klicken Sie
+bitte zuerst auf das Raketensymbol oben rechts und auf Live Code, um eine
+interaktive Code-Zelle erzeugen zu lassen. Beim ersten Start des Live Codes kann
+es etwas länger dauern. Sie erkennen, dass die Code-Zelle interaktiv geworden
+ist, wenn die Knöpfe `run`, `restart` und `restart & run all` erschienen sind.
+Dann geben Sie Ihren Code  (nach der Kommentarzeile) ein und drücken auf run. 
 
 ```{code-cell} ipython3
 # Hier Ihr Code
@@ -203,7 +200,10 @@ Programmiersprachen:
 
 https://www.tiobe.com/tiobe-index/ 
 
-In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am Computern ausgerichtet. Hier sehen Sie ein Beispiel, wie in der Programmiersprache Assembler die Meldung "Hallo Welt" auf dem Monitor angezeigt wird:
+In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am
+Computern ausgerichtet. Hier sehen Sie ein Beispiel, wie in der
+Programmiersprache Assembler die Meldung "Hallo Welt" auf dem Monitor angezeigt
+wird:
 
 ```{figure} pics/part01_assembler.png
 :name: part01_assembler
@@ -211,7 +211,8 @@ In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am Comp
 "Hallo Welt" in Assembler (Quelle: https://de.wikipedia.org/wiki/Assemblersprache)
 ```
 
-In Python ist dieser Programmcode wesentlich kürzer (in die Code-Zelle klicken und Run Section ausführen):
+In Python ist dieser Programmcode wesentlich kürzer (in die Code-Zelle klicken
+und run ausführen):
 
 ```{code-cell} ipython3
 print('Hallo Welt')
@@ -346,11 +347,19 @@ Sobald wir eine Division vorliegen haben, die nicht aufgeht, verlassen wir den B
 
 Beachten Sie bitte: Das Dezimaltrennzeichen ist ein Punkt, nicht ein Komma wie im Deutschen. Aber ansonsten funktioniert alles wie erwartet:
 
-```python
+```{code-cell} ipython3
 2.3 + 4.6
+```
+```{code-cell} ipython3
 1.4 - 5.2
+```
+```{code-cell} ipython3
 (-3.8) * 3.1
+```
+```{code-cell} ipython3
 2.4 / 0.3
+```
+```{code-cell} ipython3
 2.5**10
 ```
 
@@ -391,6 +400,8 @@ wurde, können wir sie verwenden:
 
 ```{code-cell} ipython3
 x * 3
+```
+```{code-cell} ipython3
 x + 17.8
 ```
 
@@ -405,7 +416,7 @@ sie verwendet werden können, sonst tritt ein Fehler auf.
 
 ```{exercise}
 :label: part01_miniexercise05
-Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
+Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `run` vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```
 ```{code-cell} ipython3
 # Hier Ihr Code
@@ -417,7 +428,7 @@ Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Ko
 ```python
 n
 ```
-Der Interpreter zeigt in rot eine Fehlermeldung an: "Unrecognized function or variable 'n'." Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
+Der Interpreter zeigt in rot eine Fehlermeldung an: "NameError: name 'n' is not defined". Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
 ````
 
 Sehr häufig findet man Code wie
@@ -434,6 +445,7 @@ In Python sind "Gleichungen" keine mathematischen Gleichungen, sondern
 Zuweisungen. "=" ist kein Gleichheitszeichen im mathematischen Sinne, sondern
 eine Zuweisung. Die Zuweisung muss immer in der folgenden Weise zweistufig
 gelesen werden:
+
 1. Berechne den Wert auf der rechten Seite (also $x+1$).
 2. Weise den Wert auf der rechten Seite dem auf der linken Seite stehenden
    Variablennamen zu.
@@ -444,7 +456,7 @@ x = x + 1
 x
 ```
 
-Python gibt automatisch den Variablennamen mit seinen Inhalt aus, wenn wir die Code-Zelle ausführen. Gerade wenn man ein Programm entwickelt, ist dies sehr praktisch, weil man schnell sieht, welchen Inhalt Variablen haben.
+Python gibt automatisch den Variablennamen mit seinen Inhalt aus, wenn die Variable als letztes in der Code-Zelle steht. Gerade wenn man ein Programm entwickelt, ist dies sehr praktisch, weil man schnell sieht, welchen Inhalt Variablen haben. 
 
 Richtlinien für Variablennamen:
 
@@ -454,6 +466,7 @@ Früher war der Speicherplatz von Computern klein, daher wurden häufig nur kurz
 m = 0.19
 n = 80
 b = n + m * n
+b
 ```
 
 nur schwer vermuten, was damit bezweckt wird. Oder können Sie erahnen, was dort passieren soll?
@@ -463,6 +476,7 @@ Dagegen erahnt man bei diesem Code schon eher, was bezweckt wird:
 mehrwertsteuersatz = 19/100
 nettopreis = 80
 bruttopreis = nettopreis + mehrwertsteuersatz * nettopreis
+bruttopreis
 ```
 
 Verwenden Sie für Variablennamen nur ASCII-Zeichen, also keine Umlaute wie ö, ü

@@ -482,10 +482,6 @@ den Anspruch, einen gut lesbaren, knappen Programmierstil zu fördern. So
 werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch
 Einrückungen strukturiert.</p>
 </div></blockquote>
-<p>Wenn Sie das dazugehörige Jupyter Notebook in Python (Jupyter Lab) öffnen,
-können Sie Code-Zellen direkt ausführen lassen.</p>
-<p>Ansonsten kopieren Sie bitte den Inhalt der Code-Zellen in Ihr Python-Programm,
-um die nachfolgenden Ausführungen direkt nachvollziehen zu können.</p>
 <p>Addition:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
 </pre></div>
@@ -506,17 +502,20 @@ um die nachfolgenden Ausführungen direkt nachvollziehen zu können.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
-<p>In diesem interaktiven Vorlesungsskript können Sie Python direkt ausprobieren. In
-der gleich folgenden Code-Zelle ist Platz für Ihren Python-Code. Die Code-Zelle ist
-zunächst mit einem Kommentar beschriftet, in diese Fall mit dem Kommentar <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Hier</span> <span class="pre">Ihr</span> <span class="pre">Code</span></code>. Alles was nach dem Hashtag kommt, wird von Python ignoriert. Die sogenannten
-Kommentare, die durch das Hashtag-Zeichen eingeleitet werden, sind für uns
-Menschen bestimmt.</p>
+<p>In diesem interaktiven Vorlesungsskript können Sie Python direkt ausprobieren.
+In der gleich folgenden Code-Zelle ist Platz für Ihren Python-Code. Die
+Code-Zelle ist zunächst mit einem Kommentar beschriftet, in diese Fall mit dem
+Kommentar <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Hier</span> <span class="pre">Ihr</span> <span class="pre">Code</span></code>. Alles was nach dem Hashtag kommt, wird von Python
+ignoriert. Die sogenannten Kommentare, die durch das Hashtag-Zeichen eingeleitet
+werden, sind für uns Menschen bestimmt.</p>
 <p>Wenn Sie dieses Skript in einem Jupyter Notebook durcharbeiten, können Sie
-direkt in die nächste Code-Zelle Ihren Python-Code schreiben und ausführen
-lassen. Wenn Sie dieses Skript Online lesen, klicken Sie bitte zuerst auf das
-Raketensymbol oben rechts und auf Live Code, um eine interaktive Code-Zelle
-rzeugen zu lassen. Beim ersten Start des Live Codes kann es etwas länger dauern.
-Dann geben Sie Ihren Code ein und drücken auf Run.</p>
+direkt in die nächste Code-Zelle (nach der Kommentarzeile) Ihren Python-Code
+schreiben und ausführen lassen. Wenn Sie dieses Skript Online lesen, klicken Sie
+bitte zuerst auf das Raketensymbol oben rechts und auf Live Code, um eine
+interaktive Code-Zelle erzeugen zu lassen. Beim ersten Start des Live Codes kann
+es etwas länger dauern. Sie erkennen, dass die Code-Zelle interaktiv geworden
+ist, wenn die Knöpfe <code class="docutils literal notranslate"><span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">restart</span></code> und <code class="docutils literal notranslate"><span class="pre">restart</span> <span class="pre">&amp;</span> <span class="pre">run</span> <span class="pre">all</span></code> erschienen sind.
+Dann geben Sie Ihren Code  (nach der Kommentarzeile) ein und drücken auf run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
@@ -636,14 +635,18 @@ Programmiersprache sollte sich stets nach der anvisierten Anwendung richten. Der
 sogenannte Tiobe-Index zeigt die Beliebtheit der 50 wichtigsten
 Programmiersprachen:</p>
 <p><a class="reference external" href="https://www.tiobe.com/tiobe-index/">https://www.tiobe.com/tiobe-index/</a></p>
-<p>In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am Computern ausgerichtet. Hier sehen Sie ein Beispiel, wie in der Programmiersprache Assembler die Meldung “Hallo Welt” auf dem Monitor angezeigt wird:</p>
+<p>In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am
+Computern ausgerichtet. Hier sehen Sie ein Beispiel, wie in der
+Programmiersprache Assembler die Meldung “Hallo Welt” auf dem Monitor angezeigt
+wird:</p>
 <figure class="align-default" id="part01-assembler">
 <img alt="_images/part01_assembler.png" src="_images/part01_assembler.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">“Hallo Welt” in Assembler (Quelle: <a class="reference external" href="https://de.wikipedia.org/wiki/Assemblersprache">https://de.wikipedia.org/wiki/Assemblersprache</a>)</span><a class="headerlink" href="#part01-assembler" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In Python ist dieser Programmcode wesentlich kürzer (in die Code-Zelle klicken und Run Section ausführen):</p>
+<p>In Python ist dieser Programmcode wesentlich kürzer (in die Code-Zelle klicken
+und run ausführen):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo Welt&#39;</span><span class="p">)</span>
@@ -809,12 +812,65 @@ ausprobiert, als wir Python als Taschenrechner benutzt haben:</p>
 </div>
 </div>
 <p>Beachten Sie bitte: Das Dezimaltrennzeichen ist ein Punkt, nicht ein Komma wie im Deutschen. Aber ansonsten funktioniert alles wie erwartet:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">2.3</span> <span class="o">+</span> <span class="mf">4.6</span>
-<span class="mf">1.4</span> <span class="o">-</span> <span class="mf">5.2</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">3.8</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.1</span>
-<span class="mf">2.4</span> <span class="o">/</span> <span class="mf">0.3</span>
-<span class="mf">2.5</span><span class="o">**</span><span class="mi">10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.3</span> <span class="o">+</span> <span class="mf">4.6</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.8999999999999995
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.4</span> <span class="o">-</span> <span class="mf">5.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.8000000000000003
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">-</span><span class="mf">3.8</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-11.78
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.4</span> <span class="o">/</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.5</span><span class="o">**</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9536.7431640625
+</pre></div>
+</div>
+</div>
 </div>
 <p>Daten sind aber sehr oft keine Zahlen. Beispielsweise könnte man sich
 vorstellen, eine Einkaufsliste zu erstellen und diese im Computer oder in einer
@@ -861,7 +917,18 @@ wurde, können wir sie verwenden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="n">x</span> <span class="o">+</span> <span class="mf">17.8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="mf">17.8</span>
 </pre></div>
 </div>
 </div>
@@ -882,7 +949,7 @@ sie verwendet werden können, sonst tritt ein Fehler auf.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
 <section id="exercise-content">
-<p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Section</span></code> vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
+<p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">run</span></code> vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
 </section>
 </div>
 <div class="cell docutils container">
@@ -899,7 +966,7 @@ sie verwendet werden können, sonst tritt ein Fehler auf.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span>
 </pre></div>
 </div>
-<p>Der Interpreter zeigt in rot eine Fehlermeldung an: “Unrecognized function or variable ‘n’.” Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.</p>
+<p>Der Interpreter zeigt in rot eine Fehlermeldung an: “NameError: name ‘n’ is not defined”. Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.</p>
 </section>
 </div>
 <p>Sehr häufig findet man Code wie</p>
@@ -932,7 +999,7 @@ Variablennamen zu.</p></li>
 </div>
 </div>
 </div>
-<p>Python gibt automatisch den Variablennamen mit seinen Inhalt aus, wenn wir die Code-Zelle ausführen. Gerade wenn man ein Programm entwickelt, ist dies sehr praktisch, weil man schnell sieht, welchen Inhalt Variablen haben.</p>
+<p>Python gibt automatisch den Variablennamen mit seinen Inhalt aus, wenn die Variable als letztes in der Code-Zelle steht. Gerade wenn man ein Programm entwickelt, ist dies sehr praktisch, weil man schnell sieht, welchen Inhalt Variablen haben.</p>
 <p>Richtlinien für Variablennamen:</p>
 <p>Früher war der Speicherplatz von Computern klein, daher wurden häufig nur kurze Variablennamen wie beispielsweise i oder N verwendet. Heutzutage ist es Standard, nur in Ausnahmefällen (z.B. in Schleifen, dazu kommen wir noch) kurze Variablennamen zu nehmen. Stattdessen werden Namen benutzt, bei denen man erraten kann, was die Variable für einen Einsatzzweck hat. Beispielsweise lässt der Code</p>
 <div class="cell docutils container">
@@ -940,6 +1007,12 @@ Variablennamen zu.</p></li>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">0.19</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">80</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">m</span> <span class="o">*</span> <span class="n">n</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95.2
 </pre></div>
 </div>
 </div>
@@ -951,6 +1024,12 @@ Dagegen erahnt man bei diesem Code schon eher, was bezweckt wird:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mehrwertsteuersatz</span> <span class="o">=</span> <span class="mi">19</span><span class="o">/</span><span class="mi">100</span>
 <span class="n">nettopreis</span> <span class="o">=</span> <span class="mi">80</span>
 <span class="n">bruttopreis</span> <span class="o">=</span> <span class="n">nettopreis</span> <span class="o">+</span> <span class="n">mehrwertsteuersatz</span> <span class="o">*</span> <span class="n">nettopreis</span>
+<span class="n">bruttopreis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95.2
 </pre></div>
 </div>
 </div>
