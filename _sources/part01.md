@@ -51,50 +51,66 @@ um die nachfolgenden Ausführungen direkt nachvollziehen zu können.
 
 Addition:
 
-```{code-cell} ipython3
+```python
 2+3
 ```
 
 Subtraktion:
 
-```{code-cell} ipython3
+```python
 2-3
 ```
 
 Multiplikation:
 
-```{code-cell} ipython3
+```python
 2*4
 ```
 
 Division:
 
-```{code-cell} ipython3
+```python
 8/2
 ```
 
 Potenzierung:
 
-```{code-cell} ipython3
+```python
 3**2
 ```
 
-Selbstverständlich beherrscht Python auch Klammerregeln. Gerne können Sie den
-Term  durch Python berechnen lassen, probieren Sie es doch einmal selbst aus! In
-der folgenden Code-Zelle ist Platz für Ihren Python-Code. Die Code-Zelle ist
-zunächst mit einem Kommentar beschriftet, in diese Fall mit dem Kommentar
-
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-
-Alles was nach dem Hashtag kommt, wird von Python ignoriert. Die sogenannten
+In diesem interaktiven Vorlesungsskript können Sie Python direkt ausprobieren. In
+der gleich folgenden Code-Zelle ist Platz für Ihren Python-Code. Die Code-Zelle ist
+zunächst mit einem Kommentar beschriftet, in diese Fall mit dem Kommentar `# Hier Ihr Code`. Alles was nach dem Hashtag kommt, wird von Python ignoriert. Die sogenannten
 Kommentare, die durch das Hashtag-Zeichen eingeleitet werden, sind für uns
 Menschen bestimmt.
 
+Wenn Sie dieses Skript in einem Jupyter Notebook durcharbeiten, können Sie
+direkt in die nächste Code-Zelle Ihren Python-Code schreiben und ausführen
+lassen. Wenn Sie dieses Skript Online lesen, klicken Sie bitte zuerst auf das
+Raketensymbol oben rechts und auf Live Code, um eine interaktive Code-Zelle
+rzeugen zu lassen. Beim ersten Start des Live Codes kann es etwas länger dauern.
+Dann geben Sie Ihren Code ein und drücken auf Run. 
+
+```{code-cell} ipython3
+# Hier Ihr Code
+
+```
+
+Selbstverständlich beherrscht Python auch Klammerregeln. Probieren Sie es aus!
+Kleinere Übungen zum sofortigen Ausprobieren sind in sogenannten Mini-Übungen.
+Erst kommt der Text der Übungsaufgabe, dann eine leere Code-Zelle mit dem
+Kommentar `# Hier Ihr Code` und zum Abschluss die Lösung. Anfangs ist die Lösung
+verdeckt, aber Sie können Sie jederzeit aufklappen, um Ihre Lösung zu
+kontrollieren.
+
 ```{exercise}
 :label: part01_miniexercise01
-Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen.
+Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen. 
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+
 ```
 ````{solution} part01_miniexercise01
 :label: part01_minisolution01
@@ -135,7 +151,7 @@ ein.
 
 ```{exercise}
 :label: part01_miniexercise02
-Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:
+Notieren Sie sich Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:
 * xxx
 * xxx
 ```
@@ -205,6 +221,10 @@ print('Hallo Welt')
 :label: part01_miniexercise03
 Kopieren Sie die Zeile `print('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in Python :-)
 ```
+```{code-cell} ipython3
+# Hier Ihr Code
+
+```
 ````{solution} part01_miniexercise03
 :label: part01_minisolution03
 :class: dropdown
@@ -236,7 +256,7 @@ Programm auch für Python-Skripte.
 
 ```{exercise}
 :label: part01_miniexercise04
-Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.
+Recherchieren Sie im Internet und notieren Sie Ihre Antworten.
 
 1. Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
 2. Stellen Sie eine Vermutung auf: in welcher Programmiersprache können die schnelleren Programme geschrieben werden?
@@ -315,7 +335,6 @@ normal rechnen, also Operationen ausführen. Einige davon haben wir ja bereits
 ausprobiert, als wir Python als Taschenrechner benutzt haben:
 
 ```{code-cell} ipython3
-23 + 4
 2 * (3 + 4)
 ```
 
@@ -327,19 +346,11 @@ Sobald wir eine Division vorliegen haben, die nicht aufgeht, verlassen wir den B
 
 Beachten Sie bitte: Das Dezimaltrennzeichen ist ein Punkt, nicht ein Komma wie im Deutschen. Aber ansonsten funktioniert alles wie erwartet:
 
-```{code-cell} ipython3
+```python
 2.3 + 4.6
-```
-```{code-cell} ipython3
 1.4 - 5.2
-```
-```{code-cell} ipython3
 (-3.8) * 3.1
-```
-```{code-cell} ipython3
 2.4 / 0.3
-```
-```{code-cell} ipython3
 2.5**10
 ```
 
@@ -395,6 +406,10 @@ sie verwendet werden können, sonst tritt ein Fehler auf.
 ```{exercise}
 :label: part01_miniexercise05
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+
 ```
 ````{solution} part01_miniexercise05
 :label: part01_minisolution05
@@ -464,6 +479,10 @@ gemeint ist.
 ```{exercise}
 :label: part01_miniexercise06
 Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+
 ```
 ````{solution} part01_miniexercise06
 :label: part01_minisolution06
