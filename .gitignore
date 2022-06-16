@@ -1,5 +1,6 @@
 # Project specific settings
 doc/_build
+doc/_static
 doc/.vscode/
 
 # Byte-compiled / optimized / DLL files
