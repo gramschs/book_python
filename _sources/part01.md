@@ -43,6 +43,9 @@ Was ist überhaupt Python? Wikipedia erklärt
   werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch
   Einrückungen strukturiert.
 
+Aber benutzen wir Python erst einmal als Taschenrechner, bevor wir mit der
+Programmierung starten.
+
 Addition:
 
 ```python
