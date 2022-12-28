@@ -7,3 +7,4 @@ parts:
 - caption: Grundlagen Programmierung
   chapters:
   - file: part01
+  - file: part02

@@ -114,17 +114,15 @@ Selbstverständlich beherrscht Python auch Klammerregeln. Probieren Sie es aus!
 :class: miniexercise
 Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen. 
 ```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-3 * (7-10) + 5
-```
-````
-
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 ```
+````{admonition} Lösung
+:class: minisolution, toggle
+```python
+3 * (7-10) + 5
+```
+````
 
 ## Grundlegende Begriffe beim Programmieren
 
@@ -252,17 +250,15 @@ print('Hallo Welt')
 :class: miniexercise
 Kopieren Sie die Zeile `print('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in Python :-)
 ```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-print('Hallo Simone')
-```
-````
-
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 ```
+````{admonition} Lösung
+:class: minisolution, toggle
+```python
+print('Hallo Simone')
+```
+````
 
 Heute werden nur noch die sogenannten **höheren Programmiersprachen** verwendet
 (wie Python, MATLAB oder C++), die für Menschen leichter verständlich sind.
@@ -421,19 +417,19 @@ sie verwendet werden können, sonst tritt ein Fehler auf.
 :class: miniexercise
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `run` vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
+
+```
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
-# Geben Sie nach diesem Kommentar Ihren Code ein:
 n
 ```
 Der Interpreter zeigt in rot eine Fehlermeldung an: "NameError: name 'n' is not defined". Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
 ````
 
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-```
 
 Gerne können Sie sich auch folgendes Video auf YouTube ansehen, das eine
 Einführung in das Thema Variablen in Python gibt.
@@ -585,7 +581,7 @@ mit der Taste Return/Enter abgeschlossen. Probieren wir es aus:
 input('Bitte geben Sie Ihren Namen ein: ')
 ```
 
-Wir haben zwar jetzt auf Aufforderung eine Zahl eingegeben, aber verarbeitet
+Wir haben zwar jetzt auf Aufforderung einen Namen eingegeben, aber verarbeitet
 wurde diese Eingabe nicht. Es passierte einfach nichts. Um die Eingabe
 verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab. 
 
