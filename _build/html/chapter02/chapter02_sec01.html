@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Listen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Das Modul Math" href="chapter02_sec02.html" />
+    <link rel="prev" title="Listen und Module" href="chapter02_sec00.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python für Studierende der Ingenieurwissenschaften</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zum interaktiven Vorlesungsskript Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen Programmierung
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../part01.html">
+   Einstieg in die Programmierung
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter02_sec00.html">
+   Listen und Module
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter02_sec02.html">
+     Das Modul Math
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter02_sec03.html">
+     Das Modul Turtle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter03/chapter03_sec00.html">
+   Zählschleifen (for)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec01.html">
+     for-Schleifen mit Liste
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec02.html">
+     for-Schleifen mit range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec03.html">
+     Anwendungen for-Schleifen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../part03.html">
+   Programmverzweigung (if - elif - else)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter02/chapter02_sec01.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/gramschs/book_python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter02/chapter02_sec01.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#container-fur-sammlungen">
+   Container für Sammlungen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-erzeugen-mit">
+   Listen erzeugen mit []
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elemente-aus-einer-liste-herausholen-zugriff">
+   Elemente aus einer Liste herausholen: Zugriff
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liste-liste-verkettete-liste">
+   Liste + Liste = verkettete Liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-sind-auch-nur-container">
+   Strings sind auch nur Container
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Listen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#container-fur-sammlungen">
+   Container für Sammlungen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-erzeugen-mit">
+   Listen erzeugen mit []
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elemente-aus-einer-liste-herausholen-zugriff">
+   Elemente aus einer Liste herausholen: Zugriff
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liste-liste-verkettete-liste">
+   Liste + Liste = verkettete Liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-sind-auch-nur-container">
+   Strings sind auch nur Container
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="listen">
+<h1>Listen<a class="headerlink" href="#listen" title="Permalink to this headline">#</a></h1>
+<p>Bisher haben wir drei verschiedene Datentypen kennengelernt:</p>
+<ul class="simple">
+<li><p>Integer (ganze Zahlen),</p></li>
+<li><p>Floats (Fließkommazahlen) und</p></li>
+<li><p>Strings (Zeichenketten).</p></li>
+</ul>
+<p>Damit können wir einzelne Objekte der realen Welt ganz gut abbilden. Mit einem
+String können wir den Namen einer Person erfassen, mit einem Integer das Alter
+der Person und mit einem Float die Körpergröße der Person gemessen in Meter. Was
+uns aber bisher fehlt ist, eine Sammlung von Namen oder eine Sammlung von
+Körpergrößen verwalten zu können. Daher werden wir uns in diesem Jupyter
+Notebook mit Listen beschäftigen.</p>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, dass <strong>Container</strong> Datentypen sind, die andere Objekte als Sammlung verwalten.</p></li>
+<li><p>Sie können eine <strong>Liste</strong> erzeugen.</p></li>
+<li><p>Sie wissen, was der Fachbegriff <strong>Index</strong> bedeutet.</p></li>
+<li><p>Sie können lesend und schreibend auf die Elemente einer Liste zugreifen, beherrschen also</p>
+<ul>
+<li><p><strong>Lesezugriff</strong> und</p></li>
+<li><p><strong>Schreibzugriff</strong>.</p></li>
+</ul>
+</li>
+<li><p>Sie können mit dem Plus-Operator + Listen <strong>verketten</strong>.</p></li>
+<li><p>Sie können Strings als Container interpretieren.</p></li>
+</ul>
+</div>
+<section id="container-fur-sammlungen">
+<h2>Container für Sammlungen<a class="headerlink" href="#container-fur-sammlungen" title="Permalink to this headline">#</a></h2>
+<p>In der Mathematik gibt es den Begriff des Vektors. Einen Vektor kann man als
+eine Sammlung von Zahlen interpretieren. Dabei müssen Vektoren nicht immer eine
+geometrische Interpretation haben. Beispielsweise steht der Vektor</p>
+<p>(116, 144, 199)</p>
+<p>für ein sehr schönes Blau, wenn die drei Komponenten als die Intensität der
+Farbanteile Rot - Grün und Blau interpretiert werden. Diese Art Farben zu
+beschreiben, wird RGB-Wert genannt (siehe auch <a class="reference external" href="https://de.wikipedia.org/wiki/RGB-Farbraum">Wikipedia →
+RGB-Farbraum</a>). Die Internetseite
+<a class="reference external" href="https://www.color-hex.com/">https://www.color-hex.com</a> ermöglicht es, die
+RGB-Werte verschiedener Farbtöne zu ermitteln.</p>
+<p>Wir könnten aber auch eine Namensliste mit den Mitgliedern einer WG führen
+wollen, z.B. [“Alice”, “Bob”, “Charlie”]. Damit verlassen wir die mathematische
+Welt der Zahlen und damit des Vektors. Aber auch für diese Anwendungsszenarien
+wäre es schön, Daten gemeinsam zu sammeln und zu verwalten.</p>
+<p>Der Fachbegriff für
+Datentypen, die daür gedacht sind, Daten als Sammlung zu verwalten, ist
+<strong>Container</strong>. In Python gibt es verschiedene Container:</p>
+<ul class="simple">
+<li><p>Listen: list</p></li>
+<li><p>Tupel: tuple</p></li>
+<li><p>Dictionaries: dict</p></li>
+<li><p>Mengen: set</p></li>
+</ul>
+<p>Wir behandeln in diesem Abschnitt die Listen.</p>
+</section>
+<section id="listen-erzeugen-mit">
+<h2>Listen erzeugen mit []<a class="headerlink" href="#listen-erzeugen-mit" title="Permalink to this headline">#</a></h2>
+<p>Eine Liste wird in Python durch eckige Klammern [  ] erzeugt. Sie finden das
+Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
+eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
+drücken, um die eckigen Klammern auf der Tastatur einzugeben.</p>
+<p>Betrachten wir ein Beispiel. Hier wird eine Liste mit den Elementen 1, 2, 3, 4,
+5 erzeugt und dann anschließend in der Variablen <code class="docutils literal notranslate"><span class="pre">liste_beispiel</span></code> gespeichert.
+Mit der Funktion <code class="docutils literal notranslate"><span class="pre">print()</span></code> lassen wir den Inhalt der Liste ausgeben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_beispiel</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_beispiel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erzeugen Sie eine Liste mit Ihrem Vornamen, Ihrem Nachnamen und Ihrer Körpergröße in m. Welche Datentypen brauchen Sie für diese drei Objekte? Lassen Sie Ihre Liste auch ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ich</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Simone&#39;</span><span class="p">,</span> <span class="s1">&#39;Gramsch&#39;</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ich</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vor- und Nachname werden durch Strings repräsentiert, die Körpergröße als Float.</p>
+</div>
+</section>
+<section id="elemente-aus-einer-liste-herausholen-zugriff">
+<h2>Elemente aus einer Liste herausholen: Zugriff<a class="headerlink" href="#elemente-aus-einer-liste-herausholen-zugriff" title="Permalink to this headline">#</a></h2>
+<p>Jede Liste hat einen Index. Man kann sich eine Liste wie eine Straße mit einer
+Sammlung von Häusern vorstellen. Um ein Haus in der Straße zu finden, hat es
+eine Hausnummer. Und das ist in der Informatik der <strong>Index</strong>, also die Position
+in der Liste, an der ein Element zu finden ist.</p>
+<p>In jeder Programmiersprache gibt es Container mit einem Index, wobei der Index
+in der Regel durch Integer repräsentiert wird. Allerdings gibt es Unterschiede,
+bei welcher Zahl die Nummerierung beginnt. In Python fangen wir mit der Null an.
+Dann können wir mit dem Index sozusagen nachsehen, welches Element an dieser
+Index-Position gespeichert ist. Das nennt man in der Informatik <strong>Lesezugriff</strong>.
+Oder wir können das Element an einer bestimmten Index-Position gegen ein neues
+Element austauschen. Das nennt man dann <strong>Schreibzugriff</strong>.</p>
+<p>Um auf ein Element einer Liste zugreifen zu können (egal ob lesend oder
+schreibend), verwenden wir eckige Klammern und den Index. Wenn wir also
+beispielsweise das erste Element nachschlagen, also lesen wollen, dann sieht der
+Lesezugriff also so aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung einer Liste</span>
+<span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;grün&#39;</span><span class="p">,</span> <span class="s1">&#39;blau&#39;</span><span class="p">,</span> <span class="s1">&#39;gelb&#39;</span><span class="p">,</span> <span class="s1">&#39;weiß&#39;</span><span class="p">,</span> <span class="s1">&#39;schwarz&#39;</span><span class="p">]</span>
+
+<span class="c1"># Lesezugriff mit Position 1, also Index 0</span>
+<span class="n">erstes_objekt</span> <span class="o">=</span> <span class="n">meine_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">erstes_objekt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rot
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Speichern Sie das 4. Element der Liste <code class="docutils literal notranslate"><span class="pre">meine_liste</span> <span class="pre">=</span> <span class="pre">['rot',</span> <span class="pre">'grün',</span> <span class="pre">'blau',</span> <span class="pre">'gelb',</span> <span class="pre">'weiß',</span> <span class="pre">'schwarz']</span></code> in der Variable <code class="docutils literal notranslate"><span class="pre">vier</span></code> ab und lassen Sie es ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;grün&#39;</span><span class="p">,</span> <span class="s1">&#39;blau&#39;</span><span class="p">,</span> <span class="s1">&#39;gelb&#39;</span><span class="p">,</span> <span class="s1">&#39;weiß&#39;</span><span class="p">,</span> <span class="s1">&#39;schwarz&#39;</span><span class="p">]</span>
+
+<span class="n">vier</span> <span class="o">=</span> <span class="n">meine_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Für den Schreibzugriff benutzen wir ebenfalls die Schreibweise mit den eckigen
+Klammern und dem Index.</p>
+<p>Um in unserer Liste die Farbe weiß durch lila zu ersetzen, benutzen wir
+folgenden Code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung Liste</span>
+<span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;grün&#39;</span><span class="p">,</span> <span class="s1">&#39;blau&#39;</span><span class="p">,</span> <span class="s1">&#39;gelb&#39;</span><span class="p">,</span> <span class="s1">&#39;weiß&#39;</span><span class="p">,</span> <span class="s1">&#39;schwarz&#39;</span><span class="p">]</span>
+
+<span class="c1"># Schreibzugriff</span>
+<span class="n">meine_liste</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;lila&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;rot&#39;, &#39;grün&#39;, &#39;blau&#39;, &#39;gelb&#39;, &#39;lila&#39;, &#39;schwarz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="liste-liste-verkettete-liste">
+<h2>Liste + Liste = verkettete Liste<a class="headerlink" href="#liste-liste-verkettete-liste" title="Permalink to this headline">#</a></h2>
+<p>Auch wenn es im ersten Moment verrückt erscheint, in Python können wir Listen
+addieren. Am besten schauen wir uns ein Beispiel an:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_de</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;grün&#39;</span><span class="p">,</span> <span class="s1">&#39;blau&#39;</span><span class="p">]</span>
+<span class="n">liste_en</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+
+<span class="c1"># Verkettung zweier Listen durch +</span>
+<span class="n">liste_de_en</span> <span class="o">=</span> <span class="n">liste_de</span> <span class="o">+</span> <span class="n">liste_en</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_de_en</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;rot&#39;, &#39;grün&#39;, &#39;blau&#39;, &#39;red&#39;, &#39;green&#39;, &#39;blue&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das Aneinanderhängen von Elementen zweier Container nennen wir in der Informatik
+<strong>Verkettung</strong>. Oft wird auch der englische Begriff <strong>Concatenation</strong> verwendet.</p>
+</section>
+<section id="strings-sind-auch-nur-container">
+<h2>Strings sind auch nur Container<a class="headerlink" href="#strings-sind-auch-nur-container" title="Permalink to this headline">#</a></h2>
+<p>Tatsächlich sind Strings eine Sammlung von einzelnen Zeichen. Im Deutschen
+werden Strings auch Zeichenketten genannt. Wir können auf einzelne Zeichen eines
+Strings ebenfalls mit eckigen Klammern und dem Index zugreifen.</p>
+<p>Beispielsweise können wir so die Initialen ermitteln:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vorname</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<span class="n">nachname</span> <span class="o">=</span> <span class="s1">&#39;Wunderland&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialen:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vorname</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nachname</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialen:
+A
+W
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die beiden Buchstaben können erneut verkettet werden, damit die Initialen zusammen sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vorname</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<span class="n">nachname</span> <span class="o">=</span> <span class="s1">&#39;Wunderland&#39;</span>
+
+<span class="n">initialen</span> <span class="o">=</span> <span class="n">vorname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nachname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialen:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">initialen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialen:
+AW
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dadurch lassen sich Ausgaben auch schöner gestalten. Beispielsweise können wir
+jetzt auch Strings erst verketten, bevor wir sie anzeigen lassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Alice
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gramschs/book_python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter02_sec00.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Listen und Module</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter02_sec02.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Das Modul Math</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Simone Gramsch<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
