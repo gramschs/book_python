@@ -1,3 +1,3 @@
-# Zählschleifen (for)
+# Zählschleifen (for) und Strings
 
 TODO

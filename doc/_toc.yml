@@ -17,4 +17,8 @@ parts:
     - file: chapter03/chapter03_sec01.ipynb
     - file: chapter03/chapter03_sec02.ipynb
     - file: chapter03/chapter03_sec03.ipynb
-  - file: part03.md
+  - file: chapter04/chapter04_sec00.md
+    sections:
+    - file: chapter04/chapter04_sec01.md
+    - file: chapter04/chapter04_sec02.md
+    - file: chapter04/chapter04_sec03.md
