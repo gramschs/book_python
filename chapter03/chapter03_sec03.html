@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Anwendungen for-Schleifen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>Strings &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,11 +53,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Programmverzweigung (if - elif - else)" href="../part03.html" />
+    <link rel="next" title="Programmverzweigung (if - elif - else)" href="../chapter04/chapter04_sec00.html" />
     <link rel="prev" title="for-Schleifen mit range" href="chapter03_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter03_sec00.html">
-   Zählschleifen (for)
+   Zählschleifen (for) und Strings
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -178,15 +178,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Anwendungen for-Schleifen
+     Strings
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../part03.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
    Programmverzweigung (if - elif - else)
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+     Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+     Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+     Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -358,23 +380,124 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-sind-container">
+   Strings sind Container
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-sind-unveranderlich">
+   Strings sind unveränderlich
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#und-wenn-doch-ein-string-geandert-werden-soll">
+   Und wenn doch ein String geändert werden soll?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verketten-von-strings">
+     Verketten von Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ersetzen-von-teilstrings">
+     Ersetzen von Teilstrings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatierte-strings-f-strings">
+   Formatierte Strings (f-Strings)
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Anwendungen for-Schleifen</h1>
+                <h1>Strings</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-sind-container">
+   Strings sind Container
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-sind-unveranderlich">
+   Strings sind unveränderlich
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#und-wenn-doch-ein-string-geandert-werden-soll">
+   Und wenn doch ein String geändert werden soll?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verketten-von-strings">
+     Verketten von Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ersetzen-von-teilstrings">
+     Ersetzen von Teilstrings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatierte-strings-f-strings">
+   Formatierte Strings (f-Strings)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -382,9 +505,363 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="anwendungen-for-schleifen">
-<h1>Anwendungen for-Schleifen<a class="headerlink" href="#anwendungen-for-schleifen" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="strings">
+<h1>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h1>
+<p>Den Datentyp String haben Sie bereits zu Beginn im Kapitel “Einstieg in die
+Programmierung” kennengelernt. Bis jetzt haben wir Strings vor allem dazu
+benutzt, um mit der print()-Funktion etwas auszugeben. In diesem Jupyter
+Notebook geht es nun darum, Strings auch zu manipulieren und mit den sogenannten
+f-Strings auch formatierte Ausgaben zu produzieren.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, dass Strings unveränderliche Container sind und welche Konsequenzen das für die Programmierung hat.</p></li>
+<li><p>Sie können mit dem Index auf einzelne Zeichen eines Strings zugreifen.</p></li>
+<li><p>Sie können Strings mit dem Plus-Operator <strong>verketten</strong>.</p></li>
+<li><p>Sie können mit der <strong>.replace()</strong>-Methode einen Teilstring in einem String durch einen anderen Teilstring ersetzen.</p></li>
+<li><p>Sie können mit einem <strong>f-String</strong> den Wert einer Variablen in einen String einbetten und zur Laufzeit anzeigen lassen.</p></li>
+</ul>
+</div>
+</section>
+<section id="strings-sind-container">
+<h2>Strings sind Container<a class="headerlink" href="#strings-sind-container" title="Permalink to this headline">#</a></h2>
+<p>Im deutschen Fachbegriff Zeichenketten steckt schon die Idee, Strings als eine
+Verkettung von einzelnen Zeichen zu interpretieren. Mit dieser Idee ist dann
+vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
+über den Index angesprochen werden können.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung und Anzeige String</span>
+<span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mein_string</span><span class="p">)</span>
+
+<span class="c1"># Zugriff auf einzelne Zeichen per Index</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Zeichen: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mein_string</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo, Du da!
+2. Zeichen: 
+a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aber welche Zeichen gehören dazu? Probieren Sie die folgende Mini-Übung aus.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Speichern Sie den String ‘Hallo, Du da!’ in einer Variable. Beantworten Sie folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.</p>
+<ul class="simple">
+<li><p>Was ist der kleinste Index des Strings ‘Hallo, Du da!’?</p></li>
+<li><p>Was ist der größte Index des String ‘Hallo, Du da!’?</p></li>
+<li><p>Was passiert, wenn Sie auf den Index 20 zugreifen wollen?</p></li>
+<li><p>Welches Zeichen hat den Index 6?</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code (aber zuerst überlegen... )</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<ul class="simple">
+<li><p>Der kleinste Index ist 0.</p></li>
+<li><p>Der größte Index ist 12.</p></li>
+<li><p>Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung: ‘IndexError: string index out of range’. Der Index 20 ist außerhalb des zulässigen Indexbereichs von 0 bis 12.</p></li>
+<li><p>Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch Zeichen und müssen mitgezählt werden.</p></li>
+</ul>
+</div>
+<p>Mit den beiden for-Schleifen der letzten beiden Abschnitte, können wir die
+Zeichen auch einzeln ausgeben lassen. Als erstes die for-Schleife mit
+Liste/String:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="s1">&#39;Hallo, Du Da!&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">zeichen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+a
+l
+l
+o
+,
+ 
+D
+u
+ 
+D
+a
+!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Als nächstes wird über den Index iteriert. Iteration ist der Fachbegriff für das
+mehrfache Wiederholen einer Anweisung.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">zeichen</span> <span class="o">=</span> <span class="n">mein_string</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">zeichen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+a
+l
+l
+o
+,
+ 
+D
+u
+ 
+d
+a
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strings-sind-unveranderlich">
+<h2>Strings sind unveränderlich<a class="headerlink" href="#strings-sind-unveranderlich" title="Permalink to this headline">#</a></h2>
+<p>Bei den Listen haben wir einzelne Elemente der Liste manipuliert, z.B. das
+dritte Element durch ein anderes ersetzt wie in dem folgenden Beispiel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Eins&#39;</span><span class="p">,</span> <span class="s1">&#39;Zwei&#39;</span><span class="p">,</span> <span class="s1">&#39;Drei&#39;</span><span class="p">,</span> <span class="s1">&#39;Vier&#39;</span><span class="p">,</span> <span class="s1">&#39;Fünf&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Am Anfang: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
+
+<span class="c1"># Austausch der &#39;Drei&#39; durch &#39;MMMH&#39;</span>
+<span class="n">meine_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MMMH&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Austausch:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am Anfang: 
+[&#39;Eins&#39;, &#39;Zwei&#39;, &#39;Drei&#39;, &#39;Vier&#39;, &#39;Fünf&#39;]
+Nach dem Austausch:
+[&#39;Eins&#39;, &#39;Zwei&#39;, &#39;MMMH&#39;, &#39;Vier&#39;, &#39;Fünf&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obwohl Strings auch Container sind, funktioniert die Manipulation eines
+einzelnen Zeichens in einem String leider nicht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wort</span> <span class="o">=</span> <span class="s1">&#39;hallo!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Am Anfang: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wort</span><span class="p">)</span>
+
+<span class="c1"># Austausch des kleinen Buchstaben h durch ein großes H </span>
+<span class="n">wort</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Austausch:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am Anfang: 
+hallo!
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">wort</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Austausch des kleinen Buchstaben h durch ein großes H </span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">wort</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Austausch:&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">wort</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Python-Interpreter gibt eine Fehlermeldung aus: ‘str’ object does not
+support item assignment. Ein item ist ein einzelnes Element der Liste und
+assignment ist das englische Wort für Zuweisung. Auf deutsch lautet diese
+Fehlermeldung also, dass ein String-Objekt die Zuweisung eines einzelnen
+Elements/Zeichens nicht unterstützt. Oder anders ausgedrückt, es ist verboten,
+einen String durch eine Zuweisung zu ändern.</p>
+<p>Bei Strings handelt es sich um einen sogenannten <strong>unveränderlichen Datentyp</strong>.
+Das bedeutet, dass der Inhalt eines Strings nach seiner Erstellung nicht mehr
+verändert werden kann.</p>
+<p>Es gibt andere Programmiersprachen wie beispielsweise C und MATLAB, in denen
+Strings als veränderliche Objekte umgesetzt sind. Die Entwickler:innen von
+Python haben sich bei der Entwicklung von Python aus Gründen der
+Speichereffizienz und der Sicherheit von daraus abgeleiten Datentypen (z.B.
+Dictionaries) dagegen entschieden.</p>
+</section>
+<section id="und-wenn-doch-ein-string-geandert-werden-soll">
+<h2>Und wenn doch ein String geändert werden soll?<a class="headerlink" href="#und-wenn-doch-ein-string-geandert-werden-soll" title="Permalink to this headline">#</a></h2>
+<p>Natürlich kann es dennoch vielfältige Gründe geben, einen String nach seiner
+Erstellung noch abzuändern. Beispielsweise könnte bei einer Benutzereingabe ein
+Tippfehler aufgetreten sein, der korrigiert werden soll. Obwohl Strings in
+Python unveränderlich sind, gibt es immer noch viele Operationen, die auf
+Strings ausgeführt werden können, wie z.B. das Anhängen von Strings, das Suchen
+oder das Ersetzen von Teilstrings. Allerdings wird in diesen Fällen nicht der
+ursprüngliche String modifiziert, sondern ein neuer String erzeugt.</p>
+<section id="verketten-von-strings">
+<h3>Verketten von Strings<a class="headerlink" href="#verketten-von-strings" title="Permalink to this headline">#</a></h3>
+<p>Sie können Strings in Python einfach aneinanderhängen (verketten), indem Sie den
+<code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verwenden. Hier ist ein Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>  <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<span class="n">gruss</span> <span class="o">=</span> <span class="s1">&#39;Hallo &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gruss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ersetzen-von-teilstrings">
+<h3>Ersetzen von Teilstrings<a class="headerlink" href="#ersetzen-von-teilstrings" title="Permalink to this headline">#</a></h3>
+<p>Python bietet mehrere Methoden zum Suchen und Ersetzen von Teilstrings in einem
+String. Eine dieser Methoden ist <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>. Hier ist ein Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
+<span class="n">neuer_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">neuer_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel haben wir den Teilstring “MATLAB” durch den Teilstring
+“Python” ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
+Variable namens <code class="docutils literal notranslate"><span class="pre">neuer_text</span></code> verwenden. Wenn mehrfach Änderungen des Strings
+durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
+Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
+folgendem Beispiel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
+ausführen können, wie z.B. das Suchen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.find()</span></code>-Methode,
+das Zählen von Vorkommen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.count()</span></code>-Methode und das
+Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
+<code class="docutils literal notranslate"><span class="pre">.upper()</span></code> und <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>. In der nächsten Mini-Übung probieren wir noch einmal
+die <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>-Methode aus.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Programm, das in dem Spruch “Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.” die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den Spruch vor und nach der Korrektur ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spruch</span> <span class="o">=</span> <span class="s1">&#39;Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vorher: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spruch</span><span class="p">)</span>
+
+<span class="n">spruch_korrigiert</span> <span class="o">=</span> <span class="n">spruch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Kilogramm&#39;</span><span class="p">,</span> <span class="s1">&#39;Zentner&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach der Korrektur:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spruch_korrigiert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="formatierte-strings-f-strings">
+<h2>Formatierte Strings (f-Strings)<a class="headerlink" href="#formatierte-strings-f-strings" title="Permalink to this headline">#</a></h2>
+<p>Zum Schluss behandeln wir noch formatierte Strings, die sogenannten f-Strings.
+Seit Python 3.6 erleichtert dieser Typ von String die Programmierung. Falls Sie
+Python-Code sehen, in dem Prozentzeichen vorkommen (ganz, ganz alt) oder die
+.format()-Methode benutzt wird, wundern Sie sich nicht. In dieser Vorlesung
+verwenden wir f-Strings.</p>
+<p>f-Strings sind die Abkürzung für “formatted string literals”. Sie ermöglichen
+es, den Wert einer Variable oder einen Ausdruck direkt in den String
+einzubetten. Dazu werden geschweifte Klammern verwendet, also <code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code> und zu
+Beginn des Strings wird ein <code class="docutils literal notranslate"><span class="pre">f</span></code> eingefügt, um aus dem String einen f-String zu
+machen. Der Python-Interpreter fügt dann zur Laufzeit des Programms den
+entsprechenden Wert der Variable in den String ein.</p>
+<p>Hier ein Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mein Name ist </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> und ich bin </span><span class="si">{</span><span class="n">alter</span><span class="si">}</span><span class="s1"> Jahre alt.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Insbesondere bei Ausgabe von Zahlen sind f-Strings besonders nützlich. Wenn nach
+dem Variablennamen ein Doppelpunkt eingefügt wird, kann danach die Anzahl der
+gewünschten Stellen vor dem Komma (hier natürlich ein Punkt) und der
+Nachkommastellen festgelegt werden. Zusätzlich setzen wir ein <code class="docutils literal notranslate"><span class="pre">f</span></code> in die
+geschweiften Klammern, um einen Float anzeigen zu lassen. Im folgenden Beispiel
+geben wir <span class="math notranslate nohighlight">\(\pi\)</span> auf zwei Nachkommastellen an.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pi = </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es ist schwierig, sich alle Formatierungsoptionen zu merken. Auf der
+Internetseite
+<a class="reference external" href="https://cheatography.com/brianallan/cheat-sheets/python-f-strings-basics/">https://cheatography.com/brianallan/cheat-sheets/python-f-strings-basics/</a>
+finden Sie eine umfangreiche Übersicht und können sich zudem ein pdf-Ddokument
+herunterladen.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Programm, mit dem der Flächeninhalt eines Rechtecks berechnet werden soll. Die beide Seitenlängen werden jeweils in den Variablen <code class="docutils literal notranslate"><span class="pre">laenge</span></code> und <code class="docutils literal notranslate"><span class="pre">breite</span></code> gespeichert (suchen Sie sich eigene Zahlen aus). Ausgegeben werden soll dann: “Der Flächeninhalt eines Rechtecks mit den Seiten XX und XX ist XX.”, wobei XX durch die korrekten Zahlen ersetzt werden und der Flächeninhalt auf eine Nachkommastelle gerundet werden soll.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">laenge</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="n">breite</span> <span class="o">=</span> <span class="mf">6.3</span>
+
+<span class="c1"># Verarbeitung</span>
+<span class="n">flaeche</span> <span class="o">=</span> <span class="n">laenge</span> <span class="o">*</span> <span class="n">breite</span>
+
+<span class="c1"># Ausgabe </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Flächeninhalt eines Rechtecks mit den Seiten </span><span class="si">{</span><span class="n">laenge</span><span class="si">}</span><span class="s1"> und </span><span class="si">{</span><span class="n">breite</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">flaeche</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -421,7 +898,7 @@ title="Print to PDF"
             <p class="prev-next-title">for-Schleifen mit range</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../part03.html" title="next page">
+    <a class='right-next' id="next-link" href="../chapter04/chapter04_sec00.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Programmverzweigung (if - elif - else)</p>

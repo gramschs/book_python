@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Das Modul Math" href="chapter02_sec02.html" />
@@ -158,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter03/chapter03_sec00.html">
-   Zählschleifen (for)
+   Zählschleifen (for) und Strings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -178,15 +176,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec03.html">
-     Anwendungen for-Schleifen
+     Strings
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../part03.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
    Programmverzweigung (if - elif - else)
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+     Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+     Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+     Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -381,6 +401,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#container-fur-sammlungen">
    Container für Sammlungen
   </a>
@@ -401,8 +426,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-sind-auch-nur-container">
-   Strings sind auch nur Container
+  <a class="reference internal nav-link" href="#elemente-loschen-mit-del-und-remove">
+   Elemente löschen mit del und remove
   </a>
  </li>
 </ul>
@@ -425,6 +450,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#container-fur-sammlungen">
    Container für Sammlungen
   </a>
@@ -445,8 +475,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-sind-auch-nur-container">
-   Strings sind auch nur Container
+  <a class="reference internal nav-link" href="#elemente-loschen-mit-del-und-remove">
+   Elemente löschen mit del und remove
   </a>
  </li>
 </ul>
@@ -473,6 +503,8 @@ der Person und mit einem Float die Körpergröße der Person gemessen in Meter. 
 uns aber bisher fehlt ist, eine Sammlung von Namen oder eine Sammlung von
 Körpergrößen verwalten zu können. Daher werden wir uns in diesem Jupyter
 Notebook mit Listen beschäftigen.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -486,9 +518,15 @@ Notebook mit Listen beschäftigen.</p>
 </ul>
 </li>
 <li><p>Sie können mit dem Plus-Operator + Listen <strong>verketten</strong>.</p></li>
-<li><p>Sie können Strings als Container interpretieren.</p></li>
+<li><p>Sie können Elemente aus einer Liste löschen:</p>
+<ul>
+<li><p>Löschung per Index: Funktion <strong>del</strong></p></li>
+<li><p>Löschung nach Wert: Methode <strong>remove</strong></p></li>
+</ul>
+</li>
 </ul>
 </div>
+</section>
 <section id="container-fur-sammlungen">
 <h2>Container für Sammlungen<a class="headerlink" href="#container-fur-sammlungen" title="Permalink to this headline">#</a></h2>
 <p>In der Mathematik gibt es den Begriff des Vektors. Einen Vektor kann man als
@@ -496,7 +534,7 @@ eine Sammlung von Zahlen interpretieren. Dabei müssen Vektoren nicht immer eine
 geometrische Interpretation haben. Beispielsweise steht der Vektor</p>
 <p>(116, 144, 199)</p>
 <p>für ein sehr schönes Blau, wenn die drei Komponenten als die Intensität der
-Farbanteile Rot - Grün und Blau interpretiert werden. Diese Art Farben zu
+Farbanteile Rot - Grün - Blau interpretiert werden. Diese Art Farben zu
 beschreiben, wird RGB-Wert genannt (siehe auch <a class="reference external" href="https://de.wikipedia.org/wiki/RGB-Farbraum">Wikipedia →
 RGB-Farbraum</a>). Die Internetseite
 <a class="reference external" href="https://www.color-hex.com/">https://www.color-hex.com</a> ermöglicht es, die
@@ -518,10 +556,7 @@ Datentypen, die daür gedacht sind, Daten als Sammlung zu verwalten, ist
 </section>
 <section id="listen-erzeugen-mit">
 <h2>Listen erzeugen mit []<a class="headerlink" href="#listen-erzeugen-mit" title="Permalink to this headline">#</a></h2>
-<p>Eine Liste wird in Python durch eckige Klammern [  ] erzeugt. Sie finden das
-Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
-eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
-drücken, um die eckigen Klammern auf der Tastatur einzugeben.</p>
+<p>Eine Liste wird in Python durch eckige Klammern [  ] erzeugt.</p>
 <p>Betrachten wir ein Beispiel. Hier wird eine Liste mit den Elementen 1, 2, 3, 4,
 5 erzeugt und dann anschließend in der Variablen <code class="docutils literal notranslate"><span class="pre">liste_beispiel</span></code> gespeichert.
 Mit der Funktion <code class="docutils literal notranslate"><span class="pre">print()</span></code> lassen wir den Inhalt der Liste ausgeben.</p>
@@ -538,6 +573,8 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">pr
 </div>
 </div>
 </div>
+<p>Probieren Sie in der nächsten Mini-Übung selbst aus, wie eine Liste erzeugt
+wird.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Erzeugen Sie eine Liste mit Ihrem Vornamen, Ihrem Nachnamen und Ihrer Körpergröße in m. Welche Datentypen brauchen Sie für diese drei Objekte? Lassen Sie Ihre Liste auch ausgeben.</p>
@@ -551,8 +588,8 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">pr
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ich</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Simone&#39;</span><span class="p">,</span> <span class="s1">&#39;Gramsch&#39;</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ich</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Musterfrau&#39;</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Vor- und Nachname werden durch Strings repräsentiert, die Körpergröße als Float.</p>
@@ -566,15 +603,14 @@ eine Hausnummer. Und das ist in der Informatik der <strong>Index</strong>, also 
 in der Liste, an der ein Element zu finden ist.</p>
 <p>In jeder Programmiersprache gibt es Container mit einem Index, wobei der Index
 in der Regel durch Integer repräsentiert wird. Allerdings gibt es Unterschiede,
-bei welcher Zahl die Nummerierung beginnt. In Python fangen wir mit der Null an.
+bei welcher Zahl die Nummerierung beginnt. <strong>Python fängt mit der Null an.</strong>
 Dann können wir mit dem Index sozusagen nachsehen, welches Element an dieser
 Index-Position gespeichert ist. Das nennt man in der Informatik <strong>Lesezugriff</strong>.
 Oder wir können das Element an einer bestimmten Index-Position gegen ein neues
 Element austauschen. Das nennt man dann <strong>Schreibzugriff</strong>.</p>
 <p>Um auf ein Element einer Liste zugreifen zu können (egal ob lesend oder
-schreibend), verwenden wir eckige Klammern und den Index. Wenn wir also
-beispielsweise das erste Element nachschlagen, also lesen wollen, dann sieht der
-Lesezugriff also so aus:</p>
+schreibend), verwenden wir eckige Klammern und den Index. Der Lesezugriff für
+das erste Element sieht biepielsweise so aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung einer Liste</span>
@@ -592,6 +628,8 @@ Lesezugriff also so aus:</p>
 </div>
 </div>
 </div>
+<p>In der nächsten Mini-Übung wird der Lesezugriff genutzt, um ein Element in einer
+neuen Variable zu speichern.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Speichern Sie das 4. Element der Liste <code class="docutils literal notranslate"><span class="pre">meine_liste</span> <span class="pre">=</span> <span class="pre">['rot',</span> <span class="pre">'grün',</span> <span class="pre">'blau',</span> <span class="pre">'gelb',</span> <span class="pre">'weiß',</span> <span class="pre">'schwarz']</span></code> in der Variable <code class="docutils literal notranslate"><span class="pre">vier</span></code> ab und lassen Sie es ausgeben.</p>
@@ -612,10 +650,8 @@ Lesezugriff also so aus:</p>
 </pre></div>
 </div>
 </div>
-<p>Für den Schreibzugriff benutzen wir ebenfalls die Schreibweise mit den eckigen
-Klammern und dem Index.</p>
-<p>Um in unserer Liste die Farbe weiß durch lila zu ersetzen, benutzen wir
-folgenden Code:</p>
+<p>Der Schreibzugriff erfolgt ebenfalls mit eckigen Klammern und dem Index.</p>
+<p>Im folgenden Code sehen Sie, wie in der Liste die Farbe weiß durch lila ersetzt wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung Liste</span>
@@ -636,8 +672,8 @@ folgenden Code:</p>
 </section>
 <section id="liste-liste-verkettete-liste">
 <h2>Liste + Liste = verkettete Liste<a class="headerlink" href="#liste-liste-verkettete-liste" title="Permalink to this headline">#</a></h2>
-<p>Auch wenn es im ersten Moment verrückt erscheint, in Python können wir Listen
-addieren. Am besten schauen wir uns ein Beispiel an:</p>
+<p>Auch wenn es im ersten Moment verrückt erscheint, Python kann Listen addieren.
+Am besten schauen wir uns ein Beispiel an:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_de</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;grün&#39;</span><span class="p">,</span> <span class="s1">&#39;blau&#39;</span><span class="p">]</span>
@@ -657,67 +693,122 @@ addieren. Am besten schauen wir uns ein Beispiel an:</p>
 </div>
 <p>Das Aneinanderhängen von Elementen zweier Container nennen wir in der Informatik
 <strong>Verkettung</strong>. Oft wird auch der englische Begriff <strong>Concatenation</strong> verwendet.</p>
+<p>In der folgenden Mini-Übung können Sie die Verkettung ausprobieren.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erzeugen Sie eine Liste mit den Monaten März, April und Mai und speichern Sie
+diese Liste in der Variable <code class="docutils literal notranslate"><span class="pre">fruehling</span></code>. Erzeugen Sie anschließend die Listen
+<code class="docutils literal notranslate"><span class="pre">sommer</span></code>, <code class="docutils literal notranslate"><span class="pre">herbst</span></code> und <code class="docutils literal notranslate"><span class="pre">winter</span></code> mit den jeweils passenden Monaten. Verketten Sie
+die vier Listen und speichern Sie in der Variable <code class="docutils literal notranslate"><span class="pre">jahr</span></code> ab. Lassen Sie zuletzt das
+Jahr anzeigen.</p>
+<p>Welchen Index hat Ihr Geburtsmonat in der Liste <code class="docutils literal notranslate"><span class="pre">jahr</span></code>?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Listen mit Monaten</span>
+<span class="n">fruehling</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;März&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;Mai&#39;</span><span class="p">]</span>
+<span class="n">sommer</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Juni&#39;</span><span class="p">,</span> <span class="s1">&#39;Juli&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">]</span>
+<span class="n">herbst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;Oktober&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">]</span>
+<span class="n">winter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Dezember&#39;</span><span class="p">,</span> <span class="s1">&#39;Januar&#39;</span><span class="p">,</span> <span class="s1">&#39;Februar&#39;</span><span class="p">]</span>
+
+<span class="c1"># Jahr</span>
+<span class="n">jahr</span> <span class="o">=</span> <span class="n">fruehling</span> <span class="o">+</span> <span class="n">sommer</span> <span class="o">+</span> <span class="n">herbst</span> <span class="o">+</span> <span class="n">winter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jahr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Der März hat den Index 0, der April den Index 1 usw… Der letzte Monat ist der
+Februar, der den Index 11 hat.</p>
+</div>
 </section>
-<section id="strings-sind-auch-nur-container">
-<h2>Strings sind auch nur Container<a class="headerlink" href="#strings-sind-auch-nur-container" title="Permalink to this headline">#</a></h2>
-<p>Tatsächlich sind Strings eine Sammlung von einzelnen Zeichen. Im Deutschen
-werden Strings auch Zeichenketten genannt. Wir können auf einzelne Zeichen eines
-Strings ebenfalls mit eckigen Klammern und dem Index zugreifen.</p>
-<p>Beispielsweise können wir so die Initialen ermitteln:</p>
+<section id="elemente-loschen-mit-del-und-remove">
+<h2>Elemente löschen mit del und remove<a class="headerlink" href="#elemente-loschen-mit-del-und-remove" title="Permalink to this headline">#</a></h2>
+<p>Die Verkettung der Listen führt dazu, dass die Listen länger werden. Die
+Umkehrung davon fehlt noch, das Kürzen von Listen. Wie so oft in Python gibt es
+mehrere Möglichkeiten, ein Element aus einer Liste zu entfernen, also zu
+löschen. Die Anweisung <code class="docutils literal notranslate"><span class="pre">del</span></code> löscht das Element an einer bestimmten Position.
+Zuerst kommt die Anweisung, dann das Listenelement mit Index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vorname</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
-<span class="n">nachname</span> <span class="o">=</span> <span class="s1">&#39;Wunderland&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Null&#39;</span><span class="p">,</span> <span class="s1">&#39;Eins&#39;</span><span class="p">,</span> <span class="s1">&#39;Zwei&#39;</span><span class="p">,</span> <span class="s1">&#39;Drei&#39;</span><span class="p">,</span> <span class="s1">&#39;Vier&#39;</span><span class="p">,</span> <span class="s1">&#39;Fünf&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vor dem Löschen: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialen:&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vorname</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nachname</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">meine_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Löschen&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialen:
-A
-W
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vor dem Löschen: 
+[&#39;Null&#39;, &#39;Eins&#39;, &#39;Zwei&#39;, &#39;Drei&#39;, &#39;Vier&#39;, &#39;Fünf&#39;]
+Nach dem Löschen
+[&#39;Null&#39;, &#39;Eins&#39;, &#39;Drei&#39;, &#39;Vier&#39;, &#39;Fünf&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Die beiden Buchstaben können erneut verkettet werden, damit die Initialen zusammen sind.</p>
+<p>Wie Sie sehen ist das dritte Element in der Liste gelöscht worden, da die
+Nummerierung des Index bei 0 startet.</p>
+<p>Vielleicht möchte man aber gar nicht ein Element an einer bestimmten Position
+löschen, sondern einen bestimmten Eintrag. Das folgende Beispiel implementiert
+eine Einkaufsliste in Python. Sobald ein Lebensmittel gekauft ist, soll es von
+der Liste gestrichen werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vorname</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
-<span class="n">nachname</span> <span class="o">=</span> <span class="s1">&#39;Wunderland&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">einkaufsliste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Milch&#39;</span><span class="p">,</span> <span class="s1">&#39;Kaffee&#39;</span><span class="p">,</span> <span class="s1">&#39;Brötchen&#39;</span><span class="p">,</span> <span class="s1">&#39;Marmelade&#39;</span><span class="p">]</span>
 
-<span class="n">initialen</span> <span class="o">=</span> <span class="n">vorname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nachname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Einkaufsliste: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialen:&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">initialen</span><span class="p">)</span>
+<span class="n">einkaufsliste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Brötchen&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Einkauf in der Bäckerei: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">)</span>
+
+<span class="n">einkaufsliste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Milch&#39;</span><span class="p">)</span>
+<span class="n">einkaufsliste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Kaffee&#39;</span><span class="p">)</span>
+<span class="n">einkaufsliste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Marmelade&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Einkauf im Supermarkt: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialen:
-AW
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Einkaufsliste: 
+[&#39;Milch&#39;, &#39;Kaffee&#39;, &#39;Brötchen&#39;, &#39;Marmelade&#39;]
+Nach dem Einkauf in der Bäckerei: 
+[&#39;Milch&#39;, &#39;Kaffee&#39;, &#39;Marmelade&#39;]
+Nach dem Einkauf im Supermarkt: 
+[]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Dadurch lassen sich Ausgaben auch schöner gestalten. Beispielsweise können wir
-jetzt auch Strings erst verketten, bevor wir sie anzeigen lassen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Alice
-</pre></div>
-</div>
-</div>
-</div>
+<p>Die Vorgehensweise, um das Element <code class="docutils literal notranslate"><span class="pre">Milch</span></code> zu löschen, ist diesmal komplett
+anders. Diesmal hängen wir an die Variable <code class="docutils literal notranslate"><span class="pre">einkaufsliste</span></code> einen Punkt und dann
+den Namen des Kommandos <code class="docutils literal notranslate"><span class="pre">remove()</span></code>. Wieso das?</p>
+<p>Das Kommando <code class="docutils literal notranslate"><span class="pre">del</span></code> ist so wichtig und universell, dass es mit allen Containern
+funktioniert. Daher ist dieser Befehl als eine sogenannte <strong>Funktion</strong> im
+Python-Kern implementiert. Das Kommando <code class="docutils literal notranslate"><span class="pre">remove()</span></code> bezieht sich jedoch nur auf
+die Liste. Daher ist dieser Befehl als eine sogenannte <strong>Methode</strong>
+implementiert. Eine Methode ist eine Funktion, die zu einem Datentyp dazugehört.</p>
+<p>In späteren Kapiteln werden wir selbst Funktionen und Methoden
+(Objektorientierung) implementieren und auf die Unterschiede detaillierter
+eingehen. Im Moment begnügen wir uns mit der Tatsache, dass es Funktionen wie</p>
+<ul class="simple">
+<li><p>input()</p></li>
+<li><p>print()</p></li>
+<li><p>del()</p></li>
+</ul>
+<p>gibt und Methoden, die mit einem Punkt an das Objekt angehängt werden wie z.B.
+<code class="docutils literal notranslate"><span class="pre">.remove()</span></code>.</p>
 </section>
 </section>
 

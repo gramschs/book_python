@@ -53,8 +53,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Das Modul Turtle" href="chapter02_sec03.html" />
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter03/chapter03_sec00.html">
-   Zählschleifen (for)
+   Zählschleifen (for) und Strings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -178,15 +178,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec03.html">
-     Anwendungen for-Schleifen
+     Strings
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../part03.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
    Programmverzweigung (if - elif - else)
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+     Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+     Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+     Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -358,12 +380,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-math">
+   Import math
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-math-import">
+   From math import
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -375,6 +431,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-math">
+   Import math
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-math-import">
+   From math import
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -384,6 +463,250 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="das-modul-math">
 <h1>Das Modul Math<a class="headerlink" href="#das-modul-math" title="Permalink to this headline">#</a></h1>
+<p>Python kann auch auf schwachbrüstiger Hardware laufen wie beispielsweise auf
+dem Raspberry Pi. Ein Grund für die Effizienz von Python ist, dass nicht alle
+möglichen Datentypen, Funktionen und Methoden von Beginn an in den Speicher
+geladen werden, sondern erst bei Bedarf. Python-Code ist in sogenannte Module
+unterteilt.</p>
+<p>In diesem Jupyter Notebook werden wir den Modul-Mechanismus anhand des
+Math-Moduls kennenlernen.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können erklären, was ein <strong>Modul</strong> in Python ist.</p></li>
+<li><p>Sie können ein Modul komplett mit <strong>import modul</strong> importieren und auf die darin enthaltenen Funktionalitäten mit <strong>modul.funktionalitaet</strong> zugreifen.</p></li>
+<li><p>Sie können mit <strong>from modul import funktionalitaet</strong> einzelne Funktionalitäten eines Moduls importieren.</p></li>
+</ul>
+</div>
+</section>
+<section id="import-math">
+<h2>Import math<a class="headerlink" href="#import-math" title="Permalink to this headline">#</a></h2>
+<p>Es wäre schön, häufig gebrauchte Zahlen wie die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> oder die
+Eulersche Zahl <span class="math notranslate nohighlight">\(e\)</span> zur Verfügung zu haben. Leider gehören beide nicht zum
+Python-Kern, wie der folgende Versuch zeigt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;pi&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python gibt eine Fehlermeldung aus. Der Fehler lautet “NameError”. Der
+Python-Interpreter meldet auch, bei welcher Variable der Namensfehler auftritt,
+nämlich bei ‘pi’.</p>
+<p>Die fehlende Kreiszahl Pi könnte natürlich zu Beginn eines Programmes eingeführt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aber es gibt ja noch mehr Funktionalitäten, die im Python-Kern fehlen wie
+beispielsweise die Sinus-Funktion oder die Wurzel-Funktion.</p>
+<p>Module sind Python-Programme, die Konstanten oder Anweisungen (Funktionen,
+Klassen) zur Verfügung stellen und damit den eigentlichen Python-Kern erweitern.
+Module müssen importiert werden, damit der Python-Interpreter diese erweiterten
+Funktionalitäten benutzen kann.</p>
+<p>Es gibt mehrere Anweisungen, ein Modul zu importieren. Als erstes betrachten wir
+die direkte import-Anweisung und importieren das Mathematik-Modul <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wird die obige Anweisung <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> ausgeführt, passiert scheinbar nichts.
+Tatsächlich hat der Python-Interpreter jedoch das Modul <code class="docutils literal notranslate"><span class="pre">math</span></code> geladen. Die
+Anweisung <code class="docutils literal notranslate"><span class="pre">dir(math)</span></code> listet auf, was genau alles importiert wurde.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;ceil&#39;,
+ &#39;comb&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;degrees&#39;,
+ &#39;dist&#39;,
+ &#39;e&#39;,
+ &#39;erf&#39;,
+ &#39;erfc&#39;,
+ &#39;exp&#39;,
+ &#39;expm1&#39;,
+ &#39;fabs&#39;,
+ &#39;factorial&#39;,
+ &#39;floor&#39;,
+ &#39;fmod&#39;,
+ &#39;frexp&#39;,
+ &#39;fsum&#39;,
+ &#39;gamma&#39;,
+ &#39;gcd&#39;,
+ &#39;hypot&#39;,
+ &#39;inf&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;isqrt&#39;,
+ &#39;lcm&#39;,
+ &#39;ldexp&#39;,
+ &#39;lgamma&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;modf&#39;,
+ &#39;nan&#39;,
+ &#39;nextafter&#39;,
+ &#39;perm&#39;,
+ &#39;pi&#39;,
+ &#39;pow&#39;,
+ &#39;prod&#39;,
+ &#39;radians&#39;,
+ &#39;remainder&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;tau&#39;,
+ &#39;trunc&#39;,
+ &#39;ulp&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Offensichtlich gehören sehr viele mathematische Funktionen zum math-Modul, aber auch die beiden Zahlen <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">e</span></code> finden wir in der Liste. Dann können wir ja <span class="math notranslate nohighlight">\(\pi\)</span> jetzt direkt ausgeben lassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
+<p>Erstaunlich, dass in einem Standard-Modul von Python die Programmier:innen <span class="math notranslate nohighlight">\(\pi\)</span>
+nur mit zwei Nachkommastellen angegeben haben… haben sie auch nicht. Die
+Variable <code class="docutils literal notranslate"><span class="pre">pi</span></code> wurde von uns selbst mit <code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">=</span> <span class="pre">3.14</span></code> definiert und ist nicht
+identisch mit <code class="docutils literal notranslate"><span class="pre">pi</span></code> aus dem math-Modul. Die Kreiszahl aus dem math-Modul heißt
+nämlich <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um Konstanten, Datentypen oder Funktionen eines Moduls zu nutzen, wird der
+Modulname vorangestellt und erneut der Punkt benutzt. Probieren Sie es in der
+nächsten Mini-Übung aus.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Weisen Sie der Variablen x den Wert <span class="math notranslate nohighlight">\(\pi\)</span> zu. Lassen Sie dann <span class="math notranslate nohighlight">\(y = \sin(x)\)</span>
+berechnen und ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2246467991473532e-16
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="from-math-import">
+<h2>From math import<a class="headerlink" href="#from-math-import" title="Permalink to this headline">#</a></h2>
+<p>Wenn nur die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> gebraucht wird, ist der komplette Import des
+math-Modules zuviel des Guten. Auch kann es lästig sein, immer <code class="docutils literal notranslate"><span class="pre">math.</span></code> vor pi zu
+setzen. Eine zweite Möglichkeit, Funktionalitäten eines Moduls zu importieren,
+ist die Alternative</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modulname</span> <span class="kn">import</span> <span class="n">etwas1</span><span class="p">,</span> <span class="n">etwas2</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\pi\)</span> und die Sinus-Funktion werden dann folgendermaßen importiert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt können <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">sin</span></code> direkt benutzt werden, ohne <code class="docutils literal notranslate"><span class="pre">math.</span></code> davor zu schreiben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tatsächlich gibt es noch weitere Möglichkeiten, etwas aus einem Modul zu importieren. Einen Überblick über diese Alternativen finden Sie im Internet unter <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">https://docs.python.org/3/tutorial/modules.html</a>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

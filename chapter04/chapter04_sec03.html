@@ -6,58 +6,56 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Programmverzweigung (if - elif - else) &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>Programmverzweigungen mit mehreren Zweigen: if – elif – else &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Anwendungen for-Schleifen" href="chapter03/chapter03_sec03.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Programmverzweigungen mit einen Zweig: if" href="chapter04_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -92,19 +90,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/book_logo.png" class="logo" alt="logo">
+      <img src="../_static/book_logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Python für Studierende der Ingenieurwissenschaften</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -112,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
+                <a class="reference internal" href="../intro.html">
                     Willkommen zum interaktiven Vorlesungsskript Python
                 </a>
             </li>
@@ -124,12 +122,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="part01.html">
+  <a class="reference internal" href="../part01.html">
    Einstieg in die Programmierung
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter02/chapter02_sec00.html">
+  <a class="reference internal" href="../chapter02/chapter02_sec00.html">
    Listen und Module
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -139,25 +137,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter02/chapter02_sec01.html">
+    <a class="reference internal" href="../chapter02/chapter02_sec01.html">
      Listen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter02/chapter02_sec02.html">
+    <a class="reference internal" href="../chapter02/chapter02_sec02.html">
      Das Modul Math
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter02/chapter02_sec03.html">
+    <a class="reference internal" href="../chapter02/chapter02_sec03.html">
      Das Modul Turtle
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter03/chapter03_sec00.html">
-   Zählschleifen (for)
+  <a class="reference internal" href="../chapter03/chapter03_sec00.html">
+   Zählschleifen (for) und Strings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -166,26 +164,48 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03/chapter03_sec01.html">
+    <a class="reference internal" href="../chapter03/chapter03_sec01.html">
      for-Schleifen mit Liste
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03/chapter03_sec02.html">
+    <a class="reference internal" href="../chapter03/chapter03_sec02.html">
      for-Schleifen mit range
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03/chapter03_sec03.html">
-     Anwendungen for-Schleifen
+    <a class="reference internal" href="../chapter03/chapter03_sec03.html">
+     Strings
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter04_sec00.html">
    Programmverzweigung (if - elif - else)
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter04_sec01.html">
+     Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter04_sec02.html">
+     Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -246,7 +266,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/part03.md"
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter04/chapter04_sec03.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -256,7 +276,7 @@ title="Launch on Binder"
 
 <span class="headerbtn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img src="../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
@@ -320,7 +340,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/part03.ipynb"
+        <a href="../_sources/chapter04/chapter04_sec03.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -337,7 +357,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="_sources/part03.md"
+        <a href="../_sources/chapter04/chapter04_sec03.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -397,26 +417,6 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#einfuhrung-und-lernziele">
-   Einführung und Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#der-boolesche-datentyp">
-   Der boolesche Datentyp
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vergleiche-mit-zahlen">
-   Vergleiche mit Zahlen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#programmverzweigungen-mit-einen-zweig-if">
-   Programmverzweigungen mit einen Zweig: if
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">
    Programmverzweigungen mit zwei Zweigen: if – else
   </a>
@@ -440,7 +440,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Programmverzweigung (if - elif - else)</h1>
+                <h1>Programmverzweigungen mit mehreren Zweigen: if – elif – else</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -450,26 +450,6 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#einfuhrung-und-lernziele">
-   Einführung und Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#der-boolesche-datentyp">
-   Der boolesche Datentyp
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vergleiche-mit-zahlen">
-   Vergleiche mit Zahlen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#programmverzweigungen-mit-einen-zweig-if">
-   Programmverzweigungen mit einen Zweig: if
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">
    Programmverzweigungen mit zwei Zweigen: if – else
@@ -495,304 +475,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="programmverzweigung-if-elif-else">
-<h1>Programmverzweigung (if - elif - else)<a class="headerlink" href="#programmverzweigung-if-elif-else" title="Permalink to this headline">#</a></h1>
-<section id="einfuhrung-und-lernziele">
-<h2>Einführung und Lernziele<a class="headerlink" href="#einfuhrung-und-lernziele" title="Permalink to this headline">#</a></h2>
-<p>Bisher haben wir kleinere Skripte geschrieben, bei denen die Anweisungen Zeile
-für Zeile ausgeführt wurden. Ein Programm oder Skript, das nur aus einer
-einfachen Aneinanderreihung von Befehlen besteht, nennt man linear. Bisher
-hatten wir also nur lineare Programme.</p>
-<p>In diesem und in den nächsten Skripten werden wir uns mit dem Thema
-<strong>Kontrollstruktur</strong> beschäftigen. Kontrollstrukturen dienen dazu, den linearen
-Ablauf der Programme oder Skripte aufzubrechen und beispielsweise auf Eingaben
-der Benutzerinnen und Benutzer zu reagieren. Wir starten dazu mit der
-Kontrollstruktur <strong>Programmverzweigung</strong>. Wenn ein Skript auf eine Eingabe oder
-auf den aktuellen Zustand einer Variable reagieren soll, muss der
-Python-Interpreter in der Lage sein, Vergleiche zu ziehen und entscheiden zu
-können. Daher beschäftigen wir uns vorher mit dem <strong>Datentyp Bool</strong> und
-<strong>Vergleichen</strong>.</p>
-</section>
-<section id="der-boolesche-datentyp">
-<h2>Der boolesche Datentyp<a class="headerlink" href="#der-boolesche-datentyp" title="Permalink to this headline">#</a></h2>
-<p>Viele Möglichkeiten unserer Gesellschaft stehen nur Volljährigen offen und sind
-damit an eine Altersangabe gebunden. Wenn jetzt ein Computersystem vorab prüfen
-soll, ob Volljährigkeit vorliegt oder nicht, dann brauchen wir einen einfachen
-Vergleich. Angenommen, wir würden das Alter der Benutzers oder der Benutzerin in
-der Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code> speichern. Damit wäre ein simples Beispiel für eine
-einfache Bedingung der mathematische Ausdruck <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">18</span></code>. Der Wert der
-Variablen <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird also mit der Zahl 18 verglichen. Dieser Vergleich ist
-entweder <strong>wahr (True)</strong> oder <strong>falsch (False)</strong>. Oder anders formuliert, ist
-diese Bedingung entweder erfüllt oder nicht erfüllt.</p>
-<p>Um den Wahrheitswert einer Bedingung zu speichern, hat Python einen eigenen
-Datentyp, einen sogenannten booleschen Datentyp. Nach dem englischen Wort wird
-dieser Datentyp in der Informatik üblicherweise <strong>Boolean</strong> genannt. Das
-besondere an diesem Datentyp ist, dass eine Variable diesen Datentyps nur zwei
-verschiedene Werte annehmen kann, nämlich</p>
-<ul class="simple">
-<li><p>True: Wahrheitswert ist wahr oder</p></li>
-<li><p>False: Wahrheitswert ist falsch.</p></li>
-</ul>
-<p>Aber wie kann man dann überprüfen, welcher Datentyp in einer Variablen
-gespeichert ist? Dazu gibt es das Kommando <code class="docutils literal notranslate"><span class="pre">type</span></code>. Führen Sie die nächste
-Code-Zelle aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="vergleiche-mit-zahlen">
-<h2>Vergleiche mit Zahlen<a class="headerlink" href="#vergleiche-mit-zahlen" title="Permalink to this headline">#</a></h2>
-<p>Nachdem wir jetzt den Datentyp kennegelernt haben, mit dem Python das Ergebnis
-eines Vergleichs speichert, kommen wir nun zu dem Vergleich selbst.</p>
-<p>Zunächst beschäftigen wir uns mit mathematischen Vergleichen. In der Mathematik
-ist ein Vergleich ein Ausdruck mit zwei Argumenten und einem Vergleichsoperator
-in der Mitte. Die beiden Argumente können auch unterschiedliche Datentypen
-haben, dann muss der Vergleichsoperator aber sinnvoll für diese Datentypen
-definiert sein. Z.B. darf man einen Integer mit einem Float vergleichen</p>
-<p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">17.2</span></code></p>
-<p>aber</p>
-<p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">'vier'</span></code></p>
-<p>ist nicht sinnvoll und undefiniert. Es gibt die folgenden Vergleichsoperatoren
-in Python:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>   kleiner</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>  kleiner oder gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>   größer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>  größer oder gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>  gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">!=</span> </code> ungleich</p></li>
-</ul>
-<p>Im interaktiven Modus von Python können wir leicht den Wahrheitsgehalt von Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Jetzt probieren wir in den nachfolgenden Code-Zellen verschiedene Vergleichsoperatoren aus. Zur Erinnerung, 0 steht dabei für false (falsch) und 1 für wahr (true).</p>
-<p>Ist x genau gleich 15?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">15</span>    
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ist x kleiner als 42?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">42</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ist x genau 30?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ist x ungleich 42?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">!=</span> <span class="mi">42</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ist x größer als 30?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ist x größer gleich 30?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Wählen Sie sich eine Zahl. Testen Sie anschließend:</p>
-<ul class="simple">
-<li><p>Ist Ihre Zahl kleiner gleich 5?</p></li>
-<li><p>Ist Ihre Zahl genau 17?</p></li>
-<li><p>Ist Ihre Zahl nicht gleich 17?</p></li>
-<li><p>Ist Ihre Zahl positiv?</p></li>
-<li><p>Ist Ihre Zahl kleiner als -17.7?</p></li>
-</ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe: Wahl meiner Zahl</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">33</span>
-
-<span class="c1"># kleiner gleich 5?</span>
-<span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">5</span>
-
-<span class="c1"># genau gleich 17?</span>
-<span class="n">x</span> <span class="o">==</span> <span class="mi">17</span>
-
-<span class="c1"># nicht gleich 17?</span>
-<span class="n">x</span> <span class="o">!=</span> <span class="mi">17</span>
-
-<span class="c1"># positiv?</span>
-<span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
-
-<span class="c1"># kleiner als -17.7?</span>
-<span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">17.7</span>
-</pre></div>
-</div>
-</div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="programmverzweigungen-mit-einen-zweig-if">
-<h2>Programmverzweigungen mit einen Zweig: if<a class="headerlink" href="#programmverzweigungen-mit-einen-zweig-if" title="Permalink to this headline">#</a></h2>
-<p>Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt.
-Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span><span class="p">:</span>
-    <span class="n">anweisungsblock</span>
-</pre></div>
-</div>
-<p>Ist die Bedingung erfüllt, also “True”, so wird der eingerückte Anweisungsblock
-ausgeführt, ansonsten übersprungen. Damit ist gemeint, dass der
-Python-Interpreter nach dem Ende des if-Blocks weiter macht, falls die Bedingung
-nicht erfüllt (= False) wird.</p>
-<p>Wir betrachten nun ein Beispiel:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...
-</pre></div>
-</div>
-</div>
-</div>
-<p>Und könnte beispielsweise mit einer Benutzerabfrage kombiniert werden:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie?&#39;</span><span class="p">))</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: “Heute ist es aber kalt!”</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
-<span class="n">temperatur</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">))</span>
-
-<span class="c1"># Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Heute ist es aber kalt!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt.
-Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: “Die Zahl ist negativ.”
-Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: “Die Zahl ist Null.”
-Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positiv.”</p>
-<p>Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Eingabe</span>
-<span class="n">zahl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie bitte eine Zahl ein: &#39;</span><span class="p">))</span>
-
-<span class="o">%</span> <span class="n">Verarbeitung</span> <span class="n">und</span> <span class="n">Ausgabe</span>
-<span class="k">if</span> <span class="n">zahl</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Zahl ist negativ.&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">zahl</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Zahl ist Null.&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">zahl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Zahl ist positiv.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Der Code erfordert drei if-Blöcke.</p>
-</div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="programmverzweigungen-mit-mehreren-zweigen-if-elif-else">
+<h1>Programmverzweigungen mit mehreren Zweigen: if – elif – else<a class="headerlink" href="#programmverzweigungen-mit-mehreren-zweigen-if-elif-else" title="Permalink to this headline">#</a></h1>
+<p>TODO</p>
 <section id="programmverzweigungen-mit-zwei-zweigen-if-else">
 <h2>Programmverzweigungen mit zwei Zweigen: if – else<a class="headerlink" href="#programmverzweigungen-mit-zwei-zweigen-if-else" title="Permalink to this headline">#</a></h2>
 <p>In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor.
@@ -1004,7 +689,7 @@ Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus.</p>
 </div>
 </div>
 <p>Um den obigen Code besser zu verstehen, zeichen wir den Ablauf schematisch:</p>
-<img alt="_images/part02_fahrkarte.png" id="part02-fahrkarte" src="_images/part02_fahrkarte.png" />
+<img alt="../_images/part02_fahrkarte.png" id="part02-fahrkarte" src="../_images/part02_fahrkarte.png" />
 <p>Es wäre schöner, wenn es für solche Mehrfachverzweigungen etwas
 übersichtlicheren Code gäbe. Und in der Tat, den gibt es. Man könnte sozusagen
 den Start des else-Konstruktes mit dem nachfolgenden if-Konstrukt verschmelzen.
@@ -1069,7 +754,7 @@ dem PKW im Internet auf der Seite:
 ein Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt,
 welche Strafe in Euro verhängt wird. Die Tabelle für das Jahr 2022 lautet wie
 folgt:</p>
-<img alt="_images/part02_bussgeldkatalog.png" id="part02-bussgeldkatalog" src="_images/part02_bussgeldkatalog.png" />
+<img alt="../_images/part02_bussgeldkatalog.png" id="part02-bussgeldkatalog" src="../_images/part02_bussgeldkatalog.png" />
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1177,7 +862,7 @@ Texte werden wir noch kennenlernen.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./chapter04"
         },
         predefinedOutput: true
     }
@@ -1191,11 +876,11 @@ Texte werden wir noch kennenlernen.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chapter03/chapter03_sec03.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="chapter04_sec02.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Anwendungen for-Schleifen</p>
+            <p class="prev-next-title">Programmverzweigungen mit einen Zweig: if</p>
         </div>
     </a>
 </div>
@@ -1224,7 +909,7 @@ Texte werden wir noch kennenlernen.</p>
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
