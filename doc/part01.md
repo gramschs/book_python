@@ -1,23 +1,3 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
-
-```{code-cell} ipython3
-:tags: [remove-input]
-
-from IPython.display import IFrame
-```
-
 # Einstieg in die Programmierung
 
 ## Lernziele
@@ -139,81 +119,9 @@ Aber ...
 Fangen wir erstmal von vorne an mit der grundlegen Bedeutung des Fachbegriffes
 Software im Unterschied zu Hardware.
 
-### Hardware und Software
 
-Computer, mobile Geräte wie Smartphones oder auch technische Systeme wie eine
-Anlagensteuerung bestehen aus zwei Komponenten: Hardware und Software. Dabei
-bezeichnen wir mit **Hardware** alle physischen Kompenten eines Systems, also
-die elektronischen und mechanischen Bauteile. Die **Software** dahingegen
-umfasst die Programme und deren Dokumentation sowie Daten. Man könnte auch
-sagen, dass Hardware die materiellen Teile eines Computersystems bezeichnet,
-während Software die nicht-materiellen Teile zusammenfasst. 
 
-Bitte schauen Sie sich jetzt kurz um. Welche Hardware fällt Ihnen auf, wenn Sie
-den Blick schweifen lassen?  Bei Wikipedia können Sie den Begriff
-[Hardware](https://de.wikipedia.org/wiki/Hardware) noch einmal nachlesen.
-Wikibooks bietet auch ein passendes Buch zu
-[Computerhardware](https://de.wikibooks.org/wiki/Computerhardware) an.
 
-Software ist eine Zusammenfassung der nicht-materiellen Komponenten eines
-Computersystems. Wikipedia listet hier gleich drei verschiedene ISO-Normen zur
-Definition von [Software](https://de.wikipedia.org/wiki/Software) auf.
-
-Wir verwenden im Folgenden die weitreichendste Definition von Software, wonach
-Software
-
-* Programme
-* Dokumentation und
-* Daten
-
-umfasst.
-
-Die letzteren beiden Begriffe sind am einfachsten zu erklären, Mit
-**Dokumentation** sind Bedienungsanleitungen und Handbücher gemeint, aber auch
-die technische Dokumentation, die für andere Informatiker:innen gedacht ist und
-in die Benutzer:innen eines Computersystems in der Regel keinen Einblick haben.
-**Daten** wiederum sind alle Beobachtungen oder Messungen. In der
-digitalisierten Form werden sie normalerweise durch Zahlenwerte repräsentiert.
-Was die Programme anbelangt, gibt es mehrere Kategorien, wie wir im nächsten
-Abschnitt sehen werden. 
-
-### Betriebssystem, Anwendungssoftware und Bibliothek
-
-Die wichtigste Software eines jeden Computersystems ist das **Betriebssystem**.
-Das Betriebssystem umfasst alle Computerprogramme, die notwendig sind, um
-überhaupt den Computer zu betreiben, zu starten oder zu benutzen. Das
-[Betriebssystem](https://de.wikipedia.org/wiki/Betriebssystem) hat laut
-Wikipedia folgende Aufgaben: 
-
-> ... Benutzerkommunikation; Laden, Ausführen, Unterbrechen und Beenden von
-  Programmen; Verwaltung und Zuteilung der Prozessorzeit; Verwaltung des
-  internen Speicherplatzes für Anwendungen; Verwaltung und Betrieb der
-  angeschlossenen Geräte; Schutzfunktionen z. B. durch Zugriffsbeschränkungen."
-
-Viele Menschen denken bei Software zuerst an **Anwendungssoftware** (siehe
-[Wikipedia/Anwendungssoftware](https://de.wikipedia.org/wiki/Anwendungssoftware)).
-Das sind Computerprogramme, die einen speziellen Zweck erfüllen sollen und den
-Benutzer oder die Benutzerin bei Aufgaben unterstützen. Im Englischen werden
-solche Computerprogramme auch als **Application** (= Anwendung, Verwendung,
-Einsatz) bezeichnet. 2008 hat die Firma Apple den "iOS App Store" gegründet, um
-Anwendungssoftware für das iPhone zu vertreiben. Seitdem wird immer häufiger
-auch im deutschen Sprachraum der Name Application oder App für verwendet.
-Vielfach steht "Application" eher für PC-Anwendungssoftware und der Kurzname
-"App" für Anwendungssoftware für Tablets und Smartphones.  
-
-Für Softwareentwickler sind — neben der Programmiersprache und den
-Software-Entwicklungswerkzeugen — vor allem Bibiotheken wichtig. Eine
-**Bibliothek** (siehe
-[Wikipedia/Bibliothek](https://de.wikipedia.org/wiki/Programmbibliothek)) ist
-eine Sammlung von Programmen, die zwar einen bestimmten Zweck haben, aber
-eigenständig nicht lauffähig werden. Diese Programmbibiotheken werden von
-Programmiererinnen und Programmieren benutzt, um nicht ständig neu das Rad
-erfinden zu müssen. Beispielsweise würde es den Software-Entwickungsprozess
-verlangsamen, wenn jedesmal neu ein Programm geschrieben werden müsste, dass die
-Wurzel einer Zahl berechnet oder ein Ergebnis einer Berechnung in eine Datei auf
-die Festplatte schreibt. Diese Spezialaufgaben wurden bereits von anderen
-Software-Entwickler:innen implmentiert und werden dann über die Bibliotheken der
-Gemeinschaft zur Verfügung gestellt.
 
 ### Programmiersprachen und das erste Python-Programm
 
