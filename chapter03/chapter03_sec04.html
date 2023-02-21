@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>Übungen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Programmverzweigung (if - elif - else)" href="../chapter04/chapter04_sec00.html" />
+    <link rel="prev" title="Strings" href="chapter03_sec03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,7 +121,39 @@ const thebe_selector_output = ".output, .cell_output"
   Grundlagen Programmierung
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter00/chapter00_sec00.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec01.html">
+     Hardware und Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec02.html">
+     Programmiersprachen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec03.html">
+     Installation und Start von Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../part01.html">
    Einstieg in die Programmierung
@@ -129,8 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../chapter02/chapter02_sec00.html">
    Listen und Module
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -152,16 +186,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter03_sec00.html">
    Zählschleifen (for) und Strings
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="chapter03_sec01.html">
      for-Schleifen mit Liste
@@ -177,14 +211,19 @@ const thebe_selector_output = ".output, .cell_output"
      Strings
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Übungen
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter04/chapter04_sec00.html">
    Programmverzweigung (if - elif - else)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -329,50 +368,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Übungen</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -380,13 +392,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <ol class="simple">
+  <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
+<h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
 <li><p>Schreiben Sie ein Programm, das den Benutzer nach seinem Namen und seinem Alter fragt und dann eine Begrüßungsnachricht ausgibt, die den Namen und das Alter des Benutzers enthält. Verwenden Sie eine f-String, um den Namen und das Alter des Benutzers in die Begrüßungsnachricht einzufügen.</p></li>
 <li><p>Schreiben Sie ein Programm, das den Benutzer nach seiner E-Mail-Adresse fragt und dann eine Bestätigungsmeldung ausgibt, die die E-Mail-Adresse des Benutzers enthält. Verwenden Sie eine f-String, um die E-Mail-Adresse des Benutzers in die Bestätigungsmeldung einzufügen.</p></li>
 <li><p>Schreiben Sie ein Programm, das den Benutzer nach zwei Zahlen fragt und dann die Summe, das Produkt und den Quotienten dieser Zahlen ausgibt. Verwenden Sie eine f-String, um die Zahlen und die Ergebnisse in die Ausgabe einzufügen.</p></li>
 <li><p>Schreiben Sie ein Programm, das eine Liste von Namen enthält und dann eine Nachricht ausgibt, die jeden Namen in der Liste einzeln begrüßt. Verwenden Sie eine Schleife und eine f-String, um die Nachricht für jeden Namen in der Liste zu erstellen.</p></li>
 <li><p>Schreiben Sie ein Programm, das eine Zeichenkette enthält und dann eine Nachricht ausgibt, die angibt, wie viele Vorkommen eines bestimmten Buchstabens in der Zeichenkette vorhanden sind. Verwenden Sie eine f-String, um den Buchstaben und die Anzahl der Vorkommen in die Nachricht einzufügen.</p></li>
 </ol>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -415,6 +430,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter03_sec03.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Strings</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../chapter04/chapter04_sec00.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Programmverzweigung (if - elif - else)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

@@ -53,6 +53,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Zählschleifen (for) und Strings" href="../chapter03/chapter03_sec00.html" />
@@ -122,6 +124,38 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter00/chapter00_sec00.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec01.html">
+     Hardware und Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec02.html">
+     Programmiersprachen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec03.html">
+     Installation und Start von Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter00/chapter00_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../part01.html">
    Einstieg in die Programmierung
@@ -131,8 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="chapter02_sec00.html">
    Listen und Module
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -158,8 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../chapter03/chapter03_sec00.html">
    Zählschleifen (for) und Strings
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -185,8 +219,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../chapter04/chapter04_sec00.html">
    Programmverzweigung (if - elif - else)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -504,7 +538,7 @@ Jupyter Notebook.</strong></p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "cafa18f905854a898a3af55fb4d5d99b"}
+{"version_major": 2, "version_minor": 0, "model_id": "3aa9d26957d644808168e125d1ce149c"}
 </script></div>
 </div>
 <p>Damit der Computer weiß, dass auf dieser Leinwand eine Turtle-Grafik gezeichnet
@@ -572,7 +606,7 @@ Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f57cbbc8d4304fb2b6da2e0e91b027f0"}
+{"version_major": 2, "version_minor": 0, "model_id": "255c1ce96a42466f876fe730835f9704"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -614,7 +648,7 @@ Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"2eb0a99ff000457c81ba1b8a7b9e8a76": {"model_name": "CanvasManagerModel", "model_module": "ipycanvas", "model_module_version": "^0.13", "state": {"_model_module": "ipycanvas", "_model_module_version": "^0.13", "_model_name": "CanvasManagerModel", "_view_count": null, "_view_module": null, "_view_module_version": "", "_view_name": null}}, "d927b86355db4f03aa0834710bc7cfb5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cafa18f905854a898a3af55fb4d5d99b": {"model_name": "CanvasModel", "model_module": "ipycanvas", "model_module_version": "^0.13", "state": {"_canvas_manager": "IPY_MODEL_2eb0a99ff000457c81ba1b8a7b9e8a76", "_dom_classes": [], "_model_module": "ipycanvas", "_model_module_version": "^0.13", "_model_name": "CanvasModel", "_send_client_ready_event": true, "_view_count": null, "_view_module": "ipycanvas", "_view_module_version": "^0.13", "_view_name": "CanvasView", "height": 250, "image_data": null, "layout": "IPY_MODEL_d927b86355db4f03aa0834710bc7cfb5", "sync_image_data": false, "width": 500}}, "2f36e484dfdb46e3a6081bdce89b4995": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f57cbbc8d4304fb2b6da2e0e91b027f0": {"model_name": "CanvasModel", "model_module": "ipycanvas", "model_module_version": "^0.13", "state": {"_canvas_manager": "IPY_MODEL_2eb0a99ff000457c81ba1b8a7b9e8a76", "_dom_classes": [], "_model_module": "ipycanvas", "_model_module_version": "^0.13", "_model_name": "CanvasModel", "_send_client_ready_event": true, "_view_count": null, "_view_module": "ipycanvas", "_view_module_version": "^0.13", "_view_name": "CanvasView", "height": 250, "image_data": null, "layout": "IPY_MODEL_2f36e484dfdb46e3a6081bdce89b4995", "sync_image_data": false, "width": 500}}}, "version_major": 2, "version_minor": 0}
+{"state": {"fc4b011de4c04e4ea4e1e334b7b72dce": {"model_name": "CanvasManagerModel", "model_module": "ipycanvas", "model_module_version": "^0.13", "state": {"_model_module": "ipycanvas", "_model_module_version": "^0.13", "_model_name": "CanvasManagerModel", "_view_count": null, "_view_module": null, "_view_module_version": "", "_view_name": null}}, "61eda8cfa45541ea8019ebb6371e2f45": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3aa9d26957d644808168e125d1ce149c": {"model_name": "CanvasModel", "model_module": "ipycanvas", "model_module_version": "^0.13", "state": {"_canvas_manager": "IPY_MODEL_fc4b011de4c04e4ea4e1e334b7b72dce", "_dom_classes": [], "_model_module": "ipycanvas", "_model_module_version": "^0.13", "_model_name": "CanvasModel", "_send_client_ready_event": true, "_view_count": null, "_view_module": "ipycanvas", "_view_module_version": "^0.13", "_view_name": "CanvasView", "height": 250, "image_data": null, "layout": "IPY_MODEL_61eda8cfa45541ea8019ebb6371e2f45", "sync_image_data": false, "width": 500}}, "a2a6ad8d59d14350aff8a9f80f1598eb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "255c1ce96a42466f876fe730835f9704": {"model_name": "CanvasModel", "model_module": "ipycanvas", "model_module_version": "^0.13", "state": {"_canvas_manager": "IPY_MODEL_fc4b011de4c04e4ea4e1e334b7b72dce", "_dom_classes": [], "_model_module": "ipycanvas", "_model_module_version": "^0.13", "_model_name": "CanvasModel", "_send_client_ready_event": true, "_view_count": null, "_view_module": "ipycanvas", "_view_module_version": "^0.13", "_view_name": "CanvasView", "height": 250, "image_data": null, "layout": "IPY_MODEL_a2a6ad8d59d14350aff8a9f80f1598eb", "sync_image_data": false, "width": 500}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
