@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Programmiersprachen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>Programmieren &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Installation und Start von Python" href="chapter00_sec03.html" />
@@ -141,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Programmiersprachen
+     Programmieren
     </a>
    </li>
    <li class="toctree-l2">
@@ -211,6 +209,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec03.html">
      Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec04.html">
+     Übungen
     </a>
    </li>
   </ul>
@@ -365,23 +368,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmieren-ist-wie-kochen">
+   Programmieren ist wie Kochen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmiersprachen">
+   Programmiersprachen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warum-python">
+   Warum Python?
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Programmiersprachen</h1>
+                <h1>Programmieren</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmieren-ist-wie-kochen">
+   Programmieren ist wie Kochen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmiersprachen">
+   Programmiersprachen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warum-python">
+   Warum Python?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -389,9 +459,208 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="programmiersprachen">
-<h1>Programmiersprachen<a class="headerlink" href="#programmiersprachen" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="programmieren">
+<h1>Programmieren<a class="headerlink" href="#programmieren" title="Permalink to this headline">#</a></h1>
+<p>Es gibt viele Gründe, warum es sich lohnt, Programmieren zu lernen. Die
+Nachfrage nach Ingenieur:innen, die zusätzlich Programmieren können, wächst
+aufgrund der Digitalisierung der Industrie rasant. Programmieren erfordert aber
+auch kritisches Denken und Problemlösungsfähigkeiten. Umgekehrt werden durch
+Programmieren diese Fähigkeiten gefördert. Auch fördert Programmieren das
+Verständnis von Technologie und Computersystemen. Es kann helfen, die
+Funktionsweise von Software und Hardware besser zu verstehen und Einblicke in
+die Arbeitsweise von Websites, Anwendungen und anderen Technologien zu gewinnen.
+Programmierung kann auch dabei helfen, Routineaufgaben zu automatisieren und
+Zeit zu sparen. Dies kann auch dazu beitragen, Fehler zu minimieren und die
+Effizienz zu steigern.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können erklären, was ein <strong>Algorithmus</strong> ist.</p></li>
+<li><p>Sie wissen, was eine <strong>Programmiersprache</strong> ist.</p></li>
+<li><p>Sie kennen den Unterschied zwischen <strong>höheren Prorgammiersprachen</strong> und <strong>Maschinensprache</strong>.</p></li>
+<li><p>Sie wissen, was der Unterschied zwischen einer <strong>kompilierten Programmiersprache</strong> und einer <strong>interpretierten Programmiersprache</strong> ist. Sie können für beide Kategorien Beispiele benennen.</p></li>
+</ul>
+</div>
+</section>
+<section id="programmieren-ist-wie-kochen">
+<h2>Programmieren ist wie Kochen<a class="headerlink" href="#programmieren-ist-wie-kochen" title="Permalink to this headline">#</a></h2>
+<p>Programmieren bedeutet, dem Computer eine Reihe von Anweisungen zu geben. Damit
+ist aber mehr gemeint, als nur das einfache “Computer, spiel mir den Song XY
+vor!”. Es geht darum, mit Hilfe einer Abfolge von Anweisungen ein Problem zu
+lösen. Dementsprechend ist ein wichtiger Aspekt des Programmierens die
+Fähigkeit, komplexe Probleme in kleinere, leichter zu lösende Aufgaben zu
+unterteilen. Diese Aufgaben können dann einzeln gelöst und in einem größeren
+Programm kombiniert werden, um das Problem als Ganzes zu lösen.</p>
+<p>Diese schrittweise Vorgehensweise zur Lösung eines Problems nennt man
+<strong>Algorithmus</strong>. Ein Algorithmus ist ein klar definierter Satz von Anweisungen
+oder Regeln, die von einem Computer (oder auch von einem Menschen) ausgeführt
+werden können, um ein bestimmtes Ergebnis zu erzielen.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Nehmen Sie sich 5 min Zeit, um einen Algorithmus aufzuschreiben, wie Ihr Lieblingsgericht zubereitet wird.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Zuerst werden 1 Apfel, 1 Banane, 1 Orange und 2 Kiwis kleingeschnitten und in eine Schüssel gefüllt. Danach werden 3 EL Joghurt mit 1 TL Honig und einer Prise Zimt verrührt. Zuletzt wird das Joghurt-Dressing mit den Obststücken gemischt und angerichtet.</p>
+</div>
+<p>Kochanweisungen sind nicht immer verständlich. Es kommt auf das
+Hintergrundwissen der Person an, die versucht ein Gericht nachzukochen, ob die
+Kochanweisung verständlich ist. In dem obigen Beispiel wurde beispielsweise
+vorausgesetzt, dass die Abkürzungen EL für Esslöffel und TL für Teelöffel
+bekannt sind. Es hätten aber auch Formulierungen vorkommen können wie Mehl
+anschwitzen, Sauce binden, Masse stocken lassen oder Zwiebeln glasig werden
+lassen. Falls solche Formululierungen unverstänlich sind, liegt es aber eher
+daran, dass sich dahinter eine komplett eigner Kochprozess verbirgt, den man
+kennen muss, um das Rezept insgesamt nachzukochen.</p>
+<p><a class="reference external" href="https://www.chefkoch.de/">Chefkoch</a> bietet eine riesige Anzahl an Rezepten wie
+z.B. das folgende Rezept eines
+<a class="reference external" href="https://www.chefkoch.de/rezepte/1717121280428611/Rosenkohlauflauf.html">Rosenkohl-Auflaufs</a>:</p>
+<blockquote>
+<div><p>Die Kartoffeln und den Rosenkohl bissfest garen. Das Hackfleisch anbraten
+und nach Belieben eine Zwiebel zugeben. Die Sahne und den Schmand verrühren und
+etwas geriebenen Käse zugeben, mit Knoblauchpulver und Muskat würzen. Eine
+Auflaufform fetten und abwechselnd Kartoffeln, Rosenkohl, Gehacktes, Toastkäse
+und Sahne-Schmandmischung schichten. Anschließend den restlichen Reibekäse über
+den Auflauf geben. Für eine halbe Stunde in den auf 200 Grad vorgeheizten
+Backofen geben.</p>
+</div></blockquote>
+<p>Könnten Sie dieses Rezept nachkochen? Was müsste aus Ihrer Sicht detaillierter
+beschrieben werden?</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Listen Sie die Details auf, die dem obigen Rezept des Rosenkohl-Auflaufs zugefügt werden müssten, um auch Kochanfängern eine Möglichkeit zu bieten, das Rezept nachzukochen.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<ul class="simple">
+<li><p>Die Garzeiten der Kartoffeln und des Rosenkohls sind normalerweise unterschiedlich und müssten spezifiziert werden.</p></li>
+<li><p>Wie wird Hackfleisch angebraten? Erläuterungen zum Anbraten fehlen komplett.</p></li>
+<li><p>Angaben zur Würzung der Sahne-Schmand-Mischung fehlen.</p></li>
+<li><p>Soll der Backofen 200 Grad bei Umluft oder Ober-/Unterhitze haben? Mittlere Schiene oder eine andere?</p></li>
+</ul>
+</div>
+<p>Auf die Idee, einen Algorithmus mit dem Kochen zu vergleichen, werden wir in
+spätere Kapiteln noch zurückkehren. Als nächstes beschäftigen wir uns damit, wie
+den Computer Anweisungen erteilt werden.</p>
+</section>
+<section id="programmiersprachen">
+<h2>Programmiersprachen<a class="headerlink" href="#programmiersprachen" title="Permalink to this headline">#</a></h2>
+<p>Eine <strong>Programmiersprache</strong> ist die formale Sprache zur Formulierung von
+Datenstrukturen und Algorithmen (= Abfolge von Anweisungen), die von einem
+Computer ausgeführt werden können.</p>
+<p>Es gibt nicht die wichtigste oder beste Programmiersprache, sondern die Auswahl
+der Programmiersprache sollte sich stets nach der anvisierten Anwendung richten.
+Der sogenannte Tiobe-Index zeigt die Beliebtheit der 50 wichtigsten
+Programmiersprachen:</p>
+<p><a class="reference external" href="https://www.tiobe.com/tiobe-index/">https://www.tiobe.com/tiobe-index/</a></p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Recherchieren Sie im Tiobe-Index nach den Programmiersprachen MATLAB und Python. Auf welchem Platz stehen die beiden Programmiersprachen aktuell?</p>
+</div>
+<p>In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am
+Computern ausgerichtet. Hier sehen Sie ein Beispiel, wie in der
+Programmiersprache Assembler die Meldung “Hallo Welt” auf dem Monitor angezeigt
+wird:</p>
+<figure class="align-default" id="fig-chap00-sec01">
+<img alt="../_images/fig_chap00_sec01_assembler.png" src="../_images/fig_chap00_sec01_assembler.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">“Hallo Welt” in Assembler (Quelle: <a class="reference external" href="https://de.wikipedia.org/wiki/Assemblersprache">Wikipedia → Assemblersprache</a>)</span><a class="headerlink" href="#fig-chap00-sec01" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In Python ist dieser Programmcode wesentlich kürzer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo Welt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Heute werden nur noch die sogenannten <strong>höheren Programmiersprachen</strong> verwendet
+(wie Python, MATLAB oder C++), die für Menschen leichter verständlich sind.
+Dafür müssen dann Programme, die in höheren Programmiersprachen geschrieben
+sind, in <strong>Maschinensprache</strong> übersetzt werden. Verschiedene Programmiersprachen
+verwenden dazu unterschiedliche Prinzipien. Die beiden wichtigsten Vertreter
+sind</p>
+<ul class="simple">
+<li><p><strong>Compiler-Programmiersprachen</strong> und</p></li>
+<li><p><strong>Interpreter-Programmiersprachen</strong>.</p></li>
+</ul>
+<p>Bei Compiler-Programmiersprachen wird der Programmcode vorab in Maschinensprache
+übersetzt und der Anwender erhält die Anwendungssoftware in Maschinensprache
+(bei Windows beispielsweise als exe-Datei). Den Vorgang des Übersetzens nennt
+man <strong>kompilieren</strong>. Bei Interpreter-Sprachen wird der Code in dem Moment in
+Maschinensprache übersetzt, in dem das Programm läuft bzw. ausgeführt wird.
+Während also das Programm läuft, muss gleichzeitig – quasi im Hintergrund – der
+Übersetzer arbeiten und die höhere Programmiersprache in Maschinensprache
+<strong>interpretieren</strong>. Daher der Name Interpreter-Sprache. Manchmal wird Code, der
+kompiliert wurde und dann eigenständig lauffähig ist, als <strong>Programm</strong>
+bezeichnet. Dahingegen wird Code, der interpretiert wird und dringend auf einen
+gerade laufenden Interpreter angewiesen ist, oft als Skript bezeichnet. Im
+Alltag geht diese Unterscheidung meist unter und wir verwenden den Begriff
+Programm auch für Python-Skripte.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompilierte oder interpretierte Programmiersprachen?</p>
+<ul class="simple">
+<li><p>C bzw. C++</p></li>
+<li><p>Java</p></li>
+<li><p>C# (ausgesprochen: C Sharp)</p></li>
+<li><p>Visual Basic</p></li>
+<li><p>JavaScript</p></li>
+</ul>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompilierte oder interpretierte Programmiersprachen?</p>
+<ul class="simple">
+<li><p>C bzw. C++ –&gt; kompiliert</p></li>
+<li><p>Java –&gt; kompiliert (wird manchmal auch zu den interpretierten Sprachen gezählt, weil der kompilierte Bytecode anschließend von der Java Virtual Machine interpretiert wird und nicht vom Betriebsystem direkt ausgeführt wird)</p></li>
+<li><p>C# –&gt; kompliliert</p></li>
+<li><p>Visual Basic –&gt; kompiliert</p></li>
+<li><p>JavaScript –&gt; interpretiert</p></li>
+</ul>
+</div>
+<p>Insgesamt ist der Unterschied zwischen kompilierten und interpretierten Sprachen
+vor allem eine Frage der Geschwindigkeit und Flexibilität. Kompilierte Programme
+sind in der Regel schneller als interpretierte Programme, da der Maschinencode
+direkt vom Betriebssystem ausgeführt werden kann. Umgekehrt können Änderungen
+des Programms bei interpretierten Programmen schneller durchgeführt werden, da
+diese ja ohnehin Zeile für Zeile abgearbeitet und interpretiert werden. Dies
+bedeutet, dass Änderungen am Code sofort wirksam werden, ohne dass eine erneute
+Kompilierung erforderlich ist.</p>
+<p>Letztendlich hängt die Wahl der Programmiersprache von den Anforderungen des
+Projekts ab und davon, welche Kompromisse zwischen Geschwindigkeit und
+Flexibilität akzeptabel sind.</p>
+</section>
+<section id="warum-python">
+<h2>Warum Python?<a class="headerlink" href="#warum-python" title="Permalink to this headline">#</a></h2>
+<p>In dieser Vorlesung verwenden wir Python als Programmiersprache, da Python viele
+Vorteile bietet, die das Erlernen der Programmierung erleichtern und
+(hoffentlich Spaß machen):</p>
+<ol class="simple">
+<li><p>Einfache Syntax: Python hat eine klare und leicht verständliche Syntax, die
+es leicht macht, die Grundlagen der Programmierung zu erlernen. Die Syntax
+ist lesbar und ähnelt der englischen Sprache, was das Verständnis
+erleichtert.</p></li>
+<li><p>Vielseitigkeit: Python ist eine sehr vielseitige Programmiersprache, die in
+vielen verschiedenen Bereichen eingesetzt werden kann. Sie wird oft für
+Datenanalyse, künstliche Intelligenz, Webentwicklung und wissenschaftliches
+Rechnen verwendet.</p></li>
+<li><p>Große Community: Python hat eine große Community von Entwicklern, die aktiv
+an der Weiterentwicklung der Sprache und an der Bereitstellung von
+Hilfestellung und Ressourcen für Anfänger beteiligt sind. Es gibt viele
+Online-Foren, Kurse und Tutorials, die das Erlernen der Sprache erleichtern.</p></li>
+<li><p>Interaktiver Modus: Python bietet einen interaktiven Modus, der es Anfängern
+ermöglicht, Code Zeile für Zeile auszuführen und das Ergebnis sofort zu
+sehen. Dies macht das Experimentieren und die Suche nach Fehlern im Code sehr
+einfach und effektiv.</p></li>
+<li><p>Plattformunabhängigkeit: Python kann auf verschiedenen Betriebssystemen wie
+Windows, Mac und Linux ausgeführt werden. Dies macht es für Anfänger leicht,
+die Sprache auf ihrem bevorzugten Betriebssystem zu erlernen.</p></li>
+</ol>
+<p>Ansonsten ist es ein wenig wie mit dem Erlernen einer Fremdsprache. Die erste
+Fremdsprache ist die schwerste! Sprich, wenn Sie eine Programmiersprache erlernt
+haben und wissen, wie ein komplexes Problem in Teilaufgaben zerlegt wird, können
+Sie das schnell auf andere Programmiersprachen übertragen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
