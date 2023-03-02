@@ -53,10 +53,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter00_sec04.html" />
-    <link rel="prev" title="Programmiersprachen" href="chapter00_sec02.html" />
+    <link rel="prev" title="Programmieren" href="chapter00_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter00_sec02.html">
-     Programmiersprachen
+     Programmieren
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -368,12 +370,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warum-anaconda">
+   Warum Anaconda?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-anaconda-und-start-jupyter-notebook">
+   Installation Anaconda und Start Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-sind-jupyter-notebooks">
+   Was sind Jupyter Notebooks?
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -385,6 +421,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warum-anaconda">
+   Warum Anaconda?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-anaconda-und-start-jupyter-notebook">
+   Installation Anaconda und Start Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-sind-jupyter-notebooks">
+   Was sind Jupyter Notebooks?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -394,7 +453,102 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="installation-und-start-von-python">
 <h1>Installation und Start von Python<a class="headerlink" href="#installation-und-start-von-python" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+<p>Python wird in der Regel mit dem Betriebsystem ausgeliefert. Für diese Vorlesung
+benötigen wir jedoch Python-Erweiterungen, die standardmäßig nicht installiert
+werden. Daher benutzen wir in dieser Vorlesung <strong>Anaconda</strong>, eine sehr bekannte
+Python-Distribution.</p>
+<p>Eine Python-Distribution ist eine Sammlung von Python-Softwarekomponenten. Sie
+umfasst den Python-Interpreter selbst, aber auch zusätzliche Bibliotheken und
+Frameworks, Entwicklungs- und Debugging-Tools sowie Anwendungen, die für die
+Entwicklung mit Python nützlich sein können.</p>
+<section id="warum-anaconda">
+<h2>Warum Anaconda?<a class="headerlink" href="#warum-anaconda" title="Permalink to this headline">#</a></h2>
+<p>Anaconda ist eine Python-Distribution, die von der Firma Anaconda, Inc.
+entwickelt wird. Sie ist eine kostenlose Open-Source-Plattform, die es
+Python-Entwickler:innen ermöglicht, Python, R und andere Programmiersprachen
+sowie zahlreiche Bibliotheken und Tools auf einfache Weise zu installieren, zu
+verwalten und zu verwenden.</p>
+<p>Die Distribution enthält eine Reihe von nützlichen Paketen und Bibliotheken für
+wissenschaftliche Berechnungen, Datenanalyse, maschinelles Lernen und andere
+Anwendungen. Sie ist sowohl für Einsteiger als auch für fortgeschrittene
+Entwickler geeignet und bietet eine benutzerfreundliche Benutzeroberfläche, um
+Python und seine Bibliotheken zu verwalten und zu verwenden.</p>
+</section>
+<section id="installation-anaconda-und-start-jupyter-notebook">
+<h2>Installation Anaconda und Start Jupyter Notebook<a class="headerlink" href="#installation-anaconda-und-start-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<p>Hier ist eine Schritt-für-Schritt-Anleitung zum Installieren von Python mit der
+Distribution Anaconda für Windows und MacOS:</p>
+<ol class="simple">
+<li><p>Öffnen Sie die offizielle Anaconda-Website unter
+<a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a> und laden Sie die neueste
+Version von Anaconda für Ihr Betriebssystem herunter.</p></li>
+<li><p>Führen Sie die Installationsdatei aus und folgen Sie den Anweisungen auf dem
+Bildschirm. Wählen Sie ggf. ein freies Installationsverzeichnis und stellen
+Sie sicher, dass die Option “Add Anaconda to my PATH environment variable”
+aktiviert ist.</p></li>
+<li><p>Öffnen Sie nach der Installation das Anaconda-Navigator-Programm, das im
+Startmenü oder Launchpad verfügbar sein sollte.</p></li>
+<li><p>Um ein neues Jupyter Notebook für die Python-Programmierung zu erstellen,
+klicken Sie auf “Home” im Anaconda-Navigator und wählen “Jupyter Notebook”
+aus. Klicken Sie auf “New” und wählen Sie “Python 3 (ipykernel)” aus, um ein
+neues Notebook zu erstellen.</p></li>
+<li><p>Sie können jetzt Python-Code in dem Notebook schreiben und ausführen. Wenn
+Sie zusätzliche Pakete benötigen, können Sie diese über den
+“Environments”-Tab im Anaconda-Navigator installieren.</p></li>
+</ol>
+<figure class="align-default" id="fig-chap00-sec03-jb">
+<img alt="../_images/fig_chap00_sec03_start_jb.png" src="../_images/fig_chap00_sec03_start_jb.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Startansicht der Software Jupyter Notebook</span><a class="headerlink" href="#fig-chap00-sec03-jb" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="was-sind-jupyter-notebooks">
+<h2>Was sind Jupyter Notebooks?<a class="headerlink" href="#was-sind-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<p>Jupyter Notebooks sind eine webbasierte interaktive Entwicklungsumgebung, die es
+ermöglicht, Text, Python-Code, Bilder und Videos in einem einzigen interaktiven
+Notizbuch zusammenzuführen. Sie sind eine der bekanntesten Anwendungen in der
+Data Science-Community und werden oft zur Datenanalyse, maschinellem Lernen und
+Visualisierung eingesetzt.</p>
+<p>Ein Jupyter Notebook besteht aus einer Abfolge von Zellen, in denen Text, Code
+und Visualisierungen eingebettet werden. Die Zellen können entweder in der
+Programmiersprache Python oder in einer Reihe anderer Programmiersprachen wie R,
+Julia oder JavaScript geschrieben werden.</p>
+<p>Die Kombination von Text, Code und Visualisierungen macht Jupyter Notebooks zu
+einem leistungsstarken Werkzeug für die Datenanalyse. Daten können direkt in den
+Notebooks eingegeben werden, und Ergebnisse können sofort dargestellt werden,
+ohne dass externe Anwendungen gestartet werden müssen.</p>
+<p>Jupyter Notebooks können auch einfach geteilt werden, indem sie als Datei oder
+über das Internet veröffentlicht werden. Das ermöglicht es Entwicklern und Data
+Scientists, ihre Arbeit schnell und einfach zu teilen und zu präsentieren, was
+für Zusammenarbeit und Teamarbeit in der Datenanalyse und im maschinellen Lernen
+unerlässlich ist.</p>
+<p>Insgesamt sind Jupyter Notebooks ein wichtiges Werkzeug für die Datenanalyse und
+-visualisierung und haben dazu beigetragen, den Prozess der Analyse und
+Zusammenarbeit für Data Scientists und Entwickler zu vereinfachen.</p>
+<p>In dieser Vorlesung liegt der Fokus zwar nicht auf der Datenanalyse, aber die
+Mischung aus Text, Code und Visualisierungen machen Jupyter Notebooks auch zu
+einem sehr geeigneten Werkzeug, um das Programmieren selbst zu erlernen. In
+kurzen Texten können Programmierkonstrukte erläutert werden, um dann in einer
+Code-Zelle ausgeführt zu werden.</p>
+<figure class="align-default" id="fig-chap00-sec03-zellen">
+<img alt="../_images/fig_chap00_sec03_zellen.png" src="../_images/fig_chap00_sec03_zellen.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot eines Jupyter Notebooks mit Text, Python-Code und Ergebnisse des ausgeführten Python-Codes</span><a class="headerlink" href="#fig-chap00-sec03-zellen" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Eine Zelle kann entweder eine Text-Zelle (siehe Fig. 3, Schritt 1) oder eine
+Code-Zelle (siehe Fig. 3, Schritt 2) sein. In Text-Zellen wird die sogenannte
+<a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html">Markdown-Formatierung</a>
+benutzt. Um beispielsweise ein Wort fettgedruckt anzuzeigen, werden zwei
+Sternchen ** vor und hinter das Wort gesetzt, also ich bin <code class="docutils literal notranslate"><span class="pre">**fett**</span></code> gedruckt.</p>
+<p>In Code-Zellen (siehe Fig. 3, Schritt 2 oder 3) können Sie direkt Python-Code
+eingeben. Sie erkennen eine Code-Zelle daran, dass “In” für Input daneben steht.
+Eine Code-Zelle wird ausgeführt, indem Sie auf “Run” klicken (siehe Fig. 3,
+Schritt 4). Danach erscheint die Ausgabe, die der Python-Interpreter ggf.
+produziert (siehe Fig. 3, Schritt 5). Wird ein Ergebnis berechnet oder ein Wert
+zurückgegeben, so ist das an der Bezeichnung “Out” wie Output erkennbar.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -428,7 +582,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Programmiersprachen</p>
+            <p class="prev-next-title">Programmieren</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter00_sec04.html" title="next page">
