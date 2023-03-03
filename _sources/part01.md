@@ -103,7 +103,6 @@ Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen.
 3 * (7-10) + 5
 ```
 ````
-
 ## Grundlegende Begriffe beim Programmieren
 
 Programme oder Skripte, die in Python programmiert werden, können in der Regel
