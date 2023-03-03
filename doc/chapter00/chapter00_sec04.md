@@ -40,7 +40,7 @@ Internet, nach der Bedeutung und vergleichen Sie Ihre Antwort mit der Recherche.
 Fügen Sie die Internetseite als URL in die Markdown-Zelle ein.
 ```
 
-```{admonition}
+```{admonition} Übung
 :class: miniexercise
 Speichern Sie das bearbeitete Jupyter Notebook unter einem anderen Namen ab.
 Exportieren Sie es als pdf-Dokument (über HTML).
