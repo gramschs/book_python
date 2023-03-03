@@ -1,3 +1,16 @@
+---
+jupyter:
+  jupytext:
+    cell_metadata_filter: -all
+    formats: ipynb,md
+    main_language: python
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.14.5
+---
+
 # Übungen
 
 ```{admonition} Übung 
@@ -25,4 +38,10 @@ Fügen Sie jetzt eine Markdown-Zelle ein. Schreiben Sie auf, was Ihrer Vermutung
 nach der `**`-Operator für eine Bedeutung hat. Recherchieren Sie anschließend im
 Internet, nach der Bedeutung und vergleichen Sie Ihre Antwort mit der Recherche.
 Fügen Sie die Internetseite als URL in die Markdown-Zelle ein.
+```
+
+```{admonition} Übung
+:class: miniexercise
+Speichern Sie das bearbeitete Jupyter Notebook unter einem anderen Namen ab.
+Exportieren Sie es als pdf-Dokument (über HTML).
 ```

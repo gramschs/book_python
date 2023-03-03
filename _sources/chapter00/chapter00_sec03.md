@@ -1,4 +1,26 @@
+---
+jupyter:
+  jupytext:
+    cell_metadata_filter: -all
+    formats: ipynb,md
+    main_language: python
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.14.5
+---
+
 # Installation und Start von Python
+
+Was ist überhaupt Python? Wikipedia erklärt Python folgendermaßen: 
+
+> "Python ([ˈpʰaɪθn̩], [ˈpʰaɪθɑn], auf Deutsch auch [ˈpʰyːtɔn]) ist eine
+  universelle, üblicherweise interpretierte, höhere Programmiersprache. Sie hat
+  den Anspruch, einen gut lesbaren, knappen Programmierstil zu fördern. So
+  werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch
+  Einrückungen strukturiert." 
+  (Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Python_(Programmiersprache))
 
 Python wird in der Regel mit dem Betriebsystem ausgeliefert. Für diese Vorlesung
 benötigen wir jedoch Python-Erweiterungen, die standardmäßig nicht installiert
