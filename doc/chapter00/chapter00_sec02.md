@@ -183,6 +183,15 @@ Flexibilität akzeptabel sind.
 
 ## Warum Python?
 
+Was ist überhaupt Python? Wikipedia erklärt Python folgendermaßen: 
+
+> "Python ([ˈpʰaɪθn̩], [ˈpʰaɪθɑn], auf Deutsch auch [ˈpʰyːtɔn]) ist eine
+  universelle, üblicherweise interpretierte, höhere Programmiersprache. Sie hat
+  den Anspruch, einen gut lesbaren, knappen Programmierstil zu fördern. So
+  werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch
+  Einrückungen strukturiert." 
+  (Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Python_(Programmiersprache))
+
 In dieser Vorlesung verwenden wir Python als Programmiersprache, da Python viele
 Vorteile bietet, die das Erlernen der Programmierung erleichtern und
 (hoffentlich Spaß machen):
