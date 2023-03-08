@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Übungen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>&lt;no title&gt; &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,10 +53,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Listen und Module" href="../chapter02/chapter02_sec00.html" />
-    <link rel="prev" title="Eingabe (input) und Zuweisungsoperator" href="chapter01_sec03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
   Grundlagen Programmierung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter00/chapter00_sec00.html">
    Getting Started
@@ -154,40 +156,40 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="chapter01_sec00.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter01/chapter01_sec00.html">
    Eingabe, Verarbeitung und Ausgabe
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter01_sec01.html">
+    <a class="reference internal" href="../chapter01/chapter01_sec01.html">
      Taschenrechner und Ausgabe (print)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter01_sec02.html">
+    <a class="reference internal" href="../chapter01/chapter01_sec02.html">
      Datentypen und Variablen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter01_sec03.html">
+    <a class="reference internal" href="../chapter01/chapter01_sec03.html">
      Eingabe (input) und Zuweisungsoperator
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec04.html">
      Übungen
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter02/chapter02_sec00.html">
+  <a class="reference internal" href="chapter02_sec00.html">
    Listen und Module
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -197,17 +199,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter02/chapter02_sec01.html">
+    <a class="reference internal" href="chapter02_sec01.html">
      Listen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter02/chapter02_sec02.html">
+    <a class="reference internal" href="chapter02_sec02.html">
      Das Modul Math
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter02/chapter02_sec03.html">
+    <a class="reference internal" href="chapter02_sec03.html">
      Das Modul Turtle
     </a>
    </li>
@@ -323,53 +325,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter01/chapter01_sec04.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -405,24 +360,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapter01/chapter01_sec04.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../_sources/chapter01/chapter01_sec04.md"
+        <a href="../_sources/chapter02/chapter02_sec04.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -459,23 +397,50 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Übungen</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -483,70 +448,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
-<h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
-<div class="miniexercise admonition">
+  <div class="miniexercise admonition">
 <p class="admonition-title">Übung</p>
-<p>Zu welchen Datentypen gehören folgende Ausdrücke? Stellen Sie erst eine
-Vermutung auf. Überprüfen Sie dann Ihre Vermutung mit der Funktion <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
-<ul class="simple">
-<li><p>6 + 2</p></li>
-<li><p>6 + 2.5</p></li>
-<li><p>6 / 2</p></li>
-<li><p>6 / 2.0</p></li>
-<li><p>4 - 2</p></li>
-<li><p>3 * ‘Katze’</p></li>
-</ul>
+<p>Schreiben Sie ein Programm, das den Benutzer zwei Seitenlängen für die beiden
+Katheten <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(b\)</span> eines rechtwinkligen Dreiecks eingeben lässt. Anschließend
+berechnet das Programm die Länge der Hypotenuse nach dem Satz des Pythagoras
+<span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span> und gibt diese aus.</p>
+<p>Bemerkung: Was passiert, wenn Sie eine negative Zahl eingeben?</p>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Schreiben Sie einen Witze-Generator. Zuerst soll nach einem Namen gefragt
-werden. Danach soll der Python-Interpreter den folgenden Witz ausgeben, wobei an
-der Stelle XXX der abgefragte Name stehen soll.</p>
-<hr>
-<p>Fritz macht</p>
-<p>XXX</p>
-<p>einen Kaffee. Es bleibt heißes Wasser übrig. Fritz fragt: “Was
-soll ich mit dem restlichen Wasser machen?”</p>
-<p>XXX</p>
-<p>antwortet: “Einfrieren! Heißes Wasser kann man immer gebrauchen.”</p>
-<hr> 
-<p>Testen Sie Ihr Programm mit verschiedenen Namen.</p>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übungen</p>
-<p>Schreiben Sie ein Python-Programm, das eine Länge vom Benutzer abfragt, die in
-Zoll gemessen wurde. Das Programm soll dann diese Länge in Zentimeter umrechnen
-und ausgeben. Tipp: 1 Zoll sind 2.54 cm.</p>
-<p>Testen Sie Ihr Programm beispielsweise mit der Länge 10 Zoll, die 25.4
-Zentimetern entspricht.</p>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Schreiben Sie ein Programm, das zuerst nach einer Zahl fragt und danach nach
-einer zweiten Zahl fragt. Anschließend gibt das Programm aus, welche beiden
-Zahlen gewählt wurden und was das Produkt der beiden Zahlen ist.</p>
-<p>Testen Sie anschließend Ihr Programm mit kleinen 1x1-Aufgaben, die Sie sich
-selbst ausdenken.</p>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Schreiben Sie ein Programm, dass die Kosten für eine Party ermittelt. Zuerst
-soll der Python-Interpreter nach der Raummiete fragen, dann nach den
-Gesamtkosten des Pizzadienstes und den Gesamtkosten des Getränkelieferanten.
-Lassen Sie dann die Gesamtkosten der Party ausgeben und zuletzt die Kosten pro
-Gast.</p>
-<p>Testen Sie anschließend, ob Ihr Programm für die folgenden Angaben korrekt rechnet:</p>
-<ul class="simple">
-<li><p>Eingabe Raummiete: 230 EUR</p></li>
-<li><p>Eingabe Pizzadienst: 168 EUR</p></li>
-<li><p>Eingabe Getränkelieferant: 80 EUR</p></li>
-<li><p>Eingabe Anzahl Gäste: 12</p></li>
-<li><p>Ausgabe: Gesamtkosten für die Party: 478 EUR</p></li>
-<li><p>Ausgabe: Kosten pro Gast: 39.833333 EUR</p></li>
-</ul>
-</div>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -561,7 +470,7 @@ Gast.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapter01"
+            path: "./chapter02"
         },
         predefinedOutput: true
     }
@@ -575,20 +484,6 @@ Gast.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chapter01_sec03.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Eingabe (input) und Zuweisungsoperator</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../chapter02/chapter02_sec00.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Listen und Module</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
