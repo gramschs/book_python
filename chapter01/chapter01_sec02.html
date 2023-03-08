@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -518,6 +516,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datentypen-ermitteln-mit-type">
+   Datentypen ermitteln mit type()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#weiteres-lernmaterial">
    Weiteres Lernmaterial
   </a>
@@ -574,6 +577,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datentypen-ermitteln-mit-type">
+   Datentypen ermitteln mit type()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#weiteres-lernmaterial">
    Weiteres Lernmaterial
   </a>
@@ -605,6 +613,7 @@ Datentypen und dem Speichern von Informationen in Variablen.</p>
 und die dazugehörigen Datentypen <strong>Integer</strong> und <strong>Float</strong>.</p></li>
 <li><p>Sie kennen den Datentyp <strong>String</strong>, der <strong>Zeichenketten</strong> repräsentiert.</p></li>
 <li><p>Sie wissen, was eine <strong>Variable</strong> ist und wie sie erzeugt und gefüllt wird.</p></li>
+<li><p>Sie können mit der Funktion <strong>type()</strong> den Datentyp einer Variable ermitteln.</p></li>
 </ul>
 </div>
 </section>
@@ -893,6 +902,35 @@ gemeint ist.</p>
 <span class="n">rentenalter</span> <span class="o">=</span> <span class="mi">67</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rentenalter</span> <span class="o">-</span> <span class="n">alter</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</section>
+<section id="datentypen-ermitteln-mit-type">
+<h2>Datentypen ermitteln mit type()<a class="headerlink" href="#datentypen-ermitteln-mit-type" title="Permalink to this headline">#</a></h2>
+<p>In den bisher betrachteten Beispielen sind die Python-Programme ein bis zwei
+Zeilen lang. Unwahrscheinlich, dass dann nicht klar ist, welchen Datentyp eine
+Variable hat. Wenn aber später die Programme länger werden und vielleicht auch
+Benutzereingaben dazu kommen, kann man auch den Überblick darüber verlieren.
+Dafür gibt es die <strong>type()</strong>-Funktion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datentyp_integer</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datentyp_integer</span><span class="p">)</span>
+
+<span class="n">datentyp_float</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="mf">3.1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datentyp_float</span><span class="p">)</span>
+
+<span class="n">datentyp_string</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datentyp_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
