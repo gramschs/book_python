@@ -30,6 +30,7 @@ Datentypen und dem Speichern von Informationen in Variablen.
   und die dazugehörigen Datentypen **Integer** und **Float**.
 * Sie kennen den Datentyp **String**, der **Zeichenketten** repräsentiert.
 * Sie wissen, was eine **Variable** ist und wie sie erzeugt und gefüllt wird.
+* Sie können mit der Funktion **type()** den Datentyp einer Variable ermitteln.
 ```
 
 ## Los geht es mit dem Programmieren - Datentypen in Python
@@ -234,6 +235,25 @@ rentenalter = 67
 print(rentenalter - alter)
 ```
 ````
+
+## Datentypen ermitteln mit type()
+
+In den bisher betrachteten Beispielen sind die Python-Programme ein bis zwei
+Zeilen lang. Unwahrscheinlich, dass dann nicht klar ist, welchen Datentyp eine
+Variable hat. Wenn aber später die Programme länger werden und vielleicht auch
+Benutzereingaben dazu kommen, kann man auch den Überblick darüber verlieren.
+Dafür gibt es die **type()**-Funktion.
+
+```{code-cell} ipython3
+datentyp_integer = type(3)
+print(datentyp_integer)
+
+datentyp_float = type(3.1)
+print(datentyp_float)
+
+datentyp_string = type('Hallo')
+print(datentyp_string)
+```
 
 ## Weiteres Lernmaterial
 
