@@ -235,7 +235,7 @@ print(rentenalter - alter)
 ```
 ````
 
-## Weitere Lernmaterial
+## Weiteres Lernmaterial
 
 Das folgende Video fasst die drei Datentypen Integer, Float uns String
 übersichtsartig zusammen.

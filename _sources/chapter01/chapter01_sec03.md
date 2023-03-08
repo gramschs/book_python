@@ -189,3 +189,9 @@ empfehle ich Ihnen folgende Video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+## Zusammenfassung und Ausblick
+
+Das EVA-Prinzip ist das grundlegende Prinzip der Datenverarbeitung. Mit den
+Python-Funktionen input() und print() und den Datentypen Integer, Float uund
+String haben wir bereits die wichtigsten Bausteine zusammen, um kleine
+Python-Programme zu schreiben.
