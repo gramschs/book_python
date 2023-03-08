@@ -112,7 +112,9 @@ print(person)
 Vor- und Nachname werden durch Strings repräsentiert, die Körpergröße als Float.
 ````
 
-+++
+Im folgenden Video können Sie sich die Erzeugung von Listen nochmal ansehen.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF8bZoauBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Elemente aus einer Liste herausholen: Zugriff
 
@@ -180,6 +182,10 @@ meine_liste = ['rot', 'grün', 'blau', 'gelb', 'weiß', 'schwarz']
 meine_liste[4] = 'lila'
 print(meine_liste)
 ```
+
+Der Zugriff auf Listen wird auch in dem folgenden Video erklärt.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_XzWPXvya2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Liste + Liste = verkettete Liste
 
