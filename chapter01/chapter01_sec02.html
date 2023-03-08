@@ -53,9 +53,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Eingabe (input)" href="chapter01_sec03.html" />
+    <link rel="next" title="Eingabe (input) und Zuweisungsoperator" href="chapter01_sec03.html" />
     <link rel="prev" title="Taschenrechner und Ausgabe (print)" href="chapter01_sec01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -176,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter01_sec03.html">
-     Eingabe (input)
+     Eingabe (input) und Zuweisungsoperator
     </a>
    </li>
    <li class="toctree-l2">
@@ -497,8 +501,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zahlen">
-     Zahlen
+    <a class="reference internal nav-link" href="#zahlen-integers-und-floats">
+     Zahlen (Integers und Floats)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -507,6 +511,21 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variablen">
+   Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#richtlinien-fur-variablennamen">
+   Richtlinien für Variablennamen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weitere-lernmaterial">
+   Weitere Lernmaterial
+  </a>
  </li>
 </ul>
 
@@ -538,8 +557,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zahlen">
-     Zahlen
+    <a class="reference internal nav-link" href="#zahlen-integers-und-floats">
+     Zahlen (Integers und Floats)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -548,6 +567,21 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variablen">
+   Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#richtlinien-fur-variablennamen">
+   Richtlinien für Variablennamen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weitere-lernmaterial">
+   Weitere Lernmaterial
+  </a>
  </li>
 </ul>
 
@@ -570,6 +604,8 @@ title="Print to PDF"
 <li><p>Sie wissen, was <strong>Datentypen</strong> sind.</p></li>
 <li><p>Sie kennen den Unterschied zwischen <strong>Ganzzahlen</strong> und <strong>Fließkommazahlen</strong>
 und die dazugehörigen Datentypen <strong>Integer</strong> und <strong>Float</strong>.</p></li>
+<li><p>Sie kennen den Datentyp <strong>String</strong>, der <strong>Zeichenketten</strong> repräsentiert.</p></li>
+<li><p>Sie wissen, was eine <strong>Variable</strong> ist und wie sie erzeugt und gefüllt wird.</p></li>
 </ul>
 </div>
 </section>
@@ -590,8 +626,8 @@ uns mit den einfachen Datentypen</p>
 <li><p>Float</p></li>
 <li><p>String</p></li>
 </ul>
-<section id="zahlen">
-<h3>Zahlen<a class="headerlink" href="#zahlen" title="Permalink to this headline">#</a></h3>
+<section id="zahlen-integers-und-floats">
+<h3>Zahlen (Integers und Floats)<a class="headerlink" href="#zahlen-integers-und-floats" title="Permalink to this headline">#</a></h3>
 <p>In der Programmierung unterscheidet man grundsätzlich zwischen zwei Zahlenarten,
 den <strong>Ganzzahlen</strong> und den Gleitkommazahlen, die auch <strong>Fließkommazahlen</strong>
 genannt werden. Die Ganzzahlen werden in der Mathematik als ganze Zahlen
@@ -690,18 +726,7 @@ im Deutschen. Aber ansonsten funktioniert alles wie erwartet:</p>
 </div>
 </div>
 <p>Das folgende Video fasst Zahlen in Python zusammen.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">560</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">315</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/embed/VtiDkRDPA_c&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;IFrame&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VtiDkRDPA_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="strings">
 <h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h3>
@@ -709,21 +734,174 @@ im Deutschen. Aber ansonsten funktioniert alles wie erwartet:</p>
 vorstellen, eine Einkaufsliste zu erstellen und diese im Computer oder in einer
 Notiz-App auf dem Handy zu speichern. Eine solche Zeichenkette heißt in der
 Informatik <strong>String</strong>. Mit Zeichen meint man dabei Zahlen, Buchstaben oder
-andere wie beispielsweise !”§$%&amp;/()=?.</p>
-<p>Strings werden in Python durch doppelte Anführungszeichen definiert:</p>
+andere wie beispielsweise <code class="docutils literal notranslate"><span class="pre">!&quot;§$%&amp;/()=?</span></code>.</p>
+<p>Strings werden in Python durch einfache oder doppelte Anführungszeichen definiert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Dies ist ein String!&quot;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Dies ist ein String!&#39;
+</pre></div>
 </div>
+</div>
+</div>
+<p>Strings haben wir bei dem Hallo-Welt-Programm schon kennengelernt. Allerdings
+haben wir zu diesem Zeitpunkt noch nicht den korrekten Fachbegriff String
+verwendet, sondern sie als Texte bezeichnet.</p>
 <p>Auf Strings und ihre Anwendungen kommen wir später noch zurück. Wenn Sie bereits
 jetzt mehr erfahren wollen, können Sie sich folgendes Video ansehen.</p>
-<div class="cell tag_remove-input docutils container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sTEf4_mrLvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+</section>
+<section id="variablen">
+<h2>Variablen<a class="headerlink" href="#variablen" title="Permalink to this headline">#</a></h2>
+<p><strong>Variablen</strong> sind beschriftete Schubladen. Oder anders formuliert sind
+Variablen Objekte, denen man einen Namen gibt. Technisch gesehen sind diese
+Schubladen ein kleiner Bereich im Arbeitsspeicher des Computers. Was in diesen
+Schubladen aufbewahrt wird, kann sehr unterschiedlich sein. Beispielsweise die
+Telefonnummer des ADAC-Pannendienstes, die 10. Nachkommastelle von <span class="math notranslate nohighlight">\(\pi\)</span> oder die
+aktuelle Position des Mauszeigers können in den Schubladen enthalten sein.</p>
+<p>Wir verwenden Variablen, um bestimmte Werte oder ein bestimmtes Objekt zu
+speichern. Eine Variable wird durch <strong>Zuweisung</strong> erzeugt. Damit meinen wir,
+dass eine Schublade angelegt wird und die Schublade dann erstmalig gefüllt wird.
+Das erstmalige Füllen der Schublade nennt man in der Informatik auch
+<strong>Initialisieren</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sobald die Variable x in diesem Beispiel durch eine Zuweisung von 0.5 erstellt
+wurde, können wir sie verwenden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="mf">17.8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Variablen müssen initialisiert (erstmalig mit einem Wert versehen) werden, bevor
+sie verwendet werden können, sonst tritt ein Fehler auf.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">run</span></code> vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span>
+</pre></div>
+</div>
+<p>Der Interpreter zeigt in rot eine Fehlermeldung an: “NameError: name ‘n’ is not defined”. Damit weist der Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.</p>
+</div>
+<p>Gerne können Sie sich auch folgendes Video auf YouTube ansehen, das eine
+Einführung in das Thema Variablen in Python gibt.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="richtlinien-fur-variablennamen">
+<h2>Richtlinien für Variablennamen<a class="headerlink" href="#richtlinien-fur-variablennamen" title="Permalink to this headline">#</a></h2>
+<p>Früher war der Speicherplatz von Computern klein, daher wurden häufig nur kurze
+Variablennamen wie beispielsweise i oder N verwendet. Heutzutage ist es
+Standard, nur in Ausnahmefällen (z.B. in Schleifen, dazu kommen wir noch) kurze
+Variablennamen zu nehmen. Stattdessen werden Namen benutzt, bei denen man
+erraten kann, was die Variable für einen Einsatzzweck hat. Beispielsweise lässt
+der Code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">0.19</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">m</span> <span class="o">*</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>nur schwer vermuten, was damit bezweckt wird. Oder können Sie erahnen, was dort passieren soll?
+Dagegen erahnt man bei diesem Code schon eher, was bezweckt wird:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mehrwertsteuersatz</span> <span class="o">=</span> <span class="mi">19</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">nettopreis</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">bruttopreis</span> <span class="o">=</span> <span class="n">nettopreis</span> <span class="o">+</span> <span class="n">mehrwertsteuersatz</span> <span class="o">*</span> <span class="n">nettopreis</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bruttopreis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verwenden Sie für Variablennamen nur ASCII-Zeichen, also keine Umlaute wie ö, ü
+oder ß. Zahlen sind erlaubt, aber nicht am Anfang des Namens. Es ist sinnvoll,
+lange Variablen durch einen Unterstrich besser lesbar zu gestalten (sogenannte
+Snake-Case-Formatierung). Ich empfehle für Variablennamen beispielsweise
+<code class="docutils literal notranslate"><span class="pre">dateiname_alt</span></code> oder <code class="docutils literal notranslate"><span class="pre">dateiname_neu</span></code>, wenn beispielsweise eine Datei umbenannt
+wird. Sie sind frei in der Gestaltung der Variablennamen, verboten sind nur die
+sogannnten <strong>Schlüsselwörter</strong>. Schlüsselwörter sind beispielsweise eingebaute
+Kommandos an den Python-Interpreter. Würden Sie diese als Variablennamen
+benutzen, wüsste der Python-Interpreter nicht, ob das Kommando oder die Variable
+gemeint ist.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable <code class="docutils literal notranslate"><span class="pre">rentenalter</span></code> mit dem Zahlenwert <code class="docutils literal notranslate"><span class="pre">67</span></code> und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">rentenalter</span> <span class="o">=</span> <span class="mi">67</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rentenalter</span> <span class="o">-</span> <span class="n">alter</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
-</section>
+<section id="weitere-lernmaterial">
+<h2>Weitere Lernmaterial<a class="headerlink" href="#weitere-lernmaterial" title="Permalink to this headline">#</a></h2>
+<p>Das folgende Video fasst die drei Datentypen Integer, Float uns String
+übersichtsartig zusammen.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -763,7 +941,7 @@ jetzt mehr erfahren wollen, können Sie sich folgendes Video ansehen.</p>
     <a class='right-next' id="next-link" href="chapter01_sec03.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Eingabe (input)</p>
+        <p class="prev-next-title">Eingabe (input) und Zuweisungsoperator</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

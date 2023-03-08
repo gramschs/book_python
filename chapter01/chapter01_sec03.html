@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Eingabe (input) &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>Eingabe (input) und Zuweisungsoperator &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,10 +55,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter01_sec04.html" />
-    <link rel="prev" title="Ausgabe (print)" href="chapter01_sec02.html" />
+    <link rel="prev" title="Datentypen und Variablen" href="chapter01_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -168,17 +170,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="chapter01_sec01.html">
-     Variablen und Datentypen
+     Taschenrechner und Ausgabe (print)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter01_sec02.html">
-     Ausgabe (print)
+     Datentypen und Variablen
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Eingabe (input)
+     Eingabe (input) und Zuweisungsoperator
     </a>
    </li>
    <li class="toctree-l2">
@@ -466,23 +468,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ein-und-ausgabe-sowie-das-eva-prinzip">
+   Ein- und Ausgabe sowie das EVA-Prinzip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-input-funktion">
+   Die input()-Funktion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#umwandlung-von-datentypen">
+   Umwandlung von Datentypen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zuweisungsoperator">
+   Zuweisungsoperator
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Eingabe (input)</h1>
+                <h1>Eingabe (input) und Zuweisungsoperator</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ein-und-ausgabe-sowie-das-eva-prinzip">
+   Ein- und Ausgabe sowie das EVA-Prinzip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-input-funktion">
+   Die input()-Funktion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#umwandlung-von-datentypen">
+   Umwandlung von Datentypen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zuweisungsoperator">
+   Zuweisungsoperator
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -490,9 +569,172 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="eingabe-input">
-<h1>Eingabe (input)<a class="headerlink" href="#eingabe-input" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eingabe-input-und-zuweisungsoperator">
+<h1>Eingabe (input) und Zuweisungsoperator<a class="headerlink" href="#eingabe-input-und-zuweisungsoperator" title="Permalink to this headline">#</a></h1>
+<p>Ohne die Eingabe von Daten sind Apps wertlos. In diesem Kapitel beschäftigen wir
+uns daher einer direkten Eingabemöglichkeit in Python und lernen dazu die
+input()-Funktion kennen. Um die input()-Funktion korrekt zu nutzen beschäftigen
+wir uns mit Umwandlungen von Datentypen in andere Datentypen. Zuletzt gehen wir
+noch auf die Stolperfalle ein, dass der Zuweisungsoperator <code class="docutils literal notranslate"><span class="pre">=</span></code> nicht die
+mathematische Gleichheit überprüft.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können das <strong>EVA-Prinzip</strong> erklären.</p></li>
+<li><p>Sie können mit der <strong>input()</strong>-Funktion die Eingabe eines Benutzers abfragen
+und weiter verarbeiten.</p></li>
+<li><p>Sie können per <strong>Typecasting</strong> Datentypen in andere Datentypen umwandeln.</p></li>
+<li><p>Sie wissen, dass das Zeichen <code class="docutils literal notranslate"><span class="pre">=</span></code> ein <strong>Zuweisungsoperator</strong> ist und nicht für
+die mathematische Gleichheit zweier Ausdrücke steht.</p></li>
+</ul>
+</div>
+</section>
+<section id="ein-und-ausgabe-sowie-das-eva-prinzip">
+<h2>Ein- und Ausgabe sowie das EVA-Prinzip<a class="headerlink" href="#ein-und-ausgabe-sowie-das-eva-prinzip" title="Permalink to this headline">#</a></h2>
+<p>Grundlegend geht es bei der Datenverarbeitung und vor allem bei der
+wissenschaftlichen Programmierung darum, Daten zu verarbeiten, wie der Name ja
+schon sagt sagt ;-) Selbst bei einer Smartphone-App zum Daddeln müssen Daten
+verarbeitet werden, nämlich das aktuelle Level, wo hat die Spielerin oder der
+Spieler gerade das Display berührt, was passiert in dem Spiel als nächstes usw.
+Grundsätzlich folgen datenverarbeitende Systeme dem sogenannten <strong>EVA-Prinzip</strong>.</p>
+<p>Wikipedia beschreibt das <a class="reference external" href="https://de.wikipedia.org/wiki/EVA-Prinzip">EVA-Prinzip</a> wie folgt:</p>
+<blockquote>
+<div><p>“…Das EVA-Prinzip beschreibt ein Grundprinzip der Datenverarbeitung. Die
+Abkürzung leitet sich aus den ersten Buchstaben der Begriffe Eingabe,
+Verarbeitung und Ausgabe ab (englisch IPO model: input-process-output). Diese
+drei Begriffe beschreiben die Reihenfolge, in der Daten verarbeitet werden.”</p>
+</div></blockquote>
+<p>Typische Eingabe-Operationen sind dabei</p>
+<ul class="simple">
+<li><p>die Eingabe von Zeichen über eine Tastatur oder</p></li>
+<li><p>das Lesen von Dateien, die auf der Festplatte oder einem Speichermedium gespeichert sind.</p></li>
+</ul>
+<p>Häufige Ausgabe-Operationen sind</p>
+<ul class="simple">
+<li><p>die Wiedergabe von Texten, Zahlen oder Bildern auf dem Bildschirm oder</p></li>
+<li><p>das Schreiben von Dateien auf Festplatte oder Speichermedium.</p></li>
+</ul>
+<p>Mit der Ausgabe haben wir uns schon beschäftigt. Als nächstes geht es um die
+Eingabe.</p>
+</section>
+<section id="die-input-funktion">
+<h2>Die input()-Funktion<a class="headerlink" href="#die-input-funktion" title="Permalink to this headline">#</a></h2>
+<p>Die einfachste und häufigste <strong>Eingabe</strong> erfolgt über die Tastatur. Die Funktion
+<code class="docutils literal notranslate"><span class="pre">input()</span></code> stoppt das laufende Skript und erwartet eine Eingabe über die
+Tastatur. Dabei wird der Text angezeigt, der zwischen den einfachen Hochkommata
+steht. Bei Python wird die Eingabe als String interpretiert. Die Eingabe wird
+mit der Taste Return/Enter abgeschlossen. Probieren wir es aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihren Namen ein: &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wir haben zwar jetzt auf Aufforderung einen Namen eingegeben, aber verarbeitet
+wurde diese Eingabe nicht. Es passierte einfach nichts. Um die Eingabe
+verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihren Namen ein: &#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Jetzt haben wir zwar den Namen in einer Variable gespeichert, aber so richtig
+passiert ist immer noch nichts. Jetzt wäre es noch schön, wenn wir dem Benutzer
+oder der Benutzerin unseres Skripts begrüßen können und einen entsprechenden Text
+anzeigen lassen können. Dazu verwenden wir erneut die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Jetzt können wir alles zusammensetzen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihren Namen ein: &#39;</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kopieren Sie diesen Code in die nächste Code-Zelle und probieren Sie es aus!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In dem folgenden Video sehen Sie weitere Erläuterungen zur input()-Funktion.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="umwandlung-von-datentypen">
+<h2>Umwandlung von Datentypen<a class="headerlink" href="#umwandlung-von-datentypen" title="Permalink to this headline">#</a></h2>
+<p>Die input()-Funktion hat eine Einschränkung. Bei ihrer Einführung wurde in einem
+Nebensatz erwähnt, dass die input()-Funktion Strings zurückgibt. Das ist eine
+häufige Fehlerquelle in der Programmierung, wenn man nach Zahlen fragt.
+Glücklicherweise gibt es dafür eine einfache Lösung. Wir können einen String in
+einen Integer oder Float verwandeln, indem wir die Funktionen <code class="docutils literal notranslate"><span class="pre">int()</span></code> oder
+<code class="docutils literal notranslate"><span class="pre">float()</span></code> benutzen. Wenn also nach einer Zahl per input()-Funktion gefrgt werden
+soll wie beispielsweise dem Alter einer Person, so lautet der Code wie folgt:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie?) )</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alter: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Und soll es eine Fließkommazahl werden, so können wir folgendermaßen den
+Python-Interpreter fragen lassen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie groß sind Sie gemessen in Metern?) )</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Größe in m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Probieren Sie gerne beide Varianten in der nächsten Code-Zelle aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenn Sie mehr über das sogenannte Type-Casting erfahren wollen, finden Sie
+Details in diesem Video:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u_ECGvn1Z2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="zuweisungsoperator">
+<h2>Zuweisungsoperator<a class="headerlink" href="#zuweisungsoperator" title="Permalink to this headline">#</a></h2>
+<p>Wichtig ist, dass das <code class="docutils literal notranslate"><span class="pre">=</span></code> in der Informatik eine andere Bedeutung hat als in der
+Mathematik. = meint nicht das Gleichheitszeichen, sondern den sogenannten
+<strong>Zuweisungsoperator</strong>. Das ist in der Programmierung ein Kommando, das eine
+Schublade befüllt oder technischer ausgedrückt, ein Objekt einer Variable
+zuweist.</p>
+<p>Sehr häufig findet man Code wie</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Würden wir dies als Gleichung lesen, wie wir es aus der Mathematik gewohnt sind,
+also <span class="math notranslate nohighlight">\(x = x+1\)</span>, könnten wir <span class="math notranslate nohighlight">\(x\)</span> auf beiden Seiten subtrahieren und erhalten
+<span class="math notranslate nohighlight">\(0=1\)</span>. Wir wissen, dass dies nicht wahr ist, also stimmt hier etwas nicht.</p>
+<p>In Python sind “Gleichungen” keine mathematischen Gleichungen, sondern
+Zuweisungen. “=” ist kein Gleichheitszeichen im mathematischen Sinne, sondern
+eine Zuweisung. Die Zuweisung muss immer in der folgenden Weise zweistufig
+gelesen werden:</p>
+<ol class="simple">
+<li><p>Berechne den Wert auf der rechten Seite (also <span class="math notranslate nohighlight">\(x+1\)</span>).</p></li>
+<li><p>Weise den Wert auf der rechten Seite dem auf der linken Seite stehenden
+Variablennamen zu.</p></li>
+</ol>
+<p>Wir probieren eine solche Zuweisung in der folgenden Code-Zelle aus und benutzen
+auch gleich die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion, um den Wert der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> ausgeben zu
+lassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>     
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Zuweisungsoperator ist äußerst wichtig in der Python-Programmierung. Daher
+empfehle ich Ihnen folgende Video.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -526,7 +768,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Ausgabe (print)</p>
+            <p class="prev-next-title">Datentypen und Variablen</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter01_sec04.html" title="next page">
