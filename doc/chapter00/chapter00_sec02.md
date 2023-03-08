@@ -1,14 +1,17 @@
 ---
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: ipynb,md
-    main_language: python
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.14.5
+jupytext:
+  cell_metadata_filter: -all
+  formats: ipynb,md:myst
+  main_language: python
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.5
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
 ---
 
 # Programmieren
@@ -133,7 +136,7 @@ wird:
 
 In Python ist dieser Programmcode wesentlich kürzer:
 
-```python
+```{code-cell}
 print('Hallo Welt')
 ```
 
@@ -233,7 +236,3 @@ Ansonsten ist es ein wenig wie mit dem Erlernen einer Fremdsprache. Die erste
 Fremdsprache ist die schwerste! Sprich, wenn Sie eine Programmiersprache erlernt
 haben und wissen, wie ein komplexes Problem in Teilaufgaben zerlegt wird, können
 Sie das schnell auf andere Programmiersprachen übertragen.
-
-
-
-

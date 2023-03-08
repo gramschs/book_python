@@ -12,6 +12,12 @@ parts:
     - file: chapter00/chapter00_sec02.md
     - file: chapter00/chapter00_sec03.md
     - file: chapter00/chapter00_sec04.md
+  - file: chapter01/chapter01_sec00.md
+    sections:
+    - file: chapter01/chapter01_sec01.md
+    - file: chapter01/chapter01_sec02.md
+    - file: chapter01/chapter01_sec03.md
+    - file: chapter01/chapter01_sec04.md
   - file: part01.md
   - file: chapter02/chapter02_sec00.md
     sections:
