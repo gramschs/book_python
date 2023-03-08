@@ -20,9 +20,9 @@ parts:
     - file: chapter01/chapter01_sec04.md
   - file: chapter02/chapter02_sec00.md
     sections:
-    - file: chapter02/chapter02_sec01.ipynb
-    - file: chapter02/chapter02_sec02.ipynb
-    - file: chapter02/chapter02_sec03.ipynb
+    - file: chapter02/chapter02_sec01.md
+    - file: chapter02/chapter02_sec02.md
+    - file: chapter02/chapter02_sec03.md
   - file: chapter03/chapter03_sec00.md
     sections:
     - file: chapter03/chapter03_sec01.ipynb
