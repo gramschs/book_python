@@ -15,7 +15,11 @@ kernelspec:
 
 # Datentypen und Variablen
 
-TODO
+Mit Zahlen wird anders umgegangen, als mit Texten. Zahlen werden beispielsweise
+addiert, bei Texten werden beispielsweise Kleinbuchstaben durch Großbuchstaben
+ersetzt. Daher ist es nicht verwunderlich, dass Python für beide Arten von
+Informationen eine andere technische Umsetzung verwendet. Das führt zu dem Thema
+Datentypen und dem Speichern von Informationen in Variablen.
 
 ## Lernziele
 
