@@ -335,7 +335,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter02/chapter02_sec02.ipynb"
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter02/chapter02_sec02.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -413,6 +413,23 @@ title="Source repository"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/chapter02/chapter02_sec02.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
 title="Download source file"
 >
   
@@ -420,7 +437,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -580,11 +597,6 @@ nämlich bei ‘pi’.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
-</pre></div>
-</div>
-</div>
 </div>
 <p>Aber es gibt ja noch mehr Funktionalitäten, die im Python-Kern fehlen wie
 beispielsweise die Sinus-Funktion oder die Wurzel-Funktion.</p>
@@ -610,84 +622,11 @@ Anweisung <code class="docutils literal notranslate"><span class="pre">dir(math)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__doc__&#39;,
- &#39;__file__&#39;,
- &#39;__loader__&#39;,
- &#39;__name__&#39;,
- &#39;__package__&#39;,
- &#39;__spec__&#39;,
- &#39;acos&#39;,
- &#39;acosh&#39;,
- &#39;asin&#39;,
- &#39;asinh&#39;,
- &#39;atan&#39;,
- &#39;atan2&#39;,
- &#39;atanh&#39;,
- &#39;ceil&#39;,
- &#39;comb&#39;,
- &#39;copysign&#39;,
- &#39;cos&#39;,
- &#39;cosh&#39;,
- &#39;degrees&#39;,
- &#39;dist&#39;,
- &#39;e&#39;,
- &#39;erf&#39;,
- &#39;erfc&#39;,
- &#39;exp&#39;,
- &#39;expm1&#39;,
- &#39;fabs&#39;,
- &#39;factorial&#39;,
- &#39;floor&#39;,
- &#39;fmod&#39;,
- &#39;frexp&#39;,
- &#39;fsum&#39;,
- &#39;gamma&#39;,
- &#39;gcd&#39;,
- &#39;hypot&#39;,
- &#39;inf&#39;,
- &#39;isclose&#39;,
- &#39;isfinite&#39;,
- &#39;isinf&#39;,
- &#39;isnan&#39;,
- &#39;isqrt&#39;,
- &#39;lcm&#39;,
- &#39;ldexp&#39;,
- &#39;lgamma&#39;,
- &#39;log&#39;,
- &#39;log10&#39;,
- &#39;log1p&#39;,
- &#39;log2&#39;,
- &#39;modf&#39;,
- &#39;nan&#39;,
- &#39;nextafter&#39;,
- &#39;perm&#39;,
- &#39;pi&#39;,
- &#39;pow&#39;,
- &#39;prod&#39;,
- &#39;radians&#39;,
- &#39;remainder&#39;,
- &#39;sin&#39;,
- &#39;sinh&#39;,
- &#39;sqrt&#39;,
- &#39;tan&#39;,
- &#39;tanh&#39;,
- &#39;tau&#39;,
- &#39;trunc&#39;,
- &#39;ulp&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Offensichtlich gehören sehr viele mathematische Funktionen zum math-Modul, aber auch die beiden Zahlen <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">e</span></code> finden wir in der Liste. Dann können wir ja <span class="math notranslate nohighlight">\(\pi\)</span> jetzt direkt ausgeben lassen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
 </pre></div>
 </div>
 </div>
@@ -703,11 +642,6 @@ nämlich <code class="docutils literal notranslate"><span class="pre">math.pi</s
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
-</pre></div>
-</div>
-</div>
 </div>
 <p>Um Konstanten, Datentypen oder Funktionen eines Moduls zu nutzen, wird der
 Modulname vorangestellt und erneut der Punkt benutzt. Probieren Sie es in der
@@ -720,11 +654,6 @@ berechnen und ausgeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2246467991473532e-16
 </pre></div>
 </div>
 </div>
@@ -752,12 +681,6 @@ ist die Alternative</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
-0.0
 </pre></div>
 </div>
 </div>
