@@ -6,12 +6,6 @@ root: intro
 parts:
 - caption: Grundlagen Programmierung
   chapters:
-  - file: chapter00/chapter00_sec00.md
-    sections:
-    - file: chapter00/chapter00_sec01.md
-    - file: chapter00/chapter00_sec02.md
-    - file: chapter00/chapter00_sec03.md
-    - file: chapter00/chapter00_sec04.md
   - file: chapter01/chapter01_sec00.md
     sections:
     - file: chapter01/chapter01_sec01.md
@@ -23,14 +17,20 @@ parts:
     - file: chapter02/chapter02_sec01.md
     - file: chapter02/chapter02_sec02.md
     - file: chapter02/chapter02_sec03.md
+    - file: chapter02/chapter02_sec04.md
   - file: chapter03/chapter03_sec00.md
     sections:
-    - file: chapter03/chapter03_sec01.ipynb
-    - file: chapter03/chapter03_sec02.ipynb
-    - file: chapter03/chapter03_sec03.ipynb
-    - file: chapter03/chapter03_sec04.md
+    - file: chapter03/chapter03_sec01.md
+    - file: chapter03/chapter03_sec02.md
+    - file: chapter03/chapter03_sec03.md
   - file: chapter04/chapter04_sec00.md
     sections:
-    - file: chapter04/chapter04_sec01.md
-    - file: chapter04/chapter04_sec02.md
-    - file: chapter04/chapter04_sec03.md
+    - file: chapter04/chapter04_sec01.ipynb
+    - file: chapter04/chapter04_sec02.ipynb
+    - file: chapter04/chapter04_sec03.ipynb
+    - file: chapter04/chapter04_sec04.md
+  - file: chapter05/chapter05_sec00.md
+    sections:
+    - file: chapter05/chapter05_sec01.md
+    - file: chapter05/chapter05_sec02.md
+    - file: chapter05/chapter05_sec03.md
