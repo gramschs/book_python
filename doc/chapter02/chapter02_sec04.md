@@ -1,12 +1,11 @@
 ---
 jupytext:
-  cell_metadata_filter: -all
   formats: ipynb,md:myst
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.5
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -15,7 +14,7 @@ kernelspec:
 
 # Übungen
 
-```{admonition} Übung 
+```{admonition} Übung 2.1
 :class: miniexercise
 Zu welchen Datentypen gehören folgende Ausdrücke? Stellen Sie erst eine
 Vermutung auf. Überprüfen Sie dann Ihre Vermutung mit der Funktion `type()`.
@@ -28,7 +27,7 @@ Vermutung auf. Überprüfen Sie dann Ihre Vermutung mit der Funktion `type()`.
 * 3 * 'Katze'
 ```
 
-```{admonition} Übung 
+```{admonition} Übung 2.2
 :class: miniexercise
 Schreiben Sie einen Witze-Generator. Zuerst soll nach einem Namen gefragt
 werden. Danach soll der Python-Interpreter den folgenden Witz ausgeben, wobei an
@@ -52,7 +51,7 @@ antwortet: "Einfrieren! Heißes Wasser kann man immer gebrauchen."
 Testen Sie Ihr Programm mit verschiedenen Namen.
 ```
 
-```{admonition} Übungen
+```{admonition} Übungen 2.3
 :class: miniexercise
 Schreiben Sie ein Python-Programm, das eine Länge vom Benutzer abfragt, die in
 Zoll gemessen wurde. Das Programm soll dann diese Länge in Zentimeter umrechnen
@@ -62,7 +61,7 @@ Testen Sie Ihr Programm beispielsweise mit der Länge 10 Zoll, die 25.4
 Zentimetern entspricht. 
 ```
 
-```{admonition} Übung 
+```{admonition} Übung 2.4
 :class: miniexercise
 Schreiben Sie ein Programm, das zuerst nach einer Zahl fragt und danach nach
 einer zweiten Zahl fragt. Anschließend gibt das Programm aus, welche beiden
@@ -73,7 +72,7 @@ selbst ausdenken.
 ```
 
 
-```{admonition} Übung
+```{admonition} Übung 2.5
 :class: miniexercise
 Schreiben Sie ein Programm, dass die Kosten für eine Party ermittelt. Zuerst
 soll der Python-Interpreter nach der Raummiete fragen, dann nach den

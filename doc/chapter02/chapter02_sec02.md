@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Datentypen und Variablen
+# 2.2 Datentypen und Variablen
 
 Mit Zahlen wird anders umgegangen, als mit Texten. Zahlen werden beispielsweise
 addiert, bei Texten werden beispielsweise Kleinbuchstaben durch Großbuchstaben

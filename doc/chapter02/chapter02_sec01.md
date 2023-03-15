@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Taschenrechner und Ausgabe (print)
+# 2.1 Taschenrechner und Ausgabe (print)
 
 Ein Klassiker beim Erlernen einer neuen Programmiersprache ist das
 Hallo-Welt-Programm. Dabei geht es darum, den Text "Hallo Welt" auf dem

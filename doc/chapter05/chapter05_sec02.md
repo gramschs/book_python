@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Programmverzweigungen mit einen Zweig: if
+# 5.2 Programmverzweigungen mit einen Zweig: if
 
 Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt.
 Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:

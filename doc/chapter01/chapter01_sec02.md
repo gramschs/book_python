@@ -14,7 +14,7 @@ kernelspec:
   name: python3
 ---
 
-# Programmieren
+# 1.2 Programmieren
 
 Es gibt viele Gründe, warum es sich lohnt, Programmieren zu lernen. Die
 Nachfrage nach Ingenieur:innen, die zusätzlich Programmieren können, wächst

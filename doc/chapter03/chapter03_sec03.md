@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Das Modul Turtle
+# 3.3 Das Modul Turtle
 
 In der Informatik nennt man Grafiken, die dadurch entstehen, dass ein Roboter
 Linien auf eine Leinwand zeichnet, Turtle-Grafiken. Der Roboter wird dabei mit
@@ -52,12 +52,21 @@ eine leere Leinwand, die 500 Bildpunkte breit ist und 250 Bildpunkte hoch ist. B
 
 Zusammengesetzt lautet der Code zur Erzeugung einer Leinwand also wie folgt:
 
-```{code-cell}
+```python3
 from ipyturtle3 import Canvas, TurtleScreen, Turtle
 
 leinwand = Canvas(width=500, height=250)
 display(leinwand)
 ```
+
+Die folgende Animation zeigt, was passiert, wenn die obige Code-Zelle ausgeführt
+wird. Da die weiße Leinwand auf dem weißen Hintergrund des Jupyter Notebooks
+nicht zu sehen, wird sie rot umrahmt.
+
+```{image} media/demo_turtle_initialization.gif
+:name: demo_turtle_initialization
+```
+
 
 Damit der Computer weiß, dass auf dieser Leinwand eine Turtle-Grafik gezeichnet
 werden soll, platzieren wir über die Leinwand ein Turtle-Feld. Dazu erzeugen wir
@@ -66,7 +75,7 @@ Verwendung in der Variablen `feld`. Damit das Turtle-Feld auf der Leinwand
 platziert wird, müssen wir der Erzeugung des Turtle-Feldes die Leinwand als
 Zusatzinformation hinzufügen.
 
-```{code-cell}
+```python3
 feld = TurtleScreen(leinwand)
 ```
 
@@ -75,7 +84,7 @@ feld = TurtleScreen(leinwand)
 Nun können wir endlich einen Roboter erzeugen und in die Mitte des Feldes setzen
 lassen.
 
-```{code-cell}
+```python3
 robo = Turtle(feld)
 ```
 
@@ -83,7 +92,7 @@ Mit dem Befehl
 
 ```python3
 robo.forward(schritte)
-````
+```
 
 wird der Roboter vorwärts bewegt und legt insgesamt `schritte` (gemessen in Pixeln) zurück.
 
@@ -97,7 +106,7 @@ und
 
 ```python3
 robo.right(winkel)
-````
+```
 
 wird der Roboter nach links (gegen den Uhrzeigersinn) oder rechts (im
 Uhrzeigersinn) gedreht. Der Drehwinkel wird durch die Variable `winkel`
@@ -109,7 +118,7 @@ Code-Zeilen in der folgenden Code-Zelle und experimentieren dann in der
 wieder auf seinen Ausgangszustand zurücksetzen möchten, führen Sie erneut die
 Code-Zelle mit der Erzeugung und Initialisierung aus.
 
-```{code-cell}
+```python3
 # Import der benötigten Module
 from ipyturtle3 import Canvas, TurtleScreen, Turtle
 
@@ -124,10 +133,17 @@ feld = TurtleScreen(leinwand)
 robo = Turtle(feld)
 ```
 
-```{code-cell}
+```python3
 robo.forward(100)
 robo.left(120)
 robo.forward(50)
+```
+
+Wenn Sie den Code in Ihrem Jupyter Notebook ausführen, sollten Sie Folgendes
+sehen:
+
+```{image} media/demo_turtle_running.gif
+:name: demo_turtle_running
 ```
 
 ```{admonition} Mini-Übung
@@ -153,3 +169,37 @@ robo.left(90)
 ```
 Anmerkung: natürlich hätten wir den Roboter auch viermal nach rechts drehen lassen können.
 ````
+
+## Robo kann noch mehr... 
+
+Die folgenden Befehle an den Roboter dienen zur Steuerung der Bewegung:
+
+* forward(schritte): Der Roboter bewegt sich vorwärts, die Streckenlänge wird in
+  Schritten `schritte` angegeben.
+* backward(schritte): Der Roboter bewegt sich rückwärts, die Streckenlänge wird
+  in Schritten `schritte` angegeben.
+* right(winkel): Der Roboter dreht sich nach rechts, der Winkel `winkel` wird in
+  Grad angegeben. 
+* left(winkel): Der Roboter dreht sich nach links, der Winkel `winkel` wird in
+  Grad angegeben.  
+* goto(x,y): Der Roboter läuft direkt zu der angegeben Position (x,y).
+
+Der Stift wird mit folgenden Befehlen eingestellt:
+
+* pendown(): Der Stift wird hochgehoben. Bewegt sich der Roboter, hinterlässt er
+  keine Zeichnung. 
+* penup(): Der Stift wird abgesetzt, ab jetzt zeichnet der Roboter wieder.
+* pensize(breite): Die Breite der Striche wird eingestellt, z.B. ist
+  `robo.pensize(10)` ein breiter Strich.  
+
+Für die Farbe gibt es das folgende Kommando:
+
+* pencolor(farbe): Ändert die Farbe der Striche, z.B. stellt der Befehl
+  `robo.pencolor('red')` auf rote Farbe um. Die Farben werden als String
+  übergeben und entsprechen den englischen Farben.
+
+Mehr Details finden Sie in der
+[Turtle-Dokumentation](https://docs.python.org/3/library/turtle.html).
+
+
+

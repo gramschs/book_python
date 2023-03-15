@@ -16,14 +16,14 @@ kernelspec:
 
 # Übungen
 
-```{admonition} Übung 
+```{admonition} Übung 1.1
 :class: miniexercise
 Installieren Sie Anaconda und Python auf Ihrem PC oder Laptop. Starten Sie die
 Software Jupyter Notebook. Laden Sie dieses Jupyter Notebook herunter und öffnen
 Sie es mit der Software Jupyter Notebook.
 ```
 
-```{admonition} Übung
+```{admonition} Übung 1.2
 :class: miniexercise 
 Benutzen Sie Python als Taschenrechner. Fügen Sie dazu diesem Jupyter Notebook eine Code-Zelle hinzu und lassen Sie die folgenden Ausdrücke berechnen:
 * 2 + 3
@@ -34,7 +34,7 @@ Benutzen Sie Python als Taschenrechner. Fügen Sie dazu diesem Jupyter Notebook 
 * 5**2
 ```
 
-```{admonition} Übung
+```{admonition} Übung 1.3
 :class: miniexercise
 In der vorhergehenden Aufgabe haben Sie den Ausdruck `5**2` berechnen lassen.
 Fügen Sie jetzt eine Markdown-Zelle ein. Schreiben Sie auf, was Ihrer Vermutung
@@ -43,7 +43,7 @@ Internet, nach der Bedeutung und vergleichen Sie Ihre Antwort mit der Recherche.
 Fügen Sie die Internetseite als URL in die Markdown-Zelle ein.
 ```
 
-```{admonition} Übung
+```{admonition} Übung 1.4
 :class: miniexercise
 Speichern Sie das bearbeitete Jupyter Notebook unter einem anderen Namen ab.
 Exportieren Sie es als pdf-Dokument (über HTML).

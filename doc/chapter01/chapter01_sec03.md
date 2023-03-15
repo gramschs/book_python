@@ -14,7 +14,7 @@ kernelspec:
   name: python3
 ---
 
-# Installation und Start von Python
+# 1.3 Installation und Start von Python
 
 Python wird in der Regel mit dem Betriebsystem ausgeliefert. Für diese Vorlesung
 benötigen wir jedoch Python-Erweiterungen, die standardmäßig nicht installiert

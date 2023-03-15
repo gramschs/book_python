@@ -14,7 +14,7 @@ kernelspec:
   name: python3
 ---
 
-# Hardware und Software
+# 1.1 Hardware und Software
 
 Bevor es mit der Programmierung in Python losgeht, machen wir uns erstmal mit
 ein paar grundlegenden Begriffen der Informatik vertraut. In diesem Kapitel geht

@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Listen
+# 3.1 Listen
 
 Bisher haben wir drei verschiedene Datentypen kennengelernt:
 * Integer (ganze Zahlen),

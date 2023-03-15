@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Eingabe (input) und Zuweisungsoperator
+# 2.3 Eingabe (input) und Zuweisungsoperator
 
 Ohne die Eingabe von Daten sind Apps wertlos. In diesem Kapitel beschäftigen wir
 uns daher einer direkten Eingabemöglichkeit in Python und lernen dazu die

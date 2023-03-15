@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Das Modul Math
+# 3.2 Das Modul Math
 
 Python kann auch auf schwachbrüstiger Hardware laufen wie beispielsweise auf
 dem Raspberry Pi. Ein Grund für die Effizienz von Python ist, dass nicht alle

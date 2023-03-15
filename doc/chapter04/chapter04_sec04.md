@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.8
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # Übungen
 
 1. Schreiben Sie ein Programm, das den Benutzer nach seinem Namen und seinem Alter fragt und dann eine Begrüßungsnachricht ausgibt, die den Namen und das Alter des Benutzers enthält. Verwenden Sie eine f-String, um den Namen und das Alter des Benutzers in die Begrüßungsnachricht einzufügen.
