@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8.2 GUI &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.3 Objektorientierung" href="chapter08_sec03.html" />
+    <link rel="prev" title="8.1 Debugging" href="chapter08_sec01.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python für Studierende der Ingenieurwissenschaften</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zum interaktiven Vorlesungsskript Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen Programmierung
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter01/chapter01_sec00.html">
+   1. Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec01.html">
+     1.1 Hardware und Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec02.html">
+     1.2 Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec03.html">
+     1.3 Installation und Start von Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter02/chapter02_sec00.html">
+   2. Eingabe, Verarbeitung und Ausgabe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec01.html">
+     2.1 Taschenrechner und Ausgabe (print)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec02.html">
+     2.2 Datentypen und Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec03.html">
+     2.3 Eingabe (input) und Zuweisungsoperator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter03/chapter03_sec00.html">
+   3. Listen und Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec01.html">
+     3.1 Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec02.html">
+     3.2 Das Modul Math
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec03.html">
+     3.3 Das Modul Turtle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
+   4. Zählschleifen (for) und Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+     4.1 for-Schleifen mit Liste
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+     4.2 for-Schleifen mit range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+     4.3 Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter05/chapter05_sec00.html">
+   5. Programmverzweigung (if - elif - else)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec01.html">
+     5.1 Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec02.html">
+     5.2 Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec03.html">
+     5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter06/chapter06_sec00.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec01.html">
+     6.1 Funktionen selbst schreiben
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec02.html">
+     6.2 Funktionen mit Argument und Rückgabe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec03.html">
+     6.3 Globale und lokale Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter07/chapter07_sec00.html">
+   7. Schleifen mit Bedingung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec01.html">
+     7.1 Digitale Logik: und, oder, nicht
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec02.html">
+     while
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec03.html">
+     7.3 Zufallszahlen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter08_sec00.html">
+   8. Programmentwicklung und Objektorientierung
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter08_sec01.html">
+     8.1 Debugging
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.2 GUI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter08_sec03.html">
+     8.3 Objektorientierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter08_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Anwendungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter09/chapter09_sec00.html">
+   9. Pandas anstatt Excel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec01.html">
+     9.1 Series und DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec02.html">
+     9.2 Arbeiten mit Tabellendaten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec03.html">
+     9.3 Statistik mit Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter10/chapter10_sec00.html">
+   10. Visualisierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec01.html">
+     10.1 Das Modul NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec02.html">
+     10.2 Linien-, Balken- und Streudiagramme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec03.html">
+     10.3 Visualisierung von DataFrames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter11/chapter11_sec00.html">
+   11. Messwerte und Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec01.html">
+     11.1 Theorie Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec02.html">
+     11.2 Lineare Regression mit polyfit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec03.html">
+     11.3 Polynomiale Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter12/chapter12_sec00.html">
+   12. MATLAB und Simulink
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter12/chapter12_sec01.html">
+     Simulink
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec02.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/gramschs/book_python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter08/chapter08_sec02.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/chapter08/chapter08_sec02.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sliders">
+   Sliders
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-field">
+   Edit Field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drop-down-liste">
+   Drop-Down-Liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checkbox">
+   Checkbox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Aufgabe
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>8.2 GUI</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sliders">
+   Sliders
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-field">
+   Edit Field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drop-down-liste">
+   Drop-Down-Liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checkbox">
+   Checkbox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Aufgabe
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gui">
+<h1>8.2 GUI<a class="headerlink" href="#gui" title="Permalink to this headline">#</a></h1>
+<p>Bevor wir einen Ausflug in die GUI-Programmierung unternehmen, müssen einige
+Module geladen werden.</p>
+<p><font color='red'> Bitte installieren Sie mit dem Anaconda-Navigator –&gt;
+Environments das Modul jupyterlab-widgets nach, falls es fehlen sollte.
+</font></br></p>
+<p>Bitte führen Sie mindestens einmal den folgenden Code aus, um die Funktionen für
+die GUI-Programmierung in den Speicher zu laden. Mehr Details zu grafischen
+Benutzeroberflächen in Jupyter Notebooks finden Sie auf der Internetseite
+<a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/">https://ipywidgets.readthedocs.io/en/stable/</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pylab</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<section id="sliders">
+<h2>Sliders<a class="headerlink" href="#sliders" title="Permalink to this headline">#</a></h2>
+<p>Danach programmieren wir zum Einstieg eine sehr simple Funktion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Quadratzahl von </span><span class="si">{}</span><span class="s1"> ist </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> 
+</pre></div>
+</div>
+<p>Ich kann diese Funktion nun wie gewohnt aufrufen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Oder beispielsweise alle Werte von -3 bis 3 durchlaufen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Komfortabler für Benutzerinnen und Benutzer sind grafische Benutzeroberflächen.
+Wir führen als erstes <strong>Slider</strong> ein. Ein Slider ist ein grafisches
+Kontrollelement, mit dem die Benutzerin einen Wert setzen kann, indem ein
+Indikator bewegt wird.</p>
+<p>Dazu nutzen wir die Funktion <code class="docutils literal notranslate"><span class="pre">interact()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>. Die
+Funktion <code class="docutils literal notranslate"><span class="pre">interact()</span></code> erzeugt zuerst einen Slider mit Variable und bennent
+diesen Slider als <code class="docutils literal notranslate"><span class="pre">x</span></code> (siehe 2. Argument von interact) und verbindet dann die
+Variable x mit der Funktion im 1. Argument.</p>
+<p>Klingt alles komplizierter als der entsprechende Code ist:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Schauen wir uns ein zweites Beispiel an. Wir visualisieren eine Parabel mit
+einem Vorfaktor, also <span class="math notranslate nohighlight">\(f(x)=a\cdot x^2\)</span>. Dazu schreiben wir eine Funktion, die
+den Vorfaktor als Input-Argument entgegen nimmt und dann die Parabel mit dem
+Definitionsgebiet <span class="math notranslate nohighlight">\([-10, 10]\)</span> zeichnet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeichne_parabel</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">zeichne_parabel</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Wie Sie sehen, wird bei der Initialisierung des Sliders ein Startwert gesetzt.
+Das vertiefen wir gleich. Zunächst eine Aufgabe:</p>
+</section>
+<section id="aufgabe">
+<h2>Aufgabe<a class="headerlink" href="#aufgabe" title="Permalink to this headline">#</a></h2>
+<p>Schreiben Sie eine Funktion, die die Funktion <span class="math notranslate nohighlight">\(f(x) = \sin(k \cdot x)\)</span> im
+Intervall <span class="math notranslate nohighlight">\([-2\pi, 2\pi]\)</span> zeichnet. Definieren Sie anschließend für <code class="docutils literal notranslate"><span class="pre">k</span></code> einen
+Slider mit Startwert <span class="math notranslate nohighlight">\(k=2\)</span>. Bewegen Sie anschließend den Slider.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Es ist auch möglich, zwei Slider zu definieren. Die folgende Funktion zeichnet
+einen Punkt an den Koordinaten <span class="math notranslate nohighlight">\((x,y)\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeichne_punkt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+    <span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeichne_punkt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Als nächstes definieren wir zwei Slider und verbinden die beiden Slider mit der
+Funktion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">zeichne_punkt</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Es ist schade, dass wir nicht ganz nach links oder unten kommen, weil die Slider
+Grenzen haben. Diese Grenzen und auch die Schrittweite zwischen den einzelnen
+Werten des Sliders können wir direkt bei der Initialisierung der Slider
+kontrollieren. Dann ist der Aufruf allerdings etwas komplizierter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">zeichne_punkt</span><span class="p">,</span> 
+         <span class="n">x</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> 
+         <span class="n">y</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Der <code class="docutils literal notranslate"><span class="pre">IntSlider</span></code> kann auch durch einen <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> ersetzt werden, bei dem dann
+auch Fließkommazahlen und kleinere Zwischenschritte erlaubt sind.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">zeichne_punkt</span><span class="p">,</span> 
+         <span class="n">x</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> 
+         <span class="n">y</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Aufgabe<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Eine Gerade wird durch die Funktionsgleichung</p>
+<p><span class="math notranslate nohighlight">\(y=m\cdot x + b\)</span></p>
+<p>mit der Steigung <span class="math notranslate nohighlight">\(m\)</span> und dem y-Achsenabschnitt <span class="math notranslate nohighlight">\(b\)</span> beschrieben. Schreiben Sie
+eine Funktion, die eine Gerade im Intervall <span class="math notranslate nohighlight">\([-5,5]\)</span> zeichnet und bei der die
+y-Achse stets zwischen <span class="math notranslate nohighlight">\(-10\)</span> und <span class="math notranslate nohighlight">\(10\)</span> anzeigt. Eine Benutzerin oder ein Benutzer
+soll die Steigung im Bereich <span class="math notranslate nohighlight">\(m\in[-3,3]\)</span> mit der Schrittweite <span class="math notranslate nohighlight">\(0.1\)</span> und den
+y-Achsenabschnitt <span class="math notranslate nohighlight">\(b\in[-7.5, 7.5]\)</span> mit der Schrittweite <span class="math notranslate nohighlight">\(0.5\)</span> wählen können.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="edit-field">
+<h2>Edit Field<a class="headerlink" href="#edit-field" title="Permalink to this headline">#</a></h2>
+<p>Bei einem Slider wird indirekt eine Variable mit einem Wert gefüllt, indem der
+Benutzer oder die Benutzerin der Applikation einen Indikator regelt. Im Gegenzug
+dazu erfolgt die direkte Eingabe über dein sogenanntes <strong>Edit Field</strong>.</p>
+<p>Wir konstruieren ein Eingabefeld für eine Altersabfrage. Der erste Wert, der
+angezeigt werden soll, bevor der Benutzer seine Eingabe tätigt, wird mit <code class="docutils literal notranslate"><span class="pre">value</span></code>
+definiert. <code class="docutils literal notranslate"><span class="pre">description</span></code> ist die Beschreibung, die vor dem Edit Field steht:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">IntText</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Alter:&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Wir können nun zwar das Edit Field direkt mit ganzzahligen Werten befüllen, doch
+werden diese nicht gespeichert. Daher wird im Folgenden das Edit Field mit einer
+Funktion verbunden. Dazu verwenden wir erneut die Funktion <code class="docutils literal notranslate"><span class="pre">interact()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drucke</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Das eingegebene Alter ist: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">interact</span><span class="p">(</span><span class="n">drucke</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Alter:&#39;</span> <span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Aufgabe<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>Schreiben Sie eine Funktion, die das Geburtsjahr eines Benutzers über ein Edit
+Field abfragt und danch das Alter berechnet und ausgibt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="drop-down-liste">
+<h2>Drop-Down-Liste<a class="headerlink" href="#drop-down-liste" title="Permalink to this headline">#</a></h2>
+<p>Eine <strong>Drop-Down-Liste</strong>, manchmal auch <strong>Pulldown-Menü</strong> genannt, ermöglicht
+eine Auswahl aus einer Liste von Objekten. Die einzelnen Auswahlmöglichkeiten
+werden als Optionen gelistet. Wieder wird die Beschreibung vor dem GUI-Element
+über den Wert von <code class="docutils literal notranslate"><span class="pre">description</span></code> gesetzt. Ein Startwert wird über <code class="docutils literal notranslate"><span class="pre">value</span></code>
+vorausgewählt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Zahl:&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Die Verwendung dieses GUI-Elements erfolgt analog zu den vorherigen. Allerdings
+packen wir der Übersichtlichkeit halber zunächst die Drop-Down-Liste in eine
+Variable <code class="docutils literal notranslate"><span class="pre">dropdown</span></code> und verbinden per <code class="docutils literal notranslate"><span class="pre">interact()</span></code> die Funktion <code class="docutils literal notranslate"><span class="pre">f</span></code> und ihre
+Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Quadratzahl von </span><span class="si">{}</span><span class="s1"> ist </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> 
+    
+<span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Zahl:&#39;</span><span class="p">)</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">dropdown</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Aufgabe<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>Schreiben Sie ein Programm, bei dem der Benutzer über zwei Drop-Down-Listen den
+Tag und den Monat seines Geburtstages auswählt. Lassen Sie den Computer danach
+feststellen, ob der Benutzer dieses Jahr schon Geburtstag hatte, heute gerade
+Gebutstag hat (Gratulation) oder noch Geburtstag haben wird. Geben Sie eine
+entsprechende Meldung aus.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="checkbox">
+<h2>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">#</a></h2>
+<p>Checkboxen sind explizit für die Abfrage von booleschen Werte, d.h. wahr oder
+falsch, gemacht. Hier direkt ein Beispiel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Ja oder nein? &#39;</span><span class="p">,</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Falls Sie sich über die neue Option <code class="docutils literal notranslate"><span class="pre">indent</span></code> (zu deutsch Einzug) gewundert
+haben, probieren Sie mal aus, was passiert, wenn Sie diese Option weglassen oder
+auf <code class="docutils literal notranslate"><span class="pre">True</span></code> setzen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Ja oder nein? &#39;</span><span class="p">,</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Wir erweitern unseren Plot der Sinus-Funktion um eine Legende.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotte_sinus</span><span class="p">(</span><span class="n">mit_legende</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sinus&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mit_legende</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">legend</span><span class="p">()</span>
+        
+
+<span class="n">legende_checkbox</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Legende ein &#39;</span><span class="p">,</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span>      
+
+<span class="n">interact</span><span class="p">(</span><span class="n">plotte_sinus</span><span class="p">,</span> <span class="n">mit_legende</span> <span class="o">=</span> <span class="n">legende_checkbox</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>Aufgabe<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>Schreiben Sie ein Programm, bei dem der Benutzer über eine Drop-Down-Liste
+zwischen den Funktionen Sinus und Kosinus wählen darf. Anschließend wird die
+ausgewählte Funktion im Intervall <span class="math notranslate nohighlight">\([-2\pi, 2\pi]\)</span> gezeichnet. Über eine Checkbox
+darf der Benutzer entscheiden, ob die Gitterlinien eingeblendet werden sollen
+oder nicht.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gramschs/book_python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter08_sec01.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">8.1 Debugging</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter08_sec03.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">8.3 Objektorientierung</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Simone Gramsch<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

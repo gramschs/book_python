@@ -2,6 +2,7 @@
 jupytext:
   cell_metadata_filter: -all
   formats: ipynb,md:myst
+  main_language: python
   text_representation:
     extension: .md
     format_name: myst
@@ -13,13 +14,9 @@ kernelspec:
   name: python3
 ---
 
-# Eingabe, Verarbeitung und Ausgabe
+# 1. Getting Started
 
-Dieses Jupyter Notebook ist der Einstieg in die wissenschaftliche Programmierung
-mit Python. Zuerst werden wir Python als Taschenrechner benutzen. Danach widmen
-wir uns einfachen Datentypen und Variablen. Zusammen mit einfachen
-Python-Kommandos, um Eingaben einer Benutzerin oder eines Benutzers abzufragen
-und auf dem Bildschirm auszugeben, wird es uns möglich, erste kleinere
-Python-Skripte zu schreiben. Das entspricht auch dem grundlegenden Ablauf in der
-Datenverarbeitung, dem EVA-Prinzip, das für Eingabe, Verarbeitung und Ausgabe
-steht.
+Das Kapitel "Getting Started" gibt Ihnen zuerst eine Einführung in Hardware und
+Software. Danach werden grundlegende Begriffe zum Programmieren erläutert. Im
+dritten Abschnitt folgt eine kurze Anleitung, wie Python installiert wird, und
+wie Jupyter Notebooks aufgebaut sind.

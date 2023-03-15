@@ -1,349 +1,293 @@
 ---
 jupytext:
-  formats: ipynb,md:myst
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.5
 kernelspec:
-  display_name: Python 3 (ipykernel)
+  display_name: turtle
   language: python
   name: python3
 ---
 
-# Programmverzweigungen mit mehreren Zweigen: if -- elif -- else
+# 4.3 Strings
 
-TODO
+Den Datentyp String haben Sie bereits zu Beginn im Kapitel "Einstieg in die
+Programmierung" kennengelernt. Bis jetzt haben wir Strings vor allem dazu
+benutzt, um mit der print()-Funktion etwas auszugeben. In diesem Jupyter
+Notebook geht es nun darum, Strings auch zu manipulieren und mit den sogenannten
+f-Strings auch formatierte Ausgaben zu produzieren.
 
-## Programmverzweigungen mit zwei Zweigen: if – else
 
-In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor.
-Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts?
-Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein
-Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl
-zwischen zwei Möglichkeiten gibt es **zweiteilige Programmverzweigungen**. 
+## Lernziele
 
-Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den
-sogenannten **else-Block**:
-
-```python
-if bedingung:
-    anweisungsblock 1
-else:
-    anweisungsblock 2
-```
-
-Wichtig ist, dass die Anweisungen, die nur bedingt ausgeführt werden sollen,
-eingerückt sind!
-
-Falls die Bedingung erfüllt ist, wird der 1. Anweisungsblock ausgeführt,
-ansonsten der 2. Anweisungsblock. Danach führt der Python-Interpreter alles nach
-dem if-else-Konstrukt aus, d.h. der Interpreter macht mit dem normalen
-Programmablauf weiter.
-
-Hier wieder das Beispiel mit dem Alter:  
-
-```python
-alter = int(input('Wie alt sind Sie? '))
-if alter >= 18:
-    print('Sie sind volljährig, Sie dürfen Alkohol kaufen.')
-else:
-    print('Sie sind noch nicht volljährig und dürfen daher keinen Alkohol kaufen.')
-
-print('Jetzt haben wir aber genug über den Alkoholkauf geredet...')
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2
-für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist,
-soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten
-soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
-```
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-
-```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-# Eingabe
-monat = int(input('Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.'))
-
-# Verarbeitung und Ausgabe
-if monat <= 6:
-    print('Dieser Monat gehört zur 1. Jahreshälfte.')
-else:
-    print('Dieser Monat gehört zur 2. Jahreshälfte.')
-```
+````{admonition} Lernziele
+:class: hint
+* Sie wissen, dass Strings unveränderliche Container sind und welche Konsequenzen das für die Programmierung hat.
+* Sie können mit dem Index auf einzelne Zeichen eines Strings zugreifen.
+* Sie können Strings mit dem Plus-Operator **verketten**.
+* Sie können mit der **.replace()**-Methode einen Teilstring in einem String durch einen anderen Teilstring ersetzen.
+* Sie können mit einem **f-String** den Wert einer Variablen in einen String einbetten und zur Laufzeit anzeigen lassen.
 ````
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die
-aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben:
-"Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
-```
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-# Eingabe
-temperatur = float(input('Welche Temperatur haben wir aktuell?'))
+## Strings sind Container
 
-# Verarbeitung und Ausgabe
-if temperatur <= 3:
-    print('Vorsicht, es besteht Glatteisgefahr!')
-else:
-    print('Kein Grund zur Sorge.')
-```
-````
-
-## Programmverzweigungen mit vielen Zweigen: if – elseif – else
-
-Eins, zwei, drei, viele ... häufig müssen mehr als zwei Fälle unterschieden
-werden. In einer Mini-Übung haben wir beispielsweise überprüft, ob eine Zahl
-negativ oder positiv oder Null ist. Ein Beispiel aus dem Alltag ist der Kauf
-einer Fahrkarte für den ÖPNV. Meist wird beim Ticketpreis unterschieden, ob die
-Person jünger als 6 ist (keine Fahrkarte notwendig), zwischen 6 und 14 ist
-(Schülerfahrkarte) oder älter als 14 (Erwachsenenfahrkarte). Da es jetzt drei
-Altersklassen gibt, können wir kein if-else-Konstrukt benutzen, denn nur weil
-die Person beispielsweise nicht jünger als 6 ist wissen wir noch lange nicht, ob
-die Person eine Schülerfahrkarte oder eine Erwachsenenfahrkarte braucht. 
-
-Probieren wir es einfach:
-
-```{code-cell} ipython3
-alter = 8
-if alter < 6:
-    print('keine Fahrkarte notwendig')
-if alter <= 14:
-    print('Schülerfahrkarte')
-if alter > 14:
-    print('Erwachsenenfahrkarte')
-```
-
-Sieht zunächst einmal gut aus. Für ein Alter von 8 Jahren wird tatsächlich
-Schülerfahrkarte ausgegeben. Wenn wir jetzt aber das Alter auf 5 Jahre setzen,
-so bekommen wir zwei Ausgaben:
-
-```{code-cell} ipython3
-alter = 5
-if alter < 6:
-    print('keine Fahrkarte notwendig')
-if alter <= 14:
-    print('Schülerfahrkarte')
-if alter > 14:
-    print('Erwachsenenfahrkarte')
-```
-
-Wir erhalten die Ausgabe `"keine Fahrkarte notwendig"`, weil die Bedingung des
-ersten if-Konstrukts erfüllt ist (`alter < 6`). Danach wird aber auch noch die
-Ausgabe `"Schülerfahrkarte"` angezeigt, weil auch die Bedingung des zweiten
-if-Konstrukts (`alter <= 14`) erfüllt ist. So geht es also nicht, zwischen drei
-Bedingungen zu unterscheiden.
-
-Probieren wir es mit einem zusätzlichen if-else-Konstrukt für die Unterscheidung
-der Kinder.
-
-```{code-cell} ipython3
-alter = 5
-
-if alter < 6:
-    print('keine Fahrkarte notwendig')
-else:
-    print('Schülerfahrkarte')
-
-if alter > 14:
-    print('Erwachsenenfahrkarte')
-```
-
-Jetzt sind aber Erwachsene problematisch:
-
-```{code-cell} ipython3
-alter = 27
-
-if alter < 6:
-    print('keine Fahrkarte notwendig')
-else:
-    print('Schülerfahrkarte')
-
-if alter > 14:
-    print('Erwachsenenfahrkarte')
-```
-
-Tatsächlich läuft unser Programm-Code nur korrekt, wenn wir in den else-Zweig
-noch zusätzlich zwischen "jünger als 14" und "älter als 14" unterscheiden.
-
-Führen Sie die folgende Code-Zelle mehrfach aus. Ändern Sie dabei das Alter.
-Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus. 
-
-```{code-cell} ipython3
-alter = 27
-
-if alter < 6:
-    print('keine Fahrkarte notwendig')
-else:
-    if alter <= 14:
-        print('Schülerfahrkarte')
-    else:
-        print('Erwachsenenfahrkarte')
-```
-
-Um den obigen Code besser zu verstehen, zeichen wir den Ablauf schematisch:
-
-```{image} pics/part02_fahrkarte.png
-:name: part02_fahrkarte
-```
-
-Es wäre schöner, wenn es für solche Mehrfachverzweigungen etwas
-übersichtlicheren Code gäbe. Und in der Tat, den gibt es. Man könnte sozusagen
-den Start des else-Konstruktes mit dem nachfolgenden if-Konstrukt verschmelzen.
-Das Ergebnis davon ist die if-elif-else-Syntax. Allgemein sieht das
-**if-elif-else-Konstrukt** so aus:
-
+Im deutschen Fachbegriff Zeichenketten steckt schon die Idee, Strings als eine
+Verkettung von einzelnen Zeichen zu interpretieren. Mit dieser Idee ist dann
+vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
+über den Index angesprochen werden können.
 
 ```python
-if bedingung 1:
-    anweisungsblock 1
-elif bedingung 2:
-    anweisungsblock 2
-elif bedingung 3:
-    anweisungsblock 3   
-...
-else:
-    anweisungsblock n
+# Erzeugung und Anzeige String
+mein_string = 'Hallo, Du da!'
+print(mein_string)
+
+# Zugriff auf einzelne Zeichen per Index
+print('2. Zeichen: ')
+print(mein_string[1])
 ```
 
-Hier die besser lesbare Version der Unterscheidung von Zahlen in negative
-Zahlen, 0 und positive Zahlen aus der obigen Mini-Übung:
-
-```{code-cell} ipython3
-a = 17
-if a == 0:
-    print('a ist Null.')
-elif a < 0:
-    print('a ist negativ.')
-else:
-    print('a ist positiv.')
-```
-
-Und jetzt noch einmal eine besser lesbare Version des Fahrkartenautomaten:
-
-```{code-cell} ipython3
-alter = 27
-
-if alter < 6:
-    print('keine Fahrkarte notwendig')
-elif alter <= 14:
-    print('Schülerfahrkarte')
-else:
-    print('Erwachsenenfahrkarte')
-```
+Aber welche Zeichen gehören dazu? Probieren Sie die folgende Mini-Übung aus.
 
 ````{admonition} Mini-Übung
 :class: miniexercise
-Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit
-dem PKW im Internet auf der Seite:
-https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/ Schreiben Sie
-ein Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt,
-welche Strafe in Euro verhängt wird. Die Tabelle für das Jahr 2022 lautet wie
-folgt:
-```{image} pics/part02_bussgeldkatalog.png
-:name: part02_bussgeldkatalog
-```
-````
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
+Speichern Sie den String 'Hallo, Du da!' in einer Variable. Beantworten Sie folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.
 
-```
-````{admonition} Lösung
-:class: minisolution, toggle
+* Was ist der kleinste Index des Strings 'Hallo, Du da!'?
+* Was ist der größte Index des String 'Hallo, Du da!'?
+* Was passiert, wenn Sie auf den Index 20 zugreifen wollen?
+* Welches Zeichen hat den Index 6?
+````
+
 ```python
-# Eingabe
-verstoss = int(input('Wieviel zu schnell ist die Person gefahren? '))
+# Hier Ihr Code (aber zuerst überlegen... )
 
-# Verarbeitung und Ausgabe
-if verstoss <= 10:
-    print('20 EUR')
-elif verstoss <= 15: 
-    print('40 EUR')
-elif verstoss <= 20:
-    print('60 EUR')
-elif verstoss <= 25:
-    print('100 EUR')
-elif verstoss <= 30:
-    print('150 EUR')
-elif verstoss <= 40:
-    print('200 EUR')
-elif verstoss <= 50:
-    print('320 EUR')
-elif verstoss <= 60:
-    print('480 EUR')
-elif verstoss <= 70:
-    print('600 EUR')
-else:
-    print('700 EUR')
 ```
+
+````{admonition} Lösung
+:class: solution, toggle
+
+* Der kleinste Index ist 0.
+* Der größte Index ist 12.
+* Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung: 'IndexError: string index out of range'. Der Index 20 ist außerhalb des zulässigen Indexbereichs von 0 bis 12.
+* Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch Zeichen und müssen mitgezählt werden.
 ````
 
-```{admonition} Mini-Übung
+
+Mit den beiden for-Schleifen der letzten beiden Abschnitte, können wir die
+Zeichen auch einzeln ausgeben lassen. Als erstes die for-Schleife mit
+Liste/String:
+
+```python
+for zeichen in 'Hallo, Du Da!':
+    print(zeichen)
+```
+
+Als nächstes wird über den Index iteriert. Iteration ist der Fachbegriff für das
+mehrfache Wiederholen einer Anweisung. 
+
+```python
+mein_string = 'Hallo, Du da!'
+for i in range(12):
+    zeichen = mein_string[i]
+    print(zeichen)
+```
+
+## Strings sind unveränderlich
+
+Bei den Listen haben wir einzelne Elemente der Liste manipuliert, z.B. das
+dritte Element durch ein anderes ersetzt wie in dem folgenden Beispiel.
+
+```python
+meine_liste = ['Eins', 'Zwei', 'Drei', 'Vier', 'Fünf']
+print('Am Anfang: ')
+print(meine_liste)
+
+# Austausch der 'Drei' durch 'MMMH'
+meine_liste[2] = 'MMMH'
+print('Nach dem Austausch:')
+print(meine_liste)
+```
+
+Obwohl Strings auch Container sind, funktioniert die Manipulation eines
+einzelnen Zeichens in einem String leider nicht.
+
+```python
+wort = 'hallo!'
+print('Am Anfang: ')
+print(wort)
+
+# Austausch des kleinen Buchstaben h durch ein großes H 
+wort[0] = 'H'
+print('Nach dem Austausch:')
+print(wort)
+```
+
+Der Python-Interpreter gibt eine Fehlermeldung aus: 'str' object does not
+support item assignment. Ein item ist ein einzelnes Element der Liste und
+assignment ist das englische Wort für Zuweisung. Auf deutsch lautet diese
+Fehlermeldung also, dass ein String-Objekt die Zuweisung eines einzelnen
+Elements/Zeichens nicht unterstützt. Oder anders ausgedrückt, es ist verboten,
+einen String durch eine Zuweisung zu ändern. 
+
+Bei Strings handelt es sich um einen sogenannten **unveränderlichen Datentyp**.
+Das bedeutet, dass der Inhalt eines Strings nach seiner Erstellung nicht mehr
+verändert werden kann.
+
+Es gibt andere Programmiersprachen wie beispielsweise C und MATLAB, in denen
+Strings als veränderliche Objekte umgesetzt sind. Die Entwickler:innen von
+Python haben sich bei der Entwicklung von Python aus Gründen der
+Speichereffizienz und der Sicherheit von daraus abgeleiten Datentypen (z.B.
+Dictionaries) dagegen entschieden.
+
+
+## Und wenn doch ein String geändert werden soll?
+
+Natürlich kann es dennoch vielfältige Gründe geben, einen String nach seiner
+Erstellung noch abzuändern. Beispielsweise könnte bei einer Benutzereingabe ein
+Tippfehler aufgetreten sein, der korrigiert werden soll. Obwohl Strings in
+Python unveränderlich sind, gibt es immer noch viele Operationen, die auf
+Strings ausgeführt werden können, wie z.B. das Anhängen von Strings, das Suchen
+oder das Ersetzen von Teilstrings. Allerdings wird in diesen Fällen nicht der
+ursprüngliche String modifiziert, sondern ein neuer String erzeugt.
+
+### Verketten von Strings
+
+Sie können Strings in Python einfach aneinanderhängen (verketten), indem Sie den
+`+`-Operator verwenden. Hier ist ein Beispiel:
+
+```python
+name  = 'Alice'
+gruss = 'Hallo ' + name + '!'
+print(gruss)
+```
+
+### Ersetzen von Teilstrings
+
+Python bietet mehrere Methoden zum Suchen und Ersetzen von Teilstrings in einem
+String. Eine dieser Methoden ist `.replace()`. Hier ist ein Beispiel:
+
+```python
+text = 'MATLAB ist eine großartige Programmiersprache!'
+neuer_text = text.replace('MATLAB', 'Python')
+print(neuer_text)
+
+```
+
+In diesem Beispiel haben wir den Teilstring "MATLAB" durch den Teilstring
+"Python" ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
+Variable namens `neuer_text` verwenden. Wenn mehrfach Änderungen des Strings
+durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
+Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
+folgendem Beispiel.
+
+```python
+text = 'MATLAB ist eine großartige Programmiersprache!'
+text = text.replace('MATLAB', 'Python')
+print(text)
+```
+
+Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
+ausführen können, wie z.B. das Suchen von Teilstrings mit der `.find()`-Methode,
+das Zählen von Vorkommen von Teilstrings mit der `.count()`-Methode und das
+Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
+`.upper()` und `.lower()`. In der nächsten Mini-Übung probieren wir noch einmal
+die `.replace()`-Methode aus.
+
+
+
+````{admonition} Mini-Übung
 :class: miniexercise
-Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
-* <= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
-* <= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
-* <= 10 ˚C ist, dann Ausgabe: "Es ist kühl, aber OK."
-* <= 20 ˚C ist, dann Ausgabe: "Es ist frühlingshaft."
-* <= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
-* \> 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
-```
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
+Schreiben Sie ein Programm, das in dem Spruch "Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo." die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den Spruch vor und nach der Korrektur ausgeben.
+````
 
-```
-````{admonition} Lösung
-:class: minisolution, toggle
 ```python
-# Eingabe
-temperatur = float(input('Welche Temperatur haben wir aktuell? '))
+# Hier Ihr Code
 
-# Verarbeitung und Ausgabe
-if temperatur <= - 10:
-    print('Es ist bitterkalt.')
-elif temperatur <= 0: 
-    print('Es ist kalt.')
-elif temperatur <= 10:
-    print('Es ist kühl, aber OK.')
-elif temperatur <= 20:
-    print('Es ist frühlingshaft.')
-elif temperatur <= 30:
-    print('Es ist heiß!')
-else:
-    print('Das ist ja nicht mehr auszuhalten heiß!')
+```
+
+````{admonition} Lösung
+:class: solution, toggle
+```python
+spruch = 'Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.'
+
+print('Vorher: ')
+print(spruch)
+
+spruch_korrigiert = spruch.replace('Kilogramm', 'Zentner')
+print('Nach der Korrektur:')
+print(spruch_korrigiert)
 ```
 ````
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Zusammenfassung
+## Formatierte Strings (f-Strings)
 
-In diesem Kapitel haben Sie die erste Kontrollstruktur kennengelernt, um ein
-lineares Python-Programm in ein nichtlineares Python-Programm zu verwandeln, das
-auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe
-von if, elseif und else können Sie nun beliebig viele Verzweigungen
-programmieren. Damit der Python-Interpreter den Programm-Code in einer
-Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein.
-Bedingungen sind entweder wahr oder falsch, was Python in einem booleschen
-Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher
-Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für
-Texte werden wir noch kennenlernen.
+Zum Schluss behandeln wir noch formatierte Strings, die sogenannten f-Strings.
+Seit Python 3.6 erleichtert dieser Typ von String die Programmierung. Falls Sie
+Python-Code sehen, in dem Prozentzeichen vorkommen (ganz, ganz alt) oder die
+.format()-Methode benutzt wird, wundern Sie sich nicht. In dieser Vorlesung
+verwenden wir f-Strings.
+
+f-Strings sind die Abkürzung für "formatted string literals". Sie ermöglichen
+es, den Wert einer Variable oder einen Ausdruck direkt in den String
+einzubetten. Dazu werden geschweifte Klammern verwendet, also `{` und `}` und zu
+Beginn des Strings wird ein `f` eingefügt, um aus dem String einen f-String zu
+machen. Der Python-Interpreter fügt dann zur Laufzeit des Programms den
+entsprechenden Wert der Variable in den String ein.
+ 
+Hier ein Beispiel:
 
 
+```python
+name = 'Alice'
+alter = 14
+print(f'Mein Name ist {name} und ich bin {alter} Jahre alt.')
+```
+
+Insbesondere bei Ausgabe von Zahlen sind f-Strings besonders nützlich. Wenn nach
+dem Variablennamen ein Doppelpunkt eingefügt wird, kann danach die Anzahl der
+gewünschten Stellen vor dem Komma (hier natürlich ein Punkt) und der
+Nachkommastellen festgelegt werden. Zusätzlich setzen wir ein `f` in die
+geschweiften Klammern, um einen Float anzeigen zu lassen. Im folgenden Beispiel
+geben wir $\pi$ auf zwei Nachkommastellen an.
+
+```python
+from math import pi
+
+print(f'Pi = {pi:1.2f}')
+```
+
+Es ist schwierig, sich alle Formatierungsoptionen zu merken. Auf der
+Internetseite
+[https://cheatography.com/brianallan/cheat-sheets/python-f-strings-basics/](https://cheatography.com/brianallan/cheat-sheets/python-f-strings-basics/)
+finden Sie eine umfangreiche Übersicht und können sich zudem ein pdf-Ddokument
+herunterladen.
 
 
+````{admonition} Mini-Übung
+:class: miniexercise
+Schreiben Sie ein Programm, mit dem der Flächeninhalt eines Rechtecks berechnet werden soll. Die beide Seitenlängen werden jeweils in den Variablen `laenge` und `breite` gespeichert (suchen Sie sich eigene Zahlen aus). Ausgegeben werden soll dann: "Der Flächeninhalt eines Rechtecks mit den Seiten XX und XX ist XX.", wobei XX durch die korrekten Zahlen ersetzt werden und der Flächeninhalt auf eine Nachkommastelle gerundet werden soll.
+````
 
+```python
+# Hier Ihr Code
 
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# Eingabe
+laenge = 5.5
+breite = 6.3
+
+# Verarbeitung
+flaeche = laenge * breite
+
+# Ausgabe 
+print(f'Der Flächeninhalt eines Rechtecks mit den Seiten {laenge} und {breite} ist {flaeche:.1f}.')
+```
+````

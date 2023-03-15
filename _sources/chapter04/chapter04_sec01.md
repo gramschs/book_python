@@ -1,142 +1,92 @@
 ---
 jupytext:
-  formats: ipynb,md:myst
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.5
 kernelspec:
-  display_name: Python 3 (ipykernel)
+  display_name: turtle
   language: python
   name: python3
 ---
 
-# Vergleiche und der boolesche Datentyp
+# 4.1 for-Schleifen mit Liste
 
-Viele Möglichkeiten unserer Gesellschaft stehen nur Volljährigen offen und sind
-damit an eine Altersangabe gebunden. Wenn jetzt ein Computersystem vorab prüfen
-soll, ob Volljährigkeit vorliegt oder nicht, dann brauchen wir einen einfachen
-Vergleich. Angenommen, wir würden das Alter der Benutzers oder der Benutzerin in
-der Variable `alter` speichern. Damit wäre ein simples Beispiel für eine
-einfache Bedingung der mathematische Ausdruck `alter < 18`. Der Wert der
-Variablen `alter` wird also mit der Zahl 18 verglichen. Dieser Vergleich ist
-entweder **wahr (True)** oder **falsch (False)**. Oder anders formuliert, ist
-diese Bedingung entweder erfüllt oder nicht erfüllt. 
+In der Praxis kommt es oft vor, dass wir von vornherein wissen, wie oft wir eine
+Handlung wiederholen wollen. Beispielsweise soll in einem Verein darüber
+abgestimmt werde, ob Anna oder Bob zukünftig die Kasse verwalten soll. Alle
+Vereinsmitglieder schreiben einen der beiden Namen auf einen Zettel und werfen
+ihn in die Wahlurne. Jetzt beginnt die Wiederholung. Charlie greift in die Urne,
+zieht einen Zettel heraus, liest den Namen vor und macht dann entweder bei Anna
+oder bei Bob einen Strich auf dem Flipboard. Solange Zettel in der Urne sind,
+wird diese Prozedur wiederholt. Wenn wir aber bereits vorher wissen, dass 12
+Vereinsmitglieder abgestimmt haben, so wird Charlie 12 x diese Prozedur
+wiederholen. In diesem Fall bietet sich die Umsetzung als sogenannte
+Zählschleife an.
 
-Um den Wahrheitswert einer Bedingung zu speichern, hat Python einen eigenen
-Datentyp, einen sogenannten booleschen Datentyp. Nach dem englischen Wort wird
-dieser Datentyp in der Informatik üblicherweise **Boolean** genannt. Das
-besondere an diesem Datentyp ist, dass eine Variable diesen Datentyps nur zwei
-verschiedene Werte annehmen kann, nämlich
-* True: Wahrheitswert ist wahr oder
-* False: Wahrheitswert ist falsch.
+In Python gibt es zwei Varianten von Zählschleifen. Zum einen die Zählschleife,
+bei der Elemente einer Liste abgearbeitet werden. Zum anderen die Zählschleife
+mit einem Zahlenbereich. In diesem Abschnitt behandeln wir Zählschleife mit
+einer Liste.
 
-Aber wie kann man dann überprüfen, welcher Datentyp in einer Variablen
-gespeichert ist? Dazu gibt es das Kommando `type`. Führen Sie die nächste
-Code-Zelle aus.
-
-```{code-cell} ipython3
-a = False
-type(a)
+```{admonition} Lernziele
+:class: hint
+* TODO
 ```
 
-## Vergleiche mit Zahlen
 
-Nachdem wir jetzt den Datentyp kennegelernt haben, mit dem Python das Ergebnis
-eines Vergleichs speichert, kommen wir nun zu dem Vergleich selbst.
+<!-- #region -->
+## Grammatik der for-Schleife mit Liste
 
-Zunächst beschäftigen wir uns mit mathematischen Vergleichen. In der Mathematik
-ist ein Vergleich ein Ausdruck mit zwei Argumenten und einem Vergleichsoperator
-in der Mitte. Die beiden Argumente können auch unterschiedliche Datentypen
-haben, dann muss der Vergleichsoperator aber sinnvoll für diese Datentypen
-definiert sein. Z.B. darf man einen Integer mit einem Float vergleichen 
+Die for-Schleife mit Liste hat folgende Syntax (= Grammatik einer Programmiersprache):
 
-`3 < 17.2`
-
-aber
-
-`3 < 'vier'`
-
-ist nicht sinnvoll und undefiniert. Es gibt die folgenden Vergleichsoperatoren
-in Python:
-* `<`   kleiner
-* `<=`  kleiner oder gleich
-* `>`   größer
-* `>=`  größer oder gleich
-* `==`  gleich
-* `!= ` ungleich
-
-Im interaktiven Modus von Python können wir leicht den Wahrheitsgehalt von Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:
-```{code-cell} ipython3
-x = 7
-```
-Jetzt probieren wir in den nachfolgenden Code-Zellen verschiedene Vergleichsoperatoren aus. Zur Erinnerung, 0 steht dabei für false (falsch) und 1 für wahr (true).
-
-Ist x genau gleich 15?
-```{code-cell} ipython3
-x == 15    
+```python3
+for element in liste:
+    anweisungsblock
 ```
 
-Ist x kleiner als 42?
-```{code-cell} ipython3
-x < 42
+Eine Schleife beginnt mit dem Schlüsselwort **for**. Danach kommt der Name der sogenannten **Schleifenvariable**, in diesem Fall also `element`. Als nächstes folgt wieder ein Schlüsselwort, nämlich **in** und zuletzt die Liste.
+
+Python muss wissen, welche Kommandos für jeden Schleifendurchgang ausgeführt werden sollen. Daher wird die Kopfzeile der Schleife mit einem Doppelpunkt `:` beendet. Danach werden alle Kommandos aufgelistet, die ausgeführt werden sollen. Damit Python weiß, wann es wieder mit dem normalen Programm weitergehen soll, müssen wir dem Python-Interpreter das Ende der Schleife signalisieren. In vielen Programmiersprachen wird das mit dem Schlüsselwort `end` gemacht oder es werden Klammern gesetzt. In Python wird stattdessen mit **Einrückung** gearbeitet. Alle Zeilen, die eingerückt sind, werden in der Schleife wiederholt.
+
+Probieren wir es mit einem einfachen Beispiel:
+
+
+<!-- #endregion -->
+
+```python
+for i in [2, 4, 6, 8, 10]:
+    print(i)
 ```
 
-Ist x genau 30?
-```{code-cell} ipython3
-x == 30
-```
 
-Ist x ungleich 42?
-```{code-cell} ipython3
-x != 42 
-```
+Es werden nacheinander die Elemente der Menge `[2, 4, 6, 8, 10]` auf dem Bildschirm ausgegeben.
 
-Ist x größer als 30?
-```{code-cell} ipython3
-x > 30
-```
+Meistens geht es nicht darum, nur etwas einzeln anzuzeigen, sondern die Elemente der Menge zu verarbeiten. Im nächsten Beispiel soll jedes Element der Liste `[4,5,7,11,21` um 2 erhöht und dann angezeigt werden.
 
-Ist x größer gleich 30?
-```{code-cell} ipython3
-x >= 30
+```python
+for zahl in [4,5,7,11,21]:
+    zahl2 = zahl + 2
+    print(zahl2)
+
+print('Ich bin fertig!')
 ```
 
 ```{admonition} Mini-Übung
-:class: miniexercise
-Wählen Sie sich eine Zahl. Testen Sie anschließend:
-* Ist Ihre Zahl kleiner gleich 5?
-* Ist Ihre Zahl genau 17?
-* Ist Ihre Zahl nicht gleich 17?
-* Ist Ihre Zahl positiv?
-* Ist Ihre Zahl kleiner als -17.7?
-```
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-
+Schreiben Sie eine For-Schleife, die die klassischen Schulnoten "sehr gut"  bis "ungenügend" einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
 ```
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
-# Eingabe: Wahl meiner Zahl
-x = 33
+# Erzeugung Liste
+noten_liste = ["sehr gut","gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"];
 
-# kleiner gleich 5?
-x <= 5
-
-# genau gleich 17?
-x == 17
-
-# nicht gleich 17?
-x != 17
-
-# positiv?
-x > 0
-
-# kleiner als -17.7?
-x < -17.7
+# Ausgabe 
+for note in noten_liste:
+    print(note)
 ```
 ````
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+

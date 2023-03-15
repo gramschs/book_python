@@ -2,6 +2,7 @@
 jupytext:
   cell_metadata_filter: -all
   formats: ipynb,md:myst
+  main_language: python
   text_representation:
     extension: .md
     format_name: myst
@@ -15,78 +16,35 @@ kernelspec:
 
 # Übungen
 
-```{admonition} Übung 
+```{admonition} Übung 1.1
 :class: miniexercise
-Zu welchen Datentypen gehören folgende Ausdrücke? Stellen Sie erst eine
-Vermutung auf. Überprüfen Sie dann Ihre Vermutung mit der Funktion `type()`.
-
-* 6 + 2
-* 6 + 2.5
-* 6 / 2
-* 6 / 2.0
-* 4 - 2
-* 3 * 'Katze'
+Installieren Sie Anaconda und Python auf Ihrem PC oder Laptop. Starten Sie die
+Software Jupyter Notebook. Laden Sie dieses Jupyter Notebook herunter und öffnen
+Sie es mit der Software Jupyter Notebook.
 ```
 
-```{admonition} Übung 
-:class: miniexercise
-Schreiben Sie einen Witze-Generator. Zuerst soll nach einem Namen gefragt
-werden. Danach soll der Python-Interpreter den folgenden Witz ausgeben, wobei an
-der Stelle XXX der abgefragte Name stehen soll.
-
-<hr>
-
-Fritz macht 
-
-XXX 
-
-einen Kaffee. Es bleibt heißes Wasser übrig. Fritz fragt: "Was
-soll ich mit dem restlichen Wasser machen?" 
-
-XXX 
-
-antwortet: "Einfrieren! Heißes Wasser kann man immer gebrauchen."
-
-<hr> 
-
-Testen Sie Ihr Programm mit verschiedenen Namen.
+```{admonition} Übung 1.2
+:class: miniexercise 
+Benutzen Sie Python als Taschenrechner. Fügen Sie dazu diesem Jupyter Notebook eine Code-Zelle hinzu und lassen Sie die folgenden Ausdrücke berechnen:
+* 2 + 3
+* 2 - 3
+* 4 * 5
+* 16 / 4
+* 16 / 3
+* 5**2
 ```
 
-```{admonition} Übungen
+```{admonition} Übung 1.3
 :class: miniexercise
-Schreiben Sie ein Python-Programm, das eine Länge vom Benutzer abfragt, die in
-Zoll gemessen wurde. Das Programm soll dann diese Länge in Zentimeter umrechnen
-und ausgeben. Tipp: 1 Zoll sind 2.54 cm.
-
-Testen Sie Ihr Programm beispielsweise mit der Länge 10 Zoll, die 25.4
-Zentimetern entspricht. 
+In der vorhergehenden Aufgabe haben Sie den Ausdruck `5**2` berechnen lassen.
+Fügen Sie jetzt eine Markdown-Zelle ein. Schreiben Sie auf, was Ihrer Vermutung
+nach der `**`-Operator für eine Bedeutung hat. Recherchieren Sie anschließend im
+Internet, nach der Bedeutung und vergleichen Sie Ihre Antwort mit der Recherche.
+Fügen Sie die Internetseite als URL in die Markdown-Zelle ein.
 ```
 
-```{admonition} Übung 
+```{admonition} Übung 1.4
 :class: miniexercise
-Schreiben Sie ein Programm, das zuerst nach einer Zahl fragt und danach nach
-einer zweiten Zahl fragt. Anschließend gibt das Programm aus, welche beiden
-Zahlen gewählt wurden und was das Produkt der beiden Zahlen ist.
-
-Testen Sie anschließend Ihr Programm mit kleinen 1x1-Aufgaben, die Sie sich
-selbst ausdenken.
+Speichern Sie das bearbeitete Jupyter Notebook unter einem anderen Namen ab.
+Exportieren Sie es als pdf-Dokument (über HTML).
 ```
-
-
-```{admonition} Übung
-:class: miniexercise
-Schreiben Sie ein Programm, dass die Kosten für eine Party ermittelt. Zuerst
-soll der Python-Interpreter nach der Raummiete fragen, dann nach den
-Gesamtkosten des Pizzadienstes und den Gesamtkosten des Getränkelieferanten.
-Lassen Sie dann die Gesamtkosten der Party ausgeben und zuletzt die Kosten pro
-Gast.
-
-Testen Sie anschließend, ob Ihr Programm für die folgenden Angaben korrekt rechnet:
-* Eingabe Raummiete: 230 EUR
-* Eingabe Pizzadienst: 168 EUR
-* Eingabe Getränkelieferant: 80 EUR
-* Eingabe Anzahl Gäste: 12
-* Ausgabe: Gesamtkosten für die Party: 478 EUR
-* Ausgabe: Kosten pro Gast: 39.833333 EUR
-```
-

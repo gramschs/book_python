@@ -2,6 +2,7 @@
 jupytext:
   cell_metadata_filter: -all
   formats: ipynb,md:myst
+  main_language: python
   text_representation:
     extension: .md
     format_name: myst
@@ -13,185 +14,111 @@ kernelspec:
   name: python3
 ---
 
-# Eingabe (input) und Zuweisungsoperator
+# 1.3 Installation und Start von Python
 
-Ohne die Eingabe von Daten sind Apps wertlos. In diesem Kapitel beschäftigen wir
-uns daher einer direkten Eingabemöglichkeit in Python und lernen dazu die
-input()-Funktion kennen. Um die input()-Funktion korrekt zu nutzen beschäftigen
-wir uns mit Umwandlungen von Datentypen in andere Datentypen. Zuletzt gehen wir
-noch auf die Stolperfalle ein, dass der Zuweisungsoperator `=` nicht die
-mathematische Gleichheit überprüft.
+Python wird in der Regel mit dem Betriebsystem ausgeliefert. Für diese Vorlesung
+benötigen wir jedoch Python-Erweiterungen, die standardmäßig nicht installiert
+werden. Daher benutzen wir in dieser Vorlesung **Anaconda**, eine sehr bekannte
+Python-Distribution.
 
-## Lernziele
+Eine Python-Distribution ist eine Sammlung von Python-Softwarekomponenten. Sie
+umfasst den Python-Interpreter selbst, aber auch zusätzliche Bibliotheken und
+Frameworks, Entwicklungs- und Debugging-Tools sowie Anwendungen, die für die
+Entwicklung mit Python nützlich sein können.
 
-```{admonition} Lernziele
-:class: hint
-* Sie können das **EVA-Prinzip** erklären.
-* Sie können mit der **input()**-Funktion die Eingabe eines Benutzers abfragen
-  und weiter verarbeiten.
-* Sie können per **Typecasting** Datentypen in andere Datentypen umwandeln.
-* Sie wissen, dass das Zeichen `=` ein **Zuweisungsoperator** ist und nicht für
-  die mathematische Gleichheit zweier Ausdrücke steht.
++++
+
+## Warum Anaconda?
+
+Anaconda ist eine Python-Distribution, die von der Firma Anaconda, Inc.
+entwickelt wird. Sie ist eine kostenlose Open-Source-Plattform, die es
+Python-Entwickler:innen ermöglicht, Python, R und andere Programmiersprachen
+sowie zahlreiche Bibliotheken und Tools auf einfache Weise zu installieren, zu
+verwalten und zu verwenden.
+
+Die Distribution enthält eine Reihe von nützlichen Paketen und Bibliotheken für
+wissenschaftliche Berechnungen, Datenanalyse, maschinelles Lernen und andere
+Anwendungen. Sie ist sowohl für Einsteiger als auch für fortgeschrittene
+Entwickler geeignet und bietet eine benutzerfreundliche Benutzeroberfläche, um
+Python und seine Bibliotheken zu verwalten und zu verwenden.
+
+## Installation Anaconda und Start Jupyter Notebook
+
+Hier ist eine Schritt-für-Schritt-Anleitung zum Installieren von Python mit der
+Distribution Anaconda für Windows und MacOS:
+
+1. Öffnen Sie die offizielle Anaconda-Website unter
+   https://www.anaconda.com/products/individual und laden Sie die neueste
+   Version von Anaconda für Ihr Betriebssystem herunter.
+2. Führen Sie die Installationsdatei aus und folgen Sie den Anweisungen auf dem
+   Bildschirm. Wählen Sie ggf. ein freies Installationsverzeichnis und stellen
+   Sie sicher, dass die Option "Add Anaconda to my PATH environment variable"
+   aktiviert ist.
+3. Öffnen Sie nach der Installation das Anaconda-Navigator-Programm, das im
+   Startmenü oder Launchpad verfügbar sein sollte.
+4. Um ein neues Jupyter Notebook für die Python-Programmierung zu erstellen,
+   klicken Sie auf "Home" im Anaconda-Navigator und wählen "Jupyter Notebook"
+   aus. Klicken Sie auf "New" und wählen Sie "Python 3 (ipykernel)" aus, um ein
+   neues Notebook zu erstellen.
+5. Sie können jetzt Python-Code in dem Notebook schreiben und ausführen. Wenn
+   Sie zusätzliche Pakete benötigen, können Sie diese über den
+   "Environments"-Tab im Anaconda-Navigator installieren.
+
+```{figure} pics/fig_chap00_sec03_start_jb.png
+:name: fig_chap00_sec03_jb
+
+Startansicht der Software Jupyter Notebook
 ```
 
-## Ein- und Ausgabe sowie das EVA-Prinzip
+## Was sind Jupyter Notebooks?
 
-Grundlegend geht es bei der Datenverarbeitung und vor allem bei der
-wissenschaftlichen Programmierung darum, Daten zu verarbeiten, wie der Name ja
-schon sagt sagt ;-) Selbst bei einer Smartphone-App zum Daddeln müssen Daten
-verarbeitet werden, nämlich das aktuelle Level, wo hat die Spielerin oder der
-Spieler gerade das Display berührt, was passiert in dem Spiel als nächstes usw.
-Grundsätzlich folgen datenverarbeitende Systeme dem sogenannten **EVA-Prinzip**.
+Jupyter Notebooks sind eine webbasierte interaktive Entwicklungsumgebung, die es
+ermöglicht, Text, Python-Code, Bilder und Videos in einem einzigen interaktiven
+Notizbuch zusammenzuführen. Sie sind eine der bekanntesten Anwendungen in der
+Data Science-Community und werden oft zur Datenanalyse, maschinellem Lernen und
+Visualisierung eingesetzt.
 
-Wikipedia beschreibt das [EVA-Prinzip](https://de.wikipedia.org/wiki/EVA-Prinzip) wie folgt:
-> "...Das EVA-Prinzip beschreibt ein Grundprinzip der Datenverarbeitung. Die
-  Abkürzung leitet sich aus den ersten Buchstaben der Begriffe Eingabe,
-  Verarbeitung und Ausgabe ab (englisch IPO model: input-process-output). Diese
-  drei Begriffe beschreiben die Reihenfolge, in der Daten verarbeitet werden."
+Ein Jupyter Notebook besteht aus einer Abfolge von Zellen, in denen Text, Code
+und Visualisierungen eingebettet werden. Die Zellen können entweder in der
+Programmiersprache Python oder in einer Reihe anderer Programmiersprachen wie R,
+Julia oder JavaScript geschrieben werden.
 
-Typische Eingabe-Operationen sind dabei
+Die Kombination von Text, Code und Visualisierungen macht Jupyter Notebooks zu
+einem leistungsstarken Werkzeug für die Datenanalyse. Daten können direkt in den
+Notebooks eingegeben werden, und Ergebnisse können sofort dargestellt werden,
+ohne dass externe Anwendungen gestartet werden müssen.
 
-* die Eingabe von Zeichen über eine Tastatur oder
-* das Lesen von Dateien, die auf der Festplatte oder einem Speichermedium gespeichert sind.
+Jupyter Notebooks können auch einfach geteilt werden, indem sie als Datei oder
+über das Internet veröffentlicht werden. Das ermöglicht es Entwicklern und Data
+Scientists, ihre Arbeit schnell und einfach zu teilen und zu präsentieren, was
+für Zusammenarbeit und Teamarbeit in der Datenanalyse und im maschinellen Lernen
+unerlässlich ist.
 
-Häufige Ausgabe-Operationen sind
+Insgesamt sind Jupyter Notebooks ein wichtiges Werkzeug für die Datenanalyse und
+-visualisierung und haben dazu beigetragen, den Prozess der Analyse und
+Zusammenarbeit für Data Scientists und Entwickler zu vereinfachen.
 
-* die Wiedergabe von Texten, Zahlen oder Bildern auf dem Bildschirm oder
-* das Schreiben von Dateien auf Festplatte oder Speichermedium.
+In dieser Vorlesung liegt der Fokus zwar nicht auf der Datenanalyse, aber die
+Mischung aus Text, Code und Visualisierungen machen Jupyter Notebooks auch zu
+einem sehr geeigneten Werkzeug, um das Programmieren selbst zu erlernen. In
+kurzen Texten können Programmierkonstrukte erläutert werden, um dann in einer
+Code-Zelle ausgeführt zu werden.
 
-Mit der Ausgabe haben wir uns schon beschäftigt. Als nächstes geht es um die
-Eingabe.
+```{figure} pics/fig_chap00_sec03_zellen.png
+:name: fig_chap00_sec03_zellen
 
-## Die input()-Funktion
-
-Die einfachste und häufigste **Eingabe** erfolgt über die Tastatur. Die Funktion
-`input()` stoppt das laufende Skript und erwartet eine Eingabe über die
-Tastatur. Dabei wird der Text angezeigt, der zwischen den einfachen Hochkommata
-steht. Bei Python wird die Eingabe als String interpretiert. Die Eingabe wird
-mit der Taste Return/Enter abgeschlossen. Probieren wir es aus:
-
-```python
-input('Bitte geben Sie Ihren Namen ein: ')
+Screenshot eines Jupyter Notebooks mit Text, Python-Code und Ergebnisse des ausgeführten Python-Codes
 ```
 
-Wir haben zwar jetzt auf Aufforderung einen Namen eingegeben, aber verarbeitet
-wurde diese Eingabe nicht. Es passierte einfach nichts. Um die Eingabe
-verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab. 
+Eine Zelle kann entweder eine Text-Zelle (siehe Fig. 3, Schritt 1) oder eine
+Code-Zelle (siehe Fig. 3, Schritt 2) sein. In Text-Zellen wird die sogenannte
+[Markdown-Formatierung](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html)
+benutzt. Um beispielsweise ein Wort fettgedruckt anzuzeigen, werden zwei
+Sternchen ** vor und hinter das Wort gesetzt, also ich bin `**fett**` gedruckt. 
 
-```python
-x = input('Bitte geben Sie Ihren Namen ein: ');
-```
-
-Jetzt haben wir zwar den Namen in einer Variable gespeichert, aber so richtig
-passiert ist immer noch nichts. Jetzt wäre es noch schön, wenn wir dem Benutzer
-oder der Benutzerin unseres Skripts begrüßen können und einen entsprechenden Text
-anzeigen lassen können. Dazu verwenden wir erneut die `print()`-Funktion. 
-
-```python
-print('Hallo')
-```
-Jetzt können wir alles zusammensetzen.
-
-```python
-x = input('Bitte geben Sie Ihren Namen ein: ');
-print('Hallo')
-print(x)
-```
-
-Kopieren Sie diesen Code in die nächste Code-Zelle und probieren Sie es aus!
-
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-
-```
-
-In dem folgenden Video sehen Sie weitere Erläuterungen zur input()-Funktion.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## Umwandlung von Datentypen
-
-Die input()-Funktion hat eine Einschränkung. Bei ihrer Einführung wurde in einem
-Nebensatz erwähnt, dass die input()-Funktion Strings zurückgibt. Das ist eine
-häufige Fehlerquelle in der Programmierung, wenn man nach Zahlen fragt.
-Glücklicherweise gibt es dafür eine einfache Lösung. Wir können einen String in
-einen Integer oder Float verwandeln, indem wir die Funktionen `int()` oder
-`float()` benutzen. Wenn also nach einer Zahl per input()-Funktion gefrgt werden
-soll wie beispielsweise dem Alter einer Person, so lautet der Code wie folgt:
-
-```python
-x = int( input('Wie alt sind Sie?) )
-print('Alter: ')
-print(x)
-```
-
-Und soll es eine Fließkommazahl werden, so können wir folgendermaßen den
-Python-Interpreter fragen lassen:
-
-```python
-x = int( input('Wie groß sind Sie gemessen in Metern?) )
-print('Größe in m')
-print(x)
-```
-
-Probieren Sie gerne beide Varianten in der nächsten Code-Zelle aus.
-
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-
-```
-
-Wenn Sie mehr über das sogenannte Type-Casting erfahren wollen, finden Sie
-Details in diesem Video:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u_ECGvn1Z2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-## Zuweisungsoperator
-
-Wichtig ist, dass das `=` in der Informatik eine andere Bedeutung hat als in der
-Mathematik. = meint nicht das Gleichheitszeichen, sondern den sogenannten
-**Zuweisungsoperator**. Das ist in der Programmierung ein Kommando, das eine
-Schublade befüllt oder technischer ausgedrückt, ein Objekt einer Variable
-zuweist.
-
-Sehr häufig findet man Code wie
-
-```python
-x = x + 1
-```
-
-Würden wir dies als Gleichung lesen, wie wir es aus der Mathematik gewohnt sind,
-also $x = x+1$, könnten wir $x$ auf beiden Seiten subtrahieren und erhalten
-$0=1$. Wir wissen, dass dies nicht wahr ist, also stimmt hier etwas nicht.
-
-In Python sind "Gleichungen" keine mathematischen Gleichungen, sondern
-Zuweisungen. "=" ist kein Gleichheitszeichen im mathematischen Sinne, sondern
-eine Zuweisung. Die Zuweisung muss immer in der folgenden Weise zweistufig
-gelesen werden:
-
-1. Berechne den Wert auf der rechten Seite (also $x+1$).
-2. Weise den Wert auf der rechten Seite dem auf der linken Seite stehenden
-   Variablennamen zu.
-
-Wir probieren eine solche Zuweisung in der folgenden Code-Zelle aus und benutzen
-auch gleich die `print()`-Funktion, um den Wert der Variablen `x` ausgeben zu
-lassen:
-
-```{code-cell} ipython3
-x = 4     
-x = x + 1
-print(x)
-```
-
-Der Zuweisungsoperator ist äußerst wichtig in der Python-Programmierung. Daher
-empfehle ich Ihnen folgende Video.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## Zusammenfassung und Ausblick
-
-Das EVA-Prinzip ist das grundlegende Prinzip der Datenverarbeitung. Mit den
-Python-Funktionen input() und print() und den Datentypen Integer, Float uund
-String haben wir bereits die wichtigsten Bausteine zusammen, um kleine
-Python-Programme zu schreiben.
+In Code-Zellen (siehe Fig. 3, Schritt 2 oder 3) können Sie direkt Python-Code
+eingeben. Sie erkennen eine Code-Zelle daran, dass "In" für Input daneben steht.
+Eine Code-Zelle wird ausgeführt, indem Sie auf "Run" klicken (siehe Fig. 3,
+Schritt 4). Danach erscheint die Ausgabe, die der Python-Interpreter ggf.
+produziert (siehe Fig. 3, Schritt 5). Wird ein Ergebnis berechnet oder ein Wert
+zurückgegeben, so ist das an der Bezeichnung "Out" wie Output erkennbar.

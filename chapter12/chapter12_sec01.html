@@ -1,0 +1,1186 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Simulink &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="12. MATLAB und Simulink" href="chapter12_sec00.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python für Studierende der Ingenieurwissenschaften</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zum interaktiven Vorlesungsskript Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen Programmierung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter01/chapter01_sec00.html">
+   1. Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec01.html">
+     1.1 Hardware und Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec02.html">
+     1.2 Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec03.html">
+     1.3 Installation und Start von Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter02/chapter02_sec00.html">
+   2. Eingabe, Verarbeitung und Ausgabe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec01.html">
+     2.1 Taschenrechner und Ausgabe (print)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec02.html">
+     2.2 Datentypen und Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec03.html">
+     2.3 Eingabe (input) und Zuweisungsoperator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter03/chapter03_sec00.html">
+   3. Listen und Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec01.html">
+     3.1 Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec02.html">
+     3.2 Das Modul Math
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec03.html">
+     3.3 Das Modul Turtle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
+   4. Zählschleifen (for) und Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+     4.1 for-Schleifen mit Liste
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+     4.2 for-Schleifen mit range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+     4.3 Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter05/chapter05_sec00.html">
+   5. Programmverzweigung (if - elif - else)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec01.html">
+     5.1 Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec02.html">
+     5.2 Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec03.html">
+     5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter06/chapter06_sec00.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec01.html">
+     6.1 Funktionen selbst schreiben
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec02.html">
+     6.2 Funktionen mit Argument und Rückgabe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec03.html">
+     6.3 Globale und lokale Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter07/chapter07_sec00.html">
+   7. Schleifen mit Bedingung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec01.html">
+     7.1 Digitale Logik: und, oder, nicht
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec02.html">
+     while
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec03.html">
+     7.3 Zufallszahlen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter08/chapter08_sec00.html">
+   8. Programmentwicklung und Objektorientierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter08/chapter08_sec01.html">
+     8.1 Debugging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter08/chapter08_sec02.html">
+     8.2 GUI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter08/chapter08_sec03.html">
+     8.3 Objektorientierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter08/chapter08_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter09/chapter09_sec00.html">
+   9. Pandas anstatt Excel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec01.html">
+     9.1 Series und DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec02.html">
+     9.2 Arbeiten mit Tabellendaten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec03.html">
+     9.3 Statistik mit Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter10/chapter10_sec00.html">
+   10. Visualisierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec01.html">
+     10.1 Das Modul NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec02.html">
+     10.2 Linien-, Balken- und Streudiagramme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec03.html">
+     10.3 Visualisierung von DataFrames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter11/chapter11_sec00.html">
+   11. Messwerte und Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec01.html">
+     11.1 Theorie Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec02.html">
+     11.2 Lineare Regression mit polyfit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec03.html">
+     11.3 Polynomiale Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter12_sec00.html">
+   12. MATLAB und Simulink
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Simulink
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter12/chapter12_sec01.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/gramschs/book_python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter12/chapter12_sec01.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/chapter12/chapter12_sec01.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einfuhrung-und-lernziele">
+   Einführung und Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-modellierung">
+   Was ist Modellierung?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-von-simulink">
+   Start von Simulink
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quellen-und-senken">
+   Quellen und Senken
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#layout-und-speichern">
+   Layout und Speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-erste-simulation">
+   Die erste Simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabeblocke-bzw-sources">
+   Eingabeblöcke bzw. Sources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ausgabeblocke-oder-sinks">
+   Ausgabeblöcke oder Sinks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verarbeitungsblocke">
+   Verarbeitungsblöcke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiel">
+   Beispiel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Simulink</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einfuhrung-und-lernziele">
+   Einführung und Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-modellierung">
+   Was ist Modellierung?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-von-simulink">
+   Start von Simulink
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quellen-und-senken">
+   Quellen und Senken
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#layout-und-speichern">
+   Layout und Speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-erste-simulation">
+   Die erste Simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabeblocke-bzw-sources">
+   Eingabeblöcke bzw. Sources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ausgabeblocke-oder-sinks">
+   Ausgabeblöcke oder Sinks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verarbeitungsblocke">
+   Verarbeitungsblöcke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiel">
+   Beispiel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="simulink">
+<h1>Simulink<a class="headerlink" href="#simulink" title="Permalink to this headline">#</a></h1>
+<section id="einfuhrung-und-lernziele">
+<h2>Einführung und Lernziele<a class="headerlink" href="#einfuhrung-und-lernziele" title="Permalink to this headline">#</a></h2>
+<p>MATLAB bietet neben einer Reihe von Toolboxen auch eine Zusatzsoftware an, die
+es Ingenieur:innen erleichtert, technische Systeme zu modellieren. Diese
+Software heißt Simulink und benötigt MATLAB. Detaillierte Informationen zu
+Simulink finden Sie auf der Produktseite von
+<a class="reference external" href="https://de.mathworks.com/products/simulink.html">MATLAB</a>. Die Besonderheit von
+Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt.</p>
+<p>In diesem Kapitel werden wir uns zunächst mit der Modellierung technischer
+Systeme beschäftigen und uns dann die ersten grundlegenden Schritte in Simulink
+erarbeiten.</p>
+</section>
+<section id="was-ist-modellierung">
+<h2>Was ist Modellierung?<a class="headerlink" href="#was-ist-modellierung" title="Permalink to this headline">#</a></h2>
+<p>Das erste Modell, das Sie vermutlich hatten, war eine Modelleisenbahn oder eine
+Playmobil-Spiellandschaft – vielleicht haben Sie aber auch aus Legosteinen ein
+Auto gebaut? Ein Modell beschreibt die reale Welt in vereinfachter und meist
+verkleinerter Form. In den Natur- und Ingenieurwissenschaften sind Modelle die
+Grundlage des wissenschaftlichen Arbeitens.</p>
+<p><strong>Modellierung</strong> beschreibt nun den Prozess, ein geeignetes Modell zu finden, um
+eine bestimmte Fragestellung zu beantworten. Normalerweise ist kein Modell so
+komplex wie die Wirklichkeit. Die Modellierer:innen müssen sich also
+entscheiden, welche Details wichtig sind und welche sie weglassen können.
+Beispielsweise werden sehr häufig bei Spielzeugfiguren die einzelnen Finger
+weggelassen. Aber auch bei Experimenten müssen solche Entscheidungen getroffen
+werden. Einmal angenommen, ich möchte wissen, wie lange ich mein Eis in die
+Sonne legen kann, bevor es komplett geschmolzen ist. Dann kann ich die
+Sonneneinstrahlung oder die Temperatur messen, verschiedene Eissorten nehmen und
+die Zeitdauer messen, bis wann das Eis geschmolzen ist. Aber es ist nicht
+sinnvoll zusätzlich die Information zu erheben, wie viele Eisbären am Nordpol
+gerade einen Fisch gefangen haben.</p>
+<p>In den Ingenieurwissenschaften versuchen die Forscher:innen dann aus den Daten
+oder den vermuteten Zusammenhängen eine Funktion zu basteln, die hilft die
+Zusammenhänge zu verstehen oder Prognosen zu treffen. Wenn diese Modellierung
+rein datenbasiert erfolgt, so benutzen wir Methoden der Statistik oder des
+maschinellen Lernens. Wenn stattdessen oder zusätzlich prinzipielle
+Zusammenhänge einfließen, verwenden wir Gleichungen oder
+Differentialgleichungen. Bei Simulink legen wir den Schwerpunkt der Modellierung
+auf die Differentialgleichungen.</p>
+</section>
+<section id="start-von-simulink">
+<h2>Start von Simulink<a class="headerlink" href="#start-von-simulink" title="Permalink to this headline">#</a></h2>
+<p>Da Simulink ein Zusatzprogramm von MATLAB ist, öffnen Sie zuerst MATLAB. Es kann
+sein, dass Sie Simulink erst nachinstallieren müssen. Wenn Simulink installiert
+ist, finden Sie im Hauptmenü von MATLAB einen Button mit Simulink. Starten Sie
+Simulink, legen Sie ein <code class="docutils literal notranslate"><span class="pre">Blank</span> <span class="pre">Model</span></code> an und öffnen Sie die Bibliothek mit den
+Blockdiagrammen. Die folgende Animationen zeigt Ihnen die notwendigen Schritte.</p>
+<p><img alt="Screencast Start von Simulink" src="../_images/part10_start_simulink.gif" /></p>
+</section>
+<section id="quellen-und-senken">
+<h2>Quellen und Senken<a class="headerlink" href="#quellen-und-senken" title="Permalink to this headline">#</a></h2>
+<p>Als ein erstes einfaches Beispiel simulieren wir ein System, das durch die
+mathematische Funktion <span class="math notranslate nohighlight">\(f(x)=2\sin(x)\)</span> beschrieben wird. Damit betrachten wir
+zwar noch keine Differentialgleichung, sondern nur eine einfache
+Funktionsgleichung, aber können schon die wichtigsten Prinzipienin Simulink
+kennenlernen, nämlich die grafische Block-Modellierung. In Simulink wird jede
+Eingabe, jeder Verarbeitungsschritt und jede Ausgabe durch einen Block
+bveschrieben. Diese Blöcke können dann seriell (hintereinander) oder parallel
+zusammengebaut werden. Die Idee hinter den zusammengeschalteten Blöcken erinnert
+an einen Fluss und seine Nebenflüsse, der letztendlich ins Meer fließt wie
+beispielsweise der Rhein. Nur wird in Simulink nicht Wasser transportiert,
+sondern Informationen.</p>
+<p><img alt="Bild des Rhein" src="../_images/part10_rhein_small.jpg" /></p>
+<p>Die Quelle an Informationen wird in Simulink <strong>Source</strong>, so wie der englische
+Begriff. Die weiteren Informationen wie beispielsweise Anfangswerte oder
+Randbedingungen sind ebenfalls Quellen, also Sources und fließen wie die
+Nebenflüsse in den Hauptfluss. Der Abfluss, die Senke oder das Spülbecken heißen
+auf Englisch <strong>Sink</strong>. Unter den Sink-Blöcken finden Sie also das Ergebnis, die
+Ausgabe der Simulation. Wir wollen uns nun das Beispiel</p>
+<div class="math notranslate nohighlight">
+\[f(x)=2\sin(x)\]</div>
+<p>in Simulink ansehen. Die Quelle/Source ist die rechte Seite, genauer gesagt die
+Sinusfunktion <span class="math notranslate nohighlight">\(\sin(x)\)</span>. Die Quelle wird noch verstärkt. Verstärker heißt auf
+Englisch Gain, also wird noch ein Gain-Block zur Verstärkung dazgeschaltet. Am
+Ende mündet alles in eine Visualisierung. Der entsprechende Sink-Block Scope
+zeigt das Ergebnis <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>Die Blöcke werden in der Bibliothek gesucht. Zur leichteren Navigation dient die
+linke Seitenleiste der Library. Dort wird Sink oder Source ausgewählt, um den
+Eingabeblock Sinus oder den Ausgabeblock Scope auszuwählen. Der Verstärkerblock
+Gain befindet sich bei den häufig genutzten Blöcken. Am einfachsten ist es, die
+Blöcke anzuklicken und auf den Arbeitsplatz zu ziehen, wie in dem folgenden
+Screencast gezeigt wird.</p>
+<p><img alt="Screencast erstes Projekt in Simulink" src="../_images/part10_simulink_firstproject.gif" /></p>
+</section>
+<section id="layout-und-speichern">
+<h2>Layout und Speichern<a class="headerlink" href="#layout-und-speichern" title="Permalink to this headline">#</a></h2>
+<p>Die genaue Anordnung der Blöcke ist nicht wichtig, da durch das Routing
+(Verbinden der Blöcke) die Fließrichtung definiert ist. Dennoch empfiehlt es
+sich, das Layout übersichtlich zu halten. Der folgende Screencast zeigt, wie die
+Blöcke mit der Maus verschoben werden, bis das Verbindungssignal horizontal
+ausgerichtet ist. Danach wird gezeigt, wie das erste Projekt unter dem Namen
+“firstProject” gespeichert wird.</p>
+<p><img alt="Screencast Speichern" src="../_images/part10_simulink_saveing.gif" /></p>
+</section>
+<section id="die-erste-simulation">
+<h2>Die erste Simulation<a class="headerlink" href="#die-erste-simulation" title="Permalink to this headline">#</a></h2>
+<p>Nun können wir die Simulation laufen lassen. Im folgenden Screencast werden zwei
+Möglichkeiten gezeigt. Zum einen wird direkt aus dem Hautmenü die Simulation
+gestartet. Anschließend wird durch Doppelklick auf den Scope-Block die
+Visualisierung eingeblendet. Zum anderen kann auch der Scope-Block zuerst
+geöffnet werden und von dort aus die Simulation gestartet werden. Zuletzt wird
+mnoch gezeigt, wie die Verdopplung des Verstärkungsfaktors von 1 auf 2 dazu
+führt, dass die Sinusfunktion Funktionswerte zwischen -2 und 2 annimmt.</p>
+<p><img alt="Screencast Visualisierung mit dem Scope-Block" src="../_images/part10_simulink_scope.gif" /></p>
+</section>
+<section id="eingabeblocke-bzw-sources">
+<h2>Eingabeblöcke bzw. Sources<a class="headerlink" href="#eingabeblocke-bzw-sources" title="Permalink to this headline">#</a></h2>
+<p>In der
+<a class="reference external" href="https://de.mathworks.com/help/simulink/sources.html">Simulink-Dokumentation</a>
+finden Sie eine Übersicht der möglichen Eingabeblöcke für Simulink. Die folgende
+Liste und vor allem die Beschreibungen sind von dort übernommen. Eingabeblöcke,
+die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.</p>
+<ul class="simple">
+<li><p><em>Band-Limited White Noise</em>: Dieser Block erzeugt normalverteilte Zufallszahlen
+(weißes Rauschen).</p></li>
+<li><p><em>Chirp Signal</em>: Dieser Block erzeugt eine Sinusfunktion, bei der die Frequenz
+ansteigt.</p></li>
+<li><p><em>Clock</em>: Dieser Block gibt bei jedem Simulationsschritt die aktuelle
+Simulationszeit aus. Dieser Block ist nützlich für andere Blöcke, die die
+Simulationszeit benötigen.</p></li>
+<li><p><strong>Constant</strong>: Diser Block erzeugt ein reelles oder komplexes konstantes
+Signal. Verwenden Sie diesen Block, um einen konstanten Signaleingang
+bereitzustellen.</p></li>
+<li><p><em>Counter Free-Running</em>: Dieser Block zählt hoch und beginnt wieder bei 0,
+nachdem der Wert <span class="math notranslate nohighlight">\(2^N+1\)</span> überschritten wurde, dabei ist <span class="math notranslate nohighlight">\(N\)</span> die Anzahl der
+Bits</p></li>
+<li><p><em>Counter Limited</em>: Dieser Block zählt hoch und beginnt wieder bei 0, nachdem
+ein vorher festgelegter maximaler Wert überschritten wurde</p></li>
+<li><p><em>Digital Clock</em>: Dieser Block gibt ebenfalls die Simuationszeit aus, aber nur
+zu bestimmten Zeiten.</p></li>
+<li><p><em>Enumerated Constant</em>: Dieser Block erzeugt eine Aufzählungskonstante.</p></li>
+<li><p><strong>From File</strong>: Mit diesem Block laden Sie Daten aus einer MAT-Datei in das
+Simulink-Modell.</p></li>
+<li><p><em>From Spreadsheet</em>: Dieser Block liest Daten aus einer Tabelle.</p></li>
+<li><p><strong>From Workspace</strong>: Dieser Block lädt Signaldaten aus dem MATLAB-Workspace in
+das Simulink-Modell.</p></li>
+<li><p><em>Ground</em>: Dieser Block erdet nicht verbundene Eingangssignale.</p></li>
+<li><p><em>In Bus Element</em>: Dieser Block ermöglicht die Auswahl von Eingaben eines
+externen Ports.</p></li>
+<li><p><em>Inport</em>: Inport-Blöcke verbinden Signale von außerhalb eines Systems mit dem
+System.</p></li>
+<li><p><em>Pulse Generator</em>: Der Impulsgeneratorblock erzeugt in regelmäßigen Abständen
+Rechteckimpulse.</p></li>
+<li><p><strong>Ramp</strong>: Der Rampenblock erzeugt ein Signal, das zu einem bestimmten
+Zeitpunkt und mit einem bestimmten Wert beginnt und sich mit einer bestimmten
+Rate ändert.</p></li>
+<li><p><em>Random Number</em>: Der Zufallszahlenblock erzeugt normalverteilte Zufallszahlen.</p></li>
+<li><p><em>Repeating Sequence</em>: Dieser Block gibt ein periodisches skalares Signal mit
+einer Wellenform aus, die Sie mit den Parametern Zeitwerte und Ausgangswerte
+festlegen.</p></li>
+<li><p><em>Repeating Sequence Interpolated</em>: Dieser Block gibt eine periodische
+zeitdiskrete Folge aus, die auf den Werten der Parameter “Vector of time
+values” und “Vector of output values” basiert.</p></li>
+<li><p><em>Repeating Sequence Stair</em>: Dieser Block gibt eine Treppenfolge aus und
+wiederholt sie.</p></li>
+<li><p><strong>Signal Builder</strong>: Mit diesem Block können Sie austauschbare Gruppen von
+stückweise linearen Signalquellen erstellen und in einem Modell verwenden.</p></li>
+<li><p><strong>Signal Editor</strong>: Dieser Block dient der Anzeige, Erstellung und Bearbeitung
+von austauschbaren Szenarien.</p></li>
+<li><p><em>Signal Generator</em>:  Dieser Block kann eine der folgenden vier verschiedenen
+Wellenformen erzeugen: Sinus, Rechteck, Sägezahn und Zufallsgenerator.</p></li>
+<li><p><em>Sine Wave</em>: Dieser Block gibt eine sinusförmige Wellenform aus.</p></li>
+<li><p><strong>Step</strong>: Dieser Block erzeugt eine Treppenfunktion mit zwei Stufen, der zu
+einer spezifizierten Zeit wechselt.</p></li>
+<li><p><em>Uniform Random Number</em>: Dieser Block erzeugt gleichmäßig verteilte
+Zufallszahlen in einem von Ihnen festgelegtem Intervall.</p></li>
+<li><p><em>Waveform Generator</em>: Dieser Block erzeugt wellenförmige Signale.</p></li>
+</ul>
+</section>
+<section id="ausgabeblocke-oder-sinks">
+<h2>Ausgabeblöcke oder Sinks<a class="headerlink" href="#ausgabeblocke-oder-sinks" title="Permalink to this headline">#</a></h2>
+<p>Mit den folgenden Blöcken erzeugen Sie Ausgaben oder exportieren Ergebnisse.
+Diese Liste enststammt der
+<a class="reference external" href="https://de.mathworks.com/help/simulink/sinks.html">Simulink-Dokumentation</a>.</p>
+<ul class="simple">
+<li><p><em>Display</em>: Dieser Block zeigt den Wert der Eingangsdaten an.</p></li>
+<li><p><em>Floating Scope and Scope Viewer</em>: Der Simulink® Scope Viewer und der Floating
+Scope Block zeigen Zeitsignale abhängig von der Simulationszeit an. Der Scope
+Viewer und der Floating Scope-Block haben die gleiche Funktionalität wie der
+Scope-Block, sind aber nicht mit Signalleitungen verbunden.</p></li>
+<li><p><em>Out Bus Element</em>: Dieser Block kombiniert die Funktionalität eines
+Outport-Blocks und eines Bus-Creator-Blocks.</p></li>
+<li><p><em>Outport</em>: Diese Blöcke verbinden Signale aus einem System mit einem Ziel
+außerhalb des Systems.</p></li>
+<li><p><strong>Record, XY Graph</strong>: Sie können sowohl den Block Record oder den Block XY
+Graph verwenden, um Daten im Workspace, in einer Datei oder sowohl im
+Workspace als auch in einer Datei aufzuzeichnen.</p></li>
+<li><p><strong>Scope</strong>:	Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.</p></li>
+<li><p><em>Stop Simulation</em>: Dieser Block stoppt die Simulation, wenn der Eingang
+ungleich Null ist.</p></li>
+<li><p><em>Terminator</em>:	Dieser Block wird verwendet, um Blöcke zu kappen, deren
+Ausgangsports nicht mit anderen Blöcken verbunden sind.</p></li>
+<li><p><em>To File</em>: Der To File-Block schreibt Eingangssignaldaten in eine MAT-Datei.T</p></li>
+<li><p><em>To Workspace</em>: Dieser Block protokolliert die an seinem Eingangsport
+angeschlossenen Daten im Workspace.</p></li>
+</ul>
+</section>
+<section id="verarbeitungsblocke">
+<h2>Verarbeitungsblöcke<a class="headerlink" href="#verarbeitungsblocke" title="Permalink to this headline">#</a></h2>
+<p>Um die Eingabesignale zu verarbeiten, gibt es ebenfalls eine lange Liste von
+Blöcken, siehe
+<a class="reference external" href="https://de.mathworks.com/help/simulink/block-libraries.html">Simulink-Dokumentation</a>.
+Ein erstes Beispiel haben wir mit dem Gain-Block schon kennengelernt, der ein
+Eingangssignal verstärkt und mathematisch gesehen eine multiplikativer Faktor
+ist. Die Liste der Verbeitungsblöcke ist zu lang, um sie hier eingehend zu
+behandeln. Wichtig sind jedoch die <a class="reference external" href="https://de.mathworks.com/help/simulink/math-operations.html">mathematischen
+Blöcke</a>
+zusammengefasst in dem Modul <strong>Maths Blocks</strong> und die sogenannten
+<a class="reference external" href="https://de.mathworks.com/help/simulink/continuous.html">kontinuierlichen
+Blöcke</a> aus dem Modul
+<strong>Continuous Blocks</strong>, das Ableitungen und Löser von Differentialgleichungen
+beinhaltet.</p>
+<p>In dem folgenden Simulink modellieren wir die 1. Ableitung der Sinus-Funktion.
+Dazu wählen wir einen Sine-Block als Eingangssignal, verarbeiten diesen durch
+den Derivative-Block (Derivative ist das englische Wort für Ableitung) und geben
+anschließend das Ergebnis über den Scope-Block aus. In Simulink sieht das Modell
+dann folgendermaßen aus:</p>
+<p><img alt="Screenshot des Simulink-Modells zu Ableitungen" src="../_images/part10_derivative_project.png" /></p>
+<p>Wenn Sie sich nun das Ergebnis der Ableitung durch Doppelklick auf den
+Scope-Block ansehen, haben Sie folgende Ansicht:</p>
+<p><img alt="Screenshot Scope-Block" src="../_images/part10_derivative_scope.png" /></p>
+<p>Auf der einen Seite zeigt das Liniendiagramm die Kosinus-Funktion wie erwartet.
+Auf der anderen Seite scheint es gerade am Anfang bei <span class="math notranslate nohighlight">\(t=0\)</span> eine Unstimmigkeit
+zu geben. Woher kommt das?</p>
+<p>MATLAB und Simulink sind numerische Softwaretools. Im Gegensatz zu
+Computer-Algebra-Systemen wie WolframAlpha oder GeoGebra können sie <em>nicht</em> die
+Lösung einer Gleichung oder eine Ableitung symbolisch berechnen. Stattdessen
+ermitteln sie Lösung der mathematischen Probleme <strong>numerisch</strong>.
+Computer-Algebra-Systeme gehen wie Menschen cor. Das Symbol “hoch 2” wird
+manipuliert “hoch 1” (Regel: beim Ableiten einer Potenz wird es eins weniger)
+und als Vorfaktor davor geschrieben. Weil Symbole manipuliert werden, heißt
+diese Lösungsmethode <strong>symbolisch</strong>. Stattdessen erstellt MATLAB eine
+Wertetabelle der Funktion, die abgeleitet werden soll. Danach geht MATLAB diese
+Tabelle Stück für Stück durch und bildet zwischen dem ersten und dem zweiten
+Punkt das Steigungsdreieck, dann zwischen dem zweiten und dem dritten Punkt und
+immer so weiter. Danach zeichnet MATLAB bzw. Simulink die Liste der Steigungen
+der Steigungsdreiecke und hat damit eine Näherung der 1. Ableitung gefunden.</p>
+</section>
+<section id="beispiel">
+<h2>Beispiel<a class="headerlink" href="#beispiel" title="Permalink to this headline">#</a></h2>
+<p>Nun schauen wir uns noch am Beispiel der linearen Differentialgleichung 1. Ordnung</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}(t)=-2x+1, \quad x(0)=0,\]</div>
+<p>an, wie in Simulink die numerische Lösung der DGL konstruiert wird.</p>
+<p>Dazu werden nacheinander die Blöcke</p>
+<ul class="simple">
+<li><p>Sources <span class="math notranslate nohighlight">\(\rightarrow\)</span> Constant</p></li>
+<li><p>Math Operations <span class="math notranslate nohighlight">\(\rightarrow\)</span> Add</p></li>
+<li><p>Continuous <span class="math notranslate nohighlight">\(\rightarrow\)</span> Integrator</p></li>
+<li><p>Commonly Used Blocks <span class="math notranslate nohighlight">\(\rightarrow\)</span> Gain</p></li>
+<li><p>Sinks <span class="math notranslate nohighlight">\(\rightarrow\)</span> Scope</p></li>
+</ul>
+<p>in den Arbeitsbereich gezogen und wie in den folgenden Screenshots rot markiert
+verbunden. Zuletzt ermöglicht der Start der Simulation eine Visualisierung der
+numerischen Lösung über die Scope-Ausgabe.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">assets/part10_simulink_ode.html</div></div>
+</div>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
+<p>Dieser kurze Einstieg in Simulink kann nur der Anfang sein. Wenn Sie Simulink
+vertiefen wollen, bietet Mathworks zahlreiche englischsprachige
+<a class="reference external" href="https://de.mathworks.com/products/simulink.html">Tutorials</a> an.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gramschs/book_python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter12_sec00.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">12. MATLAB und Simulink</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Simone Gramsch<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

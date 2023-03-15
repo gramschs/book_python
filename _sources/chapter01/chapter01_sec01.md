@@ -2,6 +2,7 @@
 jupytext:
   cell_metadata_filter: -all
   formats: ipynb,md:myst
+  main_language: python
   text_representation:
     extension: .md
     format_name: myst
@@ -13,226 +14,175 @@ kernelspec:
   name: python3
 ---
 
-# Taschenrechner und Ausgabe (print)
+# 1.1 Hardware und Software
 
-Ein Klassiker beim Erlernen einer neuen Programmiersprache ist das
-Hallo-Welt-Programm. Dabei geht es darum, den Text "Hallo Welt" auf dem
-Bildschirm anzeigen zu lassen. Klingt simpel, aber je nach Programmiersprache
-kann auch diese einfache Aufgabe einen hohen Aufwand bedeuten. Bevor wir das
-Hallo-Welt-Programm programmieren, nutzen wir erst Python als Taschenrechner, um
-auch den Umgang mit dem Jupyter Notebook noch weiter zu festigen.
+Bevor es mit der Programmierung in Python losgeht, machen wir uns erstmal mit
+ein paar grundlegenden Begriffen der Informatik vertraut. In diesem Kapitel geht
+es zunächst darum, was alles zu Hardware und was zu Software zählt. Darüber
+hinaus lernen wir die Einteilung der Computerprogramme in die verschiedenen
+Software-Kategorien wie Betriebssystem, Anwendungssoftware und Bibliothek
+kennen.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: hint
-* Sie kennen die grundlegenden Rechenoperationen in Python.
-* Sie wissen, was ein **Kommentar** ist.
-* Sie können in Python einen Kommentar mit **#** schreiben.
-* Sie können mit **print** das Ergebnis einer Rechnung anzeigen lassen.
-* Sie wissen, dass Texte mit einfachen `'` oder doppelten `"` Anführungszeichen
-  zu Beginn des Textes und zum Ende begrenzt werden. 
+* Sie kennen die Definition von **Hardware** und **Software**. 
+* Sie können häufige Hardware-Komponenten benennen und den verschiedenen
+  Kategorien (Eingabe, Verarbeitung, Ausgabe, Speicher) zuordnen.
+* Sie kennen die verschiedenen Software-Kategorien **Betriebssystem**,
+  **Anwendungssoftware** und **Bibliothek** und können Beispiele für jede
+  Kategorie benennen.
 ```
 
-## Python als Taschenrechner
+## Hardware
 
-Bevor wir in die Programmierung einsteigen, benutzen wir Python erst einmal als
-Taschenrechner. Im Folgenden sehen Sie, wie die Grundrechenarten in Python
-verwendet werden:
-
-Addition:
-
-```{code-cell} ipython3
-2+3
-```
-
-Subtraktion:
-
-```{code-cell} ipython3
-2-3
-```
-
-Multiplikation:
-
-```{code-cell} ipython3
-2*4
-```
-
-Division:
-
-```{code-cell} ipython3
-8/2
-```
-
-Potenzierung:
-
-```{code-cell} ipython3
-3**2
-```
-
-In diesem interaktiven Vorlesungsskript können Sie Python direkt ausprobieren.
-Es ist ein großer Vorteil der Jupyter Notebooks, dass in einem Dokument
-Text-Zellen und Code-Zellen gemischt werden können. Diesen Vorteil nutze ich
-aus, um Ihnen den Einstieg in die Programmierung zu erleichtern. Die
-Vorlesungsskripte sind so aufgebaut, dass ich Ihnen erst ein
-Programmierkonstrukt erläutere und Sie dann die Möglichkeit haben, das neu
-erlernte Wissen gleich in Python auszuprobieren.
-
-Die obigen Zellen sind Code-Zellen. Sie können daher direkt in einer der oberen
-Code-Zellen beispielsweise die Additionsaufgabe `2+3` in `2+5` abändern, um sich
-mit den Python-Kommandos vertraut zu machen. Wenn Sie dieses Skript als Jupyter
-Notebook durcharbeiten, können Sie direkt mit dem Cursor in eine der obigen
-Code-Zellen klicken und den dort stehenden Code abändern. Wenn Sie dieses Skript
-Online lesen, klicken Sie bitte zuerst auf das Raketensymbol oben rechts und auf
-Live Code, um eine interaktive Code-Zelle erzeugen zu lassen. Beim ersten Start
-des Live Codes kann es etwas länger dauern. Sie erkennen, dass die Code-Zelle
-interaktiv geworden ist, wenn die Knöpfe `run`, `restart` und `restart & run
-all` erschienen sind. Dann geben Sie Ihren Code ein und drücken auf run.
-
-Technisch gesehen ist es einfacher, wenn Code-Zellen schon existieren. Im
-Jupyter Notebook selbst lässt sich eine Code-Zelle einfach einfügen. In der
-Online-Variante dieses Vorlesungsskriptes besteht diese Möglichkeit
-bedauerlicherweise nicht. Daher werde ich für kleine Mini-Übungen zwischendurch
-Code-Zellen einfügen, die aber noch keinen Code enthalten, sondern nur als
-Platzhalter dienen sollen. Damit Sie solche Platzhalter-Code-Zellen erkennen,
-beschrifte ich diese Zellen mit einem Kommentar. Das sieht dann folgendermaßen
-aus:
-
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-```
-
-Alles was nach dem Hashtag # kommt, wird von Python ignoriert. Die sogenannten
-**Kommentare**, die durch das Hashtag-Zeichen eingeleitet werden, sind für uns
-Menschen bestimmt.
-
-Selbstverständlich beherrscht Python auch Klammerregeln. Probieren Sie es aus!
-Geben Sie in die Code-Zelle Ihren Code ein und lassen Sie die Code-Zelle
-ausführen. Die Lösungen zu den Mini-Übungen finden Sie im
-[Online-Skript](https://gramschs.github.io/book_python/intro.html) an der
-Stelle, an der sich die jeweilige Mini-Übung befindet. 
+Computer, mobile Geräte wie Smartphones oder auch technische Systeme wie eine
+Anlagensteuerung bestehen aus zwei Komponenten: Hardware und Software. Dabei
+bezeichnen wir mit **Hardware** alle physischen Kompenten eines Systems, also
+die elektronischen und mechanischen Bauteile. Die **Software** dahingegen
+umfasst die Programme und deren Dokumentation sowie Daten. Man könnte auch
+sagen, dass Hardware die materiellen Teile eines Computersystems bezeichnet,
+während Software die nicht-materiellen Teile zusammenfasst. 
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen. 
+Bitte schauen Sie sich jetzt kurz um. Welche Hardware fällt Ihnen auf, wenn Sie
+den Blick schweifen lassen? Nennen Sie mindestens fünf Hardware-Komponenten.
 ```
 
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-```
-
-````{admonition} Lösung
+```{admonition} Lösung
 :class: minisolution, toggle
-```python
-3 * (7-10) + 5
-```
-````
-
-## Ausgaben mit print
-
-Jetzt lernen Sie das erste Python-Kommando kennen, um dem Computer eine
-Anweisung zu geben. Bei den obigen Rechenaufgaben wurde automatisch das Ergebnis
-der Rechnung angezeigt, sobald die Code-Zelle ausgeführt wurde. Dies ist eine
-Besonderheit der Jupyter Notebooks, würde aber in einem normalen Python-Programm
-nicht funktionieren. Auch möchte man vielleicht ein Zwischenergebnis anzeigen
-lassen. Die interaktive Ausgabe der Jupyter Notebooks zeigt jedoch immer nur den
-Inhalt der letzten Zeile an. 
-
-Für die Anzeige von Rechenergebnissen oder Texten gibt es in Python die
-**print()**-Funktion. Die print()-Funktion in Python gibt den Wert oder die
-Werte aus, die ihr als Argumente übergeben werden. Das kann zum Beispiel eine
-Zahl sein oder eine Rechenaufgabe, wie in dem folgenden Beispiel.
-
-```{code-cell} ipython3
-print(2)
-print(3+3)
+Beispiele für Hardware sind:
+* Prozessor (CPU = central processing unit = zentrale Recheneinheit zur Verarbeitung von Befehlen)
+* Grafikprozessor (GPU = graphics processing unit = auf die Berechnung von Grafiken spezialisierter Prozessor)
+* interner Speicher: 
+    * RAM (Random Access Memory: Arbeitsspeicher für den Prozessor)
+    * ROM (Read Only Memory: dient zum Start des Computers)
+* externer Speicher: 
+    * magnetische Speichermedien: Festplatte (HDD)
+    * optische Speichermedien: CD, DVD, BlueRay
+    * Flash-Speicher: SSD, USB-Stick, SD-Karte 
+* Eingabegeräte wie Tastatur, Maus, Touchpad, Webcam, Mikrofon, Scanner, Grafiktablett
+* Ausgabegeräte wie Monitor, Display, Lautsprecher, Beamer, Drucker
 ```
 
-In der ersten Zeile ist das Argument für die print()-Funktion die Zahl 2. Das
-Argument wird in runde Klammern hinter den Funktionsnamen `print` geschrieben.
-Ein Argument ist sozusagen der Input, der an die print()-Funktion übergeben
-wird, damit der Python-Interpreter weiß, welcher Wert auf dem Bildschirm
-angezeigt werden soll. 
+Bei Wikipedia können Sie den Begriff
+[Hardware](https://de.wikipedia.org/wiki/Hardware) noch einmal nachlesen.
+Wikibooks bietet auch ein passendes Buch zu
+[Computerhardware](https://de.wikibooks.org/wiki/Computerhardware) an.
 
-Das zweite Beispiel in der zweiten Zeile funktioniert genauso. Nur wird diesmal
-eine komplette Rechnung als Argument an die print()-Funktion übergeben. In dem
-Fall rechnet der Python-Interpreter erst den Wert der Rechnung, also `3+3=6` aus
-und übergibt dann die `6` an die print()-Funktion. Die print()-Funktion wiederum
-zeigt dann die `6` am Bildschirm an. 
+## Software 
 
-Insgesamt zeigt daher der Python-Interpreter erst eine 2 und dann in der
-nächsten Zeile eine 6 an.
+Software ist eine Zusammenfassung der nicht-materiellen Komponenten eines
+Computersystems. Wikipedia listet hier gleich drei verschiedene ISO-Normen zur
+Definition von [Software](https://de.wikipedia.org/wiki/Software) auf.
+
+Wir verwenden im Folgenden die weitreichendste Definition von Software, wonach
+Software
+
+* Programme
+* Dokumentation und
+* Daten
+
+umfasst.
+
+Die letzteren beiden Begriffe sind am einfachsten zu erklären. Mit
+**Dokumentation** sind Bedienungsanleitungen und Handbücher gemeint, aber auch
+die technische Dokumentation, die für andere Informatiker:innen gedacht ist und
+in die Benutzer:innen eines Computersystems in der Regel keinen Einblick haben.
+**Daten** wiederum sind alle Beobachtungen oder Messungen. In der
+digitalisierten Form werden sie normalerweise durch Zahlenwerte repräsentiert.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Lassen Sie Python den Term $3:4$ berechnen und geben Sie das Ergebnis mit der print()-Funktion aus. 
+Nennen Sie eine Software. Gibt es eine Dokumentation dazu? Welche Daten werden mit dieser Software verarbeitet?
 ```
-
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-```
-
-````{admonition} Lösung
+```{admonition} Lösung
 :class: minisolution, toggle
-```python
-print(3/4)
+Bekannte Softwaretools zur Erstellung von Folien für eine Präsentation sind
+* Microsoft Powerpoint (vor allem für das Windows-Betriebssystem, auch MacOS)
+* LibreOffice Impress (kostenlos, alle Betriebssysteme, insbesondere auch Linux)
+* Keynote (MacOS)
+
+Die Dokumentation der jeweiligen Programme findet sich im Internet:
+* [Dokumentation Powerpoint](https://support.microsoft.com/de-de/powerpoint), 
+* [Dokumentation LibreOffice Impress](https://de.libreoffice.org/discover/impress/), 
+* [Dokumentation Keynote](https://support.apple.com/de-de/keynote)). 
+
+Da LibreOffice ein Open-Source-Projekt von Freiwilligen ist, können Sie den Programmcode und die technische Dokumentation auf den [LibreOffice → Developer](https://www.libreoffice.org/community/developers/) Seiten einsehen.
+
+Die Daten in allen drei Präsentationsprogrammen sind natürlich die Folien mit den Texten, Bildern, Videos und Animationen.
+
+Die Präsentationsprogramme gehören übrigens zur Kategorie der Anwendungssoftware.
 ```
-````
 
-Python kann mit der print()-Funktion jedoch nicht nur Zahlen ausgeben, sondern
-auch Texte. Ein erster Versuch, einfach den Text als Argument der
-print()-Funktion zu übergeben, scheitert leider, wie das nächste Beispiel zeigt.
+Was die Programme anbelangt, gibt es mehrere Kategorien, die im nächsten
+Abschnitt erklärt werden.
 
-```{code-cell} ipython3
-print(Hallo)
-```
+## Betriebssystem, Anwendungssoftware und Bibliothek
 
-Es erscheint eine Fehlermeldung mit dem Fehler: `NameError: name 'Hallo' is not
-defined`. Der Grund hierfür ist, dass der Python-Interpreter versucht, eine
-sogenannte Variable oder ein Python-Kommando mit dem Namen `Hallo` zu finden. Da
-es aber keines von beiden gibt, kommt die Fehlermeldung, dass `Hallo` nicht
-definiert wurde. Um den Text ausgeben zu lassen, werden um den Text einfache
-oder doppelte Anführungszeichen gesetzt, wie in dem folgenden Beispiel.
+Die wichtigste Software eines jeden Computersystems ist das **Betriebssystem**.
+Das Betriebssystem umfasst alle Computerprogramme, die notwendig sind, um
+überhaupt den Computer zu betreiben, zu starten oder zu benutzen. Das
+[Betriebssystem](https://de.wikipedia.org/wiki/Betriebssystem) hat laut
+Wikipedia folgende Aufgaben: 
 
-```{code-cell} ipython3
-print('Hallo')
-```
+> ... Benutzerkommunikation; Laden, Ausführen, Unterbrechen und Beenden von
+  Programmen; Verwaltung und Zuteilung der Prozessorzeit; Verwaltung des
+  internen Speicherplatzes für Anwendungen; Verwaltung und Betrieb der
+  angeschlossenen Geräte; Schutzfunktionen z. B. durch Zugriffsbeschränkungen."
+
+Bekannte Betriebssysteme für Computer sind Linux, MacOS und Windows. Bei
+Smartphones und Tablets kommen häufig die Betriebssysteme Android und iOS zum
+Einsatz.
+
+Viele Menschen denken bei Software zuerst an **Anwendungssoftware** (siehe
+[Wikipedia → Anwendungssoftware](https://de.wikipedia.org/wiki/Anwendungssoftware)).
+Das sind Computerprogramme, die einen speziellen Zweck erfüllen sollen und den
+Benutzer oder die Benutzerin bei Aufgaben unterstützen. Im Englischen werden
+solche auch als **Application** (= Anwendung, Verwendung,
+Einsatz) bezeichnet. 2008 hat die Firma Apple den "iOS App Store" gegründet, um
+Anwendungssoftware für das iPhone zu vertreiben. Seitdem wird immer häufiger
+auch im deutschen Sprachraum der Name Application oder App für verwendet.
+Vielfach steht "Application" eher für PC-Anwendungssoftware und der Kurzname
+"App" für Anwendungssoftware für Tablets und Smartphones.  
+
+Für Softwareentwickler sind — neben der Programmiersprache und den
+Software-Entwicklungswerkzeugen — vor allem Bibiotheken wichtig. Eine
+**Bibliothek** (siehe
+[Wikipedia → Bibliothek](https://de.wikipedia.org/wiki/Programmbibliothek)) ist eine
+Sammlung von Programmen, die zwar einen bestimmten Zweck haben, aber
+eigenständig nicht lauffähig werden. Diese Programmbibiotheken werden von
+Programmiererinnen und Programmieren benutzt, um nicht ständig neu das Rad
+erfinden zu müssen. Beispielsweise würde es den Software-Entwicklungsprozess
+verlangsamen, wenn jedesmal neu ein Programm geschrieben werden müsste, dass die
+Wurzel einer Zahl berechnet oder ein Ergebnis einer Berechnung in eine Datei auf
+die Festplatte schreibt. Diese Spezialaufgaben wurden bereits von anderen
+Software-Entwickler:innen implementiert und werden dann über die Bibliotheken
+der Gemeinschaft zur Verfügung gestellt.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Probieren Sie aus was passiert, wenn Sie die einfachen Anführungszeichen `'`
-durch doppelte Anführungszeichen `"` ersetzen. Lassen Sie den Text Hallo Welt
-ausgeben :-)
+Recherchieren Sie nach Python-Bibliotheken im Internet. Nennen Sie drei
+Bibliotheken zusammen mit ihrem Einsatzzweck.
 ```
-
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-```
-
-````{admonition} Lösung
+```{admonition} Lösung
 :class: minisolution, toggle
-```python
-print("Hallo Welt")
+Bekannte Bibliotheken sind
+* PyTorch, Scikit-Learn, TensorFlow: maschinelles Lernen
+* NumPy: numerisches Python (Matrizen, lineare Gleichungssysteme, ...)
+* Pandas: Tabellenverarbeitung für Python
+* Matplotlib: Visualisierung von Daten
+* SciPy: wissenschaftliches Rechnen mit Python (Regression, Interpolation, Differentialgleichungen)
 ```
-````
-
-In Python sind beide Arten von Anführungszeichen erlaubt und werden manchmal
-auch gebraucht. Wenn beispielsweise ein Apostroph in einem Text gebraucht wird,
-müssen die äußeren Anführungszeichen die doppelten Anführungszeichen sein. Der
-Python-Interpreter erwartet nämlich immer ein Paar von Anführungszeichen, damit
-eindeutig ist, wo der Text beginnt und wo er endet.
-
-Die print()-Funktion kann noch einiges mehr, als wir in dieser Einführung
-gesehen haben. Wir werden in einem späteren Kapitel im Zusammenhang mit den
-sogenannten f-Strings nochmal darauf zurückkommen.
 
 ## Weiteres Lernmaterial 
 
-In dem folgenden Video wird zunächst die Installation von Python (Anaconda)
-gezeigt. Im Gegensatz zu unserer Vorlesung wird aber die Entwickungsumgebung
-PyCharm anstatt Jupyter Notebooks genutzt. Daher können Sie gerne den ersten
-Teil des Videos überspringen und ab ca. Minute 9 einsteigen.
+In dem folgenden Video wird die grundlegende Funktionsweise eines Computers erklärt.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oxXAb8IikHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LRx1HdmbS_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+Im nächsten Video werden die Erklärungen detaillierter fortgesetzt.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c5u3aP69KYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

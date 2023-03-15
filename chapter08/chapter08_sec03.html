@@ -1,0 +1,1381 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8.3 Objektorientierung &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Übungen" href="chapter08_sec04.html" />
+    <link rel="prev" title="8.2 GUI" href="chapter08_sec02.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/book_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python für Studierende der Ingenieurwissenschaften</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zum interaktiven Vorlesungsskript Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen Programmierung
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter01/chapter01_sec00.html">
+   1. Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec01.html">
+     1.1 Hardware und Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec02.html">
+     1.2 Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec03.html">
+     1.3 Installation und Start von Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter01/chapter01_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter02/chapter02_sec00.html">
+   2. Eingabe, Verarbeitung und Ausgabe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec01.html">
+     2.1 Taschenrechner und Ausgabe (print)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec02.html">
+     2.2 Datentypen und Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec03.html">
+     2.3 Eingabe (input) und Zuweisungsoperator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter02/chapter02_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter03/chapter03_sec00.html">
+   3. Listen und Module
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec01.html">
+     3.1 Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec02.html">
+     3.2 Das Modul Math
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec03.html">
+     3.3 Das Modul Turtle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter03/chapter03_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
+   4. Zählschleifen (for) und Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+     4.1 for-Schleifen mit Liste
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+     4.2 for-Schleifen mit range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+     4.3 Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter04/chapter04_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter05/chapter05_sec00.html">
+   5. Programmverzweigung (if - elif - else)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec01.html">
+     5.1 Vergleiche und der boolesche Datentyp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec02.html">
+     5.2 Programmverzweigungen mit einen Zweig: if
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec03.html">
+     5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/chapter05_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter06/chapter06_sec00.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec01.html">
+     6.1 Funktionen selbst schreiben
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec02.html">
+     6.2 Funktionen mit Argument und Rückgabe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec03.html">
+     6.3 Globale und lokale Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter06/chapter06_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter07/chapter07_sec00.html">
+   7. Schleifen mit Bedingung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec01.html">
+     7.1 Digitale Logik: und, oder, nicht
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec02.html">
+     while
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec03.html">
+     7.3 Zufallszahlen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter07/chapter07_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chapter08_sec00.html">
+   8. Programmentwicklung und Objektorientierung
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter08_sec01.html">
+     8.1 Debugging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter08_sec02.html">
+     8.2 GUI
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.3 Objektorientierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter08_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Anwendungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter09/chapter09_sec00.html">
+   9. Pandas anstatt Excel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec01.html">
+     9.1 Series und DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec02.html">
+     9.2 Arbeiten mit Tabellendaten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec03.html">
+     9.3 Statistik mit Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter09/chapter09_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter10/chapter10_sec00.html">
+   10. Visualisierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec01.html">
+     10.1 Das Modul NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec02.html">
+     10.2 Linien-, Balken- und Streudiagramme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec03.html">
+     10.3 Visualisierung von DataFrames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter10/chapter10_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter11/chapter11_sec00.html">
+   11. Messwerte und Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec01.html">
+     11.1 Theorie Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec02.html">
+     11.2 Lineare Regression mit polyfit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec03.html">
+     11.3 Polynomiale Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter11/chapter11_sec04.html">
+     Übungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter12/chapter12_sec00.html">
+   12. MATLAB und Simulink
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter12/chapter12_sec01.html">
+     Simulink
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec03.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/gramschs/book_python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapter08/chapter08_sec03.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/chapter08/chapter08_sec03.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-1-lesen">
+   Aufgabe 8.1 Lesen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-objektorientierung">
+   8.1 Was ist Objektorientierung?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-2-video">
+   Aufgabe 8.2 Video
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klassen-definieren-attribute">
+   8.2 Klassen definieren - Attribute
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aufgabe-8-3-video">
+     Aufgabe 8.3 Video
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-4">
+   Aufgabe 8.4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-5-video">
+   Aufgabe 8.5 Video
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klassen-definieren-methoden">
+   8.3 Klassen definieren - Methoden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-6">
+   Aufgabe 8.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-7-video">
+   Aufgabe 8.7 Video
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-8">
+   Aufgabe 8.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-9">
+   Aufgabe 8.9
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>8.3 Objektorientierung</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-1-lesen">
+   Aufgabe 8.1 Lesen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-objektorientierung">
+   8.1 Was ist Objektorientierung?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-2-video">
+   Aufgabe 8.2 Video
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klassen-definieren-attribute">
+   8.2 Klassen definieren - Attribute
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aufgabe-8-3-video">
+     Aufgabe 8.3 Video
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-4">
+   Aufgabe 8.4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-5-video">
+   Aufgabe 8.5 Video
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klassen-definieren-methoden">
+   8.3 Klassen definieren - Methoden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-6">
+   Aufgabe 8.6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-7-video">
+   Aufgabe 8.7 Video
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-8">
+   Aufgabe 8.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-8-9">
+   Aufgabe 8.9
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="objektorientierung">
+<h1>8.3 Objektorientierung<a class="headerlink" href="#objektorientierung" title="Permalink to this headline">#</a></h1>
+<p>In den letzten Wochen haben wir uns die Grundlagen der Programmierung
+erarbeitet:</p>
+<ul class="simple">
+<li><p>Ein- und Ausgabe (input, print)</p></li>
+<li><p>Kontrollstrukturen (if - elif - else)</p></li>
+<li><p>Schleifen (for, while)</p></li>
+<li><p>Funktionen.</p></li>
+</ul>
+<p>In einigen Programmiersprachen wie beispielsweise C hätten wir damit auch alle
+Sprachelement kennengelernt. Diese Programmierung nennt man <strong>prozedurale
+Programmierung</strong>. Python gehört jedoch zu den objektorientierten
+Programmiersprachen, so dass wir uns diese Woche dem Thema Objektorientierung
+widmen.</p>
+<ul class="simple">
+<li><p>Kapitel 8.1: Was ist Objektorientierung?</p></li>
+<li><p>Kapitel 8.2: Klassen definieren - Attribute</p></li>
+<li><p>Kapitel 8.3: Klassen definieren - Methoden</p></li>
+</ul>
+<section id="aufgabe-8-1-lesen">
+<h2>Aufgabe 8.1 Lesen<a class="headerlink" href="#aufgabe-8-1-lesen" title="Permalink to this headline">#</a></h2>
+<p>Lesen Sie bitte als erstes die folgenden Kapitel im Buch “Python” von Kalista:</p>
+<ul class="simple">
+<li><p>Kapitel 5.1 Was ist Objektorientierung?</p></li>
+<li><p>Kapitel 5.2 Eine einfache Klasse definieren</p></li>
+</ul>
+</section>
+<section id="was-ist-objektorientierung">
+<h2>8.1 Was ist Objektorientierung?<a class="headerlink" href="#was-ist-objektorientierung" title="Permalink to this headline">#</a></h2>
+<p>Bei der bisherigen prozeduralen Programmierweise haben wir Funktionen und Daten
+getrennt. Die Daten werden in Variablen gespeichert. Funktionen funktionieren
+nach dem EVA-Prinzip. In der Regel erwartet eine Funktion eine Eingabe von
+Daten, verarbeitet diese Daten und gibt Daten zurück.</p>
+<p>Angenommen, wir wollten ein Programm zur Verwaltung von Lottoscheinen schreiben.
+Zu einem Lottoschein wollen wir Name, Adresse und die angekreuzten Zahlen
+speichern. Dann müssten wir mit unserem bisherigen Wissen folgende Variablen pro
+Lottoschein einführen:</p>
+<ul class="simple">
+<li><p>vorname</p></li>
+<li><p>nachname</p></li>
+<li><p>strasse</p></li>
+<li><p>postleitzahl</p></li>
+<li><p>stadt</p></li>
+<li><p>liste_mit_sechs_zahlen</p></li>
+</ul>
+<p>Wenn jetzt viele Spielerinnen und Spieler Lotto spielen wollen, wie gehen wir
+jetzt mit den Daten um? Legen wir eine Liste für die Vornamen und eine Liste für
+die Nachnamen usw. an? Und wenn jetzt der 17. Eintrag in der Liste mit den sechs
+angekreuzten Lottozahlen sechs Richtige hat, suchen wir dann den 17. Eintrag in
+der Liste mit den Vornamen und den 17. Eintrag in der Liste mit den Nachnamen
+usw.? Umständlich…</p>
+<p>Die Idee der objektorientierten Programmierung ist, für solche Szenarien
+<strong>Objekte</strong> einzuführen. Ein Objekt fasst verschiedene Eigenschaften wie hier
+Vorname, Nachname, Straße, usw. zu einem Objekt Lottoschein zusammen. In der
+Informatik wird eine Eigenschaft eines Objekts <strong>Attribut</strong> genannt.</p>
+<p>Damit hätten wir erst einmal nur einen neuen Datentyp. Ein Objekt macht noch
+mehr aus, denn zu dem neuen Datentyp kommen noch Funktionen dazu, die die
+Verwaltung des Objektes erleichtern. Funktionen, die zu einem Objekt gehören,
+nennt man <strong>Methoden</strong>.</p>
+</section>
+<section id="aufgabe-8-2-video">
+<h2>Aufgabe 8.2 Video<a class="headerlink" href="#aufgabe-8-2-video" title="Permalink to this headline">#</a></h2>
+<p>Schauen Sie sich Video “Python Tutorial deutsch [21/24] - Objektorientierung
+(Konzept)” an (ca. 6:35 min), siehe
+<a class="reference external" href="https://www.youtube.com/watch?v=46yolPy-2VQ&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=21">https://www.youtube.com/watch?v=46yolPy-2VQ&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=21</a>
+.</p>
+<p>Im Folgenden sehen Sie, wie ein Objekt in Python definiert wird. Die
+Implementierung erfolgt als sogenannte <strong>Klasse</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Beispiel</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">nachname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        
+    <span class="k">def</span> <span class="nf">schreibe_vorname_nachname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">schreibe_nachname_vorname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="p">)</span>
+   
+</pre></div>
+</div>
+<p>Jetzt erzeugen wir ein Objekt vom Typ <code class="docutils literal notranslate"><span class="pre">Beispiel</span></code> und speichern es in der
+Variable <code class="docutils literal notranslate"><span class="pre">person</span></code>. Mit der Funnktion <code class="docutils literal notranslate"><span class="pre">type()</span></code> checken wir kurz, welcher Datentyp
+in der Variablen <code class="docutils literal notranslate"><span class="pre">person</span></code>steckt:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="n">Beispiel</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Wunderland&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nun können wir auch die beiden Methoden ausprobieren, die zu dem Objekt gehören.
+Der Aufruf einer Methode funktioniert anders als eine Funktion. Man hängt an die
+Variable, in der das Objekt gespeichert wurde, einen Punkt und dann die Methode
+mit runden Klammern. Den Punkt nennt man in der Informatik <strong>Punktoperator</strong>.</p>
+<p>Hier ein Beispiel zu der Methode <code class="docutils literal notranslate"><span class="pre">schreibe_vorname_nachname()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span><span class="o">.</span><span class="n">schreibe_vorname_nachname</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dann die zweite Methode, also <code class="docutils literal notranslate"><span class="pre">schreibe_nachname_vorname()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span><span class="o">.</span><span class="n">schreibe_nachname_vorname</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Hinweis: Strings haben bereits vordefinierte Methoden, die sehr nützlich bei der
+Manipulation von Strings sind.</p>
+<p>Beispiele:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code> wandelt alle Zeichen in Großbuchstaben um</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code> wandelt alle Zeichen in Kleinbuchstaben um</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code> prüft, ob der String in eine Zahl umgewandelt werden könnte</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Dies ist ein Beispielstring!&#39;</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Führen Sie nachfolgende Code-Zelle aus und geben Sie ein mal <code class="docutils literal notranslate"><span class="pre">3</span></code> und einmal
+<code class="docutils literal notranslate"><span class="pre">drei</span></code> ein:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zahl: &#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> kann in eine Zahl umgewandelt werden.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> kann *nicht* in eine Zahl umgewandelt werden.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   
+</pre></div>
+</div>
+<p>Wenn Sie wissen wollen, welche eingebauten Methoden es für Strings oder andere
+Datentypen noch gibt, können Sie die Funktion <code class="docutils literal notranslate"><span class="pre">dir()</span></code>. benutzen. Schauen Sie
+sich die Methoden an und probieren Sie einige aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="klassen-definieren-attribute">
+<h2>8.2 Klassen definieren - Attribute<a class="headerlink" href="#klassen-definieren-attribute" title="Permalink to this headline">#</a></h2>
+<!-- #region -->
+<p>Jetzt definieren wir eine eigene Klasse, die eine Adresse verwalten soll. Ein
+erstes Beispiel haben Sie ja oben schon gesehen.</p>
+<p>Eingeleitet wird eine Klasse mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">class</span></code> und dann dem Namen
+der Klasse. Da Klassen Objekte sind, ist es Standard, den ersten Buchstaben des
+Klassennamens groß zu schreiben.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Klassenname</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Bemerkung: Um Variablen von Objekten leichter zu unterscheiden, werden
+Variablennamen klein geschrieben.</p>
+<p>Danach folgt ein Abschnitt namens <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__(self):</span></code>, in dem die
+Eigenschaften der Klasse aufgelistet werden. <code class="docutils literal notranslate"><span class="pre">init</span></code> steht dabei für
+initialisieren, also den ersten Zustand, den das Objekt später haben wird.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Klassenname</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eigenschaft1</span><span class="p">,</span> <span class="n">eigenschaft2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attribut1</span> <span class="o">=</span> <span class="n">eigenschaft1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attribut2</span> <span class="o">=</span> <span class="n">eigenschaft2</span>
+</pre></div>
+</div>
+<p>Probieren wir es mit der Adresse aus:</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
+    
+</pre></div>
+</div>
+<p>Wie Sie sehen, können die Eingabe-Parameter der <code class="docutils literal notranslate"><span class="pre">init()</span></code>-Methode die gleichen
+Namen tragen wie die Attribute der Klasse, also <code class="docutils literal notranslate"><span class="pre">self.strasse</span> <span class="pre">=</span> <span class="pre">strasse</span></code>, müssen
+sie aber nicht. Das Beispiel <code class="docutils literal notranslate"><span class="pre">self.postleitzahl</span> <span class="pre">=</span> <span class="pre">plz</span></code> zeigt, dass das Attribut
+<code class="docutils literal notranslate"><span class="pre">self.postleitzahl</span></code> einfach den Wert des 4. Parameters bekommt, egal wie der
+heißt.</p>
+<p>Definieren wir jetzt unsere erste Adresse, der Eingabe-Parameter <code class="docutils literal notranslate"><span class="pre">self</span></code> wird
+dabei weggelassen (warum kommt später).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Geben wir als nächstes aus, was in der Variable <code class="docutils literal notranslate"><span class="pre">adresse_fra_uas</span></code> gespeichert
+ist. Probieren wir es mit der <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wie Sie sehen, wird der Name der Klasse und der Speicherort im RAM angegeben,
+aber nicht der Inhalt. Die Funktion <code class="docutils literal notranslate"><span class="pre">print()</span></code> ist nicht für den Datentyp
+<code class="docutils literal notranslate"><span class="pre">Adresse</span></code> entwickelt worden. Schließlich können die Python-Entwickler nicht
+wissen, welche Klassen Sie entwickeln…</p>
+<p>Aber wir kommen wir jetzt an den Inhalt des Objektes <code class="docutils literal notranslate"><span class="pre">adresse_fra_uas</span></code>? Mit dem
+Punktoperator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Damit können wir auch ganz normal rechnen, wenn das Attribut eine Zahl ist:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">+</span> <span class="mi">11111</span>
+</pre></div>
+</div>
+<p>Mit dem Punktoperator können wir Attribute eines Objektes auch verändern.
+Schauen wir uns zunächst an, welchen Inhalt <code class="docutils literal notranslate"><span class="pre">adress_fra_uas.postleitzahl</span></code> hat,
+dann setzen wir eine neue Postleitzahl und schauen erneut, welchen Inhalt
+<code class="docutils literal notranslate"><span class="pre">adress_fra_uas.postleitzahl</span></code> jetzt hat:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;davor: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+
+<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="mi">77777</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;danach: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="aufgabe-8-3-video">
+<h3>Aufgabe 8.3 Video<a class="headerlink" href="#aufgabe-8-3-video" title="Permalink to this headline">#</a></h3>
+<p>Schauen Sie sich das YouTube-Video “Python Tutorial deutsch [22/24] - Klassen
+und Objekte” (ca. 14:34 min), siehe
+<a class="reference external" href="https://www.youtube.com/watch?v=XxCZrT7Z3G4&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=22">https://www.youtube.com/watch?v=XxCZrT7Z3G4&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=22</a>
+an.</p>
+<p>Stoppen Sie das Video regelmäßig und probieren Sie die dort gezeigten Beispiele
+hier aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="aufgabe-8-4">
+<h2>Aufgabe 8.4<a class="headerlink" href="#aufgabe-8-4" title="Permalink to this headline">#</a></h2>
+<p>Schreiben Sie eine Klasse, die Studierende mit den Eigenschaften</p>
+<ul class="simple">
+<li><p>Vorname</p></li>
+<li><p>Nachname</p></li>
+<li><p>Matrikel-Nummer verwalten kann.</p></li>
+</ul>
+<p>Testen Sie anschließend Ihre Klasse, indem Sie ein Beispiel ausprobieren.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="aufgabe-8-5-video">
+<h2>Aufgabe 8.5 Video<a class="headerlink" href="#aufgabe-8-5-video" title="Permalink to this headline">#</a></h2>
+<p>Bleibt noch die Frage offen, warum der <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter beim Initialisieren
+eines Objektes nicht angegeben wird. Schauen Sie sich dazu das YouTube-Video
+“Python Tutorial deutsch [23/24] - Der self Parameter” (ca. 10:53 min), siehe
+<a class="reference external" href="https://www.youtube.com/watch?v=CLoK-_qNTnU&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=23">https://www.youtube.com/watch?v=CLoK-_qNTnU&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=23</a>
+an.</p>
+</section>
+<section id="klassen-definieren-methoden">
+<h2>8.3 Klassen definieren - Methoden<a class="headerlink" href="#klassen-definieren-methoden" title="Permalink to this headline">#</a></h2>
+<p>Es ist bedauerlich, dass wir nicht eine <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion für unsere
+Adressen-Klasse zur Verfügung haben. Definieren wir uns einfach eine …</p>
+<p>Da diese Funktion nicht allgemeingültig sein kann, sondern nur für die Objekte
+<code class="docutils literal notranslate"><span class="pre">Adresse</span></code> funktionieren kann, gehört sie auch folgerichtig zur Klasse selbst.
+Sie ist also keine Funktion, sondern eine Methode.</p>
+<p>Eine Methode wird definiert, indem innerhalb des Anweisungsblocks der Klasse
+eine Funktion mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> definiert wird. Der erste Eingabewert
+muss zwingend der <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter sein. Hier ein Beispiel für eine
+Print-Methode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
+    
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
+<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Vielleicht möchten wir die Print-Ausgabe unterschiedlich haben, z.B. alles in
+einer Zeile. Wir erweitern unsere Klasse mit einer neuen Methode namens
+<code class="docutils literal notranslate"><span class="pre">print_einzeilig()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
+    
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">print_einzeilig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zuerst so:&#39;</span><span class="p">)</span>
+<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> und </span><span class="se">\n</span><span class="s1">dann einzeilig:&#39;</span><span class="p">)</span>
+<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print_einzeilig</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="aufgabe-8-6">
+<h2>Aufgabe 8.6<a class="headerlink" href="#aufgabe-8-6" title="Permalink to this headline">#</a></h2>
+<p>Fügen Sie Ihrer Klasse zum Verwalten von Studierenden (siehe Aufgabe 8.4) zwei
+Print-Funktionen hinzu. Die erste Print-Funktion soll in einer Zeile <code class="docutils literal notranslate"><span class="pre">Vorname</span> <span class="pre">Nachname</span> <span class="pre">(xxxxxx)</span></code> ausgeben, wobei das xxxxxx für die Matrikel-Nummer steht,
+also z.B.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alice</span> <span class="n">Wunderland</span> <span class="p">(</span><span class="mi">123456</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ausgeben. Die zweite soll <code class="docutils literal notranslate"><span class="pre">Nachname,</span> <span class="pre">Vorname</span> <span class="pre">(Matrikel-Nummer:</span> <span class="pre">xxxxxx)</span></code>
+ausgeben, also z.B.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wunderland</span><span class="p">,</span> <span class="n">Alice</span> <span class="p">(</span><span class="n">Matrikel</span><span class="o">-</span><span class="n">Nummer</span><span class="p">:</span> <span class="mi">123456</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Bisher hatten wir nur Methoden ohne weitere Eingabe-Parameter (natürlich mit dem
+self-Parameter, der gehört zu allen Methoden dazu). Methoden können aber auch
+weitere Parameter haben. Beispielsweise könnte man eine Print-Funktion
+schreiben, bei der durch einen Parameter gesteuert wird, ob die Adresse in vier
+oder in einer Zeile angezeigt wird:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
+    
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">einzeilig</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">einzeilig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>    
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+<p>Probieren wir es aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zuerst einzeilig:&#39;</span><span class="p">)</span>
+<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">und dann vierzeilig:&#39;</span><span class="p">)</span>
+<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zuletzt betrachten wir noch Methoden mit Rückgabewert. Wie bei Funktionen auch
+genügt es mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">return</span></code> den Rückgabewert zu definieren. Sehr
+häufig ist dabei der Fall, dass eine Eigenschaft des Objektes zurückgegeben
+wird. Dann wird in der Regel der Methodenname</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_attribut</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>gewählt.</p>
+<p>Aber prinzipiell kann der Rückgabewert auch eine Berechnung oder ähnliches
+enthalten.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
+    
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">einzeilig</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">einzeilig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>    
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
+ 
+    <span class="k">def</span> <span class="nf">get_stadt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grossschreibung</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">grossschreibung</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span>
+</pre></div>
+</div>
+<p>Und auch diese Methode probieren wir aus. Je nachdem, ob die Methode mit <code class="docutils literal notranslate"><span class="pre">True</span></code>
+oder <code class="docutils literal notranslate"><span class="pre">False</span></code> aufgerufen wird, gibt die Methode den String <code class="docutils literal notranslate"><span class="pre">self.stadt</span></code> zurück,
+entweder normal geschrieben oder in Großbuchstaben.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zuerst normal:&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">get_stadt</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">und dann groß geschrieben:&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">get_stadt</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="aufgabe-8-7-video">
+<h2>Aufgabe 8.7 Video<a class="headerlink" href="#aufgabe-8-7-video" title="Permalink to this headline">#</a></h2>
+<p>Bitte schauen Sie sich das Video “Python Tutorial deutsch [24/24] - Methoden in
+Klassen” an, ca. 18:18 min, die Werbung ab Minute 14:00 können Sie überspringen,
+siehe
+<a class="reference external" href="https://www.youtube.com/watch?v=58IjjwHs_4A&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=24">https://www.youtube.com/watch?v=58IjjwHs_4A&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=24</a>
+.</p>
+<p>Stoppen Sie das Video regelmäßig und probieren Sie die im Video gezeigten
+Beispiele hier aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="aufgabe-8-8">
+<h2>Aufgabe 8.8<a class="headerlink" href="#aufgabe-8-8" title="Permalink to this headline">#</a></h2>
+<p>Erweitern Sie die Klasse zum Verwalten von Studierenden (Vorname, Name,
+Matrikel-Nummer) um ein Attribut vorleistung_bestanden. Anfangs sollte dieses
+Attribut auf <code class="docutils literal notranslate"><span class="pre">False</span></code> gesetzt werden. Implementieren Sie eine Methode, die es
+ermöglicht, dieses Attribut auf <code class="docutils literal notranslate"><span class="pre">True</span></code> zu setzen.</p>
+<p>Testen Sie anschließend Ihre erweiterte Klasse.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="aufgabe-8-9">
+<h2>Aufgabe 8.9<a class="headerlink" href="#aufgabe-8-9" title="Permalink to this headline">#</a></h2>
+<p>Implementieren Sie eine Klasse Datum. Diese Klasse speichert Tag, Monat und Jahr
+als Attribut.</p>
+<ul class="simple">
+<li><p>Implementieren Sie Methoden, die diese Attribute verändern können. Dabei soll
+die Methode per Print()-Funktion warnen, wenn eine nicht zulässige Zahl
+verwendet wird und dann nicht die Änderung durchführen.</p></li>
+<li><p>Implementieren Sie eine Methode <code class="docutils literal notranslate"><span class="pre">get_datum_deutsch()</span></code>, die das Datum als
+String nach dem Muster <code class="docutils literal notranslate"><span class="pre">TT.MM.JJJJ</span></code> zurückgibt, also z.B. ‘07.06.2021’.</p></li>
+<li><p>Implementieren Sie eine Methode <code class="docutils literal notranslate"><span class="pre">get_datum_britisch()</span></code>, die das Datum als
+String nach dem Muster <code class="docutils literal notranslate"><span class="pre">TT/MM/JJJJ</span></code> zurückgibt, also z.B. ‘07/06/2021’.</p></li>
+<li><p>Implementieren Sie eine Methode <code class="docutils literal notranslate"><span class="pre">get_datum_amerikanisch()</span></code>, die das Datum als
+String nach dem Muster <code class="docutils literal notranslate"><span class="pre">MM/TT/JJJJ</span></code> zurückgibt, also z.B. ‘06/07/2021’.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gramschs/book_python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter08_sec02.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">8.2 GUI</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter08_sec04.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Übungen</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Simone Gramsch<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
