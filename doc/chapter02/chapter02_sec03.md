@@ -79,7 +79,7 @@ wurde diese Eingabe nicht. Es passierte einfach nichts. Um die Eingabe
 verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab. 
 
 ```python
-x = input('Bitte geben Sie Ihren Namen ein: ');
+x = input('Bitte geben Sie Ihren Namen ein: ')
 ```
 
 Jetzt haben wir zwar den Namen in einer Variable gespeichert, aber so richtig
@@ -93,7 +93,7 @@ print('Hallo')
 Jetzt können wir alles zusammensetzen.
 
 ```python
-x = input('Bitte geben Sie Ihren Namen ein: ');
+x = input('Bitte geben Sie Ihren Namen ein: ')
 print('Hallo')
 print(x)
 ```
