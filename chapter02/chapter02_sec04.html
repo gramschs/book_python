@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Listen und Module" href="../chapter03/chapter03_sec00.html" />
@@ -726,6 +724,36 @@ Vermutung auf. Überprüfen Sie dann Ihre Vermutung mit der Funktion <code class
 <li><p>3 * ‘Katze’</p></li>
 </ul>
 </div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Meine Vermutungen sind:</p>
+<ul class="simple">
+<li><p>6 + 2 -&gt; Ganzzahl (int)</p></li>
+<li><p>6 + 2.5 -&gt; Gleitkommazahl (float)</p></li>
+<li><p>6 / 2 -&gt; Gleitkommazahl (float)</p></li>
+<li><p>6 / 2.0 -&gt; Gleitkommazahl (float)</p></li>
+<li><p>4 - 2 -&gt; Ganzzahl (int)</p></li>
+<li><p>3 * ‘Katze’ -&gt; Zeichenkette (str)</p></li>
+</ul>
+<p>Um meine Vermutungen zu überprüfen, können wir den folgenden Code ausführen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mf">2.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="s1">&#39;Katze&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Die Ausgabe des Codes bestätigt meine Vermutungen:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 2.2</p>
 <p>Schreiben Sie einen Witze-Generator. Zuerst soll nach einem Namen gefragt
@@ -741,6 +769,20 @@ soll ich mit dem restlichen Wasser machen?”</p>
 <hr> 
 <p>Testen Sie Ihr Programm mit verschiedenen Namen.</p>
 </div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Namen des Benutzers abfragen</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie ist dein Name? &#39;</span><span class="p">)</span>
+
+<span class="c1"># Den Witz generieren</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fritz macht&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;einen Kaffee. Es bleibt heißes Wasser übrig. Fritz fragt: &quot;Was soll ich mit dem restlichen Wasser machen?&quot;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;antwortet: &quot;Einfrieren! Heißes Wasser kann man immer gebrauchen.&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übungen 2.3</p>
 <p>Schreiben Sie ein Python-Programm, das eine Länge vom Benutzer abfragt, die in
@@ -749,6 +791,22 @@ und ausgeben. Tipp: 1 Zoll sind 2.54 cm.</p>
 <p>Testen Sie Ihr Programm beispielsweise mit der Länge 10 Zoll, die 25.4
 Zentimetern entspricht.</p>
 </div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe: Abfrage der Daten</span>
+<span class="n">laenge_in_zoll</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie die Länge in Zoll ein: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung: Umrechnung Zoll in Zentimeter</span>
+<span class="n">laenge_in_zentimeter</span> <span class="o">=</span> <span class="n">laenge_in_zoll</span> <span class="o">*</span> <span class="mf">2.54</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">laenge_in_zoll</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zoll entsprechen &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">laenge_in_zentimeter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zentimetern.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 2.4</p>
 <p>Schreiben Sie ein Programm, das zuerst nach einer Zahl fragt und danach nach
@@ -756,6 +814,25 @@ einer zweiten Zahl fragt. Anschließend gibt das Programm aus, welche beiden
 Zahlen gewählt wurden und was das Produkt der beiden Zahlen ist.</p>
 <p>Testen Sie anschließend Ihr Programm mit kleinen 1x1-Aufgaben, die Sie sich
 selbst ausdenken.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe der beiden ahlen durch Abfrage</span>
+<span class="n">zahl1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie die erste Zahl ein: &#39;</span><span class="p">))</span>
+<span class="n">zahl2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie die zweite Zahl ein: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung</span>
+<span class="n">produkt</span> <span class="o">=</span> <span class="n">zahl1</span> <span class="o">*</span> <span class="n">zahl2</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die beiden Zahlen sind &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zahl1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;und&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zahl2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Das Produkt der beiden Zahlen ist: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">produkt</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 2.5</p>
@@ -773,6 +850,26 @@ Gast.</p>
 <li><p>Ausgabe: Gesamtkosten für die Party: 478 EUR</p></li>
 <li><p>Ausgabe: Kosten pro Gast: 39.833333 EUR</p></li>
 </ul>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe der Daten durch Abfrage</span>
+<span class="n">raummiete</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viel kostet die Raummiete? &#39;</span><span class="p">))</span>
+<span class="n">pizzadienst</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viel kostet der Pizzadienst? &#39;</span><span class="p">))</span>
+<span class="n">getraenkelieferant</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viel kostet der Getränkelieferant? &#39;</span><span class="p">))</span>
+<span class="n">anzahl_gaeste</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Gäste kommen zur Party? &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung</span>
+<span class="n">gesamtkosten</span> <span class="o">=</span> <span class="n">raummiete</span> <span class="o">+</span> <span class="n">pizzadienst</span> <span class="o">+</span> <span class="n">getraenkelieferant</span>
+<span class="n">kosten_pro_gast</span> <span class="o">=</span> <span class="n">gesamtkosten</span> <span class="o">/</span> <span class="n">anzahl_gaeste</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Gesamtkosten für die Party betragen:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gesamtkosten</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Kosten pro Gast betragen:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kosten_pro_gast</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
 
