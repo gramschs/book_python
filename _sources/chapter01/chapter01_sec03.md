@@ -42,7 +42,7 @@ Anwendungen. Sie ist sowohl für Einsteiger als auch für fortgeschrittene
 Entwickler geeignet und bietet eine benutzerfreundliche Benutzeroberfläche, um
 Python und seine Bibliotheken zu verwalten und zu verwenden.
 
-## Installation Anaconda und Start Jupyter Notebook
+## Installation Anaconda und Start JupyterLab für Jupyter Notebooks
 
 Hier ist eine Schritt-für-Schritt-Anleitung zum Installieren von Python mit der
 Distribution Anaconda für Windows und MacOS:
@@ -57,31 +57,31 @@ Distribution Anaconda für Windows und MacOS:
 3. Öffnen Sie nach der Installation das Anaconda-Navigator-Programm, das im
    Startmenü oder Launchpad verfügbar sein sollte.
 4. Um ein neues Jupyter Notebook für die Python-Programmierung zu erstellen,
-   klicken Sie auf "Home" im Anaconda-Navigator und wählen "Jupyter Notebook"
-   aus. Klicken Sie auf "New" und wählen Sie "Python 3 (ipykernel)" aus, um ein
-   neues Notebook zu erstellen.
-5. Sie können jetzt Python-Code in dem Notebook schreiben und ausführen. Wenn
+   klicken Sie auf "Home" im Anaconda-Navigator und wählen "JupyterLab"
+   aus. Alternativ können Sie JupyterLab auch mit dem Befehl "jupyter-lab" aus einem Terminal oder einer Konsole starten (Linux oder MacOS).
+5. Wählen Sie "Python 3 (ipykernel)" aus, um ein neues Notebook zu erstellen.
+6. Sie können jetzt Python-Code in dem Notebook schreiben und ausführen. Wenn
    Sie zusätzliche Pakete benötigen, können Sie diese über den
    "Environments"-Tab im Anaconda-Navigator installieren.
 
-```{figure} pics/fig_chap00_sec03_start_jb.png
-:name: fig_chap00_sec03_jb
+```{figure} pics/fig_chap00_sec03_jupyterlab.png
+:name: fig_chap00_sec03_jupyterlab
 
-Startansicht der Software Jupyter Notebook
+Startansicht der Software JupyterLab: ein neues Jupyter Notebook wird mit Klick auf den Button Python 3 (ipykernel) erstellt.
 ```
 
 ## Was sind Jupyter Notebooks?
 
-Jupyter Notebooks sind eine webbasierte interaktive Entwicklungsumgebung, die es
-ermöglicht, Text, Python-Code, Bilder und Videos in einem einzigen interaktiven
-Notizbuch zusammenzuführen. Sie sind eine der bekanntesten Anwendungen in der
-Data Science-Community und werden oft zur Datenanalyse, maschinellem Lernen und
-Visualisierung eingesetzt.
+Jupyter Notebooks führen Text, Python-Code, Bilder und Videos in einem einzigen
+interaktiven digitalen Notizbuch zusammenzuführen. Sie sind eine der
+bekanntesten Anwendungen in der Data Science-Community und werden oft zur
+Datenanalyse, maschinellem Lernen und Visualisierung eingesetzt.
 
 Ein Jupyter Notebook besteht aus einer Abfolge von Zellen, in denen Text, Code
 und Visualisierungen eingebettet werden. Die Zellen können entweder in der
 Programmiersprache Python oder in einer Reihe anderer Programmiersprachen wie R,
-Julia oder JavaScript geschrieben werden.
+Julia oder JavaScript geschrieben werden. Erkennbar sind Jupyter Notebooks an
+der Dateiendung `ipynb`.
 
 Die Kombination von Text, Code und Visualisierungen macht Jupyter Notebooks zu
 einem leistungsstarken Werkzeug für die Datenanalyse. Daten können direkt in den
@@ -107,7 +107,7 @@ Code-Zelle ausgeführt zu werden.
 ```{figure} pics/fig_chap00_sec03_zellen.png
 :name: fig_chap00_sec03_zellen
 
-Screenshot eines Jupyter Notebooks mit Text, Python-Code und Ergebnisse des ausgeführten Python-Codes
+Screenshot eines Jupyter Notebooks mit Text, Python-Code und Ergebnisse des ausgeführten Python-Codes, das mit der klassischen Software "Jupyter Notebook" geladen wurde
 ```
 
 Eine Zelle kann entweder eine Text-Zelle (siehe Fig. 3, Schritt 1) oder eine
@@ -122,3 +122,31 @@ Eine Code-Zelle wird ausgeführt, indem Sie auf "Run" klicken (siehe Fig. 3,
 Schritt 4). Danach erscheint die Ausgabe, die der Python-Interpreter ggf.
 produziert (siehe Fig. 3, Schritt 5). Wird ein Ergebnis berechnet oder ein Wert
 zurückgegeben, so ist das an der Bezeichnung "Out" wie Output erkennbar.
+
+## Was ist JupyterLab und welche Alternativen gibt es?
+
+[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)
+ist eine webbasierte Entwicklungsumgebung, um Jupyter Notebooks zu öffnen, zu
+editieren, den Python-Code auszuführen und alles wieder zu speichern. Neben
+JupyterLab gibt es weitere Möglichkeiten, um Jupyter Notebooks zu bearbeiten. 
+
+Die beiden Entwicklungsumgebungen
+
+* [PyCharm](https://www.jetbrains.com/help/pycharm/jupyter-notebook-support.html)
+* [Microsoft Visual Studio
+  Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
+ermöglichen ebenfalls die direkte Bearbeitung von Jupyter Notebooks. Auch
+zahlreiche Cloudanbieter bieten direkt das Bearbeiten und Ausführen von Jupyter
+Notebooks an, z.B.
+
+* [Google Colab](https://colab.research.google.com/notebook)
+* [Microsoft
+  Azure](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks)
+* [Deepnote](https://deepnote.com)
+* [replit](https://replit.com/template/jupyter-notebook)
+
+Wie bei allen Clouddiensten sollte man sich jedoch eingehend mit den
+Datenschutzbestimmungen des Anbieters vertraut machen, bevor man den Dienst in
+Anspruch nimmt. Aufgrund des Datenschutzes empfehle ich stets, Python/Anaconda
+lokal zu installieren.

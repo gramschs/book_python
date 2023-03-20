@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter01_sec04.html" />
@@ -715,13 +713,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation-anaconda-und-start-jupyter-notebook">
-   Installation Anaconda und Start Jupyter Notebook
+  <a class="reference internal nav-link" href="#installation-anaconda-und-start-jupyterlab-fur-jupyter-notebooks">
+   Installation Anaconda und Start JupyterLab für Jupyter Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#was-sind-jupyter-notebooks">
    Was sind Jupyter Notebooks?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-jupyterlab-und-welche-alternativen-gibt-es">
+   Was ist JupyterLab und welche Alternativen gibt es?
   </a>
  </li>
 </ul>
@@ -749,13 +752,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation-anaconda-und-start-jupyter-notebook">
-   Installation Anaconda und Start Jupyter Notebook
+  <a class="reference internal nav-link" href="#installation-anaconda-und-start-jupyterlab-fur-jupyter-notebooks">
+   Installation Anaconda und Start JupyterLab für Jupyter Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#was-sind-jupyter-notebooks">
    Was sind Jupyter Notebooks?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-ist-jupyterlab-und-welche-alternativen-gibt-es">
+   Was ist JupyterLab und welche Alternativen gibt es?
   </a>
  </li>
 </ul>
@@ -791,8 +799,8 @@ Anwendungen. Sie ist sowohl für Einsteiger als auch für fortgeschrittene
 Entwickler geeignet und bietet eine benutzerfreundliche Benutzeroberfläche, um
 Python und seine Bibliotheken zu verwalten und zu verwenden.</p>
 </section>
-<section id="installation-anaconda-und-start-jupyter-notebook">
-<h2>Installation Anaconda und Start Jupyter Notebook<a class="headerlink" href="#installation-anaconda-und-start-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<section id="installation-anaconda-und-start-jupyterlab-fur-jupyter-notebooks">
+<h2>Installation Anaconda und Start JupyterLab für Jupyter Notebooks<a class="headerlink" href="#installation-anaconda-und-start-jupyterlab-fur-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
 <p>Hier ist eine Schritt-für-Schritt-Anleitung zum Installieren von Python mit der
 Distribution Anaconda für Windows und MacOS:</p>
 <ol class="simple">
@@ -806,31 +814,31 @@ aktiviert ist.</p></li>
 <li><p>Öffnen Sie nach der Installation das Anaconda-Navigator-Programm, das im
 Startmenü oder Launchpad verfügbar sein sollte.</p></li>
 <li><p>Um ein neues Jupyter Notebook für die Python-Programmierung zu erstellen,
-klicken Sie auf “Home” im Anaconda-Navigator und wählen “Jupyter Notebook”
-aus. Klicken Sie auf “New” und wählen Sie “Python 3 (ipykernel)” aus, um ein
-neues Notebook zu erstellen.</p></li>
+klicken Sie auf “Home” im Anaconda-Navigator und wählen “JupyterLab”
+aus. Alternativ können Sie JupyterLab auch mit dem Befehl “jupyter-lab” aus einem Terminal oder einer Konsole starten (Linux oder MacOS).</p></li>
+<li><p>Wählen Sie “Python 3 (ipykernel)” aus, um ein neues Notebook zu erstellen.</p></li>
 <li><p>Sie können jetzt Python-Code in dem Notebook schreiben und ausführen. Wenn
 Sie zusätzliche Pakete benötigen, können Sie diese über den
 “Environments”-Tab im Anaconda-Navigator installieren.</p></li>
 </ol>
-<figure class="align-default" id="fig-chap00-sec03-jb">
-<img alt="../_images/fig_chap00_sec03_start_jb.png" src="../_images/fig_chap00_sec03_start_jb.png" />
+<figure class="align-default" id="fig-chap00-sec03-jupyterlab">
+<img alt="../_images/fig_chap00_sec03_jupyterlab.png" src="../_images/fig_chap00_sec03_jupyterlab.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Startansicht der Software Jupyter Notebook</span><a class="headerlink" href="#fig-chap00-sec03-jb" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Startansicht der Software JupyterLab: ein neues Jupyter Notebook wird mit Klick auf den Button Python 3 (ipykernel) erstellt.</span><a class="headerlink" href="#fig-chap00-sec03-jupyterlab" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="was-sind-jupyter-notebooks">
 <h2>Was sind Jupyter Notebooks?<a class="headerlink" href="#was-sind-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
-<p>Jupyter Notebooks sind eine webbasierte interaktive Entwicklungsumgebung, die es
-ermöglicht, Text, Python-Code, Bilder und Videos in einem einzigen interaktiven
-Notizbuch zusammenzuführen. Sie sind eine der bekanntesten Anwendungen in der
-Data Science-Community und werden oft zur Datenanalyse, maschinellem Lernen und
-Visualisierung eingesetzt.</p>
+<p>Jupyter Notebooks führen Text, Python-Code, Bilder und Videos in einem einzigen
+interaktiven digitalen Notizbuch zusammenzuführen. Sie sind eine der
+bekanntesten Anwendungen in der Data Science-Community und werden oft zur
+Datenanalyse, maschinellem Lernen und Visualisierung eingesetzt.</p>
 <p>Ein Jupyter Notebook besteht aus einer Abfolge von Zellen, in denen Text, Code
 und Visualisierungen eingebettet werden. Die Zellen können entweder in der
 Programmiersprache Python oder in einer Reihe anderer Programmiersprachen wie R,
-Julia oder JavaScript geschrieben werden.</p>
+Julia oder JavaScript geschrieben werden. Erkennbar sind Jupyter Notebooks an
+der Dateiendung <code class="docutils literal notranslate"><span class="pre">ipynb</span></code>.</p>
 <p>Die Kombination von Text, Code und Visualisierungen macht Jupyter Notebooks zu
 einem leistungsstarken Werkzeug für die Datenanalyse. Daten können direkt in den
 Notebooks eingegeben werden, und Ergebnisse können sofort dargestellt werden,
@@ -851,7 +859,7 @@ Code-Zelle ausgeführt zu werden.</p>
 <figure class="align-default" id="fig-chap00-sec03-zellen">
 <img alt="../_images/fig_chap00_sec03_zellen.png" src="../_images/fig_chap00_sec03_zellen.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot eines Jupyter Notebooks mit Text, Python-Code und Ergebnisse des ausgeführten Python-Codes</span><a class="headerlink" href="#fig-chap00-sec03-zellen" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot eines Jupyter Notebooks mit Text, Python-Code und Ergebnisse des ausgeführten Python-Codes, das mit der klassischen Software “Jupyter Notebook” geladen wurde</span><a class="headerlink" href="#fig-chap00-sec03-zellen" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Eine Zelle kann entweder eine Text-Zelle (siehe Fig. 3, Schritt 1) oder eine
@@ -865,6 +873,33 @@ Eine Code-Zelle wird ausgeführt, indem Sie auf “Run” klicken (siehe Fig. 3,
 Schritt 4). Danach erscheint die Ausgabe, die der Python-Interpreter ggf.
 produziert (siehe Fig. 3, Schritt 5). Wird ein Ergebnis berechnet oder ein Wert
 zurückgegeben, so ist das an der Bezeichnung “Out” wie Output erkennbar.</p>
+</section>
+<section id="was-ist-jupyterlab-und-welche-alternativen-gibt-es">
+<h2>Was ist JupyterLab und welche Alternativen gibt es?<a class="headerlink" href="#was-ist-jupyterlab-und-welche-alternativen-gibt-es" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">JupyterLab</a>
+ist eine webbasierte Entwicklungsumgebung, um Jupyter Notebooks zu öffnen, zu
+editieren, den Python-Code auszuführen und alles wieder zu speichern. Neben
+JupyterLab gibt es weitere Möglichkeiten, um Jupyter Notebooks zu bearbeiten.</p>
+<p>Die beiden Entwicklungsumgebungen</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.jetbrains.com/help/pycharm/jupyter-notebook-support.html">PyCharm</a></p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Microsoft Visual Studio
+Code</a></p></li>
+</ul>
+<p>ermöglichen ebenfalls die direkte Bearbeitung von Jupyter Notebooks. Auch
+zahlreiche Cloudanbieter bieten direkt das Bearbeiten und Ausführen von Jupyter
+Notebooks an, z.B.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/notebook">Google Colab</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks">Microsoft
+Azure</a></p></li>
+<li><p><a class="reference external" href="https://deepnote.com">Deepnote</a></p></li>
+<li><p><a class="reference external" href="https://replit.com/template/jupyter-notebook">replit</a></p></li>
+</ul>
+<p>Wie bei allen Clouddiensten sollte man sich jedoch eingehend mit den
+Datenschutzbestimmungen des Anbieters vertraut machen, bevor man den Dienst in
+Anspruch nimmt. Aufgrund des Datenschutzes empfehle ich stets, Python/Anaconda
+lokal zu installieren.</p>
 </section>
 </section>
 
