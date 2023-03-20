@@ -19,8 +19,8 @@ kernelspec:
 ```{admonition} Übung 1.1
 :class: miniexercise
 Installieren Sie Anaconda und Python auf Ihrem PC oder Laptop. Starten Sie die
-Software Jupyter Notebook. Laden Sie dieses Jupyter Notebook herunter und öffnen
-Sie es mit der Software Jupyter Notebook.
+Software JupyterLab. Laden Sie dieses Jupyter Notebook herunter und öffnen
+Sie es mit der Software JupyterLab.
 ```
 
 ```{admonition} Übung 1.2
