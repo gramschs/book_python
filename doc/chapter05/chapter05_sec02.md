@@ -14,6 +14,11 @@ kernelspec:
 
 # 5.2 Programmverzweigungen mit einen Zweig: if
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt.
 Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:
 

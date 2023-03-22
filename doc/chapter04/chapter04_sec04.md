@@ -14,6 +14,11 @@ kernelspec:
 
 # Übungen
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 1. Schreiben Sie ein Programm, das den Benutzer nach seinem Namen und seinem Alter fragt und dann eine Begrüßungsnachricht ausgibt, die den Namen und das Alter des Benutzers enthält. Verwenden Sie eine f-String, um den Namen und das Alter des Benutzers in die Begrüßungsnachricht einzufügen.
 
 2. Schreiben Sie ein Programm, das den Benutzer nach seiner E-Mail-Adresse fragt und dann eine Bestätigungsmeldung ausgibt, die die E-Mail-Adresse des Benutzers enthält. Verwenden Sie eine f-String, um die E-Mail-Adresse des Benutzers in die Bestätigungsmeldung einzufügen.

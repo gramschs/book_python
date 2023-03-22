@@ -14,5 +14,10 @@ kernelspec:
 
 # 11.1 Theorie Regression 
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO
 

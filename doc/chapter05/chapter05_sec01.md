@@ -14,6 +14,11 @@ kernelspec:
 
 # 5.1 Vergleiche und der boolesche Datentyp
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 Viele Möglichkeiten unserer Gesellschaft stehen nur Volljährigen offen und sind
 damit an eine Altersangabe gebunden. Wenn jetzt ein Computersystem vorab prüfen
 soll, ob Volljährigkeit vorliegt oder nicht, dann brauchen wir einen einfachen

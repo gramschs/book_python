@@ -14,4 +14,9 @@ kernelspec:
 
 # 11.3 Polynomiale Regression
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO

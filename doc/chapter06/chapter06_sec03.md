@@ -14,4 +14,9 @@ kernelspec:
 
 # 6.3 Globale und lokale Variablen
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO

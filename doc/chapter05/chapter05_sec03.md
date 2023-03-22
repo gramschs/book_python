@@ -14,6 +14,11 @@ kernelspec:
 
 # 5.3 Programmverzweigungen mit mehreren Zweigen: if -- elif -- else
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO
 
 ## Programmverzweigungen mit zwei Zweigen: if – else

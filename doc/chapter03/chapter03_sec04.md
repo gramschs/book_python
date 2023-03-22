@@ -14,6 +14,11 @@ kernelspec:
 
 # Übungen
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 ```{admonition} Übung 3.1 
 :class: miniexercise
 Schreiben Sie ein Programm, das den Benutzer zwei Seitenlängen für die beiden

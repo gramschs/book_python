@@ -14,6 +14,11 @@ kernelspec:
 
 # 8.1 Debugging
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 Diese Woche beschäftigen wir uns vor allem mit der Fehlersuche. Selbst erfahrene
 Softwareentwickler-Teams machen Fehler bei der Programmierung. Die Suche nach
 Fehlern im Programm ist schwierig, kann aber durch technische Hilfsmittel

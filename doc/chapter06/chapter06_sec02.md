@@ -14,4 +14,9 @@ kernelspec:
 
 # 6.2 Funktionen mit Argument und Rückgabe
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO

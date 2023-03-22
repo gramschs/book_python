@@ -13,6 +13,11 @@ kernelspec:
 
 # 4.1 for-Schleifen mit Liste
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 In der Praxis kommt es oft vor, dass wir von vornherein wissen, wie oft wir eine
 Handlung wiederholen wollen. Beispielsweise soll in einem Verein darüber
 abgestimmt werde, ob Anna oder Bob zukünftig die Kasse verwalten soll. Alle
