@@ -14,4 +14,9 @@ kernelspec:
 
 # 7.3 Zufallszahlen
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO

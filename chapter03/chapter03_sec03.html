@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter03_sec04.html" />
@@ -715,8 +713,30 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#die-leinwand-vorbereiten">
-   Die Leinwand vorbereiten
+  <a class="reference internal nav-link" href="#module-nachinstallieren">
+   Module nachinstallieren
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-mit-conda">
+     Installation mit conda
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-mit-pip">
+     Installation mit pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wann-conda-und-wann-pip">
+     Wann conda und wann pip?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ein-turtlefeld-initalisieren">
+   Ein Turtlefeld initalisieren
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -754,8 +774,30 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#die-leinwand-vorbereiten">
-   Die Leinwand vorbereiten
+  <a class="reference internal nav-link" href="#module-nachinstallieren">
+   Module nachinstallieren
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-mit-conda">
+     Installation mit conda
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-mit-pip">
+     Installation mit pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wann-conda-und-wann-pip">
+     Wann conda und wann pip?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ein-turtlefeld-initalisieren">
+   Ein Turtlefeld initalisieren
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -789,56 +831,324 @@ So können beispielsweise verschiedenfarbige Stifte verwendet werden oder die
 Linienstärke kann verändert werden.</p>
 <p>Der Kern von Python enthält bereits ein Modul namens <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, um eine solche
 Turtle-Grafik zu erzeugen. Da wir in dieser Vorlesung mit Jupyter Notebooks
-arbeiten, verwenden wir jedoch das Modul <code class="docutils literal notranslate"><span class="pre">ipyturtle3</span></code>, das das Turtle-Modul mit
+arbeiten, verwenden wir jedoch das Modul <code class="docutils literal notranslate"><span class="pre">colabTurtlePlus</span></code>, das das Turtle-Modul mit
 Funktionalitäten für Jupyter Notebooks erweitert.</p>
-<p><strong>Achtung: Bitte verwenden Sie kein JupyterLab, sondern die klassische Software
-Jupyter Notebook.</strong></p>
+<div class="warning admonition">
+<p class="admonition-title">Hinweis: Installation notwendig</p>
+<p>Das Modul colabTurtlePlus ist kein Standardmodul und muss daher nachinstalliert
+werden. Bitte beachten Sie die Hinweise zur Installation “Module
+nachinstallieren” und die dazugehörige Mini-Übung unten.</p>
+</div>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
+<li><p>Sie können ein fehlendes Modul mit <strong>conda</strong> oder <strong>pip</strong> nachinstallieren.</p></li>
 <li><p>Sie wissen, was eine <strong>Turtle-Grafik</strong> ist.</p></li>
-<li><p>Sie können das Modul <strong>ipyturtle3</strong> importieren.</p></li>
+<li><p>Sie können das Modul <strong>colabTurtlePlus</strong> importieren.</p></li>
 <li><p>Sie können ein Roboterfeld initalisieren und den Roboter mit einfachen Kommandos über das Roboterfeld steuern.</p></li>
 </ul>
 </div>
 </section>
-<section id="die-leinwand-vorbereiten">
-<h2>Die Leinwand vorbereiten<a class="headerlink" href="#die-leinwand-vorbereiten" title="Permalink to this headline">#</a></h2>
-<p>Als erstes importieren wir aus dem <code class="docutils literal notranslate"><span class="pre">ipyturtle3</span></code>-Modul die Kommandos Canvas, TurtleScreen und Turtle. Wir erzeugen mit dem Befehl</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+<section id="module-nachinstallieren">
+<h2>Module nachinstallieren<a class="headerlink" href="#module-nachinstallieren" title="Permalink to this headline">#</a></h2>
+<p>Um ein Python-Modul bzw. ein Python-Paket aus einem Jupyter Notebook
+nachzuinstallieren, gibt es grundsätzlich zwei Möglichkeiten: mit <strong>conda</strong> oder
+mit <strong>pip</strong>. Conda ist ein Paket-Manager, der in der Anaconda-Distribution
+enthalten ist und in der Regel für die Installation von Python-Paketen verwendet
+wird, während pip ein Paket-Manager ist, der mit Python selbst installiert wird.</p>
+<p>Hier sind Schritt-für-Schritt-Anleitungen, wie man ein Python-Modul mit conda
+oder pip in einem Jupyter Notebook nachinstallieren kann.</p>
+<section id="installation-mit-conda">
+<h3>Installation mit conda<a class="headerlink" href="#installation-mit-conda" title="Permalink to this headline">#</a></h3>
+<ol>
+<li>Öffnen Sie das Jupyter Notebook.</li>
+<li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:
+<p><code>!conda install &lt;paketname&gt;</code></p>
+<p>Ersetzen Sie dabei &lt;paketname&gt; durch den Namen des zu installierenden Pakets.</p>
+<li>Führen Sie die Zelle aus, indem Sie auf den Run-Button klicken.</li>
+<li>Warten Sie, bis das Paket heruntergeladen und installiert wurde.</li>
+<li>Überprüfen Sie, ob das Paket korrekt installiert wurde, indem Sie eine weitere
+   Code-Zelle erstellen und das Paket importieren:
+<p><code>import &lt;paketname&gt;</code></p>
+<p>Wenn kein Fehler auftritt, wurde das Paket erfolgreich installiert.</p>
+</ol>
+</section>
+<section id="installation-mit-pip">
+<h3>Installation mit pip<a class="headerlink" href="#installation-mit-pip" title="Permalink to this headline">#</a></h3>
+<ol>
+<li>Öffnen Sie das Jupyter Notebook.</li>
+<li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:</li>
+<p><code>!pip install &lt;paketname&gt;</code></p>
+<p>Ersetzen Sie dabei &lt;paketname&gt; durch den Namen des zu installierenden Pakets.</p>
+<li>Führen Sie die Zelle aus, indem Sie auf den Run-Button klicken.</li>
+<li>Warten Sie, bis das Paket heruntergeladen und installiert wurde.</li>
+<li>Überprüfen Sie, ob das Paket korrekt installiert wurde, indem Sie eine weitere Code-Zelle erstellen und das Paket importieren:</p>
+<p><code>import &lt;paketname&gt;</code></p>
+<p>Wenn kein Fehler auftritt, wurde das Paket erfolgreich installiert.</p>
+</ol>
+</section>
+<section id="wann-conda-und-wann-pip">
+<h3>Wann conda und wann pip?<a class="headerlink" href="#wann-conda-und-wann-pip" title="Permalink to this headline">#</a></h3>
+<p>Es ist wichtig zu beachten, dass conda und pip unterschiedliche
+Paket-Repositories verwenden. Wenn ein Paket mit conda installiert wurde, sollte
+es nicht mit pip aktualisiert oder deinstalliert werden, da dies zu
+Inkompatibilitäten führen kann. Umgekehrt sollte ein mit pip installiertes Paket
+nicht mit conda aktualisiert oder deinstalliert werden.</p>
+<p>In dieser Vorlesung arbeiten wir mit der Anaconda-Distribution. Sie sollten also
+immer zuerst versuchen, das fehlende Modul mit conda nachzuinstallieren. Nur
+wenn es nicht in der Anaconda-Distribution enthalten ist, nehmen Sie bitte pip.
+Die beiden folgenden Links verlinken auf die Liste der verfügbaren Pakete:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/packages/pkg-docs/">https://docs.anaconda.com/anaconda/packages/pkg-docs/</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org">https://pypi.org</a></p></li>
+</ul>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Installieren Sie jetzt das Modul <code class="docutils literal notranslate"><span class="pre">ColabTurtlePlus</span></code>, das leider nicht in der Anaconda-Distribution enthalten ist. Mehr Details zu diesem Modul finden Sie unter <a class="reference external" href="https://pypi.org/project/ColabTurtlePlus/">https://pypi.org/project/ColabTurtlePlus/</a>.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>!pip install ColabTurtlePlus
+import ColabTurtlePlus
 </pre></div>
 </div>
-<p>eine leere Leinwand, die 500 Bildpunkte breit ist und 250 Bildpunkte hoch ist. Bildpunkte werden normalerweise als Pixel bezeichnet, was wiederum mit px abgekürzt wird. Damit wir mit der Leinwand weiter arbeiten können, speichern wir dieses Objekt in der Variablen <code class="docutils literal notranslate"><span class="pre">leinwand</span></code>. Zuletzt lassen wir uns die Leinwand mit dem Befehl <code class="docutils literal notranslate"><span class="pre">display()</span></code> anzeigen.</p>
-<p>Zusammengesetzt lautet der Code zur Erzeugung einer Leinwand also wie folgt:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyturtle3</span> <span class="kn">import</span> <span class="n">Canvas</span><span class="p">,</span> <span class="n">TurtleScreen</span><span class="p">,</span> <span class="n">Turtle</span>
+</div>
+</section>
+</section>
+<section id="ein-turtlefeld-initalisieren">
+<h2>Ein Turtlefeld initalisieren<a class="headerlink" href="#ein-turtlefeld-initalisieren" title="Permalink to this headline">#</a></h2>
+<p>Als erstes werden alle Funktionalitäten des Turtle-Moduls geladen. Die typische
+Abkürzung für dieses Modul ist <code class="docutils literal notranslate"><span class="pre">turtle</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Put clearscreen() as the first line in a cell (after the import command) to re-run turtle commands in the cell
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es erscheint eine Meldung, nämlich der Hinweis: “Put clearscreen() as the first
+line in a cell (after the import command) to re-run turtle commands in the
+cell”. Mit dem Kommando <code class="docutils literal notranslate"><span class="pre">turtle.clearscreen()</span></code> wird ein Turtlefeld initalisiert
+und gleichzeitig können später die vorhandenen Grafiken damit gelöscht werden,
+wenn die Code-Zelle erneut ausgeführt wird.</p>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">dir(turtle)</span></code> können wir erkunden, was an Funktionalitäten vorhanden ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEFAULT_ANGLE_MODE&#39;,
+ &#39;DEFAULT_BACKGROUND_COLOR&#39;,
+ &#39;DEFAULT_BORDER_COLOR&#39;,
+ &#39;DEFAULT_FILL_COLOR&#39;,
+ &#39;DEFAULT_FILL_OPACITY&#39;,
+ &#39;DEFAULT_FILL_RULE&#39;,
+ &#39;DEFAULT_IS_PEN_DOWN&#39;,
+ &#39;DEFAULT_MODE&#39;,
+ &#39;DEFAULT_OUTLINE_WIDTH&#39;,
+ &#39;DEFAULT_PEN_COLOR&#39;,
+ &#39;DEFAULT_PEN_WIDTH&#39;,
+ &#39;DEFAULT_SHEARFACTOR&#39;,
+ &#39;DEFAULT_SPEED&#39;,
+ &#39;DEFAULT_STRETCHFACTOR&#39;,
+ &#39;DEFAULT_SVG_LINES_STRING&#39;,
+ &#39;DEFAULT_TILT_ANGLE&#39;,
+ &#39;DEFAULT_TURTLE_DEGREE&#39;,
+ &#39;DEFAULT_TURTLE_SHAPE&#39;,
+ &#39;DEFAULT_TURTLE_VISIBILITY&#39;,
+ &#39;DEFAULT_WINDOW_SIZE&#39;,
+ &#39;HTML&#39;,
+ &#39;RawTurtle&#39;,
+ &#39;SPEED_TO_SEC_MAP&#39;,
+ &#39;SVG_TEMPLATE&#39;,
+ &#39;Screen&#39;,
+ &#39;TURTLE_ARROW_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_CIRCLE_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_CLASSIC_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_RING_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_SQUARE_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_TRIANGLE_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_TURTLE2_SVG_TEMPLATE&#39;,
+ &#39;TURTLE_TURTLE_SVG_TEMPLATE&#39;,
+ &#39;Turtle&#39;,
+ &#39;VALID_COLORS&#39;,
+ &#39;VALID_MODES&#39;,
+ &#39;VALID_TURTLE_SHAPES&#39;,
+ &#39;_Screen&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__func_body&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_getmethparlist&#39;,
+ &#39;_make_global_funcs&#39;,
+ &#39;_screen_docrevise&#39;,
+ &#39;_tg_screen_functions&#39;,
+ &#39;_tg_turtle_functions&#39;,
+ &#39;_turtle_docrevise&#39;,
+ &#39;animationOff&#39;,
+ &#39;animationOn&#39;,
+ &#39;back&#39;,
+ &#39;backward&#39;,
+ &#39;begin_fill&#39;,
+ &#39;bgcolor&#39;,
+ &#39;bk&#39;,
+ &#39;circle&#39;,
+ &#39;clear&#39;,
+ &#39;clearscreen&#39;,
+ &#39;clearstamp&#39;,
+ &#39;clearstamps&#39;,
+ &#39;color&#39;,
+ &#39;degrees&#39;,
+ &#39;delay&#39;,
+ &#39;display&#39;,
+ &#39;distance&#39;,
+ &#39;done&#39;,
+ &#39;dot&#39;,
+ &#39;down&#39;,
+ &#39;drawline&#39;,
+ &#39;end_fill&#39;,
+ &#39;face&#39;,
+ &#39;fd&#39;,
+ &#39;fillcolor&#39;,
+ &#39;filling&#39;,
+ &#39;fillopacity&#39;,
+ &#39;fillrule&#39;,
+ &#39;forward&#39;,
+ &#39;getcolor&#39;,
+ &#39;getheading&#39;,
+ &#39;getx&#39;,
+ &#39;gety&#39;,
+ &#39;goto&#39;,
+ &#39;heading&#39;,
+ &#39;hideborder&#39;,
+ &#39;hideturtle&#39;,
+ &#39;home&#39;,
+ &#39;ht&#39;,
+ &#39;initializeTurtle&#39;,
+ &#39;initializescreen&#39;,
+ &#39;inspect&#39;,
+ &#39;isdown&#39;,
+ &#39;isvisible&#39;,
+ &#39;jumpto&#39;,
+ &#39;left&#39;,
+ &#39;line&#39;,
+ &#39;lt&#39;,
+ &#39;math&#39;,
+ &#39;mode&#39;,
+ &#39;oldDefaults&#39;,
+ &#39;pd&#39;,
+ &#39;pen&#39;,
+ &#39;pencolor&#39;,
+ &#39;pendown&#39;,
+ &#39;pensize&#39;,
+ &#39;penup&#39;,
+ &#39;pos&#39;,
+ &#39;position&#39;,
+ &#39;pu&#39;,
+ &#39;radians&#39;,
+ &#39;re&#39;,
+ &#39;regularPolygon&#39;,
+ &#39;reset&#39;,
+ &#39;resetscreen&#39;,
+ &#39;right&#39;,
+ &#39;rt&#39;,
+ &#39;saveSVG&#39;,
+ &#39;seth&#39;,
+ &#39;setheading&#39;,
+ &#39;setpos&#39;,
+ &#39;setposition&#39;,
+ &#39;settiltangle&#39;,
+ &#39;setup&#39;,
+ &#39;setworldcoordinates&#39;,
+ &#39;setx&#39;,
+ &#39;sety&#39;,
+ &#39;shape&#39;,
+ &#39;shapesize&#39;,
+ &#39;shearfactor&#39;,
+ &#39;showSVG&#39;,
+ &#39;showborder&#39;,
+ &#39;showturtle&#39;,
+ &#39;speed&#39;,
+ &#39;st&#39;,
+ &#39;stamp&#39;,
+ &#39;sys&#39;,
+ &#39;tilt&#39;,
+ &#39;tiltangle&#39;,
+ &#39;time&#39;,
+ &#39;towards&#39;,
+ &#39;turtles&#39;,
+ &#39;turtlesize&#39;,
+ &#39;up&#39;,
+ &#39;update&#39;,
+ &#39;width&#39;,
+ &#39;window_height&#39;,
+ &#39;window_width&#39;,
+ &#39;write&#39;,
+ &#39;xcor&#39;,
+ &#39;ycor&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dann folgen wir der Anweisung, zuerst das Kommando <code class="docutils literal notranslate"><span class="pre">clearscreen()</span></code> zu benutzen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="600">  
+        <rect width="100%" height="100%" style="fill:white;stroke:;stroke-width:1"/>
 
-<span class="n">leinwand</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">leinwand</span><span class="p">)</span>
+
+
+
+
+        <g id="classic" visibility="visible" transform="rotate(-90,400.0,300.0) translate(400.0, 300.0)">
+<polygon points="-5,-4.5 0,-2.5 5,-4.5 0,4.5" transform="skewX(0) scale(1,1)" style="stroke:black;fill:black;stroke-width:1" />
+</g>
+      </svg>
+</div></div>
+</div>
+<p>Es erscheint eine leere Leinwand, die 800 Bildpunkte breit ist und 600
+Bildpunkte hoch ist. Bildpunkte werden normalerweise als <strong>Pixel</strong> bezeichnet,
+was wiederum mit px abgekürzt wird.</p>
+<p>Als nächstes setzen wir einen Roboter mitten in das Feld. Der Roboter soll den
+Namen Robo tragen. Da Variablen traditionell klein geschrieben werden, wird mit
+der folgenden Code-Zeile ein Roboter-Objekt namens <code class="docutils literal notranslate"><span class="pre">robo</span></code> initalisiert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Die folgende Animation zeigt, was passiert, wenn die obige Code-Zelle ausgeführt
-wird. Da die weiße Leinwand auf dem weißen Hintergrund des Jupyter Notebooks
-nicht zu sehen, wird sie rot umrahmt.</p>
-<img alt="../_images/demo_turtle_initialization.gif" id="demo-turtle-initialization" src="../_images/demo_turtle_initialization.gif" />
-<p>Damit der Computer weiß, dass auf dieser Leinwand eine Turtle-Grafik gezeichnet
-werden soll, platzieren wir über die Leinwand ein Turtle-Feld. Dazu erzeugen wir
-mit dem Befehl <code class="docutils literal notranslate"><span class="pre">TurtleScreen()</span></code> das Feld und speichern es zur weiteren
-Verwendung in der Variablen <code class="docutils literal notranslate"><span class="pre">feld</span></code>. Damit das Turtle-Feld auf der Leinwand
-platziert wird, müssen wir der Erzeugung des Turtle-Feldes die Leinwand als
-Zusatzinformation hinzufügen.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">feld</span> <span class="o">=</span> <span class="n">TurtleScreen</span><span class="p">(</span><span class="n">leinwand</span><span class="p">)</span>
-</pre></div>
 </div>
+</div>
+<p>Der virtuelle Roboter wird durch ein Dreieck gekennzeichent. Die Spitze des
+Dreiecks zeigt in die Richtung, in die der Roboter aktuell schaut.</p>
 </section>
 <section id="der-roboter-bewegt-sich">
 <h2>Der Roboter bewegt sich<a class="headerlink" href="#der-roboter-bewegt-sich" title="Permalink to this headline">#</a></h2>
-<p>Nun können wir endlich einen Roboter erzeugen und in die Mitte des Feldes setzen
-lassen.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">feld</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>Der Roboter wird mit einfachen Befehlen wie vorwärts, links, rechts, usw.
+gesteuert. Die Befehle sind dabei englisch. Da sie an den Roboter gerichtet
+sind, wird zuerst der Name des Roboters verwendet, dann ein Punkt gesetzt und
+zuletzt der Befehlsname geschrieben. In die runden Klammern kommen die
+Argumente, z.B. um wie viele Schritte der Roboter sich vorwärts bewegen soll.</p>
 <p>Mit dem Befehl</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">schritte</span><span class="p">)</span>
 </pre></div>
@@ -854,34 +1164,42 @@ lassen.</p>
 </div>
 <p>wird der Roboter nach links (gegen den Uhrzeigersinn) oder rechts (im
 Uhrzeigersinn) gedreht. Der Drehwinkel wird durch die Variable <code class="docutils literal notranslate"><span class="pre">winkel</span></code>
-bestimmt.</p>
+im Gradmaß bestimmt.</p>
 <p>Um jetzt den kompletten Code zusammen zu haben, wiederholen wir die bisherigen
 Code-Zeilen in der folgenden Code-Zelle und experimentieren dann in der
 übernächsten Code-Zelle mit der Steuerung des Roboters. Wenn Sie das Turtle-Feld
 wieder auf seinen Ausgangszustand zurücksetzen möchten, führen Sie erneut die
 Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import der benötigten Module</span>
-<span class="kn">from</span> <span class="nn">ipyturtle3</span> <span class="kn">import</span> <span class="n">Canvas</span><span class="p">,</span> <span class="n">TurtleScreen</span><span class="p">,</span> <span class="n">Turtle</span>
-
-<span class="c1"># Erzeugung und Anzeige der Leinwand</span>
-<span class="n">leinwand</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">leinwand</span><span class="p">)</span>
-
-<span class="c1"># Initialisierung des Turtle-Feldes</span>
-<span class="n">feld</span> <span class="o">=</span> <span class="n">TurtleScreen</span><span class="p">(</span><span class="n">leinwand</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initalisierung des Feldes und Löschung bereits vorhandener Grafiken</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
 
 <span class="c1"># Erzeugung eines Roboters mit Namen robo und Platzierung auf dem Feld</span>
-<span class="n">robo</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">feld</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">robo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="c1"># Robo bewegt sich</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Wenn Sie den Code in Ihrem Jupyter Notebook ausführen, sollten Sie Folgendes
-sehen:</p>
-<img alt="../_images/demo_turtle_running.gif" id="demo-turtle-running" src="../_images/demo_turtle_running.gif" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="600">  
+        <rect width="100%" height="100%" style="fill:white;stroke:;stroke-width:1"/>
+
+
+        <line x1="400.0" y1="300.0" x2="500.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="300.0" x2="495.0" y2="291.33974596215563" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="495.0" y1="291.33974596215563" x2="490.0" y2="282.67949192431126" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="490.0" y1="282.67949192431126" x2="485.0" y2="274.0192378864669" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="485.0" y1="274.0192378864669" x2="480.0" y2="265.35898384862253" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="480.0" y1="265.35898384862253" x2="475.0" y2="256.69872981077816" stroke-linecap="round" style="stroke:black;stroke-width:1" />
+
+
+        <g id="classic" visibility="visible" transform="rotate(150,475.0,256.69872981077816) translate(475.0, 256.69872981077816)">
+<polygon points="-5,-4.5 0,-2.5 5,-4.5 0,4.5" transform="skewX(0) scale(1,1)" style="stroke:black;fill:black;stroke-width:1" />
+</g>
+      </svg>
+</div></div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Lassen Sie den Roboter ein Rechteck der Länge 200 px und Höhe 100 px zeichnen. Am Ende soll der Roboter in die ursprüngliche Richtung hin ausgerichtet sein, also nach Osten bzw. rechts.</p>
@@ -895,7 +1213,9 @@ sehen:</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+<span class="n">robo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
@@ -937,7 +1257,38 @@ keine Zeichnung.</p></li>
 übergeben und entsprechen den englischen Farben.</p></li>
 </ul>
 <p>Mehr Details finden Sie in der
-<a class="reference external" href="https://docs.python.org/3/library/turtle.html">Turtle-Dokumentation</a>.</p>
+<a class="reference external" href="https://larryriddle.agnesscott.org/ColabTurtlePlus/documentation.html">Turtle-Dokumentation von ColabTurtlePlus</a>.</p>
+<p>Zum Abschluss noch eine Mini-Übung.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie den Roboter ein gleichseitiges Dreieck zeichnen. Die erste Seite soll rot sein, die zweite grün und die dritte blau.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+<span class="n">robo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="n">robo</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 

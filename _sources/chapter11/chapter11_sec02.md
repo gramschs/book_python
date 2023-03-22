@@ -14,4 +14,9 @@ kernelspec:
 
 # 11.2 Lineare Regression mit polyfit
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 TODO

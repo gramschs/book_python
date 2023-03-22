@@ -14,7 +14,10 @@ kernelspec:
 
 # 8.2 GUI
 
-
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
 
 Bevor wir einen Ausflug in die GUI-Programmierung unternehmen, müssen einige
 Module geladen werden. 

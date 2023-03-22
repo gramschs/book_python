@@ -53,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -716,12 +714,179 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 3.1 </p>
+<p class="admonition-title">Übung 3.1</p>
+<ol class="simple">
+<li><p>Erstellen Sie eine Liste mit den ersten drei Fußballvereinen der aktuellen
+Bundesligatabelle.</p></li>
+<li><p>Erstellen Sie eine Liste, die die folgenden aktuellen Daten von Eintracht
+Frankfurt enthält:</p>
+<ul class="simple">
+<li><p>Anzahl Spieltage</p></li>
+<li><p>Anzahl Siege</p></li>
+<li><p>Anzahl Unentschieden</p></li>
+<li><p>Anzahl Niederlagen</p></li>
+<li><p>Torverhältnis (also z.B. 55:31)</p></li>
+<li><p>Tordifferenz</p></li>
+<li><p>Punkte</p></li>
+</ul>
+</li>
+<li><p>Lassen Sie beide Listen ausgeben.</p></li>
+<li><p>Lassen Sie die aktuellen Punkte von Eintracht Frankfurt ausgeben.</p></li>
+</ol>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Die folgenden Daten variieren natürlich je nach Datum. Das ist der Stand vom 22.03.2023:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">bundesliga_top3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Borussia Dortmund&#39;</span><span class="p">,</span> <span class="s1">&#39;FC Bayern München&#39;</span><span class="p">,</span> <span class="s1">&#39;1. FC Union Berlin&#39;</span><span class="p">]</span>
+<span class="n">eintracht_frankfurt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;46:36&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TOP3 der Bundesliga:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bundesliga_top3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Spieldaten Eintracht Frankfurt:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aktuelle Punkte von Eintracht Frankfurt:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 3.2 </p>
 <p>Schreiben Sie ein Programm, das den Benutzer zwei Seitenlängen für die beiden
 Katheten <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(b\)</span> eines rechtwinkligen Dreiecks eingeben lässt. Anschließend
-berechnet das Programm die Länge der Hypotenuse nach dem Satz des Pythagoras
-<span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span> und gibt diese aus.</p>
+berechnet das Programm die Länge der Hypotenuse <span class="math notranslate nohighlight">\(c\)</span> und gibt diese aus.</p>
 <p>Bemerkung: Was passiert, wenn Sie eine negative Zahl eingeben?</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe der Seitenlängen</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Gib die Länge von Seite a ein: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Gib die Länge von Seite b ein: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Berechnung der Hypotenuse</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+
+<span class="c1"># Ausgabe des Ergebnisses</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Länge der Hypotenuse c beträgt:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Alternativ könnte man auch die Wurzelfunktion aus dem Math-Modul importieren und benutzen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zur Bemerkung: Wenn der Benutzer eine negative Zahl eingibt, würde das Programm
+das berechnen, was es soll. Aber im Kontext der Anwendung könnte das Ergebnis
+sinnlos sein, da die Länge der Seiten eines Dreiecks immer positiv sein muss. Es
+wäre daher sinnvoll, eine Überprüfung der Eingabe durchzuführen, um
+sicherzustellen, dass a und b positive Zahlen sind. Wenn der Benutzer eine
+negative Zahl eingibt, könnte das Programm eine Fehlermeldung ausgeben und den
+Benutzer auffordern, eine gültige Eingabe zu machen. Dazu kommen wir in späteren
+Vorlesungen.</p>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 3.3</p>
+<p>Schreiben Sie ein Programm, das den Benutzer nach seinem Gewicht in Kilogramm
+und seiner Größe in Metern fragt. Danach soll das Programm Body-Mass-Index (BMI)
+berechnen und ausgeben. Der BMI berechnet sich mit der Formel</p>
+<div class="math notranslate nohighlight">
+\[\text{BMI} = \frac{m}{l^2},\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(m\)</span> für das Körpergewicht in kg und <span class="math notranslate nohighlight">\(l\)</span> für die Körpergröße in m steht.</p>
+<p>Welchen BMI haben Sie?</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe von Gewicht und Größe</span>
+<span class="n">gewicht</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib dein Gewicht in Kilogramm ein: &quot;</span><span class="p">))</span>
+<span class="n">groesse</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib deine Größe in Metern ein: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Berechnung des BMI</span>
+<span class="n">bmi</span> <span class="o">=</span> <span class="n">gewicht</span> <span class="o">/</span> <span class="p">(</span><span class="n">groesse</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe des Ergebnisses</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dein BMI beträgt:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bmi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 3.4</p>
+<p>Schreibe ein Programm, das mit dem Turtle-Modul ein Quadrat zeichnet. Zuerst
+soll vom Benutzer abgefragt werden, welche Seitenlänge in Pixel das Quadrat
+haben soll. Dann soll abgefragt werden, welche Farbe die Seiten haben sollen.
+Mit diesen Angaben soll dann das Quadrat gezeichnet werden.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import notwendiger Module</span>
+<span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+
+<span class="c1"># Benutzereingabe für die Größe und Farbe des Quadrats</span>
+<span class="n">seitenlaenge</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib die Seitenlänge des Quadrats ein: &quot;</span><span class="p">))</span>
+<span class="n">farbe</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib die Farbe des Quadrats auf Englisch ein (z.B. red, blue, green, yellow): &quot;</span><span class="p">)</span>
+
+<span class="c1"># Erstellen eines Turtle-Objekts</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+<span class="n">quadrat</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="c1"># Zeichnen des Quadrats</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="n">farbe</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seitenlaenge</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seitenlaenge</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seitenlaenge</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seitenlaenge</span><span class="p">)</span>
+<span class="n">quadrat</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 3.5</p>
+<p>Lassen Sie Turtle das Haus vom Nikolaus zeichnen. Das Haus vom Nikolaus sieht folgendermaßen aus:</p>
+<figure class="align-default" id="haus-nikolaus">
+<a class="reference internal image-reference" href="../_images/haus_nikolaus.svg"><img alt="../_images/haus_nikolaus.svg" height="150px" src="../_images/haus_nikolaus.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Das Haus vom Nikolaus</span><a class="headerlink" href="#haus-nikolaus" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import notwendiger Module</span>
+<span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">seite</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">diagonale</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Erstellen eines Turtle-Objekts</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="c1"># Zeichne das Haus</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">diagonale</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">diagonale</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">diagonale</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">diagonale</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
 

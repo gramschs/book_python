@@ -14,6 +14,10 @@ kernelspec:
 
 # 8.3 Objektorientierung
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
 
 In den letzten Wochen haben wir uns die Grundlagen der Programmierung
 erarbeitet:

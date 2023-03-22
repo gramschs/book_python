@@ -14,6 +14,11 @@ kernelspec:
 
 # 7.1 Digitale Logik: und, oder, nicht
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 In der letzten Vorlesung haben wir den boolschen Datentyp kennengelernt: wahr
 oder falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man
 fordern, dass zwei Bedingungen gleichzeitg erfüllt sein sollen. 

@@ -13,6 +13,11 @@ kernelspec:
 
 # 4.2 for-Schleifen mit range
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 ```{admonition} Lernziele
 :class: hint
 * TODO

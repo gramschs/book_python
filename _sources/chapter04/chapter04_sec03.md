@@ -13,6 +13,11 @@ kernelspec:
 
 # 4.3 Strings
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 Den Datentyp String haben Sie bereits zu Beginn im Kapitel "Einstieg in die
 Programmierung" kennengelernt. Bis jetzt haben wir Strings vor allem dazu
 benutzt, um mit der print()-Funktion etwas auszugeben. In diesem Jupyter

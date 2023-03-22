@@ -14,6 +14,11 @@ kernelspec:
 
 # 6.1 Funktionen selbst schreiben
 
+```{admonition} Warnung
+:class: warning
+Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+```
+
 Eine Funktion ist eine Zusammenfassung von python, der eine bestimmte Teilaufgabe
 löst. Dabei arbeitet die Funktion nach dem EVA-Prinzip. Die Funktion übernimmt
 Objekte als Eingabe, verarbeitet diese und liefert Objekte als Ergebnis zurück.
