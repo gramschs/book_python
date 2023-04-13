@@ -708,8 +708,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grammatik-der-for-schleife-mit-liste">
-   Grammatik der for-Schleife mit Liste
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-der-for-schleife-mit-liste">
+   Syntax der for-Schleife mit Liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-schleifen-mit-listen-von-zahlen">
+   for-Schleifen mit Listen von Zahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-schleifen-mit-listen-von-strings">
+   for-Schleifen mit Listen von Strings
   </a>
  </li>
 </ul>
@@ -732,8 +747,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grammatik-der-for-schleife-mit-liste">
-   Grammatik der for-Schleife mit Liste
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-der-for-schleife-mit-liste">
+   Syntax der for-Schleife mit Liste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-schleifen-mit-listen-von-zahlen">
+   for-Schleifen mit Listen von Zahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-schleifen-mit-listen-von-strings">
+   for-Schleifen mit Listen von Strings
   </a>
  </li>
 </ul>
@@ -748,10 +778,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="for-schleifen-mit-liste">
 <h1>4.1 for-Schleifen mit Liste<a class="headerlink" href="#for-schleifen-mit-liste" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
 <p>In der Praxis kommt es oft vor, dass wir von vornherein wissen, wie oft wir eine
 Handlung wiederholen wollen. Beispielsweise soll in einem Verein darüber
 abgestimmt werde, ob Anna oder Bob zukünftig die Kasse verwalten soll. Alle
@@ -767,40 +793,155 @@ Zählschleife an.</p>
 bei der Elemente einer Liste abgearbeitet werden. Zum anderen die Zählschleife
 mit einem Zahlenbereich. In diesem Abschnitt behandeln wir Zählschleife mit
 einer Liste.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>TODO</p></li>
+<li><p>Sie können eine <strong>for-Schleife mit Liste</strong> programmieren.</p></li>
+<li><p>Sie wissen, wie die Fachbegriffe der einzelnen Bestandteil der Schleife
+lauten:</p>
+<ul>
+<li><p><strong>Kopfzeile</strong>, wird mit <strong>Doppelpunkt :</strong> abgeschlossen</p></li>
+<li><p>Schlüsselwörter <strong>for</strong> und <strong>in</strong></p></li>
+<li><p><strong>Schleifenvariable</strong></p></li>
+</ul>
+</li>
+<li><p>Sie wissen, dass der Anweisungsblock des Schleifeninneren eingerückt werden muss. Die <strong>Einrückung</strong> muss immer mit der gleichen Anzahl von Zeichen erfolgen.</p></li>
 </ul>
 </div>
-<!-- #region -->
-<section id="grammatik-der-for-schleife-mit-liste">
-<h2>Grammatik der for-Schleife mit Liste<a class="headerlink" href="#grammatik-der-for-schleife-mit-liste" title="Permalink to this headline">#</a></h2>
-<p>Die for-Schleife mit Liste hat folgende Syntax (= Grammatik einer Programmiersprache):</p>
+</section>
+<section id="syntax-der-for-schleife-mit-liste">
+<h2>Syntax der for-Schleife mit Liste<a class="headerlink" href="#syntax-der-for-schleife-mit-liste" title="Permalink to this headline">#</a></h2>
+<p>Die for-Schleife mit Liste hat folgende Syntax (= Grammatik einer
+Programmiersprache):</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-    <span class="n">anweisungsblock</span>
+    <span class="n">anweisungen</span>
 </pre></div>
 </div>
-<p>Eine Schleife beginnt mit dem Schlüsselwort <strong>for</strong>. Danach kommt der Name der sogenannten <strong>Schleifenvariable</strong>, in diesem Fall also <code class="docutils literal notranslate"><span class="pre">element</span></code>. Als nächstes folgt wieder ein Schlüsselwort, nämlich <strong>in</strong> und zuletzt die Liste.</p>
-<p>Python muss wissen, welche Kommandos für jeden Schleifendurchgang ausgeführt werden sollen. Daher wird die Kopfzeile der Schleife mit einem Doppelpunkt <code class="docutils literal notranslate"><span class="pre">:</span></code> beendet. Danach werden alle Kommandos aufgelistet, die ausgeführt werden sollen. Damit Python weiß, wann es wieder mit dem normalen Programm weitergehen soll, müssen wir dem Python-Interpreter das Ende der Schleife signalisieren. In vielen Programmiersprachen wird das mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">end</span></code> gemacht oder es werden Klammern gesetzt. In Python wird stattdessen mit <strong>Einrückung</strong> gearbeitet. Alle Zeilen, die eingerückt sind, werden in der Schleife wiederholt.</p>
+<p>Eine Schleife beginnt mit dem Schlüsselwort <strong>for</strong>. Danach kommt der Name der
+sogenannten <strong>Schleifenvariable</strong>, in diesem Fall also <code class="docutils literal notranslate"><span class="pre">element</span></code>. Als nächstes
+folgt wieder ein Schlüsselwort, nämlich <strong>in</strong> und zuletzt die Variable mit der
+Liste oder die Liste selbst. Diese Zeile nennt man <strong>Kopfzeile</strong>.</p>
+<p>Python muss wissen, welche Kommandos für jeden Schleifendurchgang ausgeführt
+werden sollen. Daher wird die Kopfzeile der Schleife mit einem Doppelpunkt <code class="docutils literal notranslate"><span class="pre">:</span></code>
+beendet. Danach werden alle Kommandos aufgelistet, die ausgeführt werden sollen.
+Damit Python weiß, wann es wieder mit dem normalen Programm weitergehen soll,
+müssen wir dem Python-Interpreter das Ende der Schleife signalisieren. In vielen
+Programmiersprachen wird das mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">end</span></code> gemacht oder es werden
+Klammern gesetzt. In Python wird stattdessen mit <strong>Einrückung</strong> gearbeitet. Alle
+Zeilen mit Anweisungen, die eingerückt sind, werden in der Schleife wiederholt.</p>
+</section>
+<section id="for-schleifen-mit-listen-von-zahlen">
+<h2>for-Schleifen mit Listen von Zahlen<a class="headerlink" href="#for-schleifen-mit-listen-von-zahlen" title="Permalink to this headline">#</a></h2>
 <p>Probieren wir es mit einem einfachen Beispiel:</p>
-<!-- #endregion -->
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Es werden nacheinander die Elemente der Menge <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">8,</span> <span class="pre">10]</span></code> auf dem Bildschirm ausgegeben.</p>
-<p>Meistens geht es nicht darum, nur etwas einzeln anzuzeigen, sondern die Elemente der Menge zu verarbeiten. Im nächsten Beispiel soll jedes Element der Liste <code class="docutils literal notranslate"><span class="pre">[4,5,7,11,21</span></code> um 2 erhöht und dann angezeigt werden.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">21</span><span class="p">]:</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Schleifenvariable heißt <code class="docutils literal notranslate"><span class="pre">i</span></code>. Sie nimmt beim 1. Schleifendurchgang den Wert
+<code class="docutils literal notranslate"><span class="pre">2</span></code> an. Dann werden die Anweisungen im Schleifeninneren ausgeführt, also die
+print()-Funktion für <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">2</span></code> angewendet und eine 2 ausgegeben. Dann wird die
+Schleife ein 2. Mal durchlaufen. Diesmal nimmt die Schleifenvariable <code class="docutils literal notranslate"><span class="pre">i</span></code> den
+Wert <code class="docutils literal notranslate"><span class="pre">4</span></code> an und die print()-Funktion gibt 4 aus. Das geht so weiter bis zum 5.
+Schleifendurchgang, wo die Schleifenvariable den Wert <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">10</span></code> annimmt und eine
+10 auf dem Bildschirm angezeigt wird. Da die <code class="docutils literal notranslate"><span class="pre">10</span></code> das letzte Element der Liste
+war, macht der Python-Interpreter mit dem normalen Programm weiter. Bei unserem
+kurzen Beispiel ist aber schon das Ende des Programmes erreicht. Zusammengefasst,
+werden nacheinander die Elemente der Liste <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">8,</span> <span class="pre">10]</span></code> auf dem Bildschirm
+ausgegeben.</p>
+<p>Meistens geht es nicht darum, nur etwas einzeln anzuzeigen, sondern die Elemente
+der Menge zu verarbeiten. Im nächsten Beispiel soll jedes Element der Liste
+<code class="docutils literal notranslate"><span class="pre">[4,5,7,11,21</span></code> um 2 erhöht und dann angezeigt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">21</span><span class="p">]:</span>
     <span class="n">zahl2</span> <span class="o">=</span> <span class="n">zahl</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">zahl2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich bin fertig!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition-mini-ubung admonition">
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+7
+9
+13
+23
+Ich bin fertig!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Im Kapitel <a class="reference internal" href="chapter04_sec02.html#ref04-sec01"><span class="std std-ref">Kapitel 4.2</span></a> werden wir noch eine einfachere Funktion
+kennenlernen, um Zahlenlisten nach einem vorgegebenem Schema zu erzeugen.</p>
+<div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie eine For-Schleife, die die klassischen Schulnoten “sehr gut”  bis “ungenügend” einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.</p>
+<p>Schreiben Sie ein Programm, das die ersten 10 Quadratzahlen berechnet und ausgibt.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="n">quadrat</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">quadrat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="for-schleifen-mit-listen-von-strings">
+<h2>for-Schleifen mit Listen von Strings<a class="headerlink" href="#for-schleifen-mit-listen-von-strings" title="Permalink to this headline">#</a></h2>
+<p>Eigentlich ist die Unterscheidung von Listen mit Zahlen oder Strings nur aus
+didaktischen Gründen erfolgt. Für den Python-Interpreter ist es unerheblich, mit
+welchen Datentypen die Liste gefüllt ist, die in der for-Schleife durchlaufen
+wird. Auch eine Liste mit Strings stellt kein Problem dar, wie das folgende
+Beispiel zeigt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Januar&#39;</span><span class="p">,</span> <span class="s1">&#39;Februar&#39;</span><span class="p">,</span> <span class="s1">&#39;März&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;Mai&#39;</span><span class="p">,</span> <span class="s1">&#39;Juni&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;Juli&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;Oktober&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;Dezember&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">monat</span> <span class="ow">in</span> <span class="n">monate</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Januar
+Februar
+März
+April
+Mai
+Juni
+Juli
+August
+September
+Oktober
+November
+Dezember
+</pre></div>
+</div>
+</div>
+</div>
+<p>Am besten probieren Sie es einmal selbst aus:</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie eine For-Schleife, die die klassischen Schulnoten “sehr gut”  bis
+“ungenügend” einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten
+lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
