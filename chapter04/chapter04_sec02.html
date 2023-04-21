@@ -685,12 +685,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-range-funktion">
+   Die range()-Funktion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#range-mit-for">
+   range() mit for
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anwendungsbeispiele-fur-die-for-schleife">
+   Anwendungsbeispiele für die for-Schleife
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -702,6 +741,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-range-funktion">
+   Die range()-Funktion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#range-mit-for">
+   range() mit for
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anwendungsbeispiele-fur-die-for-schleife">
+   Anwendungsbeispiele für die for-Schleife
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -710,17 +777,205 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="for-schleifen-mit-range">
-<span id="ref04-sec01"></span><h1>4.2 for-Schleifen mit range<a class="headerlink" href="#for-schleifen-mit-range" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
+<span id="ref04-sec02"></span><h1>4.2 for-Schleifen mit range<a class="headerlink" href="#for-schleifen-mit-range" title="Permalink to this headline">#</a></h1>
+<p>In diesem Kapitel werden wir uns erneut mit Schleifen beschäftigen. Schleifen
+ermöglichen es uns, bestimmte Aufgaben wiederholt auszuführen, ohne den Code
+mehrmals schreiben zu müssen. Im <a class="reference internal" href="chapter04_sec01.html#ref04-sec01"><span class="std std-ref">Kapitel 4.1</span></a> haben wir ja bereits
+die for-Schleife mit Listen kennengelernt. In diesem Kapitel konzentrieren wir
+uns auf die for-Schleife mit der range()-Funktion in Python.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
-<ul class="simple">
-<li><p>TODO</p></li>
-</ul>
+<p>Sie können Zahlenlisten mit der <strong>range()</strong>-Funktion erzeugen und diese mit der
+for-Schleife kombinieren.</p>
 </div>
+</section>
+<section id="die-range-funktion">
+<h2>Die range()-Funktion<a class="headerlink" href="#die-range-funktion" title="Permalink to this headline">#</a></h2>
+<p>In vielen Fällen möchten wir eine Schleife für eine bestimmte Anzahl von
+Iterationen ausführen. In Python können wir dies mit Hilfe der
+<code class="docutils literal notranslate"><span class="pre">range()</span></code>-Funktion erreichen. Die range()-Funktion generiert eine Liste von
+Zahlen, die wir dann anschließend in einer for-Schleife verwenden können.
+Natürlich kann die Liste von Zahlen auch für andere Dinge genutzt werden, aber
+die Verwendung für for-Schleifen ist sicherlich der häufigste Einsatzzweck von
+range().</p>
+<p>Die Syntax der range()-Funktion ist:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>               <span class="c1"># erzeugt eine Liste von 0 bis (stop - 1)</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>        <span class="c1"># erzeugt eine Liste von start bis (stop - 1)</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>  <span class="c1"># erzeugt eine Liste von start bis (stop - 1) mit der Schrittweite step</span>
+</pre></div>
+</div>
+<p>Es ist schwierig, sich den Inhalt von <code class="docutils literal notranslate"><span class="pre">range()</span></code> direkt anzuschauen. Am
+einfachsten ist es, die range()-Funktion direkt mit der for-Schleife zu
+kombinieren wie im nächsten Abschnitt.</p>
+</section>
+<section id="range-mit-for">
+<h2>range() mit for<a class="headerlink" href="#range-mit-for" title="Permalink to this headline">#</a></h2>
+<p>Um eine for-Schleife mit der range()-Funktion zu verwenden, kombinieren wir
+einfach die beiden Konzepte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+    <span class="n">Anweisungen</span>
+</pre></div>
+</div>
+<p>Hier ist <code class="docutils literal notranslate"><span class="pre">i</span></code> die Schleifenvarible, die nacheinander bei jedem Schleifendurchgang
+die Werte in der von range() erzeugten Liste annimmt. Im Folgenden finden Sie
+einige Beispiele für die Verwendung von for-Schleifen mit range():</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range(5)</span></code> erzeugt eine Liste mit den Zahlen 0, 1, 2, 3, 4, die dann durch die
+<code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion nacheinander ausgegeben werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>      
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range(2,6)</span></code> erzeugt eine Liste mit den Zahlen 2, 3, 4, 5. Achtung, die 6 gehört
+nicht dazu, da das letzte Element der Liste ja die stop-Zahl - 1 ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">10,</span> <span class="pre">2)</span></code> erzeugt die Liste 1, 3, 5, 7, 9.</p>
+<p>Um die Bedeutung der Schrittweite <code class="docutils literal notranslate"><span class="pre">step</span></code> zu zeigen, können wir einmal eine
+negative Schrittweite ausprobieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die negative Schrittweite <code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">=</span> <span class="pre">-1</span></code> führt dazu, dass der Python-Interpreter
+rückwärts zählt.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie die Dreier-Zahlen von 3 bis 99 ausgeben, also 3, 6, 9, 12, 15, …, 96, 99.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="anwendungsbeispiele-fur-die-for-schleife">
+<h2>Anwendungsbeispiele für die for-Schleife<a class="headerlink" href="#anwendungsbeispiele-fur-die-for-schleife" title="Permalink to this headline">#</a></h2>
+<p>Insbesondere, wenn die Anzahl der Wiederholungen feststeht, kommt die
+for-Schleife in Kombination mit range() zum Einsatz. Im Folgenden sehen wir uns
+typische Beispiele an.</p>
+<p>Beispiel 1: Berechnung der Summe der ersten 10 natürlichen Zahlen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">summe</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Summe der ersten 10 natürlichen Zahlen ist: &quot;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Summe der ersten 10 natürlichen Zahlen ist:  55
+</pre></div>
+</div>
+</div>
+</div>
+<p>Beispiel 2: Nur jedes zweite Mal wird eine Aktion ausgeführt</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Programm, dass die Summe der ersten n Quadratzahlen berechnet.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Beispielwert</span>
+<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">summe</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Summe der ersten Quadratzahlen ist:&quot;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier ist die Variable <code class="docutils literal notranslate"><span class="pre">n</span></code> im Python-Code gesetzt worden. Schöner wäre eine interaktive Abfrage mit der input()-Funktion:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Quadratzahlen sollen summiert werden?))</span>
+</pre></div>
+</div>
+<p>Aber das war nicht gefragt.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

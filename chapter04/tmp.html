@@ -185,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter03_sec00.html">
+  <a class="reference internal" href="../chapter03/chapter03_sec00.html">
    3. Listen und Module
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -195,29 +195,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03_sec01.html">
+    <a class="reference internal" href="../chapter03/chapter03_sec01.html">
      3.1 Listen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03_sec02.html">
+    <a class="reference internal" href="../chapter03/chapter03_sec02.html">
      3.2 Das Modul Math
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03_sec03.html">
+    <a class="reference internal" href="../chapter03/chapter03_sec03.html">
      3.3 Das Modul Turtle
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter03_sec04.html">
+    <a class="reference internal" href="../chapter03/chapter03_sec04.html">
      Übungen
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
+  <a class="reference internal" href="chapter04_sec00.html">
    4. Zählschleifen (for) und Strings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -227,22 +227,22 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
+    <a class="reference internal" href="chapter04_sec01.html">
      4.1 for-Schleifen mit Liste
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
+    <a class="reference internal" href="chapter04_sec02.html">
      4.2 for-Schleifen mit range
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
+    <a class="reference internal" href="chapter04_sec03.html">
      4.3 Strings
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter04/chapter04_sec04.html">
+    <a class="reference internal" href="chapter04_sec04.html">
      Übungen
     </a>
    </li>
@@ -555,7 +555,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter03/tmp.ipynb"
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter04/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -629,7 +629,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapter03/tmp.ipynb"
+        <a href="../_sources/chapter04/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -719,52 +719,114 @@ title="Print to PDF"
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe des Benutzers</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">ergebnis</span> <span class="o">*</span> <span class="n">i</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Fakultät von </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">, also </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">! = </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Put clearscreen() as the first line in a cell (after the import command) to re-run turtle commands in the cell
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Eingabe des Benutzers</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Verarbeitung</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import notwendiger Module</span>
-<span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Januar&#39;</span><span class="p">,</span> <span class="s1">&#39;Februar&#39;</span><span class="p">,</span> <span class="s1">&#39;März&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;Mai&#39;</span><span class="p">,</span> <span class="s1">&#39;Juni&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;Juli&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;Oktober&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;Dezember&#39;</span><span class="p">]</span>
 
-<span class="n">seite</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">diagonale</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">diagonale</span><span class="p">)</span>
-
-<span class="c1"># Erstellen eines Turtle-Objekts</span>
-<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-
-<span class="c1"># Zeichne das Haus</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">diagonale</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">diagonale</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">diagonale</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">diagonale</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">monat</span> <span class="o">=</span> <span class="n">monate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">monat</span><span class="si">}</span><span class="s1"> ist der </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">. Monat im Jahr.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>141.4213562373095
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Januar ist der 1. Monat im Jahr.
+Februar ist der 2. Monat im Jahr.
+März ist der 3. Monat im Jahr.
+April ist der 4. Monat im Jahr.
+Mai ist der 5. Monat im Jahr.
+Juni ist der 6. Monat im Jahr.
+Juli ist der 7. Monat im Jahr.
+August ist der 8. Monat im Jahr.
+September ist der 9. Monat im Jahr.
+Oktober ist der 10. Monat im Jahr.
+November ist der 11. Monat im Jahr.
+Dezember ist der 12. Monat im Jahr.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initalisierung der leeren Liste</span>
+<span class="n">zahlen</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Eingabe der 5 Zahlen durch einen Benutzer</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie eine Zahl ein: &quot;</span><span class="p">))</span>
+    <span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+
+<span class="c1"># Verarbeitung: Berechnung der Summe</span>
+<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">zahlen</span><span class="p">:</span>
+    <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">zahl</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Summe der Zahlen ist: </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Summe der Zahlen ist: 15.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+
+<span class="n">anzahl_seiten</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie die Anzahl der Seiten des n-Ecks ein: &#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_seiten</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">anzahl_seiten</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bitte geben Sie die Anzahl der Seiten des n-Ecks ein:  7
 </pre></div>
 </div>
 <div class="output text_html">
@@ -772,12 +834,26 @@ title="Print to PDF"
         <rect width="100%" height="100%" style="fill:white;stroke:;stroke-width:1"/>
 
 
-        <line x1="400.0" y1="300.0" x2="500.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="300.0" x2="400.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="400.0" y1="200.0" x2="500.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="200.0" x2="450.0" y2="150.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="450.0" y1="150.0" x2="400.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="400.0" y1="200.0" x2="400.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="400.0" y1="300.0" x2="500.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="200.0" x2="500.0" y2="210.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="210.0" x2="500.0" y2="220.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="220.0" x2="500.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="230.0" x2="500.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="240.0" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="250.0" x2="500.0" y2="260.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="260.0" x2="500.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="270.0" x2="500.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="280.0" x2="500.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="290.0" x2="500.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" />
+        <line x1="400.0" y1="300.0" x2="430.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="430.0" y1="300.0" x2="448.705" y2="323.455" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="448.705" y1="323.455" x2="442.029" y2="352.703" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="442.029" y1="352.703" x2="415.0" y2="365.72" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="415.0" y1="365.72" x2="387.971" y2="352.703" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="387.971" y1="352.703" x2="381.295" y2="323.455" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="381.295" y1="323.455" x2="400.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" />
 
 
-        <g id="classic" visibility="visible" transform="rotate(0,500.0,300.0) translate(500.0, 300.0)">
+        <g id="classic" visibility="visible" transform="rotate(218.5714285714286,400.0,300.0) translate(400.0, 300.0)">
 <polygon points="-5,-4.5 0,-2.5 5,-4.5 0,4.5" transform="skewX(0) scale(1,1)" style="stroke:black;fill:black;stroke-width:1" />
-</g>
+<animateTransform id = "one" attributeName="transform" 
+                      type="scale"
+                      from="1 1" to="1 1"
+                      begin="0s" dur="0.01s"
+                      repeatCount="1"
+                      additive="sum"
+                      fill="freeze"
+                /><animateTransform attributeName="transform"
+                    type="rotate"
+                    from="0 0 0" to ="51.42857142857143 0 0"
+                    begin="one.end" dur="0.14285714285714285s"
+                    repeatCount="1"
+                    additive="sum"
+                    fill="freeze"
+                /></g>
       </svg>
 </div></div>
 </div>
@@ -795,7 +871,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapter03"
+            path: "./chapter04"
         },
         predefinedOutput: true
     }

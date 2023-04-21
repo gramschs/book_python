@@ -11,6 +11,7 @@ kernelspec:
   name: python3
 ---
 
+(ref04_sec01)=
 # 4.1 for-Schleifen mit Liste
 
 In der Praxis kommt es oft vor, dass wir von vornherein wissen, wie oft wir eine
@@ -136,7 +137,7 @@ Am besten probieren Sie es einmal selbst aus:
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Schreiben Sie eine For-Schleife, die die klassischen Schulnoten "sehr gut"  bis
+Schreiben Sie eine for-Schleife, die die klassischen Schulnoten "sehr gut"  bis
 "ungenügend" einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten
 lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
 ```

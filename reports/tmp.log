@@ -17,38 +17,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Import notwendiger Module
-import ColabTurtlePlus.Turtle as turtle
+# Eingabe des Benutzers
+n = int(input('Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: '))
 
-# Benutzereingabe für die Größe und Farbe des Quadrats
-seitenlaenge = int(input("Gib die Seitenlänge des Quadrats ein: "))
-farbe = input("Gib die Farbe des Quadrats auf Englisch ein (z.B. red, blue, green, yellow): ")
+# Verarbeitung
+ergebnis = 1
+for i in range(n, 1, -1):
+    ergebnis = ergebnis * i
 
-# Erstellen eines Turtle-Objekts
-turtle.clearscreen()
-quadrat = turtle.Turtle()
-
-# Zeichnen des Quadrats
-quadrat.pencolor(farbe)
-quadrat.forward(seitenlaenge)
-quadrat.left(90)
-quadrat.forward(seitenlaenge)
-quadrat.left(90)
-quadrat.forward(seitenlaenge)
-quadrat.left(90)
-quadrat.forward(seitenlaenge)
-quadrat.left(90)
+# Ausgabe
+print(f'Die Fakultät von {n} ist {ergebnis}, also {n}! = {ergebnis}.') 
 
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-Cell [0;32mIn[2], line 5[0m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mColabTurtlePlus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mTurtle[39;00m [38;5;28;01mas[39;00m [38;5;21;01mturtle[39;00m
-[1;32m      4[0m [38;5;66;03m# Benutzereingabe für die Größe und Farbe des Quadrats[39;00m
-[0;32m----> 5[0m seitenlaenge [38;5;241m=[39m [38;5;28mint[39m([38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mGib die Seitenlänge des Quadrats ein: [39;49m[38;5;124;43m"[39;49m[43m)[49m)
-[1;32m      6[0m farbe [38;5;241m=[39m [38;5;28minput[39m([38;5;124m"[39m[38;5;124mGib die Farbe des Quadrats auf Englisch ein (z.B. red, blue, green, yellow): [39m[38;5;124m"[39m)
-[1;32m      8[0m [38;5;66;03m# Erstellen eines Turtle-Objekts[39;00m
+Cell [0;32mIn[1], line 2[0m
+[1;32m      1[0m [38;5;66;03m# Eingabe des Benutzers[39;00m
+[0;32m----> 2[0m n [38;5;241m=[39m [38;5;28mint[39m([38;5;28;43minput[39;49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mBitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: [39;49m[38;5;124;43m'[39;49m[43m)[49m)
+[1;32m      4[0m [38;5;66;03m# Verarbeitung[39;00m
+[1;32m      5[0m ergebnis [38;5;241m=[39m [38;5;241m1[39m
 
 File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
 [1;32m   1184[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:

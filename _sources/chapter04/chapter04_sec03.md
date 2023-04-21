@@ -13,11 +13,6 @@ kernelspec:
 
 # 4.3 Strings
 
-```{admonition} Warnung
-:class: warning
-Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
-```
-
 Den Datentyp String haben Sie bereits zu Beginn im Kapitel "Einstieg in die
 Programmierung" kennengelernt. Bis jetzt haben wir Strings vor allem dazu
 benutzt, um mit der print()-Funktion etwas auszugeben. In diesem Jupyter
@@ -66,13 +61,8 @@ Speichern Sie den String 'Hallo, Du da!' in einer Variable. Beantworten Sie folg
 * Welches Zeichen hat den Index 6?
 ````
 
-```python
-# Hier Ihr Code (aber zuerst überlegen... )
-
-```
-
 ````{admonition} Lösung
-:class: solution, toggle
+:class: minisolution, toggle
 
 * Der kleinste Index ist 0.
 * Der größte Index ist 12.
@@ -207,14 +197,8 @@ die `.replace()`-Methode aus.
 :class: miniexercise
 Schreiben Sie ein Programm, das in dem Spruch "Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo." die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den Spruch vor und nach der Korrektur ausgeben.
 ````
-
-```python
-# Hier Ihr Code
-
-```
-
 ````{admonition} Lösung
-:class: solution, toggle
+:class: minisolution, toggle
 ```python
 spruch = 'Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.'
 
@@ -276,14 +260,8 @@ herunterladen.
 :class: miniexercise
 Schreiben Sie ein Programm, mit dem der Flächeninhalt eines Rechtecks berechnet werden soll. Die beide Seitenlängen werden jeweils in den Variablen `laenge` und `breite` gespeichert (suchen Sie sich eigene Zahlen aus). Ausgegeben werden soll dann: "Der Flächeninhalt eines Rechtecks mit den Seiten XX und XX ist XX.", wobei XX durch die korrekten Zahlen ersetzt werden und der Flächeninhalt auf eine Nachkommastelle gerundet werden soll.
 ````
-
-```python
-# Hier Ihr Code
-
-```
-
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 # Eingabe
 laenge = 5.5

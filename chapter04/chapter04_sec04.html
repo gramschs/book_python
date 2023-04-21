@@ -53,6 +53,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Programmverzweigung (if - elif - else)" href="../chapter05/chapter05_sec00.html" />
@@ -711,139 +713,111 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 4.1</p>
+<p>Schreiben Sie ein Programm, das den folgenden Text ausgibt:</p>
+<p>Januar ist der 1. Monat im Jahr. <br>
+Februar ist der 2. Monat im Jahr. <br>
+…<br></p>
+<p>Verwenden Sie dazu eine Liste der Monate und eine for-Schleife.</p>
 </div>
-<ol class="simple">
-<li><p>Schreiben Sie ein Programm, das den Benutzer nach seinem Namen und seinem Alter fragt und dann eine Begrüßungsnachricht ausgibt, die den Namen und das Alter des Benutzers enthält. Verwenden Sie eine f-String, um den Namen und das Alter des Benutzers in die Begrüßungsnachricht einzufügen.</p></li>
-<li><p>Schreiben Sie ein Programm, das den Benutzer nach seiner E-Mail-Adresse fragt und dann eine Bestätigungsmeldung ausgibt, die die E-Mail-Adresse des Benutzers enthält. Verwenden Sie eine f-String, um die E-Mail-Adresse des Benutzers in die Bestätigungsmeldung einzufügen.</p></li>
-<li><p>Schreiben Sie ein Programm, das den Benutzer nach zwei Zahlen fragt und dann die Summe, das Produkt und den Quotienten dieser Zahlen ausgibt. Verwenden Sie eine f-String, um die Zahlen und die Ergebnisse in die Ausgabe einzufügen.</p></li>
-<li><p>Schreiben Sie ein Programm, das eine Liste von Namen enthält und dann eine Nachricht ausgibt, die jeden Namen in der Liste einzeln begrüßt. Verwenden Sie eine Schleife und eine f-String, um die Nachricht für jeden Namen in der Liste zu erstellen.</p></li>
-<li><p>Schreiben Sie ein Programm, das eine Zeichenkette enthält und dann eine Nachricht ausgibt, die angibt, wie viele Vorkommen eines bestimmten Buchstabens in der Zeichenkette vorhanden sind. Verwenden Sie eine f-String, um den Buchstaben und die Anzahl der Vorkommen in die Nachricht einzufügen.</p></li>
-</ol>
-<p>Aufgabe 1: Schreiben Sie ein Programm, das eine Liste von Zahlen von 1 bis 5 enthält und diese Zahlen nacheinander mit Hilfe einer for-Schleife ausgibt.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zahlen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">monate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Januar&#39;</span><span class="p">,</span> <span class="s1">&#39;Februar&#39;</span><span class="p">,</span> <span class="s1">&#39;März&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;Mai&#39;</span><span class="p">,</span> <span class="s1">&#39;Juni&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;Juli&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;Oktober&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;Dezember&#39;</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">zahlen</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">monat</span> <span class="o">=</span> <span class="n">monate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">monat</span><span class="si">}</span><span class="s1"> ist der </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">. Monat im Jahr.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Aufgabe 2: Schreiben Sie ein Programm, das den Benutzer nach 3 Namen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Namen in der Liste mithilfe einer for-Schleife ausgeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">namen</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie einen Namen ein: &quot;</span><span class="p">)</span>
-    <span class="n">namen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namen</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
 </div>
-<p>Aufgabe 3: Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in der Liste mithilfe einer for-Schleife berechnen und ausgeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zahlen</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie eine Zahl ein: &quot;</span><span class="p">))</span>
-    <span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-
-<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">zahlen</span><span class="p">:</span>
-    <span class="n">summe</span> <span class="o">+=</span> <span class="n">zahl</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Summe der Zahlen ist:&quot;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
-</pre></div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 4.2</p>
+<p>Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei eine for-Schleife.</p>
 </div>
-<p>Aufgabe 4: Schreiben Sie ein Programm, das den Benutzer nach einer beliebigen Anzahl von Namen fragt (der Benutzer gibt zuerst die Anzahl der Namen ein) und diese in einer Liste speichert. Anschließend soll das Programm jeden Namen in Großbuchstaben mithilfe einer for-Schleife ausgeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_namen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie viele Namen möchten Sie eingeben? &quot;</span><span class="p">))</span>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
 
-<span class="n">namen</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_namen</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie einen Namen ein: &quot;</span><span class="p">)</span>
-    <span class="n">namen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namen</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-</pre></div>
-</div>
-<p>Aufgabe 5: Schreiben Sie ein Programm, das den Benutzer nach einer beliebigen Anzahl von Ganzzahlen fragt (der Benutzer gibt zuerst die Anzahl der Zahlen ein) und diese in einer Liste speichert. Anschließend soll das Programm die geraden Zahlen in der Liste mithilfe einer for-Schleife ausgeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_zahlen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie viele Zahlen möchten Sie eingeben? &quot;</span><span class="p">))</span>
-
-<span class="n">zahlen</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_zahlen</span><span class="p">):</span>
-    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie eine Zahl ein: &quot;</span><span class="p">))</span>
-    <span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die geraden Zahlen sind:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">zahlen</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">zahl</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Aufgabe 1: Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei eine for-Schleife.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Aufgabe 2: Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein Polygon mit einer vom Benutzer eingegebenen Anzahl von Seiten zu zeichnen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 4.3</p>
+<p>Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden. Testen Sie anschließend ein Dreieck und ein Siebeneck.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
 
-<span class="n">seiten</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie die Anzahl der Seiten des Polygons ein: &quot;</span><span class="p">))</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">seiten</span><span class="p">):</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">seiten</span><span class="p">)</span>
+<span class="n">anzahl_seiten</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie die Anzahl der Seiten des n-Ecks ein: &#39;</span><span class="p">))</span>
 
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_seiten</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">anzahl_seiten</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Aufgabe 3: Verwenden Sie das Turtle-Modul und eine for-Schleife, um 5 gleichmäßig verteilte Kreise zu zeichnen, die einen gemeinsamen Mittelpunkt haben (ein Blumenmuster).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 4.4</p>
+<p>Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in der Liste mithilfe einer for-Schleife berechnen und ausgeben.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initalisierung der leeren Liste</span>
+<span class="n">zahlen</span> <span class="o">=</span> <span class="p">[]</span>
 
+<span class="c1"># Eingabe der 5 Zahlen durch einen Benutzer</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie eine Zahl ein: &quot;</span><span class="p">))</span>
+    <span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
 
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+<span class="c1"># Verarbeitung: Berechnung der Summe</span>
+<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">zahlen</span><span class="p">:</span>
+    <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">zahl</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Summe der Zahlen ist: </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Aufgabe 4: Verwenden Sie das Turtle-Modul und zwei verschachtelte for-Schleifen, um ein Gittermuster aus Quadraten zu zeichnen. Das Gitter soll aus 3x3 Quadraten bestehen, wobei jedes Quadrat eine Seitenlänge von 50 Pixeln hat.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 4.5</p>
+<p>In der Mathematik gibt es die Schreibweise</p>
+<div class="math notranslate nohighlight">
+\[n! = n \cdot (n-1) \cdot ... \cdot 2 \cdot 1\]</div>
+<p>So wird zum Beispiel <span class="math notranslate nohighlight">\(5!\)</span> durch <span class="math notranslate nohighlight">\(5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120\)</span> berechnet. Dies wird in der Mathematik als Fakultät von 5 bezeichnet.</p>
+<p>Schreiben Sie ein Programm, das vom Benutzer die Zahl n abfragt, für die die Fakultät <span class="math notranslate nohighlight">\(n!\)</span> berechnet werden soll. Das Programm soll dann die Fakultät berechnen und am Ende den Text</p>
+<p>Die Fakultät von XX ist XX, also XX! = XX.</p>
+<p>ausgeben. Dabei soll XX durch die korrekten Zahlen ersetzt werden. Beispiel</p>
+<p>Die Fakultät von 5 ist 120, also 5! = 120.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe des Benutzers</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: &#39;</span><span class="p">))</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-            <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-            <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="c1"># Verarbeitung</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">ergebnis</span> <span class="o">*</span> <span class="n">i</span>
 
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Fakultät von </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">, also </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">! = </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
-<p>Aufgabe 5: Verwenden Sie das Turtle-Modul und eine for-Schleife, um eine Spirale zu zeichnen. Die Spirale soll aus Linien bestehen, die in regelmäßigen Abständen um 90 Grad gedreht sind. Die Länge der Linien soll bei jedem Schritt um 10 Pixel zunehmen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
-
-<span class="n">schritte</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">laenge</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">schritte</span><span class="p">):</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">laenge</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">laenge</span> <span class="o">+=</span> <span class="mi">10</span>
-
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
-</pre></div>
 </div>
 </section>
 

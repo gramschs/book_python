@@ -899,17 +899,243 @@ bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Joshua Kimmich</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Kingsley Coman</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pavard</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Alphonso Davies</th>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Serge Gnabry</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="einzelne-zeile">
 <h3>Einzelne Zeile<a class="headerlink" href="#einzelne-zeile" title="Permalink to this headline">#</a></h3>
@@ -922,6 +1148,26 @@ also wie folgt:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeile</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Joshua Kimmich&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zeile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Club                 Bayern Munich
+Nationality                    GER
+Position                        MF
+Age                             25
+Matches                         27
+Starts                          25
+Mins                          2194
+Goals                            4
+Assists                         10
+Penalty_Goals                    0
+Penalty_Attempted                0
+xG                             0.1
+xA                            0.27
+Yellow_Cards                     4
+Red_Cards                        0
+Name: Joshua Kimmich, dtype: object
 </pre></div>
 </div>
 </div>
@@ -946,6 +1192,30 @@ und dann den Endindex der letzten Zeile, die “herausgeschnitten” werden soll
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          Club Nationality Position  Age  Matches  Starts  \
+Name                                                                        
+Joshua Kimmich   Bayern Munich         GER       MF   25       27      25   
+Kingsley Coman   Bayern Munich         FRA    FW,MF   24       29      23   
+Benjamin Pavard  Bayern Munich         FRA       DF   24       24      22   
+Alphonso Davies  Bayern Munich         CAN       DF   19       23      22   
+
+                 Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted    xG  \
+Name                                                                            
+Joshua Kimmich   2194      4       10              0                  0  0.10   
+Kingsley Coman   1752      5       10              0                  0  0.21   
+Benjamin Pavard  1943      0        0              0                  0  0.02   
+Alphonso Davies  1763      1        2              0                  0  0.01   
+
+                   xA  Yellow_Cards  Red_Cards  
+Name                                            
+Joshua Kimmich   0.27             4          0  
+Kingsley Coman   0.34             1          0  
+Benjamin Pavard  0.09             3          0  
+Alphonso Davies  0.04             2          1  
+</pre></div>
+</div>
+</div>
 </div>
 <p>Beim Slicing können wir den Angangsindex oder den Endindex oder sogar beides
 weglassen. Wenn wir den Anfangsindex weglassen, fängt Pandas bei der ersten
@@ -961,6 +1231,53 @@ sind insgesamt 177 Zeilen.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             Club Nationality Position  Age  Matches  Starts  \
+Name                                                                           
+Robert Lewandowski  Bayern Munich         POL       FW   31       29      28   
+Joshua Kimmich      Bayern Munich         GER       MF   25       27      25   
+Kingsley Coman      Bayern Munich         FRA    FW,MF   24       29      23   
+Benjamin Pavard     Bayern Munich         FRA       DF   24       24      22   
+Alphonso Davies     Bayern Munich         CAN       DF   19       23      22   
+...                           ...         ...      ...  ...      ...     ...   
+Loris Karius         Union Berlin         GER       GK   27        4       3   
+Akaki Gogia          Union Berlin         GER       FW   28        7       0   
+Leon Dajaku          Union Berlin         GER       FW   19        2       0   
+Tim Maciejewski      Union Berlin         GER       MF   19        1       0   
+Joshua Mees          Union Berlin         GER       FW   24        1       0   
+
+                    Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted  \
+Name                                                                         
+Robert Lewandowski  2458     41        7              8                  9   
+Joshua Kimmich      2194      4       10              0                  0   
+Kingsley Coman      1752      5       10              0                  0   
+Benjamin Pavard     1943      0        0              0                  0   
+Alphonso Davies     1763      1        2              0                  0   
+...                  ...    ...      ...            ...                ...   
+Loris Karius         292      0        0              0                  0   
+Akaki Gogia          140      0        1              0                  0   
+Leon Dajaku           37      0        0              0                  0   
+Tim Maciejewski        8      0        0              0                  0   
+Joshua Mees            5      0        0              0                  0   
+
+                      xG    xA  Yellow_Cards  Red_Cards  
+Name                                                     
+Robert Lewandowski  1.16  0.13             4          0  
+Joshua Kimmich      0.10  0.27             4          0  
+Kingsley Coman      0.21  0.34             1          0  
+Benjamin Pavard     0.02  0.09             3          0  
+Alphonso Davies     0.01  0.04             2          1  
+...                  ...   ...           ...        ...  
+Loris Karius        0.00  0.00             0          0  
+Akaki Gogia         0.09  0.28             1          0  
+Leon Dajaku         0.00  0.00             0          0  
+Tim Maciejewski     0.00  0.00             0          0  
+Joshua Mees         2.02  0.00             0          0  
+
+[173 rows x 15 columns]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="selektion-unzusammenhangender-zeilen-per-liste">
@@ -971,6 +1288,27 @@ wir eine Liste mit den Zeilenindizes übergeben.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_multiple</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Manuel Neuer&#39;</span><span class="p">,</span> <span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">]</span> <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zeilen_multiple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             Club Nationality Position  Age  Matches  Starts  \
+Name                                                                           
+Manuel Neuer        Bayern Munich         GER       GK   34       33      33   
+Robert Lewandowski  Bayern Munich         POL       FW   31       29      28   
+Alphonso Davies     Bayern Munich         CAN       DF   19       23      22   
+
+                    Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted  \
+Name                                                                         
+Manuel Neuer        2970      0        0              0                  0   
+Robert Lewandowski  2458     41        7              8                  9   
+Alphonso Davies     1763      1        2              0                  0   
+
+                      xG    xA  Yellow_Cards  Red_Cards  
+Name                                                     
+Manuel Neuer        0.00  0.01             1          0  
+Robert Lewandowski  1.16  0.13             4          0  
+Alphonso Davies     0.01  0.04             2          1  
 </pre></div>
 </div>
 </div>
@@ -1001,6 +1339,23 @@ Ansonsten erfolgen die Zugriffe auf Spalten analog zu den Zugriffen auf Zeilen
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
+Manuel Neuer          2970
+Thomas Müller         2674
+David Alaba           2675
+Jérôme Boateng        2368
+Robert Lewandowski    2458
+                      ... 
+Loris Karius           292
+Akaki Gogia            140
+Leon Dajaku             37
+Tim Maciejewski          8
+Joshua Mees              5
+Name: Mins, Length: 177, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="zusammenhangende-spalten-slicing">
@@ -1012,6 +1367,25 @@ vergleichen wollen, so können wir die beiden aufeinanderfolgenden Spalten
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_elfmeter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Penalty_Goals&#39;</span> <span class="p">:</span> <span class="s1">&#39;Penalty_Attempted&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data_elfmeter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Penalty_Goals  Penalty_Attempted
+Name                                                
+Manuel Neuer                    0                  0
+Thomas Müller                   1                  1
+David Alaba                     0                  0
+Jérôme Boateng                  0                  0
+Robert Lewandowski              8                  9
+...                           ...                ...
+Loris Karius                    0                  0
+Akaki Gogia                     0                  0
+Leon Dajaku                     0                  0
+Tim Maciejewski                 0                  0
+Joshua Mees                     0                  0
+
+[177 rows x 2 columns]
 </pre></div>
 </div>
 </div>
@@ -1027,6 +1401,25 @@ liegen, müssen wir eine Liste benutzen, um sie zu selektieren.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_tore</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Goals&#39;</span><span class="p">,</span> <span class="s1">&#39;Matches&#39;</span><span class="p">,</span> <span class="s1">&#39;xG&#39;</span><span class="p">]</span> <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data_tore</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Goals  Matches    xG
+Name                                    
+Manuel Neuer            0       33  0.00
+Thomas Müller          11       32  0.24
+David Alaba             2       32  0.04
+Jérôme Boateng          1       29  0.01
+Robert Lewandowski     41       29  1.16
+...                   ...      ...   ...
+Loris Karius            0        4  0.00
+Akaki Gogia             0        7  0.09
+Leon Dajaku             0        2  0.00
+Tim Maciejewski         0        1  0.00
+Joshua Mees             0        1  2.02
+
+[177 rows x 3 columns]
 </pre></div>
 </div>
 </div>
@@ -1050,6 +1443,20 @@ Spalten zu kombinieren.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
+David Alaba           28
+Jérôme Boateng        31
+Robert Lewandowski    31
+Joshua Kimmich        25
+Kingsley Coman        24
+Benjamin Pavard       24
+Alphonso Davies       19
+Serge Gnabry          25
+Name: Age, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Und möchten wir von den Herrn Thomas Müller, Kingsley Coman und Alphonso Davies
 sowhl die Nationalität als auch das Alter selektieren, so gehen wir wie folgt
@@ -1058,6 +1465,15 @@ vor:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_special</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Thomas Müller&#39;</span><span class="p">,</span> <span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">,</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data_special</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Nationality  Age
+Name                            
+Thomas Müller           GER   30
+Kingsley Coman          FRA   24
+Alphonso Davies         CAN   19
 </pre></div>
 </div>
 </div>
@@ -1080,12 +1496,24 @@ enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bayern Munich&#39; &#39;Borussia Dortmund&#39; &#39;RB Leipzig&#39; &#39;Wolfsburg&#39;
+ &#39;Eintracht Frankfurt&#39; &#39;Bayer Leverkusen&#39; &#39;Union Berlin&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wenn man möchte, kann man auch beide Schritte in einem Schritt ausführen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vereinsnamen</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vereinsnamen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bayern Munich&#39; &#39;Borussia Dortmund&#39; &#39;RB Leipzig&#39; &#39;Wolfsburg&#39;
+ &#39;Eintracht Frankfurt&#39; &#39;Bayer Leverkusen&#39; &#39;Union Berlin&#39;]
 </pre></div>
 </div>
 </div>
@@ -1097,6 +1525,23 @@ Vergleich und speichern das Ergebnis des Vergleichs in einer Variablen.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
+Manuel Neuer          False
+Thomas Müller         False
+David Alaba           False
+Jérôme Boateng        False
+Robert Lewandowski    False
+                      ...  
+Loris Karius          False
+Akaki Gogia           False
+Leon Dajaku           False
+Tim Maciejewski       False
+Joshua Mees           False
+Name: Club, Length: 177, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -1117,6 +1562,93 @@ wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Club Nationality Position  Age  Matches  \
+Name                                                                         
+Kevin Trapp         Eintracht Frankfurt         GER       GK   30       33   
+André Silva         Eintracht Frankfurt         POR       FW   24       32   
+Filip Kostić        Eintracht Frankfurt         SRB       DF   27       30   
+Martin Hinteregger  Eintracht Frankfurt         AUT       DF   27       29   
+Daichi Kamada       Eintracht Frankfurt         JPN    MF,FW   23       32   
+Makoto Hasebe       Eintracht Frankfurt         JPN    DF,MF   36       29   
+Djibril Sow         Eintracht Frankfurt         SUI       MF   23       28   
+Obite N&#39;Dicka       Eintracht Frankfurt         FRA       DF   20       23   
+Sebastian Rode      Eintracht Frankfurt         GER       MF   29       27   
+Erik Durm           Eintracht Frankfurt         GER       DF   28       21   
+Stefan Ilsanker     Eintracht Frankfurt         AUT    MF,DF   31       27   
+Tuta                Eintracht Frankfurt         BRA       DF   21       19   
+Amin Younes         Eintracht Frankfurt         GER    MF,FW   26       26   
+David Abraham       Eintracht Frankfurt         ARG       DF   34       14   
+Aymen Barkok        Eintracht Frankfurt         MAR    FW,MF   22       26   
+Bas Dost            Eintracht Frankfurt         NED       FW   31       12   
+Luka Jović          Eintracht Frankfurt         SRB    FW,MF   22       18   
+Almamy Touré        Eintracht Frankfurt         MLI       DF   24       17   
+Steven Zuber        Eintracht Frankfurt         SUI    DF,MF   28       20   
+Timothy Chandler    Eintracht Frankfurt         USA       DF   30       15   
+Dominik Kohr        Eintracht Frankfurt         GER    MF,FW   26        7   
+Ajdin Hrustic       Eintracht Frankfurt         AUS    MF,FW   24       11   
+Danny da Costa      Eintracht Frankfurt         GER       DF   27        6   
+Elias Bördner       Eintracht Frankfurt         GER       GK   18        1   
+Ragnar Ache         Eintracht Frankfurt         GER    FW,DF   22        7   
+
+                    Starts  Mins  Goals  Assists  Penalty_Goals  \
+Name                                                              
+Kevin Trapp             33  2970      0        0              0   
+André Silva             32  2760     28        7              7   
+Filip Kostić            29  2534      4       14              0   
+Martin Hinteregger      29  2527      2        1              0   
+Daichi Kamada           28  2356      5       12              0   
+Makoto Hasebe           26  2288      0        0              0   
+Djibril Sow             25  2175      0        2              0   
+Obite N&#39;Dicka           23  2044      3        1              0   
+Sebastian Rode          19  1625      1        0              0   
+Erik Durm               19  1480      1        2              0   
+Stefan Ilsanker         17  1578      1        0              0   
+Tuta                    16  1459      0        0              0   
+Amin Younes             16  1391      3        3              0   
+David Abraham           14  1222      1        0              0   
+Aymen Barkok             9   977      2        3              0   
+Bas Dost                 9   817      4        2              1   
+Luka Jović               8   894      4        1              0   
+Almamy Touré             8   704      1        1              0   
+Steven Zuber             6   585      0        3              0   
+Timothy Chandler         3   432      1        0              0   
+Dominik Kohr             2   260      0        0              0   
+Ajdin Hrustic            1   272      1        0              0   
+Danny da Costa           1   110      0        0              0   
+Elias Bördner            1    90      0        0              0   
+Ragnar Ache              0   100      1        0              0   
+
+                    Penalty_Attempted    xG    xA  Yellow_Cards  Red_Cards  
+Name                                                                        
+Kevin Trapp                         0  0.00  0.00             0          0  
+André Silva                         7  0.79  0.18             1          0  
+Filip Kostić                        0  0.14  0.41             4          0  
+Martin Hinteregger                  0  0.07  0.03             4          0  
+Daichi Kamada                       0  0.21  0.28             3          0  
+Makoto Hasebe                       0  0.01  0.01             5          0  
+Djibril Sow                         0  0.02  0.06             6          0  
+Obite N&#39;Dicka                       0  0.05  0.01            10          0  
+Sebastian Rode                      0  0.01  0.07            10          0  
+Erik Durm                           0  0.10  0.13             1          0  
+Stefan Ilsanker                     0  0.07  0.01             4          0  
+Tuta                                0  0.01  0.02             5          0  
+Amin Younes                         0  0.22  0.11             5          0  
+David Abraham                       0  0.05  0.03             5          1  
+Aymen Barkok                        0  0.15  0.27             5          0  
+Bas Dost                            1  0.47  0.25             3          0  
+Luka Jović                          0  0.28  0.06             2          0  
+Almamy Touré                        0  0.15  0.16             2          0  
+Steven Zuber                        0  0.12  0.29             1          0  
+Timothy Chandler                    0  0.18  0.07             2          0  
+Dominik Kohr                        0  0.19  0.01             1          0  
+Ajdin Hrustic                       0  0.10  0.14             2          0  
+Danny da Costa                      0  0.14  0.00             0          0  
+Elias Bördner                       0  0.00  0.00             0          0  
+Ragnar Ache                         0  0.24  0.00             1          0  
+</pre></div>
+</div>
+</div>
 </div>
 <p>Da der print()-Befehl nicht alle Einträge anzeigt, gehen wir jetzt Zeile für
 Zeile durch. Den Zeilenindex erhalten wir über das Attribut <code class="docutils literal notranslate"><span class="pre">.index</span></code>:</p>
@@ -1124,6 +1656,35 @@ Zeile durch. Den Zeilenindex erhalten wir über das Attribut <code class="docuti
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zeilenindex</span> <span class="ow">in</span> <span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">zeilenindex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kevin Trapp
+André Silva
+Filip Kostić
+Martin Hinteregger
+Daichi Kamada
+Makoto Hasebe
+Djibril Sow
+Obite N&#39;Dicka
+Sebastian Rode
+Erik Durm
+Stefan Ilsanker
+Tuta
+Amin Younes
+David Abraham
+Aymen Barkok
+Bas Dost
+Luka Jović
+Almamy Touré
+Steven Zuber
+Timothy Chandler
+Dominik Kohr
+Ajdin Hrustic
+Danny da Costa
+Elias Bördner
+Ragnar Ache
 </pre></div>
 </div>
 </div>

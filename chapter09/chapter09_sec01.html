@@ -828,16 +828,6 @@ pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.<
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="series-aus-liste-erzeugen">
@@ -852,6 +842,15 @@ Variable <code class="docutils literal notranslate"><span class="pre">alter</spa
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    25
+1    22
+2    43
+3    37
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -871,6 +870,11 @@ Python zählt ab 0) und schreiben</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste:  22
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die Datenstruktur Series ermöglich es aber, einen <em>expliziten Index</em> zu setzen.
 Über den optionalen Parameter <code class="docutils literal notranslate"><span class="pre">index=</span></code> speichern wir als Zusatzinformation noch
@@ -880,6 +884,15 @@ Personen Alice, Bob, Charlie und Dora.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice      25
+Bob        22
+Charlie    43
+Dora       30
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -893,6 +906,11 @@ dem Punktoperator zugegegriffen werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int64
 </pre></div>
 </div>
 </div>
@@ -975,6 +993,142 @@ trotzdem nicht. Dazu verwenden wir die Methode <code class="docutils literal not
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manuel Neuer</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas Müller</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David Alaba</td>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jérôme Boateng</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Robert Lewandowski</td>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code> zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die Methode <code class="docutils literal notranslate"><span class="pre">.head(10)</span></code>mit dem Argument 10.</p>
 <div class="cell docutils container">
@@ -983,6 +1137,237 @@ trotzdem nicht. Dazu verwenden wir die Methode <code class="docutils literal not
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manuel Neuer</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas Müller</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David Alaba</td>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jérôme Boateng</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Robert Lewandowski</td>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Joshua Kimmich</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Kingsley Coman</td>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Benjamin Pavard</td>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Alphonso Davies</td>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Serge Gnabry</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
 usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
@@ -998,6 +1383,244 @@ Python-Zählweise einer 0 entspricht.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Joshua Kimmich</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Kingsley Coman</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pavard</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Alphonso Davies</th>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Serge Gnabry</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="ubersicht-verschaffen-mit-info">
@@ -1009,6 +1632,32 @@ Pandas die Methode <code class="docutils literal notranslate"><span class="pre">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 177 entries, Manuel Neuer to Joshua Mees
+Data columns (total 15 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   Club               177 non-null    object 
+ 1   Nationality        177 non-null    object 
+ 2   Position           177 non-null    object 
+ 3   Age                177 non-null    int64  
+ 4   Matches            177 non-null    int64  
+ 5   Starts             177 non-null    int64  
+ 6   Mins               177 non-null    int64  
+ 7   Goals              177 non-null    int64  
+ 8   Assists            177 non-null    int64  
+ 9   Penalty_Goals      177 non-null    int64  
+ 10  Penalty_Attempted  177 non-null    int64  
+ 11  xG                 177 non-null    float64
+ 12  xA                 177 non-null    float64
+ 13  Yellow_Cards       177 non-null    int64  
+ 14  Red_Cards          177 non-null    int64  
+dtypes: float64(2), int64(10), object(3)
+memory usage: 22.1+ KB
 </pre></div>
 </div>
 </div>

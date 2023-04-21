@@ -46,5 +46,4 @@ Fügen Sie die Internetseite als URL in die Markdown-Zelle ein.
 ```{admonition} Übung 1.4
 :class: miniexercise
 Speichern Sie das bearbeitete Jupyter Notebook unter einem anderen Namen ab.
-Exportieren Sie es als pdf-Dokument (über HTML).
 ```

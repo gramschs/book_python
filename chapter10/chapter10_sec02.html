@@ -828,16 +828,6 @@ Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils lit
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
 zu benutzen. Die erste Schnittstelle ist <strong>zustandsorientiert</strong>, die zweite
@@ -862,6 +852,12 @@ Linienplot und Beschriftungen hinzu.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11bb6dd90&gt;]
+</pre></div>
+</div>
+<img alt="../_images/chapter10_sec02_5_1.png" src="../_images/chapter10_sec02_5_1.png" />
 </div>
 </div>
 <p>PS: Ohne Strichpunkt/Semikolon gibt Jupyter-Lab noch Objekttyp und Referenz des
@@ -891,6 +887,9 @@ nach eingestellter Anzahl.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_7_0.png" src="../_images/chapter10_sec02_7_0.png" />
+</div>
 </div>
 <p>Nächstes Thema, Beschriftungen. Mit den Methoden <code class="docutils literal notranslate"><span class="pre">.set_xlabel()</span></code> und
 <code class="docutils literal notranslate"><span class="pre">.set_ylabel()</span></code> beschriften Sie die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">.set_title()</span></code> wird der
@@ -909,6 +908,9 @@ Titel gesetzt.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_9_0.png" src="../_images/chapter10_sec02_9_0.png" />
 </div>
 </div>
 <p>Zuletzt soll unser Plot gespeichert werden. Es stehen mehrere Grafikformate zur
@@ -1017,6 +1019,9 @@ Notebooks zum Download zugegriffen haben:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_16_0.png" src="../_images/chapter10_sec02_16_0.png" />
+</div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
@@ -1092,6 +1097,9 @@ Matplotlib-Methode auch <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_21_0.png" src="../_images/chapter10_sec02_21_0.png" />
+</div>
 </div>
 <p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span> </code> lässt sich das Symbol einstellen, mit dem das
 Streudiagramm erzeugt wird. Wie Sie sehen, ist ein ausgefüllter Kreis
@@ -1113,6 +1121,9 @@ aus:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_23_0.png" src="../_images/chapter10_sec02_23_0.png" />
+</div>
 </div>
 <p>Für bekannte Funktionen wie Sinus oder Kosinus würde man Liniendiagramme
 verwenden. Streudiagramme eignen sich eher für die Visualisierung einzelner
@@ -1133,6 +1144,9 @@ Farben verwenden.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_25_0.png" src="../_images/chapter10_sec02_25_0.png" />
 </div>
 </div>
 <p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
@@ -1158,6 +1172,9 @@ zu den Namen (Labels) zugeordnet werden.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Durchschnittstemperatur&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter10_sec02_27_0.png" src="../_images/chapter10_sec02_27_0.png" />
 </div>
 </div>
 <div class="miniexercise admonition">

@@ -17,17 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-monate = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 
-'September', 'Oktober', 'November', 'Dezember']
-
-for monat in monate:
-    print(monat))
+for i in range(2, 6):      
+    print(li)
 ------------------
 
-[0;36m  Cell [0;32mIn[3], line 5[0;36m[0m
-[0;31m    print(monat))[0m
-[0m                ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m unmatched ')'
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 2[0m
+[1;32m      1[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;241m2[39m, [38;5;241m6[39m):      
+[0;32m----> 2[0m     [38;5;28mprint[39m([43mli[49m)
 
-SyntaxError: unmatched ')' (<ipython-input-3-8a96aee5a853>, line 5)
+[0;31mNameError[0m: name 'li' is not defined
+NameError: name 'li' is not defined
 
