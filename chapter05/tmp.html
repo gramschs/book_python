@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec02.html">
-     3.2 Das Modul Math
+     3.2 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter04_sec00.html">
+  <a class="reference internal" href="../chapter04/chapter04_sec00.html">
    4. Zählschleifen (for) und Strings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -227,29 +227,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter04_sec01.html">
+    <a class="reference internal" href="../chapter04/chapter04_sec01.html">
      4.1 for-Schleifen mit Liste
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter04_sec02.html">
+    <a class="reference internal" href="../chapter04/chapter04_sec02.html">
      4.2 for-Schleifen mit range
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter04_sec03.html">
+    <a class="reference internal" href="../chapter04/chapter04_sec03.html">
      4.3 Strings
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter04_sec04.html">
+    <a class="reference internal" href="../chapter04/chapter04_sec04.html">
      Übungen
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter05/chapter05_sec00.html">
+  <a class="reference internal" href="chapter05_sec00.html">
    5. Programmverzweigung (if - elif - else)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -259,22 +259,22 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter05/chapter05_sec01.html">
+    <a class="reference internal" href="chapter05_sec01.html">
      5.1 Vergleiche und der boolesche Datentyp
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter05/chapter05_sec02.html">
-     5.2 Programmverzweigungen mit einen Zweig: if
+    <a class="reference internal" href="chapter05_sec02.html">
+     5.2 Programmverzweigungen: if
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter05/chapter05_sec03.html">
+    <a class="reference internal" href="chapter05_sec03.html">
      5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter05/chapter05_sec04.html">
+    <a class="reference internal" href="chapter05_sec04.html">
      Übungen
     </a>
    </li>
@@ -555,7 +555,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter04/tmp.ipynb"
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter05/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -629,7 +629,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapter04/tmp.ipynb"
+        <a href="../_sources/chapter05/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -719,16 +719,23 @@ title="Print to PDF"
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe des Benutzers</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: &#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">geburtsjahr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;In welchem Jahr wurden Sie geboren? &#39;</span><span class="p">))</span>
 
-<span class="c1"># Verarbeitung</span>
-<span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">ergebnis</span> <span class="o">*</span> <span class="n">i</span>
+<span class="c1"># Verarbeitung: berechne Alter</span>
+<span class="n">aktuelles_jahr</span> <span class="o">=</span> <span class="mi">2023</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="n">aktuelles_jahr</span> <span class="o">-</span> <span class="n">geburtsjahr</span>
 
 <span class="c1"># Ausgabe</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Fakultät von </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">, also </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">! = </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du bist noch nicht volljährig.!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">alter</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hurra, Sie werden oder wurden dieses Jahr volljährig!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie sind bereits volljährig.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -736,10 +743,10 @@ title="Print to PDF"
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Eingabe des Benutzers</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: &#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Verarbeitung</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Eingabe</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">geburtsjahr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;In welchem Jahr wurden Sie geboren? &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Verarbeitung: berechne Alter</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">aktuelles_jahr</span> <span class="o">=</span> <span class="mi">2023</span>
 
 <span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
@@ -757,105 +764,155 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Ein Onlineshop verkauft T-Shirts, Pullover und Jacken. Ein T-Shirt kostet 15,99
+EUR, ein Pullover 24,99 EUR und eine Jacke 39,99 EUR.</p>
+<p>Schreiben Sie ein Programm, das abfragt, wie viele T-Shirts, Pullover und Jacken
+bestellt werden sollen. Lassen Sie den Kaufpreis ausgeben. Dazu kommen aber noch
+die Portokosten. Bei einem Kaufpreis unter 50 Euro betragen die Portokosten
+13,95 Euro. Zwischen 50 und 100 Euro muss der Kunde 4,95 Euro Porto bezahlen. Ab
+einem Kaufpreis von 100 Euro gibt es keine Portokosten mehr. Lassen Sie
+zusätzlich die Portokosten und den Gesamtpreis ausgeben.</p>
+<p>Testen Sie Ihr Programm mit drei Beispielen für die drei unterschiedlichen
+Portokosten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Januar&#39;</span><span class="p">,</span> <span class="s1">&#39;Februar&#39;</span><span class="p">,</span> <span class="s1">&#39;März&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;Mai&#39;</span><span class="p">,</span> <span class="s1">&#39;Juni&#39;</span><span class="p">,</span> 
-<span class="s1">&#39;Juli&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;Oktober&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;Dezember&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einstellungen</span>
+<span class="n">preis_tshirt</span> <span class="o">=</span> <span class="mf">15.99</span>
+<span class="n">preis_pullover</span> <span class="o">=</span> <span class="mf">24.99</span>
+<span class="n">preis_jacke</span> <span class="o">=</span> <span class="mf">39.99</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
-    <span class="n">monat</span> <span class="o">=</span> <span class="n">monate</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">monat</span><span class="si">}</span><span class="s1"> ist der </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">. Monat im Jahr.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Januar ist der 1. Monat im Jahr.
-Februar ist der 2. Monat im Jahr.
-März ist der 3. Monat im Jahr.
-April ist der 4. Monat im Jahr.
-Mai ist der 5. Monat im Jahr.
-Juni ist der 6. Monat im Jahr.
-Juli ist der 7. Monat im Jahr.
-August ist der 8. Monat im Jahr.
-September ist der 9. Monat im Jahr.
-Oktober ist der 10. Monat im Jahr.
-November ist der 11. Monat im Jahr.
-Dezember ist der 12. Monat im Jahr.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initalisierung der leeren Liste</span>
-<span class="n">zahlen</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Eingabe der Bestellung</span>
+<span class="n">anzahl_tshirts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele T-Shirts werden bestellt? &#39;</span><span class="p">))</span>
+<span class="n">anzahl_pullover</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Pullover werden bestell? &#39;</span><span class="p">))</span>
+<span class="n">anzahl_jacken</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Jacken werden bestellt? &#39;</span><span class="p">))</span>
 
-<span class="c1"># Eingabe der 5 Zahlen durch einen Benutzer</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie eine Zahl ein: &quot;</span><span class="p">))</span>
-    <span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+<span class="c1"># Verarbeitung</span>
+<span class="n">kaufpreis</span> <span class="o">=</span> <span class="n">anzahl_tshirts</span> <span class="o">*</span> <span class="n">preis_tshirt</span> <span class="o">+</span> <span class="n">anzahl_pullover</span> <span class="o">*</span> <span class="n">preis_pullover</span> <span class="o">+</span> <span class="n">anzahl_jacken</span> <span class="o">*</span> <span class="n">preis_jacke</span>
 
-<span class="c1"># Verarbeitung: Berechnung der Summe</span>
-<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">zahlen</span><span class="p">:</span>
-    <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">zahl</span>
+<span class="k">if</span> <span class="n">kaufpreis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">portokosten</span> <span class="o">=</span> <span class="mf">13.95</span>
+<span class="k">elif</span> <span class="n">kaufpreis</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">portokosten</span> <span class="o">=</span> <span class="mf">4.95</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">portokosten</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">gesamtpreis</span> <span class="o">=</span> <span class="n">kaufpreis</span> <span class="o">+</span> <span class="n">portokosten</span>
 
 <span class="c1"># Ausgabe</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Summe der Zahlen ist: </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kaufpreis: </span><span class="si">{</span><span class="n">kaufpreis</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Portokosten: </span><span class="si">{</span><span class="n">portokosten</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gesamtpreis: </span><span class="si">{</span><span class="n">gesamtpreis</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Summe der Zahlen ist: 15.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kaufpreis: 15.99 EUR
+Portokosten: 13.95 EUR
+Gesamtpreis: 29.94 EUR
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wählen Sie sich Ihr Lieblingsrezept aus oder suchen Sie sich ein Rezept des
+Tages heraus (siehe <a class="reference external" href="https://www.chefkoch.de/rezepte/was-koche-ich-heute/">https://www.chefkoch.de/rezepte/was-koche-ich-heute/</a>).
+Notieren Sie sich die Zutatenlisten in zwei Listen. In der ersten Liste soll die
+Menge einer Zutat pro Person stehen, in der zweiten Liste die Zutat selbst.</p>
+<p>Lassen Sie dann den Computer fragen, für wie viele Personen gekocht werden soll.
+Dann soll der Computer eine Einkaufsliste ausgeben, bei der die Mengenangaben
+passend zur Personenanzahl skaliert sind.</p>
+<p>Beispiel Wrap-Pizza (<a class="reference external" href="https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html">https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html</a>):</p>
+<p>Computer: Für wie viele Personen soll gekocht werden?
+Benutzer: 4
+Computer:
+Hier ist die Zutatenliste für 4 Personen:
+4 Tortillas
+8 EL Tomatenmark
+4 EL Wasser
+usw.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zutaten fuer Wrap-Pizza fuer eine Person</span>
+<span class="n">menge</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">zutat</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tortilla(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Tomatenmark&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Wasser&quot;</span><span class="p">,</span> <span class="s2">&quot;TL Pizzagewürz&quot;</span><span class="p">,</span> <span class="s2">&quot;Kochschinken&quot;</span><span class="p">,</span> <span class="s2">&quot;Parikaschote(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Zwiebeln&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomate(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Peperoni&quot;</span><span class="p">,</span> <span class="s2">&quot;Käse&quot;</span><span class="p">,</span> <span class="s2">&quot;Oregano&quot;</span><span class="p">]</span>
+
+<span class="c1"># Eingabe: Abfrage Personenanzahl</span>
+<span class="n">personenanzahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Für wie viele Personen soll gekocht werden?&#39;</span><span class="p">))</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hier ist die Zutatenliste für </span><span class="si">{</span><span class="n">personenanzahl</span><span class="si">}</span><span class="s1"> Personen:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">menge</span><span class="p">)):</span>
+    <span class="n">aktuelle_menge</span> <span class="o">=</span> <span class="n">menge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">personenanzahl</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">aktuelle_menge</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">zutat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hier ist die Zutatenliste für 3 Personen:
+3 Tortilla(s)
+6 EL Tomatenmark
+3 EL Wasser
+3 TL Pizzagewürz
+3 Kochschinken
+3 Parikaschote(n)
+3 Zwiebeln
+3 Tomate(n)
+15 Peperoni
+135 Käse
+3 Oregano
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
-
-<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
-
-<span class="n">anzahl_seiten</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie die Anzahl der Seiten des n-Ecks ein: &#39;</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_seiten</span><span class="p">):</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">anzahl_seiten</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zutat</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;EL Wasser&#39;</span> <span class="ow">in</span> <span class="n">zutat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bitte geben Sie die Anzahl der Seiten des n-Ecks ein:  7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<div class="output text_html">
-      <svg width="800" height="600">  
-        <rect width="100%" height="100%" style="fill:white;stroke:;stroke-width:1"/>
+</div>
+</div>
+<p>Schreiben Sie ein Programm, das den Benutzer nach einem Satz fragt. Anschließend
+soll das Programm zählen, wie oft die Vokale a, e, i, o und u in dem Satz
+vorkommen.</p>
+<p>Zusatzfrage: Ws passiert bei Großbuchstaben?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie einen Satz ein: &#39;</span><span class="p">)</span>
 
+<span class="c1"># Verarbeitung</span>
+<span class="n">anzahl_a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_e</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_o</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_u</span> <span class="o">=</span> <span class="mi">0</span>
 
-        <line x1="400.0" y1="300.0" x2="430.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="430.0" y1="300.0" x2="448.705" y2="323.455" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="448.705" y1="323.455" x2="442.029" y2="352.703" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="442.029" y1="352.703" x2="415.0" y2="365.72" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="415.0" y1="365.72" x2="387.971" y2="352.703" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="387.971" y1="352.703" x2="381.295" y2="323.455" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="381.295" y1="323.455" x2="400.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" />
-
-
-        <g id="classic" visibility="visible" transform="rotate(218.5714285714286,400.0,300.0) translate(400.0, 300.0)">
-<polygon points="-5,-4.5 0,-2.5 5,-4.5 0,4.5" transform="skewX(0) scale(1,1)" style="stroke:black;fill:black;stroke-width:1" />
-<animateTransform id = "one" attributeName="transform" 
-                      type="scale"
-                      from="1 1" to="1 1"
-                      begin="0s" dur="0.01s"
-                      repeatCount="1"
-                      additive="sum"
-                      fill="freeze"
-                /><animateTransform attributeName="transform"
-                    type="rotate"
-                    from="0 0 0" to ="51.42857142857143 0 0"
-                    begin="one.end" dur="0.14285714285714285s"
-                    repeatCount="1"
-                    additive="sum"
-                    fill="freeze"
-                /></g>
-      </svg>
-</div></div>
+<span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_a</span> <span class="o">=</span> <span class="n">anzahl_a</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_e</span> <span class="o">=</span> <span class="n">anzahl_e</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_i</span> <span class="o">=</span> <span class="n">anzahl_i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_o</span> <span class="o">=</span> <span class="n">anzahl_o</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;u&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_u</span> <span class="o">=</span> <span class="n">anzahl_u</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl a: </span><span class="si">{</span><span class="n">anzahl_a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl e: </span><span class="si">{</span><span class="n">anzahl_e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl i: </span><span class="si">{</span><span class="n">anzahl_i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl o: </span><span class="si">{</span><span class="n">anzahl_o</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl u: </span><span class="si">{</span><span class="n">anzahl_u</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -871,7 +928,7 @@ Dezember ist der 12. Monat im Jahr.
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapter04"
+            path: "./chapter05"
         },
         predefinedOutput: true
     }

@@ -12,12 +12,23 @@ kernelspec:
   name: python3
 ---
 
-# 5.2 Programmverzweigungen mit einen Zweig: if
+# 5.2 Programmverzweigungen: if
 
-```{admonition} Warnung
-:class: warning
-Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+Im letzten Kapitel haben wir gelernt, wie ein Vergleich in Python durchgeführt
+wird und mit welchem Datentyp das Ergebnis eines solchen Vergleichs gespeichert
+wird. In diesem Kapitel geht es nun darum, dass das Python-Programm auf das
+Ergebnis eines Vergleichs reagiert, indem Code-Abschnitte nur dann ausgeführt
+werden, wenn eine Bedingung erfüllt ist.
+
+
+## Lernziele
+
+```{admonition} Lernziele
+:class: hint
+* Sie können mit **if** eine Programmverzweigung implementieren.
 ```
+
+## Syntax der if-Verzweigung
 
 Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt.
 Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:
@@ -35,13 +46,19 @@ nicht erfüllt (= False) wird.
 Wir betrachten nun ein Beispiel:
 
 ```{code-cell} ipython3
-alter = 17
+alter = 20
 if alter >= 18:
     print('Sie dürfen Alkohol kaufen.')
 print('Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...')
 ```
 
-Und könnte beispielsweise mit einer Benutzerabfrage kombiniert werden:
+Da die Person volljährig ist (`alter = 20`), ist der Vergleich `alter >= 18`
+wahr, die Bedingung also erfüllt. Daher wird der Anweisungsblock, der nur aus
+einer einzigen Anweisung besteht, ausgeführt. Der Python-Interpreter gibt den
+String `Sie dürfen Alkohol kaufen.` aus und macht dann mit dem normalen Programm
+weiter.
+
+Dieser Code könnte beispielsweise mit einer Benutzerabfrage kombiniert werden:
 ```python
 alter = int(input('Wie alt sind Sie?'))
 if (alter >= 18):

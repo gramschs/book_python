@@ -203,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec02.html">
-     3.2 Das Modul Math
+     3.2 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter05_sec02.html">
-     5.2 Programmverzweigungen mit einen Zweig: if
+     5.2 Programmverzweigungen: if
     </a>
    </li>
    <li class="toctree-l2">
@@ -715,7 +715,155 @@ title="Print to PDF"
 <p class="admonition-title">Warnung</p>
 <p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
 </div>
-<p>TODO</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.1</p>
+<p>Schreiben Sie ein Programm, das den Benutzer nach seinem Geburtsjahr fragt.
+Danach rechnet das Programm aus, wie alt der Benutzer dieses Jahr wird. Wenn der
+Benutzer dieses Jahr volljährig wird, soll das Programm ausgeben: “Hurra, Sie
+werden oder wurden dieses Jahr volljährig!” Wenn der Benutzer schon volljährig
+ist, soll das Programm ausgeben: “Sie sind bereits volljährig.” Ansonsten soll
+das Programm ausgeben: “Du bist noch nicht volljährig.”</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">geburtsjahr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;In welchem Jahr wurden Sie geboren? &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung: berechne Alter</span>
+<span class="n">aktuelles_jahr</span> <span class="o">=</span> <span class="mi">2023</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="n">aktuelles_jahr</span> <span class="o">-</span> <span class="n">geburtsjahr</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du bist noch nicht volljährig.!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">alter</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hurra, Sie werden oder wurden dieses Jahr volljährig!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie sind bereits volljährig.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.2</p>
+<p>Ein Onlineshop verkauft T-Shirts, Pullover und Jacken. Ein T-Shirt kostet 15,99
+EUR, ein Pullover 24,99 EUR und eine Jacke 39,99 EUR.</p>
+<p>Schreiben Sie ein Programm, das abfragt, wie viele T-Shirts, Pullover und Jacken
+bestellt werden sollen. Lassen Sie den Kaufpreis ausgeben. Dazu kommen aber noch
+die Portokosten. Bei einem Kaufpreis unter 50 Euro betragen die Portokosten
+13,95 Euro. Zwischen 50 und 100 Euro muss der Kunde 4,95 Euro Porto bezahlen. Ab
+einem Kaufpreis von 100 Euro gibt es keine Portokosten mehr. Lassen Sie
+zusätzlich die Portokosten und den Gesamtpreis ausgeben.</p>
+<p>Testen Sie Ihr Programm mit drei Beispielen für die drei unterschiedlichen
+Portokosten.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einstellungen</span>
+<span class="n">preis_tshirt</span> <span class="o">=</span> <span class="mf">15.99</span>
+<span class="n">preis_pullover</span> <span class="o">=</span> <span class="mf">24.99</span>
+<span class="n">preis_jacke</span> <span class="o">=</span> <span class="mf">39.99</span>
+
+<span class="c1"># Eingabe der Bestellung</span>
+<span class="n">anzahl_tshirts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele T-Shirts werden bestellt? &#39;</span><span class="p">))</span>
+<span class="n">anzahl_pullover</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Pullover werden bestell? &#39;</span><span class="p">))</span>
+<span class="n">anzahl_jacken</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Jacken werden bestellt? &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung</span>
+<span class="n">kaufpreis</span> <span class="o">=</span> <span class="n">anzahl_tshirts</span> <span class="o">*</span> <span class="n">preis_tshirt</span> <span class="o">+</span> <span class="n">anzahl_pullover</span> <span class="o">*</span> <span class="n">preis_pullover</span> <span class="o">+</span> <span class="n">anzahl_jacken</span> <span class="o">*</span> <span class="n">preis_jacke</span>
+
+<span class="k">if</span> <span class="n">kaufpreis</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">portokosten</span> <span class="o">=</span> <span class="mf">13.95</span>
+<span class="k">elif</span> <span class="n">kaufpreis</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">portokosten</span> <span class="o">=</span> <span class="mf">4.95</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">portokosten</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">gesamtpreis</span> <span class="o">=</span> <span class="n">kaufpreis</span> <span class="o">+</span> <span class="n">portokosten</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kaufpreis: </span><span class="si">{</span><span class="n">kaufpreis</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Portokosten: </span><span class="si">{</span><span class="n">portokosten</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gesamtpreis: </span><span class="si">{</span><span class="n">gesamtpreis</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.3</p>
+<p>Wählen Sie sich Ihr Lieblingsrezept aus oder suchen Sie sich ein Rezept des
+Tages heraus (siehe <a class="reference external" href="https://www.chefkoch.de/rezepte/was-koche-ich-heute/">https://www.chefkoch.de/rezepte/was-koche-ich-heute/</a>).
+Notieren Sie sich die Zutatenlisten in zwei Listen. In der ersten Liste soll die
+Menge einer Zutat pro Person stehen, in der zweiten Liste die Zutat selbst.</p>
+<p>Lassen Sie dann den Computer fragen, für wie viele Personen gekocht werden soll.
+Dann soll der Computer eine Einkaufsliste ausgeben, bei der die Mengenangaben
+passend zur Personenanzahl skaliert sind.</p>
+<p>Beispiel Wrap-Pizza (<a class="reference external" href="https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html">https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html</a>):</p>
+<p>Computer: Für wie viele Personen soll gekocht werden?
+Benutzer: 4
+Computer:
+Hier ist die Zutatenliste für 4 Personen:
+4 Tortillas
+8 EL Tomatenmark
+4 EL Wasser
+usw.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zutaten fuer Wrap-Pizza fuer eine Person</span>
+<span class="n">menge</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">zutat</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tortilla(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Tomatenmark&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Wasser&quot;</span><span class="p">,</span> <span class="s2">&quot;TL Pizzagewürz&quot;</span><span class="p">,</span> <span class="s2">&quot;Kochschinken&quot;</span><span class="p">,</span> <span class="s2">&quot;Parikaschote(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Zwiebeln&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomate(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Peperoni&quot;</span><span class="p">,</span> <span class="s2">&quot;Käse&quot;</span><span class="p">,</span> <span class="s2">&quot;Oregano&quot;</span><span class="p">]</span>
+
+<span class="c1"># Eingabe: Abfrage Personenanzahl</span>
+<span class="n">personenanzahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Für wie viele Personen soll gekocht werden?&#39;</span><span class="p">))</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hier ist die Zutatenliste für </span><span class="si">{</span><span class="n">personenanzahl</span><span class="si">}</span><span class="s1"> Personen:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">menge</span><span class="p">)):</span>
+    <span class="n">aktuelle_menge</span> <span class="o">=</span> <span class="n">menge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">personenanzahl</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">aktuelle_menge</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">zutat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.4</p>
+<p>Schreiben Sie ein Programm, das den Benutzer nach einem Satz fragt. Anschließend
+soll das Programm zählen, wie oft die Vokale a, e, i, o und u in dem Satz
+vorkommen.</p>
+<p>Zusatzfrage: Was passiert bei Großbuchstaben?</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie einen Satz ein: &#39;</span><span class="p">)</span>
+
+<span class="c1"># Verarbeitung</span>
+<span class="n">anzahl_a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_e</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_o</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">anzahl_u</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_a</span> <span class="o">=</span> <span class="n">anzahl_a</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_e</span> <span class="o">=</span> <span class="n">anzahl_e</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_i</span> <span class="o">=</span> <span class="n">anzahl_i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_o</span> <span class="o">=</span> <span class="n">anzahl_o</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">zeichen</span> <span class="o">==</span> <span class="s1">&#39;u&#39;</span><span class="p">:</span>
+        <span class="n">anzahl_u</span> <span class="o">=</span> <span class="n">anzahl_u</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl a: </span><span class="si">{</span><span class="n">anzahl_a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl e: </span><span class="si">{</span><span class="n">anzahl_e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl i: </span><span class="si">{</span><span class="n">anzahl_i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl o: </span><span class="si">{</span><span class="n">anzahl_o</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl u: </span><span class="si">{</span><span class="n">anzahl_u</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bei der obigen Lösung werden Großbichstaben nicht mitgezählt. Entweder werden noch zusätzlich die Vergleiche mit  ‘A’, ‘E’, ‘I’, ‘O’ und ‘U’ durchgeführt, oder der eingebene Satz mit <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> vorab zu Kleinbuchstaben konvertiert.</p>
+<p>Bemerkung: Eleganter wäre die Schreibweise <code class="docutils literal notranslate"><span class="pre">anzahl_a</span> <span class="pre">+=</span> <span class="pre">1</span></code>.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

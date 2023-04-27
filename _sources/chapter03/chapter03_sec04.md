@@ -76,7 +76,7 @@ print(c)
 ```
 Alternativ könnte man auch die Wurzelfunktion aus dem Math-Modul importieren und benutzen:
 ```python
-from math import sqrt
+from numpy import sqrt
 c = sqrt(a**2 + b**2)
 ```
 Zur Bemerkung: Wenn der Benutzer eine negative Zahl eingibt, würde das Programm
@@ -169,7 +169,7 @@ Das Haus vom Nikolaus
 ```python
 # Import notwendiger Module
 import ColabTurtlePlus.Turtle as turtle
-from math import sqrt
+from numpy import sqrt
 
 seite = 100
 diagonale = sqrt(100**2 + 100**2)

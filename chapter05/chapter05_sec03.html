@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter05_sec04.html" />
-    <link rel="prev" title="5.2 Programmverzweigungen mit einen Zweig: if" href="chapter05_sec02.html" />
+    <link rel="prev" title="5.2 Programmverzweigungen: if" href="chapter05_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -203,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec02.html">
-     3.2 Das Modul Math
+     3.2 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter05_sec02.html">
-     5.2 Programmverzweigungen mit einen Zweig: if
+     5.2 Programmverzweigungen: if
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -708,6 +708,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">
    Programmverzweigungen mit zwei Zweigen: if – else
   </a>
@@ -715,11 +720,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-vielen-zweigen-if-elseif-else">
    Programmverzweigungen mit vielen Zweigen: if – elseif – else
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zusammenfassung">
-   Zusammenfassung
   </a>
  </li>
 </ul>
@@ -742,6 +742,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">
    Programmverzweigungen mit zwei Zweigen: if – else
   </a>
@@ -749,11 +754,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-vielen-zweigen-if-elseif-else">
    Programmverzweigungen mit vielen Zweigen: if – elseif – else
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zusammenfassung">
-   Zusammenfassung
   </a>
  </li>
 </ul>
@@ -768,18 +768,28 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="programmverzweigungen-mit-mehreren-zweigen-if-elif-else">
 <h1>5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else<a class="headerlink" href="#programmverzweigungen-mit-mehreren-zweigen-if-elif-else" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
-<p>TODO</p>
-<section id="programmverzweigungen-mit-zwei-zweigen-if-else">
-<h2>Programmverzweigungen mit zwei Zweigen: if – else<a class="headerlink" href="#programmverzweigungen-mit-zwei-zweigen-if-else" title="Permalink to this headline">#</a></h2>
 <p>In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor.
 Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts?
 Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein
 Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl
-zwischen zwei Möglichkeiten gibt es <strong>zweiteilige Programmverzweigungen</strong>.</p>
+zwischen zwei Möglichkeiten gibt es zweiteilige Programmverzweigungen. Und auch
+bei zweiteiligen Programmverzweigungen ist noch nicht Schluss, denn vielleicht
+kommt man ja an eine Viererkreuzung … Daher behandeln wir in diesem Kapitel
+Programmverzweigungen mit mehreren Zweigen.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können Programmverzweigungen mit zwei Zweigen mittels <strong>if - else</strong>
+implementieren.</p></li>
+<li><p>Sie können mehrteilige Programmverzweigungen mit <strong>if - elif - else</strong>
+implementieren.</p></li>
+</ul>
+</div>
+</section>
+<section id="programmverzweigungen-mit-zwei-zweigen-if-else">
+<h2>Programmverzweigungen mit zwei Zweigen: if – else<a class="headerlink" href="#programmverzweigungen-mit-zwei-zweigen-if-else" title="Permalink to this headline">#</a></h2>
 <p>Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den
 sogenannten <strong>else-Block</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span><span class="p">:</span>
@@ -1127,21 +1137,7 @@ folgt:</p>
 </pre></div>
 </div>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
-<p>In diesem Kapitel haben Sie die erste Kontrollstruktur kennengelernt, um ein
-lineares Python-Programm in ein nichtlineares Python-Programm zu verwandeln, das
-auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe
-von if, elseif und else können Sie nun beliebig viele Verzweigungen
-programmieren. Damit der Python-Interpreter den Programm-Code in einer
-Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein.
-Bedingungen sind entweder wahr oder falsch, was Python in einem booleschen
-Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher
-Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für
-Texte werden wir noch kennenlernen.</p>
-</section>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1175,7 +1171,7 @@ Texte werden wir noch kennenlernen.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">5.2 Programmverzweigungen mit einen Zweig: if</p>
+            <p class="prev-next-title">5.2 Programmverzweigungen: if</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter05_sec04.html" title="next page">

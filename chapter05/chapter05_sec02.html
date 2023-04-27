@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.2 Programmverzweigungen mit einen Zweig: if &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>5.2 Programmverzweigungen: if &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -203,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec02.html">
-     3.2 Das Modul Math
+     3.2 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.2 Programmverzweigungen mit einen Zweig: if
+     5.2 Programmverzweigungen: if
     </a>
    </li>
    <li class="toctree-l2">
@@ -685,23 +685,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-der-if-verzweigung">
+   Syntax der if-Verzweigung
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>5.2 Programmverzweigungen mit einen Zweig: if</h1>
+                <h1>5.2 Programmverzweigungen: if</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntax-der-if-verzweigung">
+   Syntax der if-Verzweigung
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -709,12 +756,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="programmverzweigungen-mit-einen-zweig-if">
-<h1>5.2 Programmverzweigungen mit einen Zweig: if<a class="headerlink" href="#programmverzweigungen-mit-einen-zweig-if" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="programmverzweigungen-if">
+<h1>5.2 Programmverzweigungen: if<a class="headerlink" href="#programmverzweigungen-if" title="Permalink to this headline">#</a></h1>
+<p>Im letzten Kapitel haben wir gelernt, wie ein Vergleich in Python durchgeführt
+wird und mit welchem Datentyp das Ergebnis eines solchen Vergleichs gespeichert
+wird. In diesem Kapitel geht es nun darum, dass das Python-Programm auf das
+Ergebnis eines Vergleichs reagiert, indem Code-Abschnitte nur dann ausgeführt
+werden, wenn eine Bedingung erfüllt ist.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können mit <strong>if</strong> eine Programmverzweigung implementieren.</p></li>
+</ul>
 </div>
+</section>
+<section id="syntax-der-if-verzweigung">
+<h2>Syntax der if-Verzweigung<a class="headerlink" href="#syntax-der-if-verzweigung" title="Permalink to this headline">#</a></h2>
 <p>Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt.
 Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span><span class="p">:</span>
@@ -728,7 +787,7 @@ nicht erfüllt (= False) wird.</p>
 <p>Wir betrachten nun ein Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">17</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...&#39;</span><span class="p">)</span>
@@ -736,12 +795,18 @@ nicht erfüllt (= False) wird.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie dürfen Alkohol kaufen.
+Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...
 </pre></div>
 </div>
 </div>
 </div>
-<p>Und könnte beispielsweise mit einer Benutzerabfrage kombiniert werden:</p>
+<p>Da die Person volljährig ist (<code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">=</span> <span class="pre">20</span></code>), ist der Vergleich <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code>
+wahr, die Bedingung also erfüllt. Daher wird der Anweisungsblock, der nur aus
+einer einzigen Anweisung besteht, ausgeführt. Der Python-Interpreter gibt den
+String <code class="docutils literal notranslate"><span class="pre">Sie</span> <span class="pre">dürfen</span> <span class="pre">Alkohol</span> <span class="pre">kaufen.</span></code> aus und macht dann mit dem normalen Programm
+weiter.</p>
+<p>Dieser Code könnte beispielsweise mit einer Benutzerabfrage kombiniert werden:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie?&#39;</span><span class="p">))</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">)</span>
@@ -804,6 +869,7 @@ Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positi
 <p>Der Code erfordert drei if-Blöcke.</p>
 </div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+</section>
 
     <script type="text/x-thebe-config">
     {

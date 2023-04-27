@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.2 Programmverzweigungen mit einen Zweig: if" href="chapter05_sec02.html" />
+    <link rel="next" title="5.2 Programmverzweigungen: if" href="chapter05_sec02.html" />
     <link rel="prev" title="5. Programmverzweigung (if - elif - else)" href="chapter05_sec00.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -203,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter03/chapter03_sec02.html">
-     3.2 Das Modul Math
+     3.2 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter05_sec02.html">
-     5.2 Programmverzweigungen mit einen Zweig: if
+     5.2 Programmverzweigungen: if
     </a>
    </li>
    <li class="toctree-l2">
@@ -708,8 +708,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#der-datentyp-bool">
+   Der Datentyp Bool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vergleiche-mit-zahlen">
    Vergleiche mit Zahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vergleiche-mit-strings">
+   Vergleiche mit Strings
   </a>
  </li>
 </ul>
@@ -732,8 +747,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#der-datentyp-bool">
+   Der Datentyp Bool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vergleiche-mit-zahlen">
    Vergleiche mit Zahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vergleiche-mit-strings">
+   Vergleiche mit Strings
   </a>
  </li>
 </ul>
@@ -748,22 +778,33 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="vergleiche-und-der-boolesche-datentyp">
 <h1>5.1 Vergleiche und der boolesche Datentyp<a class="headerlink" href="#vergleiche-und-der-boolesche-datentyp" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
 <p>Viele Möglichkeiten unserer Gesellschaft stehen nur Volljährigen offen und sind
 damit an eine Altersangabe gebunden. Wenn jetzt ein Computersystem vorab prüfen
 soll, ob Volljährigkeit vorliegt oder nicht, dann brauchen wir einen einfachen
-Vergleich. Angenommen, wir würden das Alter der Benutzers oder der Benutzerin in
-der Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code> speichern. Damit wäre ein simples Beispiel für eine
-einfache Bedingung der mathematische Ausdruck <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">18</span></code>. Der Wert der
-Variablen <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird also mit der Zahl 18 verglichen. Dieser Vergleich ist
-entweder <strong>wahr (True)</strong> oder <strong>falsch (False)</strong>. Oder anders formuliert, ist
-diese Bedingung entweder erfüllt oder nicht erfüllt.</p>
+Vergleich. Daher beschäftigen wir uns in diesem Kapitel mit Vergleichen und dem
+Datentyp Bool.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie kennen den Datentyp <strong>Bool</strong> mit seinen beiden Werte True oder False.</p></li>
+<li><p>Sie kennen die wichtigsten Vergleichsoperatoren für Zahlen und Strings.</p></li>
+</ul>
+</div>
+</section>
+<section id="der-datentyp-bool">
+<h2>Der Datentyp Bool<a class="headerlink" href="#der-datentyp-bool" title="Permalink to this headline">#</a></h2>
+<p>Zurück zu dem Beispiel mit der Überprüfung der Volljährigkeit. Angenommen, wir
+würden das Alter der Benutzers oder der Benutzerin in der Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>
+speichern. Damit wäre ein simples Beispiel für eine einfache Bedingung der
+mathematische Ausdruck <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">18</span></code>. Der Wert der Variablen <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird also
+mit der Zahl 18 verglichen. Dieser Vergleich ist entweder <strong>wahr (True)</strong> oder
+<strong>falsch (False)</strong>. Oder anders formuliert, diese Bedingung ist entweder erfüllt
+oder nicht erfüllt.</p>
 <p>Um den Wahrheitswert einer Bedingung zu speichern, hat Python einen eigenen
 Datentyp, einen sogenannten booleschen Datentyp. Nach dem englischen Wort wird
-dieser Datentyp in der Informatik üblicherweise <strong>Boolean</strong> genannt. Das
+dieser Datentyp in der Informatik üblicherweise <strong>Bool</strong> oder <strong>Boolean</strong> genannt. Das
 besondere an diesem Datentyp ist, dass eine Variable diesen Datentyps nur zwei
 verschiedene Werte annehmen kann, nämlich</p>
 <ul class="simple">
@@ -786,9 +827,10 @@ Code-Zelle aus.</p>
 </div>
 </div>
 </div>
+</section>
 <section id="vergleiche-mit-zahlen">
 <h2>Vergleiche mit Zahlen<a class="headerlink" href="#vergleiche-mit-zahlen" title="Permalink to this headline">#</a></h2>
-<p>Nachdem wir jetzt den Datentyp kennegelernt haben, mit dem Python das Ergebnis
+<p>Nachdem wir jetzt den Datentyp kennengelernt haben, mit dem Python das Ergebnis
 eines Vergleichs speichert, kommen wir nun zu dem Vergleich selbst.</p>
 <p>Zunächst beschäftigen wir uns mit mathematischen Vergleichen. In der Mathematik
 ist ein Vergleich ein Ausdruck mit zwei Argumenten und einem Vergleichsoperator
@@ -808,7 +850,8 @@ in Python:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>  gleich</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">!=</span> </code> ungleich</p></li>
 </ul>
-<p>Im interaktiven Modus von Python können wir leicht den Wahrheitsgehalt von Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:</p>
+<p>Im interaktiven Modus von Python können wir leicht den Wahrheitsgehalt von
+Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
@@ -816,7 +859,8 @@ in Python:</p>
 </div>
 </div>
 </div>
-<p>Jetzt probieren wir in den nachfolgenden Code-Zellen verschiedene Vergleichsoperatoren aus. Zur Erinnerung, 0 steht dabei für false (falsch) und 1 für wahr (true).</p>
+<p>Jetzt probieren wir in den nachfolgenden Code-Zellen verschiedene
+Vergleichsoperatoren aus.</p>
 <p>Ist x genau gleich 15?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -935,7 +979,103 @@ in Python:</p>
 </pre></div>
 </div>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="vergleiche-mit-strings">
+<h2>Vergleiche mit Strings<a class="headerlink" href="#vergleiche-mit-strings" title="Permalink to this headline">#</a></h2>
+<p>Als nächstes werden wir uns mit der Verwendung von Strings in Vergleichen
+beschäftigen. Strings werden häufig in Vergleichen verwendet, um festzustellen,
+ob zwei Strings gleich sind oder ob ein String in einem anderen enthalten ist.</p>
+<p>Um festzustellen, ob zwei Strings in Python gleich sind, können wir den
+Gleichheitsoperator <code class="docutils literal notranslate"><span class="pre">==</span></code> verwenden. Der Gleichheitsoperator gibt <code class="docutils literal notranslate"><span class="pre">True</span></code> zurück,
+wenn die beiden Strings exakt übereinstimmen, und <code class="docutils literal notranslate"><span class="pre">False</span></code>, wenn sie sich
+unterscheiden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string01</span> <span class="o">=</span> <span class="s1">&#39;Hallo&#39;</span>
+<span class="n">string02</span> <span class="o">=</span> <span class="s1">&#39;Welt&#39;</span>
+<span class="n">string03</span> <span class="o">=</span> <span class="s1">&#39;Hallo&#39;</span>
+<span class="n">string04</span> <span class="o">=</span> <span class="s1">&#39;hallo&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">string01</span> <span class="o">==</span> <span class="n">string02</span><span class="p">)</span>  <span class="c1"># Ausgabe: False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string01</span> <span class="o">==</span> <span class="n">string03</span><span class="p">)</span>  <span class="c1"># Ausgabe: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string01</span> <span class="o">==</span> <span class="n">string04</span><span class="p">)</span>  <span class="c1"># Ausgabe: False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel sind die Strings <code class="docutils literal notranslate"><span class="pre">string01</span></code> und <code class="docutils literal notranslate"><span class="pre">string03</span></code> gleich. Der String
+<code class="docutils literal notranslate"><span class="pre">string02</span></code> ist jedoch unterschiedlich von <code class="docutils literal notranslate"><span class="pre">string01</span></code>, daher ist das Ergebnis
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. Beachten Sie auch, dass der String <code class="docutils literal notranslate"><span class="pre">string04</span></code> nicht gleich <code class="docutils literal notranslate"><span class="pre">string01</span></code>
+ist, obwohl er den gleichen Wert hat, da Groß- und Kleinschreibung in Python bei
+der Vergleichsoperation berücksichtigt werden.</p>
+<p>Um zu überprüfen, ob ein String in einem anderen enthalten ist, können wir den
+Operator <code class="docutils literal notranslate"><span class="pre">in</span></code> verwenden. Der Operator <code class="docutils literal notranslate"><span class="pre">in</span></code> gibt <code class="docutils literal notranslate"><span class="pre">True</span></code> zurück, wenn der String
+in dem anderen String enthalten ist, und <code class="docutils literal notranslate"><span class="pre">False</span></code>, wenn nicht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+<span class="n">string01</span> <span class="o">=</span> <span class="s1">&#39;Hallo Welt&#39;</span>
+<span class="n">string02</span> <span class="o">=</span> <span class="s1">&#39;Welt&#39;</span>
+<span class="n">string03</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">string02</span> <span class="ow">in</span> <span class="n">string01</span><span class="p">)</span>  <span class="c1"># Ausgabe: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string03</span> <span class="ow">in</span> <span class="n">string01</span><span class="p">)</span>  <span class="c1"># Ausgabe: False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel ist der String <code class="docutils literal notranslate"><span class="pre">string02</span></code> in dem String <code class="docutils literal notranslate"><span class="pre">string01</span></code> enthalten,
+daher ist das Ergebnis <code class="docutils literal notranslate"><span class="pre">True</span></code>. Der String <code class="docutils literal notranslate"><span class="pre">string03</span></code> ist jedoch nicht in
+<code class="docutils literal notranslate"><span class="pre">string01</span></code> enthalten, daher ist das Ergebnis <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Beachten Sie, dass bei der Überprüfung die Groß- und Kleinschreibung in Python
+beachtet werden muss. Wenn wir also nach dem String <code class="docutils literal notranslate"><span class="pre">'welt'</span></code> suchen, erhalten wir
+<code class="docutils literal notranslate"><span class="pre">False</span></code>, da der String <code class="docutils literal notranslate"><span class="pre">'Welt'</span></code> großgeschrieben ist.</p>
+<p>Wir können auch andere Vergleichsoperationen wie &lt;, &gt;, &lt;=, &gt;= mit Strings
+verwenden. Diese Operationen vergleichen die Strings nach ihrem
+lexikographischen Wert, d.h. sie vergleichen die Zeichen eines Strings in der
+Reihenfolge, in der sie auftreten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Apfel&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Banane&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Ausgabe: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Ausgabe: False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Ausgabe: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Ausgabe: False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel ist <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> kleiner als <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code>, da “A” im Alphabet vor
+“B” steht, daher ist das Ergebnis des <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>-Operators <code class="docutils literal notranslate"><span class="pre">True</span></code>. Der <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>-Operator
+gibt <code class="docutils literal notranslate"><span class="pre">False</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> größer als <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code> ist. Der <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>-Operator
+gibt <code class="docutils literal notranslate"><span class="pre">True</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> kleiner oder gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code> ist. Der
+<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>-Operator gibt <code class="docutils literal notranslate"><span class="pre">False</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> nicht größer oder gleich
+<code class="docutils literal notranslate"><span class="pre">'Banane</span></code>’ ist.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -975,7 +1115,7 @@ in Python:</p>
     <a class='right-next' id="next-link" href="chapter05_sec02.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5.2 Programmverzweigungen mit einen Zweig: if</p>
+        <p class="prev-next-title">5.2 Programmverzweigungen: if</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

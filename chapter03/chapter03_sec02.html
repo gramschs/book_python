@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2 Das Modul Math &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>3.2 Das Modul NumPy &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -205,7 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.2 Das Modul Math
+     3.2 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
@@ -269,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter05/chapter05_sec02.html">
-     5.2 Programmverzweigungen mit einen Zweig: if
+     5.2 Programmverzweigungen: if
     </a>
    </li>
    <li class="toctree-l2">
@@ -715,13 +715,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-math">
-   Import math
+  <a class="reference internal nav-link" href="#importieren-von-modulen">
+   Importieren von Modulen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-math-import">
-   From math import
+  <a class="reference internal nav-link" href="#importieren-von-einzelnen-funktionen-oder-klassen">
+   Importieren von einzelnen Funktionen oder Klassen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importieren-von-modulen-mit-alias">
+   Importieren von Modulen mit Alias
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
   </a>
  </li>
 </ul>
@@ -733,7 +743,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3.2 Das Modul Math</h1>
+                <h1>3.2 Das Modul NumPy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -749,13 +759,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-math">
-   Import math
+  <a class="reference internal nav-link" href="#importieren-von-modulen">
+   Importieren von Modulen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-math-import">
-   From math import
+  <a class="reference internal nav-link" href="#importieren-von-einzelnen-funktionen-oder-klassen">
+   Importieren von einzelnen Funktionen oder Klassen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importieren-von-modulen-mit-alias">
+   Importieren von Modulen mit Alias
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
   </a>
  </li>
 </ul>
@@ -768,15 +788,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="das-modul-math">
-<h1>3.2 Das Modul Math<a class="headerlink" href="#das-modul-math" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="das-modul-numpy">
+<h1>3.2 Das Modul NumPy<a class="headerlink" href="#das-modul-numpy" title="Permalink to this headline">#</a></h1>
 <p>Python kann auch auf schwachbrüstiger Hardware laufen wie beispielsweise auf
 dem Raspberry Pi. Ein Grund für die Effizienz von Python ist, dass nicht alle
 möglichen Datentypen, Funktionen und Methoden von Beginn an in den Speicher
 geladen werden, sondern erst bei Bedarf. Python-Code ist in sogenannte Module
 unterteilt.</p>
 <p>In diesem Jupyter Notebook werden wir den Modul-Mechanismus anhand des
-Math-Moduls kennenlernen.</p>
+NumPy-Moduls kennenlernen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
@@ -785,30 +805,17 @@ Math-Moduls kennenlernen.</p>
 <li><p>Sie können erklären, was ein <strong>Modul</strong> in Python ist.</p></li>
 <li><p>Sie können ein Modul komplett mit <strong>import modul</strong> importieren und auf die darin enthaltenen Funktionalitäten mit <strong>modul.funktionalitaet</strong> zugreifen.</p></li>
 <li><p>Sie können mit <strong>from modul import funktionalitaet</strong> einzelne Funktionalitäten eines Moduls importieren.</p></li>
+<li><p>Sie kennen das Modul <strong>NumPy</strong>.</p></li>
 </ul>
 </div>
 </section>
-<section id="import-math">
-<h2>Import math<a class="headerlink" href="#import-math" title="Permalink to this headline">#</a></h2>
+<section id="importieren-von-modulen">
+<h2>Importieren von Modulen<a class="headerlink" href="#importieren-von-modulen" title="Permalink to this headline">#</a></h2>
 <p>Es wäre schön, häufig gebrauchte Zahlen wie die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> oder die
 Eulersche Zahl <span class="math notranslate nohighlight">\(e\)</span> zur Verfügung zu haben. Leider gehören beide nicht zum
-Python-Kern, wie der folgende Versuch zeigt:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+Python-Kern. Geben Sie einmal den folgenden Code ein:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;pi&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>Python gibt eine Fehlermeldung aus. Der Fehler lautet “NameError”. Der
 Python-Interpreter meldet auch, bei welcher Variable der Namensfehler auftritt,
@@ -821,6 +828,11 @@ nämlich bei ‘pi’.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
 </div>
 <p>Aber es gibt ja noch mehr Funktionalitäten, die im Python-Kern fehlen wie
 beispielsweise die Sinus-Funktion oder die Wurzel-Funktion.</p>
@@ -829,28 +841,643 @@ Klassen) zur Verfügung stellen und damit den eigentlichen Python-Kern erweitern
 Module müssen importiert werden, damit der Python-Interpreter diese erweiterten
 Funktionalitäten benutzen kann.</p>
 <p>Es gibt mehrere Anweisungen, ein Modul zu importieren. Als erstes betrachten wir
-die direkte import-Anweisung und importieren das Mathematik-Modul <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+die direkte import-Anweisung und importieren das Mathematik-Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Das
+NumPy-Modul ist eine leistungsstarke Bibliothek für numerische Berechnungen in
+Python, die häufig in wissenschaftlichen und technischen Anwendungen verwendet
+wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wird die obige Anweisung <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code> ausgeführt, passiert scheinbar nichts.
-Tatsächlich hat der Python-Interpreter jedoch das Modul <code class="docutils literal notranslate"><span class="pre">math</span></code> geladen. Die
-Anweisung <code class="docutils literal notranslate"><span class="pre">dir(math)</span></code> listet auf, was genau alles importiert wurde.</p>
+<p>Wird die obige Anweisung <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code> ausgeführt, passiert scheinbar nichts.
+Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
+<code class="docutils literal notranslate"><span class="pre">dir(numpy)</span></code> listet auf, was genau alles importiert wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">numpy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ALLOW_THREADS&#39;,
+ &#39;AxisError&#39;,
+ &#39;BUFSIZE&#39;,
+ &#39;CLIP&#39;,
+ &#39;ComplexWarning&#39;,
+ &#39;DataSource&#39;,
+ &#39;ERR_CALL&#39;,
+ &#39;ERR_DEFAULT&#39;,
+ &#39;ERR_IGNORE&#39;,
+ &#39;ERR_LOG&#39;,
+ &#39;ERR_PRINT&#39;,
+ &#39;ERR_RAISE&#39;,
+ &#39;ERR_WARN&#39;,
+ &#39;FLOATING_POINT_SUPPORT&#39;,
+ &#39;FPE_DIVIDEBYZERO&#39;,
+ &#39;FPE_INVALID&#39;,
+ &#39;FPE_OVERFLOW&#39;,
+ &#39;FPE_UNDERFLOW&#39;,
+ &#39;False_&#39;,
+ &#39;Inf&#39;,
+ &#39;Infinity&#39;,
+ &#39;MAXDIMS&#39;,
+ &#39;MAY_SHARE_BOUNDS&#39;,
+ &#39;MAY_SHARE_EXACT&#39;,
+ &#39;ModuleDeprecationWarning&#39;,
+ &#39;NAN&#39;,
+ &#39;NINF&#39;,
+ &#39;NZERO&#39;,
+ &#39;NaN&#39;,
+ &#39;PINF&#39;,
+ &#39;PZERO&#39;,
+ &#39;RAISE&#39;,
+ &#39;RankWarning&#39;,
+ &#39;SHIFT_DIVIDEBYZERO&#39;,
+ &#39;SHIFT_INVALID&#39;,
+ &#39;SHIFT_OVERFLOW&#39;,
+ &#39;SHIFT_UNDERFLOW&#39;,
+ &#39;ScalarType&#39;,
+ &#39;Tester&#39;,
+ &#39;TooHardError&#39;,
+ &#39;True_&#39;,
+ &#39;UFUNC_BUFSIZE_DEFAULT&#39;,
+ &#39;UFUNC_PYVALS_NAME&#39;,
+ &#39;VisibleDeprecationWarning&#39;,
+ &#39;WRAP&#39;,
+ &#39;_CopyMode&#39;,
+ &#39;_NoValue&#39;,
+ &#39;_UFUNC_API&#39;,
+ &#39;__NUMPY_SETUP__&#39;,
+ &#39;__all__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__config__&#39;,
+ &#39;__deprecated_attrs__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__expired_functions__&#39;,
+ &#39;__file__&#39;,
+ &#39;__getattr__&#39;,
+ &#39;__git_version__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__path__&#39;,
+ &#39;__spec__&#39;,
+ &#39;__version__&#39;,
+ &#39;_add_newdoc_ufunc&#39;,
+ &#39;_distributor_init&#39;,
+ &#39;_financial_names&#39;,
+ &#39;_globals&#39;,
+ &#39;_mat&#39;,
+ &#39;_pyinstaller_hooks_dir&#39;,
+ &#39;_pytesttester&#39;,
+ &#39;_version&#39;,
+ &#39;abs&#39;,
+ &#39;absolute&#39;,
+ &#39;add&#39;,
+ &#39;add_docstring&#39;,
+ &#39;add_newdoc&#39;,
+ &#39;add_newdoc_ufunc&#39;,
+ &#39;all&#39;,
+ &#39;allclose&#39;,
+ &#39;alltrue&#39;,
+ &#39;amax&#39;,
+ &#39;amin&#39;,
+ &#39;angle&#39;,
+ &#39;any&#39;,
+ &#39;append&#39;,
+ &#39;apply_along_axis&#39;,
+ &#39;apply_over_axes&#39;,
+ &#39;arange&#39;,
+ &#39;arccos&#39;,
+ &#39;arccosh&#39;,
+ &#39;arcsin&#39;,
+ &#39;arcsinh&#39;,
+ &#39;arctan&#39;,
+ &#39;arctan2&#39;,
+ &#39;arctanh&#39;,
+ &#39;argmax&#39;,
+ &#39;argmin&#39;,
+ &#39;argpartition&#39;,
+ &#39;argsort&#39;,
+ &#39;argwhere&#39;,
+ &#39;around&#39;,
+ &#39;array&#39;,
+ &#39;array2string&#39;,
+ &#39;array_equal&#39;,
+ &#39;array_equiv&#39;,
+ &#39;array_repr&#39;,
+ &#39;array_split&#39;,
+ &#39;array_str&#39;,
+ &#39;asanyarray&#39;,
+ &#39;asarray&#39;,
+ &#39;asarray_chkfinite&#39;,
+ &#39;ascontiguousarray&#39;,
+ &#39;asfarray&#39;,
+ &#39;asfortranarray&#39;,
+ &#39;asmatrix&#39;,
+ &#39;atleast_1d&#39;,
+ &#39;atleast_2d&#39;,
+ &#39;atleast_3d&#39;,
+ &#39;average&#39;,
+ &#39;bartlett&#39;,
+ &#39;base_repr&#39;,
+ &#39;binary_repr&#39;,
+ &#39;bincount&#39;,
+ &#39;bitwise_and&#39;,
+ &#39;bitwise_not&#39;,
+ &#39;bitwise_or&#39;,
+ &#39;bitwise_xor&#39;,
+ &#39;blackman&#39;,
+ &#39;block&#39;,
+ &#39;bmat&#39;,
+ &#39;bool8&#39;,
+ &#39;bool_&#39;,
+ &#39;broadcast&#39;,
+ &#39;broadcast_arrays&#39;,
+ &#39;broadcast_shapes&#39;,
+ &#39;broadcast_to&#39;,
+ &#39;busday_count&#39;,
+ &#39;busday_offset&#39;,
+ &#39;busdaycalendar&#39;,
+ &#39;byte&#39;,
+ &#39;byte_bounds&#39;,
+ &#39;bytes0&#39;,
+ &#39;bytes_&#39;,
+ &#39;c_&#39;,
+ &#39;can_cast&#39;,
+ &#39;cast&#39;,
+ &#39;cbrt&#39;,
+ &#39;cdouble&#39;,
+ &#39;ceil&#39;,
+ &#39;cfloat&#39;,
+ &#39;char&#39;,
+ &#39;character&#39;,
+ &#39;chararray&#39;,
+ &#39;choose&#39;,
+ &#39;clip&#39;,
+ &#39;clongdouble&#39;,
+ &#39;clongfloat&#39;,
+ &#39;column_stack&#39;,
+ &#39;common_type&#39;,
+ &#39;compare_chararrays&#39;,
+ &#39;compat&#39;,
+ &#39;complex128&#39;,
+ &#39;complex64&#39;,
+ &#39;complex_&#39;,
+ &#39;complexfloating&#39;,
+ &#39;compress&#39;,
+ &#39;concatenate&#39;,
+ &#39;conj&#39;,
+ &#39;conjugate&#39;,
+ &#39;convolve&#39;,
+ &#39;copy&#39;,
+ &#39;copysign&#39;,
+ &#39;copyto&#39;,
+ &#39;core&#39;,
+ &#39;corrcoef&#39;,
+ &#39;correlate&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;count_nonzero&#39;,
+ &#39;cov&#39;,
+ &#39;cross&#39;,
+ &#39;csingle&#39;,
+ &#39;ctypeslib&#39;,
+ &#39;cumprod&#39;,
+ &#39;cumproduct&#39;,
+ &#39;cumsum&#39;,
+ &#39;datetime64&#39;,
+ &#39;datetime_as_string&#39;,
+ &#39;datetime_data&#39;,
+ &#39;deg2rad&#39;,
+ &#39;degrees&#39;,
+ &#39;delete&#39;,
+ &#39;deprecate&#39;,
+ &#39;deprecate_with_doc&#39;,
+ &#39;diag&#39;,
+ &#39;diag_indices&#39;,
+ &#39;diag_indices_from&#39;,
+ &#39;diagflat&#39;,
+ &#39;diagonal&#39;,
+ &#39;diff&#39;,
+ &#39;digitize&#39;,
+ &#39;disp&#39;,
+ &#39;divide&#39;,
+ &#39;divmod&#39;,
+ &#39;dot&#39;,
+ &#39;double&#39;,
+ &#39;dsplit&#39;,
+ &#39;dstack&#39;,
+ &#39;dtype&#39;,
+ &#39;e&#39;,
+ &#39;ediff1d&#39;,
+ &#39;einsum&#39;,
+ &#39;einsum_path&#39;,
+ &#39;emath&#39;,
+ &#39;empty&#39;,
+ &#39;empty_like&#39;,
+ &#39;equal&#39;,
+ &#39;error_message&#39;,
+ &#39;errstate&#39;,
+ &#39;euler_gamma&#39;,
+ &#39;exp&#39;,
+ &#39;exp2&#39;,
+ &#39;expand_dims&#39;,
+ &#39;expm1&#39;,
+ &#39;extract&#39;,
+ &#39;eye&#39;,
+ &#39;fabs&#39;,
+ &#39;fastCopyAndTranspose&#39;,
+ &#39;fft&#39;,
+ &#39;fill_diagonal&#39;,
+ &#39;find_common_type&#39;,
+ &#39;finfo&#39;,
+ &#39;fix&#39;,
+ &#39;flatiter&#39;,
+ &#39;flatnonzero&#39;,
+ &#39;flexible&#39;,
+ &#39;flip&#39;,
+ &#39;fliplr&#39;,
+ &#39;flipud&#39;,
+ &#39;float16&#39;,
+ &#39;float32&#39;,
+ &#39;float64&#39;,
+ &#39;float_&#39;,
+ &#39;float_power&#39;,
+ &#39;floating&#39;,
+ &#39;floor&#39;,
+ &#39;floor_divide&#39;,
+ &#39;fmax&#39;,
+ &#39;fmin&#39;,
+ &#39;fmod&#39;,
+ &#39;format_float_positional&#39;,
+ &#39;format_float_scientific&#39;,
+ &#39;format_parser&#39;,
+ &#39;frexp&#39;,
+ &#39;from_dlpack&#39;,
+ &#39;frombuffer&#39;,
+ &#39;fromfile&#39;,
+ &#39;fromfunction&#39;,
+ &#39;fromiter&#39;,
+ &#39;frompyfunc&#39;,
+ &#39;fromregex&#39;,
+ &#39;fromstring&#39;,
+ &#39;full&#39;,
+ &#39;full_like&#39;,
+ &#39;gcd&#39;,
+ &#39;generic&#39;,
+ &#39;genfromtxt&#39;,
+ &#39;geomspace&#39;,
+ &#39;get_array_wrap&#39;,
+ &#39;get_include&#39;,
+ &#39;get_printoptions&#39;,
+ &#39;getbufsize&#39;,
+ &#39;geterr&#39;,
+ &#39;geterrcall&#39;,
+ &#39;geterrobj&#39;,
+ &#39;gradient&#39;,
+ &#39;greater&#39;,
+ &#39;greater_equal&#39;,
+ &#39;half&#39;,
+ &#39;hamming&#39;,
+ &#39;hanning&#39;,
+ &#39;heaviside&#39;,
+ &#39;histogram&#39;,
+ &#39;histogram2d&#39;,
+ &#39;histogram_bin_edges&#39;,
+ &#39;histogramdd&#39;,
+ &#39;hsplit&#39;,
+ &#39;hstack&#39;,
+ &#39;hypot&#39;,
+ &#39;i0&#39;,
+ &#39;identity&#39;,
+ &#39;iinfo&#39;,
+ &#39;imag&#39;,
+ &#39;in1d&#39;,
+ &#39;index_exp&#39;,
+ &#39;indices&#39;,
+ &#39;inexact&#39;,
+ &#39;inf&#39;,
+ &#39;info&#39;,
+ &#39;infty&#39;,
+ &#39;inner&#39;,
+ &#39;insert&#39;,
+ &#39;int0&#39;,
+ &#39;int16&#39;,
+ &#39;int32&#39;,
+ &#39;int64&#39;,
+ &#39;int8&#39;,
+ &#39;int_&#39;,
+ &#39;intc&#39;,
+ &#39;integer&#39;,
+ &#39;interp&#39;,
+ &#39;intersect1d&#39;,
+ &#39;intp&#39;,
+ &#39;invert&#39;,
+ &#39;is_busday&#39;,
+ &#39;isclose&#39;,
+ &#39;iscomplex&#39;,
+ &#39;iscomplexobj&#39;,
+ &#39;isfinite&#39;,
+ &#39;isfortran&#39;,
+ &#39;isin&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;isnat&#39;,
+ &#39;isneginf&#39;,
+ &#39;isposinf&#39;,
+ &#39;isreal&#39;,
+ &#39;isrealobj&#39;,
+ &#39;isscalar&#39;,
+ &#39;issctype&#39;,
+ &#39;issubclass_&#39;,
+ &#39;issubdtype&#39;,
+ &#39;issubsctype&#39;,
+ &#39;iterable&#39;,
+ &#39;ix_&#39;,
+ &#39;kaiser&#39;,
+ &#39;kron&#39;,
+ &#39;lcm&#39;,
+ &#39;ldexp&#39;,
+ &#39;left_shift&#39;,
+ &#39;less&#39;,
+ &#39;less_equal&#39;,
+ &#39;lexsort&#39;,
+ &#39;lib&#39;,
+ &#39;linalg&#39;,
+ &#39;linspace&#39;,
+ &#39;little_endian&#39;,
+ &#39;load&#39;,
+ &#39;loadtxt&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;logaddexp&#39;,
+ &#39;logaddexp2&#39;,
+ &#39;logical_and&#39;,
+ &#39;logical_not&#39;,
+ &#39;logical_or&#39;,
+ &#39;logical_xor&#39;,
+ &#39;logspace&#39;,
+ &#39;longcomplex&#39;,
+ &#39;longdouble&#39;,
+ &#39;longfloat&#39;,
+ &#39;longlong&#39;,
+ &#39;lookfor&#39;,
+ &#39;ma&#39;,
+ &#39;mask_indices&#39;,
+ &#39;mat&#39;,
+ &#39;math&#39;,
+ &#39;matmul&#39;,
+ &#39;matrix&#39;,
+ &#39;matrixlib&#39;,
+ &#39;max&#39;,
+ &#39;maximum&#39;,
+ &#39;maximum_sctype&#39;,
+ &#39;may_share_memory&#39;,
+ &#39;mean&#39;,
+ &#39;median&#39;,
+ &#39;memmap&#39;,
+ &#39;meshgrid&#39;,
+ &#39;mgrid&#39;,
+ &#39;min&#39;,
+ &#39;min_scalar_type&#39;,
+ &#39;minimum&#39;,
+ &#39;mintypecode&#39;,
+ &#39;mod&#39;,
+ &#39;modf&#39;,
+ &#39;moveaxis&#39;,
+ &#39;msort&#39;,
+ &#39;multiply&#39;,
+ &#39;nan&#39;,
+ &#39;nan_to_num&#39;,
+ &#39;nanargmax&#39;,
+ &#39;nanargmin&#39;,
+ &#39;nancumprod&#39;,
+ &#39;nancumsum&#39;,
+ &#39;nanmax&#39;,
+ &#39;nanmean&#39;,
+ &#39;nanmedian&#39;,
+ &#39;nanmin&#39;,
+ &#39;nanpercentile&#39;,
+ &#39;nanprod&#39;,
+ &#39;nanquantile&#39;,
+ &#39;nanstd&#39;,
+ &#39;nansum&#39;,
+ &#39;nanvar&#39;,
+ &#39;nbytes&#39;,
+ &#39;ndarray&#39;,
+ &#39;ndenumerate&#39;,
+ &#39;ndim&#39;,
+ &#39;ndindex&#39;,
+ &#39;nditer&#39;,
+ &#39;negative&#39;,
+ &#39;nested_iters&#39;,
+ &#39;newaxis&#39;,
+ &#39;nextafter&#39;,
+ &#39;nonzero&#39;,
+ &#39;not_equal&#39;,
+ &#39;numarray&#39;,
+ &#39;number&#39;,
+ &#39;obj2sctype&#39;,
+ &#39;object0&#39;,
+ &#39;object_&#39;,
+ &#39;ogrid&#39;,
+ &#39;oldnumeric&#39;,
+ &#39;ones&#39;,
+ &#39;ones_like&#39;,
+ &#39;os&#39;,
+ &#39;outer&#39;,
+ &#39;packbits&#39;,
+ &#39;pad&#39;,
+ &#39;partition&#39;,
+ &#39;percentile&#39;,
+ &#39;pi&#39;,
+ &#39;piecewise&#39;,
+ &#39;place&#39;,
+ &#39;poly&#39;,
+ &#39;poly1d&#39;,
+ &#39;polyadd&#39;,
+ &#39;polyder&#39;,
+ &#39;polydiv&#39;,
+ &#39;polyfit&#39;,
+ &#39;polyint&#39;,
+ &#39;polymul&#39;,
+ &#39;polynomial&#39;,
+ &#39;polysub&#39;,
+ &#39;polyval&#39;,
+ &#39;positive&#39;,
+ &#39;power&#39;,
+ &#39;printoptions&#39;,
+ &#39;prod&#39;,
+ &#39;product&#39;,
+ &#39;promote_types&#39;,
+ &#39;ptp&#39;,
+ &#39;put&#39;,
+ &#39;put_along_axis&#39;,
+ &#39;putmask&#39;,
+ &#39;quantile&#39;,
+ &#39;r_&#39;,
+ &#39;rad2deg&#39;,
+ &#39;radians&#39;,
+ &#39;random&#39;,
+ &#39;ravel&#39;,
+ &#39;ravel_multi_index&#39;,
+ &#39;real&#39;,
+ &#39;real_if_close&#39;,
+ &#39;rec&#39;,
+ &#39;recarray&#39;,
+ &#39;recfromcsv&#39;,
+ &#39;recfromtxt&#39;,
+ &#39;reciprocal&#39;,
+ &#39;record&#39;,
+ &#39;remainder&#39;,
+ &#39;repeat&#39;,
+ &#39;require&#39;,
+ &#39;reshape&#39;,
+ &#39;resize&#39;,
+ &#39;result_type&#39;,
+ &#39;right_shift&#39;,
+ &#39;rint&#39;,
+ &#39;roll&#39;,
+ &#39;rollaxis&#39;,
+ &#39;roots&#39;,
+ &#39;rot90&#39;,
+ &#39;round&#39;,
+ &#39;round_&#39;,
+ &#39;row_stack&#39;,
+ &#39;s_&#39;,
+ &#39;safe_eval&#39;,
+ &#39;save&#39;,
+ &#39;savetxt&#39;,
+ &#39;savez&#39;,
+ &#39;savez_compressed&#39;,
+ &#39;sctype2char&#39;,
+ &#39;sctypeDict&#39;,
+ &#39;sctypes&#39;,
+ &#39;searchsorted&#39;,
+ &#39;select&#39;,
+ &#39;set_numeric_ops&#39;,
+ &#39;set_printoptions&#39;,
+ &#39;set_string_function&#39;,
+ &#39;setbufsize&#39;,
+ &#39;setdiff1d&#39;,
+ &#39;seterr&#39;,
+ &#39;seterrcall&#39;,
+ &#39;seterrobj&#39;,
+ &#39;setxor1d&#39;,
+ &#39;shape&#39;,
+ &#39;shares_memory&#39;,
+ &#39;short&#39;,
+ &#39;show_config&#39;,
+ &#39;sign&#39;,
+ &#39;signbit&#39;,
+ &#39;signedinteger&#39;,
+ &#39;sin&#39;,
+ &#39;sinc&#39;,
+ &#39;single&#39;,
+ &#39;singlecomplex&#39;,
+ &#39;sinh&#39;,
+ &#39;size&#39;,
+ &#39;sometrue&#39;,
+ &#39;sort&#39;,
+ &#39;sort_complex&#39;,
+ &#39;source&#39;,
+ &#39;spacing&#39;,
+ &#39;split&#39;,
+ &#39;sqrt&#39;,
+ &#39;square&#39;,
+ &#39;squeeze&#39;,
+ &#39;stack&#39;,
+ &#39;std&#39;,
+ &#39;str0&#39;,
+ &#39;str_&#39;,
+ &#39;string_&#39;,
+ &#39;subtract&#39;,
+ &#39;sum&#39;,
+ &#39;swapaxes&#39;,
+ &#39;sys&#39;,
+ &#39;take&#39;,
+ &#39;take_along_axis&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;tensordot&#39;,
+ &#39;test&#39;,
+ &#39;testing&#39;,
+ &#39;tile&#39;,
+ &#39;timedelta64&#39;,
+ &#39;trace&#39;,
+ &#39;tracemalloc_domain&#39;,
+ &#39;transpose&#39;,
+ &#39;trapz&#39;,
+ &#39;tri&#39;,
+ &#39;tril&#39;,
+ &#39;tril_indices&#39;,
+ &#39;tril_indices_from&#39;,
+ &#39;trim_zeros&#39;,
+ &#39;triu&#39;,
+ &#39;triu_indices&#39;,
+ &#39;triu_indices_from&#39;,
+ &#39;true_divide&#39;,
+ &#39;trunc&#39;,
+ &#39;typecodes&#39;,
+ &#39;typename&#39;,
+ &#39;ubyte&#39;,
+ &#39;ufunc&#39;,
+ &#39;uint&#39;,
+ &#39;uint0&#39;,
+ &#39;uint16&#39;,
+ &#39;uint32&#39;,
+ &#39;uint64&#39;,
+ &#39;uint8&#39;,
+ &#39;uintc&#39;,
+ &#39;uintp&#39;,
+ &#39;ulonglong&#39;,
+ &#39;unicode_&#39;,
+ &#39;union1d&#39;,
+ &#39;unique&#39;,
+ &#39;unpackbits&#39;,
+ &#39;unravel_index&#39;,
+ &#39;unsignedinteger&#39;,
+ &#39;unwrap&#39;,
+ &#39;use_hugepage&#39;,
+ &#39;ushort&#39;,
+ &#39;vander&#39;,
+ &#39;var&#39;,
+ &#39;vdot&#39;,
+ &#39;vectorize&#39;,
+ &#39;version&#39;,
+ &#39;void&#39;,
+ &#39;void0&#39;,
+ &#39;vsplit&#39;,
+ &#39;vstack&#39;,
+ &#39;w&#39;,
+ &#39;warnings&#39;,
+ &#39;where&#39;,
+ &#39;who&#39;,
+ &#39;zeros&#39;,
+ &#39;zeros_like&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Offensichtlich gehören sehr viele mathematische Funktionen zum math-Modul, aber auch die beiden Zahlen <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">e</span></code> finden wir in der Liste. Dann können wir ja <span class="math notranslate nohighlight">\(\pi\)</span> jetzt direkt ausgeben lassen:</p>
+<p>Offensichtlich gehören sehr viele mathematische Funktionen zum NumPy-Modul, aber
+auch die beiden Zahlen <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">e</span></code> finden wir in der Liste. Dann können wir ja
+<span class="math notranslate nohighlight">\(\pi\)</span> jetzt direkt ausgeben lassen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
 </pre></div>
 </div>
 </div>
@@ -858,11 +1485,16 @@ Anweisung <code class="docutils literal notranslate"><span class="pre">dir(math)
 <p>Erstaunlich, dass in einem Standard-Modul von Python die Programmier:innen <span class="math notranslate nohighlight">\(\pi\)</span>
 nur mit zwei Nachkommastellen angegeben haben… haben sie auch nicht. Die
 Variable <code class="docutils literal notranslate"><span class="pre">pi</span></code> wurde von uns selbst mit <code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">=</span> <span class="pre">3.14</span></code> definiert und ist nicht
-identisch mit <code class="docutils literal notranslate"><span class="pre">pi</span></code> aus dem math-Modul. Die Kreiszahl aus dem math-Modul heißt
-nämlich <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>.</p>
+identisch mit <code class="docutils literal notranslate"><span class="pre">pi</span></code> aus dem NumPy-Modul. Die Kreiszahl aus dem NumPy-Modul heißt
+nämlich <code class="docutils literal notranslate"><span class="pre">numpy.pi</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
 </pre></div>
 </div>
 </div>
@@ -884,32 +1516,33 @@ berechnen und ausgeben.</p>
 </div>
 <div class="solution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="from-math-import">
-<h2>From math import<a class="headerlink" href="#from-math-import" title="Permalink to this headline">#</a></h2>
+<section id="importieren-von-einzelnen-funktionen-oder-klassen">
+<h2>Importieren von einzelnen Funktionen oder Klassen<a class="headerlink" href="#importieren-von-einzelnen-funktionen-oder-klassen" title="Permalink to this headline">#</a></h2>
 <p>Wenn nur die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> gebraucht wird, ist der komplette Import des
-math-Modules zuviel des Guten. Auch kann es lästig sein, immer <code class="docutils literal notranslate"><span class="pre">math.</span></code> vor pi zu
-setzen. Eine zweite Möglichkeit, Funktionalitäten eines Moduls zu importieren,
-ist die Alternative</p>
+NumPy-Modules zuviel des Guten. Auch kann es lästig sein, immer <code class="docutils literal notranslate"><span class="pre">numpy.</span></code> vor pi
+zu setzen. Eine zweite Möglichkeit, Funktionalitäten eines Moduls zu
+importieren, ist die Alternative</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modulname</span> <span class="kn">import</span> <span class="n">etwas1</span><span class="p">,</span> <span class="n">etwas2</span>
 </pre></div>
 </div>
 <p><span class="math notranslate nohighlight">\(\pi\)</span> und die Sinus-Funktion werden dann folgendermaßen importiert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Jetzt können <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">sin</span></code> direkt benutzt werden, ohne <code class="docutils literal notranslate"><span class="pre">math.</span></code> davor zu schreiben.</p>
+<p>Jetzt können <code class="docutils literal notranslate"><span class="pre">pi</span></code> und <code class="docutils literal notranslate"><span class="pre">sin</span></code> direkt benutzt werden, ohne <code class="docutils literal notranslate"><span class="pre">numpy.</span></code> davor zu
+schreiben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
@@ -917,8 +1550,97 @@ ist die Alternative</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+0.0
+</pre></div>
 </div>
-<p>Tatsächlich gibt es noch weitere Möglichkeiten, etwas aus einem Modul zu importieren. Einen Überblick über diese Alternativen finden Sie im Internet unter <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">https://docs.python.org/3/tutorial/modules.html</a>.</p>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Importieren Sie die Wurzel-Funktion sqrt() direkt aus NumPy. Berechnen Sie dann
+<span class="math notranslate nohighlight">\(\sqrt{49}\)</span> und <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> und lassen Sie das Ergebnis jeweils ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">49</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="importieren-von-modulen-mit-alias">
+<h2>Importieren von Modulen mit Alias<a class="headerlink" href="#importieren-von-modulen-mit-alias" title="Permalink to this headline">#</a></h2>
+<p>Es ist üblich, Module mit einem kürzeren Alias zu importieren, um den Code
+lesbarer zu gestalten und weniger tippen zu müssen. Im Fall von NumPy wird
+häufig der Alias <code class="docutils literal notranslate"><span class="pre">np</span></code> verwendet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nachdem wir das Modul mit einem Alias importiert haben, verwenden wir diesen
+Alias, um auf die Funktionen und Klassen des Moduls zuzugreifen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Importieren Sie das <code class="docutils literal notranslate"><span class="pre">math</span></code>-Modul mit dem Alias <code class="docutils literal notranslate"><span class="pre">m</span></code> und lassen Sie die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> ausgeben. Bilden Sie dann die Differenz aus der Kreiszahl des math-Moduls und der Kreiszahl des NumPy-Moduls.</p>
+<p>Gibt es einen Unterschied zwischen den beiden Zahlen?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="n">differenz</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">differenz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Das math-Modul stellt ebenfalls mathematische Konstanten und Funktionen zur
+Verfügung, ist aber weniger umfangreich. Daher verwenden wir in dieser Vorlesung
+NumPy.</p>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
+<p>In diesem Kapitel haben wir den Modul-Mechanismus in Python untersucht und das
+NumPy-Modul als Beispiel verwendet. Wir haben gelernt, wie man Module
+importiert, spezifische Funktionen und Klassen aus einem Modul importiert und
+Module mit einem Alias importiert. Durch das Verständnis dieser Konzepte können
+Sie Ihren Python-Code besser organisieren und die Wiederverwendbarkeit von Code
+verbessern.</p>
 </section>
 </section>
 
