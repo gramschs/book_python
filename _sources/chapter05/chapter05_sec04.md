@@ -14,11 +14,6 @@ kernelspec:
 
 # Übungen
 
-```{admonition} Warnung
-:class: warning
-Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
-```
-
 ```{admonition} Übung 5.1
 :class: miniexercise
 Schreiben Sie ein Programm, das den Benutzer nach seinem Geburtsjahr fragt.
@@ -108,13 +103,13 @@ passend zur Personenanzahl skaliert sind.
 
 Beispiel Wrap-Pizza (https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html):
 
-Computer: Für wie viele Personen soll gekocht werden?
-Benutzer: 4
-Computer:
-Hier ist die Zutatenliste für 4 Personen:
-4 Tortillas
-8 EL Tomatenmark
-4 EL Wasser
+Computer: Für wie viele Personen soll gekocht werden?<br>
+Benutzer: 4<br>
+Computer:<br>
+Hier ist die Zutatenliste für 4 Personen: <br>
+4 Tortillas <br>
+8 EL Tomatenmark <br>
+4 EL Wasser <br>
 usw.
 ```
 ````{admonition} Lösung
@@ -179,3 +174,48 @@ Bei der obigen Lösung werden Großbichstaben nicht mitgezählt. Entweder werden
 
 Bemerkung: Eleganter wäre die Schreibweise `anzahl_a += 1`.
 ````
+
+```{admonition} Übung 5.5
+:class: miniexercise
+Schreiben Sie ein Programm, das mit Turtle ein n-Eck zeichnet. Das -Eck soll in
+einen Kreis mit Radius $r$ passen. Die Anzahl der Ecken, der Radius des Kreises
+und die Stiftfarbe sollen auf deutsch vom Benutzer abgefragt werden. Bei den
+Stiftfarben darf nur aus den Farben rot, grün und blau ausgewählt werden. Wählt
+der Benutzer eine falsche Stiftfarbe, soll eine Fehlermeldung ausgegeben werden
+und die Stiftfarbe schwarz gewählt werden.
+```
+````{admonition} Lösung
+:class: minisolution, toggle
+```python
+import ColabTurtlePlus.Turtle as turtle
+from numpy import sin, pi
+
+# Vorbereitung des Turle-Feldes 
+turtle.clearscreen()
+
+# Abfrage der Benutzereingaben
+anzahl_ecken = int(input('Geben Sie die Anzahl der Ecken an: '))
+radius = int(input('Geben Sie den Radius des Kreises vor, in den das n-Eck passen soll: '))
+stiftfarbe = input('Wählen Sie eine Stiftfarbe (rot, grün oder blau): ')
+
+# Check der Stiftfarbe
+if stiftfarbe.lower() == 'rot':
+    turtle.pencolor('red')
+elif stiftfarbe.lower() == 'grün':
+    turtle.pencolor('green')
+elif stiftfarbe.lower() == 'blau':
+    turtle.pencolor('blue')
+else:
+    print('Sie haben eine ungültige Stiftfarbe gewählt.')
+    turtle.pencolor('black')
+
+# Berechnungen der Seitenlänge des n-Ecks
+laenge = 2 * radius * sin(pi / anzahl_ecken)
+
+# Zeichnen des n-Ecks
+for i in range(anzahl_ecken):
+    turtle.left(360 / anzahl_ecken)
+    turtle.forward(laenge)
+```
+````
+

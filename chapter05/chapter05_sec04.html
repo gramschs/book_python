@@ -53,6 +53,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Funktionen" href="../chapter06/chapter06_sec00.html" />
@@ -711,10 +713,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 5.1</p>
 <p>Schreiben Sie ein Programm, das den Benutzer nach seinem Geburtsjahr fragt.
@@ -796,13 +794,13 @@ Menge einer Zutat pro Person stehen, in der zweiten Liste die Zutat selbst.</p>
 Dann soll der Computer eine Einkaufsliste ausgeben, bei der die Mengenangaben
 passend zur Personenanzahl skaliert sind.</p>
 <p>Beispiel Wrap-Pizza (<a class="reference external" href="https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html">https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html</a>):</p>
-<p>Computer: Für wie viele Personen soll gekocht werden?
-Benutzer: 4
-Computer:
-Hier ist die Zutatenliste für 4 Personen:
-4 Tortillas
-8 EL Tomatenmark
-4 EL Wasser
+<p>Computer: Für wie viele Personen soll gekocht werden?<br>
+Benutzer: 4<br>
+Computer:<br>
+Hier ist die Zutatenliste für 4 Personen: <br>
+4 Tortillas <br>
+8 EL Tomatenmark <br>
+4 EL Wasser <br>
 usw.</p>
 </div>
 <div class="minisolution toggle admonition">
@@ -863,6 +861,49 @@ vorkommen.</p>
 </div>
 <p>Bei der obigen Lösung werden Großbichstaben nicht mitgezählt. Entweder werden noch zusätzlich die Vergleiche mit  ‘A’, ‘E’, ‘I’, ‘O’ und ‘U’ durchgeführt, oder der eingebene Satz mit <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> vorab zu Kleinbuchstaben konvertiert.</p>
 <p>Bemerkung: Eleganter wäre die Schreibweise <code class="docutils literal notranslate"><span class="pre">anzahl_a</span> <span class="pre">+=</span> <span class="pre">1</span></code>.</p>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.5</p>
+<p>Schreiben Sie ein Programm, das mit Turtle ein n-Eck zeichnet. Das -Eck soll in
+einen Kreis mit Radius <span class="math notranslate nohighlight">\(r\)</span> passen. Die Anzahl der Ecken, der Radius des Kreises
+und die Stiftfarbe sollen auf deutsch vom Benutzer abgefragt werden. Bei den
+Stiftfarben darf nur aus den Farben rot, grün und blau ausgewählt werden. Wählt
+der Benutzer eine falsche Stiftfarbe, soll eine Fehlermeldung ausgegeben werden
+und die Stiftfarbe schwarz gewählt werden.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="c1"># Vorbereitung des Turle-Feldes </span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+
+<span class="c1"># Abfrage der Benutzereingaben</span>
+<span class="n">anzahl_ecken</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie die Anzahl der Ecken an: &#39;</span><span class="p">))</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie den Radius des Kreises vor, in den das n-Eck passen soll: &#39;</span><span class="p">))</span>
+<span class="n">stiftfarbe</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wählen Sie eine Stiftfarbe (rot, grün oder blau): &#39;</span><span class="p">)</span>
+
+<span class="c1"># Check der Stiftfarbe</span>
+<span class="k">if</span> <span class="n">stiftfarbe</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;rot&#39;</span><span class="p">:</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">stiftfarbe</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;grün&#39;</span><span class="p">:</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">stiftfarbe</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;blau&#39;</span><span class="p">:</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie haben eine ungültige Stiftfarbe gewählt.&#39;</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Berechnungen der Seitenlänge des n-Ecks</span>
+<span class="n">laenge</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="n">anzahl_ecken</span><span class="p">)</span>
+
+<span class="c1"># Zeichnen des n-Ecks</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_ecken</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">anzahl_ecken</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">laenge</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
 

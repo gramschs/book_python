@@ -120,7 +120,7 @@ print(bmi)
 
 ```{admonition} Übung 3.4
 :class: miniexercise
-Schreibe ein Programm, das mit dem Turtle-Modul ein Quadrat zeichnet. Zuerst
+Schreiben Sie ein Programm, das mit dem Turtle-Modul ein Quadrat zeichnet. Zuerst
 soll vom Benutzer abgefragt werden, welche Seitenlänge in Pixel das Quadrat
 haben soll. Dann soll abgefragt werden, welche Farbe die Seiten haben sollen.
 Mit diesen Angaben soll dann das Quadrat gezeichnet werden.
