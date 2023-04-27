@@ -14,20 +14,26 @@ kernelspec:
 
 # 5.3 Programmverzweigungen mit mehreren Zweigen: if -- elif -- else
 
-```{admonition} Warnung
-:class: warning
-Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
-```
-
-TODO
-
-## Programmverzweigungen mit zwei Zweigen: if – else
-
 In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor.
 Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts?
 Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein
 Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl
-zwischen zwei Möglichkeiten gibt es **zweiteilige Programmverzweigungen**. 
+zwischen zwei Möglichkeiten gibt es zweiteilige Programmverzweigungen. Und auch
+bei zweiteiligen Programmverzweigungen ist noch nicht Schluss, denn vielleicht
+kommt man ja an eine Viererkreuzung ... Daher behandeln wir in diesem Kapitel
+Programmverzweigungen mit mehreren Zweigen.
+
+## Lernziele
+
+```{admonition} Lernziele
+:class: hint
+* Sie können Programmverzweigungen mit zwei Zweigen mittels **if - else**
+  implementieren.
+* Sie können mehrteilige Programmverzweigungen mit **if - elif - else**
+  implementieren.
+```
+
+## Programmverzweigungen mit zwei Zweigen: if – else
 
 Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den
 sogenannten **else-Block**:
@@ -334,18 +340,6 @@ else:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Zusammenfassung
-
-In diesem Kapitel haben Sie die erste Kontrollstruktur kennengelernt, um ein
-lineares Python-Programm in ein nichtlineares Python-Programm zu verwandeln, das
-auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe
-von if, elseif und else können Sie nun beliebig viele Verzweigungen
-programmieren. Damit der Python-Interpreter den Programm-Code in einer
-Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein.
-Bedingungen sind entweder wahr oder falsch, was Python in einem booleschen
-Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher
-Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für
-Texte werden wir noch kennenlernen.
 
 
 
