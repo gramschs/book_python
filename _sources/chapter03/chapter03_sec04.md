@@ -74,7 +74,7 @@ c = (a**2 + b**2)**0.5
 print('Die Länge der Hypotenuse c beträgt:')
 print(c)
 ```
-Alternativ könnte man auch die Wurzelfunktion aus dem Math-Modul importieren und benutzen:
+Alternativ könnte man auch die Wurzelfunktion aus dem NumPy-Modul importieren und benutzen:
 ```python
 from numpy import sqrt
 c = sqrt(a**2 + b**2)
