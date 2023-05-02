@@ -249,9 +249,9 @@ Die folgenden Befehle an den Roboter dienen zur Steuerung der Bewegung:
 
 Der Stift wird mit folgenden Befehlen eingestellt:
 
-* pendown(): Der Stift wird hochgehoben. Bewegt sich der Roboter, hinterlässt er
+* penup(): Der Stift wird hochgehoben. Bewegt sich der Roboter, hinterlässt er
   keine Zeichnung. 
-* penup(): Der Stift wird abgesetzt, ab jetzt zeichnet der Roboter wieder.
+* pendown(): Der Stift wird abgesetzt, ab jetzt zeichnet der Roboter wieder.
 * pensize(breite): Die Breite der Striche wird eingestellt, z.B. ist
   `robo.pensize(10)` ein breiter Strich.  
 
