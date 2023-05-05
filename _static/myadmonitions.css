@@ -37,3 +37,7 @@ div.minisolution p.admonition-title::before {
           bottom: 88%;
 }
 
+div.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+}

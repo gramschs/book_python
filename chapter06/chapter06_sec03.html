@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.3 Globale und lokale Variablen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>6.3 Lokale und globale Variablen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter06_sec04.html" />
-    <link rel="prev" title="6.2 Funktionen mit Argument und Rückgabe" href="chapter06_sec02.html" />
+    <link rel="prev" title="6.2 Funktionen mit Parameter und Rückgabe" href="chapter06_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -299,12 +299,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter06_sec02.html">
-     6.2 Funktionen mit Argument und Rückgabe
+     6.2 Funktionen mit Parameter und Rückgabe
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.3 Globale und lokale Variablen
+     6.3 Lokale und globale Variablen
     </a>
    </li>
    <li class="toctree-l2">
@@ -685,23 +685,80 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lokale-variablen">
+   Lokale Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#globale-variablen">
+   Globale Variablen
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6.3 Globale und lokale Variablen</h1>
+                <h1>6.3 Lokale und globale Variablen</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lokale-variablen">
+   Lokale Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#globale-variablen">
+   Globale Variablen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -709,13 +766,122 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="globale-und-lokale-variablen">
-<h1>6.3 Globale und lokale Variablen<a class="headerlink" href="#globale-und-lokale-variablen" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lokale-und-globale-variablen">
+<h1>6.3 Lokale und globale Variablen<a class="headerlink" href="#lokale-und-globale-variablen" title="Permalink to this headline">#</a></h1>
+<p>In Python gibt es zwei Arten von Variablen: lokale und globale Variablen. Der
+Unterschied zwischen beiden liegt in ihrem Geltungsbereich, also wo im Programm
+sie verwendet werden können. Vor allem bei der Definition von Funktionen ist die
+Nichtbeachtung des Unterschieds eine häufige Fehlerquelle, weshalb wir in diesem
+Kapitel den Unterschied beleuchten.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<p>Sie kennen den Unterschied zwischen <strong>lokalen</strong> und <strong>globalen</strong> Variablen.</p>
 </div>
-<p>TODO</p>
+</section>
+<section id="lokale-variablen">
+<h2>Lokale Variablen<a class="headerlink" href="#lokale-variablen" title="Permalink to this headline">#</a></h2>
+<p>Schauen Sie sich bitte folgende Funktionsimplementierung an. Was macht die
+Funktion?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probieren wir es aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vor der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="n">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Nach der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vor der Anwendung der Funktion ist x = 17.
+Nach der Anwendung der Funktion ist x = 17.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir schauen in die Funktion “hinein”, um zu sehen, ob vielleicht gar nicht
+erhöht wurde.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Im Inneren der Funktion vor der Erhöhung ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Im Inneren der Funktion nach der Erhöhung ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt probieren wir nochmal aus, die Funktion auf <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">17</span></code> anzuwenden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vor der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="n">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Nach der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vor der Anwendung der Funktion ist x = 17.
+Im Inneren der Funktion vor der Erhöhung ist x = 17.
+Im Inneren der Funktion nach der Erhöhung ist x = 18.
+Nach der Anwendung der Funktion ist x = 17.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Was ist passiert? Die Variable <code class="docutils literal notranslate"><span class="pre">x</span></code> in der Funktion ist eine <strong>lokale Variable</strong>.
+Lokale Variablen sind Variablen, die innerhalb einer Funktion definiert werden.
+Ihr Geltungsbereich ist auf die Funktion beschränkt, in der sie definiert
+wurden. Das bedeutet, dass sie innerhalb der Funktion verwendet werden können,
+aber außerhalb der Funktion nicht sichtbar oder zugänglich sind.</p>
+<p>Es ist Absicht, dass Python strikt darauf achtet, lokale Variablen auf ihren
+Geltungsbereich zu beschänken. Die Programmierer:innen einer Funktion können
+vorab nicht wissen, wie alle anderen Variablen im Hauptprogramm heißen. Daher
+müssen alle Variablen in der Funktion lokal bleiben, um nicht unabsichtlich
+Variablen, die zufälligerweise den gleichen Namen tragen, zu überschreiben.</p>
+<p>Möchte man erreichen, dass eine Funktion den Wert einer Variable ändert, kann
+man dies über die Rückgabe und explizite Zuweisung erreichen. Dann ist aber
+jedem Programmier und jeder Programmiererin, die diese Funktion benutzt,
+explizit klar, dass damit der Wert der Variablen geändert wird.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># modifizierte Funktion mit Rückgabe</span>
+<span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Test</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vor der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Nach der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="globale-variablen">
+<h2>Globale Variablen<a class="headerlink" href="#globale-variablen" title="Permalink to this headline">#</a></h2>
+<p>Globale Variablen sind Variablen, die außerhalb von Funktionen definiert werden.
+Ihr Geltungsbereich erstreckt sich über das gesamte Programm, was bedeutet, dass
+sie sowohl innerhalb als auch außerhalb von Funktionen verwendet werden können.
+Das scheint zunächst unserem Experiment, eine Zahl um 1 zu erhöhen zu
+widersprechen. Tatsächlich ist die Verwendung einer globalen Variable innerhalb
+einer Funktion nur lesend möglich. Um auch einen Schreibzugriff zu erlauben,
+gibt es die Möglichkeit, eine Variable als <code class="docutils literal notranslate"><span class="pre">global</span></code> zu definieren. Meine
+persönliche Meinung ist aber, dass die Verwendung von globalen Variablen zu
+fehleranfällig ist. Daher werde ich auf dieses Thema nicht weiter eingehen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -749,7 +915,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">6.2 Funktionen mit Argument und Rückgabe</p>
+            <p class="prev-next-title">6.2 Funktionen mit Parameter und Rückgabe</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter06_sec04.html" title="next page">

@@ -301,12 +301,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter06/chapter06_sec02.html">
-     6.2 Funktionen mit Argument und Rückgabe
+     6.2 Funktionen mit Parameter und Rückgabe
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter06/chapter06_sec03.html">
-     6.3 Globale und lokale Variablen
+     6.3 Lokale und globale Variablen
     </a>
    </li>
    <li class="toctree-l2">
@@ -838,15 +838,6 @@ f-Strings auch formatierte Ausgaben zu produzieren.</p>
 Verkettung von einzelnen Zeichen zu interpretieren. Mit dieser Idee ist dann
 vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
 über den Index angesprochen werden können.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung und Anzeige String</span>
-<span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mein_string</span><span class="p">)</span>
-
-<span class="c1"># Zugriff auf einzelne Zeichen per Index</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Zeichen: &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mein_string</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
 <p>Aber welche Zeichen gehören dazu? Probieren Sie die folgende Mini-Übung aus.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
@@ -870,24 +861,67 @@ vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
 <p>Mit den beiden for-Schleifen der letzten beiden Abschnitte, können wir die
 Zeichen auch einzeln ausgeben lassen. Als erstes die for-Schleife mit
 Liste/String:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="s1">&#39;Hallo, Du Da!&#39;</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="s1">&#39;Hallo, Du Da!&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">zeichen</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+a
+l
+l
+o
+,
+ 
+D
+u
+ 
+D
+a
+!
+</pre></div>
+</div>
+</div>
+</div>
 <p>Als nächstes wird über den Index iteriert. Iteration ist der Fachbegriff für das
 mehrfache Wiederholen einer Anweisung.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
     <span class="n">zeichen</span> <span class="o">=</span> <span class="n">mein_string</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">zeichen</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+a
+l
+l
+o
+,
+ 
+D
+u
+ 
+d
+a
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="strings-sind-unveranderlich">
 <h2>Strings sind unveränderlich<a class="headerlink" href="#strings-sind-unveranderlich" title="Permalink to this headline">#</a></h2>
 <p>Bei den Listen haben wir einzelne Elemente der Liste manipuliert, z.B. das
 dritte Element durch ein anderes ersetzt wie in dem folgenden Beispiel.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Eins&#39;</span><span class="p">,</span> <span class="s1">&#39;Zwei&#39;</span><span class="p">,</span> <span class="s1">&#39;Drei&#39;</span><span class="p">,</span> <span class="s1">&#39;Vier&#39;</span><span class="p">,</span> <span class="s1">&#39;Fünf&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Eins&#39;</span><span class="p">,</span> <span class="s1">&#39;Zwei&#39;</span><span class="p">,</span> <span class="s1">&#39;Drei&#39;</span><span class="p">,</span> <span class="s1">&#39;Vier&#39;</span><span class="p">,</span> <span class="s1">&#39;Fünf&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Am Anfang: &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
 
@@ -897,17 +931,40 @@ dritte Element durch ein anderes ersetzt wie in dem folgenden Beispiel.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">meine_liste</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am Anfang: 
+[&#39;Eins&#39;, &#39;Zwei&#39;, &#39;Drei&#39;, &#39;Vier&#39;, &#39;Fünf&#39;]
+Nach dem Austausch:
+[&#39;Eins&#39;, &#39;Zwei&#39;, &#39;MMMH&#39;, &#39;Vier&#39;, &#39;Fünf&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <p>Obwohl Strings auch Container sind, funktioniert die Manipulation eines
-einzelnen Zeichens in einem String leider nicht.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wort</span> <span class="o">=</span> <span class="s1">&#39;hallo!&#39;</span>
+einzelnen Zeichens in einem String leider nicht. Entfernen Sie in der folgenden
+Code-Zelle den Kommentar vor <code class="docutils literal notranslate"><span class="pre">wort[0]</span> <span class="pre">=</span> <span class="pre">'H'</span></code>. Was passiert?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wort</span> <span class="o">=</span> <span class="s1">&#39;hallo!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Am Anfang: &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">wort</span><span class="p">)</span>
 
 <span class="c1"># Austausch des kleinen Buchstaben h durch ein großes H </span>
-<span class="n">wort</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+<span class="c1"># wort[0] = &#39;H&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach dem Austausch:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">wort</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Am Anfang: 
+hallo!
+Nach dem Austausch:
+hallo!
+</pre></div>
+</div>
+</div>
 </div>
 <p>Der Python-Interpreter gibt eine Fehlermeldung aus: ‘str’ object does not
 support item assignment. Ein item ist ein einzelnes Element der Liste und
@@ -937,21 +994,38 @@ ursprüngliche String modifiziert, sondern ein neuer String erzeugt.</p>
 <h3>Verketten von Strings<a class="headerlink" href="#verketten-von-strings" title="Permalink to this headline">#</a></h3>
 <p>Sie können Strings in Python einfach aneinanderhängen (verketten), indem Sie den
 <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verwenden. Hier ist ein Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>  <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>  <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
 <span class="n">gruss</span> <span class="o">=</span> <span class="s1">&#39;Hallo &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">gruss</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Alice!
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="ersetzen-von-teilstrings">
 <h3>Ersetzen von Teilstrings<a class="headerlink" href="#ersetzen-von-teilstrings" title="Permalink to this headline">#</a></h3>
 <p>Python bietet mehrere Methoden zum Suchen und Ersetzen von Teilstrings in einem
 String. Eine dieser Methoden ist <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>. Hier ist ein Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
 <span class="n">neuer_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">neuer_text</span><span class="p">)</span>
-
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python ist eine großartige Programmiersprache!
+</pre></div>
+</div>
+</div>
 </div>
 <p>In diesem Beispiel haben wir den Teilstring “MATLAB” durch den Teilstring
 “Python” ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
@@ -959,10 +1033,19 @@ Variable namens <code class="docutils literal notranslate"><span class="pre">neu
 durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
 Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
 folgendem Beispiel.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
 <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python ist eine großartige Programmiersprache!
+</pre></div>
+</div>
+</div>
 </div>
 <p>Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
 ausführen können, wie z.B. das Suchen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.find()</span></code>-Methode,
@@ -1003,10 +1086,19 @@ Beginn des Strings wird ein <code class="docutils literal notranslate"><span cla
 machen. Der Python-Interpreter fügt dann zur Laufzeit des Programms den
 entsprechenden Wert der Variable in den String ein.</p>
 <p>Hier ein Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
 <span class="n">alter</span> <span class="o">=</span> <span class="mi">14</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mein Name ist </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> und ich bin </span><span class="si">{</span><span class="n">alter</span><span class="si">}</span><span class="s1"> Jahre alt.&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mein Name ist Alice und ich bin 14 Jahre alt.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Insbesondere bei Ausgabe von Zahlen sind f-Strings besonders nützlich. Wenn nach
 dem Variablennamen ein Doppelpunkt eingefügt wird, kann danach die Anzahl der
@@ -1014,10 +1106,19 @@ gewünschten Stellen vor dem Komma (hier natürlich ein Punkt) und der
 Nachkommastellen festgelegt werden. Zusätzlich setzen wir ein <code class="docutils literal notranslate"><span class="pre">f</span></code> in die
 geschweiften Klammern, um einen Float anzeigen zu lassen. Im folgenden Beispiel
 geben wir <span class="math notranslate nohighlight">\(\pi\)</span> auf zwei Nachkommastellen an.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">pi</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pi = </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pi = 3.14
+</pre></div>
+</div>
+</div>
 </div>
 <p>Es ist schwierig, sich alle Formatierungsoptionen zu merken. Auf der
 Internetseite

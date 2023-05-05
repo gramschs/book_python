@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.2 Funktionen mit Argument und Rückgabe" href="chapter06_sec02.html" />
+    <link rel="next" title="6.2 Funktionen mit Parameter und Rückgabe" href="chapter06_sec02.html" />
     <link rel="prev" title="6. Funktionen" href="chapter06_sec00.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -301,12 +301,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter06_sec02.html">
-     6.2 Funktionen mit Argument und Rückgabe
+     6.2 Funktionen mit Parameter und Rückgabe
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter06_sec03.html">
-     6.3 Globale und lokale Variablen
+     6.3 Lokale und globale Variablen
     </a>
    </li>
    <li class="toctree-l2">
@@ -710,6 +710,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#die-benutzung-von-funktionen-oder-der-aufruf-von-funktionen">
    Die Benutzung von Funktionen (oder der Aufruf von Funktionen)
   </a>
@@ -717,41 +722,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definition-von-einfachen-funktionen">
    Definition von einfachen Funktionen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zu-funktionen">
-   Video zu Funktionen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-von-funktionen-mit-parametern">
-   Definition von Funktionen mit Parametern
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-funktionen-mit-parametern">
-   Video Funktionen mit Parametern
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-mit-parametern-und-ruckgabewert">
-   Funktionen mit Parametern und Rückgabewert
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-funktionen-funktionen-mit-ruckgabewert">
-   Video Funktionen Funktionen mit Rückgabewert
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-mit-mehreren-ruckgabewerten">
-   Funktionen mit mehreren Rückgabewerten
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ausfuhrung-von-funktionen-lokale-und-globale-variablen">
-   Ausführung von Funktionen: lokale und globale Variablen
   </a>
  </li>
 </ul>
@@ -774,6 +744,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#die-benutzung-von-funktionen-oder-der-aufruf-von-funktionen">
    Die Benutzung von Funktionen (oder der Aufruf von Funktionen)
   </a>
@@ -781,41 +756,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definition-von-einfachen-funktionen">
    Definition von einfachen Funktionen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zu-funktionen">
-   Video zu Funktionen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-von-funktionen-mit-parametern">
-   Definition von Funktionen mit Parametern
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-funktionen-mit-parametern">
-   Video Funktionen mit Parametern
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-mit-parametern-und-ruckgabewert">
-   Funktionen mit Parametern und Rückgabewert
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-funktionen-funktionen-mit-ruckgabewert">
-   Video Funktionen Funktionen mit Rückgabewert
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-mit-mehreren-ruckgabewerten">
-   Funktionen mit mehreren Rückgabewerten
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ausfuhrung-von-funktionen-lokale-und-globale-variablen">
-   Ausführung von Funktionen: lokale und globale Variablen
   </a>
  </li>
 </ul>
@@ -830,16 +770,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="funktionen-selbst-schreiben">
 <h1>6.1 Funktionen selbst schreiben<a class="headerlink" href="#funktionen-selbst-schreiben" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
-<p>Eine Funktion ist eine Zusammenfassung von python, der eine bestimmte Teilaufgabe
-löst. Dabei arbeitet die Funktion nach dem EVA-Prinzip. Die Funktion übernimmt
-Objekte als Eingabe, verarbeitet diese und liefert Objekte als Ergebnis zurück.
-Wie die Funktion dabei im Inneren genau funktioniert (Verarbeitung), ist
-unwichtig.</p>
-<p>Beispielsweise gibt es im Modul <code class="docutils literal notranslate"><span class="pre">math</span></code> die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>. Wir wissen, dass
+<p>Eine Funktion in Python ist eine Zusammenfassung von Anweisungen, die dazu
+dienen, eine bestimmte Teilaufgabe zu lösen. Dabei arbeitet die Funktion in
+ihrer allgemeinsten Form nach dem EVA-Prinzip. Die Funktion übernimmt Objekte
+als Eingabe, verarbeitet diese und liefert Objekte als Ergebnis zurück. Wie die
+Funktion dabei im Inneren genau funktioniert (Verarbeitung), ist unwichtig.</p>
+<p>Beispielsweise gibt es im Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>. Wir wissen, dass
 wir der Funktion eine Zahl übergeben müssen (Eingabe), z.B. <code class="docutils literal notranslate"><span class="pre">sqrt(5)</span></code>. Die
 Funktion liefert dann als Ergebnis <span class="math notranslate nohighlight">\(\sqrt{5}\)</span> zurück. Welches Verfahren zur
 Berechnung der Wurzel verwendet wurde, wissen wir nicht.</p>
@@ -847,29 +783,70 @@ Berechnung der Wurzel verwendet wurde, wissen wir nicht.</p>
 zu tun haben. Eine Funktion in der Informatik hat nichts mit einer
 mathematischen Funktion zu tun, auch wenn oft mathematische Funktionen als
 Beispiel verwendet werden. Ein Beispiel für eine nicht-mathematische Funktion
-haben Sie mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> bereits kennengelernt.</p>
+haben Sie mit <code class="docutils literal notranslate"><span class="pre">input()</span></code> bereits kennengelernt. Die Funktion nimmt einen Text
+entgegen, z.B. die Frage “Wie groß sind Sie?”. Dann wird dieser Text
+verarbeitet, in diesem Fall auf dem Bidschirm angezeigt und die Antwort
+eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie kennen die Fachbegriffe</p>
+<ul>
+<li><p><strong>Aufruf</strong> einer Funktion,</p></li>
+<li><p><strong>Argumente</strong> oder <strong>Parameter</strong> einer Funktion und</p></li>
+<li><p><strong>Rückgabewert</strong> einer Funktion.</p></li>
+</ul>
+</li>
+<li><p>Sie können eine einfache Funktion selbst implementieren.</p></li>
+</ul>
+</div>
+</section>
 <section id="die-benutzung-von-funktionen-oder-der-aufruf-von-funktionen">
 <h2>Die Benutzung von Funktionen (oder der Aufruf von Funktionen)<a class="headerlink" href="#die-benutzung-von-funktionen-oder-der-aufruf-von-funktionen" title="Permalink to this headline">#</a></h2>
 <p>Der Aufruf einer Funktion hat folgende Syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">funktion</span><span class="p">(</span> <span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rueckgabewert</span> <span class="o">=</span> <span class="n">funktion</span><span class="p">(</span> <span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>Eine Funktion wird benutzt, indem man den Namen der Funktion hinschreibt und
-dann in runden Klammern ihre Parameter, die sogenannten Argumente der Funktion.
-Welche Argumente für eine Funktion verwendet werden dürfen, hängt von der
+<p>Eine Funktion wird benutzt, indem man den Namen der Funktion und dann in runden
+Klammern ihre <strong>Parameter</strong> als Liste hinschreibt. Die konkreten Parameter einer
+Funktion beim Aufruf werden die <strong>Argumente der Funktion</strong> genannt. Welche
+Argumente für eine Funktion verwendet werden dürfen, hängt von der
 Implementierung der Funktion ab.</p>
 <p>Beispielsweise kann als Argument für die <code class="docutils literal notranslate"><span class="pre">len()</span></code>-Funktion ein String übergeben
-werden oder eine Liste. Stellen Sie eine Vermutung auf: was bewirkt die
-<code class="docutils literal notranslate"><span class="pre">len()</span></code>-Funktion?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
+werden oder eine Liste. Stellen Sie eine Vermutung auf: was könnte die
+<code class="docutils literal notranslate"><span class="pre">len()</span></code>-Funktion bewirken?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
-<p>In der Regel geben Funktionen wieder Ergebnisse zurück. Diese können einer
-Variable zugewiesen werden, um mit dem Ergebnis weiter zu arbeiten.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">laenge1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>In der Regel geben Funktionen wieder Ergebnisse zurück. Diese werden
+<strong>Rückgabewert</strong> genannt. Beispielsweise können die Rückgabewert einer Variable
+zugewiesen werden, um mit dem Ergebnis weiter zu arbeiten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">laenge1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
 <span class="n">laenge2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="s1">&#39;Apfel&#39;</span><span class="p">,</span> <span class="s1">&#39;Banane&#39;</span><span class="p">,</span> <span class="s1">&#39;Erdbeere&#39;</span><span class="p">])</span>
 
 <span class="k">if</span> <span class="n">laenge1</span> <span class="o">&lt;</span> <span class="n">laenge2</span><span class="p">:</span>
@@ -878,14 +855,19 @@ Variable zugewiesen werden, um mit dem Ergebnis weiter zu arbeiten.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Das Wort Hallo enthält mehr Buchstaben als Einträge in der Liste.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Das Wort Hallo enthält mehr Buchstaben als Einträge in der Liste.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="definition-von-einfachen-funktionen">
 <h2>Definition von einfachen Funktionen<a class="headerlink" href="#definition-von-einfachen-funktionen" title="Permalink to this headline">#</a></h2>
-<p>Die allgemeine Syntax zur Definition einer eigenen Funktion sieht wie folgt aus:</p>
+<p>Einfache Funktionen werden mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom
+Funktionsnamen definiert. Die Code-Anweisungen der Funktion werden eingerückt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Optionaler Docstring zur Erklärung.&quot;&quot;&quot;</span>
-
-    <span class="c1"># Implementierung der Funktion</span>
     <span class="n">anweisung01</span>
     <span class="n">anweisung02</span>
      <span class="o">...</span>
@@ -893,243 +875,73 @@ Variable zugewiesen werden, um mit dem Ergebnis weiter zu arbeiten.</p>
 </pre></div>
 </div>
 <p>Erstes Beispiel:</p>
-<p>Die folgende Funktion hat keine Eingabewert (Argumente, Input) und keine
-Rückgabe (Ausgabe, Return-Value).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruesse_ausrichten</span><span class="p">():</span>
+<p>Die folgende Funktion hat kein Argument und keine Rückgabe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruesse_ausrichten</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich grüße Sie!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Nachdem die Funktion <code class="docutils literal notranslate"><span class="pre">gruesse_ausrichten()</span></code>so implementiert wurde, können wir
+</div>
+</div>
+<p>Nachdem die Funktion <code class="docutils literal notranslate"><span class="pre">gruesse_ausrichten()</span></code> so implementiert wurde, können wir
 sie im Folgenden direkt verwenden.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ich grüße Sie!
+</pre></div>
+</div>
+</div>
 </div>
 <p>Und natürlich kann man sie in Programmverzweigungen und Schleifen einbauen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
     <span class="n">gruesse_ausrichten</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">soll_gegruesst_werden</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Soll gegrüßt werden (j/n)? &#39;</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ich grüße Sie!
+Ich grüße Sie!
+Ich grüße Sie!
+Ich grüße Sie!
+Ich grüße Sie!
+Ich grüße Sie!
+Ich grüße Sie!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Turtle-Progamm, das ein Rechteck zeichnet.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">soll_gegruesst_werden</span> <span class="o">==</span> <span class="s1">&#39;j&#39;</span><span class="p">:</span>
-    <span class="n">gruesse_ausrichten</span><span class="p">()</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Auf Wiedersehen!&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">zeichne_rechteck</span><span class="p">():</span>
+    <span class="n">rechteck</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        
+<span class="n">zeichne_rechteck</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="video-zu-funktionen">
-<h2>Video zu Funktionen<a class="headerlink" href="#video-zu-funktionen" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich auf YouTube das Video “Python Tutorial deutsch [18/24]” an (ca.
-7:36 min), siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=LQCfN5HS9xI&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=18">https://www.youtube.com/watch?v=LQCfN5HS9xI&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=18</a>.
-Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden python-Zelle aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
-</section>
-<section id="definition-von-funktionen-mit-parametern">
-<h2>Definition von Funktionen mit Parametern<a class="headerlink" href="#definition-von-funktionen-mit-parametern" title="Permalink to this headline">#</a></h2>
-<p>Meistens haben Funktionen Argumente, um Eingaben/Input entgegennehmen und
-verarbeiten zu können. Das Argument wird bei der Implementierung der Funktion
-mit einem Platzhalter/Variable eingeführt.</p>
-<p>Die allgemeine Syntax zur Definition einer eigenen Funktion mit Parametern sieht
-wie folgt aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Optionaler Docstring zur Erklärung.&quot;&quot;&quot;</span>
-
-    <span class="c1"># Implementierung der Funktion</span>
-    <span class="n">anweisung01</span>
-    <span class="n">anweisung02</span>
-     <span class="o">...</span>
-
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich grüße&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Der Aufruf einer Funktion ohne passende Argumente führt zu einer Fehlermeldung.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Daher müssen wir die modifizierte Funktion nun wie folgt aufrufen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="s1">&#39;Studierende&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">gruesse_ausrichten_mit_parameter()</span></code> hat aber keinen Rückgabewert.
-Das können wir wie folgt testen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">x</span></code> ist vom Typ <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> oder anders ausgedrückt, es hat keinen Datentyp.</p>
-<p>Sind Funktionen ohne Rückgabewert sinnvoll?</p>
-<p>Ja, denn so können pythonblöcke vereinfacht werden. Sollte in einem Programm python
-mehrmals ausgeführt werden, lohnt es sich, diesen in eine Funktion auszulagern,
-um diese einfach aufrufen zu können.</p>
-</section>
-<section id="video-funktionen-mit-parametern">
-<h2>Video Funktionen mit Parametern<a class="headerlink" href="#video-funktionen-mit-parametern" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich auf YouTube das Video “Python Tutorial deutsch [19/24]” an (ca.
-9:06 min), siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=af9ORp1Pty0&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=19">https://www.youtube.com/watch?v=af9ORp1Pty0&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=19</a>.
-Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden python-Zelle aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="funktionen-mit-parametern-und-ruckgabewert">
-<h2>Funktionen mit Parametern und Rückgabewert<a class="headerlink" href="#funktionen-mit-parametern-und-ruckgabewert" title="Permalink to this headline">#</a></h2>
-<p>In der Regel jedoch haben Funktionen einen Rückgabewert.</p>
-<p>Die allgemeine Syntax zur Definition einer eigenen Funktion mit Parametern und
-Rückgabewert sieht wie folgt aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Optionaler Docstring zur Erklärung.&quot;&quot;&quot;</span>
-
-    <span class="c1"># Implementierung der Funktion</span>
-    <span class="n">anweisung01</span>
-    <span class="n">anweisung02</span>
-     <span class="o">...</span>
-
-    <span class="k">return</span> <span class="n">ergebnis</span>  <span class="c1"># optional, die Funktion kann auch keine Rückgabe haben</span>
-</pre></div>
-</div>
-<p>Schauen wir uns ein Beispiel an:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_quadrat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">berechne_quadrat</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
-    <span class="n">ausgabe</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> * </span><span class="si">{}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ausgabe</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Funktionen können auch mehrere Argumente haben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_rechteck_flaeche</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-    <span class="n">flaeche</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
-    <span class="k">return</span> <span class="n">flaeche</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># main program</span>
-
-<span class="c1"># Eingabe</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Länge des Rechtecks: &#39;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Breite des Rechtecks: &#39;</span><span class="p">))</span>
-
-<span class="c1"># Verarbeitung</span>
-<span class="n">flaeche</span> <span class="o">=</span> <span class="n">berechne_rechteck_flaeche</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-
-<span class="c1"># Ausgabe</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;berechnete Fläche: &#39;</span><span class="p">,</span> <span class="n">flaeche</span><span class="p">)</span>
-
-
-</pre></div>
-</div>
-</section>
-<section id="video-funktionen-funktionen-mit-ruckgabewert">
-<h2>Video Funktionen Funktionen mit Rückgabewert<a class="headerlink" href="#video-funktionen-funktionen-mit-ruckgabewert" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich auf YouTube das Video “Python Tutorial deutsch [20/24]” an (ca.
-12:02 min), siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=ehSP-sYoKCY&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=20">https://www.youtube.com/watch?v=ehSP-sYoKCY&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=20</a>.
-Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden python-Zelle aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="funktionen-mit-mehreren-ruckgabewerten">
-<h2>Funktionen mit mehreren Rückgabewerten<a class="headerlink" href="#funktionen-mit-mehreren-ruckgabewerten" title="Permalink to this headline">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
-    <span class="c1"># Verarbeitung</span>
-    <span class="n">anweisung01</span>
-    <span class="n">anweisung02</span>
-    <span class="o">...</span>
-    
-    <span class="k">return</span> <span class="n">ergebnis1</span><span class="p">,</span> <span class="n">ergebnis2</span>
-</pre></div>
-</div>
-<p>Es ist auch möglich, mehrere Ergebnisse gleichzeitig zurückzugegen. Diese werden
-einfach nach dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">return</span></code> mit Kommas getrennt gelistet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">potenzen_bis_vier</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">x_hoch_2</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">x_hoch_3</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
-    <span class="n">x_hoch_4</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
-    <span class="k">return</span> <span class="n">x_hoch_2</span><span class="p">,</span> <span class="n">x_hoch_3</span><span class="p">,</span> <span class="n">x_hoch_4</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">potenzen_bis_vier</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">potenz2</span><span class="p">,</span> <span class="n">potenz3</span><span class="p">,</span> <span class="n">potenz4</span> <span class="o">=</span> <span class="n">potenzen_bis_vier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die 2. Potenz von </span><span class="si">{}</span><span class="s1"> ist </span><span class="si">{}</span><span class="s1">, die dritte ist </span><span class="si">{}</span><span class="s1"> und die vierte ist </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">potenz2</span><span class="p">,</span> <span class="n">potenz3</span><span class="p">,</span> <span class="n">potenz4</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-<section id="ausfuhrung-von-funktionen-lokale-und-globale-variablen">
-<h2>Ausführung von Funktionen: lokale und globale Variablen<a class="headerlink" href="#ausfuhrung-von-funktionen-lokale-und-globale-variablen" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich bitte folgende Funktionsimplementierung an. Was macht die
-Funktion?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># jetzt Funktion anwenden</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jetzt Funktion auf x anwenden...&#39;</span><span class="p">)</span>
-<span class="n">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Wir schauen in die Funktion “hinein”, um zu sehen, ob vielleicht gar nicht
-erhöht wurde.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;in der Funktion vor der Erhöhung:&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    
-    <span class="c1"># Erhöhung</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;in der Funktion nach der Erhöhung:&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># jetzt Funktion anwenden</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jetzt Funktion auf x anwenden...&#39;</span><span class="p">)</span>
-<span class="n">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Was ist passiert? Die Variable <code class="docutils literal notranslate"><span class="pre">x</span></code> in der Funktion ist eine lokale Variable. Es
-ist Zufall, das sie so heißt, wie die Variable außerhalb der Funktion. Ein
-Programmierer einer Funktion kann nicht vorab wissen, wie alle anderen Variablen
-genannt werden. Daher müssen alle Variablen in der Funktion lokal bleiben, um
-nicht unabsichtlich Variablen, die dummerweise oder absichtlich den gleichen
-Namen tragen, zu verändern.</p>
-<p>Möchte man erreichen, dass eine Funktion den Wert einer Variable ändert, kann
-man dies über die Rückgabe und explizite Zuweisung erreichen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">x</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vorher&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
- 
-<span class="n">x</span> <span class="o">=</span> <span class="n">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nachher&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
+<p>Das folgende Video zeigt Ihnen nochmal, wie in Python Funktionen definiert
+werden.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQCfN5HS9xI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1169,7 +981,7 @@ man dies über die Rückgabe und explizite Zuweisung erreichen.</p>
     <a class='right-next' id="next-link" href="chapter06_sec02.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6.2 Funktionen mit Argument und Rückgabe</p>
+        <p class="prev-next-title">6.2 Funktionen mit Parameter und Rückgabe</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

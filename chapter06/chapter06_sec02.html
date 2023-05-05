@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.2 Funktionen mit Argument und Rückgabe &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>6.2 Funktionen mit Parameter und Rückgabe &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.3 Globale und lokale Variablen" href="chapter06_sec03.html" />
+    <link rel="next" title="6.3 Lokale und globale Variablen" href="chapter06_sec03.html" />
     <link rel="prev" title="6.1 Funktionen selbst schreiben" href="chapter06_sec01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -299,12 +299,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.2 Funktionen mit Argument und Rückgabe
+     6.2 Funktionen mit Parameter und Rückgabe
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter06_sec03.html">
-     6.3 Globale und lokale Variablen
+     6.3 Lokale und globale Variablen
     </a>
    </li>
    <li class="toctree-l2">
@@ -685,23 +685,80 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-von-funktionen-mit-parametern">
+   Definition von Funktionen mit Parametern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-mit-parametern-und-ruckgabewerten">
+   Funktionen mit Parametern und Rückgabewerten
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6.2 Funktionen mit Argument und Rückgabe</h1>
+                <h1>6.2 Funktionen mit Parameter und Rückgabe</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-von-funktionen-mit-parametern">
+   Definition von Funktionen mit Parametern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-mit-parametern-und-ruckgabewerten">
+   Funktionen mit Parametern und Rückgabewerten
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -709,13 +766,239 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="funktionen-mit-argument-und-ruckgabe">
-<h1>6.2 Funktionen mit Argument und Rückgabe<a class="headerlink" href="#funktionen-mit-argument-und-ruckgabe" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="funktionen-mit-parameter-und-ruckgabe">
+<h1>6.2 Funktionen mit Parameter und Rückgabe<a class="headerlink" href="#funktionen-mit-parameter-und-ruckgabe" title="Permalink to this headline">#</a></h1>
+<p>Vorgefertigte Funktionen haben wir schon mir Argument und Rückgabewert
+aufgerufen. In diesem Kapitel geht es darum, selbst eine Funktion zu
+implementieren, die Argumente entgegennimmt, diese verarbeitet und dann
+Rückgabewerte liefert.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziel</p>
+<p>Sie können eine Funktion mit Parametern und Rückgabewerten selbst
+implementieren.</p>
 </div>
-<p>TODO</p>
+</section>
+<section id="definition-von-funktionen-mit-parametern">
+<h2>Definition von Funktionen mit Parametern<a class="headerlink" href="#definition-von-funktionen-mit-parametern" title="Permalink to this headline">#</a></h2>
+<p>Meistens haben Funktionen Argumente, um Eingaben entgegennehmen und verarbeiten
+zu können. Das Argument wird bei der Implementierung der Funktion mit einer
+Variablen eingeführt.</p>
+<p>Die allgemeine Syntax zur Definition einer eigenen Funktion mit Parametern sieht
+wie folgt aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
+    <span class="n">anweisung01</span>
+    <span class="n">anweisung02</span>
+     <span class="o">...</span>
+</pre></div>
+</div>
+<p>Funktionen werden mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und
+einer Liste von Parametern in Klammern definiert. Die Code-Anweisungen der
+Funktion werden eingerückt.</p>
+<p>Als Beispiel betrachten wir erneut die Funktion, die Grüße ausrichtet. Doch
+jetzt erweitern wir die Funktion. Die modifizierte Variante soll konkret eine
+Person grüßen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ich grüße </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Aufruf einer Funktion ohne passende Argumente führt nun zu einer
+Fehlermeldung.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Daher müssen wir die modifizierte Funktion nun wie folgt aufrufen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="s1">&#39;Anna&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ich grüße Anna!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">gruesse_ausrichten_mit_parameter()</span></code> hat aber keinen Rückgabewert.
+Das können wir wie folgt testen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ich grüße Alice!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> ist vom Typ <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> oder anders ausgedrückt, in der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> ist
+kein Datentyp gepeichert.</p>
+<p>Sind Funktionen ohne Rückgabewert sinnvoll? Ja, denn so können Python-Programme
+vereinfacht werden. Sollte in einem Programm ein Block von Anweisungen mehrmals
+ausgeführt werden, lohnt es sich, diesen in eine Funktion auszulagern, um diese
+einfach aufrufen zu können.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Die beiden
+Seitenlängen des Rechtecks sollen als Argumente der Funktion übergeben werden.
+Testen Sie Ihre Funktion auch.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">zeichne_rechteck</span><span class="p">(</span><span class="n">seite1</span><span class="p">,</span> <span class="n">seite2</span><span class="p">):</span>
+    <span class="n">rechteck</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite1</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite2</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        
+<span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">zeichne_rechteck</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Das folgende Video fasst Funktionen mit Argumenten in Python zusammen.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/af9ORp1Pty0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="funktionen-mit-parametern-und-ruckgabewerten">
+<h2>Funktionen mit Parametern und Rückgabewerten<a class="headerlink" href="#funktionen-mit-parametern-und-ruckgabewerten" title="Permalink to this headline">#</a></h2>
+<p>In der Regel jedoch haben Funktionen einen Rückgabewert. Die allgemeine Syntax
+zur Definition einer eigenen Funktion mit Parametern und Rückgabewert sieht wie
+folgt aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
+    <span class="n">anweisung01</span>
+    <span class="n">anweisung02</span>
+     <span class="o">...</span>
+
+    <span class="k">return</span> <span class="n">rueckgabewert1</span><span class="p">,</span> <span class="n">rückgabewert2</span><span class="p">,</span> <span class="o">...</span>  
+</pre></div>
+</div>
+<p>An der Definitionszeile ändert sich nichts. Zuerst wird das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code>
+verwendet, dann folgt der Funktionsname und zuletzt werden die Parameter in
+Klammern aufgelistet. Der Rückgabewert der Funktion wird dann durch das
+Schlüsselwort <code class="docutils literal notranslate"><span class="pre">return</span></code> im Inneren der Funktion, also im eingerückten Teil
+definiert. Die Funktion kann einen oder mehrere Rückgabewerte zurückliefern. Bei
+mehreren Rückgabewerten werden diese einfach durch Komma getrennt.</p>
+<p>Schauen wir uns ein Beispiel an. Die folgende Funktion nimmt einen Parameter
+entgegen und gibt einen Rückgabewert zurück.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_quadratzahl</span><span class="p">(</span><span class="n">zahl</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">zahl</span> <span class="o">*</span> <span class="n">zahl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt können wir die Funktion ausprobieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">berechne_quadratzahl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> mal </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 mal 1 ist 1
+2 mal 2 ist 4
+3 mal 3 ist 9
+4 mal 4 ist 16
+5 mal 5 ist 25
+6 mal 6 ist 36
+7 mal 7 ist 49
+8 mal 8 ist 64
+9 mal 9 ist 81
+10 mal 10 ist 100
+</pre></div>
+</div>
+</div>
+</div>
+<p>Als nächstes kommt ein Beispiel mit zwei Rückgabewerten. Nicht nur die
+Quadratzahl, sondern auch die Kubikzahl soll berechnet werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_quadrat_kubik</span><span class="p">(</span><span class="n">zahl</span><span class="p">):</span>
+    <span class="n">quadrat</span> <span class="o">=</span> <span class="n">zahl</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">kubik</span> <span class="o">=</span> <span class="n">zahl</span><span class="o">**</span><span class="mi">3</span>
+    <span class="k">return</span> <span class="n">quadrat</span><span class="p">,</span> <span class="n">kubik</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Und erneut testen wir die Funktion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">x_hoch_2</span><span class="p">,</span> <span class="n">x_hoch_3</span> <span class="o">=</span> <span class="n">berechne_quadrat_kubik</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">, x^2 = </span><span class="si">{</span><span class="n">x_hoch_2</span><span class="si">}</span><span class="s1">, x^3 = </span><span class="si">{</span><span class="n">x_hoch_3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 1, x^2 = 1, x^3 = 1
+x = 2, x^2 = 4, x^3 = 8
+x = 3, x^2 = 9, x^3 = 27
+x = 4, x^2 = 16, x^3 = 64
+x = 5, x^2 = 25, x^3 = 125
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Programm, das mit Turtle ein Rechteck zeichnet, wobei die
+beiden Seitenlängen als Argumente der Funktion übergeben werden. Die Funktion
+soll den Umfang des Rechtecks und den Flächeninhalt zurückgeben. Lassen Sie
+anschließend Umfang und Flächeninhalt ausgeben.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">zeichne_rechteck</span><span class="p">(</span><span class="n">seite1</span><span class="p">,</span> <span class="n">seite2</span><span class="p">):</span>
+    <span class="c1"># Zeichnung des Rechecks</span>
+    <span class="n">rechteck</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite1</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">seite2</span><span class="p">)</span>
+        <span class="n">rechteck</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        
+    <span class="c1"># Berechnung Umfang und Flächeninhalt</span>
+    <span class="n">umfang</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">seite1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">seite2</span>
+    <span class="n">flaeche</span> <span class="o">=</span> <span class="n">seite1</span> <span class="o">*</span> <span class="n">seite2</span>
+    
+    <span class="c1"># Rückgabe</span>
+    <span class="k">return</span> <span class="n">umfang</span><span class="p">,</span> <span class="n">flaeche</span>
+    
+<span class="c1"># Test der Funktion      </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">U</span><span class="p">,</span><span class="n">A</span> <span class="o">=</span> <span class="n">zeichne_rechteck</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Umfang ist </span><span class="si">{</span><span class="n">U</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> Längeneinheiten, der Flächeninhalt des Rechtecks ist </span><span class="si">{</span><span class="n">A</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> Flächeneinheiten.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Auch zu dem Thema Funktionen mit Rückgabe gibt es ein Video.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ehSP-sYoKCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -755,7 +1038,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="chapter06_sec03.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6.3 Globale und lokale Variablen</p>
+        <p class="prev-next-title">6.3 Lokale und globale Variablen</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
