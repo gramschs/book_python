@@ -39,7 +39,7 @@ Verkettung von einzelnen Zeichen zu interpretieren. Mit dieser Idee ist dann
 vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
 über den Index angesprochen werden können.
 
-```python
+```{code_cell} ipython3
 # Erzeugung und Anzeige String
 mein_string = 'Hallo, Du da!'
 print(mein_string)
@@ -75,7 +75,7 @@ Mit den beiden for-Schleifen der letzten beiden Abschnitte, können wir die
 Zeichen auch einzeln ausgeben lassen. Als erstes die for-Schleife mit
 Liste/String:
 
-```python
+```{code-cell} ipython3
 for zeichen in 'Hallo, Du Da!':
     print(zeichen)
 ```
@@ -83,7 +83,7 @@ for zeichen in 'Hallo, Du Da!':
 Als nächstes wird über den Index iteriert. Iteration ist der Fachbegriff für das
 mehrfache Wiederholen einer Anweisung. 
 
-```python
+```{code-cell} ipython3
 mein_string = 'Hallo, Du da!'
 for i in range(12):
     zeichen = mein_string[i]
@@ -95,7 +95,7 @@ for i in range(12):
 Bei den Listen haben wir einzelne Elemente der Liste manipuliert, z.B. das
 dritte Element durch ein anderes ersetzt wie in dem folgenden Beispiel.
 
-```python
+```{code-cell} ipython3
 meine_liste = ['Eins', 'Zwei', 'Drei', 'Vier', 'Fünf']
 print('Am Anfang: ')
 print(meine_liste)
@@ -107,15 +107,16 @@ print(meine_liste)
 ```
 
 Obwohl Strings auch Container sind, funktioniert die Manipulation eines
-einzelnen Zeichens in einem String leider nicht.
+einzelnen Zeichens in einem String leider nicht. Entfernen Sie in der folgenden
+Code-Zelle den Kommentar vor `wort[0] = 'H'`. Was passiert?
 
-```python
+```{code-cell} ipython3
 wort = 'hallo!'
 print('Am Anfang: ')
 print(wort)
 
 # Austausch des kleinen Buchstaben h durch ein großes H 
-wort[0] = 'H'
+# wort[0] = 'H'
 print('Nach dem Austausch:')
 print(wort)
 ```
@@ -153,7 +154,7 @@ ursprüngliche String modifiziert, sondern ein neuer String erzeugt.
 Sie können Strings in Python einfach aneinanderhängen (verketten), indem Sie den
 `+`-Operator verwenden. Hier ist ein Beispiel:
 
-```python
+```{code-cell} ipython3
 name  = 'Alice'
 gruss = 'Hallo ' + name + '!'
 print(gruss)
@@ -164,7 +165,7 @@ print(gruss)
 Python bietet mehrere Methoden zum Suchen und Ersetzen von Teilstrings in einem
 String. Eine dieser Methoden ist `.replace()`. Hier ist ein Beispiel:
 
-```python
+```{code-cell} ipython3
 text = 'MATLAB ist eine großartige Programmiersprache!'
 neuer_text = text.replace('MATLAB', 'Python')
 print(neuer_text)
@@ -178,7 +179,7 @@ durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
 Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
 folgendem Beispiel.
 
-```python
+```{code-cell} ipython3
 text = 'MATLAB ist eine großartige Programmiersprache!'
 text = text.replace('MATLAB', 'Python')
 print(text)
@@ -190,7 +191,6 @@ das Zählen von Vorkommen von Teilstrings mit der `.count()`-Methode und das
 Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
 `.upper()` und `.lower()`. In der nächsten Mini-Übung probieren wir noch einmal
 die `.replace()`-Methode aus.
-
 
 
 ````{admonition} Mini-Übung
@@ -229,8 +229,7 @@ entsprechenden Wert der Variable in den String ein.
  
 Hier ein Beispiel:
 
-
-```python
+```{code-cell} ipython3
 name = 'Alice'
 alter = 14
 print(f'Mein Name ist {name} und ich bin {alter} Jahre alt.')
@@ -243,7 +242,7 @@ Nachkommastellen festgelegt werden. Zusätzlich setzen wir ein `f` in die
 geschweiften Klammern, um einen Float anzeigen zu lassen. Im folgenden Beispiel
 geben wir $\pi$ auf zwei Nachkommastellen an.
 
-```python
+```{code-cell} ipython3
 from numpy import pi
 
 print(f'Pi = {pi:1.2f}')

@@ -41,8 +41,11 @@ einer Liste.
   * **Kopfzeile**, wird mit **Doppelpunkt :** abgeschlossen
   * Schlüsselwörter **for** und **in**
   * **Schleifenvariable**  
-* Sie wissen, dass der Anweisungsblock des Schleifeninneren eingerückt werden muss. Die **Einrückung** muss immer mit der gleichen Anzahl von Zeichen erfolgen.
+* Sie wissen, dass der Anweisungsblock des Schleifeninneren eingerückt werden
+  muss. Die **Einrückung** muss immer mit der gleichen Anzahl von Zeichen
+  (Leerzeichen oder Tab) erfolgen.
 ```
+
 
 ## Syntax der for-Schleife mit Liste
 
