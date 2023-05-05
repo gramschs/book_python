@@ -244,7 +244,7 @@ geschweiften Klammern, um einen Float anzeigen zu lassen. Im folgenden Beispiel
 geben wir $\pi$ auf zwei Nachkommastellen an.
 
 ```python
-from math import pi
+from numpy import pi
 
 print(f'Pi = {pi:1.2f}')
 ```
