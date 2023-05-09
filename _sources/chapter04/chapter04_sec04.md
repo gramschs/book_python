@@ -70,7 +70,6 @@ for i in range(anzahl_seiten):
     turtle.forward(30)
     turtle.right(360 / anzahl_seiten)
 ```
-```
 ````
 
 ```{admonition} Übung 4.4

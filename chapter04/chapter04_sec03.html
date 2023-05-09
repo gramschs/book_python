@@ -838,12 +838,31 @@ f-Strings auch formatierte Ausgaben zu produzieren.</p>
 Verkettung von einzelnen Zeichen zu interpretieren. Mit dieser Idee ist dann
 vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
 über den Index angesprochen werden können.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung und Anzeige String</span>
+<span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mein_string</span><span class="p">)</span>
+
+<span class="c1"># Zugriff auf einzelne Zeichen per Index</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Zeichen: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mein_string</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo, Du da!
+2. Zeichen: 
+a
+</pre></div>
+</div>
+</div>
+</div>
 <p>Aber welche Zeichen gehören dazu? Probieren Sie die folgende Mini-Übung aus.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Speichern Sie den String ‘Hallo, Du da!’ in einer Variable. Beantworten Sie folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.</p>
 <ul class="simple">
-<li><p>Was ist der kleinste Index des Strings ‘Hallo, Du da!’?</p></li>
 <li><p>Was ist der größte Index des String ‘Hallo, Du da!’?</p></li>
 <li><p>Was passiert, wenn Sie auf den Index 20 zugreifen wollen?</p></li>
 <li><p>Welches Zeichen hat den Index 6?</p></li>
@@ -852,7 +871,6 @@ vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
 <ul class="simple">
-<li><p>Der kleinste Index ist 0.</p></li>
 <li><p>Der größte Index ist 12.</p></li>
 <li><p>Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung: ‘IndexError: string index out of range’. Der Index 20 ist außerhalb des zulässigen Indexbereichs von 0 bis 12.</p></li>
 <li><p>Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch Zeichen und müssen mitgezählt werden.</p></li>
@@ -891,7 +909,7 @@ mehrfache Wiederholen einer Anweisung.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mein_string</span> <span class="o">=</span> <span class="s1">&#39;Hallo, Du da!&#39;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
     <span class="n">zeichen</span> <span class="o">=</span> <span class="n">mein_string</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">zeichen</span><span class="p">)</span>
 </pre></div>
@@ -910,6 +928,7 @@ u
  
 d
 a
+!
 </pre></div>
 </div>
 </div>
@@ -1008,6 +1027,8 @@ ursprüngliche String modifiziert, sondern ein neuer String erzeugt.</p>
 </div>
 </div>
 </div>
+<p>Allerdings haben Sie damit nicht wirklich den String geändert, sondern einen
+neuen String erzeugt.</p>
 </section>
 <section id="ersetzen-von-teilstrings">
 <h3>Ersetzen von Teilstrings<a class="headerlink" href="#ersetzen-von-teilstrings" title="Permalink to this headline">#</a></h3>
@@ -1016,43 +1037,24 @@ String. Eine dieser Methoden ist <code class="docutils literal notranslate"><spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
-<span class="n">neuer_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">neuer_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python ist eine großartige Programmiersprache!
-</pre></div>
-</div>
-</div>
-</div>
-<p>In diesem Beispiel haben wir den Teilstring “MATLAB” durch den Teilstring
-“Python” ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
-Variable namens <code class="docutils literal notranslate"><span class="pre">neuer_text</span></code> verwenden. Wenn mehrfach Änderungen des Strings
-durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
-Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
-folgendem Beispiel.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python ist eine großartige Programmiersprache!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB ist eine großartige Programmiersprache!
 </pre></div>
 </div>
 </div>
 </div>
-<p>Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
-ausführen können, wie z.B. das Suchen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.find()</span></code>-Methode,
-das Zählen von Vorkommen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.count()</span></code>-Methode und das
-Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
-<code class="docutils literal notranslate"><span class="pre">.upper()</span></code> und <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>. In der nächsten Mini-Übung probieren wir noch einmal
-die <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>-Methode aus.</p>
+<p>In diesem Beispiel haben wir den Teilstring “MATLAB” durch den Teilstring
+“Python” ersetzt. Es gibt viele andere nützliche Operationen, die Sie auf
+Strings in Python ausführen können, wie z.B. das Suchen von Teilstrings mit der
+<code class="docutils literal notranslate"><span class="pre">.find()</span></code>-Methode, das Zählen von Vorkommen von Teilstrings mit der
+<code class="docutils literal notranslate"><span class="pre">.count()</span></code>-Methode und das Konvertieren von Strings in Groß- oder
+Kleinbuchstaben mit den Methoden <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> und <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>. In der nächsten
+Mini-Übung probieren wir noch einmal die <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>-Methode aus.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Programm, das in dem Spruch “Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.” die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den Spruch vor und nach der Korrektur ausgeben.</p>
@@ -1061,12 +1063,12 @@ die <code class="docutils literal notranslate"><span class="pre">.replace()</spa
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spruch</span> <span class="o">=</span> <span class="s1">&#39;Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.&#39;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vorher: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vorher dem Anwenden der .replace()-Methode: &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spruch</span><span class="p">)</span>
 
-<span class="n">spruch_korrigiert</span> <span class="o">=</span> <span class="n">spruch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Kilogramm&#39;</span><span class="p">,</span> <span class="s1">&#39;Zentner&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nach der Korrektur:&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spruch_korrigiert</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jetzt wird .replace() angewendet: &#39;</span><span class="p">)</span>
+<span class="n">spruch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Kilogramm&#39;</span><span class="p">,</span> <span class="s1">&#39;Zentner&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spruch</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

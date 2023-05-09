@@ -22,14 +22,14 @@ f-Strings auch formatierte Ausgaben zu produzieren.
 
 ## Lernziele
 
-````{admonition} Lernziele
+```{admonition} Lernziele
 :class: hint
 * Sie wissen, dass Strings unveränderliche Container sind und welche Konsequenzen das für die Programmierung hat.
 * Sie können mit dem Index auf einzelne Zeichen eines Strings zugreifen.
 * Sie können Strings mit dem Plus-Operator **verketten**.
 * Sie können mit der **.replace()**-Methode einen Teilstring in einem String durch einen anderen Teilstring ersetzen.
 * Sie können mit einem **f-String** den Wert einer Variablen in einen String einbetten und zur Laufzeit anzeigen lassen.
-````
+```
 
 
 ## Strings sind Container
@@ -39,7 +39,7 @@ Verkettung von einzelnen Zeichen zu interpretieren. Mit dieser Idee ist dann
 vielleicht auch nicht verwunderlich, dass die einzelnen Zeichen eines Strings
 über den Index angesprochen werden können.
 
-```{code_cell} ipython3
+```{code-cell} ipython3
 # Erzeugung und Anzeige String
 mein_string = 'Hallo, Du da!'
 print(mein_string)
@@ -55,7 +55,6 @@ Aber welche Zeichen gehören dazu? Probieren Sie die folgende Mini-Übung aus.
 :class: miniexercise
 Speichern Sie den String 'Hallo, Du da!' in einer Variable. Beantworten Sie folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.
 
-* Was ist der kleinste Index des Strings 'Hallo, Du da!'?
 * Was ist der größte Index des String 'Hallo, Du da!'?
 * Was passiert, wenn Sie auf den Index 20 zugreifen wollen?
 * Welches Zeichen hat den Index 6?
@@ -64,7 +63,6 @@ Speichern Sie den String 'Hallo, Du da!' in einer Variable. Beantworten Sie folg
 ````{admonition} Lösung
 :class: minisolution, toggle
 
-* Der kleinste Index ist 0.
 * Der größte Index ist 12.
 * Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung: 'IndexError: string index out of range'. Der Index 20 ist außerhalb des zulässigen Indexbereichs von 0 bis 12.
 * Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch Zeichen und müssen mitgezählt werden.
@@ -85,7 +83,7 @@ mehrfache Wiederholen einer Anweisung.
 
 ```{code-cell} ipython3
 mein_string = 'Hallo, Du da!'
-for i in range(12):
+for i in range(13):
     zeichen = mein_string[i]
     print(zeichen)
 ```
@@ -160,6 +158,9 @@ gruss = 'Hallo ' + name + '!'
 print(gruss)
 ```
 
+Allerdings haben Sie damit nicht wirklich den String geändert, sondern einen
+neuen String erzeugt.
+
 ### Ersetzen von Teilstrings
 
 Python bietet mehrere Methoden zum Suchen und Ersetzen von Teilstrings in einem
@@ -167,30 +168,17 @@ String. Eine dieser Methoden ist `.replace()`. Hier ist ein Beispiel:
 
 ```{code-cell} ipython3
 text = 'MATLAB ist eine großartige Programmiersprache!'
-neuer_text = text.replace('MATLAB', 'Python')
-print(neuer_text)
-
-```
-
-In diesem Beispiel haben wir den Teilstring "MATLAB" durch den Teilstring
-"Python" ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
-Variable namens `neuer_text` verwenden. Wenn mehrfach Änderungen des Strings
-durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
-Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
-folgendem Beispiel.
-
-```{code-cell} ipython3
-text = 'MATLAB ist eine großartige Programmiersprache!'
-text = text.replace('MATLAB', 'Python')
+text.replace('MATLAB', 'Python')
 print(text)
 ```
 
-Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
-ausführen können, wie z.B. das Suchen von Teilstrings mit der `.find()`-Methode,
-das Zählen von Vorkommen von Teilstrings mit der `.count()`-Methode und das
-Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
-`.upper()` und `.lower()`. In der nächsten Mini-Übung probieren wir noch einmal
-die `.replace()`-Methode aus.
+In diesem Beispiel haben wir den Teilstring "MATLAB" durch den Teilstring
+"Python" ersetzt. Es gibt viele andere nützliche Operationen, die Sie auf
+Strings in Python ausführen können, wie z.B. das Suchen von Teilstrings mit der
+`.find()`-Methode, das Zählen von Vorkommen von Teilstrings mit der
+`.count()`-Methode und das Konvertieren von Strings in Groß- oder
+Kleinbuchstaben mit den Methoden `.upper()` und `.lower()`. In der nächsten
+Mini-Übung probieren wir noch einmal die `.replace()`-Methode aus.
 
 
 ````{admonition} Mini-Übung
@@ -202,12 +190,12 @@ Schreiben Sie ein Programm, das in dem Spruch "Zehn Ziegen zogen 10 Kilogramm Zu
 ```python
 spruch = 'Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.'
 
-print('Vorher: ')
+print('Vorher dem Anwenden der .replace()-Methode: ')
 print(spruch)
 
-spruch_korrigiert = spruch.replace('Kilogramm', 'Zentner')
-print('Nach der Korrektur:')
-print(spruch_korrigiert)
+print('Jetzt wird .replace() angewendet: ')
+spruch.replace('Kilogramm', 'Zentner')
+print(spruch)
 ```
 ````
 

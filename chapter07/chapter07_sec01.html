@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="while" href="chapter07_sec02.html" />
-    <link rel="prev" title="7. Schleifen mit Bedingung" href="chapter07_sec00.html" />
+    <link rel="prev" title="7. Digitale Logik und Schleifen mit Bedingung" href="chapter07_sec00.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -318,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter07_sec00.html">
-   7. Schleifen mit Bedingung
+   7. Digitale Logik und Schleifen mit Bedingung
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -710,63 +710,33 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zu-logischen-operatoren-im-allgemeinen">
-   4.2 Video zu logischen Operatoren im Allgemeinen
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zu-logischen-operatoren-in-python">
-   Video zu logischen Operatoren in Python
+  <a class="reference internal nav-link" href="#boolesche-algebra">
+   Boolesche Algebra
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe">
-   Aufgabe
+  <a class="reference internal nav-link" href="#das-logische-und">
+   Das logische UND
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Aufgabe
+  <a class="reference internal nav-link" href="#das-logische-oder">
+   Das logische ODER
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schleifen-wiederholung-mit-bedingung-while">
-   Schleifen: Wiederholung mit Bedingung “while”
+  <a class="reference internal nav-link" href="#das-logische-nicht">
+   Das logische NICHT
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zur-while-schleife">
-   Video zur while-Schleife
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   Aufgabe
+  <a class="reference internal nav-link" href="#video">
+   Video
   </a>
  </li>
 </ul>
@@ -789,63 +759,33 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zu-logischen-operatoren-im-allgemeinen">
-   4.2 Video zu logischen Operatoren im Allgemeinen
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zu-logischen-operatoren-in-python">
-   Video zu logischen Operatoren in Python
+  <a class="reference internal nav-link" href="#boolesche-algebra">
+   Boolesche Algebra
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe">
-   Aufgabe
+  <a class="reference internal nav-link" href="#das-logische-und">
+   Das logische UND
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Aufgabe
+  <a class="reference internal nav-link" href="#das-logische-oder">
+   Das logische ODER
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schleifen-wiederholung-mit-bedingung-while">
-   Schleifen: Wiederholung mit Bedingung “while”
+  <a class="reference internal nav-link" href="#das-logische-nicht">
+   Das logische NICHT
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-zur-while-schleife">
-   Video zur while-Schleife
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   Aufgabe
+  <a class="reference internal nav-link" href="#video">
+   Video
   </a>
  </li>
 </ul>
@@ -860,21 +800,41 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="digitale-logik-und-oder-nicht">
 <h1>7.1 Digitale Logik: und, oder, nicht<a class="headerlink" href="#digitale-logik-und-oder-nicht" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<p>In diesem Kapitel beschäftigen wir uns zuerst damit, wie kombinierte Bedingungen
+in der Programmiersprache Python formuliert werden. In der Informatik bezeichnet
+man dieses Themenfeld auch als <strong>digitale Logik</strong> oder <strong>boolesche Algebra</strong>.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Lernziele</p>
+<p>Sie kennen die logischen Operatoren und können diese in Python einsetzen:</p>
+<ul class="simple">
+<li><p>logisches UND: <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p>logisches ODER: <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+<li><p>logisches NICHT: <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+</ul>
 </div>
-<p>In der letzten Vorlesung haben wir den boolschen Datentyp kennengelernt: wahr
-oder falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man
-fordern, dass zwei Bedingungen gleichzeitg erfüllt sein sollen.</p>
+</section>
+<section id="boolesche-algebra">
+<h2>Boolesche Algebra<a class="headerlink" href="#boolesche-algebra" title="Permalink to this headline">#</a></h2>
+<p>In früheren Kapiteln haben wir den boolschen Datentyp kennengelernt: wahr oder
+falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man fordern,
+dass zwei Bedingungen gleichzeitg erfüllt sein sollen.</p>
 <p>Beispiel beim Busfahren: Kinder unter 6 Jahren können kostenlos Bus fahren. Ab 6
 Jahren braucht man eine Fahrkarte. Bis 14 Jahre zahlt man den Kinderpreis, ab 15
-Jahren den Erwachsenenpreis:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du darfst eine Kinderfahrkarte kaufen.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
+Jahren den Erwachsenenpreis. Die Bedingung für eine Kinderkarte lautet also:</p>
+<div class="math notranslate nohighlight">
+\[\text{Alter} \geq 6 \text{ und } \text{Alter} \leq 14.\]</div>
+<p>Keine Kinderfahrkarte braucht man, wenn man jünger als 6 ist oder älter als 14,
+also:</p>
+<div class="math notranslate nohighlight">
+\[\text{Alter} &lt; 6 \text{ oder } \text{Alter} &gt; 14.\]</div>
+<p>Eine Fahrkarte (egal ob Kinderfahrkarte oder Erwachsenenfahrkarte) muss
+mankaufen, wenn man kein Kind ist, also wenn</p>
+<div class="math notranslate nohighlight">
+\[\text{nicht} \left( \text{Alter} &lt; 6\right).\]</div>
+<p>Gut, letzteres könnte man natürlicher einfacher mit <span class="math notranslate nohighlight">\(\text{Alter} \geq 6\)</span>
+ausdrücken, aber das klappt auch nicht bei jeder Bedingung.</p>
 <p>Im Folgenden beschäftigen wir uns daher mit der Verknüpfung von booleschen
 Ausdrücken. Dieses Fachgebiet nennt man auch boolsche Algebra oder digitale
 Logik. Wikipedia fasst hier die wichtigsten Regeln zur booleschen Algebra
@@ -887,248 +847,294 @@ logischen Operatoren</p>
 <li><p>NICHT</p></li>
 </ul>
 <p>beschränken.</p>
-<section id="video-zu-logischen-operatoren-im-allgemeinen">
-<h2>4.2 Video zu logischen Operatoren im Allgemeinen<a class="headerlink" href="#video-zu-logischen-operatoren-im-allgemeinen" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich auf YouTube das Video “SimpleClub: Negation, Konjunktion,
-Disjunktion – Aussagenlogik 1” an (ca. 5:17 min):
-<a class="reference external" href="https://www.youtube.com/watch?v=inwIsNIaWJM">https://www.youtube.com/watch?v=inwIsNIaWJM</a></p>
-<p>Schreiben Sie anschließend die drei Wahrheitstafeln für</p>
-<ol class="simple">
-<li><p>Konjunktion / UND / and</p></li>
-<li><p>Disjunktion / ODER / or</p></li>
-<li><p>Negation / NICHT / not</p></li>
-</ol>
-<p>auf. Zuletzt beantworten Sie bitte die folgenden zwei Fragen:</p>
-<ul class="simple">
-<li><p>Welche logische Verknüpfung entspricht in der Elektronik einer Reihenschaltung
-und welche einer Parallelschaltung?</p></li>
-<li><p>Was sind Logikgatter?</p></li>
-</ul>
-<p>Nun wenden wir uns der Umsetzung von logischen Verknüpfungen in Python zu.</p>
 </section>
-<section id="video-zu-logischen-operatoren-in-python">
-<h2>Video zu logischen Operatoren in Python<a class="headerlink" href="#video-zu-logischen-operatoren-in-python" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich auf YouTube das Video “Python Tutorial deutsch [12/24]” an,
-siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=075l6R42tkQ&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=12">https://www.youtube.com/watch?v=075l6R42tkQ&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=12</a>
-. Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden Code-Zelle aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="aufgabe">
-<h2>Aufgabe<a class="headerlink" href="#aufgabe" title="Permalink to this headline">#</a></h2>
-<p>Was ist das Ergebnis: wahr oder falsch?</p>
-<ul class="simple">
-<li><p>wahr und wahr</p></li>
-<li><p>wahr oder falsch</p></li>
-<li><p>nicht wahr</p></li>
-<li><p>falsch oder wahr</p></li>
-<li><p>wahr oder nicht falsch</p></li>
-<li><p>nicht wahr und falsch</p></li>
-<li><p>nicht (wahr oder falsch)</p></li>
-<li><p>nicht falsch oder (falsch und falsch)</p></li>
-</ul>
-<p>Probieren Sie in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse
-hatten, indem Sie beispielsweise <code class="docutils literal notranslate"><span class="pre">wahr</span> <span class="pre">und</span> <span class="pre">wahr</span></code> in Python ausprobieren, also</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
-</pre></div>
-</div>
-<p>eingeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
-</pre></div>
-</div>
-</section>
-<section id="id1">
-<h2>Aufgabe<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>Schreiben Sie das Programm für einen Ticket-Automaten. Der Benutzer wird nach
-dem Alter gefragt und ob ein Schülerausweis vorliegt. Das Programm gibt dann
-aus, welches Ticket gekauft werden muss.</p>
+<section id="das-logische-und">
+<h2>Das logische UND<a class="headerlink" href="#das-logische-und" title="Permalink to this headline">#</a></h2>
+<p>Beim logischen UND müssen beide Bedingungen erfüllt sein, damit insgesamt die
+kombinierte Bedingung erfüllt ist. Vergleichbar ist dies mit einer
+Reihenschaltung in der Elektrotechnik. Nur wenn beide Schalter eingeschaltet
+sind, kann der Strom fließen.</p>
+<p>Hier finden Sie den Link zu einem YouTube-Video (ca. 3:14 min) von Lehrer Schmidt zur UND-Schaltung:</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=79WVEr2BVZI">https://www.youtube.com/watch?v=79WVEr2BVZI</a></p>
+<p>Man schreibt die Ergebnisse der kombinierten Bedingungen normalerweise als eine
+Tabelle auf. Die erste Zeile würde man so lesen: Wenn “Bedingung 1 wahr” ist UND
+wenn “Bedingung 2 wahr” ist, so ist auch die kombinierte Bedingung “Bedingung 1
+UND Bedingung 2” wahr. Wir verwenden hier schon die Python-Werte <code class="docutils literal notranslate"><span class="pre">True</span></code> für wahr
+und <code class="docutils literal notranslate"><span class="pre">False</span></code> für falsch sowie den <code class="docutils literal notranslate"><span class="pre">and</span></code>-Operator für das logische UND:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Alter</p></th>
-<th class="head"><p>Ticket</p></th>
+<tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
+<th class="head"><p>Bedingung 2</p></th>
+<th class="head"><p>Ergebnis mit <code class="docutils literal notranslate"><span class="pre">and</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>0 - 5</p></td>
-<td><p>keine</p></td>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
 </tr>
-<tr class="row-odd"><td><p>6 - 14</p></td>
-<td><p>Kinder-Ticket</p></td>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
 </tr>
-<tr class="row-even"><td><p>15 - 21 und Schülerausweis</p></td>
-<td><p>Kinder-Ticket</p></td>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p>15 - 59</p></td>
-<td><p>Erwachsenen-Ticket</p></td>
-</tr>
-<tr class="row-even"><td><p>ab 60</p></td>
-<td><p>Senioren-Ticket</p></td>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihr Alter ein: &#39;</span><span class="p">))</span>
-<span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihr Alter ein: &#39;</span><span class="p">))</span>
-<span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihr Alter ein: &#39;</span><span class="p">))</span>
-<span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie Ihr Alter ein: &#39;</span><span class="p">))</span>
-<span class="n">hat_schuelerausweis</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Haben Sie einen Schülerausweis (j/n)?&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie brauchen kein Ticket.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie brauchen ein Kinder-Ticket.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="p">(</span><span class="mi">15</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">hat_schuelerausweis</span> <span class="o">==</span> <span class="s1">&#39;j&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie brauchen ein Kinder-Ticket.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="p">(</span><span class="mi">15</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">59</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie brauchen ein Erwachsenen-Ticket.&#39;</span><span class="p">)</span>
+<p>Beispiel: Zwei Personen wollen einen Kinofilm sehen, der erst ab 18 erlaubt ist.
+Nur wenn beide volljährig sind, können sie den Film gemeinsam besuchen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_person1</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="n">alter_person2</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">alter_person1</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter_person2</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen beide den Film sehen.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie brauchen ein Senioren-Ticket.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vielleicht darf einer von Ihnen den Film sehen, aber nicht beide.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="schleifen-wiederholung-mit-bedingung-while">
-<h2>Schleifen: Wiederholung mit Bedingung “while”<a class="headerlink" href="#schleifen-wiederholung-mit-bedingung-while" title="Permalink to this headline">#</a></h2>
-<p>Bei einer Wiederholung mit Bedingung wird eine Anweisung solange wiederholt, bis
-die Bedingung erfüllt wird. Sie hat folgende Struktur:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">while</span> <span class="n">Bedingung</span><span class="p">:</span> 
-        <span class="n">anweisungsblock</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie duerfen beide den Film sehen.
 </pre></div>
 </div>
-<p>Die bedingte Wiederholung wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Dann
-folgt die Bedingung, die mit einem <code class="docutils literal notranslate"><span class="pre">:</span></code> abgeschlossen wird. Alle Anweisungen, die
-wiederholt werden sollen, werden eingerückt. Diesen Teil nennt man das
-Schleifeninnere, die Zeile <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">Bedingung:</span></code> nennt man den Schleifenkopf.</p>
-<p>Bespiel: Wir möchten ein Programm schreiben, bei dem der Benutzer solange Zahlen
-eingeben darf, die aufsummiert werden, bis die Null eingegeben wird. Für das
-Aufsummieren benutzen wir eine Variable als Zwischenspeicher. Dies würde in
-Python wie folgt umgesetzt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dieses Programm addiert ganze Zahlen solange, bis Sie 0 eingeben.&#39;</span><span class="p">)</span>
-<span class="n">zahl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie die erste Zahl ein: &#39;</span><span class="p">))</span>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter
+der Person zwischen 6 und 10 liegt, soll das Programm ausgeben “Wahrscheinlich
+gehst Du in die Grundschule.”</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie?&#39;</span><span class="p">))</span>
 
-<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">zahl</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">zahl</span>
-    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine weitere Zahl ein: &#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Summe aller bisher eingegeben Zahlen ist: &#39;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
+<span class="c1"># Verarbeitung und Ausgabe</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wahrscheinlich gehst Du in die Gundschule.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Probieren Sie den Code in der nächsten Code-Zelle aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dieses Programm addiert ganze Zahlen solange, bis Sie 0 eingeben.&#39;</span><span class="p">)</span>
-<span class="n">zahl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie die erste Zahl ein: &#39;</span><span class="p">))</span>
+</div>
+</section>
+<section id="das-logische-oder">
+<h2>Das logische ODER<a class="headerlink" href="#das-logische-oder" title="Permalink to this headline">#</a></h2>
+<p>Beim logischen ODER muss nur eine der beiden Bedingungen erfüllt sein, damit
+insgesamt die kombinierte Bedingung erfüllt ist. Damit ist natürlich die
+Bedingung insgesamt auch erfüllt, wenn beide Bedingungen wahr sind. Vergleichbar
+ist dies mit einer Parallelschaltung in der Elektrotechnik. Es reicht, wenn
+einer der beiden Schalter eingeschaltet sind, damit der Strom fließen kann. Auch
+wenn beide Schalter eingeschaltet sind, fließt Strom.</p>
+<p>Hier finden Sie den Link zu einem YouTube-Video (ca. 2:42 min) von Lehrer
+Schmidt zur ODER-Schaltung: <a class="reference external" href="https://www.youtube.com/watch?v=UNkXbvSN9w8">https://www.youtube.com/watch?v=UNkXbvSN9w8</a></p>
+<p>Auch bei der ODER-Verknüpfung schreibt man üblicherweise die Ergebnisse der
+kombinierten Bedingungen in Form einer Tabelle. Die dritte Zeile würde man
+beispielsweise so lesen: Wenn “Bedingung 1 wahr” ist ODER wenn “Bedingung 2
+falsch” ist, so ist auch die kombinierte Bedingung “Bedingung 1 ODER Bedingung
+2” wahr. Wir verwenden hier wiederum die Python-Werte <code class="docutils literal notranslate"><span class="pre">True</span></code> für wahr und
+<code class="docutils literal notranslate"><span class="pre">False</span></code> für falsch sowie den logischen Oder-Operator <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
+<th class="head"><p>Bedingung 2</p></th>
+<th class="head"><p>Ergebnis mit <code class="docutils literal notranslate"><span class="pre">or</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel: Zwei Personen wollen ein Auto mieten, dazu muss aber mindestens einer
+von beiden den Führerschein besitzen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">person2_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">zahl</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">zahl</span>
-    <span class="n">zahl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine weitere Zahl ein: &#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Summe aller bisher eingegeben Zahlen ist: &#39;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">person1_hat_fuehrerschein</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">person2_hat_fuehrerschein</span> <span class="o">==</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen das Auto mieten.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keiner von beiden hat einen Fuehrerschein, geht nicht.&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie duerfen das Auto mieten.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Übrigens, der Vergleich <code class="docutils literal notranslate"><span class="pre">person1_hat_fuehrerschein</span> <span class="pre">==</span> <span class="pre">True</span></code> ist eigentlich
+doppelt gemoppelt, da ja die Variable bereits den Datentyp bool hat. Wir könnten
+also auch kürzer schreiben</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">person2_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">person1_hat_fuehrerschein</span> <span class="ow">or</span> <span class="n">person2_hat_fuehrerschein</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen das Auto mieten.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keiner von beiden hat einen Fuehrerschein, geht nicht.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie duerfen das Auto mieten.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person
+jünger als 18 ist oder älter als 67, soll das Programm ausgeben: “Wahrscheinlich
+sind Sie/bist Du nicht berufstätig.”</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">alter</span> <span class="o">=</span>  <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Alter: &#39;</span><span class="p">))</span>
+
+<span class="c1"># Verarbeitung und Ausgabe</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">67</span> <span class="o">&lt;</span> <span class="n">alter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wahrscheinlich sind Sie/bist Du nicht berufstätig.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
-<section id="video-zur-while-schleife">
-<h2>Video zur while-Schleife<a class="headerlink" href="#video-zur-while-schleife" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich auf YouTube das Video “Python Tutorial deutsch [13/24] die
-while-Schleife” an, siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=sXLicTuJzB4&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=13">https://www.youtube.com/watch?v=sXLicTuJzB4&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=13</a>
-. Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden Code-Zelle aus.</p>
-<p>ACHTUNG: Falls Sie die Endlosschleife ausprobieren, können Sie oben in der
-Menüleiste das schwarze Quadrat nutzen, um die Endlosschleife abzubrechen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<section id="das-logische-nicht">
+<h2>Das logische NICHT<a class="headerlink" href="#das-logische-nicht" title="Permalink to this headline">#</a></h2>
+<p>Das logische NICHT kehrt eine Aussage um. Wenn eine Bedingung wahr war, wird sie
+falsch. War jedoch die Bedingung vorher wahr, wird sie nach Anwendung des
+logischen NICHT falsch. Man schreibt auch diese Operation normalerweise als
+Tabelle auf, wobei wir den logischen Nicht-Opertor <code class="docutils literal notranslate"><span class="pre">not</span></code> verwenden:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
+<th class="head"><p>Ergebnis mit <code class="docutils literal notranslate"><span class="pre">not</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel: Wenn eine Person keinen Führerschein hat, muss sie den Bus nehmen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">person_hat_fuehrerschein</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie muessen Bus fahren.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen Auto fahren.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
-<h2>Aufgabe<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>Schreiben Sie ein Programm, das die Zahlen von 1 bis 10 ausgibt.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie muessen Bus fahren.
 </pre></div>
 </div>
-</section>
-<section id="id3">
-<h2>Aufgabe<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<p>Schreiben Sie ein Programm, das eine minimale Zahl <span class="math notranslate nohighlight">\(a\)</span> und eine maximale Zahl
-<span class="math notranslate nohighlight">\(b\)</span> abfragt. Dann berechnet das Programm die Quadratzahlen von <span class="math notranslate nohighlight">\(a^2\)</span> bis <span class="math notranslate nohighlight">\(b^2\)</span>
-und gibt diese aus. Beispiel: Wenn der Benutzer <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span></code> eingibt und <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">8</span></code>, so
-soll das Programm <code class="docutils literal notranslate"><span class="pre">9,</span> <span class="pre">16,</span> <span class="pre">25,</span> <span class="pre">36,</span> <span class="pre">49,</span> <span class="pre">64</span></code> ausgeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
-</section>
-<section id="id4">
-<h2>Aufgabe<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
-<p>Erweitern Sie Programm 4.8 so, dass erst überprüft wird, ob die eingegebene Zahl
-<span class="math notranslate nohighlight">\(b\)</span> auch wirklich größer als <span class="math notranslate nohighlight">\(a\)</span> ist. Wenn dies nicht der Fall ist, soll solange
-weiter nach einer Zahl <span class="math notranslate nohighlight">\(b\)</span> gefragt werden, bis diese größer als a ist.</p>
-<p>Testen Sie Ihr Programm für die Beispiele <span class="math notranslate nohighlight">\(a=4\)</span> und <span class="math notranslate nohighlight">\(b=10\)</span> und anschließend für
-<span class="math notranslate nohighlight">\(a=10\)</span> und <span class="math notranslate nohighlight">\(b=4\)</span>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
-</section>
-<section id="id5">
-<h2>Aufgabe<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<p>Schreiben Sie ein Programm, welches die folgende Ausgabe bis zu einer vom
-Benutzer gewählten Zahl fortsetzt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">*</span>
-<span class="mi">2</span> <span class="o">**</span>
-<span class="mi">3</span> <span class="o">***</span>
-<span class="mi">4</span> <span class="o">****</span>
-<span class="mi">5</span> <span class="o">*****</span>
-<span class="mi">6</span> <span class="o">******</span>
-<span class="mi">7</span> <span class="o">*******</span>
-</pre></div>
-</div>
-<p>Zusatz: Passen Sie das Programm so an, dass es einen Weihnachtsbaum aus
-Sternchen zeichnet, dessen Anzahl von Zeilen (im Beispiels 7) vom Benutzer
-gewählt werden kann:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>      <span class="o">*</span> <span class="mi">1</span> <span class="o">*</span>
-     <span class="o">**</span> <span class="mi">2</span> <span class="o">**</span>
-    <span class="o">***</span> <span class="mi">3</span> <span class="o">***</span>
-   <span class="o">****</span> <span class="mi">4</span> <span class="o">****</span>
-  <span class="o">*****</span> <span class="mi">5</span> <span class="o">*****</span>
- <span class="o">******</span> <span class="mi">6</span> <span class="o">******</span>
-<span class="o">*******</span> <span class="mi">7</span> <span class="o">*******</span>
-      <span class="o">*****</span>
-      <span class="o">*****</span>
-</pre></div>
-</div>
-<p>Der Stamm besteht immer aus zwei Zeilen mit fünf Sternen. Der Benutzer darf dann
-wählen, ob obige Grafik oder der Weihnachtsbaum gezeichnet wird.</p>
-<p>Frage: Was passiert, wenn Sie eine negative Zahl eingeben?</p>
-<!-- #endregion -->
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="id6">
-<h2>Aufgabe<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<p>Unter
-<a class="reference external" href="https://www.frankfurt-university.de/de/hochschule/fachbereich-2-informatik-und-ingenieurwissenschaften/corona-faqs-fuer-fb-2/">https://www.frankfurt-university.de/de/hochschule/fachbereich-2-informatik-und-ingenieurwissenschaften/corona-faqs-fuer-fb-2/</a>
-finden Sie die Erklärungen, bei welchen Krankheitssymptoman man an die
-Hochschule kommen darf.</p>
-<p>Schreiben Sie ein Programm, dass dem Benutzer mehrere Fragen nach Symptomen
-stellt, z.B. “Haben Husten?” und auf die Antworten reagiert. Wenn z.B. die Frage
-nach dem Husten mit “Ja” beantwortet wird, fragt das Programm nach, ob der
-Husten trocken ist oder nur gelegenlich auftritt. Am Ende soll das Programm
-entscheiden, ob der Benutzer an die Hochschule kommen darf oder nicht.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="id7">
-<h2>Aufgabe<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
-<p>Aufgabe 3.7 lautete:</p>
-<p>Alkalimetalle sind die Stoffe Lithium (Li), Natrium (Na), Kalium (K), Rubidium
-(Rb), Caesium (Cs). Schreiben Sie ein Programm, das Folgendes leistet: Der
-Benutzer gibt die Formel eines chemischen Elementes an. Anschließend wird
-gemeldet, ob es sich um ein Alkalimetall handelt oder nicht.</p>
-<p>Schreiben Sie Ihr Programm aus Aufgabe 3.7 so um, dass nur noch <em>eine</em> if - else</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr
+oder falsch?</p>
 <ul class="simple">
-<li><p>Struktur ohne elif verwendet wird, indem Sie logische Operatoren einsetzen.</p></li>
+<li><p>wahr UND wahr</p></li>
+<li><p>wahr ODER falsch</p></li>
+<li><p>NICHT wahr</p></li>
+<li><p>falsch ODER wahr</p></li>
+<li><p>wahr ODER (NICHT falsch)</p></li>
+<li><p>(NICHT wahr) UND falsch</p></li>
+<li><p>NICHT (wahr ODER falsch)</p></li>
+<li><p>(NICHT falsch) ODER (falsch UND falsch)</p></li>
 </ul>
+<p>Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen
+Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in Python
+ausprobieren, also beispielsweise <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code> eingeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># wahr UND wahr</span>
+<span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+
+<span class="c1"># wahr ODER falsch</span>
+<span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+
+<span class="c1"># NICHT wahr</span>
+<span class="ow">not</span> <span class="kc">True</span>
+
+<span class="c1"># falsch ODER wahr</span>
+<span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span>
+
+<span class="c1"># wahr ODER (NICHT falsch)</span>
+<span class="kc">True</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># (NICHT wahr) UND falsch</span>
+<span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="kc">False</span>
+
+<span class="c1"># NICHT (wahr ODER falsch)</span>
+<span class="ow">not</span> <span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># (NICHT falsch) ODER (falsch UND falsch)</span>
+<span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
+<section id="video">
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1162,7 +1168,7 @@ gemeldet, ob es sich um ein Alkalimetall handelt oder nicht.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">7. Schleifen mit Bedingung</p>
+            <p class="prev-next-title">7. Digitale Logik und Schleifen mit Bedingung</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter07_sec02.html" title="next page">
