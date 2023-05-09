@@ -14,24 +14,44 @@ kernelspec:
 
 # 7.1 Digitale Logik: und, oder, nicht
 
-```{admonition} Warnung
-:class: warning
-Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+In diesem Kapitel beschäftigen wir uns zuerst damit, wie kombinierte Bedingungen
+in der Programmiersprache Python formuliert werden. In der Informatik bezeichnet
+man dieses Themenfeld auch als **digitale Logik** oder **boolesche Algebra**. 
+
+## Lernziele
+
+```{admonition} Lernziele
+:class: tip
+Sie kennen die logischen Operatoren und können diese in Python einsetzen:
+* logisches UND: `and`
+* logisches ODER: `or`
+* logisches NICHT: `not`
 ```
 
-In der letzten Vorlesung haben wir den boolschen Datentyp kennengelernt: wahr
-oder falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man
-fordern, dass zwei Bedingungen gleichzeitg erfüllt sein sollen. 
+## Boolesche Algebra
+
+In früheren Kapiteln haben wir den boolschen Datentyp kennengelernt: wahr oder
+falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man fordern,
+dass zwei Bedingungen gleichzeitg erfüllt sein sollen.
 
 Beispiel beim Busfahren: Kinder unter 6 Jahren können kostenlos Bus fahren. Ab 6
 Jahren braucht man eine Fahrkarte. Bis 14 Jahre zahlt man den Kinderpreis, ab 15
-Jahren den Erwachsenenpreis: 
+Jahren den Erwachsenenpreis. Die Bedingung für eine Kinderkarte lautet also:
 
-```python
-alter = 12
-if (6 <= alter) and (alter <= 14):
-    print('Du darfst eine Kinderfahrkarte kaufen.')
-```
+$$\text{Alter} \geq 6 \text{ und } \text{Alter} \leq 14.$$
+
+Keine Kinderfahrkarte braucht man, wenn man jünger als 6 ist oder älter als 14,
+also:
+
+$$\text{Alter} < 6 \text{ oder } \text{Alter} > 14.$$
+
+Eine Fahrkarte (egal ob Kinderfahrkarte oder Erwachsenenfahrkarte) muss
+mankaufen, wenn man kein Kind ist, also wenn
+
+$$\text{nicht} \left( \text{Alter} < 6\right).$$
+
+Gut, letzteres könnte man natürlicher einfacher mit $\text{Alter} \geq 6$
+ausdrücken, aber das klappt auch nicht bei jeder Bedingung.
 
 Im Folgenden beschäftigen wir uns daher mit der Verknüpfung von booleschen
 Ausdrücken. Dieses Fachgebiet nennt man auch boolsche Algebra oder digitale
@@ -47,265 +67,214 @@ logischen Operatoren
 
 beschränken. 
 
+## Das logische UND
 
+Beim logischen UND müssen beide Bedingungen erfüllt sein, damit insgesamt die
+kombinierte Bedingung erfüllt ist. Vergleichbar ist dies mit einer
+Reihenschaltung in der Elektrotechnik. Nur wenn beide Schalter eingeschaltet
+sind, kann der Strom fließen.
 
-## 4.2 Video zu logischen Operatoren im Allgemeinen
+Hier finden Sie den Link zu einem YouTube-Video (ca. 3:14 min) von Lehrer Schmidt zur UND-Schaltung:
 
-Schauen Sie sich auf YouTube das Video "SimpleClub: Negation, Konjunktion,
-Disjunktion – Aussagenlogik 1" an (ca. 5:17 min):
-https://www.youtube.com/watch?v=inwIsNIaWJM
+https://www.youtube.com/watch?v=79WVEr2BVZI
 
-Schreiben Sie anschließend die drei Wahrheitstafeln für 
+Man schreibt die Ergebnisse der kombinierten Bedingungen normalerweise als eine
+Tabelle auf. Die erste Zeile würde man so lesen: Wenn “Bedingung 1 wahr” ist UND
+wenn “Bedingung 2 wahr” ist, so ist auch die kombinierte Bedingung “Bedingung 1
+UND Bedingung 2” wahr. Wir verwenden hier schon die Python-Werte `True` für wahr
+und `False` für falsch sowie den `and`-Operator für das logische UND:
 
-1. Konjunktion / UND / and
-2. Disjunktion / ODER / or
-3. Negation / NICHT / not
+Bedingung 1 | Bedingung 2 | Ergebnis mit ```and```
+------------|-------------|--------------------------
+True | True | True
+False | True | False
+True | False | False
+False | False | False
 
-auf. Zuletzt beantworten Sie bitte die folgenden zwei Fragen:
+Beispiel: Zwei Personen wollen einen Kinofilm sehen, der erst ab 18 erlaubt ist.
+Nur wenn beide volljährig sind, können sie den Film gemeinsam besuchen:
 
-* Welche logische Verknüpfung entspricht in der Elektronik einer Reihenschaltung
-  und welche einer Parallelschaltung? 
-* Was sind Logikgatter?
-
-
-Nun wenden wir uns der Umsetzung von logischen Verknüpfungen in Python zu.
-
-## Video zu logischen Operatoren in Python
-
-Schauen Sie sich auf YouTube das Video "Python Tutorial deutsch [12/24]" an,
-siehe
-https://www.youtube.com/watch?v=075l6R42tkQ&list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&index=12
-. Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden Code-Zelle aus: 
-
-```python
-
-```
-
-
-## Aufgabe 
-
-Was ist das Ergebnis: wahr oder falsch?
-
-* wahr und wahr
-* wahr oder falsch
-* nicht wahr
-* falsch oder wahr
-* wahr oder nicht falsch
-* nicht wahr und falsch
-* nicht (wahr oder falsch)
-* nicht falsch oder (falsch und falsch)
-
-Probieren Sie in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse
-hatten, indem Sie beispielsweise `wahr und wahr` in Python ausprobieren, also 
-```python 
-True and True
-``` 
-eingeben.
-
-
-```python
-True and True
-```
-
-## Aufgabe 
-
-Schreiben Sie das Programm für einen Ticket-Automaten. Der Benutzer wird nach
-dem Alter gefragt und ob ein Schülerausweis vorliegt. Das Programm gibt dann
-aus, welches Ticket gekauft werden muss.
-
-Alter | Ticket
------------- | -------------
-0 - 5 | keine 
-6 - 14 | Kinder-Ticket
-15 - 21 und Schülerausweis | Kinder-Ticket
-15 - 59 | Erwachsenen-Ticket
-ab 60 | Senioren-Ticket
-
-
-```python
-alter = int(input('Bitte geben Sie Ihr Alter ein: '))
-alter = int(input('Bitte geben Sie Ihr Alter ein: '))
-alter = int(input('Bitte geben Sie Ihr Alter ein: '))
-alter = int(input('Bitte geben Sie Ihr Alter ein: '))
-hat_schuelerausweis = input('Haben Sie einen Schülerausweis (j/n)?')
-
-if (0 <= alter) and (alter <= 5):
-    print('Sie brauchen kein Ticket.')
-elif (6 <= alter) and (alter <= 14):
-    print('Sie brauchen ein Kinder-Ticket.')
-elif (15 <= alter) and (alter <= 21) and (hat_schuelerausweis == 'j'):
-    print('Sie brauchen ein Kinder-Ticket.')
-elif (15 <= alter) and (alter <= 59):
-    print('Sie brauchen ein Erwachsenen-Ticket.')
+```{code-cell} ipython3
+alter_person1 = 19
+alter_person2 = 22
+if (alter_person1 >= 18) and (alter_person2 >= 18):
+    print('Sie duerfen beide den Film sehen.')
 else:
-    print('Sie brauchen ein Senioren-Ticket.')
+    print('Vielleicht darf einer von Ihnen den Film sehen, aber nicht beide.')
 ```
 
-
-## Schleifen: Wiederholung mit Bedingung "while"
-
-Bei einer Wiederholung mit Bedingung wird eine Anweisung solange wiederholt, bis
-die Bedingung erfüllt wird. Sie hat folgende Struktur:
-
+```{admonition} Mini-Übung
+:class: miniexercise
+Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter
+der Person zwischen 6 und 10 liegt, soll das Programm ausgeben “Wahrscheinlich
+gehst Du in die Grundschule.”
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
- while Bedingung: 
-        anweisungsblock
+# Eingabe
+alter = int(input('Wie alt sind Sie?'))
+
+# Verarbeitung und Ausgabe
+if (6 <= alter) and (alter <= 10):
+    print('Wahrscheinlich gehst Du in die Gundschule.')
+```
+````
+
+## Das logische ODER
+
+Beim logischen ODER muss nur eine der beiden Bedingungen erfüllt sein, damit
+insgesamt die kombinierte Bedingung erfüllt ist. Damit ist natürlich die
+Bedingung insgesamt auch erfüllt, wenn beide Bedingungen wahr sind. Vergleichbar
+ist dies mit einer Parallelschaltung in der Elektrotechnik. Es reicht, wenn
+einer der beiden Schalter eingeschaltet sind, damit der Strom fließen kann. Auch
+wenn beide Schalter eingeschaltet sind, fließt Strom.
+
+Hier finden Sie den Link zu einem YouTube-Video (ca. 2:42 min) von Lehrer
+Schmidt zur ODER-Schaltung: https://www.youtube.com/watch?v=UNkXbvSN9w8
+
+Auch bei der ODER-Verknüpfung schreibt man üblicherweise die Ergebnisse der
+kombinierten Bedingungen in Form einer Tabelle. Die dritte Zeile würde man
+beispielsweise so lesen: Wenn “Bedingung 1 wahr” ist ODER wenn “Bedingung 2
+falsch” ist, so ist auch die kombinierte Bedingung “Bedingung 1 ODER Bedingung
+2” wahr. Wir verwenden hier wiederum die Python-Werte `True` für wahr und
+`False` für falsch sowie den logischen Oder-Operator `or`:
+
+Bedingung 1 | Bedingung 2 | Ergebnis mit ```or```
+------------|-------------|--------------------------
+True | True | True
+False | True | True
+True | False | True
+False | False | False
+
+Beispiel: Zwei Personen wollen ein Auto mieten, dazu muss aber mindestens einer
+von beiden den Führerschein besitzen.
+
+```{code-cell} ipython3
+person1_hat_fuehrerschein = True
+person2_hat_fuehrerschein = False
+
+if (person1_hat_fuehrerschein == True) or (person2_hat_fuehrerschein == True):
+    print('Sie duerfen das Auto mieten.')
+else:
+    print('Keiner von beiden hat einen Fuehrerschein, geht nicht.')
 ```
 
-Die bedingte Wiederholung wird mit dem Schlüsselwort `while` eingeleitet. Dann
-folgt die Bedingung, die mit einem `:` abgeschlossen wird. Alle Anweisungen, die
-wiederholt werden sollen, werden eingerückt. Diesen Teil nennt man das
-Schleifeninnere, die Zeile `while Bedingung:` nennt man den Schleifenkopf. 
+Übrigens, der Vergleich `person1_hat_fuehrerschein == True` ist eigentlich
+doppelt gemoppelt, da ja die Variable bereits den Datentyp bool hat. Wir könnten
+also auch kürzer schreiben
 
-Bespiel: Wir möchten ein Programm schreiben, bei dem der Benutzer solange Zahlen
-eingeben darf, die aufsummiert werden, bis die Null eingegeben wird. Für das
-Aufsummieren benutzen wir eine Variable als Zwischenspeicher. Dies würde in
-Python wie folgt umgesetzt:
+```{code-cell} ipython3
+person1_hat_fuehrerschein = True
+person2_hat_fuehrerschein = False
 
+if person1_hat_fuehrerschein or person2_hat_fuehrerschein :
+    print('Sie duerfen das Auto mieten.')
+else:
+    print('Keiner von beiden hat einen Fuehrerschein, geht nicht.')
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person
+jünger als 18 ist oder älter als 67, soll das Programm ausgeben: “Wahrscheinlich
+sind Sie/bist Du nicht berufstätig.”
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
-print('Dieses Programm addiert ganze Zahlen solange, bis Sie 0 eingeben.')
-zahl = float(input('Geben Sie die erste Zahl ein: '))
+# Eingabe
+alter =  int(input('Alter: '))
 
-summe = 0
-while zahl != 0:
-    summe = summe + zahl
-    zahl = float(input('Geben Sie eine weitere Zahl ein: '))
-print('Die Summe aller bisher eingegeben Zahlen ist: ', summe)
+# Verarbeitung und Ausgabe
+if (alter < 18) or (67 < alter):
+    print('Wahrscheinlich sind Sie/bist Du nicht berufstätig.')
+```
+````
+
+## Das logische NICHT
+
+Das logische NICHT kehrt eine Aussage um. Wenn eine Bedingung wahr war, wird sie
+falsch. War jedoch die Bedingung vorher wahr, wird sie nach Anwendung des
+logischen NICHT falsch. Man schreibt auch diese Operation normalerweise als
+Tabelle auf, wobei wir den logischen Nicht-Opertor `not` verwenden:
+
+Bedingung 1 | Ergebnis mit ```not```
+------------|--------------------------
+True | False
+False | True 
+
+Beispiel: Wenn eine Person keinen Führerschein hat, muss sie den Bus nehmen.
+
+```{code-cell} ipython3
+person_hat_fuehrerschein = False
+
+if not person_hat_fuehrerschein:
+    print('Sie muessen Bus fahren.')
+else:
+    print('Sie duerfen Auto fahren.')
 ```
 
-Probieren Sie den Code in der nächsten Code-Zelle aus:
+```{admonition} Mini-Übung
+:class: miniexercise
+Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr
+oder falsch?
 
+* wahr UND wahr
+* wahr ODER falsch
+* NICHT wahr
+* falsch ODER wahr
+* wahr ODER (NICHT falsch)
+* (NICHT wahr) UND falsch
+* NICHT (wahr ODER falsch)
+* (NICHT falsch) ODER (falsch UND falsch)
 
+Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen
+Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in Python
+ausprobieren, also beispielsweise `True and True` eingeben.
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
-print('Dieses Programm addiert ganze Zahlen solange, bis Sie 0 eingeben.')
-zahl = float(input('Geben Sie die erste Zahl ein: '))
+# wahr UND wahr
+True and True
 
-summe = 0
-while zahl != 0:
-    summe = summe + zahl
-    zahl = float(input('Geben Sie eine weitere Zahl ein: '))
-print('Die Summe aller bisher eingegeben Zahlen ist: ', summe)
+# wahr ODER falsch
+True or False
+
+# NICHT wahr
+not True
+
+# falsch ODER wahr
+False or True
+
+# wahr ODER (NICHT falsch)
+True or (not False)
+
+# (NICHT wahr) UND falsch
+(not True) and False
+
+# NICHT (wahr ODER falsch)
+not (True or False)
+
+# (NICHT falsch) ODER (falsch UND falsch)
+(not False) or (False and False)
 ```
+````
 
-## Video zur while-Schleife
+## Video
 
-Schauen Sie sich auf YouTube das Video "Python Tutorial deutsch [13/24] die
-while-Schleife" an, siehe
-https://www.youtube.com/watch?v=sXLicTuJzB4&list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&index=13
-. Stoppen Sie regelmäßig und probieren Sie die dort gezeigten Beispiele in der
-folgenden Code-Zelle aus. 
-
-ACHTUNG: Falls Sie die Endlosschleife ausprobieren, können Sie oben in der
-Menüleiste das schwarze Quadrat nutzen, um die Endlosschleife abzubrechen.
-
-```python
-
-```
-
-## Aufgabe 
-
-Schreiben Sie ein Programm, das die Zahlen von 1 bis 10 ausgibt.
-
-```python
-
-```
-
-## Aufgabe 
-
-Schreiben Sie ein Programm, das eine minimale Zahl $a$ und eine maximale Zahl
-$b$ abfragt. Dann berechnet das Programm die Quadratzahlen von $a^2$ bis $b^2$
-und gibt diese aus. Beispiel: Wenn der Benutzer `a = 3` eingibt und `b = 8`, so
-soll das Programm `9, 16, 25, 36, 49, 64` ausgeben. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
-```python
-
-```
-
-## Aufgabe 
-
-Erweitern Sie Programm 4.8 so, dass erst überprüft wird, ob die eingegebene Zahl
-$b$ auch wirklich größer als $a$ ist. Wenn dies nicht der Fall ist, soll solange
-weiter nach einer Zahl $b$ gefragt werden, bis diese größer als a ist. 
-
-Testen Sie Ihr Programm für die Beispiele $a=4$ und $b=10$ und anschließend für
-$a=10$ und $b=4$.
-
-```python
-
-```
-
-
-## Aufgabe 
-
-Schreiben Sie ein Programm, welches die folgende Ausgabe bis zu einer vom
-Benutzer gewählten Zahl fortsetzt:
-
-```python
-1 *
-2 **
-3 ***
-4 ****
-5 *****
-6 ******
-7 *******
-```
-
-Zusatz: Passen Sie das Programm so an, dass es einen Weihnachtsbaum aus
-Sternchen zeichnet, dessen Anzahl von Zeilen (im Beispiels 7) vom Benutzer
-gewählt werden kann:
-
-```python
-      * 1 *
-     ** 2 **
-    *** 3 ***
-   **** 4 ****
-  ***** 5 *****
- ****** 6 ******
-******* 7 *******
-      *****
-      *****
-```
-
-
-Der Stamm besteht immer aus zwei Zeilen mit fünf Sternen. Der Benutzer darf dann
-wählen, ob obige Grafik oder der Weihnachtsbaum gezeichnet wird.
-
-Frage: Was passiert, wenn Sie eine negative Zahl eingeben?
-<!-- #endregion -->
-
-```python
-
-```
-
-## Aufgabe 
-
-Unter
-https://www.frankfurt-university.de/de/hochschule/fachbereich-2-informatik-und-ingenieurwissenschaften/corona-faqs-fuer-fb-2/
-finden Sie die Erklärungen, bei welchen Krankheitssymptoman man an die
-Hochschule kommen darf.
-
-Schreiben Sie ein Programm, dass dem Benutzer mehrere Fragen nach Symptomen
-stellt, z.B. "Haben Husten?" und auf die Antworten reagiert. Wenn z.B. die Frage
-nach dem Husten mit "Ja" beantwortet wird, fragt das Programm nach, ob der
-Husten trocken ist oder nur gelegenlich auftritt. Am Ende soll das Programm
-entscheiden, ob der Benutzer an die Hochschule kommen darf oder nicht.
-
-```python
-
-```
-
-## Aufgabe 
-
-Aufgabe 3.7 lautete: 
-
-Alkalimetalle sind die Stoffe Lithium (Li), Natrium (Na), Kalium (K), Rubidium
-(Rb), Caesium (Cs). Schreiben Sie ein Programm, das Folgendes leistet: Der
-Benutzer gibt die Formel eines chemischen Elementes an. Anschließend wird
-gemeldet, ob es sich um ein Alkalimetall handelt oder nicht. 
-
-Schreiben Sie Ihr Programm aus Aufgabe 3.7 so um, dass nur noch _eine_ if - else
-- Struktur ohne elif verwendet wird, indem Sie logische Operatoren einsetzen.
 
