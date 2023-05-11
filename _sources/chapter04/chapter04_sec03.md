@@ -168,17 +168,29 @@ String. Eine dieser Methoden ist `.replace()`. Hier ist ein Beispiel:
 
 ```{code-cell} ipython3
 text = 'MATLAB ist eine großartige Programmiersprache!'
-text.replace('MATLAB', 'Python')
-print(text)
+neuer_text = text.replace('MATLAB', 'Python')
+print(neuer_text)
 ```
 
 In diesem Beispiel haben wir den Teilstring "MATLAB" durch den Teilstring
-"Python" ersetzt. Es gibt viele andere nützliche Operationen, die Sie auf
-Strings in Python ausführen können, wie z.B. das Suchen von Teilstrings mit der
-`.find()`-Methode, das Zählen von Vorkommen von Teilstrings mit der
-`.count()`-Methode und das Konvertieren von Strings in Groß- oder
-Kleinbuchstaben mit den Methoden `.upper()` und `.lower()`. In der nächsten
-Mini-Übung probieren wir noch einmal die `.replace()`-Methode aus.
+"Python" ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
+Variable namens `neuer_text` verwenden. Wenn mehrfach Änderungen des Strings
+durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
+Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
+folgendem Beispiel.
+
+```{code-cell} ipython3
+text = 'MATLAB ist eine großartige Programmiersprache!'
+text = text.replace('MATLAB', 'Python')
+print(text)
+```
+
+Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
+ausführen können, wie z.B. das Suchen von Teilstrings mit der `.find()`-Methode,
+das Zählen von Vorkommen von Teilstrings mit der `.count()`-Methode und das
+Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
+`.upper()` und `.lower()`. In der nächsten Mini-Übung probieren wir noch einmal
+die `.replace()`-Methode aus.
 
 
 ````{admonition} Mini-Übung

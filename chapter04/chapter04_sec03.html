@@ -318,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter07/chapter07_sec00.html">
-   7. Schleifen mit Bedingung
+   7. Digitale Logik und Schleifen mit Bedingung
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -1037,24 +1037,43 @@ String. Eine dieser Methoden ist <code class="docutils literal notranslate"><spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
-<span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">neuer_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">neuer_text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB ist eine großartige Programmiersprache!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python ist eine großartige Programmiersprache!
 </pre></div>
 </div>
 </div>
 </div>
 <p>In diesem Beispiel haben wir den Teilstring “MATLAB” durch den Teilstring
-“Python” ersetzt. Es gibt viele andere nützliche Operationen, die Sie auf
-Strings in Python ausführen können, wie z.B. das Suchen von Teilstrings mit der
-<code class="docutils literal notranslate"><span class="pre">.find()</span></code>-Methode, das Zählen von Vorkommen von Teilstrings mit der
-<code class="docutils literal notranslate"><span class="pre">.count()</span></code>-Methode und das Konvertieren von Strings in Groß- oder
-Kleinbuchstaben mit den Methoden <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> und <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>. In der nächsten
-Mini-Übung probieren wir noch einmal die <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>-Methode aus.</p>
+“Python” ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
+Variable namens <code class="docutils literal notranslate"><span class="pre">neuer_text</span></code> verwenden. Wenn mehrfach Änderungen des Strings
+durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
+Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
+folgendem Beispiel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;MATLAB ist eine großartige Programmiersprache!&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;MATLAB&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python ist eine großartige Programmiersprache!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es gibt viele andere nützliche Operationen, die Sie auf Strings in Python
+ausführen können, wie z.B. das Suchen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.find()</span></code>-Methode,
+das Zählen von Vorkommen von Teilstrings mit der <code class="docutils literal notranslate"><span class="pre">.count()</span></code>-Methode und das
+Konvertieren von Strings in Groß- oder Kleinbuchstaben mit den Methoden
+<code class="docutils literal notranslate"><span class="pre">.upper()</span></code> und <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>. In der nächsten Mini-Übung probieren wir noch einmal
+die <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>-Methode aus.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Programm, das in dem Spruch “Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.” die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den Spruch vor und nach der Korrektur ausgeben.</p>
