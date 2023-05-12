@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7.2 Schleifen mit Bedingung (while) &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>&lt;no title&gt; &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.3 Zufallszahlen" href="chapter07_sec03.html" />
-    <link rel="prev" title="7.1 Digitale Logik: und, oder, nicht" href="chapter07_sec01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
   Grundlagen Programmierung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter01/chapter01_sec00.html">
    1. Getting Started
@@ -314,23 +312,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="chapter07_sec00.html">
    7. Digitale Logik und Schleifen mit Bedingung
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter07_sec01.html">
      7.1 Digitale Logik: und, oder, nicht
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter07_sec02.html">
      7.2 Schleifen mit Bedingung (while)
     </a>
    </li>
@@ -557,7 +555,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter07/chapter07_sec02.md"
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter07/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -631,24 +629,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapter07/chapter07_sec02.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../_sources/chapter07/chapter07_sec02.md"
+        <a href="../_sources/chapter07/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -659,7 +640,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -706,32 +687,7 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syntax-der-while-schleife">
-   Syntax der while-Schleife
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schleifen-abbrechen-mit-break">
-   Schleifen abbrechen mit break
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schleifen-vorzeitig-fortsetzen-mit-continue">
-   Schleifen vorzeitig fortsetzen mit continue
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   Video
-  </a>
- </li>
+        <ul class="simple visible nav section-nav flex-column">
 </ul>
 
     </nav>
@@ -741,7 +697,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>7.2 Schleifen mit Bedingung (while)</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -750,32 +706,7 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syntax-der-while-schleife">
-   Syntax der while-Schleife
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schleifen-abbrechen-mit-break">
-   Schleifen abbrechen mit break
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#schleifen-vorzeitig-fortsetzen-mit-continue">
-   Schleifen vorzeitig fortsetzen mit continue
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   Video
-  </a>
- </li>
+                            <ul class="simple visible nav section-nav flex-column">
 </ul>
 
                         </nav>
@@ -786,136 +717,33 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="schleifen-mit-bedingung-while">
-<h1>7.2 Schleifen mit Bedingung (while)<a class="headerlink" href="#schleifen-mit-bedingung-while" title="Permalink to this headline">#</a></h1>
-<p>Ein typisches Beispiel aus dem Alltag, bei dem wir etwas wiederholen, solange
-eine Bedingung erfüllt ist, ist das Kochen von Wasser. Moderne Wasserkocher
-haben einen eingebauten Temperatursensor, der die Temperatur des Wassers misst.
-Solange die Wassertemperatur kleiner als 100 ˚C ist, wird das Wasser
-erhitzt. Sobald die 100 ˚C erreicht sind, wird der Wasserkocher
-abgeschaltet. Solche Wiederholungen wollen wir nun mit Python umsetzen.</p>
-<section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
-<div class="hint admonition">
-<p class="admonition-title">Lernziele</p>
-<ul class="simple">
-<li><p>Sie können eine Schleife mit Bedingung als <strong>while</strong>-Schleife in Python
-implementieren.</p></li>
-<li><p>Sie können mit <strong>break</strong> eine Schleife vorzeitig abbrechen.</p></li>
-<li><p>Sie können mit <strong>continue</strong> eine Schleife vorzeitig fortsetzen.</p></li>
-</ul>
-</div>
-</section>
-<section id="syntax-der-while-schleife">
-<h2>Syntax der while-Schleife<a class="headerlink" href="#syntax-der-while-schleife" title="Permalink to this headline">#</a></h2>
-<p>Bei einer Wiederholung mit Bedingung werden eine oder mehrere Anweisungen
-solange wiederholt, wie die Bedingung erfüllt ist. Die sogenannte while-Schleife
-hat folgende Struktur:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">while</span> <span class="n">Bedingung</span><span class="p">:</span> 
-        <span class="n">anweisungsblock</span>
-</pre></div>
-</div>
-<p>Die bedingte Wiederholung wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Dann
-folgt die Bedingung, die mit einem <code class="docutils literal notranslate"><span class="pre">:</span></code> abgeschlossen wird. Alle Anweisungen, die
-wiederholt werden sollen, werden eingerückt. Diesen Teil nennt man das
-Schleifeninnere, die Zeile <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">Bedingung:</span></code> nennt man den Schleifenkopf.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>While-Schleifen sind ein mächtiges Werkzeug in Python, aber es ist wichtig, sie
-sorgfältig zu verwenden. Eine schlecht definierte Bedingung könnte dazu führen,
-dass die Schleife <strong>unendlich</strong> läuft, was zu Problemen führen kann.</p>
-</div>
-<p>Um auf das Beispiel mit dem Wasserkocher zurückzukommen … auch wenn wir jetzt
-keinen echten Temperatursensor haben, würde eine while-Schleife</p>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="k">while</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;aktuelle Wassertemperatur: </span><span class="si">{</span><span class="n">temperatur</span><span class="si">}</span><span class="s1"> ˚C&#39;</span><span class="p">)</span>
-  <span class="n">temperatur</span> <span class="o">+=</span> <span class="mi">10</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Befehl an Wasserkocher: schalte das Heizelement aus!&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Das Wasser ist fertig gekocht!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aktuelle Wassertemperatur: 20 ˚C
-aktuelle Wassertemperatur: 30 ˚C
-aktuelle Wassertemperatur: 40 ˚C
-aktuelle Wassertemperatur: 50 ˚C
-aktuelle Wassertemperatur: 60 ˚C
-aktuelle Wassertemperatur: 70 ˚C
-aktuelle Wassertemperatur: 80 ˚C
-aktuelle Wassertemperatur: 90 ˚C
-aktuelle Wassertemperatur: 100 ˚C
-Befehl an Wasserkocher: schalte das Heizelement aus!
-Das Wasser ist fertig gekocht!
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Programm, das einen Countdown von 10 nach 0 implementiert.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">while</span> <span class="n">zaehler</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">zaehler</span><span class="p">)</span>
     <span class="n">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
-</section>
-<section id="schleifen-abbrechen-mit-break">
-<h2>Schleifen abbrechen mit break<a class="headerlink" href="#schleifen-abbrechen-mit-break" title="Permalink to this headline">#</a></h2>
-<p>Die <code class="docutils literal notranslate"><span class="pre">break</span></code>-Anweisung kann verwendet werden, um die Schleife vorzeitig zu
-beenden, auch wenn die Bedingung der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife noch <code class="docutils literal notranslate"><span class="pre">True</span></code> ist. Hier ist
-ein Beispiel:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">zaehler</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">zaehler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Zaehler hat aktuell den Wert: </span><span class="si">{</span><span class="n">zaehler</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-    <span class="n">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Zaehler hat aktuell den Wert: 0.
-Der Zaehler hat aktuell den Wert: 1.
-Der Zaehler hat aktuell den Wert: 2.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
 </pre></div>
 </div>
 </div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Programm, das vom Benutzer natürliche Zahlen abfragt und diese
-quadriert und ausgibt. Wird eine 0 eingegeben, soll die Eingabe der Zahlen
-abgebrochen werden und die Meldung “Sie haben 0 eingegeben, das Programm wird
-beendet.” ausgegeben werden.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine natürliche Zahl ein (0 zum Beenden): &#39;</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">zahl</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie haben 0 eingegeben, das Programm wird beendet.&#39;</span><span class="p">)</span>
@@ -925,52 +753,20 @@ beendet.” ausgegeben werden.</p>
 </pre></div>
 </div>
 </div>
-</section>
-<section id="schleifen-vorzeitig-fortsetzen-mit-continue">
-<h2>Schleifen vorzeitig fortsetzen mit continue<a class="headerlink" href="#schleifen-vorzeitig-fortsetzen-mit-continue" title="Permalink to this headline">#</a></h2>
-<p>Die <code class="docutils literal notranslate"><span class="pre">continue</span></code>-Anweisung wird verwendet, um den aktuellen Durchgang der Schleife
-zu beenden und sofort mit dem nächsten Schleifendurchgang zu beginnen. Hier ist
-ein Beispiel:</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Das Quadrat von 8 ist 64.
+Das Quadrat von 2 ist 4.
+Das Quadrat von 3 ist 9.
+Das Quadrat von 4 ist 16.
+Das Quadrat von 5 ist 25.
+Sie haben 0 eingegeben, das Programm wird beendet.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">zaehler</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="n">zaehler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Zaehler hat aktuell den Wert: </span><span class="si">{</span><span class="n">zaehler</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Zaehler hat aktuell den Wert: 1.
-Der Zaehler hat aktuell den Wert: 2.
-Der Zaehler hat aktuell den Wert: 4.
-Der Zaehler hat aktuell den Wert: 5.
-</pre></div>
-</div>
-</div>
-</div>
-<p>In diesem Beispiel wird “Der Zaehler hat aktuell den Wert: 3” nicht ausgegeben,
-da die <code class="docutils literal notranslate"><span class="pre">continue</span></code>-Anweisung dafür sorgt, dass vorzeitig der nächste
-Schleifendurchgang begonnen wird, sobald <code class="docutils literal notranslate"><span class="pre">zaehler</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> erreicht.</p>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Programm, dass eine Zahl abfragt und deren Wurzel berechnet
-und ausgibt. Wird eine negative Zahl eingegeben, so soll die Wurzelberechnung
-übersprungen werden. Insgesamt soll das Programm solange laufen, bis drei
-Wurzeln berechnet wurden.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">zaehler</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
     <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine positive Zahl ein: &#39;</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">zahl</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -982,11 +778,19 @@ Wurzeln berechnet wurden.</p>
 </pre></div>
 </div>
 </div>
-</section>
-<section id="video">
-<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sXLicTuJzB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
-</section>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Wurzel von 2 ist 1.4142135623730951.
+Sie haben eine negative Zahl eingegeben, davon kann keine Wurzel berechnet werden.
+Sie haben eine negative Zahl eingegeben, davon kann keine Wurzel berechnet werden.
+Sie haben eine negative Zahl eingegeben, davon kann keine Wurzel berechnet werden.
+Sie haben eine negative Zahl eingegeben, davon kann keine Wurzel berechnet werden.
+Sie haben eine negative Zahl eingegeben, davon kann keine Wurzel berechnet werden.
+Die Wurzel von 4 ist 2.0.
+Die Wurzel von 5 ist 2.23606797749979.
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1015,20 +819,6 @@ Wurzeln berechnet wurden.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chapter07_sec01.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">7.1 Digitale Logik: und, oder, nicht</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="chapter07_sec03.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">7.3 Zufallszahlen</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

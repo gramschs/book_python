@@ -102,10 +102,10 @@ Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
-% Eingabe
+# Eingabe
 zahl = float(input('Geben Sie bitte eine Zahl ein: '))
 
-% Verarbeitung und Ausgabe
+# Verarbeitung und Ausgabe
 if zahl < 0:
     print('Die Zahl ist negativ.')
 
