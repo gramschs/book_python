@@ -114,7 +114,7 @@ else:
 ```
 ````
 
-## Programmverzweigungen mit vielen Zweigen: if – elseif – else
+## Programmverzweigungen mit vielen Zweigen: if – elif – else
 
 Eins, zwei, drei, viele ... häufig müssen mehr als zwei Fälle unterschieden
 werden. In einer Mini-Übung haben wir beispielsweise überprüft, ob eine Zahl
