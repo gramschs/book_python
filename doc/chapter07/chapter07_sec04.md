@@ -34,3 +34,34 @@ TODO
    Schritt 1 aufgerufen. Am Ende soll der Benutzer darüber informiert werden,
    wie viel Prozent der Aufgaben richtig gelöst wurden.
 ```
+
+Zahl erraten: Implementieren Sie ein einfaches Zahlenratespiel. Das Programm sollte eine Zufallszahl zwischen 1 und 100 auswählen und den Benutzer so lange nach einer Zahl fragen, bis er die ausgewählte Zahl erraten hat. Verwenden Sie dazu eine while-Schleife und die Funktion input() um die Eingaben des Benutzers zu erhalten.
+
+import random
+gesuchte_zahl = random.randint(1, 100)
+geratene_zahl = None
+
+while geratene_zahl != gesuchte_zahl:
+    geratene_zahl = int(input("Geben Sie eine Zahl zwischen 1 und 100 ein: "))
+    if geratene_zahl < gesuchte_zahl:
+        print("Zu niedrig!")
+    elif geratene_zahl > gesuchte_zahl:
+        print("Zu hoch!")
+print("Herzlichen Glückwunsch! Sie haben die Zahl erraten.")
+
+
+Beispiel 3: Begrenzung der Anzahl von Versuchen
+
+In diesem Beispiel begrenzen wir die Anzahl der Versuche, die ein Benutzer hat, um ein Passwort korrekt einzugeben. Wenn das Passwort nach 3 Versuchen nicht korrekt eingegeben wurde, bricht die Schleife ab.
+
+versuche = 0
+passwort = "python"
+
+while versuche < 3:
+    eingabe = input("Bitte geben Sie das Passwort ein: ")
+    if eingabe == passwort:
+        print("Zugriff gewährt.")
+        break
+    versuche += 1
+else:
+    print("Zu viele falsche Versuche. Zugriff verweigert.")
