@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter07_sec04.html" />
-    <link rel="prev" title="while" href="chapter07_sec02.html" />
+    <link rel="prev" title="7.2 Schleifen mit Bedingung (while)" href="chapter07_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -331,7 +331,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter07_sec02.html">
-     while
+     7.2 Schleifen mit Bedingung (while)
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -685,12 +685,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gleichverteilte-zufallszahlen">
+   Gleichverteilte Zufallszahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalverteilte-zufallszahlen">
+   Normalverteilte Zufallszahlen
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -702,6 +736,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gleichverteilte-zufallszahlen">
+   Gleichverteilte Zufallszahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalverteilte-zufallszahlen">
+   Normalverteilte Zufallszahlen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -711,11 +768,214 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="zufallszahlen">
 <h1>7.3 Zufallszahlen<a class="headerlink" href="#zufallszahlen" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<p>In diesem Kapitel werden wir uns mit der Erzeugung und Anwendung von
+Zufallszahlen in Python beschäftigen. Wir nutzen dazu das Modul <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>
+aus der Bibliothek NumPy.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie kennen den Unterscheid zwischen <strong>gleichverteilten</strong> und
+<strong>normalverteilten</strong> Zufallszahlen.</p></li>
+<li><p>Sie können gleichverteilte Integer und Floats erzeugen lassen.</p></li>
+<li><p>Sie können normalverteilte Floats zu einem vorgegebenen Mittelwert und einer
+vorgegebenen Standabweichung erzeugen lassen.</p></li>
+</ul>
 </div>
-<p>TODO</p>
+</section>
+<section id="gleichverteilte-zufallszahlen">
+<h2>Gleichverteilte Zufallszahlen<a class="headerlink" href="#gleichverteilte-zufallszahlen" title="Permalink to this headline">#</a></h2>
+<p>Eine gleichverteilte Zufallszahl ist eine Zufallszahl, bei der jedes mögliche
+Ergebnis die gleiche Wahrscheinlichkeit hat. Das ist ähnlich wie beim Würfeln:
+Jede der sechs Zahlen hat die gleiche Wahrscheinlichkeit aufzutauchen.</p>
+<p>In Python können wir mit der Funktion <code class="docutils literal notranslate"><span class="pre">.uniform()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>
+gleichverteilte Zufallszahlen erzeugen. Hier ist ein Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6276970432088868
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir können auch mehrere Zahlen gleichzeitig erzeugen und dabei den Bereich der
+Zahlen bestimmen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.35992262 17.14477295 17.36215204 18.1877172  13.2071022 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Damit werden fünf gleichverteilte Zufallszahlen zwischen 10 und 20 generiert.</p>
+<p>Neben den Funktionen für kontinuierliche Zufallszahlen stellt <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>
+auch eine Funktion bereit, um zufällige Integer zu erzeugen. Die Funktion
+<code class="docutils literal notranslate"><span class="pre">randint()</span></code> erzeugt zufällige ganze Zahlen innerhalb eines angegebenen Intervalls.</p>
+<p>Dabei benötigt die Funktion <code class="docutils literal notranslate"><span class="pre">randint()</span></code> zwei Parameter: den Start des Intervalls
+und das Ende des Intervalls. Dabei gehört der Start des Intervalls dazu, aber
+das Ende des Intervalls nicht. Optional kann ein dritter Parameter hinzugefügt
+werden, um anzugeben, wie viele Zahlen erzeugt werden sollen.</p>
+<p>Hier ist ein Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Code generiert eine zufällige ganze Zahl (Integer) zwischen 37 und 98. Die
+99 kann jedoch nicht zufällig gezogen werden, da das Ende des Intervalls nicht
+inkludiert ist.</p>
+<p>Und hier ist ein Beispiel für die Erzeugung mehrerer Zahlen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 4 1 1 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Code generiert fünf ganzzahlige Zufallszahlen zwischen 0 und 9 und speichert
+sie in der Liste <code class="docutils literal notranslate"><span class="pre">zufallszahlen</span></code>.</p>
+<p>Es ist wichtig zu beachten, dass der obere Grenzwert bei <code class="docutils literal notranslate"><span class="pre">randint()</span></code> exklusiv
+ist, d.h. er wird selbst nicht als möglicher Ausgang berücksichtigt. Wenn also
+z.B. Zahlen von 1 bis 10 benötigt werden, sollte der obere Grenzwert als 11
+angegeben werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie sechs Lottozahlen erzeugen, d.h. sechs Integer, die zwischen 1 und 49
+gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.</p>
+<p>Könnte damit die Ziehung der Lottozahlen simuliert werden?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Erzeugung der Lottozahlen</span>
+<span class="n">lottozahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lottozahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="normalverteilte-zufallszahlen">
+<h2>Normalverteilte Zufallszahlen<a class="headerlink" href="#normalverteilte-zufallszahlen" title="Permalink to this headline">#</a></h2>
+<p>Eine normalverteilte Zufallszahl folgt der sogenannten Normalverteilung oder
+Gaußschen Verteilung. Das ist eine Wahrscheinlichkeitsverteilung, die durch ihr
+Glockenkurven-Diagramm bekannt ist.</p>
+<p>Die Normalverteilung ist durch zwei Parameter definiert: Den Mittelwert (oder
+Erwartungswert) und die Standardabweichung. Der Mittelwert ist der Wert, um den
+die Werte im Durchschnitt zentriert sind. Die Standardabweichung ist ein Maß für
+die Streuung der Werte.</p>
+<p>In Python können wir mit der Funktion <code class="docutils literal notranslate"><span class="pre">numpy.random.normal()</span></code> normalverteilte
+Zufallszahlen erzeugen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.40214677652150516
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das erste Argument <code class="docutils literal notranslate"><span class="pre">0</span></code> steht für einen Mittelwert von 0. Das zweite Argument <code class="docutils literal notranslate"><span class="pre">1</span></code>
+bedeutet, dass die Normalverteiung eine Standardabweichung von 1 hat.</p>
+<p>Wir können auch mehrere Zahlen gleichzeitig erzeugen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.27415976 -0.03413184 -1.71812517  0.32054675 -2.25772783]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt wurden fünf normalverteilte Zufallszahlen erzeugt.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Bei einer Schulklasse wird die Körpergröße der Jugendlichen (Alter: 14 bis 18
+Jahre) gemessen. Der Mittelwert bei den Mädchen ist 166.3 cm (Standardabweichung
+6.39 cm) und bei den Jungen 176.8 cm (Standardabweichung 7.46 cm) (Quelle:
+<a class="reference external" href="https://de.wikipedia.org/wiki/Normalverteilung">Wikipedia </a>).</p>
+<p>Lassen Sie die Körpergrößen einer durchschnittlichen Schulklasse (= 13 Mädchen und 13 Jungen)erzeugen und ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Erzeugung der Körpergrößen</span>
+<span class="n">maedchen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">166.3</span><span class="p">,</span> <span class="mf">6.39</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="n">jungen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">176.8</span><span class="p">,</span> <span class="mf">7.46</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maedchen</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jungen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -749,7 +1009,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">while</p>
+            <p class="prev-next-title">7.2 Schleifen mit Bedingung (while)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter07_sec04.html" title="next page">

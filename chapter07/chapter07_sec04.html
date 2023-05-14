@@ -711,49 +711,124 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 7.1</p>
+<p>Schreiben Sie ein Programm, das einen Benutzer oder eine Benutzerin auffordert,
+das Passwort einzugeben. Drei Versuche sind möglich. Bei dreimaliger
+Falscheingabe soll das Programm abgebrochen werden.</p>
 </div>
-<p>TODO</p>
-<div class="admonition-ubung-7-1 admonition">
-<p class="admonition-title">Übung 7.1 ???</p>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">versuche</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">passwort</span> <span class="o">=</span> <span class="s1">&#39;F6vfGV+vT6#&gt;hZyu4c=z+?&lt;8&#39;</span>
+
+<span class="k">while</span> <span class="n">versuche</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">eingabe</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie das Passwort ein: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">eingabe</span> <span class="o">==</span> <span class="n">passwort</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Das richtige Passwort wurde eingegeben. Zugriff gewährt.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">versuche</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 7.2</p>
+<p>Schreiben Sie einen 1x1-Trainer. Gehen Sie dabei wie folgt vor:</p>
 <ol class="simple">
-<li><p>Schreiben Sie eine <em>Funktion</em>, mit der das kleine Einmaleins geübt werden
-kann. Die Funktion soll als Eingabe die Anzahl der gewünschten Aufgaben haben
-und als Ausgabe die Anzahl der richtigen Antworten. Innerhalb der Funktion
-sollen dem Benutzer zufällige Einmaleins-Aufgaben gestellt werden. Es soll
-gleich eine Rückmeldung gegeben werden, ob das Ergebnis richtig oder falsch
-ist und ggf. was das richtige Ergebnis gewesen wäre.</p></li>
-<li><p>Schreiben Sie anschließend ein <em>Programm</em>, das den Benutzer fragt, wie viele
-1x1-Aufgaben trainiert werden sollen. Anschließend wird die Funktion aus
-Schritt 1 aufgerufen. Am Ende soll der Benutzer darüber informiert werden,
-wie viel Prozent der Aufgaben richtig gelöst wurden.</p></li>
+<li><p>Schreiben Sie eine <em>Funktion</em>, die eine 1x1-Aufgabe stellt (zum Beispiel:
+Wieviel ist 3 x 5?). Die Funktion soll überprüfen, ob die eingegebene Antwort
+korrekt ist. Bei einer falschen Antowrt soll das richtige Ergebnis ausgegeben
+werden.</p></li>
+<li><p>Im Hauptprogramm soll der Benuzter gefragt werden, wie viele 1x1-Aufgaben
+trainiert werden sollen. Danach sollen entsprechend viele aufgaben gestellt
+werden. Am Ende soll das Hauptprogramm dem Benuzter mitteilen, wieviel
+Prozent der Aufgaben korrekt gelöst wurden.</p></li>
 </ol>
 </div>
-<p>Zahl erraten: Implementieren Sie ein einfaches Zahlenratespiel. Das Programm sollte eine Zufallszahl zwischen 1 und 100 auswählen und den Benutzer so lange nach einer Zahl fragen, bis er die ausgewählte Zahl erraten hat. Verwenden Sie dazu eine while-Schleife und die Funktion input() um die Eingaben des Benutzers zu erhalten.</p>
-<p>import random
-gesuchte_zahl = random.randint(1, 100)
-geratene_zahl = None</p>
-<p>while geratene_zahl != gesuchte_zahl:
-geratene_zahl = int(input(“Geben Sie eine Zahl zwischen 1 und 100 ein: “))
-if geratene_zahl &lt; gesuchte_zahl:
-print(“Zu niedrig!”)
-elif geratene_zahl &gt; gesuchte_zahl:
-print(“Zu hoch!”)
-print(“Herzlichen Glückwunsch! Sie haben die Zahl erraten.”)</p>
-<p>Beispiel 3: Begrenzung der Anzahl von Versuchen</p>
-<p>In diesem Beispiel begrenzen wir die Anzahl der Versuche, die ein Benutzer hat, um ein Passwort korrekt einzugeben. Wenn das Passwort nach 3 Versuchen nicht korrekt eingegeben wurde, bricht die Schleife ab.</p>
-<p>versuche = 0
-passwort = “python”</p>
-<p>while versuche &lt; 3:
-eingabe = input(“Bitte geben Sie das Passwort ein: “)
-if eingabe == passwort:
-print(“Zugriff gewährt.”)
-break
-versuche += 1
-else:
-print(“Zu viele falsche Versuche. Zugriff verweigert.”)</p>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">stelle_aufgabe</span><span class="p">():</span>
+    <span class="n">zahl01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+    <span class="n">zahl02</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+    <span class="n">antwort</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wieviel ist </span><span class="si">{</span><span class="n">zahl01</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="n">zahl02</span><span class="si">}</span><span class="s1">? &#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">antwort</span> <span class="o">==</span> <span class="n">zahl01</span> <span class="o">*</span> <span class="n">zahl02</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Leider falsch, das richtige Ergebnis wäre </span><span class="si">{</span><span class="n">zahl01</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zahl02</span><span class="si">}</span><span class="s1"> gewesen.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    
+<span class="n">anzahl_aufgaben</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Aufgaben sollen gestellt werden?&#39;</span><span class="p">))</span>
+<span class="n">anzahl_richtige_antworten</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_aufgaben</span><span class="p">):</span>
+    <span class="n">ist_richtig</span> <span class="o">=</span> <span class="n">stelle_aufgabe</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ist_richtig</span><span class="p">:</span>
+        <span class="n">anzahl_richtige_antworten</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">prozent_richtige_antworten</span> <span class="o">=</span> <span class="n">anzahl_richtige_antworten</span> <span class="o">/</span> <span class="n">anzahl_aufgaben</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sie haben </span><span class="si">{</span><span class="n">prozent_richtige_antworten</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> % der Aufgaben richtig gelöst.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 7.3</p>
+<p>Schreiben Sie das Spiel “Zahlenraten”. Der Computer denkt sich eine Zahl
+zwischen 1 und 100 aus. Dann fragt er Sie solange, welche Zahl er sich
+ausgedacht hat, bis Sie die korrekte Zahl geraten haben. Außerdem gibt er Ihnen
+Hinweise, z.B. “Meine gedachte Zahl ist kleiner.” oder “Meine gedachte Zahl ist
+größer.” Sobald Sie die Zahl geraten haben, gibt der Computer aus, wie viele
+Versuche Sie gebraucht haben und beendet das Spiel.</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+
+<span class="n">versuche</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich habe mir eine Zahl zwischen 1 und 100 gedacht. Raten Sie, welche es ist!&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">versuche</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">antwort</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Raten Sie meine Zahl: &#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">antwort</span> <span class="o">&lt;</span> <span class="n">zufallszahl</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Meine gedachte Zahl ist größer.&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">antwort</span> <span class="o">==</span> <span class="n">zufallszahl</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hurra, Sie haben meine Zahl </span><span class="si">{</span><span class="n">zufallszahl</span><span class="si">}</span><span class="s1"> geraten und dazu </span><span class="si">{</span><span class="n">versuche</span><span class="si">}</span><span class="s1"> Versuche gebraucht.&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Meine gedachte Zahl ist kleiner.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 7.4</p>
+<p>Programmieren Sie einen Random Walk. Ein Random Walk ist eine zufällige
+Irrfahrt. Der Turtle-Roboter soll zufällig eine Richtung bestimmen (0, 90, 180
+oder 270 Grad) und 20 Schritte in diese Richtung gehen. Danach wird eine neue
+Richtung zufällig bestimmt und der Roboter bewegt sich erneut 20 Schritte.</p>
+<p>Lassen Sie abfragen, wie viele Male diese Prozedur wiederholt werden soll.
+Testen Sie beispielsweise 100 mal. Verlässt der Roboter dabei das Turtle-Feld?</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
+
+<span class="n">robo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+
+<span class="n">anzahl_wiederholungen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie oft soll der Roboter 20 Schritte laufen?&#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_wiederholungen</span><span class="p">):</span>
+    <span class="n">zufallswinkel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">zufallswinkel</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
