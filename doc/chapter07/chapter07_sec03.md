@@ -99,6 +99,8 @@ print(zufallszahl)
 :class: miniexercise
 Lassen Sie sechs Lottozahlen erzeugen, d.h. sechs Integer, die zwischen 1 und 49
 gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.
+
+Könnte damit die Ziehung der Lottozahlen simuliert werden?
 ```
 ```{code-cell} ipython3
 # Hier Ihr Code
@@ -107,11 +109,14 @@ gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.
 :class: minisolution, toggle
 ```python
 import numpy as np
+
+# Erzeugung der Lottozahlen
 lottozahlen = np.random.randint(1, 50, 6)
+
+# Ausgabe
 print(lottozahlen)
 ```
 ````
-
 
 ## Normalverteilte Zufallszahlen
 
