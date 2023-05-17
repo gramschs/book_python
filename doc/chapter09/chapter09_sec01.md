@@ -12,206 +12,529 @@ kernelspec:
   name: python3
 ---
 
-# 9.1 Series und DataFrame 
+# 9.1 Das Modul NumPy
+
+Im letzten Kapitel haben wir gelernt, Daten in Form von Tabellen als
+Pandas-Objekte zu verwalten. Dabei arbeiten die Module Pandas, Scikit-Learn und
+auch das Visualisierungsmodul Matplotlib, das wir in diesem Kapitel kennenlernen
+werden, alle mit NumPy-Arrays. NumPy ist ein Akronym für **numerisches Python**.
+
+Die Internetseite von NumPy
+
+> https://NumPy.org
+
+behauptet sogar von ihrem eigenen Paket, dass NumPy das (!!!) fundamentale Modul
+für alle wissenschaftlichen Programme in Python ist — stimmt wahrscheinlich! Die
+Bibliothek ist im Kern in der Programmiersprache C geschrieben und bietet vor
+allem sehr effiziente Datenstrukturen für Vektoren, Matrizen und
+mehrdimensionale Arrays an.  
+ 
+In  diesem Abschnitt werden wir uns die grundlegenden Eigenschaften des
+**NumPy-Array** erarbeiten, um für Matplotlib und Scikit-Learn die Basis zu
+schaffen.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: hint
-* Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
-* Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
-* Sie kennen das **CSV-Dateiformat**.
-* Sie können eine csv-Datei mit **read_csv()** einlesen.
-* Sie konnen mit **.info()** sich einen Überblick über die importierten Daten verschaffen.
+* Sie können **NumPy** mit seiner typischen Abkürzung **np** importieren.
+* Sie können mit **np.array()** ein NumPy-Array aus einer Liste erzeugen.
+* Sie können NumPy-Arrays, die nach einem Muster aufgebaut sind, erzeugen:
+    * Array mit Einsen: **np.ones()**
+    * Array mit Nullen: **np.zeros()**
+    * Array mit Konstante: **np.full()**
+    * Array mit vorgegebener Anzahl von Punkten in einem Intervall: **np.linspace()**
+    * Array mit vorgebener Schrittweite in einem Intervall: **np.arange()**
+* Sie können Basis-Attribute von NumPy-Arrays bestimmen wie beispielsweise
+    * Anzahl der Dimensionen: **.ndim**
+    * Größe der jeweiligen Dimension: **.shape**
+    * Gesamtgröße des Arrays: **.size**
+* Sie können NumPy-Funktionen auf NumPy-Arrays anwenden.
 ```
 
-## Import von pandas
+## NumPy ist schneller durch C
 
-Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
-Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
-und DataFrame. Dabei wird **Series** für Datenreihen genommen, also sozusagen
-die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
-**DataFrame** repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays. 
+Alle Daten lassen sich letztendlich als eine Folge von Zahlen schreiben.
+Beispielsweise kann ein Foto durch seine Pixel beschrieben werden
+zusammengesetzt aus den Werten RGB (rot - grün - blau). Python bietet dafür
+schon einen Datentyp, die Liste, in der Zahlen (Integer oder Float) gespeichert
+werden können. Da Python eine interpretierte Programmiersprache ist und da in
+der Liste auch andere Datentypen wie zum Beispiel Strings vorkommen dürfen, sind
+Listen für große Datenmengen nicht geeignet. Stattdessen stellt das Modul NumPy
+einen effizienten Datentyp zur Verfügung, das sogenannte **NumPy-Array**.  
 
-Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
-ist üblich, dabei dem Modul die Abkürzung **pd** zu geben, damit wir nicht immer
-pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.
+Dazu kommen noch Funktionen, die wichtig für Arrays sind wir Vektoroperationen.
+Tatsächlich sind die meisten NumPy-Operationen nicht in Python programmiert,
+sondern in C. Damit sind NumPy-Funktionen sehr effizient und das tolle daran
+ist, dass wir uns keine Gedanken über hardwarenahe Programmierung mit C oder C++
+machen müssen :-)
 
-```{code-cell} ipython3
-import pandas as pd # kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen
+Schauen wir uns für das Bestimmen des Maximums einer Liste von zufällig
+erzeugten Zahlen zwischen 0 und 1 an. Zunächst erzeugen wir die Liste der 100
+Zahlen. Dazu importieren wir NumPy mit seiner typischen Abkürzung `np`. im
+Untermodul `np.random`gibt es eine Funktion namens `random_sample`, die
+Zufallszahlen erzeugt.
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+import numpy as np
+
+# erzeuge Liste
+M = np.random.random_sample(100)
+
+print(M)
 ```
 
-## Series aus Liste erzeugen
+Als nächstes berechnen wir das Maximum dieser Zahlen mit der im Python-Kern
+eingebauten Standardfunktion `max`, dann mit `np.max`:
 
-Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
-Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode `pd.Series(liste)` eine neues Series-Objekt erzeugt, dass die
-Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
-Liste, also `[25, 22, 43, 37]` und initialisieren über `pd.Series()` die
-Variable `alter`:
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+max_standard = max(M)
+max_numpy = np.max(M)
 
-```{code-cell} ipython3
-alter = pd.Series([25, 22, 43, 37])
-print(alter)
+print('Standard max = ', max_standard)
+print('NumPy max = ', max_numpy)
 ```
 
-Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
-bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
-Numpy-Array nehmen? Der wichtigste Unterschied ist der **Index**.
+Aber wie lange haben eigentlich die Berechnungen gedauert? Bei so kleinen Listen
+lohnt es nicht, die Berechnung mit der Stoppuhr zu ermitteln, die typischen
+Rechnenzeiten sind zu kurz. Aber JupyterLab bietet ein eingebautes Kommando,
+nämlich `%timeit`. Der Vorteil dieses Kommandos ist, dass der Python-Interpreter
+bei sehr kurzen Rechenzeiten einfach den Code mehrmals durchläuft und
+Mittelwerte bildet.
 
-Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
-ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, ...
-angelegt wird. Wenn bei einer Liste `l = [25, 22, 43, 37]` auf das zweite
-Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
-Python zählt ab 0) und schreiben
-
-```{code-cell} ipython3
-l = [25, 22, 43, 37]
-print("2. Element der Liste: ", l[1])
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+%timeit max_standard = max(M)
+%timeit max_numpy = np.max(M)
 ```
 
-Die Datenstruktur Series ermöglich es aber, einen *expliziten Index* zu setzen.
-Über den optionalen Parameter `index=` speichern wir als Zusatzinformation noch
-ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
-Personen Alice, Bob, Charlie und Dora.
+Sie sehen, die NumPy-Variante ist erheblich schneller als die Standard-Variante.
 
-```{code-cell} ipython3
-alter = pd.Series([25, 22, 43, 30], index=["Alice", "Bob", "Charlie", "Dora"])
-print(alter)
+
+## Erzeugung von NumPy-Arrays
+
+Im Gegensatz zu Python-Listen enthalten NumPy-Arrays nur Elemente des gleichen
+Datentyps. Wenn eine Liste nur aus gleichen Datentypen besteht, können wir
+direkt aus der Liste ein NumPy-Array erzeugen. Dazu verwenden wir `array()` aus
+dem Numpy-Modul.
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+liste = [1, 2, 3, 4, 5]
+a = np.array(liste)
+
+print(a)
+print( type(a) )
 ```
 
-Jetzt ist auch klar, warum beim ersten Mal, als wir `print(alter)` ausgeführt
-haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
-Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
-Informationen ausgegeben wird, ist das Attribut `dtype`. Darin gespeichert ist
-der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
-dem Punktoperator zugegegriffen werden.
+Sehr häufig kommen aber auch zwei-  oder gar dreidimensionale Arrays vor. In der
+Mathematik würde man ein eindimensionales Array als Vektor bezeichnen, ein
+zweidimensionales Array als Matrix (= Excel-Tabelle) und ein dreidimensionales
+Array als Tensor. Die Position eines Elementes wird dabei durch ganze Zahlen
+gekennzeichnet (entspricht bei 1d-Arrays ja den Listen). Für zweidimensionale
+NumPy-Arrays brauchen wir daher zwei Indizes, für dreidimensionale Arrays drei.
+Die folgende Grafik zeigt das Nummerierungsschema:
 
-```{code-cell} ipython3
-print(alter.dtype)
+```{figure} pics/fig_numpy_array.png
+---
+width: 600px
+name: pics/fig_numpy_array
+---
+Nummerierungsschema bei NumPy-Arrays
+
+([Quelle:](https://predictivehacks.com/tips-about-NumPy-arrays/))
 ```
 
-Offensichtlich sind die gespeicherten Werte Integer.
+Im Folgenden fokussieren wir uns zunächst auf 1D- und 2D-Arrays und betrachten
+uns verschiedene Erzeugungsmethoden. Die entsprechende (englischsprachige)
+Dokumentation finden Sie hier:
+
+> https://numpy.org/doc/stable/reference/routines.array-creation.html
+ 
+Wir starten mit Arrays, die mit 0 oder 1 oder einer konstanten Zahl gefüllt
+sind. Dazu verwenden wir die NumPy-Funktionen
+* `np.zeros(dimension)`
+* `np.ones(dimension)`
+* `np.full(dimension, zahl)`
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 1d-Array gefüllt mit Nullen
+x = np.zeros(5)
+print(x)
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 2d-Array gefüllt mit Nullen
+x = np.zeros( (5,7) )
+print(x)
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 1d-Array gefüllt mit Einsen
+x = np.ones(7)
+print(x)
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 2d-Array gefüllt mit Nullen
+x = np.ones( (3,4) )
+print(x)
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 2d-Array gefüllt mit einem konstanten Wert
+x = np.full( (3,4), -17.7)
+print(x)
+```
 
 ```{admonition} Mini-Übung
-:class: miniexercise 
-Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
-Vorlesungs/Übungs-Stunden an diesem Wochentag.
+:class: miniexercise
+Erzeugen Sie folgende Arrays:
+* 1d-Array der Dimension 7 gefüllt mit 0
+* 1d-Array der Dimension 7 gefüllt mit -1
+* 2d-Array der Dimension (7,5) gefüllt mit 1
+* 2d-Array der Dimension (2,4) gefüllt mit $\pi$
+* 1d-Array der Dimension 8 gefüllt mit $\sqrt{5}$
 ```
 
-```{code-cell} ipython3
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
 # Hier Ihr Code:
 ```
 
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
-stundenplan = pd.Series([4, 0, 4, 6, 8], index=["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"])
-print(stundenplan)
+x1 = np.zeros(7)
+x2 = np.full(7, -1)
+X3 = np.ones( (7,5) )
+X4 = np.full( (2,4), np.pi)
+x5 = np.full(8, np.sqrt(5))
 ```
 ````
 
-+++
+Die folgenden 1d-Arrays werden nach einem gleichmäßigen Muster gefüllt. Dazu
+benutzen wir die NumPy-Funktionen
 
-## DataFrame für Tabellen
+* `np.linspace(start, stopp, anzahl)`
+* `np.arange(start, stopp, schrittweite)`
 
-Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
-einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
-sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
-auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
-zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
-darstellt und die Spalten die Eigenschaften speichern.
-
-Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
-Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
-kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
-gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei. 
-
-## Import von Tabellen mit read_csv()
-
-Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
-Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung Tabellen, die in einem
-offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind.
-
-Das **Dateiformat CSV** speichert Daten zeilenweise ab. Dabei steht CSV für
-"comma separated value". Die Trennung der Spalten erfolgt durch ein
-Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
-gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nacchkommastellen verwenden.
-
-Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
-`read_csv` an (siehe
-[Dokumentation/read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)).
-Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
-ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
-übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.
-
-Am besten sehen wir uns die Funktionsweise von `read_csv` an einem Beispiel an.
-Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
-Datei
-[`bundesliga_top7_offensive.csv`](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)
-herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
-JupyterNotebook liegt. Die csv-Datei stammt von
-[Kaggle](https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv).
-Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
-der Bundesligasaison 2020/21 enthalten. 
-
-Führen Sie dann anschließend die folgende Code-Zelle aus.
-
-```{code-cell} ipython3
-import pandas as pd
-data = pd.read_csv('bundesliga_top7_offensive.csv')
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 1d-Array, das gleichmäßig zwischen start und stopp mit num Werten gefüllt wird
+# im Beispiel: start = 1, stopp = 10, num = 25 
+x = np.linspace(1, 10, 25)
+print(x)
 ```
 
-Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
-trotzdem nicht. Dazu verwenden wir die Methode `.head()`.
-
-```{code-cell} ipython3
-data.head()
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 1d-Array, das bei start beginnt, step dazu addiert und bis kurz vor stopp geht
+# im Beispiel: start = 1, stopp = 20, step = 2
+x = np.arange(1, 20, 2)
+print(x)
 ```
 
-Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die Methode `.head(10)`mit dem Argument 10.
+Zuletzt betrachten wir noch Erzeugungsfunktionen, die seltener vorkommen, aber
+dennoch nützlich sein können: 
 
-```{code-cell} ipython3
-data.head(10)
+* `np.random.random_sample(dimension)`: gleichmäßig verteilt zwischen 0 und 1
+* `np.random.normal(m, s, dimension)`: normalverteilt mit Mittelwert m und
+  Standardabweichung s
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 2d-Array mit gleichmäßig zwischen 0 und 1 verteilten Zufallszahlen
+x = np.random.random_sample( (2,3) )
+print(x)
 ```
 
-Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
-usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
-welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
-erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
-gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
-den Befehl mit `index_col=`. Die Namen stehen in der 1. Spalte, was in
-Python-Zählweise einer 0 entspricht.
-
-```{code-cell} ipython3
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-data.head(10)
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 2d-Array mit normalverteilten Zufallszahlen 
+x = np.random.normal(0, 1, (3,4) )
+print(x)
 ```
 
-## Übersicht verschaffen mit info 
-
-Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
-Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
-noch kommen, können wir mit der `.head()`-Methode nicht erfassen. Dafür stellt
-Pandas die Methode `.info()` zur Verfügung. Probieren wir es einfach aus.
-
-```{code-cell} ipython3
-data.info()
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# 2d-Array als Einheitsmatrix der Größe m x m, hier m = 5
+x = np.eye(5)
+print(x)
 ```
 
-Mit `.info()` erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
-die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie `Name`
-selbsterklärend, aber was `xG` bedeutet, erschließt sich nicht von selbst. Dazu
-brauchen wir mehr Informationen von den Autor:innen der Daten.
+```{admonition} Mini-Übung
+:class: miniexercise
+Erzeugen Sie folgende Arrays:
 
-Weiterhin entnehmen wir der Ausgabe von `.info()`, dass in jeder Spalte 177
-Einträge sind, die 'non-null' sind. Damit ist gemeint, dass diese Zellen beim
-Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
-angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
-Datentyp 'object' angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
-und die mittlere erwartete Anzahl von Toren pro Spiel 'xG' (= expected number of
-goals from the player in a match) wird als Float angegeben.
+* 2d-Array mit der Dimension (3,4) und Zufallszahlen gleichmäßig zwischen 0 und
+1 verteilt 
+* 1d-Array mit der Dimension 17 und Zufallszahlen standardnormalverteilt (d.h.
+welcher Mittelwert und welche Standardabweichung?) 
+* 2d-Array mit der Dimension (1,5) und normalverteilten Zufallszahlen,
+Mittelwert 37.5, Standardabweichung 0.8 
+* 1d-Array mit allen geraden Zahlen von 100 bis 200 (inklusive) 
+* 1d-Array mit 100 Punkten im Intervall [-1,1] 
+* 1d-Array mit 0, 0.1, 0.2, 0.3, ..., 1.5
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# Hier Ihr Code:
+```
+
+````{admonition} Lösung
+:class: minisolution, toggle
+```python
+X1 = np.random.random_sample((3,4))
+x2 = np.random.normal(0, 1, 17)
+X3 = np.random.normal( 37.5, 0.8, (1,5))
+x4 = np.arange(100, 201, 2)
+x5 = np.linspace(-1, 1, 100)
+x6 = np.arange(0, 1.6, 0.1)
+```
+````
+
+
+## Attribute von NumPy-Arrays
+
+Damit wir besser verstehen, welche Attribute die NumPy-Arrays haben können,
+erzeugen wir uns zufällig drei NumPy-Arrays. Damit aber nicht bei jeder neuen
+Ausführung der Code-Zelle neue Zufallszahlen gezogen werden, fixieren wir den
+Seed des Zufallszahlengenerators (vereinfacht gesagt kommen jetzt immer die
+gleichen Zufallszahlen) und benutzen die Erzeugungsmethode
+`np.random.randint(grenze, size=dimension)`:
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+import numpy as np
+       
+np.random.seed(0)
+
+x = np.random.randint(10, size=7)
+y = np.random.randint(10, size=(2, 3))
+
+print('x = ')
+print(x)
+
+print('y = ')
+print(y)
+```
+
+Bei den Listen haben wir eine Funktion kennengelernt, mit der die Anzahl der
+Elemente in der Liste bestimmt werden kann: `len()`. Listen sind eindimensional,
+aber NumPy-Arrays können mehrdimensional sein. Daher gibt es hier auch mehr
+Eigenschaften für die Beschreibung:
+
+* Anzahl der Dimensionen: `.ndim`
+* Größe der jeweiligen Dimension: `.shape`
+* Gesamtgröße des Arrays: `.size`
+
+Die Größe `.shape` haben wir ja in der obigen Abbildung schon bereits
+kennengelernt.
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+print('x = ')
+print(x)
+
+print( x.ndim )
+print( x.shape )
+print( x.size )
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+print('y = ')
+print(y)
+
+print( y.ndim )
+print( y.shape )
+print( y.size )
+```
+
+## Zugriff einzelner Elemente eines Arrays
+
+Der Zugriff bei eindimensionalen Arrays erfolgt genau wie bei Listen über den
+**Zugriffsoperator** `[]`. Auch hier wird ab 0 beginnend gezählt.
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+x = np.random.randint(10, size=7)
+print(x)
+
+drittes_element = x[2]
+print( drittes_element )
+```
+
+Interessant wird es zu sehen, wie auf mehrdimensionale Arrays zugegriffen wird.
+Zur Erinnerung, zweidimensionale Arrays haben zwei Indizes (axis 0 und axis 1),
+dreidimensionale Arrays haben drei Indizes (axis 0, axis 1 und axis 2).
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+print('y = ')
+print(y)
+
+element = y[0,2]
+print(element)
+```
+
+So kann man übrigens auch die Werte einzelner Elemente des Arrays ändern:
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+print('vorher y = ')
+print(y)
+
+y[1,1] = 777
+print('nachher y = ', y)
+```
+
+## Funktionen auf NumPy-Arrays anwenden
+
+NumPy-Arrays ermöglichen die Verarbeitung mit den typischen mathematischen
+Funktionen und den üblichen Statistik-Größen. Schauen wir uns einfach ein paar
+Beispiele an:
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# erzeuge 11 x-Werte im Intervall [-2*pi, 2*pi]
+x = np.linspace( -2*np.pi, 2*np.pi, 11)
+print(x)
+
+# Sinus-Funktion
+y1 = np.sin(x)
+print(y1)
+
+# Kosinus-Funktion
+y2 = np.cos(x)
+print(y2)
+
+# Exponentialfunktion
+y3 = np.exp(x)
+print(y3)
+
+# Potenzfunktion, z.B. y = x hoch 5
+y4 = np.power(x, 5)
+print(y4)
+```
+
+```{code-cell}
+---
+vscode:
+  languageId: python
+---
+# erzeuge 3x4-Matrix mit Zufallszahlen
+X = np.random.random_sample((3,4))
+print(X)
+
+# Summe über alle Elemente
+s1 = np.sum(X)
+print('s1', s1)
+
+# Summe in Richtung Achse 0
+s2 = np.sum(X, axis=0)
+print('s2', s2)
+
+# Summe in Richtung Achse 1
+s3 = np.sum(X, axis=1)
+print('s3', s3)
+
+# Maximum über alle Elemente
+max1 = np.max(X)
+print('max1', max1)
+
+# Maximum in Richtung Achse 0
+max2 = np.sum(X, axis=0)
+print('max2', max2)
+
+# Maximum in Richtung Achse 1
+max3 = np.sum(X, axis=1)
+print('max3', max3)
+```
+
+## Zusammenfassung 
+
+In diesem Abschnitt haben wir das NumPy-Array kennengelernt, eine sehr
+effiziente Datenstruktur. Die Erzeugungsmethoden nach einem Muster werden wir
+vor allem für die Visualisierung von Funktionen brauchen. Das Bestimmen der
+Basis-Attribute wird wichtig werden, wenn wir NumPy-Arrays aus
+Pandas-DataFrame-Objekten extrahieren, um damit maschinelle Lernalgorithmen zu
+füttern.

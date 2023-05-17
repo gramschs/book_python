@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Simulink
+# Simulink Einführung
 
 ## Einführung und Lernziele
 

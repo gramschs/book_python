@@ -48,14 +48,14 @@ parts:
     - file: chapter07/chapter07_sec02.md
     - file: chapter07/chapter07_sec03.md
     - file: chapter07/chapter07_sec04.md
+- caption: Anwendungen 
+  chapters:
   - file: chapter08/chapter08_sec00.md
     sections:
     - file: chapter08/chapter08_sec01.md
     - file: chapter08/chapter08_sec02.md
     - file: chapter08/chapter08_sec03.md
     - file: chapter08/chapter08_sec04.md
-- caption: Anwendungen 
-  chapters:
   - file: chapter09/chapter09_sec00.md
     sections:
     - file: chapter09/chapter09_sec01.md
@@ -68,6 +68,8 @@ parts:
     - file: chapter10/chapter10_sec02.md
     - file: chapter10/chapter10_sec03.md 
     - file: chapter10/chapter10_sec04.md 
+- caption: Wissenschaftliche Software
+  chapters:
   - file: chapter11/chapter11_sec00.md
     sections:
     - file: chapter11/chapter11_sec01.md
