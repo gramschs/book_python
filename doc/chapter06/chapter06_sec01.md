@@ -123,7 +123,7 @@ for i in range(7):
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Schreiben Sie ein Turtle-Progamm, das ein Rechteck zeichnet.
+Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Testen Sie Ihre Funktion auch.
 ```
 ````{admonition} Lösung
 :class: minisolution, toggle
