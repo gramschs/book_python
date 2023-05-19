@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8.1 Debugging &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.1 Series und DataFrame &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.2 GUI" href="chapter08_sec02.html" />
-    <link rel="prev" title="8. Programmentwicklung und Objektorientierung" href="chapter08_sec00.html" />
+    <link rel="next" title="8.2 Arbeiten mit Tabellendaten" href="chapter08_sec02.html" />
+    <link rel="prev" title="8. Pandas anstatt Excel" href="chapter08_sec00.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
   Grundlagen Programmierung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter01/chapter01_sec00.html">
    1. Getting Started
@@ -346,9 +346,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter08_sec00.html">
-   8. Programmentwicklung und Objektorientierung
+   8. Pandas anstatt Excel
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -358,17 +365,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     8.1 Debugging
+     8.1 Series und DataFrame
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter08_sec02.html">
-     8.2 GUI
+     8.2 Arbeiten mit Tabellendaten
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter08_sec03.html">
-     8.3 Objektorientierung
+     8.3 Statistik mit Pandas
     </a>
    </li>
    <li class="toctree-l2">
@@ -378,16 +385,9 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Anwendungen
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter09/chapter09_sec00.html">
-   9. Pandas anstatt Excel
+   9. Visualisierung mit Matplotlib
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -397,17 +397,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter09/chapter09_sec01.html">
-     9.1 Series und DataFrame
+     9.1 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter09/chapter09_sec02.html">
-     9.2 Arbeiten mit Tabellendaten
+     9.2 Linien-, Balken- und Streudiagramme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter09/chapter09_sec03.html">
-     9.3 Statistik mit Pandas
+     9.3 Visualisierung von DataFrames
     </a>
    </li>
    <li class="toctree-l2">
@@ -419,7 +419,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter10/chapter10_sec00.html">
-   10. Visualisierung
+   10. Messwerte und Regression
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -429,17 +429,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec01.html">
-     10.1 Das Modul NumPy
+     10.1 Theorie Regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec02.html">
-     10.2 Linien-, Balken- und Streudiagramme
+     10.2 Lineare Regression mit polyfit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec03.html">
-     10.3 Visualisierung von DataFrames
+     10.3 Polynomiale Regression
     </a>
    </li>
    <li class="toctree-l2">
@@ -449,9 +449,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wissenschaftliche Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter11/chapter11_sec00.html">
-   11. Messwerte und Regression
+   11. MATLAB
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -461,17 +468,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec01.html">
-     11.1 Theorie Regression
+     11.1 Einführung MATLAB
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec02.html">
-     11.2 Lineare Regression mit polyfit
+     11.2 Numerisches Rechnen mit MATLAB
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec03.html">
-     11.3 Polynomiale Regression
+     11.3 Symbolisches Rechnen mit MATLAB
     </a>
    </li>
    <li class="toctree-l2">
@@ -483,7 +490,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter12/chapter12_sec00.html">
-   12. MATLAB und Simulink
+   12. Simulink
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -493,7 +500,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter12/chapter12_sec01.html">
-     Simulink
+     Simulink Einführung
     </a>
    </li>
   </ul>
@@ -708,43 +715,45 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fehlersuche-debugging">
-   10.1 Fehlersuche (Debugging)
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe">
-   Aufgabe
+  <a class="reference internal nav-link" href="#import-von-pandas">
+   Import von pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Aufgabe
+  <a class="reference internal nav-link" href="#series-aus-liste-erzeugen">
+   Series aus Liste erzeugen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Aufgabe
+  <a class="reference internal nav-link" href="#dataframe-fur-tabellen">
+   DataFrame für Tabellen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integrierte-entwicklungsumgebungen">
-   Integrierte Entwicklungsumgebungen
+  <a class="reference internal nav-link" href="#import-von-tabellen">
+   Import von Tabellen
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">
+     Import von Tabellen im CSV-Format
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">
+     Import von Tabellen im xlsx-Format
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testen-und-kommentare">
-   Testen und Kommentare
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Aufgabe
+  <a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">
+   Übersicht verschaffen mit info
   </a>
  </li>
 </ul>
@@ -756,7 +765,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>8.1 Debugging</h1>
+                <h1>8.1 Series und DataFrame</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -767,43 +776,45 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fehlersuche-debugging">
-   10.1 Fehlersuche (Debugging)
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe">
-   Aufgabe
+  <a class="reference internal nav-link" href="#import-von-pandas">
+   Import von pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Aufgabe
+  <a class="reference internal nav-link" href="#series-aus-liste-erzeugen">
+   Series aus Liste erzeugen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Aufgabe
+  <a class="reference internal nav-link" href="#dataframe-fur-tabellen">
+   DataFrame für Tabellen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integrierte-entwicklungsumgebungen">
-   Integrierte Entwicklungsumgebungen
+  <a class="reference internal nav-link" href="#import-von-tabellen">
+   Import von Tabellen
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">
+     Import von Tabellen im CSV-Format
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">
+     Import von Tabellen im xlsx-Format
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testen-und-kommentare">
-   Testen und Kommentare
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Aufgabe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Aufgabe
+  <a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">
+   Übersicht verschaffen mit info
   </a>
  </li>
 </ul>
@@ -816,352 +827,1064 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="debugging">
-<h1>8.1 Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
-<p>Diese Woche beschäftigen wir uns vor allem mit der Fehlersuche. Selbst erfahrene
-Softwareentwickler-Teams machen Fehler bei der Programmierung. Die Suche nach
-Fehlern im Programm ist schwierig, kann aber durch technische Hilfsmittel
-unterstützt werden, allen voran durch den Debugger (= eine Art
-Fehlersuch-Werkzeug). Damit Sie den Debugger nutzen können, benötigen Sie eine
-IDE (= integrated development environment) mit Debugger, also eine integrierte
-Entwicklungsumgebung mit Fehlersuch-Werkzeugen. Zum Schluss beschäftigen wir uns
-noch mit Testen und Dokumentation.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="series-und-dataframe">
+<h1>8.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Permalink to this headline">#</a></h1>
+<p>Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
+effizient zu speichern. Dazu benutzen Data Scientists die Datentypen <code class="docutils literal notranslate"><span class="pre">Series</span></code>
+oder <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
+mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
+verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code> kennen.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Kapitel 10.1 Fehlersuche (Debugging)</p></li>
-<li><p>Kapitel 10.2 IDEs (integrierte Entwicklungsumgebungen)</p></li>
-<li><p>Kapitel 10.3 Testen und Kommentare</p></li>
+<li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung pd importieren.</p></li>
+<li><p>Sie können aus einer Liste das Datenobjekt <strong>Series</strong> erzeugen.</p></li>
+<li><p>Sie kennen das <strong>CSV-Dateiformat</strong>.</p></li>
+<li><p>Sie können eine csv-Datei mit <strong>read_csv()</strong> einlesen.</p></li>
+<li><p>Sie konnen mit <strong>.info()</strong> sich einen Überblick über die importierten Daten verschaffen.</p></li>
 </ul>
-<section id="fehlersuche-debugging">
-<h2>10.1 Fehlersuche (Debugging)<a class="headerlink" href="#fehlersuche-debugging" title="Permalink to this headline">#</a></h2>
-<p>Aber was ist überhaupt ein Bug? In der Informatik wird ein Programmfehler
-<strong>Bug</strong> genannt. Wie in dieser Erklärung
-<a class="reference external" href="https://de.wikipedia.org/wiki/Programmfehler">Wikipedia:Programmfehler</a>
-erläutert, gibt es verschiedene Arten von Programmfehlern. Am häufigsten sind</p>
-<ul class="simple">
-<li><p>syntaktische Fehler und</p></li>
-<li><p>semantische Fehler.</p></li>
-</ul>
-<p><strong>Syntaktische Fehler</strong> sind Fehler, bei denen das Entwickler-Team gegen die
-Regeln der Programmiersprache verstoßen hat. Z.B. produziert eine fehlende
-Klammer einen Syntaxfehler:</p>
-<!-- #endregion -->
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span>
-</pre></div>
-</div>
-<p>Syntaktische Fehler braucht man nicht im eigentlichen Sinn zu suchen, denn
-syntaktische Fehler führen dazu, dass das Programm abbricht. Schwieriger
-hingegen ist es, die Ursache des syntaktischen Fehlers zu ermitteln und den
-Fehler zu beheben. Oft ist es hilfreich, die Fehlermeldung in eine
-Internet-Suchmaschine einzugeben. Oft haben andere Programmierer ebenfalls schon
-diesen Fehler im Programm gehabt und es gibt Erläuterungen zu dieser Fehlerart.</p>
-<p><strong>Semantische Fehler</strong> sind besonders schwer zu finden. Bei semantischen Fehlern
-gibt es keine Fehlermeldung des Interpreters und das Programm läuft auch, ohne
-abzustürzen. Aber das Ergebnis entspricht nicht dem, was die Entwicklerin oder
-der Entwickler beabsichtigt hatte.</p>
-<p>In dem folgenden Programm beispielsweise soll der Notendurchschnitt von
-Praxisbericht (Gewichtung 80 %) und Präsentation (20 %) berechnet werden.
-Schauen Sie sich den Programmcode an. Wo ist der Fehler?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">note_praxisbericht</span> <span class="o">=</span> <span class="mf">2.7</span>
-<span class="n">note_praesentation</span> <span class="o">=</span> <span class="mf">2.3</span>
-
-<span class="n">noten_durchschnitt</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">note_praesentation</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">note_praesentation</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Notendurchschnitt: &#39;</span><span class="p">,</span> <span class="n">noten_durchschnitt</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Der folgende Code soll den Benutzer nach mehreren Noten fragen und dann den
-Durchschnitt berechnen. Bitte geben Sie die Noten 2, 2, 2 ein und dann 0 zum
-Beenden. Der Durchschnitt ist 2, aber was berechnet das Programm? Wo ist der
-Fehler?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">anzahl</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">weitere_note_eingeben</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">while</span> <span class="n">weitere_note_eingeben</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">note</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie eine Note ein. Wenn Sie die Note 0 eingeben, ist die Noteneingabe beendet. &#39;</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">note</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">weitere_note_eingeben</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">summe</span> <span class="o">=</span> <span class="n">note</span>
-        <span class="n">anzahl</span> <span class="o">=</span> <span class="n">anzahl</span> <span class="o">+</span> <span class="mi">1</span>
-        
-<span class="n">durchschnitt</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">/</span> <span class="n">anzahl</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der Durchschnitt der Noten ist &#39;</span><span class="p">,</span> <span class="n">durchschnitt</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Aber wie gehen wir jetzt vor, um sicherzustellen, dass das von uns entwickelte
-Programm auch den beabsichtigten Zweck erfüllt? Als erstes überlegen wir uns
-Testfälle. Dazu später mehr. Auf dem Papier notieren wir uns, was das Programm
-für Zwischenergebnisse liefern sollte, welche Ausgaben und welches
-Gesamtergebnis. Für ein Testbeispiel mit den Noten 1.3, 3.7 und 2.3 hätten wir
-also folgenden <em>wünschenswerten</em> Ablauf:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">anzahl</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">weitere_note_eingeben</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">Benutzereingabe</span><span class="p">:</span> <span class="n">note</span> <span class="o">=</span> <span class="mf">1.3</span>
-<span class="k">else</span><span class="o">-</span><span class="n">Zweig</span><span class="p">:</span> 
-    <span class="n">summe</span> <span class="o">=</span> <span class="mf">1.3</span> 
-    <span class="n">anzahl</span>  <span class="o">=</span> <span class="mi">1</span>
-<span class="n">Benutzereingabe</span><span class="p">:</span> <span class="n">note</span> <span class="o">=</span> <span class="mf">3.7</span>
-<span class="k">else</span><span class="o">-</span><span class="n">Zweig</span><span class="p">:</span>
-    <span class="n">summe</span> <span class="o">=</span> <span class="mf">5.0</span>
-    <span class="n">anzahl</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">Benutzereingabe</span><span class="p">:</span> <span class="n">note</span> <span class="o">=</span> <span class="mf">2.3</span>
-<span class="k">else</span><span class="o">-</span><span class="n">Zweig</span>
-    <span class="n">summe</span> <span class="o">=</span> <span class="mf">7.3</span>
-    <span class="n">anzahl</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">Benutzereingabe</span><span class="p">:</span> <span class="mi">0</span>
-<span class="k">if</span><span class="o">-</span><span class="n">Zweig</span><span class="p">:</span>
-    <span class="n">weitere_note_eingeben</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">durchschnitt</span> <span class="o">=</span> <span class="mf">7.3</span><span class="o">/</span><span class="mi">3</span> <span class="o">=</span> <span class="mf">2.433333333333333</span>
-<span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Der</span> <span class="n">Durchschnitt</span> <span class="n">der</span> <span class="n">Noten</span> <span class="n">ist</span> <span class="mf">2.433333333333333</span>
-</pre></div>
-</div>
-<p>Leider fehlt uns derzeit der Einblick in unseren Programm-Code. Eine sehr
-einfache und schnelle Methode ist die Fehlersuche durch print-Anweisungen. Diese
-Methode funktioniert immer, kann aber bei größeren Programmen auch schnell
-unübersichtlich werden. Daher ist die Weiterentwicklung der “Debugging by
-Printing”-Methode der Debugger. Erweitern wir unser Programm mit
-print-Anweisungen und sehen wir, was passiert, wenn wir die Noten 1.3, 3.7, 2.3
-und 0 eingeben:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;summe = &#39;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
-<span class="n">anzahl</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;anzahl = &#39;</span><span class="p">,</span> <span class="n">anzahl</span><span class="p">)</span>
-<span class="n">weitere_note_eingeben</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;weitere_note_eingeben = &#39;</span><span class="p">,</span> <span class="n">weitere_note_eingeben</span><span class="p">)</span>
-
-<span class="k">while</span> <span class="n">weitere_note_eingeben</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">note</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte geben Sie eine Note ein. Wenn Sie die Note 0 eingeben, ist die Noteneingabe beendet. &#39;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;note = &#39;</span><span class="p">,</span> <span class="n">note</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">note</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">weitere_note_eingeben</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;if-Zweig: note = &#39;</span><span class="p">,</span> <span class="n">note</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;if-Zweig: weitere_note_eingeben = &#39;</span><span class="p">,</span> <span class="n">weitere_note_eingeben</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">summe</span> <span class="o">=</span> <span class="n">note</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;else-Zweig: summe = &#39;</span><span class="p">,</span> <span class="n">summe</span><span class="p">)</span>
-        <span class="n">anzahl</span> <span class="o">=</span> <span class="n">anzahl</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;else-Zweig: anzahl = &#39;</span><span class="p">,</span> <span class="n">anzahl</span><span class="p">)</span>
-        
-<span class="n">durchschnitt</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">/</span> <span class="n">anzahl</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;durchschnitt = &#39;</span><span class="p">,</span> <span class="n">durchschnitt</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der Durchschnitt der Noten ist &#39;</span><span class="p">,</span> <span class="n">durchschnitt</span><span class="p">)</span>
-</pre></div>
 </div>
 </section>
-<section id="aufgabe">
-<h2>Aufgabe<a class="headerlink" href="#aufgabe" title="Permalink to this headline">#</a></h2>
-<p>Kopieren Sie den folgenden Code in eine Code-Zelle. Finden Sie die Fehler und
-korrigieren Sie die Fehler.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">passwort</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hallo, Pirat! Wie lautet das Passwort: )</span>
-<span class="k">if</span> <span class="n">passwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Arrr!&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich grüße Sie!&#39;</span><span class="p">)</span>
-<span class="k">elif</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zugang verweigert.&quot;</span><span class="p">)</span>
+<section id="import-von-pandas">
+<h2>Import von pandas<a class="headerlink" href="#import-von-pandas" title="Permalink to this headline">#</a></h2>
+<p>Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
+Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
+und DataFrame. Dabei wird <strong>Series</strong> für Datenreihen genommen, also sozusagen
+die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
+<strong>DataFrame</strong> repräsentiert Tabellen, also sozusagen Matrizen bzw.
+verallgemeinerte zweidimensionale Arrays.</p>
+<p>Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
+ist üblich, dabei dem Modul die Abkürzung <strong>pd</strong> zu geben, damit wir nicht immer
+pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
-</section>
-<section id="id1">
-<h2>Aufgabe<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>Ein Zeitreisender kommt auf Sie zu. Fragen Sie ihn nach dem Jahr, aus dem er
-kommt und begrüßen Sie ihn. Falls er aus einem Jahr vor 1900 kommt mit “Sie
-kommen ja aus der Vergangenheit!”, zwischen 1900 und 2021 mit “Sie stammen also
-aus unserer Zeit!” und ansonsten mit “Können Sie mir die Lottozahlen von
-nächster Woche verraten?”. Schreiben Sie als erstes Ihr eigenes Programm in der
-nächsten Code-Zelle:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Vergleichen Sie anschließend Ihr Programm mit dem folgenden Code und
-korrigieren Sie die Fehler.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jahr</span> <span class="o">==</span> <span class="nb">int</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Ein Zeitreisender??? Aus welchem Jahr kommen Sie denn? &#39;))</span>
-
-<span class="k">if</span> <span class="n">jahr</span> <span class="o">&lt;=</span> <span class="mi">1900</span>
-   <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Sie kommen ja aus der Vergangenheit!&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">jahr</span> <span class="o">&gt;</span> <span class="mi">1900</span> <span class="o">&amp;&amp;</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">2020</span><span class="p">:</span>
-   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sie stammen also aus unserer Zeit!&quot;</span><span class="p">)</span>
-<span class="k">elif</span><span class="p">:</span>
-   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Können Sie mir die Lottozahlen von nächster Woche verraten?&#39;&#39;)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </section>
-<section id="id2">
-<h2>Aufgabe<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>Die folgende Klasse initalisiert ein Objekt mit Vorname, Nachname und definierte
-eine Methode vorstellen. Anschließend wird die Klasse benutzt. Korrigieren Sie
-die Fehler.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">classy</span> <span class="n">Person</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">__initalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">nachname</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">vorname</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">nach_name</span>
-  <span class="k">def</span> <span class="nf">vorstellen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guten Tag. Mein Name ist + &quot;</span> <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
-
-<span class="n">erste_person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Homer&quot;</span><span class="p">,</span> <span class="s2">&quot;Simpson&quot;</span><span class="p">)</span>
-<span class="mi">2</span><span class="n">te_person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Simpson&quot;</span><span class="p">)</span>
-
-<span class="n">erste_person</span><span class="o">.</span><span class="n">vorstellen</span><span class="p">()</span>
-<span class="mi">2</span><span class="n">te_person</span><span class="o">.</span><span class="n">self</span><span class="o">.</span><span class="n">vorstellen</span>
+<section id="series-aus-liste-erzeugen">
+<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Permalink to this headline">#</a></h2>
+<p>Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
+Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
+über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, dass die
+Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
+Liste, also <code class="docutils literal notranslate"><span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> und initialisieren über <code class="docutils literal notranslate"><span class="pre">pd.Series()</span></code> die
+Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    25
+1    22
+2    43
+3    37
+dtype: int64
 </pre></div>
+</div>
+</div>
+</div>
+<p>Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
+bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
+Numpy-Array nehmen? Der wichtigste Unterschied ist der <strong>Index</strong>.</p>
+<p>Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
+ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, …
+angelegt wird. Wenn bei einer Liste <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> auf das zweite
+Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
+Python zählt ab 0) und schreiben</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Element der Liste: &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste:  22
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Datenstruktur Series ermöglich es aber, einen <em>expliziten Index</em> zu setzen.
+Über den optionalen Parameter <code class="docutils literal notranslate"><span class="pre">index=</span></code> speichern wir als Zusatzinformation noch
+ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
+Personen Alice, Bob, Charlie und Dora.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice      25
+Bob        22
+Charlie    43
+Dora       30
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt ist auch klar, warum beim ersten Mal, als wir <code class="docutils literal notranslate"><span class="pre">print(alter)</span></code> ausgeführt
+haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
+Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
+Informationen ausgegeben wird, ist das Attribut <code class="docutils literal notranslate"><span class="pre">dtype</span></code>. Darin gespeichert ist
+der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
+dem Punktoperator zugegegriffen werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Offensichtlich sind die gespeicherten Werte Integer.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
+Vorlesungs/Übungs-Stunden an diesem Wochentag.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stundenplan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Montag&quot;</span><span class="p">,</span> <span class="s2">&quot;Dienstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Mittwoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Donnerstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Freitag&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stundenplan</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
-<section id="integrierte-entwicklungsumgebungen">
-<h2>Integrierte Entwicklungsumgebungen<a class="headerlink" href="#integrierte-entwicklungsumgebungen" title="Permalink to this headline">#</a></h2>
-<p>Integrierte Entwicklungsumgebungen (=IDE = integrated development environment)
-unterstützen die Softwareentwicklung. Für MATLAB gibt es nur eine integrierte
-Entwicklungsumgebung, nämlich MATLAB selbst. Für Python gibt es zahlreiche IDEs.
-Dabei ist der Funktionsumfang meist vergleichbar, so dass man nach persönlichen
-Vorlieben entscheiden kann.</p>
-<ul class="simple">
-<li><p>Jupyter Notebooks oder Jupyter Labs sind nicht im eigentlichen Sinne IDEs, die
-Grenze zu ziehen ist aber schwierig.</p></li>
-<li><p>Für Python ist pyCharm von der Firma JetBrains sehr beliebt, siehe
-<a class="reference external" href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a> . Diese IDE gibt es als kostenlose Version
-mit eingeschränkter Funktionalität oder als kostenpflichtige
-Professional-Variante. Studierende können sich bei JetBrains mit ihrer
-studentischen E-Mail-Adresse registrieren und können sich dann kostenlos die
-Pro-Version herunterladen. U.a. bietet die Pro-Version auch die Unterstützung
-von Jupyter Notebooks.</p></li>
-<li><p>Microsoft entwickelt seit 2015 den sogenannten Visual Code Editor, eine IDE
-für alle möglichen Programmiersprachen, siehe <a class="reference external" href="https://code.visualstudio.com">https://code.visualstudio.com</a>.</p></li>
-<li><p>Spyder ist eine IDE, die für die wissenschaftliche Programmierung sehr gerne
-genutzt wird.</p></li>
-</ul>
+<section id="dataframe-fur-tabellen">
+<h2>DataFrame für Tabellen<a class="headerlink" href="#dataframe-fur-tabellen" title="Permalink to this headline">#</a></h2>
+<p>Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
+einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
+sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
+auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
+zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
+darstellt und die Spalten die Eigenschaften speichern.</p>
+<p>Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
+Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
+kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
+gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.</p>
 </section>
-<section id="testen-und-kommentare">
-<h2>Testen und Kommentare<a class="headerlink" href="#testen-und-kommentare" title="Permalink to this headline">#</a></h2>
-<p>Jedes Programm sollte umfangreich getestet werden, bevor es zum Einsatz kommt.
-Dabei fällt es den Software-Entwicklerteams oft schwer, die eigene Sofwtare zu
-testen, denn man hat die eigenen Vorstellungen im Kopf, die ja auch so im
-Programm umgesetzt wurden. In Software-Firmen gibt es daher oft eigene Teams,
-die das Testen von Software übernehmen.</p>
-<p>Leider gibt es auch tragische Softwarefehler. Auf der Wikipedia-Seite <a class="reference external" href="https://de.wikipedia.org/wiki/Liste_von_Programmfehlerbeispielen">Liste von
-Programmfehlerbeispielen</a>
-finden Sie einige der bekanntesten Softwarefehlern. Zum Beispiel ist dies der 1.
-Eintrag: “Beim Kampfflugzeug F-16 brachte der Autopilot das Flugzeug in
-Rückenlage, wenn der Äquator überflogen wurde. Dies kam daher, dass man keine
-„negativen“ Breitengrade als Eingabedaten bedacht hatte. Dieser Fehler wurde
-sehr spät während der Entwicklung der F-16 mithilfe eines Simulators entdeckt
-und beseitigt.”</p>
-<p>Die folgenden Regeln sind daher bei der Programmierung hilfreich:</p>
-<ol class="simple">
-<li><p>Überlegen Sie sich Testfälle für Ihr Programm, bevor Sie es schreiben.</p></li>
-<li><p>Fügen Sie nur nach und nach kleine Häppchen zu Ihrem Programm hinzu und
-testen Sie sofort, ob der neue Code-Abschnitt das Gewünschte erledigt.</p></li>
-<li><p>Fügen Sie Kommentare mit # ein, um zu anderen Entwicklern zu erklären, was
-ein bestimmter Code-Abschnitt tut und was mögliche Ergebnisse sein könnten.</p></li>
-</ol>
+<section id="import-von-tabellen">
+<h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Permalink to this headline">#</a></h2>
+<p>Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
+Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
+eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
+einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
+Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
+gestreift.</p>
+<section id="import-von-tabellen-im-csv-format">
+<h3>Import von Tabellen im CSV-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Permalink to this headline">#</a></h3>
+<p>Das <strong>Dateiformat CSV</strong> speichert Daten zeilenweise ab. Dabei steht CSV für
+“comma separated value”. Die Trennung der Spalten erfolgt durch ein
+Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
+gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
+der Nacchkommastellen verwenden.</p>
+<p>Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
+<code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an (siehe
+<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">Dokumentation/read_csv</a>).
+Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
+ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
+übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.</p>
+<p>Am besten sehen wir uns die Funktionsweise von <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an einem Beispiel an.
+Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
+Datei
+<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL"><code class="docutils literal notranslate"><span class="pre">bundesliga_top7_offensive.csv</span></code></a>
+herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
+JupyterNotebook liegt. Die csv-Datei stammt von
+<a class="reference external" href="https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv">Kaggle</a>.
+Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
+der Bundesligasaison 2020/21 enthalten.</p>
+<p>Führen Sie dann anschließend die folgende Code-Zelle aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
+trotzdem nicht. Dazu verwenden wir die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manuel Neuer</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas Müller</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David Alaba</td>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jérôme Boateng</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Robert Lewandowski</td>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code> zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
+beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
+Methode <code class="docutils literal notranslate"><span class="pre">.head(10)</span></code>mit dem Argument 10.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manuel Neuer</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas Müller</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David Alaba</td>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jérôme Boateng</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Robert Lewandowski</td>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Joshua Kimmich</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Kingsley Coman</td>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Benjamin Pavard</td>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Alphonso Davies</td>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Serge Gnabry</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
+usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
+welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
+erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
+gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
+den Befehl mit <code class="docutils literal notranslate"><span class="pre">index_col=</span></code>. Die Namen stehen in der 1. Spalte, was in
+Python-Zählweise einer 0 entspricht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Joshua Kimmich</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Kingsley Coman</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pavard</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Alphonso Davies</th>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Serge Gnabry</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
-<section id="id3">
-<h2>Aufgabe<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<p>Wir hatten bereits die Aufgabe mit dem Einmaleins-Trainer. Jetzt greifen wir die
-Aufgabe auf, testen Abschnitte und benutzen Kommentare. Also…</p>
-<p>Sie möchten ein Programm schreiben, mit dem ein Benutzer das Einmaleins üben
-kann. Zu Anfang darf der Benutzer wählen, wie viele Aufgaben gestellt werden.
-Der Computer zieht Zufallszahlen zwischen 1 und 10 und stellt die
-Einmaleins-Aufgaben, z.B. die Frage: “Was ist 4x7?”. Der Benutezr gibt die
-Antwort ein. Wenn die Antwort richtig ist, gibt der Computer “Richtig!” aus.
-Ansonsten gibt der Computer den Hinweis: “Leider falsch, die richtige Antwort
-wäre xx gewesen.” Am Ende gibt der Computer aus, wie viele Aufgaben richtig
-gelöst wurden und wieviel Prozent das sind.</p>
-<p>Schreiben Sie jetzt eine Funktion, bei der der Benutzer gefragt wird, wie viele
-Aufgaben gestellt werden sollen und die die Anzahl der Aufgaben zurückgibt. Was
-kann dabei alles schiefgehen? Tipp: suchen Sie im Internet nach der
-String-Methode isdigit(). Wie können Sie als Programmiererin sicherstellen, dass
-die Eingabe des Benutzers gültig ist? Testen Sie Ihre Funktion.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion</span>
-
+<section id="import-von-tabellen-im-xlsx-format">
+<h3>Import von Tabellen im xlsx-Format<a class="headerlink" href="#import-von-tabellen-im-xlsx-format" title="Permalink to this headline">#</a></h3>
+<p>Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
+bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
+Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
+als Excel-Datei
+<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm">bundesliga_top7_offensive.xlsx</a>
+herunter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test</span>
-
-</pre></div>
 </div>
-<p>Schreiben Sie als nächstes eine Funktion, die eine Einmaleins-Aufgabe stellt
-(kein Rückgabewert). Testen Sie die Funktion.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion stelle_einmaleins_aufgaben()</span>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test</span>
-
-</pre></div>
-</div>
-<p>Erweitern Sie nun die Funktion, die Einmaleins-Aufgaben stellt um ein Argument,
-wie viele Aufgaben gestellt werden sollen. Testen Sie die Funktion.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erweiterte Funktion stelle_einmaleins_aufgaben(anzahl)</span>
-
-
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test</span>
-
-</pre></div>
-</div>
-<p>Erweitern Sie nun die Funktion, die Einmaleins-Aufgaben stellt um eine Prüfung
-des richtigen Ergebnisses. Testen Sie die Funktion, indem Sie einmal ein
-falsches Ergebnis und einmal ein richtiges Ergebnis eingeben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erweiterte Funktion stelle_einmaleins_aufgaben(anzahl) und Prüfung</span>
-
-
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test</span>
-
-</pre></div>
-</div>
-<p>Erweitern sie nun erneut die Funktion, die Einmaleins-Aufgaben stellt. Nun soll
-die Funktion noch einen Rückgabewert liefern, nämlich die Anzahl der richtig
-gelösten Aufgaben. Bauen Sie print-Anweisungen ein, um zu testen, ob die Anzahl
-der richtig gelösten Aufgaben korrekt mitgezählt wird. Im fertigen Programm
-werden diese print-Anweisungen wieder entfernt. Testen Sie die Funktion, auch
-den Rückgabewert.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erweiterte Funktion anzahl_richtige_aufgaben = stelle_einmaleins_aufgaben(anzahl) </span>
-
-
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test </span>
-
-
-</pre></div>
-</div>
-<p>Zuletzt schreiben Sie ein Programm, das aus den beiden Funktionen einen
-Einmaleins-Trainer zusammensetzt, und zusätzlich in Prozent ausgibt, wie viele
-Aufgaben richtig gelöst wurden.</p>
+<p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
+Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
+schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span> </code> nach. In dieser Vorlesung
+verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
+Vorlesung/Übung nicht notwendig ist.</p>
 </section>
-<section id="id4">
-<h2>Aufgabe<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
-<p>Was könnte folgender Code für einen Zweck haben?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">siege_computer</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">if</span> <span class="n">wahl_computer</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">wahl_benutzer</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden, ich hatte ebenfalls Stein.&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">wahl_benutzer</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Punkt für mich, Stein schleift Schere.&#39;</span><span class="p">)</span>
-        <span class="n">siege_computer</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">else</span> <span class="c1"># wahl_benutzer == &#39;Papier&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Punkt für Sie, Papier umwickelt Stein.&#39;</span><span class="p">)</span>
-        <span class="n">siege_benutzer</span> <span class="o">+=</span><span class="mi">1</span>
+</section>
+<section id="ubersicht-verschaffen-mit-info">
+<h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Permalink to this headline">#</a></h2>
+<p>Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
+Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
+noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür stellt
+Pandas die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> zur Verfügung. Probieren wir es einfach aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Korrigieren sie die 4 Fehler.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 177 entries, Manuel Neuer to Joshua Mees
+Data columns (total 15 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   Club               177 non-null    object 
+ 1   Nationality        177 non-null    object 
+ 2   Position           177 non-null    object 
+ 3   Age                177 non-null    int64  
+ 4   Matches            177 non-null    int64  
+ 5   Starts             177 non-null    int64  
+ 6   Mins               177 non-null    int64  
+ 7   Goals              177 non-null    int64  
+ 8   Assists            177 non-null    int64  
+ 9   Penalty_Goals      177 non-null    int64  
+ 10  Penalty_Attempted  177 non-null    int64  
+ 11  xG                 177 non-null    float64
+ 12  xA                 177 non-null    float64
+ 13  Yellow_Cards       177 non-null    int64  
+ 14  Red_Cards          177 non-null    int64  
+dtypes: float64(2), int64(10), object(3)
+memory usage: 22.1+ KB
 </pre></div>
 </div>
+</div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">.info()</span></code> erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
+die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie <code class="docutils literal notranslate"><span class="pre">Name</span></code>
+selbsterklärend, aber was <code class="docutils literal notranslate"><span class="pre">xG</span></code> bedeutet, erschließt sich nicht von selbst. Dazu
+brauchen wir mehr Informationen von den Autor:innen der Daten.</p>
+<p>Weiterhin entnehmen wir der Ausgabe von <code class="docutils literal notranslate"><span class="pre">.info()</span></code>, dass in jeder Spalte 177
+Einträge sind, die ‘non-null’ sind. Damit ist gemeint, dass diese Zellen beim
+Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
+angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
+Datentyp ‘object’ angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
+und die mittlere erwartete Anzahl von Toren pro Spiel ‘xG’ (= expected number of
+goals from the player in a match) wird als Float angegeben.</p>
 </section>
 </section>
 
@@ -1196,13 +1919,13 @@ Aufgaben richtig gelöst wurden.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">8. Programmentwicklung und Objektorientierung</p>
+            <p class="prev-next-title">8. Pandas anstatt Excel</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter08_sec02.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8.2 GUI</p>
+        <p class="prev-next-title">8.2 Arbeiten mit Tabellendaten</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

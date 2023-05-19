@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8.3 Objektorientierung &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.3 Statistik mit Pandas &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,10 +53,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter08_sec04.html" />
-    <link rel="prev" title="8.2 GUI" href="chapter08_sec02.html" />
+    <link rel="prev" title="8.2 Arbeiten mit Tabellendaten" href="chapter08_sec02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
   Grundlagen Programmierung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter01/chapter01_sec00.html">
    1. Getting Started
@@ -346,9 +348,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter08_sec00.html">
-   8. Programmentwicklung und Objektorientierung
+   8. Pandas anstatt Excel
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -358,17 +367,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="chapter08_sec01.html">
-     8.1 Debugging
+     8.1 Series und DataFrame
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter08_sec02.html">
-     8.2 GUI
+     8.2 Arbeiten mit Tabellendaten
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     8.3 Objektorientierung
+     8.3 Statistik mit Pandas
     </a>
    </li>
    <li class="toctree-l2">
@@ -378,16 +387,9 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Anwendungen
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter09/chapter09_sec00.html">
-   9. Pandas anstatt Excel
+   9. Visualisierung mit Matplotlib
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -397,17 +399,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter09/chapter09_sec01.html">
-     9.1 Series und DataFrame
+     9.1 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter09/chapter09_sec02.html">
-     9.2 Arbeiten mit Tabellendaten
+     9.2 Linien-, Balken- und Streudiagramme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter09/chapter09_sec03.html">
-     9.3 Statistik mit Pandas
+     9.3 Visualisierung von DataFrames
     </a>
    </li>
    <li class="toctree-l2">
@@ -419,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter10/chapter10_sec00.html">
-   10. Visualisierung
+   10. Messwerte und Regression
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -429,17 +431,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec01.html">
-     10.1 Das Modul NumPy
+     10.1 Theorie Regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec02.html">
-     10.2 Linien-, Balken- und Streudiagramme
+     10.2 Lineare Regression mit polyfit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec03.html">
-     10.3 Visualisierung von DataFrames
+     10.3 Polynomiale Regression
     </a>
    </li>
    <li class="toctree-l2">
@@ -449,9 +451,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wissenschaftliche Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter11/chapter11_sec00.html">
-   11. Messwerte und Regression
+   11. MATLAB
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -461,17 +470,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec01.html">
-     11.1 Theorie Regression
+     11.1 Einführung MATLAB
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec02.html">
-     11.2 Lineare Regression mit polyfit
+     11.2 Numerisches Rechnen mit MATLAB
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec03.html">
-     11.3 Polynomiale Regression
+     11.3 Symbolisches Rechnen mit MATLAB
     </a>
    </li>
    <li class="toctree-l2">
@@ -483,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter12/chapter12_sec00.html">
-   12. MATLAB und Simulink
+   12. Simulink
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -493,7 +502,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter12/chapter12_sec01.html">
-     Simulink
+     Simulink Einführung
     </a>
    </li>
   </ul>
@@ -708,65 +717,43 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-1-lesen">
-   Aufgabe 8.1 Lesen
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#was-ist-objektorientierung">
-   8.1 Was ist Objektorientierung?
+  <a class="reference internal nav-link" href="#schnelle-ubersicht-mit-describe">
+   Schnelle Übersicht mit .describe()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-2-video">
-   Aufgabe 8.2 Video
+  <a class="reference internal nav-link" href="#anzahl-count">
+   Anzahl count
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klassen-definieren-attribute">
-   8.2 Klassen definieren - Attribute
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aufgabe-8-3-video">
-     Aufgabe 8.3 Video
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-4">
-   Aufgabe 8.4
+  <a class="reference internal nav-link" href="#mittelwert-mean">
+   Mittelwert mean
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-5-video">
-   Aufgabe 8.5 Video
+  <a class="reference internal nav-link" href="#standardabweichung-std">
+   Standardabweichung std
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klassen-definieren-methoden">
-   8.3 Klassen definieren - Methoden
+  <a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">
+   Minimum und Maximum mit min und max
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-6">
-   Aufgabe 8.6
+  <a class="reference internal nav-link" href="#quantil-mit-quantile">
+   Quantil mit quantile
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-7-video">
-   Aufgabe 8.7 Video
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-8">
-   Aufgabe 8.8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-9">
-   Aufgabe 8.9
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
   </a>
  </li>
 </ul>
@@ -778,7 +765,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>8.3 Objektorientierung</h1>
+                <h1>8.3 Statistik mit Pandas</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -789,65 +776,43 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-1-lesen">
-   Aufgabe 8.1 Lesen
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#was-ist-objektorientierung">
-   8.1 Was ist Objektorientierung?
+  <a class="reference internal nav-link" href="#schnelle-ubersicht-mit-describe">
+   Schnelle Übersicht mit .describe()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-2-video">
-   Aufgabe 8.2 Video
+  <a class="reference internal nav-link" href="#anzahl-count">
+   Anzahl count
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klassen-definieren-attribute">
-   8.2 Klassen definieren - Attribute
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aufgabe-8-3-video">
-     Aufgabe 8.3 Video
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-4">
-   Aufgabe 8.4
+  <a class="reference internal nav-link" href="#mittelwert-mean">
+   Mittelwert mean
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-5-video">
-   Aufgabe 8.5 Video
+  <a class="reference internal nav-link" href="#standardabweichung-std">
+   Standardabweichung std
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#klassen-definieren-methoden">
-   8.3 Klassen definieren - Methoden
+  <a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">
+   Minimum und Maximum mit min und max
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-6">
-   Aufgabe 8.6
+  <a class="reference internal nav-link" href="#quantil-mit-quantile">
+   Quantil mit quantile
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-7-video">
-   Aufgabe 8.7 Video
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-8">
-   Aufgabe 8.8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-8-9">
-   Aufgabe 8.9
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
   </a>
  </li>
 </ul>
@@ -860,452 +825,805 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="objektorientierung">
-<h1>8.3 Objektorientierung<a class="headerlink" href="#objektorientierung" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
-</div>
-<p>In den letzten Wochen haben wir uns die Grundlagen der Programmierung
-erarbeitet:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="statistik-mit-pandas">
+<h1>8.3 Statistik mit Pandas<a class="headerlink" href="#statistik-mit-pandas" title="Permalink to this headline">#</a></h1>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Ein- und Ausgabe (input, print)</p></li>
-<li><p>Kontrollstrukturen (if - elif - else)</p></li>
-<li><p>Schleifen (for, while)</p></li>
-<li><p>Funktionen.</p></li>
+<li><p>Sie können sich mit <strong>describe</strong> eine Übersicht über statistische Kennzahlen
+verschaffen.</p></li>
+<li><p>Sie wissen, wie Sie die Anzahl der gültigen Einträge mit <strong>count</strong> ermitteln.</p></li>
+<li><p>Sie kennen die statistischen Kennzahlen Mittelwert und Standardabweichung und
+wissen, wie diese mit <strong>mean</strong> und <strong>std</strong> berechnet werden.</p></li>
+<li><p>Sie können das Minimum und das Maximum mit <strong>min</strong> und <strong>max</strong> bestimmen.</p></li>
+<li><p>Sie wissen wie ein Quantil interpretiert wird und wie es mit <strong>quantile</strong>
+berechnet wird.</p></li>
 </ul>
-<p>In einigen Programmiersprachen wie beispielsweise C hätten wir damit auch alle
-Sprachelement kennengelernt. Diese Programmierung nennt man <strong>prozedurale
-Programmierung</strong>. Python gehört jedoch zu den objektorientierten
-Programmiersprachen, so dass wir uns diese Woche dem Thema Objektorientierung
-widmen.</p>
+</div>
+</section>
+<section id="schnelle-ubersicht-mit-describe">
+<h2>Schnelle Übersicht mit .describe()<a class="headerlink" href="#schnelle-ubersicht-mit-describe" title="Permalink to this headline">#</a></h2>
+<p>So wie die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> uns einen schnellen Überblick über die Daten eines
+DataFrame-Objektes gibt, so liefert die Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> eine schnelle
+Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
+Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Joshua Kimmich</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Kingsley Coman</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pavard</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Alphonso Davies</th>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Serge Gnabry</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Die Anwendung der <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>-Methode liefert fogende Ausgabe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>24.903955</td>
+      <td>19.858757</td>
+      <td>14.740113</td>
+      <td>1321.604520</td>
+      <td>2.542373</td>
+      <td>2.005650</td>
+      <td>0.214689</td>
+      <td>0.271186</td>
+      <td>0.157571</td>
+      <td>0.106328</td>
+      <td>2.254237</td>
+      <td>0.056497</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.309983</td>
+      <td>10.116219</td>
+      <td>10.526494</td>
+      <td>899.843857</td>
+      <td>4.911681</td>
+      <td>3.117941</td>
+      <td>0.976548</td>
+      <td>1.115447</td>
+      <td>0.226989</td>
+      <td>0.130900</td>
+      <td>2.258267</td>
+      <td>0.231534</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>15.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>22.000000</td>
+      <td>13.000000</td>
+      <td>5.000000</td>
+      <td>456.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.020000</td>
+      <td>0.010000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>25.000000</td>
+      <td>22.000000</td>
+      <td>15.000000</td>
+      <td>1359.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.090000</td>
+      <td>0.080000</td>
+      <td>2.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>28.000000</td>
+      <td>29.000000</td>
+      <td>24.000000</td>
+      <td>2044.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.220000</td>
+      <td>0.160000</td>
+      <td>4.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>36.000000</td>
+      <td>34.000000</td>
+      <td>34.000000</td>
+      <td>3060.000000</td>
+      <td>41.000000</td>
+      <td>19.000000</td>
+      <td>8.000000</td>
+      <td>9.000000</td>
+      <td>2.020000</td>
+      <td>1.230000</td>
+      <td>10.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Da es sich eingebürgert hat, Daten zeilenweise abzuspeichern und die Eigenschaft
+pro einzelnem Datensatz in den Spalten zu speichern, wertet <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> jede
+Spalte für sich aus. Für jede Eigenschaft werden dann die statistischen
+Kennzahlen</p>
 <ul class="simple">
-<li><p>Kapitel 8.1: Was ist Objektorientierung?</p></li>
-<li><p>Kapitel 8.2: Klassen definieren - Attribute</p></li>
-<li><p>Kapitel 8.3: Klassen definieren - Methoden</p></li>
+<li><p>count</p></li>
+<li><p>mean</p></li>
+<li><p>std</p></li>
+<li><p>min</p></li>
+<li><p>max</p></li>
+<li><p>Quantile 25 %, 50 % und 75 %</p></li>
+<li><p>max</p></li>
 </ul>
-<section id="aufgabe-8-1-lesen">
-<h2>Aufgabe 8.1 Lesen<a class="headerlink" href="#aufgabe-8-1-lesen" title="Permalink to this headline">#</a></h2>
-<p>Lesen Sie bitte als erstes die folgenden Kapitel im Buch “Python” von Kalista:</p>
+<p>ausgegeben.</p>
+<p>Die Bedeutung der Kennzahlen wird in der
+<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html">Pandas-Dokumentation/DataFrame.describe
+</a>
+erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.</p>
+</section>
+<section id="anzahl-count">
+<h2>Anzahl count<a class="headerlink" href="#anzahl-count" title="Permalink to this headline">#</a></h2>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">.count()</span></code> wird die Anzahl der Einträge bestimmt, die <em>nicht</em> ‘NA’ sind. Der
+Begriff ‘NA’ stammt dabei aus dem Bereich Data Science. Gemeint sind fehlende
+Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:</p>
 <ul class="simple">
-<li><p>Kapitel 5.1 Was ist Objektorientierung?</p></li>
-<li><p>Kapitel 5.2 Eine einfache Klasse definieren</p></li>
+<li><p>NA = not available (der Messsensor hat versagt)</p></li>
+<li><p>NA = not applicable (es ist sinnlos bei einem Mann nachzufragen, ob er
+schwanger ist)</p></li>
+<li><p>NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)</p></li>
 </ul>
+<p>Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
+wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
+Methode <code class="docutils literal notranslate"><span class="pre">.count()</span></code> direkt auf den kompletten DataFrame angewendet, so erhalten
+wir ein Pandas-Series-Objekt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Club                 177
+Nationality          177
+Position             177
+Age                  177
+Matches              177
+Starts               177
+Mins                 177
+Goals                177
+Assists              177
+Penalty_Goals        177
+Penalty_Attempted    177
+xG                   177
+xA                   177
+Yellow_Cards         177
+Red_Cards            177
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
+erst die Spalte mit dem Alter heraussgreifen und darauf <code class="docutils literal notranslate"><span class="pre">.count()</span></code> anwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methode01</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">methode01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oder wir wenden zuerst <code class="docutils literal notranslate"><span class="pre">.count()</span></code>an und wählen dann im Series-Objekt das Alter
+‘Age’ aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methode02</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">methode02</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="was-ist-objektorientierung">
-<h2>8.1 Was ist Objektorientierung?<a class="headerlink" href="#was-ist-objektorientierung" title="Permalink to this headline">#</a></h2>
-<p>Bei der bisherigen prozeduralen Programmierweise haben wir Funktionen und Daten
-getrennt. Die Daten werden in Variablen gespeichert. Funktionen funktionieren
-nach dem EVA-Prinzip. In der Regel erwartet eine Funktion eine Eingabe von
-Daten, verarbeitet diese Daten und gibt Daten zurück.</p>
-<p>Angenommen, wir wollten ein Programm zur Verwaltung von Lottoscheinen schreiben.
-Zu einem Lottoschein wollen wir Name, Adresse und die angekreuzten Zahlen
-speichern. Dann müssten wir mit unserem bisherigen Wissen folgende Variablen pro
-Lottoschein einführen:</p>
+<section id="mittelwert-mean">
+<h2>Mittelwert mean<a class="headerlink" href="#mittelwert-mean" title="Permalink to this headline">#</a></h2>
+<p>Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> den Mittelwert der Einträge in jeder Spalte berechnet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwert</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                    24.903955
+Matches                19.858757
+Starts                 14.740113
+Mins                 1321.604520
+Goals                   2.542373
+Assists                 2.005650
+Penalty_Goals           0.214689
+Penalty_Attempted       0.271186
+xG                      0.157571
+xA                      0.106328
+Yellow_Cards            2.254237
+Red_Cards               0.056497
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>An der Stelle ist es wichtig, die Option <code class="docutils literal notranslate"><span class="pre">numeric_only=True</span></code> zu setzen, damit
+nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.</p>
+<p>Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
+Jahre alt sind und 1321.6 Minuten im Einsatz waren.</p>
+<p>Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
+wollen, können Sie folgendes Video ansehen.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="standardabweichung-std">
+<h2>Standardabweichung std<a class="headerlink" href="#standardabweichung-std" title="Permalink to this headline">#</a></h2>
+<p>Das ‘st’ in <code class="docutils literal notranslate"><span class="pre">.std()</span></code>für Standard steht, ist nachvollziehbar. Der dritte
+Buchstabe ‘d’ kommt von ‘deviation’, also Abweichung. Somit ist wiederum die
+Methode nach dem englischen Fachbegriff ‘standard deviation’ benannt.  Welche
+Standardabweichung erhalten wir beim Alter?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">standardabweichung</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                    4.309983
+Matches               10.116219
+Starts                10.526494
+Mins                 899.843857
+Goals                  4.911681
+Assists                3.117941
+Penalty_Goals          0.976548
+Penalty_Attempted      1.115447
+xG                     0.226989
+xA                     0.130900
+Yellow_Cards           2.258267
+Red_Cards              0.231534
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
+extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
+dann <code class="docutils literal notranslate"><span class="pre">.std()</span></code> oder erst <code class="docutils literal notranslate"><span class="pre">.std()</span></code>und dann Selektion nach ‘Age’. Probieren wir es
+aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_std</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter_std</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.309982619427105
+</pre></div>
+</div>
+</div>
+</div>
+<p>Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
+Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="minimum-und-maximum-mit-min-und-max">
+<h2>Minimum und Maximum mit min und max<a class="headerlink" href="#minimum-und-maximum-mit-min-und-max" title="Permalink to this headline">#</a></h2>
+<p>Die Namen der Methoden <code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">max()</span></code> sind fast schon wieder
+selbsterklärend. Die Methode <code class="docutils literal notranslate"><span class="pre">.min()</span></code> liefert den kleinsten Werte zurück, der in
+einer Spalte gefunden wird. Umgekehrt liefert <code class="docutils literal notranslate"><span class="pre">.max()</span></code> den größten Eintrag, der
+in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
+vorkommen, ist dabei egal.</p>
+<p>Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
+(haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
+Anzahl von Toren ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tore_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tore_min</span><span class="p">)</span>
+
+<span class="n">tore_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tore_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+41
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenig verwunderlich ist die minimale Anzahl an Toren 0 und die maximale Anzahl
+an Toren, die ein oder mehrere Spieler der Top7 2020/21 geschossen haben, war
+41. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore geschafft hat,
+natürlich Lewandowski).</p>
+<p>Von Verteidigern wird nicht erwartet, Tore zu schieen, sondern von Stürmern. Was
+ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
+Spalte ‘Position’. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
+Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
+manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
+bei denen nur ‘FW’ eingetragen ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Position&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FW&#39;</span>
+<span class="n">stuermer</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stürmer&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stuermer</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==============&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimale Tore: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stuermer</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stürmer
+Name
+Robert Lewandowski    41
+Joshua Zirkzee         0
+Mickaël Cuisance       0
+Erling Haaland        27
+Steffen Tigges         0
+Yussuf Poulsen         5
+Alexander Sørloth      5
+Justin Kluivert        3
+Wout Weghorst         20
+Josip Brekalo          7
+André Silva           28
+Bas Dost               4
+Patrik Schick          9
+Lucas Alario          11
+Demarai Gray           1
+Paulinho               0
+Taiwo Awoniyi          5
+Joel Pohjanpalo        6
+Petar Musa             1
+Akaki Gogia            0
+Leon Dajaku            0
+Joshua Mees            0
+Name: Goals, dtype: int64
+==============
+Minimale Tore: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quantil-mit-quantile">
+<h2>Quantil mit quantile<a class="headerlink" href="#quantil-mit-quantile" title="Permalink to this headline">#</a></h2>
+<p>Das Quantil <span class="math notranslate nohighlight">\(p \%\)</span> ist der Wert, bei dem <span class="math notranslate nohighlight">\(p %\)</span> der Einträge kleiner als diese
+Zahl sind und <span class="math notranslate nohighlight">\(100 \% - p \%\)</span> sind größer. Meist werden nicht Prozentzahlen
+verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht.</p>
+<p>Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
+Karten wissen. Mit der Methode <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code> können wir diesen Wert leicht aus
+den Daten holen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gelbe_karten_50prozent_quantil</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gelbe_karten_50prozent_quantil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
+weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
+gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gelbe_karten_75prozent_quantil</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gelbe_karten_75prozent_quantil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. SChauen wir uns
+die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
+sind?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">4.0</span>
+<span class="n">gelbkarten_spieler</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gelbkarten_spieler</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Position  Yellow_Cards
+Name                                      
+Sebastian Rode            MF            10
+Obite N&#39;Dicka             DF            10
+Christopher Trimmel       DF             9
+Marcel Sabitzer           MF             8
+Grischa Prömel            MF             7
+Paulo Otávio              DF             7
+Kevin Mbabu               DF             7
+Xaver Schlager            MF             7
+Maximilian Arnold         MF             7
+Leon Bailey            FW,MF             6
+Djibril Sow               MF             6
+Mats Hummels              DF             6
+Jérôme Boateng            DF             6
+Kevin Kampl               MF             6
+Dayot Upamecano           DF             6
+Thomas Delaney            MF             6
+Jude Bellingham           MF             6
+Maxence Lacroix           DF             5
+Edmond Tapsoba            DF             5
+Robert Andrich            MF             5
+Emre Can               DF,MF             5
+Nadiem Amiri              MF             5
+Moussa Diaby           FW,MF             5
+David Abraham             DF             5
+Aymen Barkok           FW,MF             5
+John Brooks               DF             5
+Amin Younes            MF,FW             5
+Tuta                      DF             5
+Nordi Mukiele             DF             5
+Makoto Hasebe          DF,MF             5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
+<p>In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
+beschäftigt, die Pandas mit der Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> zusammenfasst, die aber
+auch einzeln über</p>
 <ul class="simple">
-<li><p>vorname</p></li>
-<li><p>nachname</p></li>
-<li><p>strasse</p></li>
-<li><p>postleitzahl</p></li>
-<li><p>stadt</p></li>
-<li><p>liste_mit_sechs_zahlen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.quantile()</span></code></p></li>
 </ul>
-<p>Wenn jetzt viele Spielerinnen und Spieler Lotto spielen wollen, wie gehen wir
-jetzt mit den Daten um? Legen wir eine Liste für die Vornamen und eine Liste für
-die Nachnamen usw. an? Und wenn jetzt der 17. Eintrag in der Liste mit den sechs
-angekreuzten Lottozahlen sechs Richtige hat, suchen wir dann den 17. Eintrag in
-der Liste mit den Vornamen und den 17. Eintrag in der Liste mit den Nachnamen
-usw.? Umständlich…</p>
-<p>Die Idee der objektorientierten Programmierung ist, für solche Szenarien
-<strong>Objekte</strong> einzuführen. Ein Objekt fasst verschiedene Eigenschaften wie hier
-Vorname, Nachname, Straße, usw. zu einem Objekt Lottoschein zusammen. In der
-Informatik wird eine Eigenschaft eines Objekts <strong>Attribut</strong> genannt.</p>
-<p>Damit hätten wir erst einmal nur einen neuen Datentyp. Ein Objekt macht noch
-mehr aus, denn zu dem neuen Datentyp kommen noch Funktionen dazu, die die
-Verwaltung des Objektes erleichtern. Funktionen, die zu einem Objekt gehören,
-nennt man <strong>Methoden</strong>.</p>
-</section>
-<section id="aufgabe-8-2-video">
-<h2>Aufgabe 8.2 Video<a class="headerlink" href="#aufgabe-8-2-video" title="Permalink to this headline">#</a></h2>
-<p>Schauen Sie sich Video “Python Tutorial deutsch [21/24] - Objektorientierung
-(Konzept)” an (ca. 6:35 min), siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=46yolPy-2VQ&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=21">https://www.youtube.com/watch?v=46yolPy-2VQ&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=21</a>
-.</p>
-<p>Im Folgenden sehen Sie, wie ein Objekt in Python definiert wird. Die
-Implementierung erfolgt als sogenannte <strong>Klasse</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Beispiel</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">nachname</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
-        
-    <span class="k">def</span> <span class="nf">schreibe_vorname_nachname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="p">)</span>
-        
-    <span class="k">def</span> <span class="nf">schreibe_nachname_vorname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="p">)</span>
-   
-</pre></div>
-</div>
-<p>Jetzt erzeugen wir ein Objekt vom Typ <code class="docutils literal notranslate"><span class="pre">Beispiel</span></code> und speichern es in der
-Variable <code class="docutils literal notranslate"><span class="pre">person</span></code>. Mit der Funnktion <code class="docutils literal notranslate"><span class="pre">type()</span></code> checken wir kurz, welcher Datentyp
-in der Variablen <code class="docutils literal notranslate"><span class="pre">person</span></code>steckt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="n">Beispiel</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Wunderland&#39;</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Nun können wir auch die beiden Methoden ausprobieren, die zu dem Objekt gehören.
-Der Aufruf einer Methode funktioniert anders als eine Funktion. Man hängt an die
-Variable, in der das Objekt gespeichert wurde, einen Punkt und dann die Methode
-mit runden Klammern. Den Punkt nennt man in der Informatik <strong>Punktoperator</strong>.</p>
-<p>Hier ein Beispiel zu der Methode <code class="docutils literal notranslate"><span class="pre">schreibe_vorname_nachname()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span><span class="o">.</span><span class="n">schreibe_vorname_nachname</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Dann die zweite Methode, also <code class="docutils literal notranslate"><span class="pre">schreibe_nachname_vorname()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span><span class="o">.</span><span class="n">schreibe_nachname_vorname</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Hinweis: Strings haben bereits vordefinierte Methoden, die sehr nützlich bei der
-Manipulation von Strings sind.</p>
-<p>Beispiele:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code> wandelt alle Zeichen in Großbuchstaben um</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code> wandelt alle Zeichen in Kleinbuchstaben um</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code> prüft, ob der String in eine Zahl umgewandelt werden könnte</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Dies ist ein Beispielstring!&#39;</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>Führen Sie nachfolgende Code-Zelle aus und geben Sie ein mal <code class="docutils literal notranslate"><span class="pre">3</span></code> und einmal
-<code class="docutils literal notranslate"><span class="pre">drei</span></code> ein:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zahl: &#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> kann in eine Zahl umgewandelt werden.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> kann *nicht* in eine Zahl umgewandelt werden.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   
-</pre></div>
-</div>
-<p>Wenn Sie wissen wollen, welche eingebauten Methoden es für Strings oder andere
-Datentypen noch gibt, können Sie die Funktion <code class="docutils literal notranslate"><span class="pre">dir()</span></code>. benutzen. Schauen Sie
-sich die Methoden an und probieren Sie einige aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="klassen-definieren-attribute">
-<h2>8.2 Klassen definieren - Attribute<a class="headerlink" href="#klassen-definieren-attribute" title="Permalink to this headline">#</a></h2>
-<!-- #region -->
-<p>Jetzt definieren wir eine eigene Klasse, die eine Adresse verwalten soll. Ein
-erstes Beispiel haben Sie ja oben schon gesehen.</p>
-<p>Eingeleitet wird eine Klasse mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">class</span></code> und dann dem Namen
-der Klasse. Da Klassen Objekte sind, ist es Standard, den ersten Buchstaben des
-Klassennamens groß zu schreiben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Klassenname</span><span class="p">:</span>
-</pre></div>
-</div>
-<p>Bemerkung: Um Variablen von Objekten leichter zu unterscheiden, werden
-Variablennamen klein geschrieben.</p>
-<p>Danach folgt ein Abschnitt namens <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__(self):</span></code>, in dem die
-Eigenschaften der Klasse aufgelistet werden. <code class="docutils literal notranslate"><span class="pre">init</span></code> steht dabei für
-initialisieren, also den ersten Zustand, den das Objekt später haben wird.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Klassenname</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eigenschaft1</span><span class="p">,</span> <span class="n">eigenschaft2</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">attribut1</span> <span class="o">=</span> <span class="n">eigenschaft1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">attribut2</span> <span class="o">=</span> <span class="n">eigenschaft2</span>
-</pre></div>
-</div>
-<p>Probieren wir es mit der Adresse aus:</p>
-<!-- #endregion -->
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
-    
-</pre></div>
-</div>
-<p>Wie Sie sehen, können die Eingabe-Parameter der <code class="docutils literal notranslate"><span class="pre">init()</span></code>-Methode die gleichen
-Namen tragen wie die Attribute der Klasse, also <code class="docutils literal notranslate"><span class="pre">self.strasse</span> <span class="pre">=</span> <span class="pre">strasse</span></code>, müssen
-sie aber nicht. Das Beispiel <code class="docutils literal notranslate"><span class="pre">self.postleitzahl</span> <span class="pre">=</span> <span class="pre">plz</span></code> zeigt, dass das Attribut
-<code class="docutils literal notranslate"><span class="pre">self.postleitzahl</span></code> einfach den Wert des 4. Parameters bekommt, egal wie der
-heißt.</p>
-<p>Definieren wir jetzt unsere erste Adresse, der Eingabe-Parameter <code class="docutils literal notranslate"><span class="pre">self</span></code> wird
-dabei weggelassen (warum kommt später).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Geben wir als nächstes aus, was in der Variable <code class="docutils literal notranslate"><span class="pre">adresse_fra_uas</span></code> gespeichert
-ist. Probieren wir es mit der <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Wie Sie sehen, wird der Name der Klasse und der Speicherort im RAM angegeben,
-aber nicht der Inhalt. Die Funktion <code class="docutils literal notranslate"><span class="pre">print()</span></code> ist nicht für den Datentyp
-<code class="docutils literal notranslate"><span class="pre">Adresse</span></code> entwickelt worden. Schließlich können die Python-Entwickler nicht
-wissen, welche Klassen Sie entwickeln…</p>
-<p>Aber wir kommen wir jetzt an den Inhalt des Objektes <code class="docutils literal notranslate"><span class="pre">adresse_fra_uas</span></code>? Mit dem
-Punktoperator.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Damit können wir auch ganz normal rechnen, wenn das Attribut eine Zahl ist:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">+</span> <span class="mi">11111</span>
-</pre></div>
-</div>
-<p>Mit dem Punktoperator können wir Attribute eines Objektes auch verändern.
-Schauen wir uns zunächst an, welchen Inhalt <code class="docutils literal notranslate"><span class="pre">adress_fra_uas.postleitzahl</span></code> hat,
-dann setzen wir eine neue Postleitzahl und schauen erneut, welchen Inhalt
-<code class="docutils literal notranslate"><span class="pre">adress_fra_uas.postleitzahl</span></code> jetzt hat:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;davor: &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-
-<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="mi">77777</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;danach: &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-</pre></div>
-</div>
-<section id="aufgabe-8-3-video">
-<h3>Aufgabe 8.3 Video<a class="headerlink" href="#aufgabe-8-3-video" title="Permalink to this headline">#</a></h3>
-<p>Schauen Sie sich das YouTube-Video “Python Tutorial deutsch [22/24] - Klassen
-und Objekte” (ca. 14:34 min), siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=XxCZrT7Z3G4&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=22">https://www.youtube.com/watch?v=XxCZrT7Z3G4&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=22</a>
-an.</p>
-<p>Stoppen Sie das Video regelmäßig und probieren Sie die dort gezeigten Beispiele
-hier aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="aufgabe-8-4">
-<h2>Aufgabe 8.4<a class="headerlink" href="#aufgabe-8-4" title="Permalink to this headline">#</a></h2>
-<p>Schreiben Sie eine Klasse, die Studierende mit den Eigenschaften</p>
-<ul class="simple">
-<li><p>Vorname</p></li>
-<li><p>Nachname</p></li>
-<li><p>Matrikel-Nummer verwalten kann.</p></li>
-</ul>
-<p>Testen Sie anschließend Ihre Klasse, indem Sie ein Beispiel ausprobieren.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="aufgabe-8-5-video">
-<h2>Aufgabe 8.5 Video<a class="headerlink" href="#aufgabe-8-5-video" title="Permalink to this headline">#</a></h2>
-<p>Bleibt noch die Frage offen, warum der <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter beim Initialisieren
-eines Objektes nicht angegeben wird. Schauen Sie sich dazu das YouTube-Video
-“Python Tutorial deutsch [23/24] - Der self Parameter” (ca. 10:53 min), siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=CLoK-_qNTnU&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=23">https://www.youtube.com/watch?v=CLoK-_qNTnU&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=23</a>
-an.</p>
-</section>
-<section id="klassen-definieren-methoden">
-<h2>8.3 Klassen definieren - Methoden<a class="headerlink" href="#klassen-definieren-methoden" title="Permalink to this headline">#</a></h2>
-<p>Es ist bedauerlich, dass wir nicht eine <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion für unsere
-Adressen-Klasse zur Verfügung haben. Definieren wir uns einfach eine …</p>
-<p>Da diese Funktion nicht allgemeingültig sein kann, sondern nur für die Objekte
-<code class="docutils literal notranslate"><span class="pre">Adresse</span></code> funktionieren kann, gehört sie auch folgerichtig zur Klasse selbst.
-Sie ist also keine Funktion, sondern eine Methode.</p>
-<p>Eine Methode wird definiert, indem innerhalb des Anweisungsblocks der Klasse
-eine Funktion mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> definiert wird. Der erste Eingabewert
-muss zwingend der <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter sein. Hier ein Beispiel für eine
-Print-Methode:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
-    
-    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
-<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Vielleicht möchten wir die Print-Ausgabe unterschiedlich haben, z.B. alles in
-einer Zeile. Wir erweitern unsere Klasse mit einer neuen Methode namens
-<code class="docutils literal notranslate"><span class="pre">print_einzeilig()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
-    
-    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
-        
-    <span class="k">def</span> <span class="nf">print_einzeilig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="p">))</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zuerst so:&#39;</span><span class="p">)</span>
-<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> und </span><span class="se">\n</span><span class="s1">dann einzeilig:&#39;</span><span class="p">)</span>
-<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print_einzeilig</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<section id="aufgabe-8-6">
-<h2>Aufgabe 8.6<a class="headerlink" href="#aufgabe-8-6" title="Permalink to this headline">#</a></h2>
-<p>Fügen Sie Ihrer Klasse zum Verwalten von Studierenden (siehe Aufgabe 8.4) zwei
-Print-Funktionen hinzu. Die erste Print-Funktion soll in einer Zeile <code class="docutils literal notranslate"><span class="pre">Vorname</span> <span class="pre">Nachname</span> <span class="pre">(xxxxxx)</span></code> ausgeben, wobei das xxxxxx für die Matrikel-Nummer steht,
-also z.B.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alice</span> <span class="n">Wunderland</span> <span class="p">(</span><span class="mi">123456</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>ausgeben. Die zweite soll <code class="docutils literal notranslate"><span class="pre">Nachname,</span> <span class="pre">Vorname</span> <span class="pre">(Matrikel-Nummer:</span> <span class="pre">xxxxxx)</span></code>
-ausgeben, also z.B.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wunderland</span><span class="p">,</span> <span class="n">Alice</span> <span class="p">(</span><span class="n">Matrikel</span><span class="o">-</span><span class="n">Nummer</span><span class="p">:</span> <span class="mi">123456</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Bisher hatten wir nur Methoden ohne weitere Eingabe-Parameter (natürlich mit dem
-self-Parameter, der gehört zu allen Methoden dazu). Methoden können aber auch
-weitere Parameter haben. Beispielsweise könnte man eine Print-Funktion
-schreiben, bei der durch einen Parameter gesteuert wird, ob die Adresse in vier
-oder in einer Zeile angezeigt wird:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
-    
-    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">einzeilig</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">einzeilig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>    
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
-    
-</pre></div>
-</div>
-<p>Probieren wir es aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zuerst einzeilig:&#39;</span><span class="p">)</span>
-<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">und dann vierzeilig:&#39;</span><span class="p">)</span>
-<span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Zuletzt betrachten wir noch Methoden mit Rückgabewert. Wie bei Funktionen auch
-genügt es mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">return</span></code> den Rückgabewert zu definieren. Sehr
-häufig ist dabei der Fall, dass eine Eigenschaft des Objektes zurückgegeben
-wird. Dann wird in der Regel der Methodenname</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_attribut</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>gewählt.</p>
-<p>Aber prinzipiell kann der Rückgabewert auch eine Berechnung oder ähnliches
-enthalten.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Adresse</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strasse</span><span class="p">,</span> <span class="n">hausnummer</span><span class="p">,</span> <span class="n">plz</span><span class="p">,</span> <span class="n">stadt</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span> <span class="o">=</span> <span class="n">strasse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span> <span class="o">=</span> <span class="n">hausnummer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span> <span class="o">=</span> <span class="n">plz</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="o">=</span> <span class="n">stadt</span>
-    
-    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">einzeilig</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">einzeilig</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span> <span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>    
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Straße: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strasse</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hausnummer: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hausnummer</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Postleitzahl: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">postleitzahl</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stadt: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="p">)</span>
- 
-    <span class="k">def</span> <span class="nf">get_stadt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grossschreibung</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">grossschreibung</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stadt</span>
-</pre></div>
-</div>
-<p>Und auch diese Methode probieren wir aus. Je nachdem, ob die Methode mit <code class="docutils literal notranslate"><span class="pre">True</span></code>
-oder <code class="docutils literal notranslate"><span class="pre">False</span></code> aufgerufen wird, gibt die Methode den String <code class="docutils literal notranslate"><span class="pre">self.stadt</span></code> zurück,
-entweder normal geschrieben oder in Großbuchstaben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adresse_fra_uas</span> <span class="o">=</span> <span class="n">Adresse</span><span class="p">(</span><span class="s1">&#39;Nibelungenplatz&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60318</span><span class="p">,</span> <span class="s1">&#39;Frankfurt am Main&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;zuerst normal:&#39;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">get_stadt</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">und dann groß geschrieben:&#39;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">adresse_fra_uas</span><span class="o">.</span><span class="n">get_stadt</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-
-</pre></div>
-</div>
-</section>
-<section id="aufgabe-8-7-video">
-<h2>Aufgabe 8.7 Video<a class="headerlink" href="#aufgabe-8-7-video" title="Permalink to this headline">#</a></h2>
-<p>Bitte schauen Sie sich das Video “Python Tutorial deutsch [24/24] - Methoden in
-Klassen” an, ca. 18:18 min, die Werbung ab Minute 14:00 können Sie überspringen,
-siehe
-<a class="reference external" href="https://www.youtube.com/watch?v=58IjjwHs_4A&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=24">https://www.youtube.com/watch?v=58IjjwHs_4A&amp;list=PL_pqkvxZ6ho3u8PJAsUU-rOAQ74D0TqZB&amp;index=24</a>
-.</p>
-<p>Stoppen Sie das Video regelmäßig und probieren Sie die im Video gezeigten
-Beispiele hier aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="aufgabe-8-8">
-<h2>Aufgabe 8.8<a class="headerlink" href="#aufgabe-8-8" title="Permalink to this headline">#</a></h2>
-<p>Erweitern Sie die Klasse zum Verwalten von Studierenden (Vorname, Name,
-Matrikel-Nummer) um ein Attribut vorleistung_bestanden. Anfangs sollte dieses
-Attribut auf <code class="docutils literal notranslate"><span class="pre">False</span></code> gesetzt werden. Implementieren Sie eine Methode, die es
-ermöglicht, dieses Attribut auf <code class="docutils literal notranslate"><span class="pre">True</span></code> zu setzen.</p>
-<p>Testen Sie anschließend Ihre erweiterte Klasse.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="aufgabe-8-9">
-<h2>Aufgabe 8.9<a class="headerlink" href="#aufgabe-8-9" title="Permalink to this headline">#</a></h2>
-<p>Implementieren Sie eine Klasse Datum. Diese Klasse speichert Tag, Monat und Jahr
-als Attribut.</p>
-<ul class="simple">
-<li><p>Implementieren Sie Methoden, die diese Attribute verändern können. Dabei soll
-die Methode per Print()-Funktion warnen, wenn eine nicht zulässige Zahl
-verwendet wird und dann nicht die Änderung durchführen.</p></li>
-<li><p>Implementieren Sie eine Methode <code class="docutils literal notranslate"><span class="pre">get_datum_deutsch()</span></code>, die das Datum als
-String nach dem Muster <code class="docutils literal notranslate"><span class="pre">TT.MM.JJJJ</span></code> zurückgibt, also z.B. ‘07.06.2021’.</p></li>
-<li><p>Implementieren Sie eine Methode <code class="docutils literal notranslate"><span class="pre">get_datum_britisch()</span></code>, die das Datum als
-String nach dem Muster <code class="docutils literal notranslate"><span class="pre">TT/MM/JJJJ</span></code> zurückgibt, also z.B. ‘07/06/2021’.</p></li>
-<li><p>Implementieren Sie eine Methode <code class="docutils literal notranslate"><span class="pre">get_datum_amerikanisch()</span></code>, die das Datum als
-String nach dem Muster <code class="docutils literal notranslate"><span class="pre">MM/TT/JJJJ</span></code> zurückgibt, also z.B. ‘06/07/2021’.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p>berechnet und ausgegeben werden können.</p>
 </section>
 </section>
 
@@ -1340,7 +1658,7 @@ String nach dem Muster <code class="docutils literal notranslate"><span class="p
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">8.2 GUI</p>
+            <p class="prev-next-title">8.2 Arbeiten mit Tabellendaten</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter08_sec04.html" title="next page">

@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import random
+
+def hangman():
+
+    word_list = ['python', 'java', 'kotlin', 'javascript', 'cplusplus', 'ruby', 'perl', 'swift', 'golang', 'rust']
+    random_word = random.choice(word_list)
+    guessed_letters = []
+    attempts = 10
+
+    print("Lass uns Hangman spielen!")
+    print("_ " * len(random_word))
+
+    while attempts > 0:
+        print("\nDu hast noch", attempts, "Versuche übrig.")
+        guess = input("Buchstabe eingeben: ")
+
+        if guess in guessed_letters:
+            print("Du hast diesen Buchstaben bereits geraten.")
+            continue
+        elif len(guess) != 1:
+            print("Bitte nur einen Buchstaben eingeben.")
+            continue
+        elif not guess.isalpha():
+            print("Bitte nur Buchstaben eingeben.")
+            continue
+        elif guess not in random_word:
+            attempts -= 1
+            print("Falsch! Du verlierst einen Versuch.")
+        else:
+            guessed_letters.append(guess)
+
+        word_so_far = ''
+        for letter in random_word:
+            if letter in guessed_letters:
+                word_so_far += letter + ' '
+            else:
+                word_so_far += '_ '
+        print(word_so_far)
+
+        if '_' not in word_so_far:
+            print("\nGlückwunsch, du hast das Wort erraten!")
+            return
+
+    print("\nLeider hast du das Spiel verloren. Das Wort war '" + random_word + "'.")
+
+if __name__ == "__main__":
+    hangman()
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Cell [0;32mIn[1], line 47[0m
+[1;32m     44[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;130;01m\n[39;00m[38;5;124mLeider hast du das Spiel verloren. Das Wort war [39m[38;5;124m'[39m[38;5;124m"[39m [38;5;241m+[39m random_word [38;5;241m+[39m [38;5;124m"[39m[38;5;124m'[39m[38;5;124m.[39m[38;5;124m"[39m)
+[1;32m     46[0m [38;5;28;01mif[39;00m [38;5;18m__name__[39m [38;5;241m==[39m [38;5;124m"[39m[38;5;124m__main__[39m[38;5;124m"[39m:
+[0;32m---> 47[0m     [43mhangman[49m[43m([49m[43m)[49m
+
+Cell [0;32mIn[1], line 15[0m, in [0;36mhangman[0;34m()[0m
+[1;32m     13[0m [38;5;28;01mwhile[39;00m attempts [38;5;241m>[39m [38;5;241m0[39m:
+[1;32m     14[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;130;01m\n[39;00m[38;5;124mDu hast noch[39m[38;5;124m"[39m, attempts, [38;5;124m"[39m[38;5;124mVersuche übrig.[39m[38;5;124m"[39m)
+[0;32m---> 15[0m     guess [38;5;241m=[39m [38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mBuchstabe eingeben: [39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m     17[0m     [38;5;28;01mif[39;00m guess [38;5;129;01min[39;00m guessed_letters:
+[1;32m     18[0m         [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mDu hast diesen Buchstaben bereits geraten.[39m[38;5;124m"[39m)
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
+[1;32m   1184[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[1;32m   1185[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[0;32m-> 1186[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[1;32m   1187[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[1;32m   1188[0m     [38;5;28mstr[39m(prompt),
+[1;32m   1189[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[1;32m   1190[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[1;32m   1191[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m   1192[0m )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+

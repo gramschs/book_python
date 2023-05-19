@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.2 Arbeiten mit Tabellendaten &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>9.2 Linien-, Balken- und Streudiagramme &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,10 +53,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.3 Statistik mit Pandas" href="chapter09_sec03.html" />
-    <link rel="prev" title="9.1 Series und DataFrame" href="chapter09_sec01.html" />
+    <link rel="next" title="9.3 Visualisierung von DataFrames" href="chapter09_sec03.html" />
+    <link rel="prev" title="9.1 Das Modul NumPy" href="chapter09_sec01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -346,9 +348,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter08/chapter08_sec00.html">
-   8. Programmentwicklung und Objektorientierung
+   8. Pandas anstatt Excel
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -358,17 +367,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter08/chapter08_sec01.html">
-     8.1 Debugging
+     8.1 Series und DataFrame
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter08/chapter08_sec02.html">
-     8.2 GUI
+     8.2 Arbeiten mit Tabellendaten
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter08/chapter08_sec03.html">
-     8.3 Objektorientierung
+     8.3 Statistik mit Pandas
     </a>
    </li>
    <li class="toctree-l2">
@@ -378,16 +387,9 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Anwendungen
- </span>
-</p>
-<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="chapter09_sec00.html">
-   9. Pandas anstatt Excel
+   9. Visualisierung mit Matplotlib
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -397,17 +399,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec01.html">
-     9.1 Series und DataFrame
+     9.1 Das Modul NumPy
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     9.2 Arbeiten mit Tabellendaten
+     9.2 Linien-, Balken- und Streudiagramme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec03.html">
-     9.3 Statistik mit Pandas
+     9.3 Visualisierung von DataFrames
     </a>
    </li>
    <li class="toctree-l2">
@@ -419,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter10/chapter10_sec00.html">
-   10. Visualisierung
+   10. Messwerte und Regression
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -429,17 +431,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec01.html">
-     10.1 Das Modul NumPy
+     10.1 Theorie Regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec02.html">
-     10.2 Linien-, Balken- und Streudiagramme
+     10.2 Lineare Regression mit polyfit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec03.html">
-     10.3 Visualisierung von DataFrames
+     10.3 Polynomiale Regression
     </a>
    </li>
    <li class="toctree-l2">
@@ -449,9 +451,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wissenschaftliche Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter11/chapter11_sec00.html">
-   11. Messwerte und Regression
+   11. MATLAB
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -461,17 +470,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec01.html">
-     11.1 Theorie Regression
+     11.1 Einführung MATLAB
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec02.html">
-     11.2 Lineare Regression mit polyfit
+     11.2 Numerisches Rechnen mit MATLAB
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter11/chapter11_sec03.html">
-     11.3 Polynomiale Regression
+     11.3 Symbolisches Rechnen mit MATLAB
     </a>
    </li>
    <li class="toctree-l2">
@@ -483,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapter12/chapter12_sec00.html">
-   12. MATLAB und Simulink
+   12. Simulink
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -493,7 +502,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter12/chapter12_sec01.html">
-     Simulink
+     Simulink Einführung
     </a>
    </li>
   </ul>
@@ -713,62 +722,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-auf-zeilen">
-   Zugriff auf Zeilen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#einzelne-zeile">
-     Einzelne Zeile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhangende-zeilen-slicing">
-     Zusammenhängende Zeilen: Slicing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selektion-unzusammenhangender-zeilen-per-liste">
-     Selektion unzusammenhängender Zeilen per Liste
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-auf-spalten">
-   Zugriff auf Spalten
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#einzelne-spalte">
-     Einzelne Spalte
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhangende-spalten-slicing">
-     Zusammenhängende Spalten: Slicing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selektion-unzusammenhangender-spalten-per-liste">
-     Selektion unzusammenhängender Spalten per Liste
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-auf-zellen">
-   Zugriff auf Zellen
+  <a class="reference internal nav-link" href="#liniendiagramme">
+   Liniendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filtern">
-   Filtern
+  <a class="reference internal nav-link" href="#balkendiagramme">
+   Balkendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zusammenfassung">
-   Zusammenfassung
+  <a class="reference internal nav-link" href="#streudiagramme">
+   Streudiagramme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
+   Zusammenfassung und Ausblick
   </a>
  </li>
 </ul>
@@ -780,7 +750,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>9.2 Arbeiten mit Tabellendaten</h1>
+                <h1>9.2 Linien-, Balken- und Streudiagramme</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -796,62 +766,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-auf-zeilen">
-   Zugriff auf Zeilen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#einzelne-zeile">
-     Einzelne Zeile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhangende-zeilen-slicing">
-     Zusammenhängende Zeilen: Slicing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selektion-unzusammenhangender-zeilen-per-liste">
-     Selektion unzusammenhängender Zeilen per Liste
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-auf-spalten">
-   Zugriff auf Spalten
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#einzelne-spalte">
-     Einzelne Spalte
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhangende-spalten-slicing">
-     Zusammenhängende Spalten: Slicing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selektion-unzusammenhangender-spalten-per-liste">
-     Selektion unzusammenhängender Spalten per Liste
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-auf-zellen">
-   Zugriff auf Zellen
+  <a class="reference internal nav-link" href="#liniendiagramme">
+   Liniendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filtern">
-   Filtern
+  <a class="reference internal nav-link" href="#balkendiagramme">
+   Balkendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zusammenfassung">
-   Zusammenfassung
+  <a class="reference internal nav-link" href="#streudiagramme">
+   Streudiagramme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
+   Zusammenfassung und Ausblick
   </a>
  </li>
 </ul>
@@ -864,837 +795,441 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="arbeiten-mit-tabellendaten">
-<h1>9.2 Arbeiten mit Tabellendaten<a class="headerlink" href="#arbeiten-mit-tabellendaten" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="linien-balken-und-streudiagramme">
+<h1>9.2 Linien-, Balken- und Streudiagramme<a class="headerlink" href="#linien-balken-und-streudiagramme" title="Permalink to this headline">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können auf ganze Zeilen und Spalten zugreifen:</p>
-<ul>
-<li><p>Zugriff auf eine einzelne Zeile oder Spalte, indem ein Index spezifiziert wird</p></li>
-<li><p>Zugriff auf mehrere zusammenhängende Zeilen oder Spalten (Slice)</p></li>
-<li><p>Zugriff auf mehrere unzusammenhängende Zeilen oder Spalten (Selektion)</p></li>
-</ul>
-</li>
-<li><p>Sie können auf einzelne oder mehrere Zellen der Tabelle zugreifen.</p></li>
-<li><p>Sie können ein DataFrame-Objekt nach einer Eigenschaft filtern.</p></li>
+<li><p>Sie können <strong>Matplotlib</strong> mit der üblichen Abkürzung <strong>plt</strong> importieren.</p></li>
+<li><p>Sie können Funktionen als <strong>Liniendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können diskrete Daten als <strong>Balkendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können Messwerte mit <strong>Streudiagrammen</strong> darstellen.</p></li>
 </ul>
 </div>
 </section>
-<section id="zugriff-auf-zeilen">
-<h2>Zugriff auf Zeilen<a class="headerlink" href="#zugriff-auf-zeilen" title="Permalink to this headline">#</a></h2>
-<p>Als erstes möchten wir ganze Zeilen der Tabelle lesen. Dazu verwenden wir das
-Attribut <code class="docutils literal notranslate"><span class="pre">.loc</span></code> mit passenden Indizes.</p>
-<p>Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
-Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
-bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.</p>
+<section id="liniendiagramme">
+<h2>Liniendiagramme<a class="headerlink" href="#liniendiagramme" title="Permalink to this headline">#</a></h2>
+<p>Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
+sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
+wenn die Daten von einer mathematischen Funktion stammen. Obwohl die Daten
+theoretisch für jeden x-Wert vorliegen und wir daher Millionen von (x,y)-Punkten
+zeichnen könnten, benutzen wir eine Weretabelle mit weniger (x,y)-Paaren. Die
+Anzahl der (x,y)-Paare bestimmt dann, wie “glatt” die Visualisierung wirkt.</p>
+<p>Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Danach lassen wir den Interpreter diese Werte zeichnen. Dazu benötigen wir das
+Modul <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, genauer gesagt nur einen Teil dieses Moduls namens <code class="docutils literal notranslate"><span class="pre">pylab</span></code>.
+Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
+zu benutzen. Die erste Schnittstelle ist <strong>zustandsorientiert</strong>, die zweite
+<strong>objektorientiert</strong>. Die zustandsorientierte Schnittstelle ist älter. Die
+Entwickler:innen des Matplotlib-Moduls orientierten sich zunächst an der
+kommerziellen Software MATLAB und griffen erst in einer späteren Phase auf
+Objektorientierung zurück.</p>
+<p>Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
+das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
+in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
+gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
+die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten. Wir
+werden in dieser Vorlesung die objektorientierte Schnittstelle verwenden.</p>
+<p>Zunächst erzeugen wir das Grafik-Objekt bestehend aus einer Figure (=Grafik als
+Ganzes) und Axes (=Achsen) explizit mit der Funktion <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>und
+speichern diese in entsprechenden Variablen. Dann verwenden wir Methoden, das
+Grafikobjekt zu manipulieren. Beispielsweise fügen wir den Achsen einen
+Linienplot und Beschriftungen hinzu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Joshua Kimmich</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Kingsley Coman</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Benjamin Pavard</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Alphonso Davies</th>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Serge Gnabry</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11e6e6f80&gt;]
+</pre></div>
 </div>
-<section id="einzelne-zeile">
-<h3>Einzelne Zeile<a class="headerlink" href="#einzelne-zeile" title="Permalink to this headline">#</a></h3>
-<p>Uns interessieren die Spielerdaten von Joshua Kimmich näher. Um eine ganze Zeile
-aus der Tabelle herauszugreifen, verwenden wir das Attribut <code class="docutils literal notranslate"><span class="pre">.loc[zeilenindex]</span></code>
-und geben in eckigen Klammern den Index der Zeile an, die wir betrachten wollen.
-Da wir beim Import die Namen als Zeileindex gesetzt haben, lautet der Zugriff
-also wie folgt:</p>
+<img alt="../_images/chapter09_sec02_5_1.png" src="../_images/chapter09_sec02_5_1.png" />
+</div>
+</div>
+<p>PS: Ohne Strichpunkt/Semikolon gibt Jupyter-Lab noch Objekttyp und Referenz des
+Speicherplatzes aus. In einem normalen Python-Skript würde das nicht passieren.
+Sie können diese Angabe durch den Strichpunkt/Semikolon in der letzten Zeile
+unterdrücken.</p>
+<p>Aber zurück zum Plot, sieht ziemlich krakelig aus. Eigentlich sollte dies eine
+Parabel im Intervall <span class="math notranslate nohighlight">\([-2,2]\)</span> werden. Mit nur 5 Punkten und der Tatsache, dass
+diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus.
+Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand
+erzeugen. Wir verwenden das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> für numerisches Python, das wir wieder
+einmal zuerst laden müssen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(a,b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> je
+nach eingestellter Anzahl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeile</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Joshua Kimmich&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeile</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Club                 Bayern Munich
-Nationality                    GER
-Position                        MF
-Age                             25
-Matches                         27
-Starts                          25
-Mins                          2194
-Goals                            4
-Assists                         10
-Penalty_Goals                    0
-Penalty_Attempted                0
-xG                             0.1
-xA                            0.27
-Yellow_Cards                     4
-Red_Cards                        0
-Name: Joshua Kimmich, dtype: object
-</pre></div>
+<img alt="../_images/chapter09_sec02_7_0.png" src="../_images/chapter09_sec02_7_0.png" />
 </div>
 </div>
-</div>
-</section>
-<section id="zusammenhangende-zeilen-slicing">
-<h3>Zusammenhängende Zeilen: Slicing<a class="headerlink" href="#zusammenhangende-zeilen-slicing" title="Permalink to this headline">#</a></h3>
-<p>Wenn wir auf mehrere Zeilen gleichzeitig zugreifen wollen, gibt es zwei
-Möglichkeiten:</p>
-<ol class="simple">
-<li><p>Die Zeilen folgen direkt aufeinander, sind also zusammenhängend.</p></li>
-<li><p>Zwischen den einzelnen Zeilen sind Lücken.</p></li>
-</ol>
-<p>Als erstes betrachten wir zusammenhängende Zeilen. Der Zugriff auf
-zusammenhängende Bereiche wird in der Informatik <strong>Slicing</strong> genannt. Bei der
-Angabe des Bereiches gibt man den Anfangsindex gefolgt von einem Doppelpunkt an
-und dann den Endindex der letzten Zeile, die “herausgeschnitten” werden soll.</p>
+<p>Nächstes Thema, Beschriftungen. Mit den Methoden <code class="docutils literal notranslate"><span class="pre">.set_xlabel()</span></code> und
+<code class="docutils literal notranslate"><span class="pre">.set_ylabel()</span></code> beschriften Sie die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">.set_title()</span></code> wird der
+Titel gesetzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Joshua Kimmich&#39;</span> <span class="p">:</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeilen_slice</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          Club Nationality Position  Age  Matches  Starts  \
-Name                                                                        
-Joshua Kimmich   Bayern Munich         GER       MF   25       27      25   
-Kingsley Coman   Bayern Munich         FRA    FW,MF   24       29      23   
-Benjamin Pavard  Bayern Munich         FRA       DF   24       24      22   
-Alphonso Davies  Bayern Munich         CAN       DF   19       23      22   
-
-                 Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted    xG  \
-Name                                                                            
-Joshua Kimmich   2194      4       10              0                  0  0.10   
-Kingsley Coman   1752      5       10              0                  0  0.21   
-Benjamin Pavard  1943      0        0              0                  0  0.02   
-Alphonso Davies  1763      1        2              0                  0  0.01   
-
-                   xA  Yellow_Cards  Red_Cards  
-Name                                            
-Joshua Kimmich   0.27             4          0  
-Kingsley Coman   0.34             1          0  
-Benjamin Pavard  0.09             3          0  
-Alphonso Davies  0.04             2          1  
-</pre></div>
+<img alt="../_images/chapter09_sec02_9_0.png" src="../_images/chapter09_sec02_9_0.png" />
 </div>
 </div>
-</div>
-<p>Beim Slicing können wir den Angangsindex oder den Endindex oder sogar beides
-weglassen. Wenn wir den Anfangsindex weglassen, fängt Pandas bei der ersten
-Zeile an. Lassen wir den Endindex weg, geht der Slice automatisch bis zum Ende.</p>
-<p>Im folgenden Beispiel startet der Slice bei ‘Robert Lewandowski’und geht bis zur
-letzten Zeile. Obwohl nicht alle Zeilendargestellt werden, erkennen wir das an
-der Anzahl der Zeilen: 173 rows (und 15 Spalten columns). Zur Erinnerung, es
-sind insgesamt 177 Zeilen.</p>
+<p>Zuletzt soll unser Plot gespeichert werden. Es stehen mehrere Grafikformate zur
+Verfügung. Mehr Details finden Sie auf der Internetseite <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html">Dokumentation
+savefig</a>.
+Ein typisches Ausgabeformat ist eine Rastergrafik wie z.B. png.</p>
+<p>Da die komplette Grafik (= Figure) gespeichert werden soll, wird <code class="docutils literal notranslate"><span class="pre">.savefig()</span></code>
+auf das Objekt <code class="docutils literal notranslate"><span class="pre">fig</span></code> angewendet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_slice_from_lewandowski</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">:</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_slice_from_lewandowski</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             Club Nationality Position  Age  Matches  Starts  \
-Name                                                                           
-Robert Lewandowski  Bayern Munich         POL       FW   31       29      28   
-Joshua Kimmich      Bayern Munich         GER       MF   25       27      25   
-Kingsley Coman      Bayern Munich         FRA    FW,MF   24       29      23   
-Benjamin Pavard     Bayern Munich         FRA       DF   24       24      22   
-Alphonso Davies     Bayern Munich         CAN       DF   19       23      22   
-...                           ...         ...      ...  ...      ...     ...   
-Loris Karius         Union Berlin         GER       GK   27        4       3   
-Akaki Gogia          Union Berlin         GER       FW   28        7       0   
-Leon Dajaku          Union Berlin         GER       FW   19        2       0   
-Tim Maciejewski      Union Berlin         GER       MF   19        1       0   
-Joshua Mees          Union Berlin         GER       FW   24        1       0   
-
-                    Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted  \
-Name                                                                         
-Robert Lewandowski  2458     41        7              8                  9   
-Joshua Kimmich      2194      4       10              0                  0   
-Kingsley Coman      1752      5       10              0                  0   
-Benjamin Pavard     1943      0        0              0                  0   
-Alphonso Davies     1763      1        2              0                  0   
-...                  ...    ...      ...            ...                ...   
-Loris Karius         292      0        0              0                  0   
-Akaki Gogia          140      0        1              0                  0   
-Leon Dajaku           37      0        0              0                  0   
-Tim Maciejewski        8      0        0              0                  0   
-Joshua Mees            5      0        0              0                  0   
-
-                      xG    xA  Yellow_Cards  Red_Cards  
-Name                                                     
-Robert Lewandowski  1.16  0.13             4          0  
-Joshua Kimmich      0.10  0.27             4          0  
-Kingsley Coman      0.21  0.34             1          0  
-Benjamin Pavard     0.02  0.09             3          0  
-Alphonso Davies     0.01  0.04             2          1  
-...                  ...   ...           ...        ...  
-Loris Karius        0.00  0.00             0          0  
-Akaki Gogia         0.09  0.28             1          0  
-Leon Dajaku         0.00  0.00             0          0  
-Tim Maciejewski     0.00  0.00             0          0  
-Joshua Mees         2.02  0.00             0          0  
-
-[173 rows x 15 columns]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot_stromstaerke.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="selektion-unzusammenhangender-zeilen-per-liste">
-<h3>Selektion unzusammenhängender Zeilen per Liste<a class="headerlink" href="#selektion-unzusammenhangender-zeilen-per-liste" title="Permalink to this headline">#</a></h3>
-<p>Soll auf mehrere Zeilen zugegriffen werdenn, die nicht zusammenhängen, so können
-wir eine Liste mit den Zeilenindizes übergeben.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_multiple</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Manuel Neuer&#39;</span><span class="p">,</span> <span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeilen_multiple</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             Club Nationality Position  Age  Matches  Starts  \
-Name                                                                           
-Manuel Neuer        Bayern Munich         GER       GK   34       33      33   
-Robert Lewandowski  Bayern Munich         POL       FW   31       29      28   
-Alphonso Davies     Bayern Munich         CAN       DF   19       23      22   
-
-                    Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted  \
-Name                                                                         
-Manuel Neuer        2970      0        0              0                  0   
-Robert Lewandowski  2458     41        7              8                  9   
-Alphonso Davies     1763      1        2              0                  0   
-
-                      xG    xA  Yellow_Cards  Red_Cards  
-Name                                                     
-Manuel Neuer        0.00  0.01             1          0  
-Robert Lewandowski  1.16  0.13             4          0  
-Alphonso Davies     0.01  0.04             2          1  
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="zugriff-auf-spalten">
-<h2>Zugriff auf Spalten<a class="headerlink" href="#zugriff-auf-spalten" title="Permalink to this headline">#</a></h2>
-<p>Auf Spalten können wir zugreifen, indem wir <code class="docutils literal notranslate"><span class="pre">.loc</span></code> mit zwei Argumenten benutzen.
-Dann steht das 1. Argument für den Zeilenindex und das 2. Argument für den
-Spaltenindex. Wenn wir die komplette Spalte betrachten wollen, setzen wir für
-den Zeilenindex einfach einen Doppelpunkt <code class="docutils literal notranslate"><span class="pre">:</span></code>. Damit werden automatisch als
-Anfangsindex die erste Zeile und als Endindex die letzte Zeile gewählt.
-Ansonsten erfolgen die Zugriffe auf Spalten analog zu den Zugriffen auf Zeilen
-über die drei Möglichkeiten</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Bitte plotten Sie folgende Funktionen:</p>
 <ul class="simple">
-<li><p>einzelne Spalte,</p></li>
-<li><p>zusammenhängende Spalten (Slicing) und</p></li>
-<li><p>unzusammenhängende Spalten als Liste.</p></li>
+<li><p>lineare Funktion, z.B. f(x) = 7x + 2</p></li>
+<li><p>Sinus,</p></li>
+<li><p>Kosinus,</p></li>
+<li><p>Exponentialfunktion und</p></li>
+<li><p>Wurzelfunktion.</p></li>
 </ul>
-<section id="einzelne-spalte">
-<h3>Einzelne Spalte<a class="headerlink" href="#einzelne-spalte" title="Permalink to this headline">#</a></h3>
-<p>Alle Minuten, die die Spieler auf dem Platz standen, erhalten wir somit als</p>
+<p>Verändern Sie auch das Definitionsgebiet der Funktionen, also das Intervall für
+<span class="math notranslate nohighlight">\(x\)</span>. (Bei welcher Funktion müssen Sie besonders auf das Defiitionsgebiet der
+Funktion achten?)</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_minuten</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_minuten</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Manuel Neuer          2970
-Thomas Müller         2674
-David Alaba           2675
-Jérôme Boateng        2368
-Robert Lewandowski    2458
-                      ... 
-Loris Karius           292
-Akaki Gogia            140
-Leon Dajaku             37
-Tim Maciejewski          8
-Joshua Mees              5
-Name: Mins, Length: 177, dtype: int64
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="zusammenhangende-spalten-slicing">
-<h3>Zusammenhängende Spalten: Slicing<a class="headerlink" href="#zusammenhangende-spalten-slicing" title="Permalink to this headline">#</a></h3>
-<p>Wenn wir beispielsweise die verwandelten Elfmeter mit den versuchten Elfmetern
-vergleichen wollen, so können wir die beiden aufeinanderfolgenden Spalten
-‘Penalty_Goals’ und ‘Penalty_Attempted’ als Slice ausschneiden:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_elfmeter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Penalty_Goals&#39;</span> <span class="p">:</span> <span class="s1">&#39;Penalty_Attempted&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_elfmeter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Penalty_Goals  Penalty_Attempted
-Name                                                
-Manuel Neuer                    0                  0
-Thomas Müller                   1                  1
-David Alaba                     0                  0
-Jérôme Boateng                  0                  0
-Robert Lewandowski              8                  9
-...                           ...                ...
-Loris Karius                    0                  0
-Akaki Gogia                     0                  0
-Leon Dajaku                     0                  0
-Tim Maciejewski                 0                  0
-Joshua Mees                     0                  0
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-[177 rows x 2 columns]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="selektion-unzusammenhangender-spalten-per-liste">
-<h3>Selektion unzusammenhängender Spalten per Liste<a class="headerlink" href="#selektion-unzusammenhangender-spalten-per-liste" title="Permalink to this headline">#</a></h3>
-<p>Die Anzahl der Tore (‘Goals’), die Anzahl der Spiele (‘Matches’) und die
-durchschnittliche Anzahl erwarteter Tore pro Spiel (‘xG’) miteinander zu
-vergleichen, könnte aufschlussreich sein. Da die Spalten nicht nebeneinander
-liegen, müssen wir eine Liste benutzen, um sie zu selektieren.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_tore</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Goals&#39;</span><span class="p">,</span> <span class="s1">&#39;Matches&#39;</span><span class="p">,</span> <span class="s1">&#39;xG&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_tore</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Goals  Matches    xG
-Name                                    
-Manuel Neuer            0       33  0.00
-Thomas Müller          11       32  0.24
-David Alaba             2       32  0.04
-Jérôme Boateng          1       29  0.01
-Robert Lewandowski     41       29  1.16
-...                   ...      ...   ...
-Loris Karius            0        4  0.00
-Akaki Gogia             0        7  0.09
-Leon Dajaku             0        2  0.00
-Tim Maciejewski         0        1  0.00
-Joshua Mees             0        1  2.02
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">7</span>
 
-[177 rows x 3 columns]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="zugriff-auf-zellen">
-<h2>Zugriff auf Zellen<a class="headerlink" href="#zugriff-auf-zellen" title="Permalink to this headline">#</a></h2>
-<p>Es kann auch vorkommen, dass man gezielt auf eine einzelne Zelle oder einen
-Bereich von Zellen zugreifen möchte. Auch dazu benutzen wir das Attribut
-<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
-<p>Der Trick ist nun, die drei Möglichkeiten (einzeln, Slice und Selektion per
-Liste) für die Zeilen mit den gleichen drei Möglichkeiten des Zugriffes für
-Spalten zu kombinieren.</p>
-<p>Wollen wir Beispielsweise das Alter der Fußballprofis von ‘David Alaba’bis
-‘Serge Gnabry’ wissen, so gehen wir folgendermaßen vor:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;David Alaba&#39;</span> <span class="p">:</span> <span class="s1">&#39;Serge Gnabry&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-David Alaba           28
-Jérôme Boateng        31
-Robert Lewandowski    31
-Joshua Kimmich        25
-Kingsley Coman        24
-Benjamin Pavard       24
-Alphonso Davies       19
-Serge Gnabry          25
-Name: Age, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Und möchten wir von den Herrn Thomas Müller, Kingsley Coman und Alphonso Davies
-sowhl die Nationalität als auch das Alter selektieren, so gehen wir wie folgt
-vor:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_special</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Thomas Müller&#39;</span><span class="p">,</span> <span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">,</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_special</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Nationality  Age
-Name                            
-Thomas Müller           GER   30
-Kingsley Coman          FRA   24
-Alphonso Davies         CAN   19
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="filtern">
-<h2>Filtern<a class="headerlink" href="#filtern" title="Permalink to this headline">#</a></h2>
-<p>Vielleicht haben Sie sich schon gefragt, warum wir nur Bayern-Spieler analysiert
-haben. Die Antwort ist simpel, Bayern stand im Datensatz oben in den ersten
-Zeilen. Tatsächlich sind aber die Spielerdaten von sieben Vereinen im Datensatz
-enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
-<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>ansehen.</p>
-<p>In einem ersten Schritt lesen wir die Spalte mit den Vereinen aus (Spalte
-‘Club’). Dann wenden wir auf das Ergnis die Methode <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> an.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vereine</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span>
-<span class="n">vereinsnamen</span> <span class="o">=</span> <span class="n">vereine</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vereinsnamen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bayern Munich&#39; &#39;Borussia Dortmund&#39; &#39;RB Leipzig&#39; &#39;Wolfsburg&#39;
- &#39;Eintracht Frankfurt&#39; &#39;Bayer Leverkusen&#39; &#39;Union Berlin&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wenn man möchte, kann man auch beide Schritte in einem Schritt ausführen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vereinsnamen</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vereinsnamen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bayern Munich&#39; &#39;Borussia Dortmund&#39; &#39;RB Leipzig&#39; &#39;Wolfsburg&#39;
- &#39;Eintracht Frankfurt&#39; &#39;Bayer Leverkusen&#39; &#39;Union Berlin&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Jetzt wo wir wissen, dass auch Eintracht Frankfurt dabei ist, würden wir den
-Datensatz gerne nach Eintracht Frankfurt filter. Dazu benutzen wir einen
-Vergleich und speichern das Ergebnis des Vergleichs in einer Variablen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Manuel Neuer          False
-Thomas Müller         False
-David Alaba           False
-Jérôme Boateng        False
-Robert Lewandowski    False
-                      ...  
-Loris Karius          False
-Akaki Gogia           False
-Leon Dajaku           False
-Tim Maciejewski       False
-Joshua Mees           False
-Name: Club, Length: 177, dtype: bool
-</pre></div>
-</div>
-</div>
-</div>
-<p>Das Ergebnis des Vergleichs, der in der Variablen <code class="docutils literal notranslate"><span class="pre">filter</span></code> gespeichert ist, ist
-ein Pandas-Series-Objekt, das für jede Zeile gespeichert hat, ob der Vergleich
-wahr (True) oder falsch (False) ist. Ist in einer Zeile der Club gleich
-‘Eintracht Frankfurt’, so ist in dem booleschen Objekt an dieser Stelle True
-eingetragen und ansonsten False. Der Datenyp dtype wird mit <code class="docutils literal notranslate"><span class="pre">bool</span></code> angegeben.</p>
-<p>Wir können nun anstatt einer Liste diesen booleschen Index nutzen, um Zeilen zu
-selektieren. Steht in einer Zeile des booleschen Series-Objektes <code class="docutils literal notranslate"><span class="pre">True</span></code>, so wird
-diese Zeile ausgewählt. Ansonsten wird die Zeile übersprungen. Damit erhalten
-wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="nb">filter</span><span class="p">,</span> <span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Club Nationality Position  Age  Matches  \
-Name                                                                         
-Kevin Trapp         Eintracht Frankfurt         GER       GK   30       33   
-André Silva         Eintracht Frankfurt         POR       FW   24       32   
-Filip Kostić        Eintracht Frankfurt         SRB       DF   27       30   
-Martin Hinteregger  Eintracht Frankfurt         AUT       DF   27       29   
-Daichi Kamada       Eintracht Frankfurt         JPN    MF,FW   23       32   
-Makoto Hasebe       Eintracht Frankfurt         JPN    DF,MF   36       29   
-Djibril Sow         Eintracht Frankfurt         SUI       MF   23       28   
-Obite N&#39;Dicka       Eintracht Frankfurt         FRA       DF   20       23   
-Sebastian Rode      Eintracht Frankfurt         GER       MF   29       27   
-Erik Durm           Eintracht Frankfurt         GER       DF   28       21   
-Stefan Ilsanker     Eintracht Frankfurt         AUT    MF,DF   31       27   
-Tuta                Eintracht Frankfurt         BRA       DF   21       19   
-Amin Younes         Eintracht Frankfurt         GER    MF,FW   26       26   
-David Abraham       Eintracht Frankfurt         ARG       DF   34       14   
-Aymen Barkok        Eintracht Frankfurt         MAR    FW,MF   22       26   
-Bas Dost            Eintracht Frankfurt         NED       FW   31       12   
-Luka Jović          Eintracht Frankfurt         SRB    FW,MF   22       18   
-Almamy Touré        Eintracht Frankfurt         MLI       DF   24       17   
-Steven Zuber        Eintracht Frankfurt         SUI    DF,MF   28       20   
-Timothy Chandler    Eintracht Frankfurt         USA       DF   30       15   
-Dominik Kohr        Eintracht Frankfurt         GER    MF,FW   26        7   
-Ajdin Hrustic       Eintracht Frankfurt         AUS    MF,FW   24       11   
-Danny da Costa      Eintracht Frankfurt         GER       DF   27        6   
-Elias Bördner       Eintracht Frankfurt         GER       GK   18        1   
-Ragnar Ache         Eintracht Frankfurt         GER    FW,DF   22        7   
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
 
-                    Starts  Mins  Goals  Assists  Penalty_Goals  \
-Name                                                              
-Kevin Trapp             33  2970      0        0              0   
-André Silva             32  2760     28        7              7   
-Filip Kostić            29  2534      4       14              0   
-Martin Hinteregger      29  2527      2        1              0   
-Daichi Kamada           28  2356      5       12              0   
-Makoto Hasebe           26  2288      0        0              0   
-Djibril Sow             25  2175      0        2              0   
-Obite N&#39;Dicka           23  2044      3        1              0   
-Sebastian Rode          19  1625      1        0              0   
-Erik Durm               19  1480      1        2              0   
-Stefan Ilsanker         17  1578      1        0              0   
-Tuta                    16  1459      0        0              0   
-Amin Younes             16  1391      3        3              0   
-David Abraham           14  1222      1        0              0   
-Aymen Barkok             9   977      2        3              0   
-Bas Dost                 9   817      4        2              1   
-Luka Jović               8   894      4        1              0   
-Almamy Touré             8   704      1        1              0   
-Steven Zuber             6   585      0        3              0   
-Timothy Chandler         3   432      1        0              0   
-Dominik Kohr             2   260      0        0              0   
-Ajdin Hrustic            1   272      1        0              0   
-Danny da Costa           1   110      0        0              0   
-Elias Bördner            1    90      0        0              0   
-Ragnar Ache              0   100      1        0              0   
+<span class="n">x4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x4</span><span class="p">)</span>
 
-                    Penalty_Attempted    xG    xA  Yellow_Cards  Red_Cards  
-Name                                                                        
-Kevin Trapp                         0  0.00  0.00             0          0  
-André Silva                         7  0.79  0.18             1          0  
-Filip Kostić                        0  0.14  0.41             4          0  
-Martin Hinteregger                  0  0.07  0.03             4          0  
-Daichi Kamada                       0  0.21  0.28             3          0  
-Makoto Hasebe                       0  0.01  0.01             5          0  
-Djibril Sow                         0  0.02  0.06             6          0  
-Obite N&#39;Dicka                       0  0.05  0.01            10          0  
-Sebastian Rode                      0  0.01  0.07            10          0  
-Erik Durm                           0  0.10  0.13             1          0  
-Stefan Ilsanker                     0  0.07  0.01             4          0  
-Tuta                                0  0.01  0.02             5          0  
-Amin Younes                         0  0.22  0.11             5          0  
-David Abraham                       0  0.05  0.03             5          1  
-Aymen Barkok                        0  0.15  0.27             5          0  
-Bas Dost                            1  0.47  0.25             3          0  
-Luka Jović                          0  0.28  0.06             2          0  
-Almamy Touré                        0  0.15  0.16             2          0  
-Steven Zuber                        0  0.12  0.29             1          0  
-Timothy Chandler                    0  0.18  0.07             2          0  
-Dominik Kohr                        0  0.19  0.01             1          0  
-Ajdin Hrustic                       0  0.10  0.14             2          0  
-Danny da Costa                      0  0.14  0.00             0          0  
-Elias Bördner                       0  0.00  0.00             0          0  
-Ragnar Ache                         0  0.24  0.00             1          0  
+<span class="n">x5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x5</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x5</span><span class="p">,</span><span class="n">y5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x-Achse&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y-Achse&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mini-Übung&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-</div>
-<p>Da der print()-Befehl nicht alle Einträge anzeigt, gehen wir jetzt Zeile für
-Zeile durch. Den Zeilenindex erhalten wir über das Attribut <code class="docutils literal notranslate"><span class="pre">.index</span></code>:</p>
+</section>
+<section id="balkendiagramme">
+<h2>Balkendiagramme<a class="headerlink" href="#balkendiagramme" title="Permalink to this headline">#</a></h2>
+<p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">.bar()</span></code> kann ein Balkendiagramm erstellt werden. Nehmen wir mal
+an, wir möchten auswerten, wie viele Nutzer/innen in Moodle auf die Jupyter
+Notebooks zum Download zugegriffen haben:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Woche</p></th>
+<th class="head"><p>Anzahl Nutzer/innen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<p>Dann wird das Balkendiagramm mit folgenden Code erzeugt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zeilenindex</span> <span class="ow">in</span> <span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">zeilenindex</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="c1"># bar plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kevin Trapp
-André Silva
-Filip Kostić
-Martin Hinteregger
-Daichi Kamada
-Makoto Hasebe
-Djibril Sow
-Obite N&#39;Dicka
-Sebastian Rode
-Erik Durm
-Stefan Ilsanker
-Tuta
-Amin Younes
-David Abraham
-Aymen Barkok
-Bas Dost
-Luka Jović
-Almamy Touré
-Steven Zuber
-Timothy Chandler
-Dominik Kohr
-Ajdin Hrustic
-Danny da Costa
-Elias Bördner
-Ragnar Ache
+<img alt="../_images/chapter09_sec02_16_0.png" src="../_images/chapter09_sec02_16_0.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Hier ist eine Tabelle mit den Zugriffszahlen auf das MATLAB Live Script in der
+Vorlesung angewandte Informatik im Sommersemester 2021. Bitte stellen Sie die
+Daten als Balkendiagramm inklusive Beschriftungen dar.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Woche</p></th>
+<th class="head"><p>Anzahl Nutzer/innen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>11</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Zugriffe&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Zugriffszahlen MATLAB Live Skripte SoSe 22&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
-<p>In diesem Abschnitt konnten wir nur die Basis-Funktionalitäten streifen.
-Natürlich ist auch möglich, Bereiche zu sortieren oder gruppieren. Im nächsten
-Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
+<section id="streudiagramme">
+<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Permalink to this headline">#</a></h2>
+<p>Bei Streudiagrammen werden nicht die Punkte <span class="math notranslate nohighlight">\((x_1,y_2)\)</span> mit <span class="math notranslate nohighlight">\((x_2,y_2)\)</span> mit
+<span class="math notranslate nohighlight">\((x_3,y_3)\)</span> usw. durch Linien verbunden, sondern jeder Punkt selbst wird an der
+Stelle seiner Koordinaten eingezeichnet. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Methode auch <code class="docutils literal notranslate"><span class="pre">.scatter()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># scatter plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec02_21_0.png" src="../_images/chapter09_sec02_21_0.png" />
+</div>
+</div>
+<p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span> </code> lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Wie Sie sehen, ist ein ausgefüllter Kreis
+voreingestellt. Lesen Sie auf der Internetseite</p>
+<blockquote>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
+</div></blockquote>
+<p>nach, welche Marker-Symbole existieren. Probieren Sie einige der Symbole hier
+aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># scatter plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec02_23_0.png" src="../_images/chapter09_sec02_23_0.png" />
+</div>
+</div>
+<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man Liniendiagramme
+verwenden. Streudiagramme eignen sich eher für die Visualisierung einzelner
+Messungen. Wenn Sie beispielsweise an jeden Wochentag die Temperatur an zwei
+Orten messen, bietet es sich an, beide Messreihen in einem Streudiagramm zu
+visualisieren. Dazu sollten Sie unterschiedliche Marker und unterschiedliche
+Farben verwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># scatter plots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec02_25_0.png" src="../_images/chapter09_sec02_25_0.png" />
+</div>
+</div>
+<p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Messung1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zuletzt verwendet man die Methode <code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>, die eine Legende mit allen
+Label-Einträgen erzeugt, bei denen die Farben der Kurven und die Marker korrekt
+zu den Namen (Labels) zugeordnet werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># scatter plots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Offenbach&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Durchschnittstemperatur&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec02_27_0.png" src="../_images/chapter09_sec02_27_0.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Stellen Sie die Sinus-Funktion im Intervall <span class="math notranslate nohighlight">\([-4\pi,4\pi]\)</span> als Scatter-Plot dar.
+Dabei sollen negative Funktionswerte blau eingefärbt werden und positive
+Funktionswerte rot. Setzen Sie zusätzlich an Nullstellen einen schwarzen
+Diamanten.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># data </span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">my_color</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">y_i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">y_i</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">my_color</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">my_color</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">x_diamond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">y_diamond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x_diamond</span><span class="p">))</span>
+
+<span class="c1"># plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">my_color</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_diamond</span><span class="p">,</span> <span class="n">y_diamond</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this headline">#</a></h2>
+<p>In diesem Abschnitt haben wir die drei wichtigsten Diagrammtypen wiederholt. Das
+Linien- und das Streudiagramm werden für die Visualisierung von kontinuierlichen
+Daten verwendet, wohingegen das Balkendiagramm dem Plot von diskreten Daten
+(Kategorien) dient. Im folgenden Abschnitt verknüpfen wir Matplotlib mit Pandas
+zur Visualisierung von Tabellendaten in einem DataFrame.</p>
 </section>
 </section>
 
@@ -1729,13 +1264,13 @@ Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">9.1 Series und DataFrame</p>
+            <p class="prev-next-title">9.1 Das Modul NumPy</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter09_sec03.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">9.3 Statistik mit Pandas</p>
+        <p class="prev-next-title">9.3 Visualisierung von DataFrames</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

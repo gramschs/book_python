@@ -12,399 +12,240 @@ kernelspec:
   name: python3
 ---
 
-# 8.1 Debugging
+# 8.1 Series und DataFrame 
 
-```{admonition} Warnung
-:class: warning
-Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!
+Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
+effizient zu speichern. Dazu benutzen Data Scientists die Datentypen `Series`
+oder `DataFrame` aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
+mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
+verwendete Datenformat `csv` kennen.
+
+
+## Lernziele
+
+```{admonition} Lernziele
+:class: hint
+* Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
+* Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
+* Sie kennen das **CSV-Dateiformat**.
+* Sie können eine csv-Datei mit **read_csv()** einlesen.
+* Sie konnen mit **.info()** sich einen Überblick über die importierten Daten verschaffen.
 ```
 
-Diese Woche beschäftigen wir uns vor allem mit der Fehlersuche. Selbst erfahrene
-Softwareentwickler-Teams machen Fehler bei der Programmierung. Die Suche nach
-Fehlern im Programm ist schwierig, kann aber durch technische Hilfsmittel
-unterstützt werden, allen voran durch den Debugger (= eine Art
-Fehlersuch-Werkzeug). Damit Sie den Debugger nutzen können, benötigen Sie eine
-IDE (= integrated development environment) mit Debugger, also eine integrierte
-Entwicklungsumgebung mit Fehlersuch-Werkzeugen. Zum Schluss beschäftigen wir uns
-noch mit Testen und Dokumentation.
+## Import von pandas
 
-* Kapitel 10.1 Fehlersuche (Debugging)
-* Kapitel 10.2 IDEs (integrierte Entwicklungsumgebungen)
-* Kapitel 10.3 Testen und Kommentare
+Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
+Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
+und DataFrame. Dabei wird **Series** für Datenreihen genommen, also sozusagen
+die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
+**DataFrame** repräsentiert Tabellen, also sozusagen Matrizen bzw.
+verallgemeinerte zweidimensionale Arrays. 
 
+Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
+ist üblich, dabei dem Modul die Abkürzung **pd** zu geben, damit wir nicht immer
+pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.
 
-## 10.1 Fehlersuche (Debugging)
+```{code-cell} ipython3
+import pandas as pd # kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen
+```
 
+## Series aus Liste erzeugen
 
-Aber was ist überhaupt ein Bug? In der Informatik wird ein Programmfehler
-**Bug** genannt. Wie in dieser Erklärung
-[Wikipedia:Programmfehler](https://de.wikipedia.org/wiki/Programmfehler)
-erläutert, gibt es verschiedene Arten von Programmfehlern. Am häufigsten sind 
+Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
+Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
+über die Methode `pd.Series(liste)` ein neues Series-Objekt erzeugt, dass die
+Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
+Liste, also `[25, 22, 43, 37]` und initialisieren über `pd.Series()` die
+Variable `alter`:
 
-* syntaktische Fehler und
-* semantische Fehler.
+```{code-cell} ipython3
+alter = pd.Series([25, 22, 43, 37])
+print(alter)
+```
 
-**Syntaktische Fehler** sind Fehler, bei denen das Entwickler-Team gegen die
-Regeln der Programmiersprache verstoßen hat. Z.B. produziert eine fehlende
-Klammer einen Syntaxfehler:
-<!-- #endregion -->
+Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
+bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
+Numpy-Array nehmen? Der wichtigste Unterschied ist der **Index**.
 
+Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
+ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, ...
+angelegt wird. Wenn bei einer Liste `l = [25, 22, 43, 37]` auf das zweite
+Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
+Python zählt ab 0) und schreiben
+
+```{code-cell} ipython3
+l = [25, 22, 43, 37]
+print("2. Element der Liste: ", l[1])
+```
+
+Die Datenstruktur Series ermöglich es aber, einen *expliziten Index* zu setzen.
+Über den optionalen Parameter `index=` speichern wir als Zusatzinformation noch
+ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
+Personen Alice, Bob, Charlie und Dora.
+
+```{code-cell} ipython3
+alter = pd.Series([25, 22, 43, 30], index=["Alice", "Bob", "Charlie", "Dora"])
+print(alter)
+```
+
+Jetzt ist auch klar, warum beim ersten Mal, als wir `print(alter)` ausgeführt
+haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
+Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
+Informationen ausgegeben wird, ist das Attribut `dtype`. Darin gespeichert ist
+der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
+dem Punktoperator zugegegriffen werden.
+
+```{code-cell} ipython3
+print(alter.dtype)
+```
+
+Offensichtlich sind die gespeicherten Werte Integer.
+
+```{admonition} Mini-Übung
+:class: miniexercise 
+Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
+Vorlesungs/Übungs-Stunden an diesem Wochentag.
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code:
+```
+
+````{admonition} Lösung
+:class: minisolution, toggle
 ```python
-print('Hallo'
+stundenplan = pd.Series([4, 0, 4, 6, 8], index=["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"])
+print(stundenplan)
+```
+````
+
++++
+
+## DataFrame für Tabellen
+
+Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
+einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
+sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
+auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
+zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
+darstellt und die Spalten die Eigenschaften speichern.
+
+Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
+Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
+kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
+gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei. 
+
+## Import von Tabellen 
+
+Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
+Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
+eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
+einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
+Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
+gestreift.
+
+### Import von Tabellen im CSV-Format
+
+Das **Dateiformat CSV** speichert Daten zeilenweise ab. Dabei steht CSV für
+"comma separated value". Die Trennung der Spalten erfolgt durch ein
+Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
+gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
+der Nacchkommastellen verwenden.
+
+Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
+`read_csv` an (siehe
+[Dokumentation/read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)).
+Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
+ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
+übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.
+
+Am besten sehen wir uns die Funktionsweise von `read_csv` an einem Beispiel an.
+Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
+Datei
+[`bundesliga_top7_offensive.csv`](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)
+herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
+JupyterNotebook liegt. Die csv-Datei stammt von
+[Kaggle](https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv).
+Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
+der Bundesligasaison 2020/21 enthalten. 
+
+Führen Sie dann anschließend die folgende Code-Zelle aus.
+
+```{code-cell} ipython3
+import pandas as pd
+data = pd.read_csv('bundesliga_top7_offensive.csv')
 ```
 
-Syntaktische Fehler braucht man nicht im eigentlichen Sinn zu suchen, denn
-syntaktische Fehler führen dazu, dass das Programm abbricht. Schwieriger
-hingegen ist es, die Ursache des syntaktischen Fehlers zu ermitteln und den
-Fehler zu beheben. Oft ist es hilfreich, die Fehlermeldung in eine
-Internet-Suchmaschine einzugeben. Oft haben andere Programmierer ebenfalls schon
-diesen Fehler im Programm gehabt und es gibt Erläuterungen zu dieser Fehlerart.
+Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
+trotzdem nicht. Dazu verwenden wir die Methode `.head()`.
 
-**Semantische Fehler** sind besonders schwer zu finden. Bei semantischen Fehlern
-gibt es keine Fehlermeldung des Interpreters und das Programm läuft auch, ohne
-abzustürzen. Aber das Ergebnis entspricht nicht dem, was die Entwicklerin oder
-der Entwickler beabsichtigt hatte.  
-
-In dem folgenden Programm beispielsweise soll der Notendurchschnitt von
-Praxisbericht (Gewichtung 80 %) und Präsentation (20 %) berechnet werden.
-Schauen Sie sich den Programmcode an. Wo ist der Fehler?
-
-```python
-note_praxisbericht = 2.7
-note_praesentation = 2.3
-
-noten_durchschnitt = 0.8 * note_praesentation + 0.2 * note_praesentation
-print('Notendurchschnitt: ', noten_durchschnitt)
+```{code-cell} ipython3
+data.head()
 ```
 
-Der folgende Code soll den Benutzer nach mehreren Noten fragen und dann den
-Durchschnitt berechnen. Bitte geben Sie die Noten 2, 2, 2 ein und dann 0 zum
-Beenden. Der Durchschnitt ist 2, aber was berechnet das Programm? Wo ist der
-Fehler?
+Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
+beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
+Methode `.head(10)`mit dem Argument 10.
 
-```python
-summe = 0
-anzahl = 0
-weitere_note_eingeben = True
-
-while weitere_note_eingeben == True:
-    note = float(input('Bitte geben Sie eine Note ein. Wenn Sie die Note 0 eingeben, ist die Noteneingabe beendet. '))
-    if note == 0:
-        weitere_note_eingeben = False
-    else:
-        summe = note
-        anzahl = anzahl + 1
-        
-durchschnitt = summe / anzahl
-print('Der Durchschnitt der Noten ist ', durchschnitt)
+```{code-cell} ipython3
+data.head(10)
 ```
 
-Aber wie gehen wir jetzt vor, um sicherzustellen, dass das von uns entwickelte
-Programm auch den beabsichtigten Zweck erfüllt? Als erstes überlegen wir uns
-Testfälle. Dazu später mehr. Auf dem Papier notieren wir uns, was das Programm
-für Zwischenergebnisse liefern sollte, welche Ausgaben und welches
-Gesamtergebnis. Für ein Testbeispiel mit den Noten 1.3, 3.7 und 2.3 hätten wir
-also folgenden *wünschenswerten* Ablauf:
+Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
+usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
+welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
+erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
+gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
+den Befehl mit `index_col=`. Die Namen stehen in der 1. Spalte, was in
+Python-Zählweise einer 0 entspricht.
 
-```
-summe = 0
-anzahl = 0
-weitere_note_eingeben = True
-Benutzereingabe: note = 1.3
-else-Zweig: 
-    summe = 1.3 
-    anzahl  = 1
-Benutzereingabe: note = 3.7
-else-Zweig:
-    summe = 5.0
-    anzahl = 2
-Benutzereingabe: note = 2.3
-else-Zweig
-    summe = 7.3
-    anzahl = 3
-Benutzereingabe: 0
-if-Zweig:
-    weitere_note_eingeben = False
-durchschnitt = 7.3/3 = 2.433333333333333
-Ausgabe: Der Durchschnitt der Noten ist 2.433333333333333
+```{code-cell} ipython3
+data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
+data.head(10)
 ```
 
-Leider fehlt uns derzeit der Einblick in unseren Programm-Code. Eine sehr
-einfache und schnelle Methode ist die Fehlersuche durch print-Anweisungen. Diese
-Methode funktioniert immer, kann aber bei größeren Programmen auch schnell
-unübersichtlich werden. Daher ist die Weiterentwicklung der "Debugging by
-Printing"-Methode der Debugger. Erweitern wir unser Programm mit
-print-Anweisungen und sehen wir, was passiert, wenn wir die Noten 1.3, 3.7, 2.3
-und 0 eingeben:
+### Import von Tabellen im xlsx-Format
 
-```python
-summe = 0
-print('summe = ', summe)
-anzahl = 0
-print('anzahl = ', anzahl)
-weitere_note_eingeben = True
-print('weitere_note_eingeben = ', weitere_note_eingeben)
+Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
+bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
+Dateiendung `.xlsx`. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
+als Excel-Datei
+[bundesliga_top7_offensive.xlsx](https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm)
+herunter.
 
-while weitere_note_eingeben == True:
-    note = float(input('Bitte geben Sie eine Note ein. Wenn Sie die Note 0 eingeben, ist die Noteneingabe beendet. '))
-    print('note = ', note)
-    if note == 0:
-        weitere_note_eingeben = False
-        print('if-Zweig: note = ', note)
-        print('if-Zweig: weitere_note_eingeben = ', weitere_note_eingeben)
-    else:
-        summe = note
-        print('else-Zweig: summe = ', summe)
-        anzahl = anzahl + 1
-        print('else-Zweig: anzahl = ', anzahl)
-        
-durchschnitt = summe / anzahl
-print('durchschnitt = ', durchschnitt)
-print('Der Durchschnitt der Noten ist ', durchschnitt)
+```{code-cell} ipython3
+data = pd.read_excel('bundesliga_top7_offensive.xlsx', index_col=0)
+data.head(5)
 ```
 
-## Aufgabe 
+Vermutlich erhalten Sie zunächst eine Fehlermeldung: `Missing optional
+dependency 'openpyxl'.  Use pip or conda to install openpyxl.` Falls das der
+Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
+schreiben zu können, installieren Sie bitte das Modul `openpyxl` mit `!conda
+install openpyxl` oder `!pip install openpyxl ` nach. In dieser Vorlesung
+verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
+Vorlesung/Übung nicht notwendig ist.
 
-Kopieren Sie den folgenden Code in eine Code-Zelle. Finden Sie die Fehler und
-korrigieren Sie die Fehler.
+## Übersicht verschaffen mit info 
 
-```python
-passwort = input("Hallo, Pirat! Wie lautet das Passwort: )
-if passwort in ["Arrr!"):
-    print('Ich grüße Sie!')
-elif
-print("Zugang verweigert.")
+Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
+Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
+noch kommen, können wir mit der `.head()`-Methode nicht erfassen. Dafür stellt
+Pandas die Methode `.info()` zur Verfügung. Probieren wir es einfach aus.
+
+```{code-cell} ipython3
+data.info()
 ```
 
-
-```python
-
-```
-
-## Aufgabe 
-
-Ein Zeitreisender kommt auf Sie zu. Fragen Sie ihn nach dem Jahr, aus dem er
-kommt und begrüßen Sie ihn. Falls er aus einem Jahr vor 1900 kommt mit "Sie
-kommen ja aus der Vergangenheit!", zwischen 1900 und 2021 mit "Sie stammen also
-aus unserer Zeit!" und ansonsten mit "Können Sie mir die Lottozahlen von
-nächster Woche verraten?". Schreiben Sie als erstes Ihr eigenes Programm in der
-nächsten Code-Zelle:
-
-```python
-
-```
-
- Vergleichen Sie anschließend Ihr Programm mit dem folgenden Code und
- korrigieren Sie die Fehler.
- 
- ```python
-jahr == int.input("Ein Zeitreisender??? Aus welchem Jahr kommen Sie denn? '))
-
-if jahr <= 1900
-    print ('Sie kommen ja aus der Vergangenheit!')
-elif jahr > 1900 && year < 2020:
-    print ("Sie stammen also aus unserer Zeit!")
-elif:
-    print ("Können Sie mir die Lottozahlen von nächster Woche verraten?'')
-```
-
-```python
-
-```
-
-## Aufgabe
-
-Die folgende Klasse initalisiert ein Objekt mit Vorname, Nachname und definierte
-eine Methode vorstellen. Anschließend wird die Klasse benutzt. Korrigieren Sie
-die Fehler. 
-
-```python
-classy Person:
-  def __initalize__(self, vorname, nachname):
-    self.first = vorname
-    self.last = nach_name
-  def vorstellen(self):
-  print("Guten Tag. Mein Name ist + " self.vorname + " " + self.last)
-
-erste_person = Person("Homer", "Simpson")
-2te_person = Person("Marge", "Simpson")
-
-erste_person.vorstellen()
-2te_person.self.vorstellen
-```
-
-
-```python
-
-```
-
-## Integrierte Entwicklungsumgebungen
-
-Integrierte Entwicklungsumgebungen (=IDE = integrated development environment)
-unterstützen die Softwareentwicklung. Für MATLAB gibt es nur eine integrierte
-Entwicklungsumgebung, nämlich MATLAB selbst. Für Python gibt es zahlreiche IDEs.
-Dabei ist der Funktionsumfang meist vergleichbar, so dass man nach persönlichen
-Vorlieben entscheiden kann.
-
-* Jupyter Notebooks oder Jupyter Labs sind nicht im eigentlichen Sinne IDEs, die
-  Grenze zu ziehen ist aber schwierig.
-* Für Python ist pyCharm von der Firma JetBrains sehr beliebt, siehe
-  https://www.jetbrains.com/pycharm/ . Diese IDE gibt es als kostenlose Version
-  mit eingeschränkter Funktionalität oder als kostenpflichtige
-  Professional-Variante. Studierende können sich bei JetBrains mit ihrer
-  studentischen E-Mail-Adresse registrieren und können sich dann kostenlos die
-  Pro-Version herunterladen. U.a. bietet die Pro-Version auch die Unterstützung
-  von Jupyter Notebooks. 
-* Microsoft entwickelt seit 2015 den sogenannten Visual Code Editor, eine IDE
-  für alle möglichen Programmiersprachen, siehe https://code.visualstudio.com.
-* Spyder ist eine IDE, die für die wissenschaftliche Programmierung sehr gerne
-  genutzt wird.
-
-
-
-## Testen und Kommentare
-
-Jedes Programm sollte umfangreich getestet werden, bevor es zum Einsatz kommt.
-Dabei fällt es den Software-Entwicklerteams oft schwer, die eigene Sofwtare zu
-testen, denn man hat die eigenen Vorstellungen im Kopf, die ja auch so im
-Programm umgesetzt wurden. In Software-Firmen gibt es daher oft eigene Teams,
-die das Testen von Software übernehmen.
-
-Leider gibt es auch tragische Softwarefehler. Auf der Wikipedia-Seite [Liste von
-Programmfehlerbeispielen](https://de.wikipedia.org/wiki/Liste_von_Programmfehlerbeispielen)
-finden Sie einige der bekanntesten Softwarefehlern. Zum Beispiel ist dies der 1.
-Eintrag: "Beim Kampfflugzeug F-16 brachte der Autopilot das Flugzeug in
-Rückenlage, wenn der Äquator überflogen wurde. Dies kam daher, dass man keine
-„negativen“ Breitengrade als Eingabedaten bedacht hatte. Dieser Fehler wurde
-sehr spät während der Entwicklung der F-16 mithilfe eines Simulators entdeckt
-und beseitigt."
-
-Die folgenden Regeln sind daher bei der Programmierung hilfreich:
-
-1. Überlegen Sie sich Testfälle für Ihr Programm, bevor Sie es schreiben.
-2. Fügen Sie nur nach und nach kleine Häppchen zu Ihrem Programm hinzu und
-   testen Sie sofort, ob der neue Code-Abschnitt das Gewünschte erledigt.
-3. Fügen Sie Kommentare mit # ein, um zu anderen Entwicklern zu erklären, was
-   ein bestimmter Code-Abschnitt tut und was mögliche Ergebnisse sein könnten.
-
-
-
-## Aufgabe 
-
-Wir hatten bereits die Aufgabe mit dem Einmaleins-Trainer. Jetzt greifen wir die
-Aufgabe auf, testen Abschnitte und benutzen Kommentare. Also...
-
-Sie möchten ein Programm schreiben, mit dem ein Benutzer das Einmaleins üben
-kann. Zu Anfang darf der Benutzer wählen, wie viele Aufgaben gestellt werden.
-Der Computer zieht Zufallszahlen zwischen 1 und 10 und stellt die
-Einmaleins-Aufgaben, z.B. die Frage: "Was ist 4x7?". Der Benutezr gibt die
-Antwort ein. Wenn die Antwort richtig ist, gibt der Computer "Richtig!" aus.
-Ansonsten gibt der Computer den Hinweis: "Leider falsch, die richtige Antwort
-wäre xx gewesen." Am Ende gibt der Computer aus, wie viele Aufgaben richtig
-gelöst wurden und wieviel Prozent das sind.
-
-Schreiben Sie jetzt eine Funktion, bei der der Benutzer gefragt wird, wie viele
-Aufgaben gestellt werden sollen und die die Anzahl der Aufgaben zurückgibt. Was
-kann dabei alles schiefgehen? Tipp: suchen Sie im Internet nach der
-String-Methode isdigit(). Wie können Sie als Programmiererin sicherstellen, dass
-die Eingabe des Benutzers gültig ist? Testen Sie Ihre Funktion.
-
-```python
-# Funktion
-
-```
-
-```python
-# Test
-
-```
-
-Schreiben Sie als nächstes eine Funktion, die eine Einmaleins-Aufgabe stellt
-(kein Rückgabewert). Testen Sie die Funktion.
-
-```python
-# Funktion stelle_einmaleins_aufgaben()
-
-```
-
-```python
-# Test
-
-```
-
-Erweitern Sie nun die Funktion, die Einmaleins-Aufgaben stellt um ein Argument,
-wie viele Aufgaben gestellt werden sollen. Testen Sie die Funktion. 
-
-```python
-# erweiterte Funktion stelle_einmaleins_aufgaben(anzahl)
-
-
-```
-
-```python
-# Test
-
-```
-
-Erweitern Sie nun die Funktion, die Einmaleins-Aufgaben stellt um eine Prüfung
-des richtigen Ergebnisses. Testen Sie die Funktion, indem Sie einmal ein
-falsches Ergebnis und einmal ein richtiges Ergebnis eingeben.
-
-```python
-# erweiterte Funktion stelle_einmaleins_aufgaben(anzahl) und Prüfung
-
-
-```
-
-```python
-# Test
-
-```
-
-Erweitern sie nun erneut die Funktion, die Einmaleins-Aufgaben stellt. Nun soll
-die Funktion noch einen Rückgabewert liefern, nämlich die Anzahl der richtig
-gelösten Aufgaben. Bauen Sie print-Anweisungen ein, um zu testen, ob die Anzahl
-der richtig gelösten Aufgaben korrekt mitgezählt wird. Im fertigen Programm
-werden diese print-Anweisungen wieder entfernt. Testen Sie die Funktion, auch
-den Rückgabewert.
-
-```python
-# erweiterte Funktion anzahl_richtige_aufgaben = stelle_einmaleins_aufgaben(anzahl) 
-
-
-```
-
-```python
-# Test 
-
-
-```
-
-Zuletzt schreiben Sie ein Programm, das aus den beiden Funktionen einen
-Einmaleins-Trainer zusammensetzt, und zusätzlich in Prozent ausgibt, wie viele
-Aufgaben richtig gelöst wurden.
-
-
-## Aufgabe 
-
-Was könnte folgender Code für einen Zweck haben?
-
-```python
-siege_computer = 0
-if wahl_computer == 'Stein':
-    if wahl_benutzer == 'Stein':
-        print('Unentschieden, ich hatte ebenfalls Stein.')
-    elif wahl_benutzer == 'Schere':
-        print('Punkt für mich, Stein schleift Schere.')
-        siege_computer += 1
-    else # wahl_benutzer == 'Papier'
-        print('Punkt für Sie, Papier umwickelt Stein.')
-        siege_benutzer +=1
-```
-
-Korrigieren sie die 4 Fehler. 
-
-
-```python
-
-```
+Mit `.info()` erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
+die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie `Name`
+selbsterklärend, aber was `xG` bedeutet, erschließt sich nicht von selbst. Dazu
+brauchen wir mehr Informationen von den Autor:innen der Daten.
+
+Weiterhin entnehmen wir der Ausgabe von `.info()`, dass in jeder Spalte 177
+Einträge sind, die 'non-null' sind. Damit ist gemeint, dass diese Zellen beim
+Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
+angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
+Datentyp 'object' angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
+und die mittlere erwartete Anzahl von Toren pro Spiel 'xG' (= expected number of
+goals from the player in a match) wird als Float angegeben.
