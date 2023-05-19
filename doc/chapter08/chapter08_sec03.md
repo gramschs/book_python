@@ -36,7 +36,7 @@ DataFrame-Objektes gibt, so liefert die Methode `.describe()` eine schnelle
 Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
 Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21. 
 
-```python
+```{code-cell} ipython3
 import pandas as pd
 
 data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
@@ -45,7 +45,7 @@ data.head(10)
 
 Die Anwendung der `.describe()`-Methode liefert fogende Ausgabe:
 
-```python
+```{code-cell} ipython3
 data.describe()
 ```
 
@@ -86,7 +86,7 @@ wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
 Methode `.count()` direkt auf den kompletten DataFrame angewendet, so erhalten
 wir ein Pandas-Series-Objekt. 
 
-```python
+```{code-cell} ipython3
 print( data.count() )
 ```
 
@@ -94,7 +94,7 @@ Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
 erst die Spalte mit dem Alter heraussgreifen und darauf `.count()` anwenden.
 
 
-```python
+```{code-cell} ipython3
 methode01 = data.loc[:, 'Age'].count()
 print(methode01)
 ```
@@ -102,7 +102,7 @@ print(methode01)
 Oder wir wenden zuerst `.count()`an und wählen dann im Series-Objekt das Alter
 'Age' aus.
 
-```python
+```{code-cell} ipython3
 methode02 = data.count().loc['Age']
 print(methode02)
 ```
@@ -111,19 +111,13 @@ print(methode02)
 
 Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode `.mean()` den Mittelwert der Einträge in jeder Spalte berechnet.
 
-```python
-mittelwert = data.mean()
-print(mittelwert)
-```
-
-Wenn Sie eine Fehlermeldung erhalten sollten "Dropping of nuisance columns in
-DataFrame reductions (with 'numeric_only=None') is deprecated", übergeben Sie
-bitte der `mean()`-Methode die Option `numeric_only=True`.
-
-```python
+```{code-cell} ipython3
 mittelwert = data.mean(numeric_only=True)
 print(mittelwert)
 ```
+
+An der Stelle ist es wichtig, die Option `numeric_only=True` zu setzen, damit
+nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.
 
 Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
 Jahre alt sind und 1321.6 Minuten im Einsatz waren.
@@ -141,7 +135,7 @@ Buchstabe 'd' kommt von 'deviation', also Abweichung. Somit ist wiederum die
 Methode nach dem englischen Fachbegriff 'standard deviation' benannt.  Welche
 Standardabweichung erhalten wir beim Alter?
 
-```python
+```{code-cell} ipython3
 standardabweichung = data.std(numeric_only=True)
 print(standardabweichung)
 ```
@@ -151,7 +145,7 @@ extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
 dann `.std()` oder erst `.std()`und dann Selektion nach 'Age'. Probieren wir es
 aus.
 
-```python
+```{code-cell} ipython3
 alter_std = data.loc[:, 'Age'].std()
 print(alter_std) 
 ```
@@ -174,7 +168,7 @@ Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
 (haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
 Anzahl von Toren ist.
 
-```python
+```{code-cell} ipython3
 tore_min = data.loc[:, 'Goals'].min()
 print(tore_min)
 
@@ -194,7 +188,7 @@ Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
 manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
 bei denen nur 'FW' eingetragen ist.  
 
-```python
+```{code-cell} ipython3
 filter = data.loc[:, 'Position'] == 'FW'
 stuermer = data.loc[filter, 'Goals']
 
@@ -215,7 +209,7 @@ Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
 Karten wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus
 den Daten holen.
 
-```python
+```{code-cell} ipython3
 gelbe_karten_50prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.5)
 print(gelbe_karten_50prozent_quantil)
 ```
@@ -224,7 +218,7 @@ Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
 weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
 gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an. 
 
-```python
+```{code-cell} ipython3
 gelbe_karten_75prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.75)
 print(gelbe_karten_75prozent_quantil)
 ```
@@ -233,7 +227,7 @@ print(gelbe_karten_75prozent_quantil)
 die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
 sind?
 
-```python
+```{code-cell} ipython3
 filter = data.loc[:, 'Yellow_Cards'] > 4.0
 gelbkarten_spieler = data.loc[filter, ['Position', 'Yellow_Cards']]
 print(gelbkarten_spieler.sort_values(by='Yellow_Cards', ascending=False))

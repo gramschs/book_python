@@ -14,6 +14,13 @@ kernelspec:
 
 # 8.1 Series und DataFrame 
 
+Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
+effizient zu speichern. Dazu benutzen Data Scientists die Datentypen `Series`
+oder `DataFrame` aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
+mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
+verwendete Datenformat `csv` kennen.
+
+
 ## Lernziele
 
 ```{admonition} Lernziele
@@ -46,7 +53,7 @@ import pandas as pd # kürze das Modul pandas als pd ab, um Schreibarbeit zu spa
 
 Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
 Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode `pd.Series(liste)` eine neues Series-Objekt erzeugt, dass die
+über die Methode `pd.Series(liste)` ein neues Series-Objekt erzeugt, dass die
 Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
 Liste, also `[25, 22, 43, 37]` und initialisieren über `pd.Series()` die
 Variable `alter`:
@@ -128,13 +135,16 @@ Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
 kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
 gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei. 
 
-## Import von Tabellen mit read_csv()
+## Import von Tabellen 
 
 Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
 Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung Tabellen, die in einem
-offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind.
+eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
+einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
+Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
+gestreift.
+
+### Import von Tabellen im CSV-Format
 
 Das **Dateiformat CSV** speichert Daten zeilenweise ab. Dabei steht CSV für
 "comma separated value". Die Trennung der Spalten erfolgt durch ein
@@ -173,7 +183,9 @@ trotzdem nicht. Dazu verwenden wir die Methode `.head()`.
 data.head()
 ```
 
-Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die Methode `.head(10)`mit dem Argument 10.
+Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
+beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
+Methode `.head(10)`mit dem Argument 10.
 
 ```{code-cell} ipython3
 data.head(10)
@@ -191,6 +203,28 @@ Python-Zählweise einer 0 entspricht.
 data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
 data.head(10)
 ```
+
+### Import von Tabellen im xlsx-Format
+
+Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
+bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
+Dateiendung `.xlsx`. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
+als Excel-Datei
+[bundesliga_top7_offensive.xlsx](https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm)
+herunter.
+
+```{code-cell} ipython3
+data = pd.read_excel('bundesliga_top7_offensive.xlsx', index_col=0)
+data.head(5)
+```
+
+Vermutlich erhalten Sie zunächst eine Fehlermeldung: `Missing optional
+dependency 'openpyxl'.  Use pip or conda to install openpyxl.` Falls das der
+Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
+schreiben zu können, installieren Sie bitte das Modul `openpyxl` mit `!conda
+install openpyxl` oder `!pip install openpyxl ` nach. In dieser Vorlesung
+verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
+Vorlesung/Übung nicht notwendig ist.
 
 ## Übersicht verschaffen mit info 
 

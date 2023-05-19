@@ -14,7 +14,7 @@ kernelspec:
 
 # 8. Pandas anstatt Excel
 
-Maschinelles LErnenist dazu gedacht, Muster in größeren Datenmengen zu finden.
+Maschinelles Lernenist dazu gedacht, Muster in größeren Datenmengen zu finden.
 Der einfache Datenyp Liste reicht nicht aus, um größere Datenmengen effizient zu
 verwalten. Typischerweise liegen größere Datensätze in Form von Tabllen vor. Das
 verwendetet Datenformat variiert dabei. Manchnal liegen die Daten im
