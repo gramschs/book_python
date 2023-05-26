@@ -777,16 +777,19 @@ Spiel funktioniert folgendermaßen:</p>
 <p>Der Computer wählt aus einer Liste von Wörtern zufällig eines aus. Anstatt das
 Wort anzuzeigen, werden Unterstriche angezeigt. Wurde beispielsweise zufällig
 das Wort “beispiel” ausgewählt, so wird</p>
-<hr class="docutils" />
+<p><code>_ _ _ _ _ _ _ _ </code></p>
 <p>angezeigt. Danach darf der Spieler einen Buchstaben raten. Ist der Buchstabe im
 gesuchten Wort, so wird er künftig korrekt angezeigt. Wurde beispielweise E
 geraten, dann sieht die Anzeige so aus:</p>
-<p>_ e _ _ _ _ e _</p>
+<p><code>_ e _ _ _ _ e _</code></p>
 <p>Es dürfen maximal 10 Buchstaben falsch geraten werden. Ein Galgenmännchen muss
 nicht gezeichnet werden.</p>
-<p>Tipp:</p>
+<p>Tipps:</p>
 <ul class="simple">
 <li><p>Eine Liste der richtig geratenen Buchstaben ist hilfreich.</p></li>
+<li><p>Um zu testen, ob schon alle Buchstaben korrekt geraten wurden, kann auf die
+Existenz von <code class="docutils literal notranslate"><span class="pre">_</span></code> getestet werden. Das ist aber nur eine von vielen
+Möglichkeiten.</p></li>
 </ul>
 </div>
 <div class="minisolution toggle admonition">

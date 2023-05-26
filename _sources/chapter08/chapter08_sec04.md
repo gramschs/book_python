@@ -79,21 +79,24 @@ Der Computer wählt aus einer Liste von Wörtern zufällig eines aus. Anstatt da
 Wort anzuzeigen, werden Unterstriche angezeigt. Wurde beispielsweise zufällig
 das Wort "beispiel" ausgewählt, so wird 
 
-_ _ _ _ _ _ _ _ 
+<code>_ _ _ _ _ _ _ _ </code>
 
 angezeigt. Danach darf der Spieler einen Buchstaben raten. Ist der Buchstabe im
 gesuchten Wort, so wird er künftig korrekt angezeigt. Wurde beispielweise E
 geraten, dann sieht die Anzeige so aus:
 
-_ e _ _ _ _ e _
+<code>_ e _ _ _ _ e _</code>
 
 Es dürfen maximal 10 Buchstaben falsch geraten werden. Ein Galgenmännchen muss
 nicht gezeichnet werden.
 
-Tipp:
+Tipps:
 * Eine Liste der richtig geratenen Buchstaben ist hilfreich.
+* Um zu testen, ob schon alle Buchstaben korrekt geraten wurden, kann auf die
+  Existenz von `_` getestet werden. Das ist aber nur eine von vielen
+  Möglichkeiten.
 ```
-
+ 
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
