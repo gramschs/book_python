@@ -1,0 +1,62 @@
+# Quellen (Stichtag: 01.08.2022):
+# https://www.transfermarkt.de/bundesliga/marktwerteverein/wettbewerb/L1/stichtag/2022-08-01/plus/1
+# https://www.transfermarkt.de/2-bundesliga/marktwerteverein/wettbewerb/L2/plus/1?stichtag=2022-08-01
+# https://www.transfermarkt.de/3-liga/marktwerteverein/wettbewerb/L3/plus/1?stichtag=2022-08-01
+# Angaben Wert in Mio. Euro
+Verein,Ligazugehörigkeit,Wert,Kadergröße
+"FC Bayern München","Bundesliga",870.23,28
+"Borussia Dortmund","Bundesliga",509.45,30
+"Bayer 04 Leverkusen","Bundesliga",455.35,29
+"RasenBallsport Leipzig","Bundesliga",486.18,30
+"VfL Wolfsburg","Bundesliga",239.65,33
+"Eintracht Frankfurt","Bundesliga",250.25,32
+"TSG 1899 Hoffenheim","Bundesliga",176.40,29
+"Borussia Mönchengladbach","Bundesliga",178.95,27
+"SC Freiburg","Bundesliga",149.55,28
+"VfB Stuttgart","Bundesliga",142.08,31
+"1. FSV Mainz 05","Bundesliga",112.25,30
+"Hertha BSC","Bundesliga",127.35,34
+"FC Augsburg","Bundesliga",99.10,32
+"1. FC Union Berlin","Bundesliga",94.70,33
+"1. FC Köln","Bundesliga",91.73,32
+"FC Schalke 04","Bundesliga",65.45,29
+"SV Werder Bremen","Bundesliga",62.65,30
+"VfL Bochum","Bundesliga",38.00,26
+"Hamburger SV","2. Bundesliga",34.85,28
+"Arminia Bielefeld","2. Bundesliga",31.10,26
+"SpVgg Greuther Fürth","2. Bundesliga",24.55,27
+"FC St. Pauli","2. Bundesliga",23.50,28
+"Fortuna Düsseldorf","2. Bundesliga",19.55,23
+"Hannover 96","2. Bundesliga",22.60,28
+"1.FC Nürnberg","2. Bundesliga",23.25,27
+"SV Darmstadt 98","2. Bundesliga",18.93,26
+"Karlsruher SC","2. Bundesliga",16.95,30
+"1.FC Heidenheim 1846","2. Bundesliga",16.65,27
+"Holstein Kiel","2. Bundesliga",16.38,30
+"SC Paderborn 07","2. Bundesliga",16.38,27
+"SV Sandhausen","2. Bundesliga",13.15,25
+"SSV Jahn Regensburg","2. Bundesliga",12.10,25
+"FC Hansa Rostock","2. Bundesliga",13.00,28
+"1.FC Kaiserslautern","2. Bundesliga",9.45,28
+"1.FC Magdeburg","2. Bundesliga",11.10,31
+"Eintracht Braunschweig","2. Bundesliga",8.83,26
+"Borussia Dortmund II","3. Liga",13.05,31
+"SG Dynamo Dresden","3. Liga",9.18,31
+"FC Ingolstadt 04","3. Liga",8.43,27
+"SC Freiburg II","3. Liga",6.23,31
+"FC Erzgebirge Aue","3. Liga",7.53,30
+"TSV 1860 München","3. Liga",6.65,30
+"SV Waldhof Mannheim","3. Liga",5.73,23
+"MSV Duisburg","3. Liga",5.55,28
+"FC Viktoria Köln","3. Liga",6.60,32
+"1. FC Saarbrücken","3. Liga",6.15,26
+"VfL Osnabrück","3. Liga",5.60,27
+"SV Wehen Wiesbaden","3. Liga",5.53,25
+"Rot-Weiss Essen","3. Liga",4.68,29
+"SV 07 Elversberg","3. Liga",4.05,26
+"SC Verl","3. Liga",3.68,28
+"Hallescher FC","3. Liga",3.95,24
+"SV Meppen","3. Liga",3.93,26
+"FSV Zwickau","3. Liga",3.80,24
+"SpVgg Bayreuth","3. Liga",3.25,30
+"VfB Oldenburg","3. Liga",3.06,27
