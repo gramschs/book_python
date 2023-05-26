@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.1 Das Modul NumPy &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>9.1 Linien-, Balken- und Streudiagramme &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.2 Linien-, Balken- und Streudiagramme" href="chapter09_sec02.html" />
+    <link rel="next" title="9.2 Visualisierung von DataFrames mit Fehlerbalken" href="chapter09_sec02.html" />
     <link rel="prev" title="9. Visualisierung mit Matplotlib" href="chapter09_sec00.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -399,17 +399,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     9.1 Das Modul NumPy
+     9.1 Linien-, Balken- und Streudiagramme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec02.html">
-     9.2 Linien-, Balken- und Streudiagramme
+     9.2 Visualisierung von DataFrames mit Fehlerbalken
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec03.html">
-     9.3 Visualisierung von DataFrames
+     9.3 Histogramme
     </a>
    </li>
    <li class="toctree-l2">
@@ -722,33 +722,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-ist-schneller-durch-c">
-   NumPy ist schneller durch C
+  <a class="reference internal nav-link" href="#liniendiagramme">
+   Liniendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erzeugung-von-numpy-arrays">
-   Erzeugung von NumPy-Arrays
+  <a class="reference internal nav-link" href="#balkendiagramme">
+   Balkendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attribute-von-numpy-arrays">
-   Attribute von NumPy-Arrays
+  <a class="reference internal nav-link" href="#streudiagramme">
+   Streudiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-einzelner-elemente-eines-arrays">
-   Zugriff einzelner Elemente eines Arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-auf-numpy-arrays-anwenden">
-   Funktionen auf NumPy-Arrays anwenden
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zusammenfassung">
-   Zusammenfassung
+  <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
+   Zusammenfassung und Ausblick
   </a>
  </li>
 </ul>
@@ -760,7 +750,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>9.1 Das Modul NumPy</h1>
+                <h1>9.1 Linien-, Balken- und Streudiagramme</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -776,33 +766,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-ist-schneller-durch-c">
-   NumPy ist schneller durch C
+  <a class="reference internal nav-link" href="#liniendiagramme">
+   Liniendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erzeugung-von-numpy-arrays">
-   Erzeugung von NumPy-Arrays
+  <a class="reference internal nav-link" href="#balkendiagramme">
+   Balkendiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attribute-von-numpy-arrays">
-   Attribute von NumPy-Arrays
+  <a class="reference internal nav-link" href="#streudiagramme">
+   Streudiagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zugriff-einzelner-elemente-eines-arrays">
-   Zugriff einzelner Elemente eines Arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-auf-numpy-arrays-anwenden">
-   Funktionen auf NumPy-Arrays anwenden
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zusammenfassung">
-   Zusammenfassung
+  <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
+   Zusammenfassung und Ausblick
   </a>
  </li>
 </ul>
@@ -815,287 +795,313 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="das-modul-numpy">
-<h1>9.1 Das Modul NumPy<a class="headerlink" href="#das-modul-numpy" title="Permalink to this headline">#</a></h1>
-<p>Im letzten Kapitel haben wir gelernt, Daten in Form von Tabellen als
-Pandas-Objekte zu verwalten. Dabei arbeiten die Module Pandas, Scikit-Learn und
-auch das Visualisierungsmodul Matplotlib, das wir in diesem Kapitel kennenlernen
-werden, alle mit NumPy-Arrays. NumPy ist ein Akronym für <strong>numerisches Python</strong>.</p>
-<p>Die Internetseite von NumPy</p>
-<blockquote>
-<div><p><a class="reference external" href="https://NumPy.org">https://NumPy.org</a></p>
-</div></blockquote>
-<p>behauptet sogar von ihrem eigenen Paket, dass NumPy das (!!!) fundamentale Modul
-für alle wissenschaftlichen Programme in Python ist — stimmt wahrscheinlich! Die
-Bibliothek ist im Kern in der Programmiersprache C geschrieben und bietet vor
-allem sehr effiziente Datenstrukturen für Vektoren, Matrizen und
-mehrdimensionale Arrays an.</p>
-<p>In  diesem Abschnitt werden wir uns die grundlegenden Eigenschaften des
-<strong>NumPy-Array</strong> erarbeiten, um für Matplotlib und Scikit-Learn die Basis zu
-schaffen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="linien-balken-und-streudiagramme">
+<h1>9.1 Linien-, Balken- und Streudiagramme<a class="headerlink" href="#linien-balken-und-streudiagramme" title="Permalink to this headline">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können <strong>NumPy</strong> mit seiner typischen Abkürzung <strong>np</strong> importieren.</p></li>
-<li><p>Sie können mit <strong>np.array()</strong> ein NumPy-Array aus einer Liste erzeugen.</p></li>
-<li><p>Sie können NumPy-Arrays, die nach einem Muster aufgebaut sind, erzeugen:</p>
-<ul>
-<li><p>Array mit Einsen: <strong>np.ones()</strong></p></li>
-<li><p>Array mit Nullen: <strong>np.zeros()</strong></p></li>
-<li><p>Array mit Konstante: <strong>np.full()</strong></p></li>
-<li><p>Array mit vorgegebener Anzahl von Punkten in einem Intervall: <strong>np.linspace()</strong></p></li>
-<li><p>Array mit vorgebener Schrittweite in einem Intervall: <strong>np.arange()</strong></p></li>
-</ul>
-</li>
-<li><p>Sie können Basis-Attribute von NumPy-Arrays bestimmen wie beispielsweise</p>
-<ul>
-<li><p>Anzahl der Dimensionen: <strong>.ndim</strong></p></li>
-<li><p>Größe der jeweiligen Dimension: <strong>.shape</strong></p></li>
-<li><p>Gesamtgröße des Arrays: <strong>.size</strong></p></li>
-</ul>
-</li>
-<li><p>Sie können NumPy-Funktionen auf NumPy-Arrays anwenden.</p></li>
+<li><p>Sie können <strong>Matplotlib</strong> mit der üblichen Abkürzung <strong>plt</strong> importieren.</p></li>
+<li><p>Sie können Funktionen als <strong>Liniendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können diskrete Daten als <strong>Balkendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können Messwerte mit <strong>Streudiagrammen</strong> darstellen.</p></li>
 </ul>
 </div>
 </section>
-<section id="numpy-ist-schneller-durch-c">
-<h2>NumPy ist schneller durch C<a class="headerlink" href="#numpy-ist-schneller-durch-c" title="Permalink to this headline">#</a></h2>
-<p>Alle Daten lassen sich letztendlich als eine Folge von Zahlen schreiben.
-Beispielsweise kann ein Foto durch seine Pixel beschrieben werden
-zusammengesetzt aus den Werten RGB (rot - grün - blau). Python bietet dafür
-schon einen Datentyp, die Liste, in der Zahlen (Integer oder Float) gespeichert
-werden können. Da Python eine interpretierte Programmiersprache ist und da in
-der Liste auch andere Datentypen wie zum Beispiel Strings vorkommen dürfen, sind
-Listen für große Datenmengen nicht geeignet. Stattdessen stellt das Modul NumPy
-einen effizienten Datentyp zur Verfügung, das sogenannte <strong>NumPy-Array</strong>.</p>
-<p>Dazu kommen noch Funktionen, die wichtig für Arrays sind wir Vektoroperationen.
-Tatsächlich sind die meisten NumPy-Operationen nicht in Python programmiert,
-sondern in C. Damit sind NumPy-Funktionen sehr effizient und das tolle daran
-ist, dass wir uns keine Gedanken über hardwarenahe Programmierung mit C oder C++
-machen müssen :-)</p>
-<p>Schauen wir uns für das Bestimmen des Maximums einer Liste von zufällig
-erzeugten Zahlen zwischen 0 und 1 an. Zunächst erzeugen wir die Liste der 100
-Zahlen. Dazu importieren wir NumPy mit seiner typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">np</span></code>. im
-Untermodul <code class="docutils literal notranslate"><span class="pre">np.random</span></code>gibt es eine Funktion namens <code class="docutils literal notranslate"><span class="pre">random_sample</span></code>, die
-Zufallszahlen erzeugt.</p>
+<section id="liniendiagramme">
+<h2>Liniendiagramme<a class="headerlink" href="#liniendiagramme" title="Permalink to this headline">#</a></h2>
+<p>Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
+sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
+wenn die Daten von einer mathematischen Funktion stammen. Obwohl die Daten
+theoretisch für jeden x-Wert vorliegen und wir daher Millionen von (x,y)-Punkten
+zeichnen könnten, benutzen wir eine Weretabelle mit weniger (x,y)-Paaren. Die
+Anzahl der (x,y)-Paare bestimmt dann, wie “glatt” die Visualisierung wirkt.</p>
+<p>Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
+wir das Modul <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, genauer gesagt nur einen Teil dieses Moduls namens
+<code class="docutils literal notranslate"><span class="pre">pylab</span></code>. Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
+zu benutzen. Die erste Schnittstelle ist <strong>zustandsorientiert</strong>, die zweite
+<strong>objektorientiert</strong>. Die zustandsorientierte Schnittstelle ist älter. Die
+Entwickler:innen des Matplotlib-Moduls orientierten sich zunächst an der
+kommerziellen Software MATLAB und griffen erst in einer späteren Phase auf
+Objektorientierung zurück.</p>
+<p>Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
+das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
+in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
+gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
+die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten.</p>
+<p>Trotz der Nachteile werden wir in dieser Vorlesung die zustandsorientierte
+Schnittstelle benutzen, um den Vorteil auszunutzen, MATLAB-Syntax verwenden zu
+können.</p>
+<p>Zunächst erzeugen wir das Grafik-Objekt bestehend aus einer Figure (=Grafik als
+Ganzes) und Axes (=Achsen) explizit mit der Funktion <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>und
+speichern diese in entsprechenden Variablen. Dann verwenden wir Methoden, das
+Grafikobjekt zu manipulieren. Beispielsweise fügen wir den Achsen einen
+Linienplot und Beschriftungen hinzu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112c7b070&gt;]
+</pre></div>
+</div>
+<img alt="../_images/chapter09_sec01_5_1.png" src="../_images/chapter09_sec01_5_1.png" />
+</div>
+</div>
+<p>PS: Ohne Strichpunkt/Semikolon gibt Jupyter-Lab noch Objekttyp und Referenz des
+Speicherplatzes aus. In einem normalen Python-Skript würde das nicht passieren.
+Sie können diese Angabe durch den Strichpunkt/Semikolon in der letzten Zeile
+unterdrücken.</p>
+<p>Aber zurück zum Plot, sieht ziemlich krakelig aus. Eigentlich sollte dies eine
+Parabel im Intervall <span class="math notranslate nohighlight">\([-2,2]\)</span> werden. Mit nur 5 Punkten und der Tatsache, dass
+diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus.
+Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand
+erzeugen. Wir verwenden das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> für numerisches Python, das wir wieder
+einmal zuerst laden müssen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(a,b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> je
+nach eingestellter Anzahl. Damit können wir jetzt eine feiner aufgelöste
+Wertetabelle erstellen und visualisieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># erzeuge Liste</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.46493824 0.3179266  0.04406483 0.8688818  0.50256397 0.72544298
- 0.92950355 0.06638888 0.10150198 0.38567242 0.89345329 0.10755077
- 0.99150817 0.75212557 0.18579113 0.72541914 0.00653594 0.14953971
- 0.79797252 0.78164886 0.2721735  0.563869   0.07709279 0.17263453
- 0.62633074 0.64307603 0.09511721 0.67656053 0.2987444  0.0641274
- 0.333055   0.01784431 0.9602669  0.1167682  0.0028076  0.87753087
- 0.19479379 0.25499048 0.19582708 0.41165305 0.89909641 0.77567089
- 0.20862084 0.62175218 0.17545739 0.14575645 0.0374228  0.08840204
- 0.61266859 0.19719162 0.28874679 0.67200878 0.23737912 0.68089611
- 0.16330634 0.49237703 0.19891334 0.6501225  0.63145303 0.47666367
- 0.15466741 0.76176185 0.24847075 0.50167623 0.10668701 0.81408349
- 0.7140142  0.01823903 0.4546641  0.31662891 0.0380127  0.88852279
- 0.58994188 0.42454045 0.87262119 0.18241289 0.58831918 0.52751788
- 0.81647047 0.03472909 0.93110521 0.26438819 0.64649379 0.37335701
- 0.02041738 0.95038315 0.30757393 0.80907641 0.03877795 0.25276568
- 0.4761133  0.22256183 0.37331652 0.920422   0.38149746 0.02106966
- 0.09737543 0.08339809 0.34739789 0.57225667]
-</pre></div>
+<img alt="../_images/chapter09_sec01_7_0.png" src="../_images/chapter09_sec01_7_0.png" />
 </div>
 </div>
-</div>
-<p>Als nächstes berechnen wir das Maximum dieser Zahlen mit der im Python-Kern
-eingebauten Standardfunktion <code class="docutils literal notranslate"><span class="pre">max</span></code>, dann mit <code class="docutils literal notranslate"><span class="pre">np.max</span></code>:</p>
+<p>Nächstes Thema, Beschriftungen. Mit den Funktionen <code class="docutils literal notranslate"><span class="pre">xlabel()</span></code> und
+<code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> beschriften Sie die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">title()</span></code> wird der
+Titel gesetzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_standard</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-<span class="n">max_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard max = &#39;</span><span class="p">,</span> <span class="n">max_standard</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NumPy max = &#39;</span><span class="p">,</span> <span class="n">max_numpy</span><span class="p">)</span>
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard max =  0.991508170620431
-NumPy max =  0.991508170620431
-</pre></div>
+<img alt="../_images/chapter09_sec01_9_0.png" src="../_images/chapter09_sec01_9_0.png" />
 </div>
 </div>
-</div>
-<p>Aber wie lange haben eigentlich die Berechnungen gedauert? Bei so kleinen Listen
-lohnt es nicht, die Berechnung mit der Stoppuhr zu ermitteln, die typischen
-Rechnenzeiten sind zu kurz. Aber JupyterLab bietet ein eingebautes Kommando,
-nämlich <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>. Der Vorteil dieses Kommandos ist, dass der Python-Interpreter
-bei sehr kurzen Rechenzeiten einfach den Code mehrmals durchläuft und
-Mittelwerte bildet.</p>
+<p>Zuletzt soll unser Plot gespeichert werden. Dazu wird die Funktion <code class="docutils literal notranslate"><span class="pre">savefig()</span></code>
+verwendet. Das erste Argument der Funktion ist ein String mit dem Dateinamen,
+unter dem die Grafik abgespeichert werden soll. Die Dateiendung wird von
+Matplotlib automatisch dazu benutzt, das Grafikformat festzulegen. Es stehen
+mehrere Grafikformate zur Verfügung. Mehr Details finden Sie auf der
+Internetseite <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html">Dokumentation
+savefig</a>.
+Ein typisches Ausgabeformat ist eine Rastergrafik wie z.B. png. Danach können
+noch weitere optionale Argumente folgen, die beispielsweise die Auflösung der
+Grafik festlegen.</p>
+<p>Die folgende Anweisung speichert das Liniendiagramm unter dem Dateinamen
+<code class="docutils literal notranslate"><span class="pre">plot_stromstaerke.png</span></code> ab, verwendet dabei das png-Format und eine Auflösung
+von 300 dpi, also 300 Punkten pro Inch.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> max_standard = max(M)
-<span class="o">%</span><span class="k">timeit</span> max_numpy = np.max(M)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot_stromstaerke.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.05 µs ± 15.2 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.36 µs ± 9.02 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Sie sehen, die NumPy-Variante ist erheblich schneller als die Standard-Variante.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Bitte plotten Sie folgende Funktionen:</p>
+<ul class="simple">
+<li><p>lineare Funktion, z.B. f(x) = 7x + 2</p></li>
+<li><p>Sinus,</p></li>
+<li><p>Kosinus,</p></li>
+<li><p>Exponentialfunktion und</p></li>
+<li><p>Wurzelfunktion.</p></li>
+</ul>
+<p>Verändern Sie auch das Definitionsgebiet der Funktionen, also das Intervall für
+<span class="math notranslate nohighlight">\(x\)</span>. (Bei welcher Funktion müssen Sie besonders auf das Defiitionsgebiet der
+Funktion achten?)</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">7</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+
+<span class="n">x4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x4</span><span class="p">)</span>
+
+<span class="n">x5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x5</span><span class="p">,</span><span class="n">y5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-Achse&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y-Achse&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mini-Übung&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="erzeugung-von-numpy-arrays">
-<h2>Erzeugung von NumPy-Arrays<a class="headerlink" href="#erzeugung-von-numpy-arrays" title="Permalink to this headline">#</a></h2>
-<p>Im Gegensatz zu Python-Listen enthalten NumPy-Arrays nur Elemente des gleichen
-Datentyps. Wenn eine Liste nur aus gleichen Datentypen besteht, können wir
-direkt aus der Liste ein NumPy-Array erzeugen. Dazu verwenden wir <code class="docutils literal notranslate"><span class="pre">array()</span></code> aus
-dem Numpy-Modul.</p>
+<section id="balkendiagramme">
+<h2>Balkendiagramme<a class="headerlink" href="#balkendiagramme" title="Permalink to this headline">#</a></h2>
+<p>Mit der Funktion <code class="docutils literal notranslate"><span class="pre">bar()</span></code> kann ein Balkendiagramm erstellt werden. Nehmen wir mal
+an, wir möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter
+Notebooks zum Download zugegriffen haben:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Woche</p></th>
+<th class="head"><p>Anzahl Nutzer/innen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<p>Dann wird das Balkendiagramm mit folgenden Code erzeugt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1"># bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4 5]
-&lt;class &#39;numpy.ndarray&#39;&gt;
-</pre></div>
+<img alt="../_images/chapter09_sec01_16_0.png" src="../_images/chapter09_sec01_16_0.png" />
 </div>
 </div>
-</div>
-<p>Sehr häufig kommen aber auch zwei-  oder gar dreidimensionale Arrays vor. In der
-Mathematik würde man ein eindimensionales Array als Vektor bezeichnen, ein
-zweidimensionales Array als Matrix (= Excel-Tabelle) und ein dreidimensionales
-Array als Tensor. Die Position eines Elementes wird dabei durch ganze Zahlen
-gekennzeichnet (entspricht bei 1d-Arrays ja den Listen). Für zweidimensionale
-NumPy-Arrays brauchen wir daher zwei Indizes, für dreidimensionale Arrays drei.
-Die folgende Grafik zeigt das Nummerierungsschema:</p>
-<figure class="align-default" id="pics-fig-numpy-array">
-<a class="reference internal image-reference" href="../_images/fig_numpy_array.png"><img alt="../_images/fig_numpy_array.png" src="../_images/fig_numpy_array.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Nummerierungsschema bei NumPy-Arrays</span><a class="headerlink" href="#pics-fig-numpy-array" title="Permalink to this image">#</a></p>
-<div class="legend">
-<p>(<a class="reference external" href="https://predictivehacks.com/tips-about-NumPy-arrays/">Quelle:</a>)</p>
-</div>
-</figcaption>
-</figure>
-<p>Im Folgenden fokussieren wir uns zunächst auf 1D- und 2D-Arrays und betrachten
-uns verschiedene Erzeugungsmethoden. Die entsprechende (englischsprachige)
-Dokumentation finden Sie hier:</p>
+<p>Farben können mit dem optionalen Argument <code class="docutils literal notranslate"><span class="pre">color=</span></code> eingestellt werden. Dabei
+funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
+Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
+RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
+Blau-Anteil. Details finden Sie dazu hier</p>
 <blockquote>
-<div><p><a class="reference external" href="https://numpy.org/doc/stable/reference/routines.array-creation.html">https://numpy.org/doc/stable/reference/routines.array-creation.html</a></p>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colors.html">https://matplotlib.org/stable/tutorials/colors/colors.html</a></p>
 </div></blockquote>
-<p>Wir starten mit Arrays, die mit 0 oder 1 oder einer konstanten Zahl gefüllt
-sind. Dazu verwenden wir die NumPy-Funktionen</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.zeros(dimension)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.ones(dimension)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.full(dimension,</span> <span class="pre">zahl)</span></code></p></li>
-</ul>
+<p>Im folgenden Balkendiagramm sind die Balken grau eingefärbt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1d-Array gefüllt mit Nullen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="c1"># bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2d-Array gefüllt mit Nullen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0. 0. 0.]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1d-Array gefüllt mit Einsen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1. 1. 1. 1. 1. 1. 1.]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2d-Array gefüllt mit Nullen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1.]
- [1. 1. 1. 1.]
- [1. 1. 1. 1.]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2d-Array gefüllt mit einem konstanten Wert</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="o">-</span><span class="mf">17.7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-17.7 -17.7 -17.7 -17.7]
- [-17.7 -17.7 -17.7 -17.7]
- [-17.7 -17.7 -17.7 -17.7]]
-</pre></div>
-</div>
+<img alt="../_images/chapter09_sec01_18_0.png" src="../_images/chapter09_sec01_18_0.png" />
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Erzeugen Sie folgende Arrays:</p>
-<ul class="simple">
-<li><p>1d-Array der Dimension 7 gefüllt mit 0</p></li>
-<li><p>1d-Array der Dimension 7 gefüllt mit -1</p></li>
-<li><p>2d-Array der Dimension (7,5) gefüllt mit 1</p></li>
-<li><p>2d-Array der Dimension (2,4) gefüllt mit <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
-<li><p>1d-Array der Dimension 8 gefüllt mit <span class="math notranslate nohighlight">\(\sqrt{5}\)</span></p></li>
-</ul>
+<p>Hier ist eine Tabelle mit den Zugriffszahlen auf das MATLAB Live Script in der
+Vorlesung angewandte Informatik im Sommersemester 2021. Bitte stellen Sie die
+Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken schwarz.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Woche</p></th>
+<th class="head"><p>Anzahl Nutzer/innen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>11</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1106,399 +1112,155 @@ sind. Dazu verwenden wir die NumPy-Funktionen</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">X4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">x5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Zugriffe&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriffszahlen MATLAB Live Skripte SoSe 22&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<p>Die folgenden 1d-Arrays werden nach einem gleichmäßigen Muster gefüllt. Dazu
-benutzen wir die NumPy-Funktionen</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stopp,</span> <span class="pre">anzahl)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stopp,</span> <span class="pre">schrittweite)</span></code></p></li>
-</ul>
+</section>
+<section id="streudiagramme">
+<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Permalink to this headline">#</a></h2>
+<p>Bei Streudiagrammen werden nicht die Punkte <span class="math notranslate nohighlight">\((x_1,y_2)\)</span> mit <span class="math notranslate nohighlight">\((x_2,y_2)\)</span> mit
+<span class="math notranslate nohighlight">\((x_3,y_3)\)</span> usw. durch Linien verbunden, sondern jeder Punkt selbst wird an der
+Stelle seiner Koordinaten eingezeichnet. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Funktion auch <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1d-Array, das gleichmäßig zwischen start und stopp mit num Werten gefüllt wird</span>
-<span class="c1"># im Beispiel: start = 1, stopp = 10, num = 25 </span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.     1.375  1.75   2.125  2.5    2.875  3.25   3.625  4.     4.375
-  4.75   5.125  5.5    5.875  6.25   6.625  7.     7.375  7.75   8.125
-  8.5    8.875  9.25   9.625 10.   ]
-</pre></div>
+<img alt="../_images/chapter09_sec01_23_0.png" src="../_images/chapter09_sec01_23_0.png" />
 </div>
 </div>
-</div>
+<p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span></code> lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Wie Sie sehen, ist ein ausgefüllter Kreis
+voreingestellt. Lesen Sie auf der Internetseite</p>
+<blockquote>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
+</div></blockquote>
+<p>nach, welche Marker-Symbole existieren. Probieren Sie einige der Symbole hier
+aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1d-Array, das bei start beginnt, step dazu addiert und bis kurz vor stopp geht</span>
-<span class="c1"># im Beispiel: start = 1, stopp = 20, step = 2</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># scatter plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1  3  5  7  9 11 13 15 17 19]
-</pre></div>
+<img alt="../_images/chapter09_sec01_25_0.png" src="../_images/chapter09_sec01_25_0.png" />
 </div>
 </div>
-</div>
-<p>Zuletzt betrachten wir noch Erzeugungsfunktionen, die seltener vorkommen, aber
-dennoch nützlich sein können:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.random.random_sample(dimension)</span></code>: gleichmäßig verteilt zwischen 0 und 1</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.random.normal(m,</span> <span class="pre">s,</span> <span class="pre">dimension)</span></code>: normalverteilt mit Mittelwert m und
-Standardabweichung s</p></li>
-</ul>
+<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man Liniendiagramme
+verwenden. Streudiagramme eignen sich eher für die Visualisierung einzelner
+Messungen. Wenn Sie beispielsweise an jeden Wochentag die Temperatur an zwei
+Orten messen, bietet es sich an, beide Messreihen in einem Streudiagramm zu
+visualisieren. Dazu sollten Sie unterschiedliche Marker und unterschiedliche
+Farben verwenden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2d-Array mit gleichmäßig zwischen 0 und 1 verteilten Zufallszahlen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Zufallszahlen, um Temperaturmessung zu simulieren</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Zufallszahlen, um Temperaturmessung zu simulieren</span>
+
+<span class="c1"># scatter plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.64333539 0.65070105 0.62661754]
- [0.02117369 0.49397902 0.39755407]]
-</pre></div>
+<img alt="../_images/chapter09_sec01_27_0.png" src="../_images/chapter09_sec01_27_0.png" />
 </div>
 </div>
-</div>
+<p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
+<code class="docutils literal notranslate"><span class="pre">plt.scatter(x,y1,</span> <span class="pre">label='Messung1')</span></code>. Zuletzt verwendet man die Funktion
+<code class="docutils literal notranslate"><span class="pre">legend()</span></code>, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
+Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2d-Array mit normalverteilten Zufallszahlen </span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># scatter plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Offenbach&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Durchschnittstemperatur&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.08426638 -0.8444065   1.33909132  1.76243466]
- [-0.07610642  0.85219613  0.45549024 -0.6894616 ]
- [ 1.95064015  0.43926475  0.73494939 -0.65651186]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2d-Array als Einheitsmatrix der Größe m x m, hier m = 5</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0.]
- [0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 1.]]
-</pre></div>
-</div>
+<img alt="../_images/chapter09_sec01_29_0.png" src="../_images/chapter09_sec01_29_0.png" />
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Erzeugen Sie folgende Arrays:</p>
-<ul class="simple">
-<li><p>2d-Array mit der Dimension (3,4) und Zufallszahlen gleichmäßig zwischen 0 und
-1 verteilt</p></li>
-<li><p>1d-Array mit der Dimension 17 und Zufallszahlen standardnormalverteilt (d.h.
-welcher Mittelwert und welche Standardabweichung?)</p></li>
-<li><p>2d-Array mit der Dimension (1,5) und normalverteilten Zufallszahlen,
-Mittelwert 37.5, Standardabweichung 0.8</p></li>
-<li><p>1d-Array mit allen geraden Zahlen von 100 bis 200 (inklusive)</p></li>
-<li><p>1d-Array mit 100 Punkten im Intervall [-1,1]</p></li>
-<li><p>1d-Array mit 0, 0.1, 0.2, 0.3, …, 1.5</p></li>
-</ul>
+<p>Erzeugen Sie 50 normalverteilte Zufallszahlen mit Mittelwert 0 und
+Standardabweichung 1. Visualisieren Sie diese als Streudiagramm. Die Marker
+sollen rot gefärbte Diamenten sein.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
-<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span> <span class="mf">37.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">x4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">x5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">x6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># data </span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="attribute-von-numpy-arrays">
-<h2>Attribute von NumPy-Arrays<a class="headerlink" href="#attribute-von-numpy-arrays" title="Permalink to this headline">#</a></h2>
-<p>Damit wir besser verstehen, welche Attribute die NumPy-Arrays haben können,
-erzeugen wir uns zufällig drei NumPy-Arrays. Damit aber nicht bei jeder neuen
-Ausführung der Code-Zelle neue Zufallszahlen gezogen werden, fixieren wir den
-Seed des Zufallszahlengenerators (vereinfacht gesagt kommen jetzt immer die
-gleichen Zufallszahlen) und benutzen die Erzeugungsmethode
-<code class="docutils literal notranslate"><span class="pre">np.random.randint(grenze,</span> <span class="pre">size=dimension)</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-       
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 
-[5 0 3 3 7 9 3]
-y = 
-[[5 2 4]
- [7 6 8]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Bei den Listen haben wir eine Funktion kennengelernt, mit der die Anzahl der
-Elemente in der Liste bestimmt werden kann: <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Listen sind eindimensional,
-aber NumPy-Arrays können mehrdimensional sein. Daher gibt es hier auch mehr
-Eigenschaften für die Beschreibung:</p>
-<ul class="simple">
-<li><p>Anzahl der Dimensionen: <code class="docutils literal notranslate"><span class="pre">.ndim</span></code></p></li>
-<li><p>Größe der jeweiligen Dimension: <code class="docutils literal notranslate"><span class="pre">.shape</span></code></p></li>
-<li><p>Gesamtgröße des Arrays: <code class="docutils literal notranslate"><span class="pre">.size</span></code></p></li>
-</ul>
-<p>Die Größe <code class="docutils literal notranslate"><span class="pre">.shape</span></code> haben wir ja in der obigen Abbildung schon bereits
-kennengelernt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 
-[5 0 3 3 7 9 3]
-1
-(7,)
-7
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = 
-[[5 2 4]
- [7 6 8]]
-2
-(2, 3)
-6
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zugriff-einzelner-elemente-eines-arrays">
-<h2>Zugriff einzelner Elemente eines Arrays<a class="headerlink" href="#zugriff-einzelner-elemente-eines-arrays" title="Permalink to this headline">#</a></h2>
-<p>Der Zugriff bei eindimensionalen Arrays erfolgt genau wie bei Listen über den
-<strong>Zugriffsoperator</strong> <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Auch hier wird ab 0 beginnend gezählt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">drittes_element</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">drittes_element</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8 1 6 7 7 8 1]
-6
-</pre></div>
-</div>
-</div>
-</div>
-<p>Interessant wird es zu sehen, wie auf mehrdimensionale Arrays zugegriffen wird.
-Zur Erinnerung, zweidimensionale Arrays haben zwei Indizes (axis 0 und axis 1),
-dreidimensionale Arrays haben drei Indizes (axis 0, axis 1 und axis 2).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-
-<span class="n">element</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = 
-[[5 2 4]
- [7 6 8]]
-4
-</pre></div>
-</div>
-</div>
-</div>
-<p>So kann man übrigens auch die Werte einzelner Elemente des Arrays ändern:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vorher y = &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-
-<span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">777</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nachher y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vorher y = 
-[[5 2 4]
- [7 6 8]]
-nachher y =  [[  5   2   4]
- [  7 777   8]]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="funktionen-auf-numpy-arrays-anwenden">
-<h2>Funktionen auf NumPy-Arrays anwenden<a class="headerlink" href="#funktionen-auf-numpy-arrays-anwenden" title="Permalink to this headline">#</a></h2>
-<p>NumPy-Arrays ermöglichen die Verarbeitung mit den typischen mathematischen
-Funktionen und den üblichen Statistik-Größen. Schauen wir uns einfach ein paar
-Beispiele an:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeuge 11 x-Werte im Intervall [-2*pi, 2*pi]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># Sinus-Funktion</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
-
-<span class="c1"># Kosinus-Funktion</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
-
-<span class="c1"># Exponentialfunktion</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span>
-
-<span class="c1"># Potenzfunktion, z.B. y = x hoch 5</span>
-<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-6.28318531 -5.02654825 -3.76991118 -2.51327412 -1.25663706  0.
-  1.25663706  2.51327412  3.76991118  5.02654825  6.28318531]
-[ 2.44929360e-16  9.51056516e-01  5.87785252e-01 -5.87785252e-01
- -9.51056516e-01  0.00000000e+00  9.51056516e-01  5.87785252e-01
- -5.87785252e-01 -9.51056516e-01 -2.44929360e-16]
-[ 1.          0.30901699 -0.80901699 -0.80901699  0.30901699  1.
-  0.30901699 -0.80901699 -0.80901699  0.30901699  1.        ]
-[1.86744273e-03 6.56141994e-03 2.30541108e-02 8.10025922e-02
- 2.84609543e-01 1.00000000e+00 3.51358562e+00 1.23452839e+01
- 4.33762122e+01 1.52406036e+02 5.35491656e+02]
-[-9.79262991e+03 -3.20884897e+03 -7.61474902e+02 -1.00276530e+02
- -3.13364157e+00  0.00000000e+00  3.13364157e+00  1.00276530e+02
-  7.61474902e+02  3.20884897e+03  9.79262991e+03]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeuge 3x4-Matrix mit Zufallszahlen</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># Summe über alle Elemente</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s1&#39;</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
-
-<span class="c1"># Summe in Richtung Achse 0</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s2&#39;</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
-
-<span class="c1"># Summe in Richtung Achse 1</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span>
-
-<span class="c1"># Maximum über alle Elemente</span>
-<span class="n">max1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max1&#39;</span><span class="p">,</span> <span class="n">max1</span><span class="p">)</span>
-
-<span class="c1"># Maximum in Richtung Achse 0</span>
-<span class="n">max2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max2&#39;</span><span class="p">,</span> <span class="n">max2</span><span class="p">)</span>
-
-<span class="c1"># Maximum in Richtung Achse 1</span>
-<span class="n">max3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max3&#39;</span><span class="p">,</span> <span class="n">max3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.92559664 0.07103606 0.0871293  0.0202184 ]
- [0.83261985 0.77815675 0.87001215 0.97861834]
- [0.79915856 0.46147936 0.78052918 0.11827443]]
-s1 6.72282900923483
-s2 [2.55737505 1.31067217 1.73767062 1.11711117]
-s3 [1.10398039 3.45940709 2.15944153]
-max1 0.978618342232764
-max2 [2.55737505 1.31067217 1.73767062 1.11711117]
-max3 [1.10398039 3.45940709 2.15944153]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
-<p>In diesem Abschnitt haben wir das NumPy-Array kennengelernt, eine sehr
-effiziente Datenstruktur. Die Erzeugungsmethoden nach einem Muster werden wir
-vor allem für die Visualisierung von Funktionen brauchen. Das Bestimmen der
-Basis-Attribute wird wichtig werden, wenn wir NumPy-Arrays aus
-Pandas-DataFrame-Objekten extrahieren, um damit maschinelle Lernalgorithmen zu
-füttern.</p>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this headline">#</a></h2>
+<p>In diesem Abschnitt haben wir die drei wichtigsten Diagrammtypen wiederholt. Das
+Linien- und das Streudiagramm werden für die Visualisierung von kontinuierlichen
+Daten verwendet, wohingegen das Balkendiagramm dem Plot von diskreten Daten
+(Kategorien) dient. Im folgenden Abschnitt verknüpfen wir Matplotlib mit Pandas
+zur Visualisierung von Tabellendaten in einem DataFrame.</p>
 </section>
 </section>
 
@@ -1539,7 +1301,7 @@ füttern.</p>
     <a class='right-next' id="next-link" href="chapter09_sec02.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">9.2 Linien-, Balken- und Streudiagramme</p>
+        <p class="prev-next-title">9.2 Visualisierung von DataFrames mit Fehlerbalken</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

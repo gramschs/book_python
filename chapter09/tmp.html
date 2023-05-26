@@ -352,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter08_sec00.html">
+  <a class="reference internal" href="../chapter08/chapter08_sec00.html">
    8. Pandas anstatt Excel
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -362,29 +362,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter08_sec01.html">
+    <a class="reference internal" href="../chapter08/chapter08_sec01.html">
      8.1 Series und DataFrame
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter08_sec02.html">
+    <a class="reference internal" href="../chapter08/chapter08_sec02.html">
      8.2 Arbeiten mit Tabellendaten
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter08_sec03.html">
+    <a class="reference internal" href="../chapter08/chapter08_sec03.html">
      8.3 Statistik mit Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter08_sec04.html">
+    <a class="reference internal" href="../chapter08/chapter08_sec04.html">
      Übungen
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter09/chapter09_sec00.html">
+  <a class="reference internal" href="chapter09_sec00.html">
    9. Visualisierung mit Matplotlib
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -394,22 +394,22 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter09/chapter09_sec01.html">
-     9.1 Das Modul NumPy
+    <a class="reference internal" href="chapter09_sec01.html">
+     9.1 Linien-, Balken- und Streudiagramme
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter09/chapter09_sec02.html">
-     9.2 Linien-, Balken- und Streudiagramme
+    <a class="reference internal" href="chapter09_sec02.html">
+     9.2 Visualisierung von DataFrames mit Fehlerbalken
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter09/chapter09_sec03.html">
-     9.3 Visualisierung von DataFrames
+    <a class="reference internal" href="chapter09_sec03.html">
+     9.3 Histogramme
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter09/chapter09_sec04.html">
+    <a class="reference internal" href="chapter09_sec04.html">
      Übungen
     </a>
    </li>
@@ -562,7 +562,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/tmp.ipynb"
+        <a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter09/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -636,7 +636,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapter08/tmp.ipynb"
+        <a href="../_sources/chapter09/tmp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -726,177 +726,246 @@ title="Print to PDF"
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">hangman</span><span class="p">():</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">25</span><span class="p">]</span>
 
-    <span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;java&#39;</span><span class="p">,</span> <span class="s1">&#39;kotlin&#39;</span><span class="p">,</span> <span class="s1">&#39;javascript&#39;</span><span class="p">,</span> <span class="s1">&#39;cplusplus&#39;</span><span class="p">,</span> <span class="s1">&#39;ruby&#39;</span><span class="p">,</span> <span class="s1">&#39;perl&#39;</span><span class="p">,</span> <span class="s1">&#39;swift&#39;</span><span class="p">,</span> <span class="s1">&#39;golang&#39;</span><span class="p">,</span> <span class="s1">&#39;rust&#39;</span><span class="p">]</span>
-    <span class="n">random_word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
-    <span class="n">guessed_letters</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">attempts</span> <span class="o">=</span> <span class="mi">10</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lass uns Hangman spielen!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;_ &quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">random_word</span><span class="p">))</span>
-
-    <span class="k">while</span> <span class="n">attempts</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Du hast noch&quot;</span><span class="p">,</span> <span class="n">attempts</span><span class="p">,</span> <span class="s2">&quot;Versuche übrig.&quot;</span><span class="p">)</span>
-        <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Buchstabe eingeben: &quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">guessed_letters</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du hast diesen Buchstaben bereits geraten.&quot;</span><span class="p">)</span>
-            <span class="k">continue</span>
-        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bitte nur einen Buchstaben eingeben.&quot;</span><span class="p">)</span>
-            <span class="k">continue</span>
-        <span class="k">elif</span> <span class="ow">not</span> <span class="n">guess</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bitte nur Buchstaben eingeben.&quot;</span><span class="p">)</span>
-            <span class="k">continue</span>
-        <span class="k">elif</span> <span class="n">guess</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">random_word</span><span class="p">:</span>
-            <span class="n">attempts</span> <span class="o">-=</span> <span class="mi">1</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Falsch! Du verlierst einen Versuch.&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">guessed_letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
-
-        <span class="n">word_so_far</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">random_word</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">guessed_letters</span><span class="p">:</span>
-                <span class="n">word_so_far</span> <span class="o">+=</span> <span class="n">letter</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">word_so_far</span> <span class="o">+=</span> <span class="s1">&#39;_ &#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">word_so_far</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="s1">&#39;_&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">word_so_far</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Glückwunsch, du hast das Wort erraten!&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Leider hast du das Spiel verloren. Das Wort war &#39;&quot;</span> <span class="o">+</span> <span class="n">random_word</span> <span class="o">+</span> <span class="s2">&quot;&#39;.&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">hangman</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lass uns Hangman spielen!
-_ _ _ _ 
-
-Du hast noch 10 Versuche übrig.
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">47</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Leider hast du das Spiel verloren. Das Wort war &#39;&quot;</span> <span class="o">+</span> <span class="n">random_word</span> <span class="o">+</span> <span class="s2">&quot;&#39;.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">47</span>     <span class="n">hangman</span><span class="p">()</span>
-
-<span class="nn">Cell In[1], line 15,</span> in <span class="ni">hangman</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">while</span> <span class="n">attempts</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Du hast noch&quot;</span><span class="p">,</span> <span class="n">attempts</span><span class="p">,</span> <span class="s2">&quot;Versuche übrig.&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Buchstabe eingeben: &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">if</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">guessed_letters</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du hast diesen Buchstaben bereits geraten.&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
+<img alt="../_images/tmp_0_0.png" src="../_images/tmp_0_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">waehle_zufallswort</span><span class="p">():</span>
-    <span class="c1"># Erzeugung einer Liste mit Wörtern und zufällige Auswahl eines Wortes, indem der Index zufällig gezogen wird</span>
-    <span class="n">woerterliste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;matlab&#39;</span><span class="p">,</span> <span class="s1">&#39;cplusplus&#39;</span><span class="p">,</span> <span class="s1">&#39;java&#39;</span><span class="p">,</span> <span class="s1">&#39;javascript&#39;</span><span class="p">,</span> <span class="s1">&#39;ruby&#39;</span><span class="p">,</span> <span class="s1">&#39;perl&#39;</span><span class="p">,</span> <span class="s1">&#39;swift&#39;</span><span class="p">,</span> <span class="s1">&#39;golang&#39;</span><span class="p">,</span> <span class="s1">&#39;rust&#39;</span><span class="p">]</span>
-    <span class="n">anzahl_woerter</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">woerterliste</span><span class="p">)</span>
-    <span class="n">zufallsindex</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">anzahl_woerter</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">woerterliste</span><span class="p">[</span><span class="n">zufallsindex</span><span class="p">]</span>     
+<span class="c1"># data </span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">generiere_anzeigetext</span><span class="p">(</span><span class="n">wort</span><span class="p">,</span> <span class="n">korrekt_geratene_buchstaben</span><span class="p">):</span>
-    <span class="c1"># Starte mit leerem String</span>
-    <span class="n">anzeigetext</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="c1"># ersetze jeden Buchstaben im Zufallswort durch sich Unterstrich und ein Leerzeichen,</span>
-    <span class="c1"># aber nur, wenn er nicht in der Liste der richtig geratenen Buchstaben ist</span>
-    <span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">wort</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">korrekt_geratene_buchstaben</span><span class="p">:</span>
-            <span class="n">anzeigetext</span> <span class="o">+=</span> <span class="n">zeichen</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">anzeigetext</span> <span class="o">+=</span> <span class="s1">&#39;_ &#39;</span>
-
-    <span class="k">return</span> <span class="n">anzeigetext</span>
-
-
-
-<span class="c1"># Start</span>
-<span class="n">anzahl_versuche</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">zufallswort</span> <span class="o">=</span> <span class="n">waehle_zufallswort</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wir spielen Galgenmännchen. Sie haben </span><span class="si">{</span><span class="n">anzahl_versuche</span><span class="si">}</span><span class="s1"> Fehlversuche, um das Wort zu erraten.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es darf immer nur ein Kleinbuchstabe eingegeben werden.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Los geht es.&#39;</span><span class="p">)</span>
-
-<span class="c1"># Bereite Liste vor, in der richtig geratene Buchstaben gesammelt werden</span>
-<span class="n">geratene_richtige_buchstaben</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># Schleifen zum Anzeigen und Abfragen der Buchstaben</span>
-<span class="n">anzeigetext</span> <span class="o">=</span> <span class="n">generiere_anzeigetext</span><span class="p">(</span><span class="n">zufallswort</span><span class="p">,</span> <span class="n">geratene_richtige_buchstaben</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">anzahl_versuche</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="c1"># Anzeige des Rätselwortes und Abfrage eines Buchstabens</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sie haben noch </span><span class="si">{</span><span class="n">anzahl_versuche</span><span class="si">}</span><span class="s1"> Fehlversuche, das Rätselwort lautet: </span><span class="si">{</span><span class="n">anzeigetext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">buchstabe</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Welchen Buchstaben wählen Sie? &#39;</span><span class="p">)</span>
-
-    <span class="c1"># Test, ob Buchstabe vorkommt; wenn nicht, Anzahl Versuche reduzieren</span>
-    <span class="k">if</span> <span class="n">buchstabe</span> <span class="ow">in</span> <span class="n">zufallswort</span><span class="p">:</span>
-            <span class="n">geratene_richtige_buchstaben</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buchstabe</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Richtig, </span><span class="si">{</span><span class="n">buchstabe</span><span class="si">}</span><span class="s1"> ist im gesuchten Wort enthalten.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-            <span class="n">anzahl_versuche</span> <span class="o">-=</span> <span class="mi">1</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Leider kommt der Buchstabe </span><span class="si">{</span><span class="n">buchstabe</span><span class="si">}</span><span class="s1"> im gesuchten Wort nicht vor.&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Aktualisierung des Anzeigetextes</span>
-    <span class="n">anzeigetext</span> <span class="o">=</span> <span class="n">generiere_anzeigetext</span><span class="p">(</span><span class="n">zufallswort</span><span class="p">,</span> <span class="n">geratene_richtige_buchstaben</span><span class="p">)</span>
-   
-    <span class="c1"># Test, ob bereits alle Buchstaben geraten wurden</span>
-    <span class="k">if</span> <span class="s1">&#39;_&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">anzeigetext</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Herzlichen Glückwunsch, Sie haben das Wort </span><span class="si">{</span><span class="n">zufallswort</span><span class="si">}</span><span class="s1"> erraten :-)&#39;</span><span class="p">)</span>
-        <span class="k">break</span>
-    
-
-
-<span class="k">if</span> <span class="n">anzahl_versuche</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s1">&#39;_&#39;</span> <span class="ow">in</span> <span class="n">anzeigetext</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sie haben leider verloren. Das richtige Wort wäre </span><span class="si">{</span><span class="n">zufallswort</span><span class="si">}</span><span class="s1"> gewesen.&#39;</span><span class="p">)</span> 
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wir spielen Galgenmännchen. Sie haben 3 Versuche, um das Wort zu erraten.
-Es darf immer nur ein Kleinbuchstabe eingegeben werden.
-Los geht es.
-Sie haben noch 3 Versuche, das Rätselwort lautet: _ _ _ _ _ _ 
-Richtig, a ist im gesuchten Wort enthalten.
-Sie haben noch 3 Versuche, das Rätselwort lautet: _ _ _ a _ _ 
-Richtig, g ist im gesuchten Wort enthalten.
-Sie haben noch 3 Versuche, das Rätselwort lautet: g _ _ a _ g 
-Leider kommt der Buchstabe q im gesuchten Wort nicht vor.
-Sie haben noch 2 Versuche, das Rätselwort lautet: g _ _ a _ g 
-Leider kommt der Buchstabe q im gesuchten Wort nicht vor.
-Sie haben noch 1 Versuche, das Rätselwort lautet: g _ _ a _ g 
-Leider kommt der Buchstabe q im gesuchten Wort nicht vor.
-Sie haben leider verloren. Das richtige Wort wäre golang gewesen.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x11eca1f60&gt;
 </pre></div>
 </div>
+<img alt="../_images/tmp_1_1.png" src="../_images/tmp_1_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># data</span>
+<span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span>
+<span class="n">data_eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
+<span class="n">min_durchschnitt</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">min_durchschnitt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tmp_3_0.png" src="../_images/tmp_3_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">standardabweichung_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung_alter</span><span class="p">)</span>
+<span class="c1"># styling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>    <span class="c1"># um 45 Grad</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tmp_4_0.png" src="../_images/tmp_4_0.png" />
 </div>
 </div>
 
@@ -913,7 +982,7 @@ Sie haben leider verloren. Das richtige Wort wäre golang gewesen.
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapter08"
+            path: "./chapter09"
         },
         predefinedOutput: true
     }
