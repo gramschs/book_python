@@ -86,11 +86,7 @@ Parabel im Intervall $[-2,2]$ werden. Mit nur 5 Punkten und der Tatsache, dass
 diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus.
 Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand
 erzeugen. Wir verwenden das Modul `numpy` für numerisches Python, das wir wieder
-einmal zuerst laden müssen:
-
-```python
-import numpy as np
-```
+einmal zuerst laden müssen.
 
 Die Funktion `np.linspace(a,b, Anzahl)` erzeugt Punkte im Intervall $[a,b]$ je
 nach eingestellter Anzahl. Damit können wir jetzt eine feiner aufgelöste
