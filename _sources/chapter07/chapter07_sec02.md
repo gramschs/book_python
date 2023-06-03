@@ -76,7 +76,7 @@ Schreiben Sie ein Programm, das einen Countdown von 10 nach 0 implementiert.
 :class: minisolution, toggle
 ```python
 zaehler = 10
-while zaehler > 0:
+while zaehler >= 0:
     print(zaehler)
     zaehler = zaehler - 1
 ```
