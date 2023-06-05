@@ -925,7 +925,7 @@ In Prozent umgerechnet ist das: 22.11 %.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x128e41270&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13c842410&gt;
 </pre></div>
 </div>
 <img alt="../_images/tmp_7_1.png" src="../_images/tmp_7_1.png" />
@@ -938,8 +938,8 @@ In Prozent umgerechnet ist das: 22.11 %.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.88668204  1.14595541  4.7803892   6.87552292 10.27837096 13.47827241
- 16.90804357]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.44471958 -0.03866747  4.33278058  6.68880077  9.0910443  13.11501304
+ 14.88645489]
 </pre></div>
 </div>
 </div>
@@ -954,7 +954,7 @@ In Prozent umgerechnet ist das: 22.11 %.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.18663945 2.97531709 0.02890995]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9.43018922e-01 2.85058868e+00 2.16665262e-03]
 </pre></div>
 </div>
 </div>
@@ -1096,20 +1096,20 @@ In Prozent umgerechnet ist das: 22.11 %.
     <span class="n">r2_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polynomgrad </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">: R2 = </span><span class="si">{</span><span class="n">r2_liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polynomgrad </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">: R2 = </span><span class="si">{</span><span class="n">r2_liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomgrad 1: R2 = 0.0053725351543482125
-Polynomgrad 2: R2 = 0.983379214645667
-Polynomgrad 3: R2 = 0.9834259558402986
-Polynomgrad 4: R2 = 0.9846874808354835
-Polynomgrad 5: R2 = 0.9855495609154395
-Polynomgrad 6: R2 = 1.0
-Polynomgrad 7: R2 = 1.0
-Polynomgrad 8: R2 = 1.0
-Polynomgrad 9: R2 = 1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomgrad 1: R2 = 0.0054
+Polynomgrad 2: R2 = 0.9834
+Polynomgrad 3: R2 = 0.9834
+Polynomgrad 4: R2 = 0.9847
+Polynomgrad 5: R2 = 0.9855
+Polynomgrad 6: R2 = 1.0000
+Polynomgrad 7: R2 = 1.0000
+Polynomgrad 8: R2 = 1.0000
+Polynomgrad 9: R2 = 1.0000
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniconda/base/envs/turtle/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3442: RankWarning: Polyfit may be poorly conditioned
@@ -1122,6 +1122,246 @@ Polynomgrad 9: R2 = 1.0
   exec(code_obj, self.user_global_ns, self.user_ns)
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Datenimport Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">]</span>
+    
+<span class="c1"># Parabel durch die Messdaten</span>
+<span class="n">y_parabel</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">y_parabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+   
+<span class="c1"># Plot der Messdaten mit zusätzlicher Parabel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tmp_18_0.png" src="../_images/tmp_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Datenimport Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">])</span>
+    
+<span class="c1"># Parabel durch die Messdaten</span>
+<span class="n">y_parabel</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+   
+<span class="c1"># Plot der Messdaten mit zusätzlicher Parabel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tmp_19_0.png" src="../_images/tmp_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">studizahlen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/studierendenzahlen_frankfurt_uas.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">studizahlen</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Hochschule</th>
+      <th>Deutsche männlich</th>
+      <th>Deutsche weiblich</th>
+      <th>Deutsche insgesamt</th>
+      <th>Ausländer männlich</th>
+      <th>Ausländer weiblich</th>
+      <th>Ausländer insgesamt</th>
+      <th>männlich</th>
+      <th>weiblich</th>
+      <th>insgesamt</th>
+    </tr>
+    <tr>
+      <th>Semester</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>WS 1998/99</th>
+      <td>HS6220</td>
+      <td>Frankfurt University of Applied Sciences (FH)</td>
+      <td>4757</td>
+      <td>2434</td>
+      <td>7191</td>
+      <td>1569</td>
+      <td>542</td>
+      <td>2111</td>
+      <td>6326</td>
+      <td>2976</td>
+      <td>9302</td>
+    </tr>
+    <tr>
+      <th>WS 1999/00</th>
+      <td>HS6220</td>
+      <td>Frankfurt University of Applied Sciences (FH)</td>
+      <td>4505</td>
+      <td>2464</td>
+      <td>6969</td>
+      <td>1630</td>
+      <td>539</td>
+      <td>2169</td>
+      <td>6135</td>
+      <td>3003</td>
+      <td>9138</td>
+    </tr>
+    <tr>
+      <th>WS 2000/01</th>
+      <td>HS6220</td>
+      <td>Frankfurt University of Applied Sciences (FH)</td>
+      <td>4223</td>
+      <td>2481</td>
+      <td>6704</td>
+      <td>1668</td>
+      <td>626</td>
+      <td>2294</td>
+      <td>5891</td>
+      <td>3107</td>
+      <td>8998</td>
+    </tr>
+    <tr>
+      <th>WS 2001/02</th>
+      <td>HS6220</td>
+      <td>Frankfurt University of Applied Sciences (FH)</td>
+      <td>4106</td>
+      <td>2513</td>
+      <td>6619</td>
+      <td>1644</td>
+      <td>637</td>
+      <td>2281</td>
+      <td>5750</td>
+      <td>3150</td>
+      <td>8900</td>
+    </tr>
+    <tr>
+      <th>WS 2002/03</th>
+      <td>HS6220</td>
+      <td>Frankfurt University of Applied Sciences (FH)</td>
+      <td>4011</td>
+      <td>2603</td>
+      <td>6614</td>
+      <td>1703</td>
+      <td>674</td>
+      <td>2377</td>
+      <td>5714</td>
+      <td>3277</td>
+      <td>8991</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_maennlich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;männlich&#39;</span><span class="p">]</span>
+<span class="n">y_weiblich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;weiblich&#39;</span><span class="p">]</span>
+<span class="n">semester</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_weiblich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Studierende&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/tmp_21_0.png" src="../_images/tmp_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_semester</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">semester</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_semester</span><span class="p">)</span>
+<span class="n">p_maennlich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p_weiblich</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_weiblich</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung bei der Entwicklung Studenten: </span><span class="si">{</span><span class="n">p_maennlich</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung bei der Entwicklung Studentinnen: </span><span class="si">{</span><span class="n">p_weiblich</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Erstelle Wertetabelle für das Diagramm</span>
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">anzahl_semester</span><span class="p">)</span>
+<span class="n">y_modell_maennlich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_maennlich</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+<span class="n">y_modell_weiblich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_weiblich</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung Streudiagramm und Reggressionsgeraden als Liniendiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_weiblich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell_maennlich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell_weiblich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Studierende&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Steigung bei der Entwicklung Studenten: 147.43
+Steigung bei der Entwicklung Studentinnen: 187.27
+</pre></div>
+</div>
+<img alt="../_images/tmp_22_1.png" src="../_images/tmp_22_1.png" />
 </div>
 </div>
 

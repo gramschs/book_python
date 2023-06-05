@@ -434,7 +434,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter10_sec02.html">
-     10.2 Lineare Regression mit polyfit
+     10.2 Lineare Regression mit polyfit und polyval
     </a>
    </li>
    <li class="toctree-l2">
@@ -718,11 +718,205 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 10.1</p>
+<p>Gegeben ist der folgende Code mit Zeilennummern, um Messdaten zu visualisieren. Suchen Sie die darin enthaltenen Fehler. Korrigieren Sie anschließend das Programm.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>  <span class="c1"># Datenimport Messdaten</span>
+<span class="mi">2</span>  <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="mi">3</span>  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">]</span>
+<span class="mi">4</span>    
+<span class="mi">5</span>  <span class="c1"># Parabel durch die Messdaten</span>
+<span class="mi">6</span>  <span class="n">y_parabel</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="mi">7</span>   
+<span class="mi">8</span>  <span class="c1"># Plot der Messdaten mit zusätzlicher Parabel</span>
+<span class="mi">9</span>  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="mi">11</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
+<span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
+<span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
+<span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">titel</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
 </div>
-<p>TODO</p>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<ul class="simple">
+<li><p>Zeile 6: Listen dürfen nicht quadriert werden.</p></li>
+<li><p>Zeile 9: Der Aufruf plt.figure() fürht zu einer Fehlermeldung, da Matplotlib nicht importiert wurde.</p></li>
+<li><p>Zeile 14: plt.title() ist falsch geschrieben.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Datenimport Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">]</span>
+    
+<span class="c1"># Parabel durch die Messdaten</span>
+<span class="n">y_parabel</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">y_parabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+   
+<span class="c1"># Plot der Messdaten mit zusätzlicher Parabel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bemerkung: Hätten wir nicht eine Liste, sondern NumPy-Arrays genommen, um die Messwerte zu speichern, hätte die Quadratur funktioniert. Die folgende Alternative korrigiert auch alle Fehler.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Datenimport Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">])</span>
+    
+<span class="c1"># Parabel durch die Messdaten</span>
+<span class="n">y_parabel</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+   
+<span class="c1"># Plot der Messdaten mit zusätzlicher Parabel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 10.2</p>
+<p>Laden Sie den Datensatz <code class="docutils literal notranslate"><span class="pre">studierendenzahlen_frankfurt_uas.csv</span></code> (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/MzxHw2rDRdx5eRA">→ hier Download</a>) herunter und
+importieren Sie ihn mit Pandas. Die ersten drei Zeilen sind Kommentare und
+müssen daher mit dem Argument <code class="docutils literal notranslate"><span class="pre">skiprows=3</span></code> übersprungen werden.</p>
+<ol class="simple">
+<li><p>Lassen Sie die Studierendenzahlen männlich und weiblich visualisieren.</p></li>
+<li><p>Berechne Sie eine Regressionsgerade jeweils für die Studierendenzahlen
+weiblich und männlich. Wächst die Anzahl der männlichen oder der weiblichen
+Studierenden schneller?</p></li>
+<li><p>Lassen Sie die Regressionsgeraden zusammen mit den Studierendenzahlen
+visualisieren.</p></li>
+</ol>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Der Code zum Import der Studierendenzahlen ist:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">studizahlen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;studierendenzahlen_frankfurt_uas.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">studizahlen</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Der Index kann auf die erste Spalte gesetzt werden, muss aber nicht. Die Visualisierung als Streudiagramm erfolgt mit folgenden Python-Code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraktion der Daten aus der Tabelle</span>
+<span class="n">y_maennlich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;männlich&#39;</span><span class="p">]</span>
+<span class="n">y_weiblich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;weiblich&#39;</span><span class="p">]</span>
+<span class="n">semester</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">index</span>
+
+<span class="c1"># Streudiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_weiblich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Studierende&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Für die Regressionsgeraden brauchen wir Zahlen als Ursache, nicht Semester. Daher basteln wir mit der <code class="docutils literal notranslate"><span class="pre">range</span></code>-Funktion x-Werte von 0 bis zur Anzahl der Semester. Danach wenden wir <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> mit Grad 1 an und lassen die beiden Steigungen ausgeben.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_semester</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">semester</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_semester</span><span class="p">)</span>
+
+<span class="n">p_maennlich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p_weiblich</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_weiblich</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung bei der Entwicklung Studenten: </span><span class="si">{</span><span class="n">p_maennlich</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung bei der Entwicklung Studentinnen: </span><span class="si">{</span><span class="n">p_weiblich</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Die Anzahl der weiblichen Studierenden wächst schneller als die der männlichen Studierenden.</p>
+<p>Zuletzt wird alles zusammen visualisiert.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstelle Wertetabelle für das Diagramm</span>
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">anzahl_semester</span><span class="p">)</span>
+<span class="n">y_modell_maennlich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_maennlich</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+<span class="n">y_modell_weiblich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_weiblich</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung Streudiagramm und Reggressionsgeraden als Liniendiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">semester</span><span class="p">,</span> <span class="n">y_weiblich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell_maennlich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell_weiblich</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Studierende&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 10.3</p>
+<p>Laden Sie die Biersteuerstatistik
+(<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/Ejc2LFEW3Hz3mA9">Download</a>) herunter.</p>
+<ol class="simple">
+<li><p>Importieren Sie die Daten mit Pandas (8 Zeilen müssen Úbersprungen werden).
+Lassen Sie sich einen Überblick anzeigen. Was enthält die Tabelle?</p></li>
+<li><p>Filtern Sie die Tabelle nach den Jahren 2020, 2021 und 2022 lassen Sie den
+Absatz von Bier in Hektolitern pro Monat visualisieren.</p></li>
+<li><p>Stellen Sie eine Vermutung an. Durch welches Regressionspolynom könnte der
+Absatz von Bier pro Monat am besten erklärt werden?</p></li>
+<li><p>Stellen Sie das Regressionspolynom für 2022 auf und visualisieren Sie es
+zusammen mit den Messwerten.</p></li>
+</ol>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">daten</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;biersteuerstatistik.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">daten</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Die Datei enthält 360 Einträge mit Jahr, Monat und Absatz von Bier in Hektolitern.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">for</span> <span class="n">jahr</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]:</span>
+    <span class="n">daten_pro_jahr</span> <span class="o">=</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">jahr</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">daten_pro_jahr</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Monat&#39;</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">daten_pro_jahr</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">]</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">jahr</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Monat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bierstatistik&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Aufgrund der Visualisierung entscheiden wir uns für eine Annäherung durch eine
+Regressionsparabel.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data_2022</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2022</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_2022</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">]</span>
+
+<span class="n">p2022</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p2022</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Monat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bierstatistik für das Jahr 2022&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
