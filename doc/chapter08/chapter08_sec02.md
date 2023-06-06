@@ -319,7 +319,7 @@ print(spezialauswahl)
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Lassen Sie sich das Alter von Robert Lewandoswki und Thomas Müller anzeigen.
+Lassen Sie sich das Alter von Robert Lewandowski und Thomas Müller anzeigen.
 ```
 
 ```{code-cell} ipython3
