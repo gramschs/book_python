@@ -147,7 +147,11 @@ zeichnen wir eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu
 verwenden wir die Funktion `axhline()`.
 
 ```{code-cell} ipython3
-# plot
+# Daten
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
+
+# Visualisierung
 plt.figure()
 plt.bar(x,y)
 plt.xlabel('Spieler')
@@ -204,17 +208,19 @@ Hilfeseite
 
 ```{code-cell} ipython3
 # data
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
 standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
 
 # plot data
-fig, ax = plt.subplots()
-ax.errorbar(x, y, yerr=standardabweichung_alter)
+plt.figure()
+plt.errorbar(x, y, yerr=standardabweichung_alter)
+
 # styling
-ax.set_xlabel('Spieler')
-ax.xaxis.set_ticks(x)                               # rotiert die x-Achsenbeschriftung
-ax.set_xticklabels(x, rotation = 45, ha="right")    # um 45 Grad
-ax.set_ylabel('Alter')
-ax.set_title('Spielerdaten Eintracht Frankfurt 20/21');
+plt.xlabel('Spieler')
+plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
 ```
 
 Die Grafik sieht irritierend aus, da die Altersangben der Spieler verbunden
@@ -223,6 +229,11 @@ ein wenig an den Optionen herumschrauben. Mit der Formatierung `fmt='o'` werden
 die Messwerte als Kreise dargestellt.
 
 ```{code-cell} ipython3
+# data
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
+standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
+
 # plot data
 plt.figure()
 plt.errorbar(x, y, yerr=standardabweichung_alter, fmt='o')
