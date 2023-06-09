@@ -84,7 +84,7 @@ wie lineare Regression funktioniert.
 ## Beispiel: weltweiter CO2-Ausstoß
 
 Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
-Einwohner (Quelle: https://data.worldbank.org).
+Einwohner ([hier Download](https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz)).
 
 ```{code-cell} ipython3
 import pandas as pd

@@ -436,7 +436,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chapter10/chapter10_sec02.html">
-     10.2 Lineare Regression mit polyfit
+     10.2 Lineare Regression mit polyfit und polyval
     </a>
    </li>
    <li class="toctree-l2">
@@ -863,7 +863,7 @@ Linienplot und Beschriftungen hinzu.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12bfe3040&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10dbe3100&gt;]
 </pre></div>
 </div>
 <img alt="../_images/chapter09_sec01_5_1.png" src="../_images/chapter09_sec01_5_1.png" />
@@ -1224,9 +1224,10 @@ werden.</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Erzeugen Sie 50 normalverteilte Zufallszahlen mit Mittelwert 0 und
-Standardabweichung 1. Visualisieren Sie diese als Streudiagramm. Die Marker
-sollen rot gefärbte Diamenten sein.</p>
+<p>Erzeugen Sie eine Wertetabelle mit den Zahlen 1 bis 50 für x und 50
+normalverteilten Zufallszahlen mit Mittelwert 0 und Standardabweichung 1 für y.
+Visualisieren Sie diese als Streudiagramm. Die Marker sollen rot gefärbte
+Diamenten sein.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1241,7 +1242,7 @@ sollen rot gefärbte Diamenten sein.</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># data </span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1"># plot</span>

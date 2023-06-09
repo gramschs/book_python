@@ -357,9 +357,10 @@ plt.title('Durchschnittstemperatur');
 
 ```{admonition} Mini-Übung
 :class: miniexercise 
-Erzeugen Sie 50 normalverteilte Zufallszahlen mit Mittelwert 0 und
-Standardabweichung 1. Visualisieren Sie diese als Streudiagramm. Die Marker
-sollen rot gefärbte Diamenten sein.
+Erzeugen Sie eine Wertetabelle mit den Zahlen 1 bis 50 für x und 50
+normalverteilten Zufallszahlen mit Mittelwert 0 und Standardabweichung 1 für y.
+Visualisieren Sie diese als Streudiagramm. Die Marker sollen rot gefärbte
+Diamenten sein.
 ```
 
 ```{code-cell} ipython3
@@ -373,7 +374,7 @@ import matplotlib.pylab as plt
 import numpy as np
 
 # data 
-x = np.linspace(-2*np.pi, 2*np.pi, 50)
+x = np.linspace(1, 50, 50)
 y = np.random.normal(0, 1, 50)
 
 # plot
