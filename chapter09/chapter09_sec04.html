@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Übungen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>9.4 Histogramme (optional) &#8212; Python für Studierende der Ingenieurwissenschaften</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,10 +53,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Messwerte und Regression" href="../chapter10/chapter10_sec00.html" />
-    <link rel="prev" title="9.3 Histogramme" href="chapter09_sec03.html" />
+    <link rel="next" title="Übungen" href="chapter09_sec05.html" />
+    <link rel="prev" title="9.3 Visualisierung von DataFrames mit Fehlerbalken" href="chapter09_sec03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -397,21 +399,26 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec01.html">
-     9.1 Linien-, Balken- und Streudiagramme
+     9.1 Linien- und Balkendiagramme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec02.html">
-     9.2 Visualisierung von DataFrames mit Fehlerbalken
+     9.2 Streudiagramme
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter09_sec03.html">
-     9.3 Histogramme
+     9.3 Visualisierung von DataFrames mit Fehlerbalken
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
+     9.4 Histogramme (optional)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter09_sec05.html">
      Übungen
     </a>
    </li>
@@ -692,23 +699,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notenspiegel-ist-ein-histogramm">
+   Notenspiegel ist ein Histogramm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wahl-der-bins-ist-entscheidend-zur-interpretation-der-daten">
+   Wahl der Bins ist entscheidend zur Interpretation der Daten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Übungen</h1>
+                <h1>9.4 Histogramme (optional)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notenspiegel-ist-ein-histogramm">
+   Notenspiegel ist ein Histogramm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wahl-der-bins-ist-entscheidend-zur-interpretation-der-daten">
+   Wahl der Bins ist entscheidend zur Interpretation der Daten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -716,214 +790,293 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
-<h1>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="histogramme-optional">
+<h1>9.4 Histogramme (optional)<a class="headerlink" href="#histogramme-optional" title="Permalink to this headline">#</a></h1>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, was ein <strong>Histogramm</strong> ist.</p></li>
+<li><p>Sie können mit der Funktion <strong>hist()</strong> ein Histogramm erzeugen und visualisieren.</p></li>
+<li><p>Sie wissen, dass die Einteilung des Intervalls in die Teilintervalle <strong>Bin</strong>
+kritisch ist und daher sehr sorgfältig gewählt werden muss.</p></li>
+</ul>
+</div>
+</section>
+<section id="notenspiegel-ist-ein-histogramm">
+<h2>Notenspiegel ist ein Histogramm<a class="headerlink" href="#notenspiegel-ist-ein-histogramm" title="Permalink to this headline">#</a></h2>
+<p>Das erste Histogramm, das Ihnen wahrscheinlich begegnet ist, ist der
+Notenspiegel in der Schule gewesen. Für jedes Merkmal (hier = Note) des
+Datensatzes (hier = Klasse) wird die Anzahl der Schülerinnen und Schüler
+angegeben, die diese Note erreicht haben. Eine typische Klassenarbeit könnte
+beispielsweise so aussehen:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Ein Histogramm ist eine Visualisierung einer solchen Tabelle. Dabei werden in
+der Regel Balken benutzt. Auf der x-Achse sind also die Merkmale aufgetragen und
+auf der y-Achse finden wir die Anzahl der Merkmale in dem Datensatz. Die Anzahl
+kann dabei in absoluten Zahlen angegeben werden oder in relativen (Prozent).</p>
+<p>So sieht das Histogramm des Notenspiegels aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Note&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Klassenarbeit&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec04_1_0.png" src="../_images/chapter09_sec04_1_0.png" />
+</div>
+</div>
+<p>Diese Analysemethode wird sehr häufig eingesetzt. Daher stellen alle drei Module
+<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">Matplotlib</a>,
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.histogram.html">Numpy</a>
+und
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html">Pandas</a>
+Methoden für Histogramme zur Verfügung. Da wir ohnehin das Histogramm
+visualisieren wollen, überspringen wir das Numpy-Histogramm und wenden uns
+gleich dem Matplotlib-Histogramm zu, das auch die Basis für das
+Pandas-Histogramm bildet.</p>
+<p>Um die Optionen des Histogramms kennenzulernen, lassen wir jetzt Matplotlib
+selbst das Histogramm, also den Notenspiegel berechnen und visualisieren. Zuerst
+notieren wir die Einzelnoten, die zu dem obigen Notenspiegel gehören. Dann
+wenden wir die Funktion <code class="docutils literal notranslate"><span class="pre">hist()</span></code> an.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einzelnoten der Klassenarbeit</span>
+<span class="n">noten</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Berechnung und Visualisierung des Histogramms</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">noten</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Note&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Klassenarbeit&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec04_3_0.png" src="../_images/chapter09_sec04_3_0.png" />
+</div>
+</div>
+<p>Warum sind bei den Noten 1 bis 4 Balken mit Abstand zueinander zu sehen, aber
+bei der Note 5 und 6 kleben die Balken aneinander? Die Funktion <code class="docutils literal notranslate"><span class="pre">hist()</span></code>
+funktioniert etwas anders, als wir Menschen vorgehen würden. Wir wissen, dass
+die Noten 1 bis 6 diskrete Werte sind und können einfach durchzählen, um zu
+bestimmen, wie häufig jede einzelne Note in der Klassenarbeit erzielt wurde.
+Matplotlib geht anders vor. Zunächst werden der minimale und der maximale
+vorkommene Wert ermittelt. Das sind in unserem Beispiel die 1 und die
+6. Danach wird das Intervall <span class="math notranslate nohighlight">\([1,6]\)</span> in 10 kleinere Teilintervalle unterteilt.
+Bei jedem Teilintervall gehört der minimale Wert zum Teilintervall dazu, aber
+der maximale nicht. Ausnahme ist nur das letzte Teilintervall, da gehört auch
+der maximale Wert, also die 6, zum Teilintervall dazu.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;\textcolor{red}{[}1,1.5), \, [1.5, 2), \, [2, 2.5), \, [2.5, 3), \, [3, 3.5) \\
+&amp;[3.5, 4), \, [4, 4.5), \, [4.5,5), \, [5, 5.5), \, [5.5,6\textcolor{red}{]} 
+\end{align*}\]</div>
+<p>Die Häufigkeit der Note 1 gehört zum ersten Teilintervall <span class="math notranslate nohighlight">\([1, 1.5)\)</span>, aber die
+Häufigkeit der Note 2 gehört nicht zum 2. Teilintervall, sondern zum 3.
+Teilintervall <span class="math notranslate nohighlight">\([2, 2.5)\)</span>. Die Note 5 gehört zum 9. Teilintervall und die Note 6
+gehört zum 10. Teilintervall, weil es das letzte Teilintervall ist. Daher wird
+der Balken mit der Häufigkeit der Note 5 beim Teilintervall <span class="math notranslate nohighlight">\([5, 5.5)\)</span>
+visualisiert und der Balken mit der Häufigkeit der Note 6 direkt daneben beim
+Teilintervall <span class="math notranslate nohighlight">\([5.5, 6]\)</span>.</p>
+<p>Wenn dieses Verhalten nicht gewünscht ist, kann der Funktion <code class="docutils literal notranslate"><span class="pre">hist()</span></code> die
+Unterteilung in die Teilintervalle selbst vorgegeben werden. Wir hätten gerne
+die Intervalle</p>
+<div class="math notranslate nohighlight">
+\[[1,2), [2,3), [3,4), [4,5), [5,6), [6,7].\]</div>
+<p>Um diese Intervalle zu erzeugen, müssen wir immer den minimalen Wert eines
+Teilintervalles und zum Abschluss den maximalen Wert des letzten Teilintervalls
+in eine Liste notieren und dann der Funktion <code class="docutils literal notranslate"><span class="pre">hist()</span></code> als optionalen Parameter
+<code class="docutils literal notranslate"><span class="pre">bins=</span> </code> übergeben. Das englische Wort bin steht dabei nicht für Tonne, sondern
+bezeichnet die Teilintervalle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einzelnoten der Klassenarbeit</span>
+<span class="n">noten</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Eigene Teilintervalle</span>
+<span class="n">teilintervalle</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="c1"># Berechnung und Visualisierung des Histogramms</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">noten</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">teilintervalle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Note&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Klassenarbeit&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec04_5_0.png" src="../_images/chapter09_sec04_5_0.png" />
+</div>
+</div>
+<p>Die Balken werden jetzt über jedes Teilintervall platziert, so dass sie wieder
+“aneinanderkleben”. Mit der Option <code class="docutils literal notranslate"><span class="pre">rwidth=</span></code> können wir sie etwas schmaler
+gestalten. Sollen sie beispielsweise nur 80 % der ursprünglichen Breite haben,
+so setzen wir <code class="docutils literal notranslate"><span class="pre">rwidth=0.8</span></code>. Mit der Option <code class="docutils literal notranslate"><span class="pre">align='left'</span></code> zentrieren wird die
+Balken um den Anfang des Teilintervalls.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einzelnoten der Klassenarbeit</span>
+<span class="n">noten</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Eigene Teilintervalle</span>
+<span class="n">teilintervalle</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="c1"># Berechnung und Visualisierung des Histogramms</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">noten</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">teilintervalle</span><span class="p">,</span> <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Note&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Klassenarbeit&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec04_7_0.png" src="../_images/chapter09_sec04_7_0.png" />
+</div>
+</div>
+<p>Die Optionen sind ausführlich in der
+<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">Matplotlib-Dokumentation/hist</a>
+dokumentiert. Kurz zusammengefasst bedeuten die drei Optionen</p>
+<ul class="simple">
+<li><p><em>bins=</em>: Wenn <code class="docutils literal notranslate"><span class="pre">bins</span></code> ein Integer ist, wird der kleinste x- und der größte
+x-Wert ermittelt. Danach werden soviele Teilintervalle gebildet, wie dort
+angegeben. Ist jedoch <code class="docutils literal notranslate"><span class="pre">bins</span></code> eine Liste von Zahlen, z.B. [1,2,3,4], so werden
+als Behälter Intervalle zwischen den aufeinanderfolgenden Werten gebildet. In
+diesem Fall wäre der 1. Behälter das Intervall [1,2), der 2. Behälter das
+Intervall [2,3), der 3. Behälter [3,4]. Bei vier Zahlen in der Liste erhalten
+wir drei Intervalle, wobei die ersten Intervalle immer rechts offen sind und
+nur das letzte Intervall ist geschlossen.</p></li>
+<li><p><em>align=</em>: Die Option <code class="docutils literal notranslate"><span class="pre">align</span></code> kann die Werte ‘left’, ‘mid’ und ‘right’
+annehmen. Verwendet man die Option nicht, so wird automatisch <code class="docutils literal notranslate"><span class="pre">align='mid'</span></code>
+benutzt. Mit dieser Option wird die horizontale Ausrichtung der Balken
+gesteuert.</p></li>
+<li><p><em>rwidth=</em>: Mit der dritten Option <code class="docutils literal notranslate"><span class="pre">rwidth</span></code> kann die Breite der Balken
+eingestellt werden. Die Breite wird dabei relativ als Float angegeben.
+<code class="docutils literal notranslate"><span class="pre">rwidth=0.9</span></code> würde einen Balken ergeben, der 90 % Breite zum Standard hat.</p></li>
+</ul>
+</section>
+<section id="wahl-der-bins-ist-entscheidend-zur-interpretation-der-daten">
+<h2>Wahl der Bins ist entscheidend zur Interpretation der Daten<a class="headerlink" href="#wahl-der-bins-ist-entscheidend-zur-interpretation-der-daten" title="Permalink to this headline">#</a></h2>
+<p>Nicht immer ist die Klasseneinteilung, also die Bins, vorher schon klar.
+Beispielsweise könnten wir die Körpergröße der teilnehmenden Studierenden dieser
+Vorlesung analysieren wollen. Und dabei sind wir bei der Einteilung in Bins
+frei. Beispielsweise könnten wir zwei Bins, nämlich <span class="math notranslate nohighlight">\(&lt; 120~cm\)</span> und <span class="math notranslate nohighlight">\(\geq 120~cm\)</span>
+wählen. So richtig viel verrät uns diese Aufteilung über die Verteilung der
+Körpergröße jedoch nicht, denn wahrscheinlich sind alle in der letzten Bin. Aber
+stattdessen Millimeterschritte zu wählen, wäre zuviel des Guten. Daher
+beschäftigen wir uns als Nächstes mit der Wahl der Bin-Größe im Verhältnis zu
+den gegebenen Daten.</p>
+<p>Wir wollen die folgenden Experimente mit den Zufallszahlen vergleichbar machen.
+Deswegen fixieren wir den Zufallszahlengenerator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">zufallszahlen_generator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Im Folgenden erzeugen wir zunächst einmal 1000 normalverteilte Zufallszahlen mit
+Mittelwert 0 und Standardabweichung 1. Bei (0,1)-normalverteilten Zufallszahlen
+wissen wir, dass</p>
+<ul class="simple">
+<li><p>68.27 % aller Zahlen zwischen -1 und 1 liegen,</p></li>
+<li><p>95.45 % aller Zahlen zwischen -2 und 2 liegen und</p></li>
+<li><p>99.73 % aller Zahlen zwischen -3 und 3 liegen.</p></li>
+</ul>
+<p>Wenn wir jetzt 100 Bins wählen, wird eine Bin ca. 0.06 breit sein. Wir tragen
+jetzt die Anzahl der Zufallszahlen, die in eine Bin fällt, im Histogram auf:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generiere normalverteilte Zufallszahlen</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">zufallszahlen_generator</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Histogramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/chapter09_sec04_11_0.png" src="../_images/chapter09_sec04_11_0.png" />
+</div>
+</div>
+<p>Die normalverteilten Zufallszahlen zeigen die typische Gauß-Verteilung, die auch
+Glockenkurve genannt wird.</p>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 9.1</p>
-<p>Laden Sie die Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC">20220801_Marktwert_Bundesliga.csv</a>
-herunter. Die ersten 5 Zeilen sind Kommentare, die beim Einlesen übersprungen
-werden sollten.</p>
-<ol class="simple">
-<li><p>Verschaffen Sie sich erst einen Überblick über die Daten.</p></li>
-<li><p>Filtern Sie dann die Daten nach der Ligazugehörigkeit (‘Bundesliga’, ‘2.
-Bundesliga’ und ‘3. Liga’).</p></li>
-<li><p>Lassen Sie dann für jede der drei Ligen den Wert der Vereine visualisieren.</p></li>
-</ol>
+<p class="admonition-title">Mini-Übung</p>
+<p>Ändern Sie bitte in der obigen Code-Zelle die Anzahl der Zufallszahlen.
+Probieren Sie z.B. N = 10, 100, 1000 oder 100000000 aus. Ab wann erkennen Sie
+die Gauß-Kurve? Gibt es eine Anzahl N von Punkten, ab der sich die Kurve nicht
+mehr ändert?</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Import der Tabelle</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;20220801_Marktwert_Bundesliga.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Überblick</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-
-<span class="c1"># Filtern nach den drei Ligen</span>
-<span class="n">erste_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">zweite_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2. Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">dritte_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;3. Liga&#39;</span> <span class="p">]</span>
-
-<span class="c1"># 1. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Wert&#39;</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Erste Bundesliga&#39;</span><span class="p">);</span>
-
-<span class="c1"># 2. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Wert&#39;</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zweite Bundesliga&#39;</span><span class="p">);</span>
-
-<span class="c1"># 3. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Wert&#39;</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dritte Bundesliga&#39;</span><span class="p">);</span>
-</pre></div>
+<p>Für eine kleine Anzahl von Zufallszahlen wie beispielsweise <span class="math notranslate nohighlight">\(N=10\)</span> oder <span class="math notranslate nohighlight">\(N=100\)</span>
+ist die Gauß-Kurve nicht erkennbar. Ab <span class="math notranslate nohighlight">\(N=1000\)</span> ist die Gauß-Kurve deutlich
+erkennbar, für mehr Zufallszahlen natürlich auch.</p>
 </div>
-</div>
+<p>In der Praxis ist es nicht so einfach, die Anzahl der Daten zu vergrößern. Daher
+probieren wir als nächstes das Umgekehrte.</p>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 9.2</p>
-<p>Verwenden Sie nun die Daten aus der vorherigen Übung, um die Kadergröße der
-Vereine zu visualisieren. Lassen Sie für jede Liga ein eigenes Diagramm
-generieren, das die Kadergröße für jeden Verein zeigt. Zudem soll jeweils der
-Mittelwert als rote horizontale Linie und die Standardabweichung als
-Fehlerbalken dargestellt werden.</p>
+<p class="admonition-title">Mini-Übung</p>
+<p>Wir bleiben bei <span class="math notranslate nohighlight">\(N=1000\)</span> Zufallszahlen, aber spielen mit der Anzahl der Bins und
+der Bingröße herum. Verändern Sie die Anzahl der Bins von 6, 10, 50, 100, 250,
+1000, 10000. Was beobachten Sie?</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Import der Tabelle</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;20220801_Marktwert_Bundesliga.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Filtern nach den drei Ligen</span>
-<span class="n">erste_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">zweite_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2. Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">dritte_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;3. Liga&#39;</span> <span class="p">]</span>
-
-<span class="c1"># Visualisierung 1. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Kadergröße&#39;</span><span class="p">]</span>
-<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Kadergröße&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Erste Bundesliga&#39;</span><span class="p">);</span>
-
-<span class="c1"># Visualisierung 2. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Kadergröße&#39;</span><span class="p">]</span>
-<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Kadergröße&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zweite Bundesliga&#39;</span><span class="p">);</span>
-
-<span class="c1"># Visualisierung 3. Liga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Kadergröße&#39;</span><span class="p">]</span>
-<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Kadergröße&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dritte Bundesliga&#39;</span><span class="p">);</span>
-</pre></div>
+<p>Wird die Anzahl der Bins klein gewählt, so sind die Teilintervalle größer. Somit
+liegen (normalerweise) auch in jedem Teilintervall Zufallszahlen, so dass jede
+Bin gefüllt ist. Gleichzeitig wird aber erschwert, den Typ der Verteilung
+abzulesen. Wird die Anzahl der Bins erhöht, so werden die Teilintervalle kleiner
+und die Struktur der Gaußschen Glockenkurve wird besser erkennbar. Wird die
+Anzahl der Bins jedoch zu groß gewählt, so sind die Teilintervalle teilweise so
+klein, dass in einigen Teilintervallen keine Zufallszahlen mehr liegen.</p>
 </div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung 9.3</p>
-<p>Teilaufgabe 1:</p>
-<p>Programmieren Sie eine Funktion, die einen Random Walk mit dem Turtle-Modul
-implementiert (siehe Übung 7.4). Der Roboter soll 100x zufällig eine Richtung
-Osten, Süden, Westen oder Norden wählen und dann 10 Schritte laufen. Lassen Sie dann den Abstand zum Ursprung berechnen und von der Funktion zurückgeben.</p>
-<p>Tipp: Die aktuelle Position des Roboters kann mit der Methode <code class="docutils literal notranslate"><span class="pre">.position()</span></code>
-bestimmt werden. Die Anweisung <code class="docutils literal notranslate"><span class="pre">x,y</span> <span class="pre">=</span> <span class="pre">robo.position()</span></code> speichert die x-Position
-in x und entsprechend die y-Position in y, wenn Ihr Roboter <code class="docutils literal notranslate"><span class="pre">robo</span></code> heißt.</p>
-<p>Teilaufgabe 2:</p>
-<p>Lassen Sie nun den Roboter 10 x seinen Random Walk ausführen und jeweils die
-Entfernung zum Ursprung zurückgeben. Sammeln Sie die Entfernungen in einer
-Liste. Untersuchen Sie mit einem Histogramm, wie die Entfernungen verteilt sind.
-Wenn die Rechenzeiten auf Ihrer Hardware annehmbar sind, erhöhen Sie bitte die
-Anzahl der Random Walks (vorsichtig!).</p>
-<p>Tipp: Setzen Sie innerhalb der Random-Walk-Funktion die Geschwindigkeit des
-Roboters auf <code class="docutils literal notranslate"><span class="pre">0</span></code>, also <code class="docutils literal notranslate"><span class="pre">robo.speed(0)</span></code>, falls Ihr Roboter <code class="docutils literal notranslate"><span class="pre">robo</span></code> heißt. Fügen
-Sie außerdem nach der letzten Bewegung den Befehl <code class="docutils literal notranslate"><span class="pre">robo.done()</span></code>ein. Dann wird
-die Bewegung nicht mehr animiert und nur der Laufweg angezeigt.</p>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Teilaufgabe 1: Implementierung eines Random Walks als Funktion</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">random_walk</span><span class="p">():</span>
-    <span class="n">robo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-        <span class="n">zufallswinkel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90</span>
-        <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">zufallswinkel</span><span class="p">)</span>
-        <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-    <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">robo</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
-    
-    <span class="n">entfernung</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">entfernung</span>
-</pre></div>
-</div>
-<p>Teilaufgabe 2: Durchführung von vielen Random Walks und Sammeln der Entfernungen in einer Liste (hier 500 Randon Walks):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
-    
-<span class="n">liste_entfernungen</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">random_walk</span><span class="p">()</span>
-    <span class="n">liste_entfernungen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Das Ergebnis könnte beispielhaft so aussehen:</p>
-<figure class="align-default" id="fig-solution09-03-random-walks">
-<a class="reference internal image-reference" href="../_images/solution09_03_random_walks.png"><img alt="../_images/solution09_03_random_walks.png" src="../_images/solution09_03_random_walks.png" style="width: 75%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Endergebnis von 500 Random Walks</span><a class="headerlink" href="#fig-solution09-03-random-walks" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Der Code zur Erzeugung des Histogramms ist:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">liste_entfernungen</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Entfernung zum Ursprung in px&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Häufigkeit&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Analyse der Random Walks&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Das Histogramm könnte beispielhaft so aussehen:</p>
-<figure class="align-default" id="fig-solution09-03-histogram">
-<a class="reference internal image-reference" href="../_images/solution09_03_histogram.png"><img alt="../_images/solution09_03_histogram.png" src="../_images/solution09_03_histogram.png" style="width: 75%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Histogramm der 500 Random Walks</span><a class="headerlink" href="#fig-solution09-03-histogram" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Die Entfernungen sind nicht gleichverteilt und auch nicht normalverteilt.</p>
-</div>
+<p>Zusammenfassend ist die Wahl der Bins, also die Anzahl der Teilintervalle,
+kritisch und muss passend zu den Daten gewählt werden.</p>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
+<p>Bei einem Histogramm werden Daten in Klassen eingeteilt und ihre Anzahl
+bestimmt. Die Wahl der Klassen ist dabei kritisch und muss sorgsam erfolgen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -957,13 +1110,13 @@ die Bewegung nicht mehr animiert und nur der Laufweg angezeigt.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">9.3 Histogramme</p>
+            <p class="prev-next-title">9.3 Visualisierung von DataFrames mit Fehlerbalken</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../chapter10/chapter10_sec00.html" title="next page">
+    <a class='right-next' id="next-link" href="chapter09_sec05.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">10. Messwerte und Regression</p>
+        <p class="prev-next-title">Übungen</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
