@@ -12,98 +12,103 @@ kernelspec:
   name: python3
 ---
 
-# 9.2 Visualisierung von DataFrames mit Fehlerbalken
+# 9.2 Streudiagramme
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: hint
-* Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus einem DataFrame extrahieren.
-* Sie können den Text der Achsenbeschriftung drehen.
-* Sie können mit **axhline()** zu einem Plot eine horizontale
-  Linie hinzufügen.
-* Sie können Fehlerbalken mit **errorbar()** visualisieren.
+* Sie können Messwerte mit **Streudiagrammen** darstellen. 
 ```
 
-## Visualisierung von DataFrames
 
-Aber wie kombinieren wir jetzt die Funktionalitäten des Pandas-Moduls mit denen
-des Matplotlib-Moduls? Der grundlegende Datentyp für Matplotlib ist das
-NumPy-Array und auch in den Pandas-Datenobjekten stecken im Kern NumPy-Arrays.
-Daher funktionieren die Plotting-Funktionalitäten von Matplotlib direkt.
-Wünschenswert wäre allerdings, den Zeilen- oder den Spaltenindex für die
-Beschriftung zu nehmen. Beides ist in dem DataFrame-Objekt abgespeichert. Wir
-können mit
+## Streudiagramme
 
-* ``.index`` auf den Zeilenindex und
-* ``.columns`` auf den Spaltenindex
-
-zugreifen. Übrigens, ``.values`` liefert die Werten in der Tabelle als
-NumPy-Array zurück. Aber das brauchen wir für die Visualisierung nicht, denn die
-Tabellendaten können direkt viualisiert werden. 
-
-Wir verwenden wieder einen realistischen Datensatz und importieren den uns schon
-bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21
-([→ Download](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)).
-Dann lassen wir den Zeilen- und Spaltenindex direkt anzeigen:
+Bei Streudiagrammen werden nicht die Punkte $(x_1,y_2)$ mit $(x_2,y_2)$ mit
+$(x_3,y_3)$ usw. durch Linien verbunden, sondern jeder Punkt selbst wird an der
+Stelle seiner Koordinaten eingezeichnet. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Funktion auch `scatter()`.
 
 ```{code-cell} ipython3
-import pandas as pd
-
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-
-print('Zeilenindex: ')
-print(data.index)
-
-print('Spaltenindex:')
-print(data.columns)
-```
-
-So kann man direkt die Daten aus einem Pandas-DataFrame extrahieren und
-visualisieren. Wenn wir beispielsweise wissen wollen, wie alt die Spieler der
-Eintracht Frankfurt sind, filtern wir zuerst. Danach stellen wir auf der x-Achse
-die Namen der Spieler (= Zeilenindex) dar und auf der y-Achse das Alter ('Age').
-Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
-verwenden wir ein Balkendiagramm.
-
-```{code-cell} ipython3
+import numpy as np
 import matplotlib.pylab as plt
 
 # data
-filter = data.loc[:, 'Club'] == 'Eintracht Frankfurt'
-data_eintracht_frankfurt = data.loc[filter, :]
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
+x = np.linspace(-2*np.pi, 2*np.pi, 50)
+y = np.sin(x)
 
-# plot
+# scatter plot
 plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
+plt.scatter(x,y);
 ```
 
-Leider kann man die Spielernamen nicht mehr lesen. Wir können händisch in das
-Styling der x-Achsenbeschriftung eingreifen und die die Beschriftung um 45 Grad
-drehen. Dann sieht der Code folgendermaßen aus:
+Über die Option `marker=` lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Wie Sie sehen, ist ein ausgefüllter Kreis
+voreingestellt. Lesen Sie auf der Internetseite 
+
+> https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers
+
+nach, welche Marker-Symbole existieren. Probieren Sie einige der Symbole hier
+aus:
 
 ```{code-cell} ipython3
-# plot
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21')
+# data
+x = np.linspace(-2*np.pi, 2*np.pi, 50)
+y = np.sin(x)
 
-# Rotation der xticks um 45 Grad und horizontal alignment rechts
-plt.xticks(rotation = 45, ha='right');
+# scatter plot
+fig, ax = plt.subplots()
+ax.scatter(x,y, marker='x');
+```
+
+Für bekannte Funktionen wie Sinus oder Kosinus würde man Liniendiagramme
+verwenden. Streudiagramme eignen sich eher für die Visualisierung einzelner
+Messungen. Wenn Sie beispielsweise an jeden Wochentag die Temperatur an zwei
+Orten messen, bietet es sich an, beide Messreihen in einem Streudiagramm zu
+visualisieren. Dazu sollten Sie unterschiedliche Marker und unterschiedliche
+Farben verwenden.
+
+```{code-cell} ipython3
+# data
+x  = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+y1 = np.random.uniform(15,23,7) # Zufallszahlen, um Temperaturmessung zu simulieren
+y2 = np.random.uniform(15,23,7) # Zufallszahlen, um Temperaturmessung zu simulieren
+
+# scatter plots
+plt.figure()
+plt.scatter(x, y1, marker='+')
+plt.scatter(x, y2, marker='.');
+```
+
+Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
+`plt.scatter(x,y1, label='Messung1')`. Zuletzt verwendet man die Funktion
+`legend()`, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
+Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+werden.
+
+```{code-cell} ipython3
+# data
+x  = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+y1 = np.random.uniform(15,23,7)
+y2 = np.random.uniform(15,23,7)
+
+# scatter plots
+plt.figure()
+plt.scatter(x, y1, marker='+', label='Frankfurt')
+plt.scatter(x, y2, marker='.', label='Offenbach')
+plt.legend()
+plt.title('Durchschnittstemperatur');
 ```
 
 ```{admonition} Mini-Übung
-:class: miniexercise
-Visualisieren Sie die Anzahl der Minuten, die ein Spieler der Eintracht
-Frankfurt auf dem Platz stand. Beschriften Sie auch x- und y-Achse und geben Sie
-der Grafik einen aussagekräftigen Titel.
+:class: miniexercise 
+Erzeugen Sie eine Wertetabelle mit den Zahlen 1 bis 50 für x und 50
+normalverteilten Zufallszahlen mit Mittelwert 0 und Standardabweichung 1 für y.
+Visualisieren Sie diese als Streudiagramm. Die Marker sollen rot gefärbte
+Diamenten sein.
 ```
 
 ```{code-cell} ipython3
@@ -113,165 +118,23 @@ der Grafik einen aussagekräftigen Titel.
 ````{admonition} Lösung
 :class: minisolution, toggle
 ```python
-# data
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Mins']
+import matplotlib.pylab as plt
+import numpy as np
+
+# data 
+x = np.linspace(1, 50, 50)
+y = np.random.normal(0, 1, 50)
 
 # plot
 plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.xticks(rotation = 45, ha='right')
-plt.ylabel('Minuten')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
+plt.scatter(x,y, c='red', marker='D')
 ```
 ````
 
-## Plot vom Mittelwert als horizontale Linie
-
-Als nächstes möchten wir in den Plot Zusatzinformationen mit einblenden. So
-würden wir gerne sichtbar machen, wo das Durchschnittsalter der Fußballspieler
-liegt. Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt
-liegt und welcher jünger als der Durchschnitt ist.
-
-Dazu müssen wir zunächst die Zusatzinformation aus den Daten herausholen, sprich
-den Mittelwert des Alters berechnen lassen.
-
-```{code-cell} ipython3
-mittelwert_alter = data_eintracht_frankfurt.loc[:, 'Age'].mean()
-print(f'Mittleres Alter der Spieler: {mittelwert_alter}')
-```
-
-Und nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Dazu
-zeichnen wir eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu
-verwenden wir die Funktion `axhline()`.
-
-```{code-cell} ipython3
-# Daten
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-
-# Visualisierung
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-
-# Rotation der xticks um 45 Grad und horizontal alignment rechts
-plt.xticks(rotation = 45, ha='right')
-
-# horizontale Linie
-plt.axhline(mittelwert_alter, color='red');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Bilden Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war. Ergänzen Sie Ihren Plot der letzten
-Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.
-```
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Mins']
-min_durchschnitt = y.mean()
-
-# plot
-plt.figure()
-plt.bar(x,y)
-plt.axhline(min_durchschnitt, color='black')
-plt.xlabel('Spieler')
-plt.xticks(rotation = 45, ha='right')
-plt.ylabel('Minuten')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-````
-
-## Plot der Standardabweichung als Fehlerbalken
-
-Bei allen Messungen treten Messfehler auf. Manchmal weiß man von Anfang an,
-welchen Messfehler das Messgerät hat. Ein anderes Mal hat man beispielsweise
-eine Messung zehnmal wiederholt und möchte nun den Mittelwert als Datenpunkt und
-die Standardabweichung der Messergebnisse als Fehlerbalken visualisieren. Durch
-die Angabe eines Fehlerbalkens kann man dem Betrachter eine Zusatzinformation
-mitteilen. Für die Darstellung von Fehlerbalken stellt das Matplotlib-Modul die
-Methode ``errorbar()`` zur Verfügung. Mehr Informationen gibt es auf der
-Hilfeseite
-
-> https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html
-
-
-```{code-cell} ipython3
-# data
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
-
-# plot data
-plt.figure()
-plt.errorbar(x, y, yerr=standardabweichung_alter)
-
-# styling
-plt.xlabel('Spieler')
-plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-
-Die Grafik sieht irritierend aus, da die Altersangben der Spieler verbunden
-wurden. Ästhetischer und besser interpretierbar wird die Grafik, wenn wir noch
-ein wenig an den Optionen herumschrauben. Mit der Formatierung `fmt='o'` werden
-die Messwerte als Kreise dargestellt.
-
-```{code-cell} ipython3
-# data
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
-
-# plot data
-plt.figure()
-plt.errorbar(x, y, yerr=standardabweichung_alter, fmt='o')
-
-# styling
-plt.xlabel('Spieler')
-plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie nun die Standardabweichung der Minuten visualisieren, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war. 
-```
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Mins']
-min_standardabweichung = y.std()
-
-# plot
-plt.figure()
-plt.errorbar(x,y, yerr=min_standardabweichung, fmt='o')
-plt.xlabel('Spieler')
-plt.xticks(rotation = 45, ha='right')
-plt.ylabel('Minuten')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-````
 
 ## Zusammenfassung und Ausblick
 
-Nachdem wir uns erarbeitet haben, wie Daten aus einem DataFrame für eine
-Visualisierung mit Matplotlib aufbereitet werden, lernen wir im nächsten
-Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.
+Das Linien- und das Streudiagramm werden für die Visualisierung von
+kontinuierlichen Daten verwendet, wohingegen das Balkendiagramm dem Plot von
+diskreten Daten (Kategorien) dient. Im folgenden Abschnitt verknüpfen wir
+Matplotlib mit Pandas zur Visualisierung von Tabellendaten in einem DataFrame.
