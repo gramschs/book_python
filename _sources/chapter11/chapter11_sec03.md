@@ -1,4 +1,4 @@
-# 11.3 Symbolisches Rechnen mit MATLAB
+# 11.3 Programmieren in MATLAB
 
 
 ```{admonition} Warnung

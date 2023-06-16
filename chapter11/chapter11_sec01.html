@@ -483,7 +483,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="chapter11_sec03.html">
-     11.3 Symbolisches Rechnen mit MATLAB
+     11.3 Programmieren in MATLAB
     </a>
    </li>
    <li class="toctree-l2">
@@ -633,12 +633,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden">
+   MATLAB starten und die Entwicklungsumgebung erkunden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab-als-taschenrechner">
+   MATLAB als Taschenrechner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hilfe">
+   Hilfe
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -650,6 +689,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden">
+   MATLAB starten und die Entwicklungsumgebung erkunden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab-als-taschenrechner">
+   MATLAB als Taschenrechner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hilfe">
+   Hilfe
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -659,10 +726,104 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="einfuhrung-matlab">
 <h1>11.1 Einführung MATLAB<a class="headerlink" href="#einfuhrung-matlab" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<p>Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Matlab">https://de.wikipedia.org/wiki/Matlab</a>):</p>
+<blockquote>
+<div><p>“Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der Name ableitet: MATrix LABoratory.”</p>
+</div></blockquote>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können MATLAB starten.</p></li>
+<li><p>Sie können MATLAB als Taschenrechner benutzen.</p></li>
+<li><p>Sie können die Dokumentation mit der Anweisung <strong>doc</strong> aufrufen.</p></li>
+</ul>
 </div>
+</section>
+<section id="matlab-starten-und-die-entwicklungsumgebung-erkunden">
+<h2>MATLAB starten und die Entwicklungsumgebung erkunden<a class="headerlink" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden" title="Permalink to this headline">#</a></h2>
+<p>Im Folgenden benutzten wir MATLAB in der Cloud. Registrieren Sie sich zuerst bei
+der Firma MathWorks</p>
+<blockquote>
+<div><p><a class="reference external" href="https://de.mathworks.com/mwaccount/register?uri=https%3A%2F%2Fde.mathworks.com%2Fmwaccount%2F">Registrierung
+MathWorks</a></p>
+</div></blockquote>
+<p>Sollten Sie Studentin oder Student einer Hochschule sein, verfügt Ihre
+Hochschule vielleicht über eine Campuslizenz. In diesem Fall reicht es, bei der
+Registrierung Ihre studentische E-Mail-Adresse anzugeben.</p>
+<p>Klicken Sie dann auf die folgende URL</p>
+<blockquote>
+<div><p><a class="reference external" href="https://matlab.mathworks.com">https://matlab.mathworks.com</a></p>
+</div></blockquote>
+<p>um sich mit Ihrem neuen Account anzumelden. Starten Sie danach MATLAB Online wie
+in der folgenden Abbildung gezeigt.</p>
+<figure class="align-center" id="id1">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/screenshot01.png"><img alt="Screenshot des Startbildschirms von MATLAB Online" class="bg-primary mb-1" src="../_images/screenshot01.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Screenshot des Startbildschirms von MATLAB Online</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Danach wird die MATLAB-Entwicklungsumgebung gestartet. Vorerst belassen wir es bei den Standardeinstellungen. In dem folgenden Video werden die einzelnen Bestandteile der Entwicklungsumgebung vorgestellt.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “1.1 Matlab - Umgebung” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HXyMG9gy4Oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="matlab-als-taschenrechner">
+<h2>MATLAB als Taschenrechner<a class="headerlink" href="#matlab-als-taschenrechner" title="Permalink to this headline">#</a></h2>
+<figure class="align-center" id="id2">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/screenshot02.png"><img alt="Screenshot des Kommandofensters" class="bg-primary mb-1" src="../_images/screenshot02.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Screenshot des MATLAB Kommandofensters</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Auch wenn MATLAB also zunächst von der Firma MathWorks für numerische
+Berechnungen ausgelegt wurde, können wir es wie einen Taschenrechner benutzen.
+In dem sogenannten <strong>Kommandofenster</strong> können wir nach dem Prompt (das sind die
+zwei spitzen Klammern &gt;&gt;) unsere Anweisungen an MATLAB eingeben. Durch das
+Drücken von Return wird die Eingabe abgschlossen und MATLAB führt die Anweisung
+aus.</p>
+<p>Probieren Sie es aus:</p>
+<ul class="simple">
+<li><p>Addition: 2+3</p></li>
+<li><p>Subtraktion: 2-3</p></li>
+<li><p>Multiplikation: 2*4</p></li>
+<li><p>Division: 8/2</p></li>
+<li><p>Potenzierung: 3^2</p></li>
+</ul>
+<p>Selbstverständlich beherrscht MATLAB auch Klammerregeln. Gerne können Sie den
+Term durch MATLAB berechnen lassen, probieren Sie es doch einmal selbst aus!</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “1.2 Taschenrechner” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="hilfe">
+<h2>Hilfe<a class="headerlink" href="#hilfe" title="Permalink to this headline">#</a></h2>
+<p>MATLAB ist nur in Englisch verfügbar. Alle Anweisungen an MATLAB basieren auf
+der englischen Sprache. Dafür besitzt MATLAB eine gute Dokumentation. Mit dem
+Kommando <strong>doc</strong> wird die entsprechende Webseite im Browser geladen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “1.3 Hilfe” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FasuEz-bC40" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
