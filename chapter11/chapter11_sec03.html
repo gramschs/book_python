@@ -633,12 +633,71 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">
+   Eingabe, Verarbeitung und Ausgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen">
+   Funktionen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmverzweigungen">
+   Programmverzweigungen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schleifen">
+   Schleifen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagramme">
+   Diagramme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression">
+   Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weiteres-lehrmaterial">
+   Weiteres Lehrmaterial
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -650,6 +709,54 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele">
+   Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">
+   Eingabe, Verarbeitung und Ausgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen">
+   Funktionen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmverzweigungen">
+   Programmverzweigungen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schleifen">
+   Schleifen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagramme">
+   Diagramme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression">
+   Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weiteres-lehrmaterial">
+   Weiteres Lehrmaterial
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -659,10 +766,352 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="programmieren-in-matlab">
 <h1>11.3 Programmieren in MATLAB<a class="headerlink" href="#programmieren-in-matlab" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Achtung, dieser Abschnitt des Vorlesungsskriptes wird gerade überarbeitet!!!</p>
+<p>Ein Programmierkurs in MATLAB erfordert eine ganze Vorlesung. In diesem Kapitel vergleichen wir nur die Programmierkonstrukte aus Python mit denen von MATLAB. Gerne können Sie Details in dem Vorlesungsskript</p>
+<blockquote>
+<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/</a></p>
+</div></blockquote>
+<p>nachlesen.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Lernziele</p>
+<p>Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich</p>
+<ul class="simple">
+<li><p>Eingabe</p></li>
+<li><p>Verarbeitung (Variablen und Datentypen)</p></li>
+<li><p>Ausgabe</p></li>
+<li><p>Funktionen</p></li>
+<li><p>Vergleiche</p></li>
+<li><p>Programmverzweigungen</p></li>
+<li><p>Schleifen</p></li>
+<li><p>Diagramme</p></li>
+<li><p>Regression</p></li>
+</ul>
 </div>
+</section>
+<section id="eingabe-verarbeitung-und-ausgabe">
+<h2>Eingabe, Verarbeitung und Ausgabe<a class="headerlink" href="#eingabe-verarbeitung-und-ausgabe" title="Permalink to this headline">#</a></h2>
+<p>Die Eingabe erfolgt in MATLAB mit der Funktion <code class="docutils literal notranslate"><span class="pre">input()</span></code>. Im Unterschied zu
+Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
+ist es in MATLAB schwierig, eine Abfrage nach Text zu gestalten. Meist wird
+indirekt gearbeitet mit Abfragen a la “Haben Sie einen Führerschein? Geben Sie 0
+ein für Nein und 1 für Ja.”</p>
+<p>Für die Ausgabe gibt es zwei Funktionen. Die Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> gibt den Inhalt
+einer Variablen direkt aus. Die Funktion <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> ermöglicht weitere
+Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
+f-Strings. Es wird in den String ein Platzhalter <code class="docutils literal notranslate"><span class="pre">%f</span></code> eingesetzt und dann,
+nachdem der String abgeschlossen wurde, nach einem Komma die Variable.</p>
+<p>Das folgende Beispiel fragt nach einem Nettpreis und gibt dann den Bruttopreis
+mit einem Mehrwertsteuersatz von 19 %.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">nettopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie den Nettopreis ein: &#39;</span><span class="p">)</span>
+<span class="n">bruttopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nettopreis</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.19</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nettopreis</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Der Bruttopreis ist %f EUR.&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">bruttopreis</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zwischenrechnungen werden von MATLAB automatisch am Bildschirm ausgegeben. Wenn
+das nicht gewünscht ist, kann die Ausgabe durch ein Semikolon am Ende der Zeile
+unterdrückt werden.</p>
+</section>
+<section id="funktionen">
+<h2>Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this headline">#</a></h2>
+<p>In MATLAB werden häufig Funktionen gebraucht. Zunächst einmal sind Funktionen in
+MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
+implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
+stellen sie meist “echte” mathematische Funktionen mit einer Eingabe und einer
+Ausgabe dar.</p>
+<p>Die Grundstruktur einer Funktion in MATLAB ist eie folgt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ergebnis1, ergebnis2,...] = funktionsname</span><span class="p">(</span>input1, input2,...<span class="p">)</span>
+<span class="w">    </span><span class="c">% Anweisungen</span>
+<span class="w">    </span><span class="n">ergebnis1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="n">ergebnis2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Die Funktion wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">function</span></code> eingeleitet. Danach kommen
+die Variablen, deren Werte von der Funktion zurückgegeben werden sollen. Das
+wird durch den Zuweisungsoperator <code class="docutils literal notranslate"><span class="pre">=</span></code> deutlich gemacht. Zuletzt folgt der
+Funktionsname mit den Eingabeparametern. Die Anweisungen im Inneren der Funktion
+werden durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
+<p>Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
+Fläche und gibt beide Werte zurück.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[umfang, flaeche] = berechne_umfang_flaeche</span><span class="p">(</span>radius<span class="p">)</span>
+<span class="w">    </span><span class="n">umfang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="n">flaeche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span>^<span class="mi">2</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Sie muss unter dem Namen <code class="docutils literal notranslate"><span class="pre">berechne_umfang_flaeche.m</span></code> abgespeichert werden, damit
+sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">berechne_umfang_flaeche</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in
+MATLAB.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 3.1 Einleitung Funktionen” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 3.2 Input/Output bei Funktionen” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/psyGbqwBD2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 3.3 Formale Definition von Funktionen” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FMfTxKd3gOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 3.4 Unterfunktionen” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i1c3IPCb82E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 3.5 Geltungsbereich” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ebqojVhnPwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="programmverzweigungen">
+<h2>Programmverzweigungen<a class="headerlink" href="#programmverzweigungen" title="Permalink to this headline">#</a></h2>
+<p>MATLAB kennt ebenfalls Vergleiche und den booleschen Datentyp. Die
+Vergleichsoperatoren sind mit Ausnahme des “ungleich”-Operators auch identisch:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> kleiner</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner oder gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> größer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer oder gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~=</span></code> ungleich</p></li>
+</ul>
+<p>Das Ergebnis eines Vergleichs ist entweder <code class="docutils literal notranslate"><span class="pre">true</span></code> oder <code class="docutils literal notranslate"><span class="pre">false</span></code>. MATLAB verwendet
+hier also Kleinbcuhstaben im Vergleich zu Python mit <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
+entsprechende Verzweigungskonstrukt lautet</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist kleiner als 10.&#39;</span><span class="p">)</span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist nicht kleiner als 10, aber kleiner als 15.&#39;</span><span class="p">)</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist größer oder gleich 15.&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Wie Sie sehen, werden nach den Bedingungen keine Doppelpunkte gesetzt. Die
+Verzweigung wird mit einem <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 4.1 if else elseif” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9FA1RP4vj6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><p>In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
+gibt. Die sogenannte <code class="docutils literal notranslate"><span class="pre">switch</span></code>-Verzweigung ist vor allem dann interessant, wenn
+sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
+if-elseif-else ersetzt werden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 4.2 switch - Anweisung” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="schleifen">
+<h2>Schleifen<a class="headerlink" href="#schleifen" title="Permalink to this headline">#</a></h2>
+<p>Natürlich kennt MATLAB auch Schleifen. Sowohl die while-Schleife als auch die
+for-Schleife können in MATLAB benutzt werden.</p>
+<p>Eine Schleife mit Bedingung wird mit <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Wir setzen einen
+Zähler auf Eins und erhöhen in jedem Schleifendurchgang den Wert des Zählers um
+Eins, solange wie der Zähler kleiner gleich 10 ist.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zaehler</span><span class="p">)</span>
+<span class="w">    </span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 4.3 while-Anweisung” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sSw9QKAjESE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><p>Bei der for-Schleife wird eine Liste von Zahlen abgearbeitet oder ein
+Zahlenbereich durchlaufen. Das folgende Code-Beispiel gibt nacheinander die
+Zahlen 2, 6, 8 und -1 auf dem Bildschirm aus.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Wieder wird die Schleife nicht durch einen Doppelpunkt eingeleitet. Die Schleife
+wird durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> beendet. Alternativ kann der Doppelpunktoperator genutzt
+werden, um eine Liste mit Zahlen nach einem Muster zu generieren. Der folgende
+Code zählt von 10 runter.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Rakete startet...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 4.4 for - Anweisung” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2qGElJdocnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><p>In beiden Schleifen-Varianten sind <code class="docutils literal notranslate"><span class="pre">continue</span></code> und <code class="docutils literal notranslate"><span class="pre">break</span></code> möglich, um die
+Schleife vorzeitig zu einem neuen Schleifendurchgang zu veranlassen oder die
+Schleife vorzeitig abzubrechen. Wer an Details interessiert ist, findet sie in
+den folgenden Videos.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 4.5 continue - Anweisung” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VdHhQhIjasg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 4.6 break - Anweisung” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bIXuZXPSblU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="diagramme">
+<h2>Diagramme<a class="headerlink" href="#diagramme" title="Permalink to this headline">#</a></h2>
+<p>Bei der Einführung in die Datenvisualisierung mit Matplotlib in Python haben wir
+absichtlich die zustandsorientierte Schnittstelle der Bibliothek genutzt. Diese
+wurde nach dem Vorbild von MATLAB gestaltet, so dass Diagramme mit den uns
+bekannten Anweisungen funktionieren.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+
+<span class="nb">figure</span><span class="p">();</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Liniendiagramm&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Auch das Balkendiagramm mit <code class="docutils literal notranslate"><span class="pre">bar()</span></code> und das Streudiagramm mit <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>
+funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
+bestehen. Die Verarbeitung von Strings istg in MATLAB etwas komplizierter, so
+dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
+umzusetzen sind.</p>
+<p>Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
+gemeinsam dargestellt werden sollen. Dann muss nach dem ersten Diagramm der
+Befehl <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on</span></code> ausgeführt werden, damit die nachfolgenden Diagramme in
+dieselbe Grafik gezeichnet werden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Video zu “Matlab - 5.1 Plot erstellen” von Mathe? Logisch!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2admMlXzlSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="regression">
+<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h2>
+<p>Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir als Streudiagramm visualisieren.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">]</span>
+
+<span class="nb">figure</span><span class="p">()</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Die Funktion zur Bestimmung eines Regressionspolynoms lautet <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code>. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
+die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
+Argument wird der gewüunschte Polynomgrad übergeben. Wir probieren eine
+Regressionsparabel.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">polyval(p,</span> <span class="pre">x)</span></code> werten wir ein Polynom <code class="docutils literal notranslate"><span class="pre">p</span></code> an der Stelle <code class="docutils literal notranslate"><span class="pre">x</span></code> aus. Um also
+die Regressionsparabel zusätzlich zu den Messwerten zu visualisieren, verwenden
+wir den folgenden Code.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Künstliche Messdaten</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">];</span>
+
+<span class="c">% Regression</span>
+<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">x_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="n">y_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">x_modell</span><span class="p">);</span>
+
+<span class="c">% Visualisierung</span>
+<span class="nb">figure</span><span class="p">();</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span><span class="w"> </span><span class="n">y_modell</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
+Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
+Kommentarzeichen in MATLAB ein Prozentzeichen <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
+</section>
+<section id="weiteres-lehrmaterial">
+<h2>Weiteres Lehrmaterial<a class="headerlink" href="#weiteres-lehrmaterial" title="Permalink to this headline">#</a></h2>
+<p>Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript</p>
+<blockquote>
+<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/intro.html</a></p>
+</div></blockquote>
+<p>nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
+anderen empfehle ich die YouTube-Playlist</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY">So lernst Du
+Matlab</a></p>
+</div></blockquote>
+<p>von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
+auch noch anderen Themen behandelt.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
