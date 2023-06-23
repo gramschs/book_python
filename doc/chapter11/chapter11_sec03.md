@@ -227,7 +227,7 @@ bekannten Anweisungen funktionieren.
 
 ```matlab
 x = linspace(-3, 3, 100);
-y = 3 * x + 7;
+y = 3 .* x + 7;
 
 figure();
 plot(x,y);
