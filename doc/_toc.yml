@@ -79,5 +79,6 @@ parts:
     - file: chapter11/chapter11_sec04.md
   - file: chapter12/chapter12_sec00.md
     sections:
-      - file: chapter12/chapter12_sec01.md
-  
+      - file: chapter12/chapter12_sec01.md        
+      - file: chapter12/chapter12_sec02.md
+      - file: chapter12/chapter12_sec03.md
