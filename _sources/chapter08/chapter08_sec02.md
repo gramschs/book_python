@@ -22,7 +22,7 @@ auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können auf ganze Zeilen und Spalten zugreifen:
   * Zugriff auf eine einzelne Zeile oder Spalte, indem ein Index spezifiziert wird
   * Zugriff auf mehrere zusammenhängende Zeilen oder Spalten (Slice) 
@@ -147,7 +147,7 @@ Lassen Sie sich die folgenden Zeilen anzeigen:
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 data_zeile = data.loc['Kingsley Coman']
 data_slice = data.loc['Kingsley Coman' : 'Alphonso Davies']
@@ -258,7 +258,7 @@ Lassen Sie sich die folgenden Spalten anzeigen:
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 data_spalte = data.loc[:, 'Nationality']
 data_slice = data.loc[:, 'Nationality' : 'Age']
@@ -327,7 +327,7 @@ Lassen Sie sich das Alter von Robert Lewandowski und Thomas Müller anzeigen.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 alter = data.loc[['Robert Lewandowski', 'Thomas Müller'], 'Age']
 print(alter)

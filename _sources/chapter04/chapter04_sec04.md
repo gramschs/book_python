@@ -25,7 +25,7 @@ Februar ist der 2. Monat im Jahr. <br>
 Verwenden Sie dazu eine Liste der Monate und eine for-Schleife.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 monate = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 
 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
@@ -41,7 +41,7 @@ for i in range(12):
 Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei eine for-Schleife.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 
@@ -58,7 +58,7 @@ for i in range(4):
 Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden. Testen Sie anschließend ein Dreieck und ein Siebeneck.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 
@@ -77,7 +77,7 @@ for i in range(anzahl_seiten):
 Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in der Liste mithilfe einer for-Schleife berechnen und ausgeben.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Initalisierung der leeren Liste
 zahlen = []
@@ -115,7 +115,7 @@ Die Fakultät von 5 ist 120, also 5! = 120.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe des Benutzers
 n = int(input('Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: '))

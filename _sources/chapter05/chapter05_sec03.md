@@ -26,7 +26,7 @@ Programmverzweigungen mit mehreren Zweigen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können Programmverzweigungen mit zwei Zweigen mittels **if - else**
   implementieren.
 * Sie können mehrteilige Programmverzweigungen mit **if - elif - else**
@@ -77,7 +77,7 @@ soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 monat = int(input('Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.'))
@@ -101,7 +101,7 @@ aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben:
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 temperatur = float(input('Welche Temperatur haben wir aktuell?'))
@@ -273,7 +273,7 @@ folgt:
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 verstoss = int(input('Wieviel zu schnell ist die Person gefahren? '))
@@ -317,7 +317,7 @@ Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder ei
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 temperatur = float(input('Welche Temperatur haben wir aktuell? '))

@@ -106,7 +106,7 @@ Könnte damit die Ziehung der Lottozahlen simuliert werden?
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import numpy as np
 
@@ -162,7 +162,7 @@ Lassen Sie die Körpergrößen einer durchschnittlichen Schulklasse (= 13 Mädch
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import numpy as np
 

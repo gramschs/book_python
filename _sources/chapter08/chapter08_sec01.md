@@ -24,7 +24,7 @@ verwendete Datenformat `csv` kennen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
 * Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
 * Sie kennen das **CSV-Dateiformat**.
@@ -112,7 +112,7 @@ Vorlesungs/Übungs-Stunden an diesem Wochentag.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 stundenplan = pd.Series([4, 0, 4, 6, 8], index=["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"])
 print(stundenplan)

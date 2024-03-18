@@ -31,7 +31,7 @@ Effizienz zu steigern.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können erklären, was ein **Algorithmus** ist.
 * Sie wissen, was eine **Programmiersprache** ist.
 * Sie kennen den Unterschied zwischen **höheren Prorgammiersprachen** und **Maschinensprache**.
@@ -59,7 +59,7 @@ Nehmen Sie sich 5 min Zeit, um einen Algorithmus aufzuschreiben, wie Ihr Lieblin
 ```
 
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Zuerst werden 1 Apfel, 1 Banane, 1 Orange und 2 Kiwis kleingeschnitten und in eine Schüssel gefüllt. Danach werden 3 EL Joghurt mit 1 TL Honig und einer Prise Zimt verrührt. Zuletzt wird das Joghurt-Dressing mit den Obststücken gemischt und angerichtet.
 ```
 
@@ -94,7 +94,7 @@ Listen Sie die Details auf, die dem obigen Rezept des Rosenkohl-Auflaufs zugefü
 ```
 
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 * Die Garzeiten der Kartoffeln und des Rosenkohls sind normalerweise unterschiedlich und müssten spezifiziert werden. 
 * Wie wird Hackfleisch angebraten? Erläuterungen zum Anbraten fehlen komplett.
 * Angaben zur Würzung der Sahne-Schmand-Mischung fehlen.
@@ -175,7 +175,7 @@ Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompiliert
 ```
 
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompilierte oder interpretierte Programmiersprachen?
 * C bzw. C++ --> kompiliert
 * Java --> kompiliert (wird manchmal auch zu den interpretierten Sprachen gezählt, weil der kompilierte Bytecode anschließend von der Java Virtual Machine interpretiert wird und nicht vom Betriebsystem direkt ausgeführt wird)

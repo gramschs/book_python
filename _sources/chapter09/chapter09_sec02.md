@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können Messwerte mit **Streudiagrammen** darstellen. 
 ```
 
@@ -33,7 +33,7 @@ Matplotlib-Funktion auch `scatter()`.
 
 ```{code-cell} ipython3
 import numpy as np
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 # data
 x = np.linspace(-2*np.pi, 2*np.pi, 50)
@@ -116,9 +116,9 @@ Diamenten sein.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 # data 

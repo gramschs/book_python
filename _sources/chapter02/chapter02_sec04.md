@@ -28,7 +28,7 @@ Vermutung auf. Überprüfen Sie dann Ihre Vermutung mit der Funktion `type()`.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Meine Vermutungen sind:
 
 * 6 + 2 -> Ganzzahl (int)
@@ -86,7 +86,7 @@ Testen Sie Ihr Programm mit verschiedenen Namen.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Namen des Benutzers abfragen
 name = input('Wie ist dein Name? ')
@@ -112,7 +112,7 @@ Zentimetern entspricht.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe: Abfrage der Daten
 laenge_in_zoll = float(input('Bitte geben Sie die Länge in Zoll ein: '))
@@ -140,7 +140,7 @@ selbst ausdenken.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe der beiden ahlen durch Abfrage
 zahl1 = float(input('Bitte geben Sie die erste Zahl ein: '))
@@ -178,7 +178,7 @@ Testen Sie anschließend, ob Ihr Programm für die folgenden Angaben korrekt rec
 
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe der Daten durch Abfrage
 raummiete = float(input('Wie viel kostet die Raummiete? '))

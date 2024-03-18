@@ -23,7 +23,7 @@ uns auf die for-Schleife mit der range()-Funktion in Python.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 Sie können Zahlenlisten mit der **range()**-Funktion erzeugen und diese mit der
 for-Schleife kombinieren.
 ```
@@ -105,7 +105,7 @@ rückwärts zählt.
 Lassen Sie die Dreier-Zahlen von 3 bis 99 ausgeben, also 3, 6, 9, 12, 15, ..., 96, 99.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 for i in range(3, 100, 3):
     print(i)
@@ -140,7 +140,7 @@ for i in range(2, 11, 2):
 Schreiben Sie ein Programm, dass die Summe der ersten n Quadratzahlen berechnet.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 n = 5  # Beispielwert
 summe = 0

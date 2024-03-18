@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können mit **polyfit** die Koeffizienten einer Regressionsgerade zu
   gegebenen Messwerten bestimmen.
 * Sie können mit **polyval** aus den berechneten Koeffizienten die
@@ -48,7 +48,7 @@ Um die Anwendung von `polyfit()` zu zeigen, werden zunächst die folgenden siebe
 Messpunkte visualisiert:
 
 ```{code-cell} ipython3
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 x = [-1, 0, 1, 2,  3, 4, 5]
 y = [-2.52,  0.85,   3.21,  7.19,  8.93, 12.89, 15.40]
@@ -83,7 +83,7 @@ Farbe rot visualisieren.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Wertetabelle für Regressionsgerade
 x_modell = np.linspace(-1, 5)
@@ -133,7 +133,7 @@ zusammen mit der Regressionsgeraden (in rot).
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Wertetabelle für Regressionsgerade
 x_modell = np.linspace(-1, 5)

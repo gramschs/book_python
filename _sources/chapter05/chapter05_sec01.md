@@ -23,7 +23,7 @@ Datentyp Bool.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie kennen den Datentyp **Bool** mit seinen beiden Werte True oder False.
 * Sie kennen die wichtigsten Vergleichsoperatoren für Zahlen und Strings.
 ```
@@ -133,7 +133,7 @@ Wählen Sie sich eine Zahl. Testen Sie anschließend:
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe: Wahl meiner Zahl
 x = 33

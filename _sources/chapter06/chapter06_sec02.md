@@ -22,7 +22,7 @@ Rückgabewerte liefert.
 ## Lernziele
 
 ```{admonition} Lernziel
-:class: hint
+:class: admonition-goals
 Sie können eine Funktion mit Parametern und Rückgabewerten selbst
 implementieren.
 ```
@@ -92,7 +92,7 @@ Seitenlängen des Rechtecks sollen als Argumente der Funktion übergeben werden.
 Testen Sie Ihre Funktion auch.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 turtle.clearscreen()
@@ -179,7 +179,7 @@ soll den Umfang des Rechtecks und den Flächeninhalt zurückgeben. Lassen Sie
 anschließend Umfang und Flächeninhalt ausgeben.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 turtle.clearscreen()

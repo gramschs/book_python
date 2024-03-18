@@ -8,7 +8,7 @@ Rechenoperationen für Vektoren und Matrizen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können einen **Vektor** oder eine **Matrix** in MATLAB erzeugen.
 * Sie wissen, wie Sie auf einzelne Elemente eines Vektors oder ein MAtrix
   zugreifen.

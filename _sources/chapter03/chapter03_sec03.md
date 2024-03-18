@@ -36,7 +36,7 @@ nachinstallieren" und die dazugehörige Mini-Übung unten.
 ## Lernziele 
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können ein fehlendes Modul mit **conda** oder **pip** nachinstallieren.
 * Sie wissen, was eine **Turtle-Grafik** ist.
 * Sie können das Modul **colabTurtlePlus** importieren.
@@ -106,7 +106,7 @@ Die beiden folgenden Links verlinken auf die Liste der verfügbaren Pakete:
 Installieren Sie jetzt das Modul `ColabTurtlePlus`, das leider nicht in der Anaconda-Distribution enthalten ist. Mehr Details zu diesem Modul finden Sie unter [https://pypi.org/project/ColabTurtlePlus/](https://pypi.org/project/ColabTurtlePlus/).
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```markdown
 !pip install ColabTurtlePlus
 import ColabTurtlePlus
@@ -217,7 +217,7 @@ Lassen Sie den Roboter ein Rechteck der Länge 200 px und Höhe 100 px zeichnen.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 turtle.clearscreen()
 robo = turtle.Turtle()
@@ -276,7 +276,7 @@ Lassen Sie den Roboter ein gleichseitiges Dreieck zeichnen. Die erste Seite soll
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 turtle.clearscreen()
 robo = turtle.Turtle()
