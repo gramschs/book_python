@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können **Matplotlib** mit der üblichen Abkürzung **plt** importieren.
 * Sie können Funktionen als **Liniendiagramm** visualisieren.
 * Sie können diskrete Daten als **Balkendiagramm** visualisieren.
@@ -44,7 +44,7 @@ wir das Modul `matplotlib`, genauer gesagt nur einen Teil dieses Moduls namens
 `pylab`. Daher laden wir es zuerst mit der typischen Abkürzung `plt`.
 
 ```{code-cell} ipython3
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 ```
 
 Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
@@ -157,9 +157,9 @@ Funktion achten?)
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 x1 = np.linspace(-3, 3, 101)
@@ -258,9 +258,9 @@ Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken sc
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 x = [3, 4, 5, 6, 7]

@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können mit **polyfit** zu gegebenen Messdaten die Koeffizienten eines
   Regressionspolynoms bestimmen.
 * Sie können mit **polyval** aus den Koeffizienten ein Regressionspolynom
@@ -51,7 +51,7 @@ Die reellen Zahlen $a, b, c, d$ werden Koeffizienten des Polynoms genannt.
 Wir betrachten als Beispiel die folgenden künstlichen Messwerte.
 
 ```{code-cell} ipython3
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 x = [-1, 0, 1, 2, 3, 4, 5]
 y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]

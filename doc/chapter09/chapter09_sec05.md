@@ -27,9 +27,9 @@ werden sollten.
 3. Lassen Sie dann für jede der drei Ligen den Wert der Vereine visualisieren.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # Import der Tabelle
@@ -89,9 +89,9 @@ Fehlerbalken dargestellt werden.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # Import der Tabelle
@@ -172,7 +172,7 @@ Sie außerdem nach der letzten Bewegung den Befehl `robo.done()`ein. Dann wird
 die Bewegung nicht mehr animiert und nur der Laufweg angezeigt.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Teilaufgabe 1: Implementierung eines Random Walks als Funktion
 ```python
 import ColabTurtlePlus.Turtle as turtle
@@ -215,7 +215,7 @@ Endergebnis von 500 Random Walks
 
 Der Code zur Erzeugung des Histogramms ist:
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 plt.figure()
 plt.hist(liste_entfernungen, bins=25)

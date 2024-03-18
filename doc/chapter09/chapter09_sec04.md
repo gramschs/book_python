@@ -44,7 +44,7 @@ kann dabei in absoluten Zahlen angegeben werden oder in relativen (Prozent).
 So sieht das Histogramm des Notenspiegels aus:
 
 ```{code-cell} ipython3
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 # data
 x = [1, 2, 3, 4, 5, 6]
@@ -231,7 +231,7 @@ die Gauß-Kurve? Gibt es eine Anzahl N von Punkten, ab der sich die Kurve nicht
 mehr ändert?
 ```
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Für eine kleine Anzahl von Zufallszahlen wie beispielsweise $N=10$ oder $N=100$
 ist die Gauß-Kurve nicht erkennbar. Ab $N=1000$ ist die Gauß-Kurve deutlich
 erkennbar, für mehr Zufallszahlen natürlich auch.
@@ -247,7 +247,7 @@ der Bingröße herum. Verändern Sie die Anzahl der Bins von 6, 10, 50, 100, 250
 1000, 10000. Was beobachten Sie?
 ```
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Wird die Anzahl der Bins klein gewählt, so sind die Teilintervalle größer. Somit
 liegen (normalerweise) auch in jedem Teilintervall Zufallszahlen, so dass jede
 Bin gefüllt ist. Gleichzeitig wird aber erschwert, den Typ der Verteilung

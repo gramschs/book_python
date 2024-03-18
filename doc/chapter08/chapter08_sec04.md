@@ -28,7 +28,7 @@ importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.
 Importieren Sie die Daten mit einem geeigneten Zeilenindex.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro angegeben.
 
 Die Vereinsnamen sind ein guter Zeilenindex. Daher sollten die Daten folgendermaßen importiert werden:
@@ -51,7 +51,7 @@ Laden Sie die Tabelle aus Übung 8.1.
 4. Lassen Sie sich die Daten des 1.FC Kaiserslautern anzeigen. 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 data.info()
 ```
@@ -98,7 +98,7 @@ Tipps:
 ```
  
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 from numpy.random import randint
 

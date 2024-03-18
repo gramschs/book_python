@@ -25,7 +25,7 @@ auch den Umgang mit dem Jupyter Notebook noch weiter zu festigen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie kennen die grundlegenden Rechenoperationen in Python.
 * Sie wissen, was ein **Kommentar** ist.
 * Sie können in Python einen Kommentar mit **#** schreiben.
@@ -122,7 +122,7 @@ Lassen Sie Python den Term $3\cdot (7-10)+5$ berechnen.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 3 * (7-10) + 5
 ```
@@ -173,7 +173,7 @@ Lassen Sie Python den Term $3:4$ berechnen und geben Sie das Ergebnis mit der pr
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 print(3/4)
 ```
@@ -210,7 +210,7 @@ ausgeben :-)
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 print("Hallo Welt")
 ```

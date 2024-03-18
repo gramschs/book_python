@@ -27,7 +27,7 @@ NumPy-Moduls kennenlernen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können erklären, was ein **Modul** in Python ist.
 * Sie können ein Modul komplett mit **import modul** importieren und auf die darin enthaltenen Funktionalitäten mit **modul.funktionalitaet** zugreifen.
 * Sie können mit **from modul import funktionalitaet** einzelne Funktionalitäten eines Moduls importieren.
@@ -120,7 +120,7 @@ berechnen und ausgeben.
 ```
 
 ````{admonition} Lösung
-:class: solution, toggle
+:class: miniexercise, toggle
 ```python
 x = numpy.pi
 y = numpy.sin(x)
@@ -167,7 +167,7 @@ $\sqrt{49}$ und $\sqrt{2}$ und lassen Sie das Ergebnis jeweils ausgeben.
 ```
 
 ````{admonition} Lösung
-:class: solution, toggle
+:class: miniexercise, toggle
 ```python
 from numpy import sqrt
 
@@ -206,7 +206,7 @@ Gibt es einen Unterschied zwischen den beiden Zahlen?
 ```
 
 ````{admonition} Lösung
-:class: solution, toggle
+:class: miniexercise, toggle
 ```python
 import math as m
 

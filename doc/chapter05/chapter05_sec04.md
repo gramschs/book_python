@@ -24,7 +24,7 @@ ist, soll das Programm ausgeben: "Sie sind bereits volljährig." Ansonsten soll
 das Programm ausgeben: "Du bist noch nicht volljährig."
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 geburtsjahr = int(input('In welchem Jahr wurden Sie geboren? '))
@@ -59,7 +59,7 @@ Testen Sie Ihr Programm mit drei Beispielen für die drei unterschiedlichen
 Portokosten.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Einstellungen
 preis_tshirt = 15.99
@@ -113,7 +113,7 @@ Hier ist die Zutatenliste für 4 Personen: <br>
 usw.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Zutaten fuer Wrap-Pizza fuer eine Person
 menge = [1, 2, 1, 1, 1, 1, 1, 1, 5, 45, 1]
@@ -139,7 +139,7 @@ vorkommen.
 Zusatzfrage: Was passiert bei Großbuchstaben?
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 text = input('Geben Sie einen Satz ein: ')
@@ -185,7 +185,7 @@ der Benutzer eine falsche Stiftfarbe, soll eine Fehlermeldung ausgegeben werden
 und die Stiftfarbe schwarz gewählt werden.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 from numpy import sin, pi

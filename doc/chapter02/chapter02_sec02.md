@@ -24,7 +24,7 @@ Datentypen und dem Speichern von Informationen in Variablen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie wissen, was **Datentypen** sind.
 * Sie kennen den Unterschied zwischen **Ganzzahlen** und **Fließkommazahlen**
   und die dazugehörigen Datentypen **Integer** und **Float**.
@@ -167,7 +167,7 @@ Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Ko
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 n
 ```
@@ -227,7 +227,7 @@ Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Va
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 alter = 21

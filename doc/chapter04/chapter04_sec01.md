@@ -34,7 +34,7 @@ einer Liste.
 ## Lernziele 
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können eine **for-Schleife mit Liste** programmieren.
 * Sie wissen, wie die Fachbegriffe der einzelnen Bestandteil der Schleife
   lauten:
@@ -112,7 +112,7 @@ kennenlernen, um Zahlenlisten nach einem vorgegebenem Schema zu erzeugen.
 Schreiben Sie ein Programm, das die ersten 10 Quadratzahlen berechnet und ausgibt.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 for i in [1,2,3,4,5,6,7,8,9,10]:
     quadrat = i ** 2
@@ -145,7 +145,7 @@ Schreiben Sie eine for-Schleife, die die klassischen Schulnoten "sehr gut"  bis
 lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Erzeugung Liste
 noten_liste = ["sehr gut","gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"];

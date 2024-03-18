@@ -35,12 +35,12 @@ Gegeben ist der folgende Code mit Zeilennummern, um Messdaten zu visualisieren. 
 ```
 ````
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 * Zeile 6: Listen dürfen nicht quadriert werden.
 * Zeile 9: Der Aufruf plt.figure() fürht zu einer Fehlermeldung, da Matplotlib nicht importiert wurde.
 * Zeile 14: plt.title() ist falsch geschrieben.
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 # Datenimport Messdaten
 x = [-20, -15, -10, -5, 0, 5]
@@ -62,7 +62,7 @@ plt.title('Messdaten');
 
 Bemerkung: Hätten wir nicht eine Liste, sondern NumPy-Arrays genommen, um die Messwerte zu speichern, hätte die Quadratur funktioniert. Die folgende Alternative korrigiert auch alle Fehler.
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 # Datenimport Messdaten
@@ -96,7 +96,7 @@ müssen daher mit dem Argument `skiprows=3` übersprungen werden.
    visualisieren.
 ```
 ````{admonition} Lösung 
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Der Code zum Import der Studierendenzahlen ist:
 ```python
 import pandas as pd
@@ -168,7 +168,7 @@ Absatz von Bier pro Monat am besten erklärt werden?
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import pandas as pd
 
@@ -179,7 +179,7 @@ daten.info()
 Die Datei enthält 360 Einträge mit Jahr, Monat und Absatz von Bier in Hektolitern.
 
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 for jahr in [2020, 2021, 2022]:
     daten_pro_jahr = daten.loc[ daten.loc[:, 'Jahr'] == jahr, :]

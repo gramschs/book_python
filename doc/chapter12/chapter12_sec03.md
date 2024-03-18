@@ -22,7 +22,7 @@ Integration an.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können eine Funktion in Simulink ableiten.
 * Sie können eine Funktion in Simulink integrieren.
 * Sie können eine lineare Differentialgleichung 1. Ordnung mit Simulink-Blöcken

@@ -23,7 +23,7 @@ Regressionsverfahren.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: important
+:class: admonition-goals
 * Sie wissen, was **Regression** ist.
 * Sie wissen, was das **Bestimmtheitsmaß** $R^2$ ist und können es für **lineare Regression** interpretieren:
   * Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
@@ -111,7 +111,7 @@ print(data.describe())
 Nun folgt noch die Visualisierung der Daten.
 
 ```{code-cell} ipython3
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 jahre = data.index
 co2 = data.loc[:, 'Metrische_Tonnen_pro_Einwohner']
@@ -145,7 +145,7 @@ Werte von `start` bis `stopp`.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import numpy as np
 

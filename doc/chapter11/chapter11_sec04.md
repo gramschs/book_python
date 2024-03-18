@@ -8,7 +8,7 @@ eine Interpreter-Sprache und welche eine Compiler-Sprache? Welche Vor- und Nacht
 Recherchieren Sie im Internet: Was ist Cython und was ist der MATLAB Coder?
 ```
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Sowohl MATLAB als auch Python sind beides Interpreter-Sprachen. Sie werden in Echtzeit ausgeführt, anstatt vorab in Maschinencode kompiliert zu werden, wie es bei Compiler-Sprachen der Fall ist.
 
 Vorteile von Interpreter-Sprachen sind:
@@ -52,7 +52,7 @@ print(zahlen)
 ```
 ````
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Das Python-Programm gibt 
 
 [0, 1, 1, 2, 3, 5, 8, 13]
@@ -76,7 +76,7 @@ solange gegeneinander spielen, bis einer von beiden 3 Punkte erreicht hat.
 Wünschenswert sind auch Ausgaben wie z.B. der aktuelle Spielstand oder am Ende die Gratulation an den Sieger.
 ```
 ````{admonition} Lösung 
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 from numpy.random import randint 
 
@@ -155,7 +155,7 @@ print(f'Die Wurzel der Zahl ist {x}.')
 ```
 ````
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 1. Die Funktion `sqrt()` existiert nicht im Python-Standard, sondern muss zuerst
    durch ein Modul wie beispielsweise Math oder NumPy importiert werden. 
 2. Die Wurzel existiert nur für nicht-negative Zahlen. Es sollte also vorab
@@ -201,7 +201,7 @@ print(f'Die Wurzel der Zahl ist {y}.')
    251 Werktagen für das gesamte Jahr rechnen, siehe https://www.ferienwiki.de/tools/werktagerechner
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Import und Übersicht:
 ```python
 import pandas as pd
@@ -221,7 +221,7 @@ print(anzahl_tage)
 ```
 Visualisierung als Liniendiagramm
 ```python
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 x = range(1, anzahl_tage+1)
 y = data.loc[:, 'Schluss'] 

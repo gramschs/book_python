@@ -24,7 +24,7 @@ werden, wenn eine Bedingung erfüllt ist.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können mit **if** eine Programmverzweigung implementieren.
 ```
 
@@ -75,7 +75,7 @@ Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktue
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 temperatur = int(input('Welche Temperatur haben wir aktuell?'))
@@ -100,7 +100,7 @@ Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
 
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 zahl = float(input('Geben Sie bitte eine Zahl ein: '))

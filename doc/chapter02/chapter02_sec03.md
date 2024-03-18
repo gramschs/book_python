@@ -25,7 +25,7 @@ mathematische Gleichheit überprüft.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können das **EVA-Prinzip** erklären.
 * Sie können mit der **input()**-Funktion die Eingabe eines Benutzers abfragen
   und weiter verarbeiten.

@@ -32,7 +32,7 @@ kernelspec:
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Die folgenden Daten variieren natürlich je nach Datum. Das ist der Stand vom 22.03.2023: 
 ```python
 # Eingabe
@@ -61,7 +61,7 @@ Bemerkung: Was passiert, wenn Sie eine negative Zahl eingeben?
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe der Seitenlängen
 a = float(input('Gib die Länge von Seite a ein: '))
@@ -103,7 +103,7 @@ Welchen BMI haben Sie?
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe von Gewicht und Größe
 gewicht = float(input("Gib dein Gewicht in Kilogramm ein: "))
@@ -127,7 +127,7 @@ Mit diesen Angaben soll dann das Quadrat gezeichnet werden.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Import notwendiger Module
 import ColabTurtlePlus.Turtle as turtle
@@ -165,7 +165,7 @@ Das Haus vom Nikolaus
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Import notwendiger Module
 import ColabTurtlePlus.Turtle as turtle

@@ -18,7 +18,7 @@ Simulink stellt viele Blöcke zur Verfügung. In diesem Kapitel gehen wir die Li
 
 ## Lernziele
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie kennen die wichtigsten Eingabe-, Verarbeitungs- und Ausgabeblöcke.
 * Sie können ein Eingangssignal ableiten und integrieren.
 ```

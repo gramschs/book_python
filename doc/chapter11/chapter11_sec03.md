@@ -9,7 +9,7 @@ nachlesen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich
 * Eingabe
 * Verarbeitung (Variablen und Datentypen)

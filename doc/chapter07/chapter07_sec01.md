@@ -113,7 +113,7 @@ gehst Du in die Grundschule.”
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 alter = int(input('Wie alt sind Sie?'))
@@ -187,7 +187,7 @@ sind Sie/bist Du nicht berufstätig.”
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Eingabe
 alter =  int(input('Alter: '))
@@ -243,7 +243,7 @@ ausprobieren, also beispielsweise `True and True` eingeben.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # wahr UND wahr
 True and True

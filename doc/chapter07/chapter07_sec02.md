@@ -24,7 +24,7 @@ abgeschaltet. Solche Wiederholungen wollen wir nun mit Python umsetzen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können eine Schleife mit Bedingung als **while**-Schleife in Python
   implementieren.
 * Sie können mit **break** eine Schleife vorzeitig abbrechen.
@@ -73,7 +73,7 @@ Schreiben Sie ein Programm, das einen Countdown von 10 nach 0 implementiert.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 zaehler = 10
 while zaehler >= 0:
@@ -109,7 +109,7 @@ beendet." ausgegeben werden.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 while True:
     zahl = int(input('Geben Sie eine natürliche Zahl ein (0 zum Beenden): '))
@@ -152,7 +152,7 @@ Wurzeln berechnet wurden.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 zaehler = 0
 while zaehler < 3:

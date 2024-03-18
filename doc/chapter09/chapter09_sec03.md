@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus einem DataFrame extrahieren.
 * Sie können den Text der Achsenbeschriftung drehen.
 * Sie können mit **axhline()** zu einem Plot eine horizontale
@@ -67,7 +67,7 @@ Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
 verwenden wir ein Balkendiagramm.
 
 ```{code-cell} ipython3
-import matplotlib.pylab as plt
+import matplotlib.pyplot as plt
 
 # data
 filter = data.loc[:, 'Club'] == 'Eintracht Frankfurt'
@@ -111,7 +111,7 @@ der Grafik einen aussagekräftigen Titel.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # data
 x = data_eintracht_frankfurt.index
@@ -175,7 +175,7 @@ Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 x = data_eintracht_frankfurt.index
 y = data_eintracht_frankfurt.loc[:, 'Mins']
@@ -254,7 +254,7 @@ Frankfurt durchschnittlich im Einsatz war.
 # Hier Ihr Code
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 x = data_eintracht_frankfurt.index
 y = data_eintracht_frankfurt.loc[:, 'Mins']

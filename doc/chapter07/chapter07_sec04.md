@@ -21,7 +21,7 @@ das Passwort einzugeben. Drei Versuche sind möglich. Bei dreimaliger
 Falscheingabe soll das Programm abgebrochen werden.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 versuche = 0
 passwort = 'F6vfGV+vT6#>hZyu4c=z+?<8'
@@ -48,7 +48,7 @@ Schreiben Sie einen 1x1-Trainer. Gehen Sie dabei wie folgt vor:
    Prozent der Aufgaben korrekt gelöst wurden.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import numpy as np
 
@@ -84,7 +84,7 @@ größer." Sobald Sie die Zahl geraten haben, gibt der Computer aus, wie viele
 Versuche Sie gebraucht haben und beendet das Spiel.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import numpy as np
 
@@ -116,7 +116,7 @@ Lassen Sie abfragen, wie viele Male diese Prozedur wiederholt werden soll.
 Testen Sie beispielsweise 100 mal. Verlässt der Roboter dabei das Turtle-Feld?
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 import numpy as np

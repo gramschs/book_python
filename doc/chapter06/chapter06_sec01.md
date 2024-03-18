@@ -37,7 +37,7 @@ eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie kennen die Fachbegriffe 
   * **Aufruf** einer Funktion,
   * **Argumente** oder **Parameter** einer Funktion und
@@ -126,7 +126,7 @@ for i in range(7):
 Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Testen Sie Ihre Funktion auch.
 ```
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 turtle.clearscreen()

@@ -26,7 +26,7 @@ kennen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie kennen die Definition von **Hardware** und **Software**. 
 * Sie können häufige Hardware-Komponenten benennen und den verschiedenen
   Kategorien (Eingabe, Verarbeitung, Ausgabe, Speicher) zuordnen.
@@ -52,7 +52,7 @@ den Blick schweifen lassen? Nennen Sie mindestens fünf Hardware-Komponenten.
 ```
 
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Beispiele für Hardware sind:
 * Prozessor (CPU = central processing unit = zentrale Recheneinheit zur Verarbeitung von Befehlen)
 * Grafikprozessor (GPU = graphics processing unit = auf die Berechnung von Grafiken spezialisierter Prozessor)
@@ -99,7 +99,7 @@ digitalisierten Form werden sie normalerweise durch Zahlenwerte repräsentiert.
 Nennen Sie eine Software. Gibt es eine Dokumentation dazu? Welche Daten werden mit dieser Software verarbeitet?
 ```
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Bekannte Softwaretools zur Erstellung von Folien für eine Präsentation sind
 * Microsoft Powerpoint (vor allem für das Windows-Betriebssystem, auch MacOS)
 * LibreOffice Impress (kostenlos, alle Betriebssysteme, insbesondere auch Linux)
@@ -168,7 +168,7 @@ Recherchieren Sie nach Python-Bibliotheken im Internet. Nennen Sie drei
 Bibliotheken zusammen mit ihrem Einsatzzweck.
 ```
 ```{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 Bekannte Bibliotheken sind
 * PyTorch, Scikit-Learn, TensorFlow: maschinelles Lernen
 * NumPy: numerisches Python (Matrizen, lineare Gleichungssysteme, ...)
@@ -177,12 +177,4 @@ Bekannte Bibliotheken sind
 * SciPy: wissenschaftliches Rechnen mit Python (Regression, Interpolation, Differentialgleichungen)
 ```
 
-## Weiteres Lernmaterial 
 
-In dem folgenden Video wird die grundlegende Funktionsweise eines Computers erklärt.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LRx1HdmbS_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-Im nächsten Video werden die Erklärungen detaillierter fortgesetzt.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c5u3aP69KYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

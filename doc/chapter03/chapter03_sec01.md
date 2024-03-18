@@ -28,7 +28,7 @@ Notebook mit Listen beschäftigen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: hint
+:class: admonition-goals
 * Sie wissen, dass **Container** Datentypen sind, die andere Objekte als Sammlung verwalten.
 * Sie können eine **Liste** erzeugen.
 * Sie wissen, was der Fachbegriff **Index** bedeutet.
@@ -104,7 +104,7 @@ Erzeugen Sie eine Liste mit Ihrem Vornamen, Ihrem Nachnamen und Ihrer Körpergr�
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 person = ['Alice', 'Musterfrau', 1.61]
 print(person)
@@ -159,7 +159,7 @@ Speichern Sie das 4. Element der Liste `meine_liste = ['rot', 'grün', 'blau', '
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 meine_liste = ['rot', 'grün', 'blau', 'gelb', 'weiß', 'schwarz']
 
@@ -224,7 +224,7 @@ Welchen Index hat Ihr Geburtsmonat in der Liste `jahr`?
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Listen mit Monaten
 fruehling = ['März', 'April', 'Mai']

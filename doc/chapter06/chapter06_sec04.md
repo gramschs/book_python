@@ -22,7 +22,7 @@ Ihre Funktion.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Funktion
 def schreibe_hallo(n):
@@ -58,7 +58,7 @@ xx steht dabei für den ausgerechneten BMI.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 # Funktion zur Berechnung des BMI
 def berechne_bmi(gewicht, koerpergroesse):
@@ -114,7 +114,7 @@ Der Tannenbaum ist insgesamt 8 Zeilen hoch.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 def zeichne_tannenbaum(blaetterhoehe, stammhoehe):
     # Blätter zeichnen
@@ -161,7 +161,7 @@ Auch `penup`, `pendown` und `goto` könnten hilfreich sein.
 ```
 
 ````{admonition} Lösung
-:class: minisolution, toggle
+:class: miniexercise, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 turtle.clearscreen()
