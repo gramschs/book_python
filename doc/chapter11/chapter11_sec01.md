@@ -1,9 +1,12 @@
 # 11.1 Einführung MATLAB
 
-Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe https://de.wikipedia.org/wiki/Matlab):
+Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe [https://de.wikipedia.org/wiki/Matlab](https://de.wikipedia.org/wiki/Matlab)):
 
-> “Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der Name ableitet: MATrix LABoratory.”
-
+> “Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
+> US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
+> und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für
+> numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der
+> Name ableitet: MATrix LABoratory.”
 
 ## Lernziele
 
@@ -13,7 +16,6 @@ Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe http
 * Sie können MATLAB als Taschenrechner benutzen.
 * Sie können die Dokumentation mit der Anweisung **doc** aufrufen. 
 ```
-
 
 ## MATLAB starten und die Entwicklungsumgebung erkunden
 
@@ -29,7 +31,7 @@ Registrierung Ihre studentische E-Mail-Adresse anzugeben.
 
 Klicken Sie dann auf die folgende URL
 
-> https://matlab.mathworks.com
+> <https://matlab.mathworks.com>
 
 um sich mit Ihrem neuen Account anzumelden. Starten Sie danach MATLAB Online wie
 in der folgenden Abbildung gezeigt.
@@ -42,12 +44,15 @@ in der folgenden Abbildung gezeigt.
 Screenshot des Startbildschirms von MATLAB Online
 ```
 
-Danach wird die MATLAB-Entwicklungsumgebung gestartet. Vorerst belassen wir es bei den Standardeinstellungen. In dem folgenden Video werden die einzelnen Bestandteile der Entwicklungsumgebung vorgestellt.
+Danach wird die MATLAB-Entwicklungsumgebung gestartet. Vorerst belassen wir es
+bei den Standardeinstellungen. In dem folgenden Video werden die einzelnen
+Bestandteile der Entwicklungsumgebung vorgestellt.
 
 ```{dropdown} Video zu "1.1 Matlab - Umgebung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HXyMG9gy4Oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HXyMG9gy4Oo"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
-
 
 ## MATLAB als Taschenrechner
 
@@ -75,10 +80,12 @@ Probieren Sie es aus:
 * Potenzierung: 3^2
 
 Selbstverständlich beherrscht MATLAB auch Klammerregeln. Gerne können Sie den
-Term durch MATLAB berechnen lassen, probieren Sie es doch einmal selbst aus! 
+Term durch MATLAB berechnen lassen, probieren Sie es doch einmal selbst aus!
 
 ```{dropdown} Video zu "1.2 Taschenrechner" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 ## Hilfe
@@ -88,6 +95,7 @@ der englischen Sprache. Dafür besitzt MATLAB eine gute Dokumentation. Mit dem
 Kommando **doc** wird die entsprechende Webseite im Browser geladen.
 
 ```{dropdown} Video zu "1.3 Hilfe" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FasuEz-bC40" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FasuEz-bC40"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
-
