@@ -1,6 +1,5 @@
 # 11.2 Numerisches Rechnen mit MATLAB
 
-
 MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
 ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenen Datentypen und
 Rechenoperationen für Vektoren und Matrizen.
@@ -101,10 +100,10 @@ Bruchstrichs `/`. Bei der zweiten Variante wird jedes Elemet des Vektors `b`
 durch die entsprechenden Elemente des Vektors `a` geteilt. Der Bruchstrich `\`
 zeigt an, dass `a` im Nenner stehen soll.
 
-### Erzeugung eines Vektors mittels Doppelpunkt-Operator : 
+### Erzeugung eines Vektors mittels Doppelpunkt-Operator
 
-Python verfügt über die Funktion `range()`, um Listen mit Zahlen zu erzeugen, die
-einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
+Python verfügt über die Funktion `range()`, um Listen mit Zahlen zu erzeugen,
+die einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
 gebraucht, dass sie sogar durch einen eigenen Operator anstatt einer Funktion
 erreicht wird, durch den Doppelpunkt-Operator `:`.
 
@@ -130,12 +129,15 @@ a = 12 : -2 :  4
 Das folgende Video fasst die obigen Erklärungen zusammen.
 
 ```{dropdown} Video zu "Matlab - 1.4 Vektoren" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
+
 ## Matrizen
 
 MATLAB würde nicht Matrix-Labor heißen, wenn es nicht einen eigenen Datentyp für
-Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrx ab. Ein
+Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrix ab. Ein
 Zeilenvektor ist eine $1\times N$-Matrix und ein Spaltenvektor eine $M\times
 1$-Matrix. Daher betrachten wir uns als nächstes, wie Matrizen in MATLAB erzeugt
 werden.
@@ -151,10 +153,10 @@ markiert das Ende der Zeile.
 A = [1, 2, 3; 4, 5, 6; 7, 8, 9]
 ```
 
-### Erzeugung von speziellen Matrizen 
+### Erzeugung von speziellen Matrizen
 
 Für Matrizen, die häufig gebraucht werden, hat MATLAB eigene
-Erzeugungsfunktionen. Beispielsweise generiert die Funktion 
+Erzeugungsfunktionen. Beispielsweise generiert die Funktion
 
 ```matlab
 A = zeros(5,3)
@@ -178,7 +180,9 @@ E = eye(5)
 Hier noch ein Video zu Matrizen in MATLAB.
 
 ```{dropdown} Video zu "Matlab - 1.5 Matrizen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 ## Skripte
@@ -205,18 +209,21 @@ nun den größten Raum einnimmt.
 :alt: Screenshot MATLAB mit Texteditor
 :width: 75%
 :align: center
-Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem auf den Button "Run" geklickt wird (siehe 3)
+Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem
+auf den Button "Run" geklickt wird (siehe 3)
 ```
 
 Das Skript wird ausgeführt, indem Sie auf den Button "Run" klicken (siehe
 Screenshot, 3). Es ist ratsam, am Anfang des Skriptes den Befehl `clear all`
 einzufügen. Diese Anweisung sorgt dafür, dass alle sich im Speicher befindlichen
-Variablen gelöscht werden. 
+Variablen gelöscht werden.
 
 Ein weiteres Video zu Skripten in MATLAB finden Sie hier.
 
 ```{dropdown} Video zu "Matlab - 1.6 Skripte" von Mathe? logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 ## Zugriff auf Vektor- und Matrixelemente
@@ -244,7 +251,10 @@ element = A(2,3)
 Damit wird die `8` aus der Matrix `A` extrahiert und kann weiter verarbeitet
 werden.
 
-Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu existiert das sogenannte **Slicing**. Mit Slicing ist gemeint, dass auf einen zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll. Wir betrachten die $3\times 5$-Matrix $A$ von vorhin, also
+Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu
+existiert das sogenannte **Slicing**. Mit Slicing ist gemeint, dass auf einen
+zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll.
+Wir betrachten die $3\times 5$-Matrix $A$ von vorhin, also
 
 ```matlab
 A = [1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15]
@@ -291,24 +301,26 @@ ersetzen. Wir könnten durch den folgenden Code erreichen.
 A(:, 2) = [102; 107; 112]
 ```
 
-Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das Slicing zusammen.
+Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das
+Slicing zusammen.
 
 ```{dropdown} Video zu "Matlab - 2.1 Doppelpunkt- bzw. Colon-Operator" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 ```{dropdown} Video zu "Matlab - 2.2 Zugriff auf Teile von Matrizen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 ## Fortgeschrittene Rechenoperationen für Vektoren und Matrizen
 
-Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das
-Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden
-Komponenten der Vektoren und die Summierung dieser Produkte berechnet.
+Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden Komponenten der Vektoren und die Summierung dieser Produkte berechnet.
 
-In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion `dot()`
-berechnet:
+In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion `dot()` berechnet:
 
 ```matlab
 v = [1, 2, 3]
@@ -318,13 +330,7 @@ skalarprodukt = dot(v, w)
 
 Das Ergbnis ist $1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32$.
 
-Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige
-Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren
-angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen
-Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden
-Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch
-definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein
-Rechtssytem bildet.
+Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.
 
 In MATLAB wird das Vektorprodukt mit der Funktion `cross()` berechnet:
 
@@ -334,12 +340,9 @@ w = [4, 5, 6]
 vektorprodukt = cross(v, w)
 ```
 
-Das Vektorprodukt ist der Vektor `[-3, 6, -3]`. 
+Das Vektorprodukt ist der Vektor `[-3, 6, -3]`.
 
-Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen
-definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der
-Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das
-lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.
+Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.
 
 In MATLAB wird die Determinante einer Matrix mit der Funktion `det()` berechnet:
 
@@ -352,9 +355,9 @@ Die Determinante der obigen Matrix $A$ ist $\det(A) = 1\cdot 4 - 3\cdot 2 = -2$.
 
 Eigenwerte und Eigenvektoren sind weitere wichtige Konzepte in der linearen
 Algebra, die in vielen Anwendungen, einschließlich der
-Maschinenbauingenieurswissenschaften, der Informatik und der Datenanalyse,
+Maschinenbauingenieurwissenschaften, der Informatik und der Datenanalyse,
 nützlich sind. Die Eigenwerte einer Matrix sind die Lösungen der
-charakteristischen Gleichung 
+charakteristischen Gleichung
 
 $$\det(A-\lambda E) = 0,$$
 
@@ -368,7 +371,8 @@ erfüllt. Ein Eigenvektor ist also ein Vektor, der sich bei der Anwendung einer
 linearen Transformation (repräsentiert durch die Matrix) nur um einen
 Skalierungsfaktor ändert.
 
-In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion `eig()` berechnet:
+In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion `eig()`
+berechnet:
 
 ```matlab
 A = [1, 2; 3, 4]
@@ -381,13 +385,14 @@ entsprechenden Eigenwerte sind die Elemente auf der Diagonale in D.
 
 Für weitere Betrachtungen empfehle ich die folgenden beiden Videos.
 
-
 ```{dropdown} Video zu "Matlab - 2.3 Kombination und Transformation von Matrizen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
 ```{dropdown} Video zu "Matlab - 2.4 Operationen auf Matrizen" Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
-
-

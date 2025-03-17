@@ -43,7 +43,7 @@ bezeichnen wir mit **Hardware** alle physischen Kompenten eines Systems, also
 die elektronischen und mechanischen Bauteile. Die **Software** dahingegen
 umfasst die Programme und deren Dokumentation sowie Daten. Man könnte auch
 sagen, dass Hardware die materiellen Teile eines Computersystems bezeichnet,
-während Software die nicht-materiellen Teile zusammenfasst. 
+während Software die nicht-materiellen Teile zusammenfasst.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
@@ -72,7 +72,7 @@ Bei Wikipedia können Sie den Begriff
 Wikibooks bietet auch ein passendes Buch zu
 [Computerhardware](https://de.wikibooks.org/wiki/Computerhardware) an.
 
-## Software 
+## Software
 
 Software ist eine Zusammenfassung der nicht-materiellen Komponenten eines
 Computersystems. Wikipedia listet hier gleich drei verschiedene ISO-Normen zur
@@ -98,6 +98,7 @@ digitalisierten Form werden sie normalerweise durch Zahlenwerte repräsentiert.
 :class: miniexercise
 Nennen Sie eine Software. Gibt es eine Dokumentation dazu? Welche Daten werden mit dieser Software verarbeitet?
 ```
+
 ```{admonition} Lösung
 :class: miniexercise, toggle
 Bekannte Softwaretools zur Erstellung von Folien für eine Präsentation sind
@@ -126,7 +127,7 @@ Die wichtigste Software eines jeden Computersystems ist das **Betriebssystem**.
 Das Betriebssystem umfasst alle Computerprogramme, die notwendig sind, um
 überhaupt den Computer zu betreiben, zu starten oder zu benutzen. Das
 [Betriebssystem](https://de.wikipedia.org/wiki/Betriebssystem) hat laut
-Wikipedia folgende Aufgaben: 
+Wikipedia folgende Aufgaben:
 
 > ... Benutzerkommunikation; Laden, Ausführen, Unterbrechen und Beenden von
   Programmen; Verwaltung und Zuteilung der Prozessorzeit; Verwaltung des
@@ -167,6 +168,7 @@ der Gemeinschaft zur Verfügung gestellt.
 Recherchieren Sie nach Python-Bibliotheken im Internet. Nennen Sie drei
 Bibliotheken zusammen mit ihrem Einsatzzweck.
 ```
+
 ```{admonition} Lösung
 :class: miniexercise, toggle
 Bekannte Bibliotheken sind
@@ -176,5 +178,3 @@ Bekannte Bibliotheken sind
 * Matplotlib: Visualisierung von Daten
 * SciPy: wissenschaftliches Rechnen mit Python (Regression, Interpolation, Differentialgleichungen)
 ```
-
-

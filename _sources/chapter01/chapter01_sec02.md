@@ -46,7 +46,7 @@ vor!". Es geht darum, mit Hilfe einer Abfolge von Anweisungen ein Problem zu
 lösen. Dementsprechend ist ein wichtiger Aspekt des Programmierens die
 Fähigkeit, komplexe Probleme in kleinere, leichter zu lösende Aufgaben zu
 unterteilen. Diese Aufgaben können dann einzeln gelöst und in einem größeren
-Programm kombiniert werden, um das Problem als Ganzes zu lösen. 
+Programm kombiniert werden, um das Problem als Ganzes zu lösen.
 
 Diese schrittweise Vorgehensweise zur Lösung eines Problems nennt man
 **Algorithmus**. Ein Algorithmus ist ein klar definierter Satz von Anweisungen
@@ -77,7 +77,7 @@ kennen muss, um das Rezept insgesamt nachzukochen.
 z.B. das folgende Rezept eines
 [Rosenkohl-Auflaufs](https://www.chefkoch.de/rezepte/1717121280428611/Rosenkohlauflauf.html):
 
->   Die Kartoffeln und den Rosenkohl bissfest garen. Das Hackfleisch anbraten
+> Die Kartoffeln und den Rosenkohl bissfest garen. Das Hackfleisch anbraten
 und nach Belieben eine Zwiebel zugeben. Die Sahne und den Schmand verrühren und
 etwas geriebenen Käse zugeben, mit Knoblauchpulver und Muskat würzen. Eine
 Auflaufform fetten und abwechselnd Kartoffeln, Rosenkohl, Gehacktes, Toastkäse
@@ -105,18 +105,18 @@ Auf die Idee, einen Algorithmus mit dem Kochen zu vergleichen, werden wir in
 spätere Kapiteln noch zurückkehren. Als nächstes beschäftigen wir uns damit, wie
 den Computer Anweisungen erteilt werden.
 
-## Programmiersprachen 
+## Programmiersprachen
 
 Eine **Programmiersprache** ist die formale Sprache zur Formulierung von
 Datenstrukturen und Algorithmen (= Abfolge von Anweisungen), die von einem
-Computer ausgeführt werden können. 
+Computer ausgeführt werden können.
 
 Es gibt nicht die wichtigste oder beste Programmiersprache, sondern die Auswahl
 der Programmiersprache sollte sich stets nach der anvisierten Anwendung richten.
 Der sogenannte Tiobe-Index zeigt die Beliebtheit der 50 wichtigsten
-Programmiersprachen: 
+Programmiersprachen:
 
-https://www.tiobe.com/tiobe-index/ 
+<https://www.tiobe.com/tiobe-index/>
 
 ```{admonition} Mini-Übung
 :class: miniexercise
@@ -145,10 +145,10 @@ Heute werden nur noch die sogenannten **höheren Programmiersprachen** verwendet
 Dafür müssen dann Programme, die in höheren Programmiersprachen geschrieben
 sind, in **Maschinensprache** übersetzt werden. Verschiedene Programmiersprachen
 verwenden dazu unterschiedliche Prinzipien. Die beiden wichtigsten Vertreter
-sind 
+sind
 
 * **Compiler-Programmiersprachen** und
-* **Interpreter-Programmiersprachen**. 
+* **Interpreter-Programmiersprachen**.
 
 Bei Compiler-Programmiersprachen wird der Programmcode vorab in Maschinensprache
 übersetzt und der Anwender erhält die Anwendungssoftware in Maschinensprache
@@ -195,17 +195,17 @@ Kompilierung erforderlich ist.
 
 Letztendlich hängt die Wahl der Programmiersprache von den Anforderungen des
 Projekts ab und davon, welche Kompromisse zwischen Geschwindigkeit und
-Flexibilität akzeptabel sind. 
+Flexibilität akzeptabel sind.
 
 ## Warum Python?
 
-Was ist überhaupt Python? Wikipedia erklärt Python folgendermaßen: 
+Was ist überhaupt Python? Wikipedia erklärt Python folgendermaßen:
 
 > "Python ([ˈpʰaɪθn̩], [ˈpʰaɪθɑn], auf Deutsch auch [ˈpʰyːtɔn]) ist eine
   universelle, üblicherweise interpretierte, höhere Programmiersprache. Sie hat
   den Anspruch, einen gut lesbaren, knappen Programmierstil zu fördern. So
   werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch
-  Einrückungen strukturiert." 
+  Einrückungen strukturiert."
   (Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Python_(Programmiersprache))
 
 In dieser Vorlesung verwenden wir Python als Programmiersprache, da Python viele
@@ -231,7 +231,7 @@ Vorteile bietet, die das Erlernen der Programmierung erleichtern und
 5. Plattformunabhängigkeit: Python kann auf verschiedenen Betriebssystemen wie
    Windows, Mac und Linux ausgeführt werden. Dies macht es für Anfänger leicht,
    die Sprache auf ihrem bevorzugten Betriebssystem zu erlernen.
-   
+
 Ansonsten ist es ein wenig wie mit dem Erlernen einer Fremdsprache. Die erste
 Fremdsprache ist die schwerste! Sprich, wenn Sie eine Programmiersprache erlernt
 haben und wissen, wie ein komplexes Problem in Teilaufgaben zerlegt wird, können

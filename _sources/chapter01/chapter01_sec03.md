@@ -48,7 +48,7 @@ Hier ist eine Schritt-für-Schritt-Anleitung zum Installieren von Python mit der
 Distribution Anaconda für Windows und MacOS:
 
 1. Öffnen Sie die offizielle Anaconda-Website unter
-   https://www.anaconda.com/products/individual und laden Sie die neueste
+   <https://www.anaconda.com/products/individual> und laden Sie die neueste
    Version von Anaconda für Ihr Betriebssystem herunter.
 2. Führen Sie die Installationsdatei aus und folgen Sie den Anweisungen auf dem
    Bildschirm. Wählen Sie ggf. ein freies Installationsverzeichnis und stellen
@@ -114,7 +114,7 @@ Eine Zelle kann entweder eine Text-Zelle (siehe Fig. 3, Schritt 1) oder eine
 Code-Zelle (siehe Fig. 3, Schritt 2) sein. In Text-Zellen wird die sogenannte
 [Markdown-Formatierung](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html)
 benutzt. Um beispielsweise ein Wort fettgedruckt anzuzeigen, werden zwei
-Sternchen ** vor und hinter das Wort gesetzt, also ich bin `**fett**` gedruckt. 
+Sternchen ** vor und hinter das Wort gesetzt, also ich bin `**fett**` gedruckt.
 
 In Code-Zellen (siehe Fig. 3, Schritt 2 oder 3) können Sie direkt Python-Code
 eingeben. Sie erkennen eine Code-Zelle daran, dass "In" für Input daneben steht.
@@ -128,7 +128,7 @@ zurückgegeben, so ist das an der Bezeichnung "Out" wie Output erkennbar.
 [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)
 ist eine webbasierte Entwicklungsumgebung, um Jupyter Notebooks zu öffnen, zu
 editieren, den Python-Code auszuführen und alles wieder zu speichern. Neben
-JupyterLab gibt es weitere Möglichkeiten, um Jupyter Notebooks zu bearbeiten. 
+JupyterLab gibt es weitere Möglichkeiten, um Jupyter Notebooks zu bearbeiten.
 
 Die beiden Entwicklungsumgebungen
 

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3.3 Das Modul Turtle &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
@@ -15,54 +14,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter03/chapter03_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -70,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="3.2 Das Modul NumPy" href="chapter03_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,31 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -109,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,10 +100,15 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -129,7 +117,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -144,6 +133,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -157,11 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../_static/book_logo.png" class="logo__image only-light" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>
-    <script>document.write(`<img src="../_static/book_logo.png" class="logo__image only-dark" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>`);</script>
+    <img src="../_static/book_logo.png" class="logo__image only-dark pst-js-only" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -173,96 +171,96 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec02.html">1.2 Programmieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec03.html">1.3 Installation und Start von Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/chapter02_sec00.html">2. Eingabe, Verarbeitung und Ausgabe</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/chapter02_sec00.html">2. Eingabe, Verarbeitung und Ausgabe</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec01.html">2.1 Taschenrechner und Ausgabe (print)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec02.html">2.2 Datentypen und Variablen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec03.html">2.3 Eingabe (input) und Zuweisungsoperator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter03_sec00.html">3. Listen und Module</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter03_sec00.html">3. Listen und Module</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter03_sec01.html">3.1 Listen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter03_sec02.html">3.2 Das Modul NumPy</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3 Das Modul Turtle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter03_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">5. Programmverzweigung (if - elif - else)</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">5. Programmverzweigung (if - elif - else)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">5.1 Vergleiche und der boolesche Datentyp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">5.2 Programmverzweigungen: if</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">6. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">6. Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">6.1 Funktionen selbst schreiben</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">6.2 Funktionen mit Parameter und Rückgabe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">6.3 Lokale und globale Variablen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -271,14 +269,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -287,14 +290,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -319,14 +322,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter03/chapter03_sec03.md" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -451,27 +454,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -514,7 +509,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="das-modul-turtle">
-<h1>3.3 Das Modul Turtle<a class="headerlink" href="#das-modul-turtle" title="Permalink to this heading">#</a></h1>
+<h1>3.3 Das Modul Turtle<a class="headerlink" href="#das-modul-turtle" title="Link to this heading">#</a></h1>
 <p>In der Informatik nennt man Grafiken, die dadurch entstehen, dass ein Roboter
 Linien auf eine Leinwand zeichnet, Turtle-Grafiken. Der Roboter wird dabei mit
 einfachen Kommandos gesteuert. Beschrieben wird er durch seine Position (x- und
@@ -533,7 +528,7 @@ werden. Bitte beachten Sie die Hinweise zur Installation “Module
 nachinstallieren” und die dazugehörige Mini-Übung unten.</p>
 </div>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -545,7 +540,7 @@ nachinstallieren” und die dazugehörige Mini-Übung unten.</p>
 </div>
 </section>
 <section id="module-nachinstallieren">
-<h2>Module nachinstallieren<a class="headerlink" href="#module-nachinstallieren" title="Permalink to this heading">#</a></h2>
+<h2>Module nachinstallieren<a class="headerlink" href="#module-nachinstallieren" title="Link to this heading">#</a></h2>
 <p>Um ein Python-Modul bzw. ein Python-Paket aus einem Jupyter Notebook
 nachzuinstallieren, gibt es grundsätzlich zwei Möglichkeiten: mit <strong>conda</strong> oder
 mit <strong>pip</strong>. Conda ist ein Paket-Manager, der in der Anaconda-Distribution
@@ -554,7 +549,7 @@ wird, während pip ein Paket-Manager ist, der mit Python selbst installiert wird
 <p>Hier sind Schritt-für-Schritt-Anleitungen, wie man ein Python-Modul mit conda
 oder pip in einem Jupyter Notebook nachinstallieren kann.</p>
 <section id="installation-mit-conda">
-<h3>Installation mit conda<a class="headerlink" href="#installation-mit-conda" title="Permalink to this heading">#</a></h3>
+<h3>Installation mit conda<a class="headerlink" href="#installation-mit-conda" title="Link to this heading">#</a></h3>
 <ol>
 <li>Öffnen Sie das Jupyter Notebook.</li>
 <li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:
@@ -569,7 +564,7 @@ oder pip in einem Jupyter Notebook nachinstallieren kann.</p>
 </ol>
 </section>
 <section id="installation-mit-pip">
-<h3>Installation mit pip<a class="headerlink" href="#installation-mit-pip" title="Permalink to this heading">#</a></h3>
+<h3>Installation mit pip<a class="headerlink" href="#installation-mit-pip" title="Link to this heading">#</a></h3>
 <ol>
 <li>Öffnen Sie das Jupyter Notebook.</li>
 <li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:</li>
@@ -583,7 +578,7 @@ oder pip in einem Jupyter Notebook nachinstallieren kann.</p>
 </ol>
 </section>
 <section id="wann-conda-und-wann-pip">
-<h3>Wann conda und wann pip?<a class="headerlink" href="#wann-conda-und-wann-pip" title="Permalink to this heading">#</a></h3>
+<h3>Wann conda und wann pip?<a class="headerlink" href="#wann-conda-und-wann-pip" title="Link to this heading">#</a></h3>
 <p>Es ist wichtig zu beachten, dass conda und pip unterschiedliche
 Paket-Repositories verwenden. Wenn ein Paket mit conda installiert wurde, sollte
 es nicht mit pip aktualisiert oder deinstalliert werden, da dies zu
@@ -611,7 +606,7 @@ import ColabTurtlePlus
 </section>
 </section>
 <section id="ein-turtlefeld-initalisieren">
-<h2>Ein Turtlefeld initalisieren<a class="headerlink" href="#ein-turtlefeld-initalisieren" title="Permalink to this heading">#</a></h2>
+<h2>Ein Turtlefeld initalisieren<a class="headerlink" href="#ein-turtlefeld-initalisieren" title="Link to this heading">#</a></h2>
 <p>Als erstes werden alle Funktionalitäten des Turtle-Moduls geladen. Die typische
 Abkürzung für dieses Modul ist <code class="docutils literal notranslate"><span class="pre">turtle</span></code>.</p>
 <div class="cell docutils container">
@@ -621,7 +616,12 @@ Abkürzung für dieses Modul ist <code class="docutils literal notranslate"><spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Put clearscreen() as the first line in a cell (after the import command) to re-run turtle commands in the cell
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">ColabTurtlePlus.Turtle</span> <span class="k">as</span> <span class="nn">turtle</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ColabTurtlePlus&#39;
 </pre></div>
 </div>
 </div>
@@ -638,164 +638,6 @@ wenn die Code-Zelle erneut ausgeführt wird.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEFAULT_ANGLE_MODE&#39;,
- &#39;DEFAULT_BACKGROUND_COLOR&#39;,
- &#39;DEFAULT_BORDER_COLOR&#39;,
- &#39;DEFAULT_FILL_COLOR&#39;,
- &#39;DEFAULT_FILL_OPACITY&#39;,
- &#39;DEFAULT_FILL_RULE&#39;,
- &#39;DEFAULT_IS_PEN_DOWN&#39;,
- &#39;DEFAULT_MODE&#39;,
- &#39;DEFAULT_OUTLINE_WIDTH&#39;,
- &#39;DEFAULT_PEN_COLOR&#39;,
- &#39;DEFAULT_PEN_WIDTH&#39;,
- &#39;DEFAULT_SHEARFACTOR&#39;,
- &#39;DEFAULT_SPEED&#39;,
- &#39;DEFAULT_STRETCHFACTOR&#39;,
- &#39;DEFAULT_SVG_LINES_STRING&#39;,
- &#39;DEFAULT_TILT_ANGLE&#39;,
- &#39;DEFAULT_TURTLE_DEGREE&#39;,
- &#39;DEFAULT_TURTLE_SHAPE&#39;,
- &#39;DEFAULT_TURTLE_VISIBILITY&#39;,
- &#39;DEFAULT_WINDOW_SIZE&#39;,
- &#39;HTML&#39;,
- &#39;RawTurtle&#39;,
- &#39;SPEED_TO_SEC_MAP&#39;,
- &#39;SVG_TEMPLATE&#39;,
- &#39;Screen&#39;,
- &#39;TURTLE_ARROW_SVG_TEMPLATE&#39;,
- &#39;TURTLE_CIRCLE_SVG_TEMPLATE&#39;,
- &#39;TURTLE_CLASSIC_SVG_TEMPLATE&#39;,
- &#39;TURTLE_RING_SVG_TEMPLATE&#39;,
- &#39;TURTLE_SQUARE_SVG_TEMPLATE&#39;,
- &#39;TURTLE_TRIANGLE_SVG_TEMPLATE&#39;,
- &#39;TURTLE_TURTLE2_SVG_TEMPLATE&#39;,
- &#39;TURTLE_TURTLE_SVG_TEMPLATE&#39;,
- &#39;Turtle&#39;,
- &#39;VALID_COLORS&#39;,
- &#39;VALID_MODES&#39;,
- &#39;VALID_TURTLE_SHAPES&#39;,
- &#39;_Screen&#39;,
- &#39;__builtins__&#39;,
- &#39;__cached__&#39;,
- &#39;__doc__&#39;,
- &#39;__file__&#39;,
- &#39;__func_body&#39;,
- &#39;__loader__&#39;,
- &#39;__name__&#39;,
- &#39;__package__&#39;,
- &#39;__spec__&#39;,
- &#39;_getmethparlist&#39;,
- &#39;_make_global_funcs&#39;,
- &#39;_screen_docrevise&#39;,
- &#39;_tg_screen_functions&#39;,
- &#39;_tg_turtle_functions&#39;,
- &#39;_turtle_docrevise&#39;,
- &#39;animationOff&#39;,
- &#39;animationOn&#39;,
- &#39;back&#39;,
- &#39;backward&#39;,
- &#39;begin_fill&#39;,
- &#39;bgcolor&#39;,
- &#39;bk&#39;,
- &#39;circle&#39;,
- &#39;clear&#39;,
- &#39;clearscreen&#39;,
- &#39;clearstamp&#39;,
- &#39;clearstamps&#39;,
- &#39;color&#39;,
- &#39;degrees&#39;,
- &#39;delay&#39;,
- &#39;display&#39;,
- &#39;distance&#39;,
- &#39;done&#39;,
- &#39;dot&#39;,
- &#39;down&#39;,
- &#39;drawline&#39;,
- &#39;end_fill&#39;,
- &#39;face&#39;,
- &#39;fd&#39;,
- &#39;fillcolor&#39;,
- &#39;filling&#39;,
- &#39;fillopacity&#39;,
- &#39;fillrule&#39;,
- &#39;forward&#39;,
- &#39;getcolor&#39;,
- &#39;getheading&#39;,
- &#39;getx&#39;,
- &#39;gety&#39;,
- &#39;goto&#39;,
- &#39;heading&#39;,
- &#39;hideborder&#39;,
- &#39;hideturtle&#39;,
- &#39;home&#39;,
- &#39;ht&#39;,
- &#39;initializeTurtle&#39;,
- &#39;initializescreen&#39;,
- &#39;inspect&#39;,
- &#39;isdown&#39;,
- &#39;isvisible&#39;,
- &#39;jumpto&#39;,
- &#39;left&#39;,
- &#39;line&#39;,
- &#39;lt&#39;,
- &#39;math&#39;,
- &#39;mode&#39;,
- &#39;oldDefaults&#39;,
- &#39;pd&#39;,
- &#39;pen&#39;,
- &#39;pencolor&#39;,
- &#39;pendown&#39;,
- &#39;pensize&#39;,
- &#39;penup&#39;,
- &#39;pos&#39;,
- &#39;position&#39;,
- &#39;pu&#39;,
- &#39;radians&#39;,
- &#39;re&#39;,
- &#39;regularPolygon&#39;,
- &#39;reset&#39;,
- &#39;resetscreen&#39;,
- &#39;right&#39;,
- &#39;rt&#39;,
- &#39;saveSVG&#39;,
- &#39;seth&#39;,
- &#39;setheading&#39;,
- &#39;setpos&#39;,
- &#39;setposition&#39;,
- &#39;settiltangle&#39;,
- &#39;setup&#39;,
- &#39;setworldcoordinates&#39;,
- &#39;setx&#39;,
- &#39;sety&#39;,
- &#39;shape&#39;,
- &#39;shapesize&#39;,
- &#39;shearfactor&#39;,
- &#39;showSVG&#39;,
- &#39;showborder&#39;,
- &#39;showturtle&#39;,
- &#39;speed&#39;,
- &#39;st&#39;,
- &#39;stamp&#39;,
- &#39;sys&#39;,
- &#39;tilt&#39;,
- &#39;tiltangle&#39;,
- &#39;time&#39;,
- &#39;towards&#39;,
- &#39;turtles&#39;,
- &#39;turtlesize&#39;,
- &#39;up&#39;,
- &#39;update&#39;,
- &#39;width&#39;,
- &#39;window_height&#39;,
- &#39;window_width&#39;,
- &#39;write&#39;,
- &#39;xcor&#39;,
- &#39;ycor&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Dann folgen wir der Anweisung, zuerst das Kommando <code class="docutils literal notranslate"><span class="pre">clearscreen()</span></code> zu benutzen.</p>
 <div class="cell docutils container">
@@ -804,20 +646,6 @@ wenn die Code-Zelle erneut ausgeführt wird.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-      <svg width="800" height="600">  
-        <rect width="100%" height="100%" style="fill:white;stroke:;stroke-width:1"/>
-        
-        
-        
-        
-        
-        <g id="classic" visibility="visible" transform="rotate(-90,400.0,300.0) translate(400.0, 300.0)">
-<polygon points="-5,-4.5 0,-2.5 5,-4.5 0,4.5" transform="skewX(0) scale(1,1)" style="stroke:black;fill:black;stroke-width:1" />
-</g>
-      </svg>
-    </div></div>
 </div>
 <p>Es erscheint eine leere Leinwand, die 800 Bildpunkte breit ist und 600
 Bildpunkte hoch ist. Bildpunkte werden normalerweise als <strong>Pixel</strong> bezeichnet,
@@ -836,7 +664,7 @@ der folgenden Code-Zeile ein Roboter-Objekt namens <code class="docutils literal
 Dreiecks zeigt in die Richtung, in die der Roboter aktuell schaut.</p>
 </section>
 <section id="der-roboter-bewegt-sich">
-<h2>Der Roboter bewegt sich<a class="headerlink" href="#der-roboter-bewegt-sich" title="Permalink to this heading">#</a></h2>
+<h2>Der Roboter bewegt sich<a class="headerlink" href="#der-roboter-bewegt-sich" title="Link to this heading">#</a></h2>
 <p>Der Roboter wird mit einfachen Befehlen wie vorwärts, links, rechts, usw.
 gesteuert. Die Befehle sind dabei englisch. Da sie an den Roboter gerichtet
 sind, wird zuerst der Name des Roboters verwendet, dann ein Punkt gesetzt und
@@ -878,20 +706,6 @@ Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-      <svg width="800" height="600">  
-        <rect width="100%" height="100%" style="fill:white;stroke:;stroke-width:1"/>
-        
-        
-        <line x1="400.0" y1="300.0" x2="500.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="500.0" y1="300.0" x2="495.0" y2="291.33974596215563" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="495.0" y1="291.33974596215563" x2="490.0" y2="282.67949192431126" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="490.0" y1="282.67949192431126" x2="485.0" y2="274.0192378864669" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="485.0" y1="274.0192378864669" x2="480.0" y2="265.35898384862253" stroke-linecap="round" style="stroke:black;stroke-width:1" /><line x1="480.0" y1="265.35898384862253" x2="475.0" y2="256.69872981077816" stroke-linecap="round" style="stroke:black;stroke-width:1" />
-        
-        
-        <g id="classic" visibility="visible" transform="rotate(150,475.0,256.69872981077816) translate(475.0, 256.69872981077816)">
-<polygon points="-5,-4.5 0,-2.5 5,-4.5 0,4.5" transform="skewX(0) scale(1,1)" style="stroke:black;fill:black;stroke-width:1" />
-</g>
-      </svg>
-    </div></div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
@@ -922,7 +736,7 @@ Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
 </div>
 </section>
 <section id="robo-kann-noch-mehr">
-<h2>Robo kann noch mehr…<a class="headerlink" href="#robo-kann-noch-mehr" title="Permalink to this heading">#</a></h2>
+<h2>Robo kann noch mehr…<a class="headerlink" href="#robo-kann-noch-mehr" title="Link to this heading">#</a></h2>
 <p>Die folgenden Befehle an den Roboter dienen zur Steuerung der Bewegung:</p>
 <ul class="simple">
 <li><p>forward(schritte): Der Roboter bewegt sich vorwärts, die Streckenlänge wird in
@@ -1012,7 +826,7 @@ keine Zeichnung.</p></li>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1040,7 +854,8 @@ keine Zeichnung.</p></li>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1106,8 +921,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
