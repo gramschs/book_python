@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Ableitung, Integration und Differentialgleichung mit Simulink
+# 12.3 Ableitung, Integration und Differentialgleichung mit Simulink
 
 Bei den Modellen treten sehr häufig Differentialgleichungen auf. In diesem
 Kapitel betrachten wir die Modellierung einer linearen Differentialgleichung 1.
@@ -92,7 +92,7 @@ Differentialgleichung 1. Ordnung
 $$\dot{x}(t)=-2x+1, \quad x(0)=0,$$
 
 an, wie in Simulink die numerische Lösung der Differentialgleichung konstruiert
-wird. 
+wird.
 
 Dazu werden nacheinander die Blöcke
 
