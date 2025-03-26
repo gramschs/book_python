@@ -17,16 +17,15 @@ kernelspec:
 # 1.2 Programmieren
 
 Es gibt viele Gründe, warum es sich lohnt, Programmieren zu lernen. Die
-Nachfrage nach Ingenieur:innen, die zusätzlich Programmieren können, wächst
-aufgrund der Digitalisierung der Industrie rasant. Programmieren erfordert aber
-auch kritisches Denken und Problemlösungsfähigkeiten. Umgekehrt werden durch
-Programmieren diese Fähigkeiten gefördert. Auch fördert Programmieren das
-Verständnis von Technologie und Computersystemen. Es kann helfen, die
+Nachfrage nach Ingenieurinnen und Ingenieuren, die zusätzlich Programmieren
+können, wächst aufgrund der Digitalisierung der Industrie rasant. Programmieren
+fördert kritisches Denken und Problemlösungsfähigkeiten. Umgekehrt werden durch
+Programmieren diese Fähigkeiten weiter entwickelt. Zudem fördert Programmieren
+das Verständnis von Technologie und Computersystemen. Es kann helfen, die
 Funktionsweise von Software und Hardware besser zu verstehen und Einblicke in
 die Arbeitsweise von Websites, Anwendungen und anderen Technologien zu gewinnen.
 Programmierung kann auch dabei helfen, Routineaufgaben zu automatisieren und
-Zeit zu sparen. Dies kann auch dazu beitragen, Fehler zu minimieren und die
-Effizienz zu steigern.
+Zeit zu sparen. Dies kann Fehler minimieren und die Effizienz steigern.
 
 ## Lernziele
 
@@ -34,44 +33,50 @@ Effizienz zu steigern.
 :class: admonition-goals
 * Sie können erklären, was ein **Algorithmus** ist.
 * Sie wissen, was eine **Programmiersprache** ist.
-* Sie kennen den Unterschied zwischen **höheren Prorgammiersprachen** und **Maschinensprache**.
-* Sie wissen, was der Unterschied zwischen einer **kompilierten Programmiersprache** und einer **interpretierten Programmiersprache** ist. Sie können für beide Kategorien Beispiele benennen.
+* Sie kennen den Unterschied zwischen **höheren Prorgammiersprachen** und
+  **Maschinensprache**.
+* Sie wissen, was der Unterschied zwischen einer **kompilierten
+  Programmiersprache** und einer **interpretierten Programmiersprache** ist. Sie
+  können für beide Kategorien Beispiele benennen.
 ```
 
 ## Programmieren ist wie Kochen
 
-Programmieren bedeutet, dem Computer eine Reihe von Anweisungen zu geben. Damit
-ist aber mehr gemeint, als nur das einfache "Computer, spiel mir den Song XY
-vor!". Es geht darum, mit Hilfe einer Abfolge von Anweisungen ein Problem zu
-lösen. Dementsprechend ist ein wichtiger Aspekt des Programmierens die
-Fähigkeit, komplexe Probleme in kleinere, leichter zu lösende Aufgaben zu
-unterteilen. Diese Aufgaben können dann einzeln gelöst und in einem größeren
-Programm kombiniert werden, um das Problem als Ganzes zu lösen.
+Programmieren bedeutet, dem Computer eine Reihe von Anweisungen zu geben. Es
+geht darum, mit Hilfe einer Abfolge von Anweisungen ein Problem zu lösen. Ein
+wichtiger Aspekt des Programmierens ist die Fähigkeit, komplexe Probleme in
+kleinere, leichter zu lösende Aufgaben zu unterteilen. Diese Aufgaben können
+dann einzeln gelöst und in einem größeren Programm kombiniert werden, um das
+Problem als Ganzes zu lösen.
 
-Diese schrittweise Vorgehensweise zur Lösung eines Problems nennt man
+Diese schrittweise Beschreibung der Lösung eines Problems nennt man
 **Algorithmus**. Ein Algorithmus ist ein klar definierter Satz von Anweisungen
 oder Regeln, die von einem Computer (oder auch von einem Menschen) ausgeführt
 werden können, um ein bestimmtes Ergebnis zu erzielen.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Nehmen Sie sich 5 min Zeit, um einen Algorithmus aufzuschreiben, wie Ihr Lieblingsgericht zubereitet wird.
+Nehmen Sie sich 5 min Zeit, um einen Algorithmus aufzuschreiben, wie Ihr
+Lieblingsgericht zubereitet wird.
 ```
 
 ```{admonition} Lösung
 :class: miniexercise, toggle
-Zuerst werden 1 Apfel, 1 Banane, 1 Orange und 2 Kiwis kleingeschnitten und in eine Schüssel gefüllt. Danach werden 3 EL Joghurt mit 1 TL Honig und einer Prise Zimt verrührt. Zuletzt wird das Joghurt-Dressing mit den Obststücken gemischt und angerichtet.
+Zuerst werden 1 Apfel, 1 Banane, 1 Orange und 2 Kiwis kleingeschnitten und in
+eine Schüssel gefüllt. Danach werden 3 EL Joghurt mit 1 TL Honig und einer Prise
+Zimt verrührt. Zuletzt wird das Joghurt-Dressing mit den Obststücken gemischt
+und angerichtet.
 ```
 
 Kochanweisungen sind nicht immer verständlich. Es kommt auf das
-Hintergrundwissen der Person an, die versucht ein Gericht nachzukochen, ob die
+Hintergrundwissen der Person an, die versucht, ein Gericht nachzukochen, ob die
 Kochanweisung verständlich ist. In dem obigen Beispiel wurde beispielsweise
 vorausgesetzt, dass die Abkürzungen EL für Esslöffel und TL für Teelöffel
 bekannt sind. Es hätten aber auch Formulierungen vorkommen können wie Mehl
 anschwitzen, Sauce binden, Masse stocken lassen oder Zwiebeln glasig werden
-lassen. Falls solche Formululierungen unverstänlich sind, liegt es aber eher
-daran, dass sich dahinter eine komplett eigner Kochprozess verbirgt, den man
-kennen muss, um das Rezept insgesamt nachzukochen.
+lassen. Falls solche Formulierungen unverständlich sind, liegt es oft daran,
+dass sich dahinter ein eigener Kochprozess verbirgt, den man kennen muss, um das
+Rezept insgesamt nachzukochen.
 
 [Chefkoch](https://www.chefkoch.de/) bietet eine riesige Anzahl an Rezepten wie
 z.B. das folgende Rezept eines
@@ -90,15 +95,19 @@ beschrieben werden?
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Listen Sie die Details auf, die dem obigen Rezept des Rosenkohl-Auflaufs zugefügt werden müssten, um auch Kochanfängern eine Möglichkeit zu bieten, das Rezept nachzukochen.
+Listen Sie die Details auf, die dem obigen Rezept des Rosenkohl-Auflaufs
+zugefügt werden müssten, um auch Kochanfängern eine Möglichkeit zu bieten, das
+Rezept nachzukochen.
 ```
 
 ```{admonition} Lösung
 :class: miniexercise, toggle
-* Die Garzeiten der Kartoffeln und des Rosenkohls sind normalerweise unterschiedlich und müssten spezifiziert werden. 
+* Die Garzeiten der Kartoffeln und des Rosenkohls sind normalerweise
+  unterschiedlich und müssten spezifiziert werden. 
 * Wie wird Hackfleisch angebraten? Erläuterungen zum Anbraten fehlen komplett.
 * Angaben zur Würzung der Sahne-Schmand-Mischung fehlen.
-* Soll der Backofen 200 Grad bei Umluft oder Ober-/Unterhitze haben? Mittlere Schiene oder eine andere?
+* Soll der Backofen 200 Grad bei Umluft oder Ober-/Unterhitze haben? Mittlere
+* Schiene oder eine andere?
 ```
 
 Auf die Idee, einen Algorithmus mit dem Kochen zu vergleichen, werden wir in
@@ -120,7 +129,8 @@ Programmiersprachen:
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Recherchieren Sie im Tiobe-Index nach den Programmiersprachen MATLAB und Python. Auf welchem Platz stehen die beiden Programmiersprachen aktuell?
+Recherchieren Sie im Tiobe-Index nach den Programmiersprachen MATLAB und Python.
+Auf welchem Platz stehen die beiden Programmiersprachen aktuell?
 ```
 
 In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am
@@ -155,7 +165,7 @@ Bei Compiler-Programmiersprachen wird der Programmcode vorab in Maschinensprache
 (bei Windows beispielsweise als exe-Datei). Den Vorgang des Übersetzens nennt
 man **kompilieren**. Bei Interpreter-Sprachen wird der Code in dem Moment in
 Maschinensprache übersetzt, in dem das Programm läuft bzw. ausgeführt wird.
-Während also das Programm läuft, muss gleichzeitig – quasi im Hintergrund – der
+Während also das Programm läuft, muss gleichzeitig ⎼ quasi im Hintergrund ⎼ der
 Übersetzer arbeiten und die höhere Programmiersprache in Maschinensprache
 **interpretieren**. Daher der Name Interpreter-Sprache. Manchmal wird Code, der
 kompiliert wurde und dann eigenständig lauffähig ist, als **Programm**
@@ -166,7 +176,9 @@ Programm auch für Python-Skripte.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompilierte oder interpretierte Programmiersprachen?
+Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen
+kompilierte oder interpretierte Programmiersprachen?
+
 * C bzw. C++
 * Java
 * C# (ausgesprochen: C Sharp)
@@ -176,9 +188,13 @@ Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompiliert
 
 ```{admonition} Lösung
 :class: miniexercise, toggle
-Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen kompilierte oder interpretierte Programmiersprachen?
+Recherchieren Sie im Internet. Sind die folgenden Programmiersprachen
+kompilierte oder interpretierte Programmiersprachen?
+
 * C bzw. C++ --> kompiliert
-* Java --> kompiliert (wird manchmal auch zu den interpretierten Sprachen gezählt, weil der kompilierte Bytecode anschließend von der Java Virtual Machine interpretiert wird und nicht vom Betriebsystem direkt ausgeführt wird)
+* Java --> kompiliert (wird manchmal auch zu den interpretierten Sprachen
+  gezählt, weil der kompilierte Bytecode anschließend von der Java Virtual
+  Machine interpretiert wird und nicht vom Betriebsystem direkt ausgeführt wird)
 * C# --> kompliliert
 * Visual Basic --> kompiliert
 * JavaScript --> interpretiert
@@ -209,8 +225,8 @@ Was ist überhaupt Python? Wikipedia erklärt Python folgendermaßen:
   (Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Python_(Programmiersprache))
 
 In dieser Vorlesung verwenden wir Python als Programmiersprache, da Python viele
-Vorteile bietet, die das Erlernen der Programmierung erleichtern und
-(hoffentlich Spaß machen):
+Vorteile bietet, die das Erlernen der Programmierung erleichtern und Spaß
+machen:
 
 1. Einfache Syntax: Python hat eine klare und leicht verständliche Syntax, die
    es leicht macht, die Grundlagen der Programmierung zu erlernen. Die Syntax
@@ -236,3 +252,11 @@ Ansonsten ist es ein wenig wie mit dem Erlernen einer Fremdsprache. Die erste
 Fremdsprache ist die schwerste! Sprich, wenn Sie eine Programmiersprache erlernt
 haben und wissen, wie ein komplexes Problem in Teilaufgaben zerlegt wird, können
 Sie das schnell auf andere Programmiersprachen übertragen.
+
+## Zusammenfassung und Ausblick
+
+In diesem Kapitel haben wir die Vorteile des Programmierens für Ingenieure
+diskutiert, den Begriff des Algorithmus anhand von Kochrezepten erklärt und die
+Unterschiede zwischen verschiedenen Programmiersprachen sowie die Vorteile von
+Python hervorgehoben. Im nächsten Kapitel beschäftigen wir uns mit den
+technischen Voraussetzungen, um Python-Programme zu schreiben und auszuführen.
