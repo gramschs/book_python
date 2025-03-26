@@ -256,9 +256,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
 </ul>
@@ -521,8 +521,7 @@ sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.</p
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">berechne_umfang_flaeche</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in
-MATLAB.</p>
+<p>Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video zu “Matlab - 3.1 Einleitung Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -562,7 +561,7 @@ Vergleichsoperatoren sind mit Ausnahme des “ungleich”-Operators auch identis
 <li><p><code class="docutils literal notranslate"><span class="pre">~=</span></code> ungleich</p></li>
 </ul>
 <p>Das Ergebnis eines Vergleichs ist entweder <code class="docutils literal notranslate"><span class="pre">true</span></code> oder <code class="docutils literal notranslate"><span class="pre">false</span></code>. MATLAB verwendet
-hier also Kleinbcuhstaben im Vergleich zu Python mit <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+hier also Kleinbuchstaben im Vergleich zu Python mit <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
 entsprechende Verzweigungskonstrukt lautet</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span>
@@ -681,7 +680,9 @@ dieselbe Grafik gezeichnet werden.</p>
 </details></section>
 <section id="regression">
 <h2>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h2>
-<p>Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir als Streudiagramm visualisieren.</p>
+<p>Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
+betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
+als Streudiagramm visualisieren.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
 <span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">]</span>
 

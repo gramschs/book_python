@@ -76,7 +76,6 @@ werden durch das `end` abgeschlossen.
 Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
 Fläche und gibt beide Werte zurück.
 
-
 ```matlab
 function [umfang, flaeche] = berechne_umfang_flaeche(radius)
     umfang = 2 * pi * radius;
@@ -91,8 +90,7 @@ sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.
 [U, A] = berechne_umfang_flaeche(5)
 ```
 
-Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in
-MATLAB.
+Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.
 
 ```{dropdown} Video zu "Matlab - 3.1 Einleitung Funktionen" von Mathe? Logisch!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -127,7 +125,7 @@ Vergleichsoperatoren sind mit Ausnahme des "ungleich"-Operators auch identisch:
 * `~=` ungleich
 
 Das Ergebnis eines Vergleichs ist entweder `true` oder `false`. MATLAB verwendet
-hier also Kleinbcuhstaben im Vergleich zu Python mit `True` und `False`.
+hier also Kleinbuchstaben im Vergleich zu Python mit `True` und `False`.
 
 Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
 entsprechende Verzweigungskonstrukt lautet
@@ -152,7 +150,7 @@ Verzweigung wird mit einem `end` abgeschlossen.
 In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
 gibt. Die sogenannte `switch`-Verzweigung ist vor allem dann interessant, wenn
 sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
-if-elseif-else ersetzt werden. 
+if-elseif-else ersetzt werden.
 
 ```{dropdown} Video zu "Matlab - 4.2 switch - Anweisung" von Mathe? Logisch!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -253,7 +251,9 @@ dieselbe Grafik gezeichnet werden.
 
 ## Regression
 
-Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir als Streudiagramm visualisieren.
+Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
+betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
+als Streudiagramm visualisieren.
 
 ```matlab
 x = [-1, 0, 1, 2, 3, 4, 5]
@@ -304,19 +304,17 @@ In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
 Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
 Kommentarzeichen in MATLAB ein Prozentzeichen `%`.
 
-
 ## Weiteres Lehrmaterial
 
 Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript
 
-> https://gramschs.github.io/book_matlab/intro.html
+> [https://gramschs.github.io/book_matlab/intro.html](https://gramschs.github.io/book_matlab/intro.html)
 
 nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
-anderen empfehle ich die YouTube-Playlist 
+anderen empfehle ich die YouTube-Playlist
 
 > [So lernst Du
 > Matlab](https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY)
 
 von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
 auch noch anderen Themen behandelt.
-

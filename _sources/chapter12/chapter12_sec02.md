@@ -12,11 +12,12 @@ kernelspec:
   name: python3
 ---
 
-# Simulink-Bibliothek
+# 12.2 Simulink-Bibliothek
 
 Simulink stellt viele Blöcke zur Verfügung. In diesem Kapitel gehen wir die Liste der wichtigsten Blöcke durch. Darüber hinaus betrachten wir Ableitungen und Integrale.
 
 ## Lernziele
+
 ```{admonition} Lernziele
 :class: admonition-goals
 * Sie kennen die wichtigsten Eingabe-, Verarbeitungs- und Ausgabeblöcke.
@@ -32,7 +33,7 @@ Liste und vor allem die Beschreibungen sind von dort übernommen. Eingabeblöcke
 die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.
 
 * *Band-Limited White Noise*: Dieser Block erzeugt normalverteilte Zufallszahlen
-  (weißes Rauschen). 	
+  (weißes Rauschen).  
 * *Chirp Signal*: Dieser Block erzeugt eine Sinusfunktion, bei der die Frequenz
   ansteigt.
 * *Clock*: Dieser Block gibt bei jedem Simulationsschritt die aktuelle
@@ -50,8 +51,8 @@ die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.
   zu bestimmten Zeiten.
 * *Enumerated Constant*: Dieser Block erzeugt eine Aufzählungskonstante.
 * **From File**: Mit diesem Block laden Sie Daten aus einer MAT-Datei in das
-  Simulink-Modell.	
-* *From Spreadsheet*: Dieser Block liest Daten aus einer Tabelle.	
+  Simulink-Modell.
+* *From Spreadsheet*: Dieser Block liest Daten aus einer Tabelle.
 * **From Workspace**: Dieser Block lädt Signaldaten aus dem MATLAB-Workspace in
   das Simulink-Modell.
 * *Ground*: Dieser Block erdet nicht verbundene Eingangssignale.
@@ -63,18 +64,18 @@ die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.
   Rechteckimpulse.
 * **Ramp**: Der Rampenblock erzeugt ein Signal, das zu einem bestimmten
   Zeitpunkt und mit einem bestimmten Wert beginnt und sich mit einer bestimmten
-  Rate ändert. 	
+  Rate ändert.  
 * *Random Number*: Der Zufallszahlenblock erzeugt normalverteilte Zufallszahlen.
 * *Repeating Sequence*: Dieser Block gibt ein periodisches skalares Signal mit
   einer Wellenform aus, die Sie mit den Parametern Zeitwerte und Ausgangswerte
   festlegen.
 * *Repeating Sequence Interpolated*: Dieser Block gibt eine periodische
   zeitdiskrete Folge aus, die auf den Werten der Parameter "Vector of time
-  values" und "Vector of output values" basiert. 
+  values" und "Vector of output values" basiert.
 * *Repeating Sequence Stair*: Dieser Block gibt eine Treppenfolge aus und
   wiederholt sie.
 * **Signal Builder**: Mit diesem Block können Sie austauschbare Gruppen von
-  stückweise linearen Signalquellen erstellen und in einem Modell verwenden. 
+  stückweise linearen Signalquellen erstellen und in einem Modell verwenden.
 * **Signal Editor**: Dieser Block dient der Anzeige, Erstellung und Bearbeitung
   von austauschbaren Szenarien.
 * *Signal Generator*:  Dieser Block kann eine der folgenden vier verschiedenen
@@ -83,7 +84,7 @@ die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.
 * **Step**: Dieser Block erzeugt eine Treppenfunktion mit zwei Stufen, der zu
   einer spezifizierten Zeit wechselt.
 * *Uniform Random Number*: Dieser Block erzeugt gleichmäßig verteilte
-  Zufallszahlen in einem von Ihnen festgelegtem Intervall. 
+  Zufallszahlen in einem von Ihnen festgelegtem Intervall.
 * *Waveform Generator*: Dieser Block erzeugt wellenförmige Signale.
 
 ## Ausgabeblöcke oder Sinks
@@ -92,27 +93,26 @@ Mit den folgenden Blöcken erzeugen Sie Ausgaben oder exportieren Ergebnisse.
 Diese Liste enststammt der
 [Simulink-Dokumentation](https://de.mathworks.com/help/simulink/sinks.html).
 
-* *Display*: Dieser Block zeigt den Wert der Eingangsdaten an. 
+* *Display*: Dieser Block zeigt den Wert der Eingangsdaten an.
 * *Floating Scope and Scope Viewer*: Der Simulink® Scope Viewer und der Floating
   Scope Block zeigen Zeitsignale abhängig von der Simulationszeit an. Der Scope
   Viewer und der Floating Scope-Block haben die gleiche Funktionalität wie der
   Scope-Block, sind aber nicht mit Signalleitungen verbunden.
 * *Out Bus Element*: Dieser Block kombiniert die Funktionalität eines
-  Outport-Blocks und eines Bus-Creator-Blocks. 
+  Outport-Blocks und eines Bus-Creator-Blocks.
 * *Outport*: Diese Blöcke verbinden Signale aus einem System mit einem Ziel
-  außerhalb des Systems. 
+  außerhalb des Systems.
 * **Record, XY Graph**: Sie können sowohl den Block Record oder den Block XY
   Graph verwenden, um Daten im Workspace, in einer Datei oder sowohl im
   Workspace als auch in einer Datei aufzuzeichnen.
-* **Scope**:	Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.
+* **Scope**: Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.
 * *Stop Simulation*: Dieser Block stoppt die Simulation, wenn der Eingang
   ungleich Null ist.
-* *Terminator*:	Dieser Block wird verwendet, um Blöcke zu kappen, deren
+* *Terminator*: Dieser Block wird verwendet, um Blöcke zu kappen, deren
   Ausgangsports nicht mit anderen Blöcken verbunden sind.
 * *To File*: Der To File-Block schreibt Eingangssignaldaten in eine MAT-Datei.T
 * *To Workspace*: Dieser Block protokolliert die an seinem Eingangsport
   angeschlossenen Daten im Workspace.
-
 
 ## Verarbeitungsblöcke
 
@@ -130,20 +130,20 @@ Blöcke](https://de.mathworks.com/help/simulink/continuous.html) aus dem Modul
 **Continuous Blocks**, das Ableitungen und Löser von Differentialgleichungen
 beinhaltet.
 
-## Beispiel: lineare Funktion als Eingangssignal 
+## Beispiel: lineare Funktion als Eingangssignal
 
 Wollen wir die lineare Funktion $u(t) = 2\cdot t + 3$ in Simulink modellieren,
 so brauchen wir zwei Eingangssignale, nämlich $t$ und $1$. Daher ziehen wir
 zuerst die Sources-Blöcke `Ramp` und `Constant` aus der Simulink-Bibliothek auf
 den Arbeitsplatz. Die Eigenschaften beider Blöcke können durch Doppelklick
-angezeigt werden. 
+angezeigt werden.
 
 Die Rampe ist eine Funktion, die Null ist und ab einem bestimmten Zeitpunkt
 linear ansteigt. Sowohl der Zeitpunkt, ab dem der lineare Anstieg beginnt, als
 auch die Steigung können eingestellt werden. Wir lassen die Voreinstellung
 `Start Time` auf Null. Normalerweise müssten wir jetzt die Steigung, also
 `Slope` auf den Wert 2 setzen, aber um den prinzipiellen Zusammenbau von Termen
-zu zeigen, benutzen wir erneut den Verstärker-Block `Gain`. 
+zu zeigen, benutzen wir erneut den Verstärker-Block `Gain`.
 
 Der Block `Constant` produziert ein konstantes Eingangssignal. Auch hier könnten
 wir den Wert 3 direkt eingeben, indem wir einen Doppelklick auf den Block machen
@@ -157,5 +157,3 @@ wir wiederum mit einer Ausgabe, dem Scope-Block. Dann können wir die Simulation
 laufen lassen.
 
 ![Screenshot des Simulink-Modells zu lineare Funktion](pics/simulink_lineare_funktion.png)
-
-

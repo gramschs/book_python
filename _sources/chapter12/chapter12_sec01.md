@@ -12,14 +12,14 @@ kernelspec:
   name: python3
 ---
 
-# Simulink Einführung
+# 12.1 Simulink Einführung
 
 MATLAB bietet neben einer Reihe von Toolboxen auch eine Zusatzsoftware an, die
 es Ingenieur:innen erleichtert, technische Systeme zu modellieren. Diese
 Software heißt Simulink und benötigt MATLAB. Detaillierte Informationen zu
 Simulink finden Sie auf der Produktseite von
 [MATLAB](https://de.mathworks.com/products/simulink.html). Die Besonderheit von
-Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt. 
+Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt.
 
 In diesem Kapitel werden wir uns zunächst mit der Modellierung technischer
 Systeme beschäftigen und uns dann die ersten grundlegenden Schritte in Simulink
@@ -43,7 +43,7 @@ Das erste Modell, das Sie vermutlich hatten, war eine Modelleisenbahn oder eine
 Playmobil-Spiellandschaft – vielleicht haben Sie aber auch aus Legosteinen ein
 Auto gebaut? Ein Modell beschreibt die reale Welt in vereinfachter und meist
 verkleinerter Form. In den Natur- und Ingenieurwissenschaften sind Modelle die
-Grundlage des wissenschaftlichen Arbeitens. 
+Grundlage des wissenschaftlichen Arbeitens.
 
 **Modellierung** beschreibt nun den Prozess, ein geeignetes Modell zu finden, um
 eine bestimmte Fragestellung zu beantworten. Normalerweise ist kein Modell so
@@ -98,7 +98,7 @@ Begriff. Die weiteren Informationen wie beispielsweise Anfangswerte oder
 Randbedingungen sind ebenfalls Quellen, also Sources und fließen wie die
 Nebenflüsse in den Hauptfluss. Der Abfluss, die Senke oder das Spülbecken heißen
 auf Englisch **Sink**. Unter den Sink-Blöcken finden Sie also das Ergebnis, die
-Ausgabe der Simulation. Wir wollen uns nun das Beispiel 
+Ausgabe der Simulation. Wir wollen uns nun das Beispiel
 
 $$f(x)=2\sin(x)$$
 
@@ -117,7 +117,7 @@ Screencast gezeigt wird.
 
 ![Screencast erstes Projekt in Simulink](screencasts/part10_simulink_firstproject.gif)
 
-## Layout und Speichern 
+## Layout und Speichern
 
 Die genaue Anordnung der Blöcke ist nicht wichtig, da durch das Routing
 (Verbinden der Blöcke) die Fließrichtung definiert ist. Dennoch empfiehlt es
