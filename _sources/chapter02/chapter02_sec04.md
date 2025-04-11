@@ -100,8 +100,7 @@ print('antwortet: "Einfrieren! Heißes Wasser kann man immer gebrauchen."')
 ```
 ````
 
-
-```{admonition} Übungen 2.3
+```{admonition} Übung 2.3
 :class: miniexercise
 Schreiben Sie ein Python-Programm, das eine Länge vom Benutzer abfragt, die in
 Zoll gemessen wurde. Das Programm soll dann diese Länge in Zentimeter umrechnen
@@ -127,7 +126,6 @@ print(laenge_in_zentimeter)
 print('Zentimetern.')
 ```
 ````
-
 
 ```{admonition} Übung 2.4
 :class: miniexercise
@@ -175,7 +173,6 @@ Testen Sie anschließend, ob Ihr Programm für die folgenden Angaben korrekt rec
 * Ausgabe: Gesamtkosten für die Party: 478 EUR
 * Ausgabe: Kosten pro Gast: 39.833333 EUR
 ```
-
 
 ````{admonition} Lösung
 :class: miniexercise, toggle
