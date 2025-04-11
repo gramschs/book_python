@@ -111,7 +111,7 @@ Rezept nachzukochen.
 ```
 
 Auf die Idee, einen Algorithmus mit dem Kochen zu vergleichen, werden wir in
-spätere Kapiteln noch zurückkehren. Als nächstes beschäftigen wir uns damit, wie
+späteren Kapiteln noch zurückkehren. Als nächstes beschäftigen wir uns damit, wie
 den Computer Anweisungen erteilt werden.
 
 ## Programmiersprachen
