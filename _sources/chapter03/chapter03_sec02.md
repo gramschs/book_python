@@ -29,18 +29,18 @@ NumPy-Moduls kennenlernen.
 ```{admonition} Lernziele
 :class: admonition-goals
 * Sie können erklären, was ein **Modul** in Python ist.
-* Sie können ein Modul komplett mit **import modul** importieren und auf die darin enthaltenen Funktionalitäten mit **modul.funktionalitaet** zugreifen.
-* Sie können mit **from modul import funktionalitaet** einzelne Funktionalitäten eines Moduls importieren.
+* Sie können ein Modul komplett mit **import modul** importieren und auf die
+  darin enthaltenen Funktionalitäten mit **modul.funktionalitaet** zugreifen.
+* Sie können mit **from modul import funktionalitaet** einzelne Funktionalitäten
+  eines Moduls importieren.
 * Sie kennen das Modul **NumPy**.
 ```
-
-+++
 
 ## Importieren von Modulen
 
 Es wäre schön, häufig gebrauchte Zahlen wie die Kreiszahl $\pi$ oder die
 Eulersche Zahl $e$ zur Verfügung zu haben. Leider gehören beide nicht zum
-Python-Kern. Geben Sie einmal den folgenden Code ein: 
+Python-Kern. Geben Sie einmal den folgenden Code ein:
 
 ```python
 print(pi)
@@ -50,9 +50,9 @@ print(pi)
 
 Python gibt eine Fehlermeldung aus. Der Fehler lautet "NameError". Der
 Python-Interpreter meldet auch, bei welcher Variable der Namensfehler auftritt,
-nämlich bei 'pi'. 
+nämlich bei 'pi'.
 
-Die fehlende Kreiszahl Pi könnte natürlich zu Beginn eines Programmes eingeführt werden. 
+Die fehlende Kreiszahl Pi könnte natürlich zu Beginn eines Programmes eingeführt werden.
 
 ```{code-cell} ipython3
 pi = 3.14
@@ -60,7 +60,7 @@ print(pi)
 ```
 
 Aber es gibt ja noch mehr Funktionalitäten, die im Python-Kern fehlen wie
-beispielsweise die Sinus-Funktion oder die Wurzel-Funktion. 
+beispielsweise die Sinus-Funktion oder die Wurzel-Funktion.
 
 Module sind Python-Programme, die Konstanten oder Anweisungen (Funktionen,
 Klassen) zur Verfügung stellen und damit den eigentlichen Python-Kern erweitern.
@@ -79,7 +79,7 @@ import numpy
 
 Wird die obige Anweisung `import numpy` ausgeführt, passiert scheinbar nichts.
 Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
-`dir(numpy)` listet auf, was genau alles importiert wurde. 
+`dir(numpy)` listet auf, was genau alles importiert wurde.
 
 ```{code-cell} ipython3
 dir(numpy)
@@ -134,9 +134,9 @@ print(y)
 ## Importieren von einzelnen Funktionen oder Klassen
 
 Wenn nur die Kreiszahl $\pi$ gebraucht wird, ist der komplette Import des
-NumPy-Modules zuviel des Guten. Auch kann es lästig sein, immer `numpy.` vor pi
-zu setzen. Eine zweite Möglichkeit, Funktionalitäten eines Moduls zu
-importieren, ist die Alternative
+NumPy-Modules eine Verschwendung von Ressourcen. Auch kann es lästig sein, immer
+`numpy.` vor pi zu setzen. Eine zweite Möglichkeit, Funktionalitäten eines
+Moduls zu importieren, ist die Alternative
 
 ```python
 from modulname import etwas1, etwas2
@@ -176,7 +176,7 @@ print(sqrt(2))
 ```
 ````
 
-##  Importieren von Modulen mit Alias
+## Importieren von Modulen mit Alias
 
 Es ist üblich, Module mit einem kürzeren Alias zu importieren, um den Code
 lesbarer zu gestalten und weniger tippen zu müssen. Im Fall von NumPy wird
@@ -196,7 +196,9 @@ print(x)
 
 ````{admonition} Mini-Übung
 :class: miniexercise
-Importieren Sie das `math`-Modul mit dem Alias `m` und lassen Sie die Kreiszahl $\pi$ ausgeben. Bilden Sie dann die Differenz aus der Kreiszahl des math-Moduls und der Kreiszahl des NumPy-Moduls. 
+Importieren Sie das `math`-Modul mit dem Alias `m` und lassen Sie die Kreiszahl
+$\pi$ ausgeben. Bilden Sie dann die Differenz aus der Kreiszahl des math-Moduls
+und der Kreiszahl des NumPy-Moduls.
 
 Gibt es einen Unterschied zwischen den beiden Zahlen?
 ````
@@ -221,12 +223,11 @@ Das math-Modul stellt ebenfalls mathematische Konstanten und Funktionen zur
 Verfügung, ist aber weniger umfangreich. Daher verwenden wir in dieser Vorlesung
 NumPy.
 
-## Zusammenfassung
+## Zusammenfassung und Ausblick
 
 In diesem Kapitel haben wir den Modul-Mechanismus in Python untersucht und das
 NumPy-Modul als Beispiel verwendet. Wir haben gelernt, wie man Module
 importiert, spezifische Funktionen und Klassen aus einem Modul importiert und
 Module mit einem Alias importiert. Durch das Verständnis dieser Konzepte können
 Sie Ihren Python-Code besser organisieren und die Wiederverwendbarkeit von Code
-verbessern.
-
+verbessern. Im nächsten Kapitel werden wir ein weiteres Modul kennenlernen.

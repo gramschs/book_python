@@ -256,9 +256,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
 </ul>
@@ -496,7 +496,8 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-turtlefeld-initalisieren">Ein Turtlefeld initalisieren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-roboter-bewegt-sich">Der Roboter bewegt sich</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robo-kann-noch-mehr">Robo kann noch mehr…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robo-kann-noch-mehr">Robo kann noch mehr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -510,22 +511,22 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="das-modul-turtle">
 <h1>3.3 Das Modul Turtle<a class="headerlink" href="#das-modul-turtle" title="Link to this heading">#</a></h1>
-<p>In der Informatik nennt man Grafiken, die dadurch entstehen, dass ein Roboter
-Linien auf eine Leinwand zeichnet, Turtle-Grafiken. Der Roboter wird dabei mit
-einfachen Kommandos gesteuert. Beschrieben wird er durch seine Position (x- und
-y-Koordinaten in einem kartesischen Koordinatensystem) und seine Ausrichtung.
-Der “Stift” des Roboters kann von seinen Eigenschaften her ebenfalls variieren.
-So können beispielsweise verschiedenfarbige Stifte verwendet werden oder die
-Linienstärke kann verändert werden.</p>
-<p>Der Kern von Python enthält bereits ein Modul namens <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, um eine solche
-Turtle-Grafik zu erzeugen. Da wir in dieser Vorlesung mit Jupyter Notebooks
-arbeiten, verwenden wir jedoch das Modul <code class="docutils literal notranslate"><span class="pre">colabTurtlePlus</span></code>, das das Turtle-Modul mit
-Funktionalitäten für Jupyter Notebooks erweitert.</p>
+<p>In der Informatik bezeichnet man Grafiken, die dadurch entstehen, dass ein
+Roboter Linien auf eine Leinwand zeichnet, als <em>Turtle-Grafiken</em>. Der Roboter
+wird durch einfache Kommandos gesteuert. Er besitzt eine bestimmte Position (x-
+und y-Koordinaten in einem kartesischen Koordinatensystem) und eine Ausrichtung.
+Auch der “Stift” des Roboters kann angepasst werden – zum Beispiel in Farbe oder
+Linienstärke.</p>
+<p>Python bringt bereits ein Modul namens <code class="docutils literal notranslate"><span class="pre">turtle</span></code> mit, um solche Grafiken zu
+erstellen. Da wir jedoch in dieser Vorlesung mit <strong>Jupyter Notebooks</strong> arbeiten,
+verwenden wir das Modul <code class="docutils literal notranslate"><span class="pre">ColabTurtlePlus</span></code>. Es erweitert die Standardfunktionen
+und ist speziell für den Einsatz in Notebooks geeignet.</p>
 <div class="warning admonition">
 <p class="admonition-title">Hinweis: Installation notwendig</p>
 <p>Das Modul colabTurtlePlus ist kein Standardmodul und muss daher nachinstalliert
 werden. Bitte beachten Sie die Hinweise zur Installation “Module
-nachinstallieren” und die dazugehörige Mini-Übung unten.</p>
+nachinstallieren” und die dazugehörige Mini-Übung unten. Falls Sie mit JupyterLite
+arbeiten, verwenden Sie bitte</p>
 </div>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
@@ -535,7 +536,8 @@ nachinstallieren” und die dazugehörige Mini-Übung unten.</p>
 <li><p>Sie können ein fehlendes Modul mit <strong>conda</strong> oder <strong>pip</strong> nachinstallieren.</p></li>
 <li><p>Sie wissen, was eine <strong>Turtle-Grafik</strong> ist.</p></li>
 <li><p>Sie können das Modul <strong>colabTurtlePlus</strong> importieren.</p></li>
-<li><p>Sie können ein Roboterfeld initalisieren und den Roboter mit einfachen Kommandos über das Roboterfeld steuern.</p></li>
+<li><p>Sie können ein Roboterfeld initalisieren und den Roboter mit einfachen
+Kommandos über das Roboterfeld steuern.</p></li>
 </ul>
 </div>
 </section>
@@ -550,32 +552,22 @@ wird, während pip ein Paket-Manager ist, der mit Python selbst installiert wird
 oder pip in einem Jupyter Notebook nachinstallieren kann.</p>
 <section id="installation-mit-conda">
 <h3>Installation mit conda<a class="headerlink" href="#installation-mit-conda" title="Link to this heading">#</a></h3>
-<ol>
-<li>Öffnen Sie das Jupyter Notebook.</li>
-<li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:
-<p><code>!conda install &lt;paketname&gt;</code></p>
-<p>Ersetzen Sie dabei &lt;paketname&gt; durch den Namen des zu installierenden Pakets.</p>
-<li>Führen Sie die Zelle aus, indem Sie auf den Run-Button klicken.</li>
-<li>Warten Sie, bis das Paket heruntergeladen und installiert wurde.</li>
-<li>Überprüfen Sie, ob das Paket korrekt installiert wurde, indem Sie eine weitere
-   Code-Zelle erstellen und das Paket importieren:
-<p><code>import &lt;paketname&gt;</code></p>
-<p>Wenn kein Fehler auftritt, wurde das Paket erfolgreich installiert.</p>
-</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">conda</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">paketname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Ersetzen Sie <code class="docutils literal notranslate"><span class="pre">&lt;paketname&gt;</span></code> durch den Namen des gewünschten Pakets.
+Nutzen Sie diese Methode bevorzugt, wenn Sie mit der Anaconda-Distribution arbeiten.</p>
 </section>
 <section id="installation-mit-pip">
 <h3>Installation mit pip<a class="headerlink" href="#installation-mit-pip" title="Link to this heading">#</a></h3>
-<ol>
-<li>Öffnen Sie das Jupyter Notebook.</li>
-<li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:</li>
-<p><code>!pip install &lt;paketname&gt;</code></p>
-<p>Ersetzen Sie dabei &lt;paketname&gt; durch den Namen des zu installierenden Pakets.</p>
-<li>Führen Sie die Zelle aus, indem Sie auf den Run-Button klicken.</li>
-<li>Warten Sie, bis das Paket heruntergeladen und installiert wurde.</li>
-<li>Überprüfen Sie, ob das Paket korrekt installiert wurde, indem Sie eine weitere Code-Zelle erstellen und das Paket importieren:</p>
-<p><code>import &lt;paketname&gt;</code></p>
-<p>Wenn kein Fehler auftritt, wurde das Paket erfolgreich installiert.</p>
-</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">paketname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">pip</span></code>, wenn das Paket nicht in der Anaconda-Distribution enthalten
+ist. Diese Variante funktioniert auch zuverlässig in Google Colab oder
+JupyterLite.</p>
+<p>Wichtig: Vermischen Sie conda und pip nicht für dasselbe Paket. Das kann zu
+Fehlern führen.</p>
 </section>
 <section id="wann-conda-und-wann-pip">
 <h3>Wann conda und wann pip?<a class="headerlink" href="#wann-conda-und-wann-pip" title="Link to this heading">#</a></h3>
@@ -594,12 +586,14 @@ Die beiden folgenden Links verlinken auf die Liste der verfügbaren Pakete:</p>
 </ul>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Installieren Sie jetzt das Modul <code class="docutils literal notranslate"><span class="pre">ColabTurtlePlus</span></code>, das leider nicht in der Anaconda-Distribution enthalten ist. Mehr Details zu diesem Modul finden Sie unter <a class="reference external" href="https://pypi.org/project/ColabTurtlePlus/">https://pypi.org/project/ColabTurtlePlus/</a>.</p>
+<p>Installieren Sie jetzt das Modul <code class="docutils literal notranslate"><span class="pre">ColabTurtlePlus</span></code>, das leider nicht in der
+Anaconda-Distribution enthalten ist. Mehr Details zu diesem Modul finden Sie
+unter
+<a class="reference external" href="https://pypi.org/project/ColabTurtlePlus/">https://pypi.org/project/ColabTurtlePlus/</a>.</p>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>!pip install ColabTurtlePlus
-import ColabTurtlePlus
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>%pip install -q ColabTurtlePlus
 </pre></div>
 </div>
 </div>
@@ -660,21 +654,24 @@ der folgenden Code-Zeile ein Roboter-Objekt namens <code class="docutils literal
 </div>
 </div>
 </div>
-<p>Der virtuelle Roboter wird durch ein Dreieck gekennzeichent. Die Spitze des
-Dreiecks zeigt in die Richtung, in die der Roboter aktuell schaut.</p>
+<p>Der virtuelle Roboter wird durch ein Dreieck gekennzeichnet. Die Spitze des
+Dreiecks zeigt in die Richtung, in die der Roboter aktuell schaut, also in die
+Bewegungsrichtung.</p>
 </section>
 <section id="der-roboter-bewegt-sich">
 <h2>Der Roboter bewegt sich<a class="headerlink" href="#der-roboter-bewegt-sich" title="Link to this heading">#</a></h2>
 <p>Der Roboter wird mit einfachen Befehlen wie vorwärts, links, rechts, usw.
-gesteuert. Die Befehle sind dabei englisch. Da sie an den Roboter gerichtet
-sind, wird zuerst der Name des Roboters verwendet, dann ein Punkt gesetzt und
-zuletzt der Befehlsname geschrieben. In die runden Klammern kommen die
-Argumente, z.B. um wie viele Schritte der Roboter sich vorwärts bewegen soll.</p>
+gesteuert. Die Befehle sind dabei der englischen Sprache entnommen. Da sie an
+den Roboter gerichtet sind, wird zuerst der Name des Roboters verwendet, dann
+ein Punkt gesetzt und zuletzt der Befehlsname geschrieben. In die runden
+Klammern kommen die Argumente, z.B. um wie viele Schritte der Roboter sich
+vorwärts bewegen soll.</p>
 <p>Mit dem Befehl</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">schritte</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>wird der Roboter vorwärts bewegt und legt insgesamt <code class="docutils literal notranslate"><span class="pre">schritte</span></code> (gemessen in Pixeln) zurück.</p>
+<p>wird der Roboter vorwärts bewegt und legt insgesamt <code class="docutils literal notranslate"><span class="pre">schritte</span></code> (gemessen in
+Pixeln) zurück.</p>
 <p>Mit den Befehlen</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">winkel</span><span class="p">)</span>
 </pre></div>
@@ -685,7 +682,7 @@ Argumente, z.B. um wie viele Schritte der Roboter sich vorwärts bewegen soll.</
 </div>
 <p>wird der Roboter nach links (gegen den Uhrzeigersinn) oder rechts (im
 Uhrzeigersinn) gedreht. Der Drehwinkel wird durch die Variable <code class="docutils literal notranslate"><span class="pre">winkel</span></code>
-im Gradmaß bestimmt.</p>
+in Grad angegeben.</p>
 <p>Um jetzt den kompletten Code zusammen zu haben, wiederholen wir die bisherigen
 Code-Zeilen in der folgenden Code-Zelle und experimentieren dann in der
 übernächsten Code-Zelle mit der Steuerung des Roboters. Wenn Sie das Turtle-Feld
@@ -709,7 +706,9 @@ Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie den Roboter ein Rechteck der Länge 200 px und Höhe 100 px zeichnen. Am Ende soll der Roboter in die ursprüngliche Richtung hin ausgerichtet sein, also nach Osten bzw. rechts.</p>
+<p>Lassen Sie den Roboter ein Rechteck der Länge 200 px und Höhe 100 px zeichnen.
+Am Ende soll der Roboter in die ursprüngliche Richtung hin ausgerichtet sein,
+also nach Osten bzw. rechts.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -732,17 +731,18 @@ Code-Zelle mit der Erzeugung und Initialisierung aus.</p>
 <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Anmerkung: natürlich hätten wir den Roboter auch viermal nach rechts drehen lassen können.</p>
+<p>Anmerkung: natürlich hätten wir den Roboter auch viermal nach rechts drehen
+lassen können.</p>
 </div>
 </section>
 <section id="robo-kann-noch-mehr">
-<h2>Robo kann noch mehr…<a class="headerlink" href="#robo-kann-noch-mehr" title="Link to this heading">#</a></h2>
+<h2>Robo kann noch mehr<a class="headerlink" href="#robo-kann-noch-mehr" title="Link to this heading">#</a></h2>
 <p>Die folgenden Befehle an den Roboter dienen zur Steuerung der Bewegung:</p>
 <ul class="simple">
 <li><p>forward(schritte): Der Roboter bewegt sich vorwärts, die Streckenlänge wird in
-Schritten <code class="docutils literal notranslate"><span class="pre">schritte</span></code> angegeben.</p></li>
+Schritten/Pixel <code class="docutils literal notranslate"><span class="pre">schritte</span></code> angegeben.</p></li>
 <li><p>backward(schritte): Der Roboter bewegt sich rückwärts, die Streckenlänge wird
-in Schritten <code class="docutils literal notranslate"><span class="pre">schritte</span></code> angegeben.</p></li>
+in Schritten/Pixel <code class="docutils literal notranslate"><span class="pre">schritte</span></code> angegeben.</p></li>
 <li><p>right(winkel): Der Roboter dreht sich nach rechts, der Winkel <code class="docutils literal notranslate"><span class="pre">winkel</span></code> wird in
 Grad angegeben.</p></li>
 <li><p>left(winkel): Der Roboter dreht sich nach links, der Winkel <code class="docutils literal notranslate"><span class="pre">winkel</span></code> wird in
@@ -768,7 +768,8 @@ keine Zeichnung.</p></li>
 <p>Zum Abschluss noch eine Mini-Übung.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie den Roboter ein gleichseitiges Dreieck zeichnen. Die erste Seite soll rot sein, die zweite grün und die dritte blau.</p>
+<p>Lassen Sie den Roboter ein gleichseitiges Dreieck zeichnen. Die erste Seite soll
+rot sein, die zweite grün und die dritte blau.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -796,6 +797,12 @@ keine Zeichnung.</p></li>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir uns mit Turtle beschäftigt. In den folgenden
+Kapiteln werden wir Turtle nutzen, um verschiedene Programmierkonstrukte
+kennenzulernen.</p>
 </section>
 </section>
 
@@ -873,7 +880,8 @@ keine Zeichnung.</p></li>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-turtlefeld-initalisieren">Ein Turtlefeld initalisieren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-roboter-bewegt-sich">Der Roboter bewegt sich</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robo-kann-noch-mehr">Robo kann noch mehr…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robo-kann-noch-mehr">Robo kann noch mehr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

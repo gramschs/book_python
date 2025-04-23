@@ -256,9 +256,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
 </ul>
@@ -492,7 +492,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-erzeugen-mit">Listen erzeugen mit []</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elemente-aus-einer-liste-herausholen-zugriff">Elemente aus einer Liste herausholen: Zugriff</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-liste-verkettete-liste">Liste + Liste = verkettete Liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-lang-ist-eine-liste">Wie lang ist eine Liste?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elemente-loschen-mit-del-und-remove">Elemente löschen mit del und remove</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -509,13 +511,13 @@
 <p>Bisher haben wir drei verschiedene Datentypen kennengelernt:</p>
 <ul class="simple">
 <li><p>Integer (ganze Zahlen),</p></li>
-<li><p>Floats (Fließkommazahlen) und</p></li>
-<li><p>Strings (Zeichenketten).</p></li>
+<li><p>Float (Fließkommazahlen) und</p></li>
+<li><p>String (Zeichenketten).</p></li>
 </ul>
-<p>Damit können wir einzelne Objekte der realen Welt ganz gut abbilden. Mit einem
-String können wir den Namen einer Person erfassen, mit einem Integer das Alter
-der Person und mit einem Float die Körpergröße der Person gemessen in Meter. Was
-uns aber bisher fehlt ist, eine Sammlung von Namen oder eine Sammlung von
+<p>Damit können wir einzelne Objekte der realen Welt gut abbilden. Mit einem String
+können wir den Namen einer Person erfassen, mit einem Integer das Alter der
+Person und mit einem Float die Körpergröße der Person gemessen in Meter. Was uns
+aber bisher fehlt ist, eine Sammlung von Namen oder eine Sammlung von
 Körpergrößen verwalten zu können. Daher werden wir uns in diesem Jupyter
 Notebook mit Listen beschäftigen.</p>
 <section id="lernziele">
@@ -558,9 +560,8 @@ RGB-Werte verschiedener Farbtöne zu ermitteln.</p>
 wollen, z.B. [“Alice”, “Bob”, “Charlie”]. Damit verlassen wir die mathematische
 Welt der Zahlen und damit des Vektors. Aber auch für diese Anwendungsszenarien
 wäre es schön, Daten gemeinsam zu sammeln und zu verwalten.</p>
-<p>Der Fachbegriff für
-Datentypen, die daür gedacht sind, Daten als Sammlung zu verwalten, ist
-<strong>Container</strong>. In Python gibt es verschiedene Container:</p>
+<p>Der Fachbegriff für Datentypen, die dafür gedacht sind, Daten als Sammlung zu
+verwalten, ist <strong>Container</strong>. In Python gibt es verschiedene Container:</p>
 <ul class="simple">
 <li><p>Listen: list</p></li>
 <li><p>Tupel: tuple</p></li>
@@ -610,8 +611,13 @@ wird.</p>
 <p>Vor- und Nachname werden durch Strings repräsentiert, die Körpergröße als Float.</p>
 </div>
 <p>Im folgenden Video können Sie sich die Erzeugung von Listen nochmal ansehen.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF8bZoauBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Python Tutorial - Listen” von Programmieren starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF8bZoauBs"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
 <section id="elemente-aus-einer-liste-herausholen-zugriff">
 <h2>Elemente aus einer Liste herausholen: Zugriff<a class="headerlink" href="#elemente-aus-einer-liste-herausholen-zugriff" title="Link to this heading">#</a></h2>
 <p>Jede Liste hat einen Index. Man kann sich eine Liste wie eine Straße mit einer
@@ -687,8 +693,12 @@ neuen Variable zu speichern.</p>
 </div>
 </div>
 <p>Der Zugriff auf Listen wird auch in dem folgenden Video erklärt.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Python Tutorial - Zugriff auf Listen” von Programmieren starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_XzWPXvya2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section>
+</div>
+</details></section>
 <section id="liste-liste-verkettete-liste">
 <h2>Liste + Liste = verkettete Liste<a class="headerlink" href="#liste-liste-verkettete-liste" title="Link to this heading">#</a></h2>
 <p>Auch wenn es im ersten Moment verrückt erscheint, Python kann Listen addieren.
@@ -744,6 +754,49 @@ Jahr anzeigen.</p>
 </div>
 <p>Der März hat den Index 0, der April den Index 1 usw… Der letzte Monat ist der
 Februar, der den Index 11 hat.</p>
+</div>
+</section>
+<section id="wie-lang-ist-eine-liste">
+<h2>Wie lang ist eine Liste?<a class="headerlink" href="#wie-lang-ist-eine-liste" title="Link to this heading">#</a></h2>
+<p>Manchmal möchte man wissen, wie viele Elemente in einer Liste enthalten sind.
+Dafür gibt es in Python die eingebaute Funktion <code class="docutils literal notranslate"><span class="pre">len()</span></code> – kurz für length, also
+Länge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">farben</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;grün&#39;</span><span class="p">,</span> <span class="s1">&#39;blau&#39;</span><span class="p">]</span>
+<span class="n">anzahl_farben</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">farben</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">anzahl_farben</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel enthält die Liste <code class="docutils literal notranslate"><span class="pre">farben</span></code> drei Elemente, daher gibt
+<code class="docutils literal notranslate"><span class="pre">len(farben)</span></code> den Wert 3 zurück.</p>
+<p>Diese Funktion ist besonders nützlich, wenn man mit Listen arbeitet, deren Länge
+sich verändert, zum Beispiel, wenn Einträge hinzugefügt oder gelöscht werden.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erzeugen Sie eine Liste mit Ihren drei Lieblingsgerichten. Verwenden Sie
+<code class="docutils literal notranslate"><span class="pre">len()</span></code>, um die Länge der Liste zu bestimmen, und geben Sie sie aus.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gerichte</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pizza&#39;</span><span class="p">,</span> <span class="s1">&#39;Lasagne&#39;</span><span class="p">,</span> <span class="s1">&#39;Sushi&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gerichte</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="elemente-loschen-mit-del-und-remove">
@@ -829,6 +882,15 @@ eingehen. Im Moment begnügen wir uns mit der Tatsache, dass es Funktionen wie</
 <p>gibt und Methoden, die mit einem Punkt an das Objekt angehängt werden wie z.B.
 <code class="docutils literal notranslate"><span class="pre">.remove()</span></code>.</p>
 </section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir gelernt, wie man mit Listen mehrere Werte in Python
+strukturiert speichern kann. Wir wissen nun, wie Listen erstellt, gelesen,
+verändert, verkettet und verkürzt werden. Außerdem kennen wir mit <code class="docutils literal notranslate"><span class="pre">len()</span></code> eine
+einfache Möglichkeit, die Länge einer Liste zu bestimmen. Diese Konzepte bilden
+die Grundlage für viele weiterführende Themen wie Schleifen und Interaktionen,
+die in späteren Kapiteln behandelt werden.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -901,7 +963,9 @@ eingehen. Im Moment begnügen wir uns mit der Tatsache, dass es Funktionen wie</
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-erzeugen-mit">Listen erzeugen mit []</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elemente-aus-einer-liste-herausholen-zugriff">Elemente aus einer Liste herausholen: Zugriff</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-liste-verkettete-liste">Liste + Liste = verkettete Liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-lang-ist-eine-liste">Wie lang ist eine Liste?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elemente-loschen-mit-del-und-remove">Elemente löschen mit del und remove</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

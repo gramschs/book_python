@@ -13,37 +13,38 @@ kernelspec:
 
 # 3.3 Das Modul Turtle
 
-In der Informatik nennt man Grafiken, die dadurch entstehen, dass ein Roboter
-Linien auf eine Leinwand zeichnet, Turtle-Grafiken. Der Roboter wird dabei mit
-einfachen Kommandos gesteuert. Beschrieben wird er durch seine Position (x- und
-y-Koordinaten in einem kartesischen Koordinatensystem) und seine Ausrichtung.
-Der "Stift" des Roboters kann von seinen Eigenschaften her ebenfalls variieren.
-So können beispielsweise verschiedenfarbige Stifte verwendet werden oder die
-Linienstärke kann verändert werden.
+In der Informatik bezeichnet man Grafiken, die dadurch entstehen, dass ein
+Roboter Linien auf eine Leinwand zeichnet, als *Turtle-Grafiken*. Der Roboter
+wird durch einfache Kommandos gesteuert. Er besitzt eine bestimmte Position (x-
+und y-Koordinaten in einem kartesischen Koordinatensystem) und eine Ausrichtung.
+Auch der "Stift" des Roboters kann angepasst werden – zum Beispiel in Farbe oder
+Linienstärke.
 
-Der Kern von Python enthält bereits ein Modul namens `turtle`, um eine solche
-Turtle-Grafik zu erzeugen. Da wir in dieser Vorlesung mit Jupyter Notebooks
-arbeiten, verwenden wir jedoch das Modul `colabTurtlePlus`, das das Turtle-Modul mit
-Funktionalitäten für Jupyter Notebooks erweitert.
+Python bringt bereits ein Modul namens `turtle` mit, um solche Grafiken zu
+erstellen. Da wir jedoch in dieser Vorlesung mit **Jupyter Notebooks** arbeiten,
+verwenden wir das Modul `ColabTurtlePlus`. Es erweitert die Standardfunktionen
+und ist speziell für den Einsatz in Notebooks geeignet.
 
 ```{admonition} Hinweis: Installation notwendig
 :class: warning
 Das Modul colabTurtlePlus ist kein Standardmodul und muss daher nachinstalliert
 werden. Bitte beachten Sie die Hinweise zur Installation "Module
-nachinstallieren" und die dazugehörige Mini-Übung unten.
+nachinstallieren" und die dazugehörige Mini-Übung unten. Falls Sie mit JupyterLite
+arbeiten, verwenden Sie bitte
+
+%pip install -q ColabTurtlePlus
 ```
 
-## Lernziele 
+## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
 * Sie können ein fehlendes Modul mit **conda** oder **pip** nachinstallieren.
 * Sie wissen, was eine **Turtle-Grafik** ist.
 * Sie können das Modul **colabTurtlePlus** importieren.
-* Sie können ein Roboterfeld initalisieren und den Roboter mit einfachen Kommandos über das Roboterfeld steuern.
+* Sie können ein Roboterfeld initalisieren und den Roboter mit einfachen
+  Kommandos über das Roboterfeld steuern.
 ```
-
-+++
 
 ## Module nachinstallieren
 
@@ -58,32 +59,25 @@ oder pip in einem Jupyter Notebook nachinstallieren kann.
 
 ### Installation mit conda
 
-<ol>
-<li>Öffnen Sie das Jupyter Notebook.</li>
-<li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:
-<p><code>!conda install &lt;paketname&gt;</code></p>
-<p>Ersetzen Sie dabei &lt;paketname&gt; durch den Namen des zu installierenden Pakets.</p>
-<li>Führen Sie die Zelle aus, indem Sie auf den Run-Button klicken.</li>
-<li>Warten Sie, bis das Paket heruntergeladen und installiert wurde.</li>
-<li>Überprüfen Sie, ob das Paket korrekt installiert wurde, indem Sie eine weitere
-   Code-Zelle erstellen und das Paket importieren:
-<p><code>import &lt;paketname&gt;</code></p>
-<p>Wenn kein Fehler auftritt, wurde das Paket erfolgreich installiert.</p>
-</ol>
+```python
+!conda install <paketname>
+```
+
+Ersetzen Sie `<paketname>` durch den Namen des gewünschten Pakets.
+Nutzen Sie diese Methode bevorzugt, wenn Sie mit der Anaconda-Distribution arbeiten.
 
 ### Installation mit pip
 
-<ol>
-<li>Öffnen Sie das Jupyter Notebook.</li>
-<li>Erstellen Sie eine neue Code-Zelle und geben Sie folgenden Befehl ein:</li>
-<p><code>!pip install &lt;paketname&gt;</code></p>
-<p>Ersetzen Sie dabei &lt;paketname&gt; durch den Namen des zu installierenden Pakets.</p>
-<li>Führen Sie die Zelle aus, indem Sie auf den Run-Button klicken.</li>
-<li>Warten Sie, bis das Paket heruntergeladen und installiert wurde.</li>
-<li>Überprüfen Sie, ob das Paket korrekt installiert wurde, indem Sie eine weitere Code-Zelle erstellen und das Paket importieren:</p>
-<p><code>import &lt;paketname&gt;</code></p>
-<p>Wenn kein Fehler auftritt, wurde das Paket erfolgreich installiert.</p>
-</ol>
+```python
+%pip install <paketname>
+```
+
+Verwenden Sie `pip`, wenn das Paket nicht in der Anaconda-Distribution enthalten
+ist. Diese Variante funktioniert auch zuverlässig in Google Colab oder
+JupyterLite.
+
+Wichtig: Vermischen Sie conda und pip nicht für dasselbe Paket. Das kann zu
+Fehlern führen.
 
 ### Wann conda und wann pip?
 
@@ -91,7 +85,7 @@ Es ist wichtig zu beachten, dass conda und pip unterschiedliche
 Paket-Repositories verwenden. Wenn ein Paket mit conda installiert wurde, sollte
 es nicht mit pip aktualisiert oder deinstalliert werden, da dies zu
 Inkompatibilitäten führen kann. Umgekehrt sollte ein mit pip installiertes Paket
-nicht mit conda aktualisiert oder deinstalliert werden. 
+nicht mit conda aktualisiert oder deinstalliert werden.
 
 In dieser Vorlesung arbeiten wir mit der Anaconda-Distribution. Sie sollten also
 immer zuerst versuchen, das fehlende Modul mit conda nachzuinstallieren. Nur
@@ -103,25 +97,27 @@ Die beiden folgenden Links verlinken auf die Liste der verfügbaren Pakete:
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Installieren Sie jetzt das Modul `ColabTurtlePlus`, das leider nicht in der Anaconda-Distribution enthalten ist. Mehr Details zu diesem Modul finden Sie unter [https://pypi.org/project/ColabTurtlePlus/](https://pypi.org/project/ColabTurtlePlus/).
+Installieren Sie jetzt das Modul `ColabTurtlePlus`, das leider nicht in der
+Anaconda-Distribution enthalten ist. Mehr Details zu diesem Modul finden Sie
+unter
+[https://pypi.org/project/ColabTurtlePlus/](https://pypi.org/project/ColabTurtlePlus/).
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```markdown
-!pip install ColabTurtlePlus
-import ColabTurtlePlus
+%pip install -q ColabTurtlePlus
 ```
 ````
 
-
-## Ein Turtlefeld initalisieren 
+## Ein Turtlefeld initalisieren
 
 Als erstes werden alle Funktionalitäten des Turtle-Moduls geladen. Die typische
 Abkürzung für dieses Modul ist `turtle`.
 
 ```{code-cell} ipython3
 import ColabTurtlePlus.Turtle as turtle
-``` 
+```
 
 Es erscheint eine Meldung, nämlich der Hinweis: "Put clearscreen() as the first
 line in a cell (after the import command) to re-run turtle commands in the
@@ -133,17 +129,17 @@ Mit `dir(turtle)` können wir erkunden, was an Funktionalitäten vorhanden ist.
 
 ```{code-cell} ipython3
 dir(turtle)
-``` 
+```
 
 Dann folgen wir der Anweisung, zuerst das Kommando `clearscreen()` zu benutzen.
 
 ```{code-cell} ipython3
 turtle.clearscreen()
-``` 
+```
 
 Es erscheint eine leere Leinwand, die 800 Bildpunkte breit ist und 600
 Bildpunkte hoch ist. Bildpunkte werden normalerweise als **Pixel** bezeichnet,
-was wiederum mit px abgekürzt wird. 
+was wiederum mit px abgekürzt wird.
 
 Als nächstes setzen wir einen Roboter mitten in das Feld. Der Roboter soll den
 Namen Robo tragen. Da Variablen traditionell klein geschrieben werden, wird mit
@@ -151,18 +147,20 @@ der folgenden Code-Zeile ein Roboter-Objekt namens `robo` initalisiert.
 
 ```{code-cell} ipython3
 robo = turtle.Turtle()
-``` 
+```
 
-Der virtuelle Roboter wird durch ein Dreieck gekennzeichent. Die Spitze des
-Dreiecks zeigt in die Richtung, in die der Roboter aktuell schaut.
+Der virtuelle Roboter wird durch ein Dreieck gekennzeichnet. Die Spitze des
+Dreiecks zeigt in die Richtung, in die der Roboter aktuell schaut, also in die
+Bewegungsrichtung.
 
 ## Der Roboter bewegt sich
 
 Der Roboter wird mit einfachen Befehlen wie vorwärts, links, rechts, usw.
-gesteuert. Die Befehle sind dabei englisch. Da sie an den Roboter gerichtet
-sind, wird zuerst der Name des Roboters verwendet, dann ein Punkt gesetzt und
-zuletzt der Befehlsname geschrieben. In die runden Klammern kommen die
-Argumente, z.B. um wie viele Schritte der Roboter sich vorwärts bewegen soll.
+gesteuert. Die Befehle sind dabei der englischen Sprache entnommen. Da sie an
+den Roboter gerichtet sind, wird zuerst der Name des Roboters verwendet, dann
+ein Punkt gesetzt und zuletzt der Befehlsname geschrieben. In die runden
+Klammern kommen die Argumente, z.B. um wie viele Schritte der Roboter sich
+vorwärts bewegen soll.
 
 Mit dem Befehl
 
@@ -170,15 +168,16 @@ Mit dem Befehl
 robo.forward(schritte)
 ```
 
-wird der Roboter vorwärts bewegt und legt insgesamt `schritte` (gemessen in Pixeln) zurück.
+wird der Roboter vorwärts bewegt und legt insgesamt `schritte` (gemessen in
+Pixeln) zurück.
 
-Mit den Befehlen 
+Mit den Befehlen
 
 ```python3
 robo.left(winkel)
 ```
 
-und 
+und
 
 ```python3
 robo.right(winkel)
@@ -186,7 +185,7 @@ robo.right(winkel)
 
 wird der Roboter nach links (gegen den Uhrzeigersinn) oder rechts (im
 Uhrzeigersinn) gedreht. Der Drehwinkel wird durch die Variable `winkel`
-im Gradmaß bestimmt.
+in Grad angegeben.
 
 Um jetzt den kompletten Code zusammen zu haben, wiederholen wir die bisherigen
 Code-Zeilen in der folgenden Code-Zelle und experimentieren dann in der
@@ -209,7 +208,9 @@ robo.forward(50)
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Lassen Sie den Roboter ein Rechteck der Länge 200 px und Höhe 100 px zeichnen. Am Ende soll der Roboter in die ursprüngliche Richtung hin ausgerichtet sein, also nach Osten bzw. rechts.
+Lassen Sie den Roboter ein Rechteck der Länge 200 px und Höhe 100 px zeichnen.
+Am Ende soll der Roboter in die ursprüngliche Richtung hin ausgerichtet sein,
+also nach Osten bzw. rechts.
 ```
 
 ```{code-cell}
@@ -230,19 +231,20 @@ robo.left(90)
 robo.forward(100)
 robo.left(90)
 ```
-Anmerkung: natürlich hätten wir den Roboter auch viermal nach rechts drehen lassen können.
+Anmerkung: natürlich hätten wir den Roboter auch viermal nach rechts drehen
+lassen können.
 ````
 
-## Robo kann noch mehr... 
+## Robo kann noch mehr
 
 Die folgenden Befehle an den Roboter dienen zur Steuerung der Bewegung:
 
 * forward(schritte): Der Roboter bewegt sich vorwärts, die Streckenlänge wird in
-  Schritten `schritte` angegeben.
+  Schritten/Pixel `schritte` angegeben.
 * backward(schritte): Der Roboter bewegt sich rückwärts, die Streckenlänge wird
-  in Schritten `schritte` angegeben.
+  in Schritten/Pixel `schritte` angegeben.
 * right(winkel): Der Roboter dreht sich nach rechts, der Winkel `winkel` wird in
-  Grad angegeben. 
+  Grad angegeben.
 * left(winkel): Der Roboter dreht sich nach links, der Winkel `winkel` wird in
   Grad angegeben.  
 * goto(x,y): Der Roboter läuft direkt zu der angegeben Position (x,y).
@@ -250,7 +252,7 @@ Die folgenden Befehle an den Roboter dienen zur Steuerung der Bewegung:
 Der Stift wird mit folgenden Befehlen eingestellt:
 
 * penup(): Der Stift wird hochgehoben. Bewegt sich der Roboter, hinterlässt er
-  keine Zeichnung. 
+  keine Zeichnung.
 * pendown(): Der Stift wird abgesetzt, ab jetzt zeichnet der Roboter wieder.
 * pensize(breite): Die Breite der Striche wird eingestellt, z.B. ist
   `robo.pensize(10)` ein breiter Strich.  
@@ -268,7 +270,8 @@ Zum Abschluss noch eine Mini-Übung.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Lassen Sie den Roboter ein gleichseitiges Dreieck zeichnen. Die erste Seite soll rot sein, die zweite grün und die dritte blau.
+Lassen Sie den Roboter ein gleichseitiges Dreieck zeichnen. Die erste Seite soll
+rot sein, die zweite grün und die dritte blau.
 ```
 
 ```{code-cell}
@@ -295,3 +298,8 @@ robo.forward(50)
 ```
 ````
 
+## Zusammenfassung und Ausblick
+
+In diesem Kapitel haben wir uns mit Turtle beschäftigt. In den folgenden
+Kapiteln werden wir Turtle nutzen, um verschiedene Programmierkonstrukte
+kennenzulernen.

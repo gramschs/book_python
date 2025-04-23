@@ -258,9 +258,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
 </ul>
@@ -493,7 +493,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-modulen">Importieren von Modulen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-einzelnen-funktionen-oder-klassen">Importieren von einzelnen Funktionen oder Klassen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-modulen-mit-alias">Importieren von Modulen mit Alias</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -520,8 +520,10 @@ NumPy-Moduls kennenlernen.</p>
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
 <li><p>Sie können erklären, was ein <strong>Modul</strong> in Python ist.</p></li>
-<li><p>Sie können ein Modul komplett mit <strong>import modul</strong> importieren und auf die darin enthaltenen Funktionalitäten mit <strong>modul.funktionalitaet</strong> zugreifen.</p></li>
-<li><p>Sie können mit <strong>from modul import funktionalitaet</strong> einzelne Funktionalitäten eines Moduls importieren.</p></li>
+<li><p>Sie können ein Modul komplett mit <strong>import modul</strong> importieren und auf die
+darin enthaltenen Funktionalitäten mit <strong>modul.funktionalitaet</strong> zugreifen.</p></li>
+<li><p>Sie können mit <strong>from modul import funktionalitaet</strong> einzelne Funktionalitäten
+eines Moduls importieren.</p></li>
 <li><p>Sie kennen das Modul <strong>NumPy</strong>.</p></li>
 </ul>
 </div>
@@ -1234,9 +1236,9 @@ berechnen und ausgeben.</p>
 <section id="importieren-von-einzelnen-funktionen-oder-klassen">
 <h2>Importieren von einzelnen Funktionen oder Klassen<a class="headerlink" href="#importieren-von-einzelnen-funktionen-oder-klassen" title="Link to this heading">#</a></h2>
 <p>Wenn nur die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> gebraucht wird, ist der komplette Import des
-NumPy-Modules zuviel des Guten. Auch kann es lästig sein, immer <code class="docutils literal notranslate"><span class="pre">numpy.</span></code> vor pi
-zu setzen. Eine zweite Möglichkeit, Funktionalitäten eines Moduls zu
-importieren, ist die Alternative</p>
+NumPy-Modules eine Verschwendung von Ressourcen. Auch kann es lästig sein, immer
+<code class="docutils literal notranslate"><span class="pre">numpy.</span></code> vor pi zu setzen. Eine zweite Möglichkeit, Funktionalitäten eines
+Moduls zu importieren, ist die Alternative</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modulname</span> <span class="kn">import</span> <span class="n">etwas1</span><span class="p">,</span> <span class="n">etwas2</span>
 </pre></div>
 </div>
@@ -1315,7 +1317,9 @@ Alias, um auf die Funktionen und Klassen des Moduls zuzugreifen:</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Importieren Sie das <code class="docutils literal notranslate"><span class="pre">math</span></code>-Modul mit dem Alias <code class="docutils literal notranslate"><span class="pre">m</span></code> und lassen Sie die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> ausgeben. Bilden Sie dann die Differenz aus der Kreiszahl des math-Moduls und der Kreiszahl des NumPy-Moduls.</p>
+<p>Importieren Sie das <code class="docutils literal notranslate"><span class="pre">math</span></code>-Modul mit dem Alias <code class="docutils literal notranslate"><span class="pre">m</span></code> und lassen Sie die Kreiszahl
+<span class="math notranslate nohighlight">\(\pi\)</span> ausgeben. Bilden Sie dann die Differenz aus der Kreiszahl des math-Moduls
+und der Kreiszahl des NumPy-Moduls.</p>
 <p>Gibt es einen Unterschied zwischen den beiden Zahlen?</p>
 </div>
 <div class="cell docutils container">
@@ -1340,14 +1344,14 @@ Alias, um auf die Funktionen und Klassen des Moduls zuzugreifen:</p>
 Verfügung, ist aber weniger umfangreich. Daher verwenden wir in dieser Vorlesung
 NumPy.</p>
 </section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
 <p>In diesem Kapitel haben wir den Modul-Mechanismus in Python untersucht und das
 NumPy-Modul als Beispiel verwendet. Wir haben gelernt, wie man Module
 importiert, spezifische Funktionen und Klassen aus einem Modul importiert und
 Module mit einem Alias importiert. Durch das Verständnis dieser Konzepte können
 Sie Ihren Python-Code besser organisieren und die Wiederverwendbarkeit von Code
-verbessern.</p>
+verbessern. Im nächsten Kapitel werden wir ein weiteres Modul kennenlernen.</p>
 </section>
 </section>
 
@@ -1420,7 +1424,7 @@ verbessern.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-modulen">Importieren von Modulen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-einzelnen-funktionen-oder-klassen">Importieren von einzelnen Funktionen oder Klassen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-modulen-mit-alias">Importieren von Modulen mit Alias</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
