@@ -14,14 +14,15 @@ kernelspec:
 # 3.1 Listen
 
 Bisher haben wir drei verschiedene Datentypen kennengelernt:
-* Integer (ganze Zahlen),
-* Floats (Fließkommazahlen) und
-* Strings (Zeichenketten).
 
-Damit können wir einzelne Objekte der realen Welt ganz gut abbilden. Mit einem
-String können wir den Namen einer Person erfassen, mit einem Integer das Alter
-der Person und mit einem Float die Körpergröße der Person gemessen in Meter. Was
-uns aber bisher fehlt ist, eine Sammlung von Namen oder eine Sammlung von
+* Integer (ganze Zahlen),
+* Float (Fließkommazahlen) und
+* String (Zeichenketten).
+
+Damit können wir einzelne Objekte der realen Welt gut abbilden. Mit einem String
+können wir den Namen einer Person erfassen, mit einem Integer das Alter der
+Person und mit einem Float die Körpergröße der Person gemessen in Meter. Was uns
+aber bisher fehlt ist, eine Sammlung von Namen oder eine Sammlung von
 Körpergrößen verwalten zu können. Daher werden wir uns in diesem Jupyter
 Notebook mit Listen beschäftigen.
 
@@ -61,11 +62,10 @@ RGB-Werte verschiedener Farbtöne zu ermitteln.
 Wir könnten aber auch eine Namensliste mit den Mitgliedern einer WG führen
 wollen, z.B. [“Alice”, “Bob”, “Charlie”]. Damit verlassen wir die mathematische
 Welt der Zahlen und damit des Vektors. Aber auch für diese Anwendungsszenarien
-wäre es schön, Daten gemeinsam zu sammeln und zu verwalten. 
+wäre es schön, Daten gemeinsam zu sammeln und zu verwalten.
 
-Der Fachbegriff für
-Datentypen, die daür gedacht sind, Daten als Sammlung zu verwalten, ist
-**Container**. In Python gibt es verschiedene Container:
+Der Fachbegriff für Datentypen, die dafür gedacht sind, Daten als Sammlung zu
+verwalten, ist **Container**. In Python gibt es verschiedene Container:
 
 * Listen: list
 * Tupel: tuple
@@ -78,7 +78,7 @@ Wir behandeln in diesem Abschnitt die Listen.
 
 ## Listen erzeugen mit []
 
-Eine Liste wird in Python durch eckige Klammern [  ] erzeugt. 
+Eine Liste wird in Python durch eckige Klammern [  ] erzeugt.
 
 Betrachten wir ein Beispiel. Hier wird eine Liste mit den Elementen 1, 2, 3, 4,
 5 erzeugt und dann anschließend in der Variablen `liste_beispiel` gespeichert.
@@ -114,7 +114,10 @@ Vor- und Nachname werden durch Strings repräsentiert, die Körpergröße als Fl
 
 Im folgenden Video können Sie sich die Erzeugung von Listen nochmal ansehen.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF8bZoauBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{dropdown} Video "Python Tutorial - Listen" von Programmieren starten
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ihF8bZoauBs"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
 ## Elemente aus einer Liste herausholen: Zugriff
 
@@ -185,7 +188,9 @@ print(meine_liste)
 
 Der Zugriff auf Listen wird auch in dem folgenden Video erklärt.
 
+```{dropdown} Video "Python Tutorial - Zugriff auf Listen" von Programmieren starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_XzWPXvya2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
 ## Liste + Liste = verkettete Liste
 
@@ -241,6 +246,42 @@ Februar, der den Index 11 hat.
 ````
 
 +++
+
+## Wie lang ist eine Liste?
+
+Manchmal möchte man wissen, wie viele Elemente in einer Liste enthalten sind.
+Dafür gibt es in Python die eingebaute Funktion `len()` – kurz für length, also
+Länge.
+
+```{code-cell} ipython3
+farben = ['rot', 'grün', 'blau']
+anzahl_farben = len(farben)
+print(anzahl_farben)
+```
+
+In diesem Beispiel enthält die Liste `farben` drei Elemente, daher gibt
+`len(farben)` den Wert 3 zurück.
+
+Diese Funktion ist besonders nützlich, wenn man mit Listen arbeitet, deren Länge
+sich verändert, zum Beispiel, wenn Einträge hinzugefügt oder gelöscht werden.
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Erzeugen Sie eine Liste mit Ihren drei Lieblingsgerichten. Verwenden Sie
+`len()`, um die Länge der Liste zu bestimmen, und geben Sie sie aus.
+```
+
+```{code-cell} ipython
+# Hier Ihr Code.
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+gerichte = ['Pizza', 'Lasagne', 'Sushi']
+print(len(gerichte))
+```
+````
 
 ## Elemente löschen mit del und remove
 
@@ -307,3 +348,12 @@ eingehen. Im Moment begnügen wir uns mit der Tatsache, dass es Funktionen wie
 
 gibt und Methoden, die mit einem Punkt an das Objekt angehängt werden wie z.B.
 `.remove()`.
+
+## Zusammenfassung und Ausblick
+
+In diesem Kapitel haben wir gelernt, wie man mit Listen mehrere Werte in Python
+strukturiert speichern kann. Wir wissen nun, wie Listen erstellt, gelesen,
+verändert, verkettet und verkürzt werden. Außerdem kennen wir mit `len()` eine
+einfache Möglichkeit, die Länge einer Liste zu bestimmen. Diese Konzepte bilden
+die Grundlage für viele weiterführende Themen wie Schleifen und Interaktionen,
+die in späteren Kapiteln behandelt werden.
