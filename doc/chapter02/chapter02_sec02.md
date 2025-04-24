@@ -99,8 +99,9 @@ im Deutschen. Aber ansonsten funktioniert alles wie erwartet:
 
 Das folgende Video fasst Zahlen in Python zusammen.
 
+```{dropdown} Video "Zahlen in Python" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VtiDkRDPA_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+```
 
 ### Strings
 
@@ -123,16 +124,18 @@ verwendet, sondern sie als Texte bezeichnet.
 Auf Strings und ihre Anwendungen kommen wir später noch zurück. Wenn Sie bereits
 jetzt mehr erfahren wollen, können Sie sich folgendes Video ansehen.
 
+```{dropdown} Video "Strings in Python" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sTEf4_mrLvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
-## Variablen 
+## Variablen
 
 **Variablen** sind beschriftete Schubladen. Oder anders formuliert sind
 Variablen Objekte, denen man einen Namen gibt. Technisch gesehen sind diese
 Schubladen ein kleiner Bereich im Arbeitsspeicher des Computers. Was in diesen
 Schubladen aufbewahrt wird, kann sehr unterschiedlich sein. Beispielsweise die
 Telefonnummer des ADAC-Pannendienstes, die 10. Nachkommastelle von $\pi$ oder die
-aktuelle Position des Mauszeigers können in den Schubladen enthalten sein. 
+aktuelle Position des Mauszeigers können in den Schubladen enthalten sein.
 
 Wir verwenden Variablen, um bestimmte Werte oder ein bestimmtes Objekt zu
 speichern. Eine Variable wird durch **Zuweisung** erzeugt. Damit meinen wir,
@@ -156,16 +159,18 @@ x + 17.8
 ```
 
 Variablen müssen initialisiert (erstmalig mit einem Wert versehen) werden, bevor
-sie verwendet werden können, sonst tritt ein Fehler auf. 
+sie verwendet werden können, sonst tritt ein Fehler auf.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `run` vom Python-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -177,7 +182,9 @@ Der Interpreter zeigt in rot eine Fehlermeldung an: "NameError: name 'n' is not 
 Gerne können Sie sich auch folgendes Video auf YouTube ansehen, das eine
 Einführung in das Thema Variablen in Python gibt.
 
+```{dropdown} Video "Variablen in Python" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jfOLXKPGXJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
 ## Richtlinien für Variablennamen
 
@@ -218,7 +225,9 @@ gemeint ist.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
+Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine
+Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie
+viele Jahre es noch bis zum Renteneintritt dauert.
 ```
 
 ```{code-cell} ipython3
@@ -260,4 +269,6 @@ print(datentyp_string)
 Das folgende Video fasst die drei Datentypen Integer, Float uns String
 übersichtsartig zusammen.
 
+```{dropdown} Video "Datentypen in Python" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1WqFJ5wsA4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
