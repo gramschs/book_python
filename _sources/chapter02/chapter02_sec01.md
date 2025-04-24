@@ -110,7 +110,7 @@ Selbstverständlich beherrscht Python auch Klammerregeln. Probieren Sie es aus!
 Geben Sie in die Code-Zelle Ihren Code ein und lassen Sie die Code-Zelle
 ausführen. Die Lösungen zu den Mini-Übungen finden Sie im
 [Online-Skript](https://gramschs.github.io/book_python/intro.html) an der
-Stelle, an der sich die jeweilige Mini-Übung befindet. 
+Stelle, an der sich die jeweilige Mini-Übung befindet.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
@@ -136,7 +136,7 @@ der Rechnung angezeigt, sobald die Code-Zelle ausgeführt wurde. Dies ist eine
 Besonderheit der Jupyter Notebooks, würde aber in einem normalen Python-Programm
 nicht funktionieren. Auch möchte man vielleicht ein Zwischenergebnis anzeigen
 lassen. Die interaktive Ausgabe der Jupyter Notebooks zeigt jedoch immer nur den
-Inhalt der letzten Zeile an. 
+Inhalt der letzten Zeile an.
 
 Für die Anzeige von Rechenergebnissen oder Texten gibt es in Python die
 **print()**-Funktion. Die print()-Funktion in Python gibt den Wert oder die
@@ -152,13 +152,13 @@ In der ersten Zeile ist das Argument für die print()-Funktion die Zahl 2. Das
 Argument wird in runde Klammern hinter den Funktionsnamen `print` geschrieben.
 Ein Argument ist sozusagen der Input, der an die print()-Funktion übergeben
 wird, damit der Python-Interpreter weiß, welcher Wert auf dem Bildschirm
-angezeigt werden soll. 
+angezeigt werden soll.
 
 Das zweite Beispiel in der zweiten Zeile funktioniert genauso. Nur wird diesmal
 eine komplette Rechnung als Argument an die print()-Funktion übergeben. In dem
 Fall rechnet der Python-Interpreter erst den Wert der Rechnung, also `3+3=6` aus
 und übergibt dann die `6` an die print()-Funktion. Die print()-Funktion wiederum
-zeigt dann die `6` am Bildschirm an. 
+zeigt dann die `6` am Bildschirm an.
 
 Insgesamt zeigt daher der Python-Interpreter erst eine 2 und dann in der
 nächsten Zeile eine 6 an.
@@ -226,13 +226,13 @@ Die print()-Funktion kann noch einiges mehr, als wir in dieser Einführung
 gesehen haben. Wir werden in einem späteren Kapitel im Zusammenhang mit den
 sogenannten f-Strings nochmal darauf zurückkommen.
 
-## Weiteres Lernmaterial 
+## Weiteres Lernmaterial
 
 In dem folgenden Video wird zunächst die Installation von Python (Anaconda)
 gezeigt. Im Gegensatz zu unserer Vorlesung wird aber die Entwickungsumgebung
 PyCharm anstatt Jupyter Notebooks genutzt. Daher können Sie gerne den ersten
 Teil des Videos überspringen und ab ca. Minute 9 einsteigen.
 
+```{dropdown} Video "Dein erstes Python-Programm" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oxXAb8IikHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
+```

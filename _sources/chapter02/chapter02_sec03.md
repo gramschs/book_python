@@ -76,7 +76,7 @@ input('Bitte geben Sie Ihren Namen ein: ')
 
 Wir haben zwar jetzt auf Aufforderung einen Namen eingegeben, aber verarbeitet
 wurde diese Eingabe nicht. Es passierte einfach nichts. Um die Eingabe
-verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab. 
+verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab.
 
 ```python
 x = input('Bitte geben Sie Ihren Namen ein: ')
@@ -85,11 +85,12 @@ x = input('Bitte geben Sie Ihren Namen ein: ')
 Jetzt haben wir zwar den Namen in einer Variable gespeichert, aber so richtig
 passiert ist immer noch nichts. Jetzt wäre es noch schön, wenn wir dem Benutzer
 oder der Benutzerin unseres Skripts begrüßen können und einen entsprechenden Text
-anzeigen lassen können. Dazu verwenden wir erneut die `print()`-Funktion. 
+anzeigen lassen können. Dazu verwenden wir erneut die `print()`-Funktion.
 
 ```python
 print('Hallo')
 ```
+
 Jetzt können wir alles zusammensetzen.
 
 ```python
@@ -107,7 +108,9 @@ Kopieren Sie diesen Code in die nächste Code-Zelle und probieren Sie es aus!
 
 In dem folgenden Video sehen Sie weitere Erläuterungen zur input()-Funktion.
 
+```{dropdown} Video "Die input()-Funktion" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/I9h1c-121Uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
 ## Umwandlung von Datentypen
 
@@ -142,10 +145,11 @@ Probieren Sie gerne beide Varianten in der nächsten Code-Zelle aus.
 ```
 
 Wenn Sie mehr über das sogenannte Type-Casting erfahren wollen, finden Sie
-Details in diesem Video:
+Details in diesem Video.
 
+```{dropdown} Video "Type-Casting in Python" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u_ECGvn1Z2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+```
 
 ## Zuweisungsoperator
 
@@ -187,7 +191,9 @@ print(x)
 Der Zuweisungsoperator ist äußerst wichtig in der Python-Programmierung. Daher
 empfehle ich Ihnen folgende Video.
 
+```{dropdown} Video "Der Zuweisungsoperator" von Programmieren Starten
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XKFQ2_et5k8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
 ## Zusammenfassung und Ausblick
 
