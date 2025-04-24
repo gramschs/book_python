@@ -16,7 +16,7 @@ kernelspec:
 
 In diesem Kapitel werden wir uns mit der Erzeugung und Anwendung von
 Zufallszahlen in Python beschäftigen. Wir nutzen dazu das Modul `numpy.random`
-aus der Bibliothek NumPy. 
+aus der Bibliothek NumPy.
 
 ## Lernziele
 
@@ -102,9 +102,11 @@ gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.
 
 Könnte damit die Ziehung der Lottozahlen simuliert werden?
 ```
+
 ```{code-cell} ipython3
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -158,9 +160,11 @@ Jahre) gemessen. Der Mittelwert bei den Mädchen ist 166.3 cm (Standardabweichun
 
 Lassen Sie die Körpergrößen einer durchschnittlichen Schulklasse (= 13 Mädchen und 13 Jungen)erzeugen und ausgeben.
 ```
+
 ```{code-cell} ipython3
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
