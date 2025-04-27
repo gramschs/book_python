@@ -12,266 +12,115 @@ kernelspec:
   name: python3
 ---
 
-# 9.3 Visualisierung von DataFrames mit Fehlerbalken
+# 9.3 Ableitung, Integration und Differentialgleichung mit Simulink
+
+Bei den Modellen treten sehr häufig Differentialgleichungen auf. In diesem
+Kapitel betrachten wir die Modellierung einer linearen Differentialgleichung 1.
+Ordnung mit Simulink. Davor sehen wir uns noch zwei Beispiele zur Ableitung und
+Integration an.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus einem DataFrame extrahieren.
-* Sie können den Text der Achsenbeschriftung drehen.
-* Sie können mit **axhline()** zu einem Plot eine horizontale
-  Linie hinzufügen.
-* Sie können Fehlerbalken mit **errorbar()** visualisieren.
+* Sie können eine Funktion in Simulink ableiten.
+* Sie können eine Funktion in Simulink integrieren.
+* Sie können eine lineare Differentialgleichung 1. Ordnung mit Simulink-Blöcken
+  modellieren.
 ```
 
-## Visualisierung von DataFrames
+## Ableitung am Beispiel der Sinusfunktion
 
-Aber wie kombinieren wir jetzt die Funktionalitäten des Pandas-Moduls mit denen
-des Matplotlib-Moduls? Der grundlegende Datentyp für Matplotlib ist das
-NumPy-Array und auch in den Pandas-Datenobjekten stecken im Kern NumPy-Arrays.
-Daher funktionieren die Plotting-Funktionalitäten von Matplotlib direkt.
-Wünschenswert wäre allerdings, den Zeilen- oder den Spaltenindex für die
-Beschriftung zu nehmen. Beides ist in dem DataFrame-Objekt abgespeichert. Wir
-können mit
+In dem folgenden Simulink-Modell modellieren wir die 1. Ableitung der
+Sinus-Funktion. Dazu wählen wir einen `Sine`-Block als Eingangssignal,
+verarbeiten diesen durch den `Derivative`-Block (Derivative ist das englische
+Wort für Ableitung) und geben anschließend das Ergebnis über den `Scope`-Block
+aus. In Simulink sieht das Modell dann folgendermaßen aus:
 
-* ``.index`` auf den Zeilenindex und
-* ``.columns`` auf den Spaltenindex
+![Screenshot des Simulink-Modells zu Ableitungen](pics/part10_derivative_project.png)
 
-zugreifen. Übrigens, ``.values`` liefert die Werten in der Tabelle als
-NumPy-Array zurück. Aber das brauchen wir für die Visualisierung nicht, denn die
-Tabellendaten können direkt viualisiert werden. 
+Wenn Sie sich nun das Ergebnis der Ableitung durch Doppelklick auf den
+Scope-Block ansehen, haben Sie folgende Ansicht:
 
-Wir verwenden wieder einen realistischen Datensatz und importieren den uns schon
-bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21
-([→ Download](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)).
-Dann lassen wir den Zeilen- und Spaltenindex direkt anzeigen:
+![Screenshot Scope-Block](pics/part10_derivative_scope.png)
+
+Auf der einen Seite zeigt das Liniendiagramm die Kosinus-Funktion wie erwartet.
+Auf der anderen Seite scheint es gerade am Anfang bei $t=0$ eine Unstimmigkeit
+zu geben. Woher kommt das?
+
+MATLAB und Simulink sind numerische Softwaretools. Im Gegensatz zu
+Computer-Algebra-Systemen wie WolframAlpha oder GeoGebra können sie *nicht* die
+Lösung einer Gleichung oder eine Ableitung symbolisch berechnen. Stattdessen
+ermitteln sie Lösung der mathematischen Probleme **numerisch**.
+Computer-Algebra-Systeme gehen wie Menschen cor. Das Symbol "hoch 2" wird
+manipuliert "hoch 1" (Regel: beim Ableiten einer Potenz wird es eins weniger)
+und als Vorfaktor davor geschrieben. Weil Symbole manipuliert werden, heißt
+diese Lösungsmethode **symbolisch**. Stattdessen erstellt MATLAB eine
+Wertetabelle der Funktion, die abgeleitet werden soll. Danach geht MATLAB diese
+Tabelle Stück für Stück durch und bildet zwischen dem ersten und dem zweiten
+Punkt das Steigungsdreieck, dann zwischen dem zweiten und dem dritten Punkt und
+immer so weiter. Danach zeichnet MATLAB bzw. Simulink die Liste der Steigungen
+der Steigungsdreiecke und hat damit eine Näherung der 1. Ableitung gefunden.
+
+## Integration am Beispiel der Wurzelfunktion
+
+Als nächstes Beispiel wollen wir die Funktion
+
+$$u(t) = \sqrt{t}$$
+
+integrieren. Das Ergebnis ist eigentlich $U(t) = \frac{2}{3} t^{3/2} + C$, aber
+standardmäßig wird die Integrationskonstante auf Null gesetzt, also $C = 0$.
+
+Um das Eingangssignal $t$ zu erzeugen, verwenden wir wiederum den `Ramp`-Block.
+Danach stecken wir $t$ in die Wurzelfunktion. Die Wurzelfunktion gehört zu den
+`Math Operations`, der entsprechende Block heißt `sqrt`-Block. Verbinden wir
+beide Blöcke, so erzeugen wir insgesamt $\sqrt{t}$.
+
+Nun integrieren wir das Eingangssignal mit dem `Integrator`-Block, der sich in
+der Bibliothek `Continuos` befindet. Das Ergebnis visualisieren wir mit einem
+`Scope`-Block.
+
+Das fertige Blockdiagramm zeigt der folgende Screenshot.
+
+![Screenshot Scope-Block](pics/simulink_integration.png)
+
+## Lineare Differentialgleichungen 1. Ordnung
+
+Nun schauen wir uns noch am Beispiel der folgenden linearen
+Differentialgleichung 1. Ordnung
+
+$$\dot{x}(t)=-2x+1, \quad x(0)=0,$$
+
+an, wie in Simulink die numerische Lösung der Differentialgleichung konstruiert
+wird.
+
+Dazu werden nacheinander die Blöcke
+
+* Sources $\rightarrow$ Constant
+* Math Operations $\rightarrow$ Add
+* Continuous $\rightarrow$ Integrator
+* Commonly Used Blocks $\rightarrow$ Gain
+* Sinks $\rightarrow$ Scope
+
+in den Arbeitsbereich gezogen und wie in den folgenden Screenshots rot markiert
+verbunden. Zuletzt ermöglicht der Start der Simulation eine Visualisierung der
+numerischen Lösung über die Scope-Ausgabe.
+
+Die folgende Sequenz an Screenshots zeigt nacheinander die notwendigen Schritte,
+um die Differentialgleichung
+
+$$\dot{x}(t)=-2x+1, \quad x(0)=0,$$
+
+zu modellieren.
 
 ```{code-cell} ipython3
-import pandas as pd
-
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-
-print('Zeilenindex: ')
-print(data.index)
-
-print('Spaltenindex:')
-print(data.columns)
+:tags: [remove-input]
+from IPython.display import HTML
+HTML('../assets/chapter12/simulink_ode.html')
 ```
 
-So kann man direkt die Daten aus einem Pandas-DataFrame extrahieren und
-visualisieren. Wenn wir beispielsweise wissen wollen, wie alt die Spieler der
-Eintracht Frankfurt sind, filtern wir zuerst. Danach stellen wir auf der x-Achse
-die Namen der Spieler (= Zeilenindex) dar und auf der y-Achse das Alter ('Age').
-Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
-verwenden wir ein Balkendiagramm.
+## Zusammenfassung
 
-```{code-cell} ipython3
-import matplotlib.pyplot as plt
-
-# data
-filter = data.loc[:, 'Club'] == 'Eintracht Frankfurt'
-data_eintracht_frankfurt = data.loc[filter, :]
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-
-# plot
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-
-Leider kann man die Spielernamen nicht mehr lesen. Wir können händisch in das
-Styling der x-Achsenbeschriftung eingreifen und die die Beschriftung um 45 Grad
-drehen. Dann sieht der Code folgendermaßen aus:
-
-```{code-cell} ipython3
-# plot
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21')
-
-# Rotation der xticks um 45 Grad und horizontal alignment rechts
-plt.xticks(rotation = 45, ha='right');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Visualisieren Sie die Anzahl der Minuten, die ein Spieler der Eintracht
-Frankfurt auf dem Platz stand. Beschriften Sie auch x- und y-Achse und geben Sie
-der Grafik einen aussagekräftigen Titel.
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-# data
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Mins']
-
-# plot
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.xticks(rotation = 45, ha='right')
-plt.ylabel('Minuten')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-````
-
-## Plot vom Mittelwert als horizontale Linie
-
-Als nächstes möchten wir in den Plot Zusatzinformationen mit einblenden. So
-würden wir gerne sichtbar machen, wo das Durchschnittsalter der Fußballspieler
-liegt. Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt
-liegt und welcher jünger als der Durchschnitt ist.
-
-Dazu müssen wir zunächst die Zusatzinformation aus den Daten herausholen, sprich
-den Mittelwert des Alters berechnen lassen.
-
-```{code-cell} ipython3
-mittelwert_alter = data_eintracht_frankfurt.loc[:, 'Age'].mean()
-print(f'Mittleres Alter der Spieler: {mittelwert_alter}')
-```
-
-Und nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Dazu
-zeichnen wir eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu
-verwenden wir die Funktion `axhline()`.
-
-```{code-cell} ipython3
-# Daten
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-
-# Visualisierung
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-
-# Rotation der xticks um 45 Grad und horizontal alignment rechts
-plt.xticks(rotation = 45, ha='right')
-
-# horizontale Linie
-plt.axhline(mittelwert_alter, color='red');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Bilden Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war. Ergänzen Sie Ihren Plot der letzten
-Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.
-```
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Mins']
-min_durchschnitt = y.mean()
-
-# plot
-plt.figure()
-plt.bar(x,y)
-plt.axhline(min_durchschnitt, color='black')
-plt.xlabel('Spieler')
-plt.xticks(rotation = 45, ha='right')
-plt.ylabel('Minuten')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-````
-
-## Plot der Standardabweichung als Fehlerbalken
-
-Bei allen Messungen treten Messfehler auf. Manchmal weiß man von Anfang an,
-welchen Messfehler das Messgerät hat. Ein anderes Mal hat man beispielsweise
-eine Messung zehnmal wiederholt und möchte nun den Mittelwert als Datenpunkt und
-die Standardabweichung der Messergebnisse als Fehlerbalken visualisieren. Durch
-die Angabe eines Fehlerbalkens kann man dem Betrachter eine Zusatzinformation
-mitteilen. Für die Darstellung von Fehlerbalken stellt das Matplotlib-Modul die
-Methode ``errorbar()`` zur Verfügung. Mehr Informationen gibt es auf der
-Hilfeseite
-
-> https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html
-
-
-```{code-cell} ipython3
-# data
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
-
-# plot data
-plt.figure()
-plt.errorbar(x, y, yerr=standardabweichung_alter)
-
-# styling
-plt.xlabel('Spieler')
-plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-
-Die Grafik sieht irritierend aus, da die Altersangben der Spieler verbunden
-wurden. Ästhetischer und besser interpretierbar wird die Grafik, wenn wir noch
-ein wenig an den Optionen herumschrauben. Mit der Formatierung `fmt='o'` werden
-die Messwerte als Kreise dargestellt.
-
-```{code-cell} ipython3
-# data
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Age']
-standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
-
-# plot data
-plt.figure()
-plt.errorbar(x, y, yerr=standardabweichung_alter, fmt='o')
-
-# styling
-plt.xlabel('Spieler')
-plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie nun die Standardabweichung der Minuten visualisieren, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war. 
-```
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt.loc[:, 'Mins']
-min_standardabweichung = y.std()
-
-# plot
-plt.figure()
-plt.errorbar(x,y, yerr=min_standardabweichung, fmt='o')
-plt.xlabel('Spieler')
-plt.xticks(rotation = 45, ha='right')
-plt.ylabel('Minuten')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21');
-```
-````
-
-## Zusammenfassung und Ausblick
-
-Nachdem wir uns erarbeitet haben, wie Daten aus einem DataFrame für eine
-Visualisierung mit Matplotlib aufbereitet werden, lernen wir im nächsten
-Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.
+Dieser kurze Einstieg in Simulink kann nur der Anfang sein. Wenn Sie Simulink
+vertiefen wollen, bietet Mathworks zahlreiche (englischsprachige)
+[Tutorials](https://de.mathworks.com/products/simulink.html) an.

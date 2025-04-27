@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.1 Series und DataFrame &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.1 Einführung MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.2 Arbeiten mit Tabellendaten" href="chapter08_sec02.html" />
-    <link rel="prev" title="8. Pandas anstatt Excel" href="chapter08_sec00.html" />
+    <link rel="next" title="8.2 Numerisches Rechnen mit MATLAB" href="chapter08_sec02.html" />
+    <link rel="prev" title="8. MATLAB" href="chapter08_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -193,9 +193,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -221,44 +221,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Pandas anstatt Excel</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -309,55 +308,6 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec01.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -381,23 +331,6 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/chapter08/chapter08_sec01.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -477,7 +410,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.1 Series und DataFrame</h1>
+    <h1>8.1 Einführung MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -488,15 +421,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-pandas">Import von pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im CSV-Format</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden">MATLAB starten und die Entwicklungsumgebung erkunden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-als-taschenrechner">MATLAB als Taschenrechner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilfe">Hilfe</a></li>
 </ul>
             </nav>
         </div>
@@ -508,1065 +435,106 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="series-und-dataframe">
-<h1>8.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Link to this heading">#</a></h1>
-<p>Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
-effizient zu speichern. Dazu benutzen Data Scientists die Datentypen <code class="docutils literal notranslate"><span class="pre">Series</span></code>
-oder <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
-mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
-verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code> kennen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="einfuhrung-matlab">
+<h1>8.1 Einführung MATLAB<a class="headerlink" href="#einfuhrung-matlab" title="Link to this heading">#</a></h1>
+<p>Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Matlab">https://de.wikipedia.org/wiki/Matlab</a>):</p>
+<blockquote>
+<div><p>“Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
+US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
+und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für
+numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der
+Name ableitet: MATrix LABoratory.”</p>
+</div></blockquote>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung pd importieren.</p></li>
-<li><p>Sie können aus einer Liste das Datenobjekt <strong>Series</strong> erzeugen.</p></li>
-<li><p>Sie kennen das <strong>CSV-Dateiformat</strong>.</p></li>
-<li><p>Sie können eine csv-Datei mit <strong>read_csv()</strong> einlesen.</p></li>
-<li><p>Sie konnen mit <strong>.info()</strong> sich einen Überblick über die importierten Daten verschaffen.</p></li>
+<li><p>Sie können MATLAB starten.</p></li>
+<li><p>Sie können MATLAB als Taschenrechner benutzen.</p></li>
+<li><p>Sie können die Dokumentation mit der Anweisung <strong>doc</strong> aufrufen.</p></li>
 </ul>
 </div>
 </section>
-<section id="import-von-pandas">
-<h2>Import von pandas<a class="headerlink" href="#import-von-pandas" title="Link to this heading">#</a></h2>
-<p>Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
-Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
-und DataFrame. Dabei wird <strong>Series</strong> für Datenreihen genommen, also sozusagen
-die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
-<strong>DataFrame</strong> repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays.</p>
-<p>Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
-ist üblich, dabei dem Modul die Abkürzung <strong>pd</strong> zu geben, damit wir nicht immer
-pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen</span>
-</pre></div>
+<section id="matlab-starten-und-die-entwicklungsumgebung-erkunden">
+<h2>MATLAB starten und die Entwicklungsumgebung erkunden<a class="headerlink" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden" title="Link to this heading">#</a></h2>
+<p>Im Folgenden benutzten wir MATLAB in der Cloud. Registrieren Sie sich zuerst bei
+der Firma MathWorks</p>
+<blockquote>
+<div><p><a class="reference external" href="https://de.mathworks.com/mwaccount/register?uri=https%3A%2F%2Fde.mathworks.com%2Fmwaccount%2F">Registrierung
+MathWorks</a></p>
+</div></blockquote>
+<p>Sollten Sie Studentin oder Student einer Hochschule sein, verfügt Ihre
+Hochschule vielleicht über eine Campuslizenz. In diesem Fall reicht es, bei der
+Registrierung Ihre studentische E-Mail-Adresse anzugeben.</p>
+<p>Klicken Sie dann auf die folgende URL</p>
+<blockquote>
+<div><p><a class="reference external" href="https://matlab.mathworks.com">https://matlab.mathworks.com</a></p>
+</div></blockquote>
+<p>um sich mit Ihrem neuen Account anzumelden. Starten Sie danach MATLAB Online wie
+in der folgenden Abbildung gezeigt.</p>
+<figure class="align-center" id="id1">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/screenshot01.png"><img alt="Screenshot des Startbildschirms von MATLAB Online" class="bg-primary mb-1" src="../_images/screenshot01.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Screenshot des Startbildschirms von MATLAB Online</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Danach wird die MATLAB-Entwicklungsumgebung gestartet. Vorerst belassen wir es
+bei den Standardeinstellungen. In dem folgenden Video werden die einzelnen
+Bestandteile der Entwicklungsumgebung vorgestellt.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “1.1 Matlab - Umgebung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HXyMG9gy4Oo"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+</details></section>
+<section id="matlab-als-taschenrechner">
+<h2>MATLAB als Taschenrechner<a class="headerlink" href="#matlab-als-taschenrechner" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id2">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/screenshot02.png"><img alt="Screenshot des Kommandofensters" class="bg-primary mb-1" src="../_images/screenshot02.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Screenshot des MATLAB Kommandofensters</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Auch wenn MATLAB also zunächst von der Firma MathWorks für numerische
+Berechnungen ausgelegt wurde, können wir es wie einen Taschenrechner benutzen.
+In dem sogenannten <strong>Kommandofenster</strong> können wir nach dem Prompt (das sind die
+zwei spitzen Klammern &gt;&gt;) unsere Anweisungen an MATLAB eingeben. Durch das
+Drücken von Return wird die Eingabe abgschlossen und MATLAB führt die Anweisung
+aus.</p>
+<p>Probieren Sie es aus:</p>
+<ul class="simple">
+<li><p>Addition: 2+3</p></li>
+<li><p>Subtraktion: 2-3</p></li>
+<li><p>Multiplikation: 2*4</p></li>
+<li><p>Division: 8/2</p></li>
+<li><p>Potenzierung: 3^2</p></li>
+</ul>
+<p>Selbstverständlich beherrscht MATLAB auch Klammerregeln. Gerne können Sie den
+Term durch MATLAB berechnen lassen, probieren Sie es doch einmal selbst aus!</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “1.2 Taschenrechner” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+</details></section>
+<section id="hilfe">
+<h2>Hilfe<a class="headerlink" href="#hilfe" title="Link to this heading">#</a></h2>
+<p>MATLAB ist nur in Englisch verfügbar. Alle Anweisungen an MATLAB basieren auf
+der englischen Sprache. Dafür besitzt MATLAB eine gute Dokumentation. Mit dem
+Kommando <strong>doc</strong> wird die entsprechende Webseite im Browser geladen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “1.3 Hilfe” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FasuEz-bC40"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</section>
-<section id="series-aus-liste-erzeugen">
-<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Link to this heading">#</a></h2>
-<p>Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
-Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, dass die
-Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
-Liste, also <code class="docutils literal notranslate"><span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> und initialisieren über <code class="docutils literal notranslate"><span class="pre">pd.Series()</span></code> die
-Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    25
-1    22
-2    43
-3    37
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
-bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
-Numpy-Array nehmen? Der wichtigste Unterschied ist der <strong>Index</strong>.</p>
-<p>Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
-ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, …
-angelegt wird. Wenn bei einer Liste <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> auf das zweite
-Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
-Python zählt ab 0) und schreiben</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Element der Liste: &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste:  22
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die Datenstruktur Series ermöglich es aber, einen <em>expliziten Index</em> zu setzen.
-Über den optionalen Parameter <code class="docutils literal notranslate"><span class="pre">index=</span></code> speichern wir als Zusatzinformation noch
-ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
-Personen Alice, Bob, Charlie und Dora.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice      25
-Bob        22
-Charlie    43
-Dora       30
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Jetzt ist auch klar, warum beim ersten Mal, als wir <code class="docutils literal notranslate"><span class="pre">print(alter)</span></code> ausgeführt
-haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
-Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
-Informationen ausgegeben wird, ist das Attribut <code class="docutils literal notranslate"><span class="pre">dtype</span></code>. Darin gespeichert ist
-der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
-dem Punktoperator zugegegriffen werden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Offensichtlich sind die gespeicherten Werte Integer.</p>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
-Vorlesungs/Übungs-Stunden an diesem Wochentag.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stundenplan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Montag&quot;</span><span class="p">,</span> <span class="s2">&quot;Dienstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Mittwoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Donnerstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Freitag&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stundenplan</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="dataframe-fur-tabellen">
-<h2>DataFrame für Tabellen<a class="headerlink" href="#dataframe-fur-tabellen" title="Link to this heading">#</a></h2>
-<p>Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
-einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
-sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
-auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
-zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
-darstellt und die Spalten die Eigenschaften speichern.</p>
-<p>Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
-Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
-kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
-gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.</p>
-</section>
-<section id="import-von-tabellen">
-<h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Link to this heading">#</a></h2>
-<p>Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
-Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
-einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
-gestreift.</p>
-<section id="import-von-tabellen-im-csv-format">
-<h3>Import von Tabellen im CSV-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Link to this heading">#</a></h3>
-<p>Das <strong>Dateiformat CSV</strong> speichert Daten zeilenweise ab. Dabei steht CSV für
-“comma separated value”. Die Trennung der Spalten erfolgt durch ein
-Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
-gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nacchkommastellen verwenden.</p>
-<p>Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
-<code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an (siehe
-<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">Dokumentation/read_csv</a>).
-Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
-ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
-übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.</p>
-<p>Am besten sehen wir uns die Funktionsweise von <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an einem Beispiel an.
-Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
-Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL"><code class="docutils literal notranslate"><span class="pre">bundesliga_top7_offensive.csv</span></code></a>
-herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
-JupyterNotebook liegt. Die csv-Datei stammt von
-<a class="reference external" href="https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv">Kaggle</a>.
-Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
-der Bundesligasaison 2020/21 enthalten.</p>
-<p>Führen Sie dann anschließend die folgende Code-Zelle aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
-trotzdem nicht. Dazu verwenden wir die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Manuel Neuer</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Thomas Müller</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>David Alaba</td>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Jérôme Boateng</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Robert Lewandowski</td>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code> zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
-beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
-Methode <code class="docutils literal notranslate"><span class="pre">.head(10)</span></code>mit dem Argument 10.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Manuel Neuer</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Thomas Müller</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>David Alaba</td>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Jérôme Boateng</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Robert Lewandowski</td>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Joshua Kimmich</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Kingsley Coman</td>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Benjamin Pavard</td>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Alphonso Davies</td>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Serge Gnabry</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
-usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
-welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
-erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
-gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
-den Befehl mit <code class="docutils literal notranslate"><span class="pre">index_col=</span></code>. Die Namen stehen in der 1. Spalte, was in
-Python-Zählweise einer 0 entspricht.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Joshua Kimmich</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Kingsley Coman</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Benjamin Pavard</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Alphonso Davies</th>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Serge Gnabry</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="import-von-tabellen-im-xlsx-format">
-<h3>Import von Tabellen im xlsx-Format<a class="headerlink" href="#import-von-tabellen-im-xlsx-format" title="Link to this heading">#</a></h3>
-<p>Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
-bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
-Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
-als Excel-Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm">bundesliga_top7_offensive.xlsx</a>
-herunter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
-Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
-schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span> </code> nach. In dieser Vorlesung
-verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
-Vorlesung/Übung nicht notwendig ist.</p>
-</section>
-</section>
-<section id="ubersicht-verschaffen-mit-info">
-<h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Link to this heading">#</a></h2>
-<p>Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
-Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
-noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür stellt
-Pandas die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> zur Verfügung. Probieren wir es einfach aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Index: 177 entries, Manuel Neuer to Joshua Mees
-Data columns (total 15 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   Club               177 non-null    object 
- 1   Nationality        177 non-null    object 
- 2   Position           177 non-null    object 
- 3   Age                177 non-null    int64  
- 4   Matches            177 non-null    int64  
- 5   Starts             177 non-null    int64  
- 6   Mins               177 non-null    int64  
- 7   Goals              177 non-null    int64  
- 8   Assists            177 non-null    int64  
- 9   Penalty_Goals      177 non-null    int64  
- 10  Penalty_Attempted  177 non-null    int64  
- 11  xG                 177 non-null    float64
- 12  xA                 177 non-null    float64
- 13  Yellow_Cards       177 non-null    int64  
- 14  Red_Cards          177 non-null    int64  
-dtypes: float64(2), int64(10), object(3)
-memory usage: 22.1+ KB
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">.info()</span></code> erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
-die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie <code class="docutils literal notranslate"><span class="pre">Name</span></code>
-selbsterklärend, aber was <code class="docutils literal notranslate"><span class="pre">xG</span></code> bedeutet, erschließt sich nicht von selbst. Dazu
-brauchen wir mehr Informationen von den Autor:innen der Daten.</p>
-<p>Weiterhin entnehmen wir der Ausgabe von <code class="docutils literal notranslate"><span class="pre">.info()</span></code>, dass in jeder Spalte 177
-Einträge sind, die ‘non-null’ sind. Damit ist gemeint, dass diese Zellen beim
-Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
-angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
-Datentyp ‘object’ angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
-und die mittlere erwartete Anzahl von Toren pro Spiel ‘xG’ (= expected number of
-goals from the player in a match) wird als Float angegeben.</p>
-</section>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1605,7 +573,7 @@ goals from the player in a match) wird als Float angegeben.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8. Pandas anstatt Excel</p>
+        <p class="prev-next-title">8. MATLAB</p>
       </div>
     </a>
     <a class="right-next"
@@ -1613,7 +581,7 @@ goals from the player in a match) wird als Float angegeben.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8.2 Arbeiten mit Tabellendaten</p>
+        <p class="prev-next-title">8.2 Numerisches Rechnen mit MATLAB</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1635,15 +603,9 @@ goals from the player in a match) wird als Float angegeben.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-pandas">Import von pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im CSV-Format</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden">MATLAB starten und die Entwicklungsumgebung erkunden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-als-taschenrechner">MATLAB als Taschenrechner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilfe">Hilfe</a></li>
 </ul>
   </nav></div>
 

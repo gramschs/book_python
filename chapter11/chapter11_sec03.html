@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.3 Programmieren in MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>11.3 Visualisierung von DataFrames mit Fehlerbalken &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter11/chapter11_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Übungen" href="chapter11_sec04.html" />
-    <link rel="prev" title="11.2 Numerisches Rechnen mit MATLAB" href="chapter11_sec02.html" />
+    <link rel="next" title="Übungen" href="chapter11_sec05.html" />
+    <link rel="prev" title="11.2 Streudiagramme" href="chapter11_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -193,9 +193,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -221,44 +221,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -309,6 +308,55 @@
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter11/chapter11_sec03.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -332,6 +380,23 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter11/chapter11_sec03.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
       
       
       
@@ -411,7 +476,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.3 Programmieren in MATLAB</h1>
+    <h1>11.3 Visualisierung von DataFrames mit Fehlerbalken</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,13 +487,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">Eingabe, Verarbeitung und Ausgabe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">Funktionen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen">Programmverzweigungen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schleifen">Schleifen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramme">Diagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lehrmaterial">Weiteres Lehrmaterial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisierung-von-dataframes">Visualisierung von DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-vom-mittelwert-als-horizontale-linie">Plot vom Mittelwert als horizontale Linie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-der-standardabweichung-als-fehlerbalken">Plot der Standardabweichung als Fehlerbalken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -440,306 +502,331 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="programmieren-in-matlab">
-<h1>11.3 Programmieren in MATLAB<a class="headerlink" href="#programmieren-in-matlab" title="Link to this heading">#</a></h1>
-<p>Ein Programmierkurs in MATLAB erfordert eine ganze Vorlesung. In diesem Kapitel vergleichen wir nur die Programmierkonstrukte aus Python mit denen von MATLAB. Gerne können Sie Details in dem Vorlesungsskript</p>
-<blockquote>
-<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/</a></p>
-</div></blockquote>
-<p>nachlesen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualisierung-von-dataframes-mit-fehlerbalken">
+<h1>11.3 Visualisierung von DataFrames mit Fehlerbalken<a class="headerlink" href="#visualisierung-von-dataframes-mit-fehlerbalken" title="Link to this heading">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
-<p>Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich</p>
 <ul class="simple">
-<li><p>Eingabe</p></li>
-<li><p>Verarbeitung (Variablen und Datentypen)</p></li>
-<li><p>Ausgabe</p></li>
-<li><p>Funktionen</p></li>
-<li><p>Vergleiche</p></li>
-<li><p>Programmverzweigungen</p></li>
-<li><p>Schleifen</p></li>
-<li><p>Diagramme</p></li>
-<li><p>Regression</p></li>
+<li><p>Sie können den Zeilenindex <strong>.index</strong> und den Spaltenindex <strong>.columns</strong> aus einem DataFrame extrahieren.</p></li>
+<li><p>Sie können den Text der Achsenbeschriftung drehen.</p></li>
+<li><p>Sie können mit <strong>axhline()</strong> zu einem Plot eine horizontale
+Linie hinzufügen.</p></li>
+<li><p>Sie können Fehlerbalken mit <strong>errorbar()</strong> visualisieren.</p></li>
 </ul>
 </div>
 </section>
-<section id="eingabe-verarbeitung-und-ausgabe">
-<h2>Eingabe, Verarbeitung und Ausgabe<a class="headerlink" href="#eingabe-verarbeitung-und-ausgabe" title="Link to this heading">#</a></h2>
-<p>Die Eingabe erfolgt in MATLAB mit der Funktion <code class="docutils literal notranslate"><span class="pre">input()</span></code>. Im Unterschied zu
-Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
-ist es in MATLAB schwierig, eine Abfrage nach Text zu gestalten. Meist wird
-indirekt gearbeitet mit Abfragen a la “Haben Sie einen Führerschein? Geben Sie 0
-ein für Nein und 1 für Ja.”</p>
-<p>Für die Ausgabe gibt es zwei Funktionen. Die Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> gibt den Inhalt
-einer Variablen direkt aus. Die Funktion <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> ermöglicht weitere
-Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
-f-Strings. Es wird in den String ein Platzhalter <code class="docutils literal notranslate"><span class="pre">%f</span></code> eingesetzt und dann,
-nachdem der String abgeschlossen wurde, nach einem Komma die Variable.</p>
-<p>Das folgende Beispiel fragt nach einem Nettpreis und gibt dann den Bruttopreis
-mit einem Mehrwertsteuersatz von 19 %.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">nettopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie den Nettopreis ein: &#39;</span><span class="p">)</span>
-<span class="n">bruttopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nettopreis</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.19</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nettopreis</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Der Bruttopreis ist %f EUR.&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">bruttopreis</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Zwischenrechnungen werden von MATLAB automatisch am Bildschirm ausgegeben. Wenn
-das nicht gewünscht ist, kann die Ausgabe durch ein Semikolon am Ende der Zeile
-unterdrückt werden.</p>
-</section>
-<section id="funktionen">
-<h2>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading">#</a></h2>
-<p>In MATLAB werden häufig Funktionen gebraucht. Zunächst einmal sind Funktionen in
-MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
-implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
-stellen sie meist “echte” mathematische Funktionen mit einer Eingabe und einer
-Ausgabe dar.</p>
-<p>Die Grundstruktur einer Funktion in MATLAB ist eie folgt:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ergebnis1, ergebnis2,...] = funktionsname</span><span class="p">(</span>input1, input2,...<span class="p">)</span>
-<span class="w">    </span><span class="c">% Anweisungen</span>
-<span class="w">    </span><span class="n">ergebnis1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
-<span class="w">    </span><span class="n">ergebnis2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<p>Die Funktion wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">function</span></code> eingeleitet. Danach kommen
-die Variablen, deren Werte von der Funktion zurückgegeben werden sollen. Das
-wird durch den Zuweisungsoperator <code class="docutils literal notranslate"><span class="pre">=</span></code> deutlich gemacht. Zuletzt folgt der
-Funktionsname mit den Eingabeparametern. Die Anweisungen im Inneren der Funktion
-werden durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
-<p>Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
-Fläche und gibt beide Werte zurück.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[umfang, flaeche] = berechne_umfang_flaeche</span><span class="p">(</span>radius<span class="p">)</span>
-<span class="w">    </span><span class="n">umfang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
-<span class="w">    </span><span class="n">flaeche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span>^<span class="mi">2</span><span class="p">;</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<p>Sie muss unter dem Namen <code class="docutils literal notranslate"><span class="pre">berechne_umfang_flaeche.m</span></code> abgespeichert werden, damit
-sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">berechne_umfang_flaeche</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.1 Einleitung Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.2 Input/Output bei Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/psyGbqwBD2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.3 Formale Definition von Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FMfTxKd3gOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.4 Unterfunktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i1c3IPCb82E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.5 Geltungsbereich” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ebqojVhnPwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="programmverzweigungen">
-<h2>Programmverzweigungen<a class="headerlink" href="#programmverzweigungen" title="Link to this heading">#</a></h2>
-<p>MATLAB kennt ebenfalls Vergleiche und den booleschen Datentyp. Die
-Vergleichsoperatoren sind mit Ausnahme des “ungleich”-Operators auch identisch:</p>
+<section id="visualisierung-von-dataframes">
+<h2>Visualisierung von DataFrames<a class="headerlink" href="#visualisierung-von-dataframes" title="Link to this heading">#</a></h2>
+<p>Aber wie kombinieren wir jetzt die Funktionalitäten des Pandas-Moduls mit denen
+des Matplotlib-Moduls? Der grundlegende Datentyp für Matplotlib ist das
+NumPy-Array und auch in den Pandas-Datenobjekten stecken im Kern NumPy-Arrays.
+Daher funktionieren die Plotting-Funktionalitäten von Matplotlib direkt.
+Wünschenswert wäre allerdings, den Zeilen- oder den Spaltenindex für die
+Beschriftung zu nehmen. Beides ist in dem DataFrame-Objekt abgespeichert. Wir
+können mit</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> kleiner</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner oder gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> größer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer oder gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~=</span></code> ungleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.index</span></code> auf den Zeilenindex und</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.columns</span></code> auf den Spaltenindex</p></li>
 </ul>
-<p>Das Ergebnis eines Vergleichs ist entweder <code class="docutils literal notranslate"><span class="pre">true</span></code> oder <code class="docutils literal notranslate"><span class="pre">false</span></code>. MATLAB verwendet
-hier also Kleinbuchstaben im Vergleich zu Python mit <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
-entsprechende Verzweigungskonstrukt lautet</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist kleiner als 10.&#39;</span><span class="p">)</span>
-<span class="k">elseif</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist nicht kleiner als 10, aber kleiner als 15.&#39;</span><span class="p">)</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist größer oder gleich 15.&#39;</span><span class="p">)</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<p>Wie Sie sehen, werden nach den Bedingungen keine Doppelpunkte gesetzt. Die
-Verzweigung wird mit einem <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.1 if else elseif” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9FA1RP4vj6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><p>In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
-gibt. Die sogenannte <code class="docutils literal notranslate"><span class="pre">switch</span></code>-Verzweigung ist vor allem dann interessant, wenn
-sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
-if-elseif-else ersetzt werden.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.2 switch - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="schleifen">
-<h2>Schleifen<a class="headerlink" href="#schleifen" title="Link to this heading">#</a></h2>
-<p>Natürlich kennt MATLAB auch Schleifen. Sowohl die while-Schleife als auch die
-for-Schleife können in MATLAB benutzt werden.</p>
-<p>Eine Schleife mit Bedingung wird mit <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Wir setzen einen
-Zähler auf Eins und erhöhen in jedem Schleifendurchgang den Wert des Zählers um
-Eins, solange wie der Zähler kleiner gleich 10 ist.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zaehler</span><span class="p">)</span>
-<span class="w">    </span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.3 while-Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSw9QKAjESE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><p>Bei der for-Schleife wird eine Liste von Zahlen abgearbeitet oder ein
-Zahlenbereich durchlaufen. Das folgende Code-Beispiel gibt nacheinander die
-Zahlen 2, 6, 8 und -1 auf dem Bildschirm aus.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<p>Wieder wird die Schleife nicht durch einen Doppelpunkt eingeleitet. Die Schleife
-wird durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> beendet. Alternativ kann der Doppelpunktoperator genutzt
-werden, um eine Liste mit Zahlen nach einem Muster zu generieren. Der folgende
-Code zählt von 10 runter.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Rakete startet...&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.4 for - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2qGElJdocnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><p>In beiden Schleifen-Varianten sind <code class="docutils literal notranslate"><span class="pre">continue</span></code> und <code class="docutils literal notranslate"><span class="pre">break</span></code> möglich, um die
-Schleife vorzeitig zu einem neuen Schleifendurchgang zu veranlassen oder die
-Schleife vorzeitig abzubrechen. Wer an Details interessiert ist, findet sie in
-den folgenden Videos.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.5 continue - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VdHhQhIjasg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.6 break - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bIXuZXPSblU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="diagramme">
-<h2>Diagramme<a class="headerlink" href="#diagramme" title="Link to this heading">#</a></h2>
-<p>Bei der Einführung in die Datenvisualisierung mit Matplotlib in Python haben wir
-absichtlich die zustandsorientierte Schnittstelle der Bibliothek genutzt. Diese
-wurde nach dem Vorbild von MATLAB gestaltet, so dass Diagramme mit den uns
-bekannten Anweisungen funktionieren.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<p>zugreifen. Übrigens, <code class="docutils literal notranslate"><span class="pre">.values</span></code> liefert die Werten in der Tabelle als
+NumPy-Array zurück. Aber das brauchen wir für die Visualisierung nicht, denn die
+Tabellendaten können direkt viualisiert werden.</p>
+<p>Wir verwenden wieder einen realistischen Datensatz und importieren den uns schon
+bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21
+(<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL">→ Download</a>).
+Dann lassen wir den Zeilen- und Spaltenindex direkt anzeigen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="nb">figure</span><span class="p">();</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Liniendiagramm&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Auch das Balkendiagramm mit <code class="docutils literal notranslate"><span class="pre">bar()</span></code> und das Streudiagramm mit <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>
-funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
-bestehen. Die Verarbeitung von Strings istg in MATLAB etwas komplizierter, so
-dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
-umzusetzen sind.</p>
-<p>Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
-gemeinsam dargestellt werden sollen. Dann muss nach dem ersten Diagramm der
-Befehl <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on</span></code> ausgeführt werden, damit die nachfolgenden Diagramme in
-dieselbe Grafik gezeichnet werden.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 5.1 Plot erstellen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2admMlXzlSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="regression">
-<h2>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h2>
-<p>Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
-betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
-als Streudiagramm visualisieren.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="nb">figure</span><span class="p">()</span>
-<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Die Funktion zur Bestimmung eines Regressionspolynoms lautet <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code>. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
-die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
-Argument wird der gewüunschte Polynomgrad übergeben. Wir probieren eine
-Regressionsparabel.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">polyval(p,</span> <span class="pre">x)</span></code> werten wir ein Polynom <code class="docutils literal notranslate"><span class="pre">p</span></code> an der Stelle <code class="docutils literal notranslate"><span class="pre">x</span></code> aus. Um also
-die Regressionsparabel zusätzlich zu den Messwerten zu visualisieren, verwenden
-wir den folgenden Code.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Künstliche Messdaten</span>
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zeilenindex: &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
-<span class="c">% Regression</span>
-<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
-<span class="n">x_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-<span class="n">y_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">x_modell</span><span class="p">);</span>
-
-<span class="c">% Visualisierung</span>
-<span class="nb">figure</span><span class="p">();</span>
-<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span><span class="w"> </span><span class="n">y_modell</span><span class="p">);</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Spaltenindex:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
-Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
-Kommentarzeichen in MATLAB ein Prozentzeichen <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zeilenindex: 
+Index([&#39;Manuel Neuer&#39;, &#39;Thomas Müller&#39;, &#39;David Alaba&#39;, &#39;Jérôme Boateng&#39;,
+       &#39;Robert Lewandowski&#39;, &#39;Joshua Kimmich&#39;, &#39;Kingsley Coman&#39;,
+       &#39;Benjamin Pavard&#39;, &#39;Alphonso Davies&#39;, &#39;Serge Gnabry&#39;,
+       ...
+       &#39;Petar Musa&#39;, &#39;Florian Hübner&#39;, &#39;Cedric Teuchert&#39;, &#39;Keita Endo&#39;,
+       &#39;Niko Gießelmann&#39;, &#39;Loris Karius&#39;, &#39;Akaki Gogia&#39;, &#39;Leon Dajaku&#39;,
+       &#39;Tim Maciejewski&#39;, &#39;Joshua Mees&#39;],
+      dtype=&#39;object&#39;, name=&#39;Name&#39;, length=177)
+Spaltenindex:
+Index([&#39;Club&#39;, &#39;Nationality&#39;, &#39;Position&#39;, &#39;Age&#39;, &#39;Matches&#39;, &#39;Starts&#39;, &#39;Mins&#39;,
+       &#39;Goals&#39;, &#39;Assists&#39;, &#39;Penalty_Goals&#39;, &#39;Penalty_Attempted&#39;, &#39;xG&#39;, &#39;xA&#39;,
+       &#39;Yellow_Cards&#39;, &#39;Red_Cards&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>So kann man direkt die Daten aus einem Pandas-DataFrame extrahieren und
+visualisieren. Wenn wir beispielsweise wissen wollen, wie alt die Spieler der
+Eintracht Frankfurt sind, filtern wir zuerst. Danach stellen wir auf der x-Achse
+die Namen der Spieler (= Zeilenindex) dar und auf der y-Achse das Alter (‘Age’).
+Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
+verwenden wir ein Balkendiagramm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># data</span>
+<span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span>
+<span class="n">data_eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c3e3b1a06524487182ee373df019ca2e735f26c672875a1bd24b19e37c6780ef.png" src="../_images/c3e3b1a06524487182ee373df019ca2e735f26c672875a1bd24b19e37c6780ef.png" />
+</div>
+</div>
+<p>Leider kann man die Spielernamen nicht mehr lesen. Wir können händisch in das
+Styling der x-Achsenbeschriftung eingreifen und die die Beschriftung um 45 Grad
+drehen. Dann sieht der Code folgendermaßen aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rotation der xticks um 45 Grad und horizontal alignment rechts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b253113db6f5355ea82b3fa4874bfba135c9637aa82eb956f1b0ed33bf2dd941.png" src="../_images/b253113db6f5355ea82b3fa4874bfba135c9637aa82eb956f1b0ed33bf2dd941.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Visualisieren Sie die Anzahl der Minuten, die ein Spieler der Eintracht
+Frankfurt auf dem Platz stand. Beschriften Sie auch x- und y-Achse und geben Sie
+der Grafik einen aussagekräftigen Titel.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="weiteres-lehrmaterial">
-<h2>Weiteres Lehrmaterial<a class="headerlink" href="#weiteres-lehrmaterial" title="Link to this heading">#</a></h2>
-<p>Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript</p>
+<section id="plot-vom-mittelwert-als-horizontale-linie">
+<h2>Plot vom Mittelwert als horizontale Linie<a class="headerlink" href="#plot-vom-mittelwert-als-horizontale-linie" title="Link to this heading">#</a></h2>
+<p>Als nächstes möchten wir in den Plot Zusatzinformationen mit einblenden. So
+würden wir gerne sichtbar machen, wo das Durchschnittsalter der Fußballspieler
+liegt. Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt
+liegt und welcher jünger als der Durchschnitt ist.</p>
+<p>Dazu müssen wir zunächst die Zusatzinformation aus den Daten herausholen, sprich
+den Mittelwert des Alters berechnen lassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwert_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mittleres Alter der Spieler: </span><span class="si">{</span><span class="n">mittelwert_alter</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mittleres Alter der Spieler: 26.12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Und nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Dazu
+zeichnen wir eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu
+verwenden wir die Funktion <code class="docutils literal notranslate"><span class="pre">axhline()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+
+<span class="c1"># Visualisierung</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+
+<span class="c1"># Rotation der xticks um 45 Grad und horizontal alignment rechts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+
+<span class="c1"># horizontale Linie</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert_alter</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a8c535c44ff02ac1fb936c7b0e3c2569411720e8bf8cf480561045056f22f3f8.png" src="../_images/a8c535c44ff02ac1fb936c7b0e3c2569411720e8bf8cf480561045056f22f3f8.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Bilden Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
+Frankfurt durchschnittlich im Einsatz war. Ergänzen Sie Ihren Plot der letzten
+Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
+<span class="n">min_durchschnitt</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">min_durchschnitt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="plot-der-standardabweichung-als-fehlerbalken">
+<h2>Plot der Standardabweichung als Fehlerbalken<a class="headerlink" href="#plot-der-standardabweichung-als-fehlerbalken" title="Link to this heading">#</a></h2>
+<p>Bei allen Messungen treten Messfehler auf. Manchmal weiß man von Anfang an,
+welchen Messfehler das Messgerät hat. Ein anderes Mal hat man beispielsweise
+eine Messung zehnmal wiederholt und möchte nun den Mittelwert als Datenpunkt und
+die Standardabweichung der Messergebnisse als Fehlerbalken visualisieren. Durch
+die Angabe eines Fehlerbalkens kann man dem Betrachter eine Zusatzinformation
+mitteilen. Für die Darstellung von Fehlerbalken stellt das Matplotlib-Modul die
+Methode <code class="docutils literal notranslate"><span class="pre">errorbar()</span></code> zur Verfügung. Mehr Informationen gibt es auf der
+Hilfeseite</p>
 <blockquote>
-<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/intro.html</a></p>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html</a></p>
 </div></blockquote>
-<p>nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
-anderen empfehle ich die YouTube-Playlist</p>
-<blockquote>
-<div><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY">So lernst Du
-Matlab</a></p>
-</div></blockquote>
-<p>von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
-auch noch anderen Themen behandelt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">standardabweichung_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung_alter</span><span class="p">)</span>
+
+<span class="c1"># styling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>    <span class="c1"># um 45 Grad</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f91108157f79bf93f7e757dc33a8c3e5eebe19128355d1e6add7ab385cece574.png" src="../_images/f91108157f79bf93f7e757dc33a8c3e5eebe19128355d1e6add7ab385cece574.png" />
+</div>
+</div>
+<p>Die Grafik sieht irritierend aus, da die Altersangben der Spieler verbunden
+wurden. Ästhetischer und besser interpretierbar wird die Grafik, wenn wir noch
+ein wenig an den Optionen herumschrauben. Mit der Formatierung <code class="docutils literal notranslate"><span class="pre">fmt='o'</span></code> werden
+die Messwerte als Kreise dargestellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">standardabweichung_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung_alter</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="c1"># styling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>    <span class="c1"># um 45 Grad</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c91b5547ab52d9dd14d3f474058dfb2b341c8b8b784775708ecfbb60a3b4f9bc.png" src="../_images/c91b5547ab52d9dd14d3f474058dfb2b341c8b8b784775708ecfbb60a3b4f9bc.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie nun die Standardabweichung der Minuten visualisieren, die ein Spieler der Eintracht
+Frankfurt durchschnittlich im Einsatz war.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
+<span class="n">min_standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">min_standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Nachdem wir uns erarbeitet haben, wie Daten aus einem DataFrame für eine
+Visualisierung mit Matplotlib aufbereitet werden, lernen wir im nächsten
+Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.</p>
 </section>
 </section>
 
@@ -779,11 +866,11 @@ auch noch anderen Themen behandelt.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">11.2 Numerisches Rechnen mit MATLAB</p>
+        <p class="prev-next-title">11.2 Streudiagramme</p>
       </div>
     </a>
     <a class="right-next"
-       href="chapter11_sec04.html"
+       href="chapter11_sec05.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -809,13 +896,10 @@ auch noch anderen Themen behandelt.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">Eingabe, Verarbeitung und Ausgabe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">Funktionen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen">Programmverzweigungen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schleifen">Schleifen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramme">Diagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lehrmaterial">Weiteres Lehrmaterial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisierung-von-dataframes">Visualisierung von DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-vom-mittelwert-als-horizontale-linie">Plot vom Mittelwert als horizontale Linie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-der-standardabweichung-als-fehlerbalken">Plot der Standardabweichung als Fehlerbalken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.2 Arbeiten mit Tabellendaten &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.2 Numerisches Rechnen mit MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,16 +56,18 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.3 Statistik mit Pandas" href="chapter08_sec03.html" />
-    <link rel="prev" title="8.1 Series und DataFrame" href="chapter08_sec01.html" />
+    <link rel="next" title="8.3 Programmieren in MATLAB" href="chapter08_sec03.html" />
+    <link rel="prev" title="8.1 Einführung MATLAB" href="chapter08_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -193,9 +195,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -221,44 +223,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Pandas anstatt Excel</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -309,55 +310,6 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec02.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -381,23 +333,6 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/chapter08/chapter08_sec02.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -477,7 +412,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.2 Arbeiten mit Tabellendaten</h1>
+    <h1>8.2 Numerisches Rechnen mit MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -488,21 +423,21 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zeilen">Zugriff auf Zeilen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-zeile">Einzelne Zeile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-zeilen-slicing">Zusammenhängende Zeilen: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-zeilen-per-liste">Selektion unzusammenhängender Zeilen per Liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren">Vektoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-zeilenvektor">Erzeugung Zeilenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-spaltenvektor">Erzeugung Spaltenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator">Erzeugung eines Vektors mittels Doppelpunkt-Operator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-spalten">Zugriff auf Spalten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-spalte">Einzelne Spalte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-spalten-slicing">Zusammenhängende Spalten: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-spalten-per-liste">Selektion unzusammenhängender Spalten per Liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizen">Matrizen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-matrizen">Erzeugung von Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-speziellen-matrizen">Erzeugung von speziellen Matrizen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zellen">Zugriff auf Zellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtern">Filtern</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skripte">Skripte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-vektor-und-matrixelemente">Zugriff auf Vektor- und Matrixelemente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">Fortgeschrittene Rechenoperationen für Vektoren und Matrizen</a></li>
 </ul>
             </nav>
         </div>
@@ -514,975 +449,345 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="arbeiten-mit-tabellendaten">
-<h1>8.2 Arbeiten mit Tabellendaten<a class="headerlink" href="#arbeiten-mit-tabellendaten" title="Link to this heading">#</a></h1>
-<p>Eine Tabellenkalkulationssoftware wie LibreOffice Calc, Excel oder Number ist
-nicht nur nützlich, um Daten zu sammeln und zu speichern, sondern auch um
-statistische Auswertungen durchzuführen. In diesem Kapitel geht es darum, wie
-auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="numerisches-rechnen-mit-matlab">
+<h1>8.2 Numerisches Rechnen mit MATLAB<a class="headerlink" href="#numerisches-rechnen-mit-matlab" title="Link to this heading">#</a></h1>
+<p>MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
+ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenen Datentypen und
+Rechenoperationen für Vektoren und Matrizen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können auf ganze Zeilen und Spalten zugreifen:</p>
-<ul>
-<li><p>Zugriff auf eine einzelne Zeile oder Spalte, indem ein Index spezifiziert wird</p></li>
-<li><p>Zugriff auf mehrere zusammenhängende Zeilen oder Spalten (Slice)</p></li>
-<li><p>Zugriff auf mehrere unzusammenhängende Zeilen oder Spalten (Selektion)</p></li>
-</ul>
-</li>
-<li><p>Sie können auf einzelne oder mehrere Zellen der Tabelle zugreifen.</p></li>
-<li><p>Sie können ein DataFrame-Objekt nach einer Eigenschaft filtern.</p></li>
-</ul>
-</div>
-</section>
-<section id="zugriff-auf-zeilen">
-<h2>Zugriff auf Zeilen<a class="headerlink" href="#zugriff-auf-zeilen" title="Link to this heading">#</a></h2>
-<p>Als erstes möchten wir ganze Zeilen der Tabelle lesen. Dazu verwenden wir das
-Attribut <code class="docutils literal notranslate"><span class="pre">.loc</span></code> mit passenden Indizes.</p>
-<p>Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
-Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
-bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Joshua Kimmich</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Kingsley Coman</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Benjamin Pavard</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Alphonso Davies</th>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Serge Gnabry</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<section id="einzelne-zeile">
-<h3>Einzelne Zeile<a class="headerlink" href="#einzelne-zeile" title="Link to this heading">#</a></h3>
-<p>Uns interessieren die Spielerdaten von Thomas Müller näher.</p>
-<figure class="align-center" id="fig08-01">
-<a class="reference internal image-reference" href="../_images/tabelle_zeile_einzeln.png"><img alt="Eine einzelne Zeile der Tabelle ist markiert." src="../_images/tabelle_zeile_einzeln.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Auf eine einzelne Zeile der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[zeilenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-01" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Um eine ganze Zeile aus der Tabelle herauszugreifen, verwenden wir das Attribut
-<code class="docutils literal notranslate"><span class="pre">.loc[zeilenindex]</span></code> und geben in eckigen Klammern den Index der Zeile an, die
-wir betrachten wollen. Da wir beim Import die Namen als Zeileindex gesetzt
-haben, lautet der Zugriff also wie folgt:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeile</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Thomas Müller&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeile</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Club                 Bayern Munich
-Nationality                    GER
-Position                        MF
-Age                             30
-Matches                         32
-Starts                          31
-Mins                          2674
-Goals                           11
-Assists                         19
-Penalty_Goals                    1
-Penalty_Attempted                1
-xG                            0.24
-xA                            0.39
-Yellow_Cards                     0
-Red_Cards                        0
-Name: Thomas Müller, dtype: object
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zusammenhangende-zeilen-slicing">
-<h3>Zusammenhängende Zeilen: Slicing<a class="headerlink" href="#zusammenhangende-zeilen-slicing" title="Link to this heading">#</a></h3>
-<p>Wenn wir auf mehrere Zeilen gleichzeitig zugreifen wollen, gibt es zwei
-Möglichkeiten:</p>
-<ol class="arabic simple">
-<li><p>Die Zeilen folgen direkt aufeinander, sind also zusammenhängend.</p></li>
-<li><p>Zwischen den einzelnen Zeilen sind Lücken.</p></li>
-</ol>
-<p>Als erstes betrachten wir zusammenhängende Zeilen. Der Zugriff auf
-zusammenhängende Bereiche wird in der Informatik <strong>Slicing</strong> genannt.</p>
-<figure class="align-center" id="fig08-02">
-<a class="reference internal image-reference" href="../_images/tabelle_zeile_slice.png"><img alt="Mehrere zusammenhängende Zeilen der Tabelle sind markiert." src="../_images/tabelle_zeile_slice.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Auf mehrere zusammenhängende Zeilen der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[start:stopp]</span></code> zugegriffen. Das nennt man Slicing.</span><a class="headerlink" href="#fig08-02" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Bei der Angabe des Bereiches gibt man den Anfangsindex gefolgt von einem
-Doppelpunkt an und dann den Endindex der letzten Zeile, die “herausgeschnitten”
-werden soll.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Thomas Müller&#39;</span> <span class="p">:</span> <span class="s1">&#39;Jérôme Boateng&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeilen_slice</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Club Nationality Position  Age  Matches  Starts  \
-Name                                                                       
-Thomas Müller   Bayern Munich         GER       MF   30       32      31   
-David Alaba     Bayern Munich         AUT    DF,MF   28       32      30   
-Jérôme Boateng  Bayern Munich         GER       DF   31       29      29   
-
-                Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted    xG  \
-Name                                                                           
-Thomas Müller   2674     11       19              1                  1  0.24   
-David Alaba     2675      2        4              0                  0  0.04   
-Jérôme Boateng  2368      1        1              0                  0  0.01   
-
-                  xA  Yellow_Cards  Red_Cards  
-Name                                           
-Thomas Müller   0.39             0          0  
-David Alaba     0.08             4          0  
-Jérôme Boateng  0.02             6          0  
-</pre></div>
-</div>
-</div>
-</div>
-<p>Beim Slicing können wir den Angangsindex oder den Endindex oder sogar beides
-weglassen. Wenn wir den Anfangsindex weglassen, fängt Pandas bei der ersten
-Zeile an. Lassen wir den Endindex weg, geht der Slice automatisch bis zum Ende.</p>
-<p>Im folgenden Beispiel startet der Slice bei ‘Robert Lewandowski’und geht bis zur
-letzten Zeile. Obwohl nicht alle Zeilendargestellt werden, erkennen wir das an
-der Anzahl der Zeilen: 173 rows (und 15 Spalten columns). Zur Erinnerung, es
-sind insgesamt 177 Zeilen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_slice_from_lewandowski</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">:</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_slice_from_lewandowski</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             Club Nationality Position  Age  Matches  Starts  \
-Name                                                                           
-Robert Lewandowski  Bayern Munich         POL       FW   31       29      28   
-Joshua Kimmich      Bayern Munich         GER       MF   25       27      25   
-Kingsley Coman      Bayern Munich         FRA    FW,MF   24       29      23   
-Benjamin Pavard     Bayern Munich         FRA       DF   24       24      22   
-Alphonso Davies     Bayern Munich         CAN       DF   19       23      22   
-...                           ...         ...      ...  ...      ...     ...   
-Loris Karius         Union Berlin         GER       GK   27        4       3   
-Akaki Gogia          Union Berlin         GER       FW   28        7       0   
-Leon Dajaku          Union Berlin         GER       FW   19        2       0   
-Tim Maciejewski      Union Berlin         GER       MF   19        1       0   
-Joshua Mees          Union Berlin         GER       FW   24        1       0   
-
-                    Mins  Goals  Assists  Penalty_Goals  Penalty_Attempted  \
-Name                                                                         
-Robert Lewandowski  2458     41        7              8                  9   
-Joshua Kimmich      2194      4       10              0                  0   
-Kingsley Coman      1752      5       10              0                  0   
-Benjamin Pavard     1943      0        0              0                  0   
-Alphonso Davies     1763      1        2              0                  0   
-...                  ...    ...      ...            ...                ...   
-Loris Karius         292      0        0              0                  0   
-Akaki Gogia          140      0        1              0                  0   
-Leon Dajaku           37      0        0              0                  0   
-Tim Maciejewski        8      0        0              0                  0   
-Joshua Mees            5      0        0              0                  0   
-
-                      xG    xA  Yellow_Cards  Red_Cards  
-Name                                                     
-Robert Lewandowski  1.16  0.13             4          0  
-Joshua Kimmich      0.10  0.27             4          0  
-Kingsley Coman      0.21  0.34             1          0  
-Benjamin Pavard     0.02  0.09             3          0  
-Alphonso Davies     0.01  0.04             2          1  
-...                  ...   ...           ...        ...  
-Loris Karius        0.00  0.00             0          0  
-Akaki Gogia         0.09  0.28             1          0  
-Leon Dajaku         0.00  0.00             0          0  
-Tim Maciejewski     0.00  0.00             0          0  
-Joshua Mees         2.02  0.00             0          0  
-
-[173 rows x 15 columns]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="selektion-unzusammenhangender-zeilen-per-liste">
-<h3>Selektion unzusammenhängender Zeilen per Liste<a class="headerlink" href="#selektion-unzusammenhangender-zeilen-per-liste" title="Link to this heading">#</a></h3>
-<p>Soll auf mehrere Zeilen zugegriffen werdenn, die nicht zusammenhängen, so nennt
-man das <strong>Selektion</strong>.</p>
-<figure class="align-center" id="fig08-03">
-<a class="reference internal image-reference" href="../_images/tabelle_zeile_selektion.png"><img alt="Slicing von Zeilen einer Tabelle" src="../_images/tabelle_zeile_selektion.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[list]</span></code> zugegriffen. Das nennt man Selektion.</span><a class="headerlink" href="#fig08-03" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> eine
-Liste mit den gewünschten Zeilenindizes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Manuel Neuer&#39;</span><span class="p">,</span> <span class="s1">&#39;David Alaba&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeilen_selektion</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                       Club Nationality Position  Age  Matches  Starts  Mins  \
-Name                                                                           
-Manuel Neuer  Bayern Munich         GER       GK   34       33      33  2970   
-David Alaba   Bayern Munich         AUT    DF,MF   28       32      30  2675   
-
-              Goals  Assists  Penalty_Goals  Penalty_Attempted    xG    xA  \
-Name                                                                         
-Manuel Neuer      0        0              0                  0  0.00  0.01   
-David Alaba       2        4              0                  0  0.04  0.08   
-
-              Yellow_Cards  Red_Cards  
-Name                                   
-Manuel Neuer             1          0  
-David Alaba              4          0  
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie sich die folgenden Zeilen anzeigen:</p>
-<ul class="simple">
-<li><p>Kingsley Coman</p></li>
-<li><p>Kingsley Coman bis Alphonso Davies</p></li>
-<li><p>Robert Lewandowski, Kingsley Coman und Serge Gnabry</p></li>
+<li><p>Sie können einen <strong>Vektor</strong> oder eine <strong>Matrix</strong> in MATLAB erzeugen.</p></li>
+<li><p>Sie wissen, wie Sie auf einzelne Elemente eines Vektors oder ein MAtrix
+zugreifen.</p></li>
+<li><p>Sie beherrschen das Slicing in MATLAB.</p></li>
+<li><p>Sie können grundlegende Rechenoperationen mit Vektoren oder Matrizen
+ausführen.</p></li>
+<li><p>Sie können mit MATLAB das Skalarprodukt oder das Vektorprodukt von Vektoren
+berechnen.</p></li>
+<li><p>Sie können die Determinante, die Eigenwerte oder die Eigenvektoren einer
+Matrix berechnen.</p></li>
 </ul>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</section>
+<section id="vektoren">
+<h2>Vektoren<a class="headerlink" href="#vektoren" title="Link to this heading">#</a></h2>
+<p>Vektoren sind sozusagen technisch gesehen Listen, die nur Zahlen enthalten, und
+für die die typischen Vektoroperationen definiert sind. Zunächst beschäftigen
+wir uns mit der Erzeugung von Vektoren.</p>
+<section id="erzeugung-zeilenvektor">
+<h3>Erzeugung Zeilenvektor<a class="headerlink" href="#erzeugung-zeilenvektor" title="Link to this heading">#</a></h3>
+<p>Ein Vektor wird in MATLAB durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[</span>&#160; <span class="pre">]</span></code> erzeugt. Sie finden das
+Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
+eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
+drücken, um die eckigen Klammern auf der Tastatur einzugeben.</p>
+<p>Betrachten wir ein Beispiel. Hier wird ein Vektor mit den Elementen 1, 2, 3, 4,
+5 erzeugt und dann anschließend in der Variablen <code class="docutils literal notranslate"><span class="pre">v</span></code> gespeichert. Zur Trennung
+der einzelnen Elemente des Vektors verwenden wir das Komma. Tatsächlich würde
+MATLAB auch ein Leerzeichen als Trennung akzeptieren. Im Zusammenhang mit
+Matrizen ist aber das Komma einprägsamer, so dass wir beim Komma bleiben.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_zeile</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">]</span>
-<span class="n">data_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Kingsley Coman&#39;</span> <span class="p">:</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">]</span>
-<span class="n">data_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span><span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">,</span> <span class="s1">&#39;Serge Gnabry&#39;</span><span class="p">]]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">data_zeile</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_slice</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_selektion</span><span class="p">)</span>
+</section>
+<section id="erzeugung-spaltenvektor">
+<h3>Erzeugung Spaltenvektor<a class="headerlink" href="#erzeugung-spaltenvektor" title="Link to this heading">#</a></h3>
+<p>Der Vektor, so wie wir ihn bisher erzeugt haben, ist ein Zeilenvektor. Möchten
+wir ihn in einen Spaltenvektor umwandeln, so müssen wir ihn transponieren. Dafür
+steht in MATLAB der einzelne Hochstrich <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">&#39;</span>
 </pre></div>
 </div>
+<p>Soll direkt ein Spaltenvektor erzeugt werden, so verwenden wir das Semikolon
+anstatt des Kommas.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">spaltenvektor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
 </div>
 </section>
+<section id="einfache-rechenoperationen">
+<h3>Einfache Rechenoperationen<a class="headerlink" href="#einfache-rechenoperationen" title="Link to this heading">#</a></h3>
+<p>Mit Vektoren kann auch direkt gerechnet werden. Natürlich müssen dabei die
+Dimensionen der Vektoren übereinstimmen. Bei der folgenden Addition</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7</span><span class="p">]</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.7</span><span class="p">]</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+<p>wird von MATLAB das Ergebnis <code class="docutils literal notranslate"><span class="pre">[-1.5,</span> <span class="pre">1,</span> <span class="pre">2]</span></code> berechnet und angezeigt. Die
+Subtraktion erfolgt analog.</p>
+<p>Die Multiplikation <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code> funktioniert jedoch nicht. Es erscheint eine
+Fehlermeldung. Das liegt daran, dass es eine direkte Multiplikation von Vektoren
+nicht gibt. Wir müssen erst entscheiden, ob elementweise multipliziert werden
+soll oder ob vielleicht das Skalarprodukt oder das Vektorprodukt gemeint ist.</p>
+<p>Bei der elementweisen Multiplikation wird dem Mulitiplikationsoperator <code class="docutils literal notranslate"><span class="pre">*</span></code> ein
+Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> vorangestellt, also <code class="docutils literal notranslate"><span class="pre">.*</span></code>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+<p>Das Ergebnis ist dann der Vektor <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">-2.0000,</span> <span class="pre">-6.2900]</span></code>. So funktioniert auch
+die elementweise Division. Dabei gibt es zwei Varianten:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">b</span>
+<span class="n">a</span><span class="w"> </span><span class="o">.\</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+<p>Bei der ersten Variante wird jedes Element des Vektors <code class="docutils literal notranslate"><span class="pre">a</span></code> durch das
+entsprechende Element des Vektors <code class="docutils literal notranslate"><span class="pre">b</span></code> geteilt. Das <code class="docutils literal notranslate"><span class="pre">b</span></code>steht in Nenner des
+Bruchstrichs <code class="docutils literal notranslate"><span class="pre">/</span></code>. Bei der zweiten Variante wird jedes Elemet des Vektors <code class="docutils literal notranslate"><span class="pre">b</span></code>
+durch die entsprechenden Elemente des Vektors <code class="docutils literal notranslate"><span class="pre">a</span></code> geteilt. Der Bruchstrich <code class="docutils literal notranslate"><span class="pre">\</span></code>
+zeigt an, dass <code class="docutils literal notranslate"><span class="pre">a</span></code> im Nenner stehen soll.</p>
 </section>
-<section id="zugriff-auf-spalten">
-<h2>Zugriff auf Spalten<a class="headerlink" href="#zugriff-auf-spalten" title="Link to this heading">#</a></h2>
-<p>Auf Spalten können wir zugreifen, indem wir <code class="docutils literal notranslate"><span class="pre">.loc</span></code> mit zwei Argumenten benutzen.
-Dann steht das 1. Argument für den Zeilenindex und das 2. Argument für den
-Spaltenindex. Wenn wir die komplette Spalte betrachten wollen, setzen wir für
-den Zeilenindex einfach einen Doppelpunkt <code class="docutils literal notranslate"><span class="pre">:</span></code>. Damit werden automatisch als
-Anfangsindex die erste Zeile und als Endindex die letzte Zeile gewählt.
-Ansonsten erfolgen die Zugriffe auf Spalten analog zu den Zugriffen auf Zeilen
-über die drei Möglichkeiten</p>
-<ul class="simple">
-<li><p>einzelne Spalte,</p></li>
-<li><p>zusammenhängende Spalten (Slicing) und</p></li>
-<li><p>unzusammenhängende Spalten als Liste (Selektion).</p></li>
-</ul>
-<section id="einzelne-spalte">
-<h3>Einzelne Spalte<a class="headerlink" href="#einzelne-spalte" title="Link to this heading">#</a></h3>
-<p>Als nächstes greifen wir auf eine Spalte der Tabelle zu.</p>
-<figure class="align-center" id="fig08-04">
-<a class="reference internal image-reference" href="../_images/tabelle_spalte_einzeln.png"><img alt="Einzelne Spalte einer Tabelle" src="../_images/tabelle_spalte_einzeln.png" style="width: 50%;" /></a>
+<section id="erzeugung-eines-vektors-mittels-doppelpunkt-operator">
+<h3>Erzeugung eines Vektors mittels Doppelpunkt-Operator<a class="headerlink" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator" title="Link to this heading">#</a></h3>
+<p>Python verfügt über die Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code>, um Listen mit Zahlen zu erzeugen,
+die einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
+gebraucht, dass sie sogar durch einen eigenen Operator anstatt einer Funktion
+erreicht wird, durch den Doppelpunkt-Operator <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Eine Liste mit den Zahlen von 5 bis 11 wird folgendermaßen generiert:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span>
+</pre></div>
+</div>
+<p>Auch hier ist eine Schrittweite versteckt enthalten. Der folgende Code erzeugt
+gerade Zahlen von 4 bis 12:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+</pre></div>
+</div>
+<p>So kann auch rückwärts gezählt werden.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>Das folgende Video fasst die obigen Erklärungen zusammen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 1.4 Vektoren” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+</section>
+<section id="matrizen">
+<h2>Matrizen<a class="headerlink" href="#matrizen" title="Link to this heading">#</a></h2>
+<p>MATLAB würde nicht Matrix-Labor heißen, wenn es nicht einen eigenen Datentyp für
+Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrix ab. Ein
+Zeilenvektor ist eine <span class="math notranslate nohighlight">\(1\times N\)</span>-Matrix und ein Spaltenvektor eine <span class="math notranslate nohighlight">\(M\times
+1\)</span>-Matrix. Daher betrachten wir uns als nächstes, wie Matrizen in MATLAB erzeugt
+werden.</p>
+<section id="erzeugung-von-matrizen">
+<h3>Erzeugung von Matrizen<a class="headerlink" href="#erzeugung-von-matrizen" title="Link to this heading">#</a></h3>
+<p>Bei den Vektoren haben wir gelernt, Leerzeichen oder Komma, um Elemente eines
+Zeilenvektors aufzulisten, und Semikolon, um Elemente in einem Spaltenvektor
+voneinander abzugrenzen. Eine Matrix wird zeilenweise eingegeben. Das Semikolon
+markiert das Ende der Zeile.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="erzeugung-von-speziellen-matrizen">
+<h3>Erzeugung von speziellen Matrizen<a class="headerlink" href="#erzeugung-von-speziellen-matrizen" title="Link to this heading">#</a></h3>
+<p>Für Matrizen, die häufig gebraucht werden, hat MATLAB eigene
+Erzeugungsfunktionen. Beispielsweise generiert die Funktion</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>eine Matrix, die nur die Zahl Null enthält und die 5 Zeilen und 3 Spalten hat.
+Analog dazu funktioniert das Kommando</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>das eine Matrix mit Einsen erzeugt, die 5 Zeilen und 3 Spalten hat. Sehr häufig
+gebraucht wird auch die Einheitsmatrix. Mit der Funktion <code class="docutils literal notranslate"><span class="pre">eye(N)</span></code> wird sie
+erzeugt, wobei der Parameter <code class="docutils literal notranslate"><span class="pre">N</span></code> die Dimension der quadratischen Matrix angibt.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier noch ein Video zu Matrizen in MATLAB.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 1.5 Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+</section>
+<section id="skripte">
+<h2>Skripte<a class="headerlink" href="#skripte" title="Link to this heading">#</a></h2>
+<p>Es ist umständlich, immer alles in das Kommandofenster einzugeben. Die
+Entwicklungsumgebung MATLAB bietet einen Texteditor, um ein sogenanntes Skript
+zu schreiben. Ein Skript ist wie ein Programm, also eine Aneinanderreihung von
+Anweisungen an den MATLAB-Interpreter. Es wird als Text abgespeichert und trägt
+die Dateiendung <code class="docutils literal notranslate"><span class="pre">.m</span></code>. Am einfachsten starten Sie den Editor, indem Sie auf <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Script</span></code> klicken.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/screenshot03.png"><img alt="Screenshot MATLAB mit &quot;New Script&quot;" src="../_images/screenshot03.png" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Auf eine einzelne Spalte der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">spaltenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-04" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Screenshot MATLAB mit dem Button “New Script”</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex <code class="docutils literal notranslate"><span class="pre">Age</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Manuel Neuer          34
-Thomas Müller         30
-David Alaba           28
-Jérôme Boateng        31
-Robert Lewandowski    31
-                      ..
-Loris Karius          27
-Akaki Gogia           28
-Leon Dajaku           19
-Tim Maciejewski       19
-Joshua Mees           24
-Name: Age, Length: 177, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zusammenhangende-spalten-slicing">
-<h3>Zusammenhängende Spalten: Slicing<a class="headerlink" href="#zusammenhangende-spalten-slicing" title="Link to this heading">#</a></h3>
-<p>Wenn wir beispielsweise die Anzahl der Spiele (<code class="docutils literal notranslate"><span class="pre">Matches</span></code>), die ein Spieler in
-der Saison absolviert hat, mit der Anzahl der Spiele, in denen er vom Anfang an
-auf dem Platz stand (<code class="docutils literal notranslate"><span class="pre">Starts</span></code>) vergleichen wollen, so können wir die beiden
-aufeinanderfolgenden Spalten ‘Matches’ und ‘Starts’ als Slice ausschneiden.</p>
-<figure class="align-center" id="fig08-05">
-<a class="reference internal image-reference" href="../_images/tabelle_spalte_slice.png"><img alt="Slice von Spalten einer Tabelle" src="../_images/tabelle_spalte_slice.png" style="width: 50%;" /></a>
+<p>Sobald MATLAB den Texteditor öffnet, verändert sich das Layout von MATLAB. Das
+Kommandofenster rutscht nach unten und wird kleiner, wohingegen der Texteditor
+nun den größten Raum einnimmt.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/screenshot04.png"><img alt="Screenshot MATLAB mit Texteditor" src="../_images/screenshot04.png" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Auf mehrere zusammenhängende Spalten der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">start:stopp]</span></code> zugegriffen. Das nennt man Slicing.</span><a class="headerlink" href="#fig08-05" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem
+auf den Button “Run” geklickt wird (siehe 3)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Analog zum Slicing von Zeilen wird ein Slicing von Spalten durchgeführt, indem
-der Anfangsspaltenindex hingeschrieben wird, dann ein Doppelpunkt gesetzt wird
-und dann der Endspaltenindex notiert wird. Das folgende Beispiel zeigt das
-Slicing zweier Spalten.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiele</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Matches&#39;</span> <span class="p">:</span> <span class="s1">&#39;Starts&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spiele</span><span class="p">)</span>
+<p>Das Skript wird ausgeführt, indem Sie auf den Button “Run” klicken (siehe
+Screenshot, 3). Es ist ratsam, am Anfang des Skriptes den Befehl <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code>
+einzufügen. Diese Anweisung sorgt dafür, dass alle sich im Speicher befindlichen
+Variablen gelöscht werden.</p>
+<p>Ein weiteres Video zu Skripten in MATLAB finden Sie hier.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 1.6 Skripte” von Mathe? logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zugriff-auf-vektor-und-matrixelemente">
+<h2>Zugriff auf Vektor- und Matrixelemente<a class="headerlink" href="#zugriff-auf-vektor-und-matrixelemente" title="Link to this heading">#</a></h2>
+<p>Der Zugriff auf die Elemente eines Vektors erfolgt durch Angabe des Index des
+Elements in runden Klammern. Beachten Sie, dass MATLAB im Gegensatz zu vielen
+anderen Programmiersprachen einen Index verwendet, der bei 1 beginnt. Das
+folgende Beispiel zeigt, wie auf das dritte Element des Vektors zugegriffen
+wird.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+<span class="n">drittes_element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Matches  Starts
-Name                               
-Manuel Neuer             33      33
-Thomas Müller            32      31
-David Alaba              32      30
-Jérôme Boateng           29      29
-Robert Lewandowski       29      28
-...                     ...     ...
-Loris Karius              4       3
-Akaki Gogia               7       0
-Leon Dajaku               2       0
-Tim Maciejewski           1       0
-Joshua Mees               1       0
-
-[177 rows x 2 columns]
+<p>Soll hingegen auf Elemente einer Matrix zugefriffen werden, müssen wir die Zeile
+und die Spalte über den jeweiligen Index angeben. Auf die zweite Zeile und die
+dritte Spalte wird folgendermaßen zugegriffen.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span>
+<span class="n">element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="selektion-unzusammenhangender-spalten-per-liste">
-<h3>Selektion unzusammenhängender Spalten per Liste<a class="headerlink" href="#selektion-unzusammenhangender-spalten-per-liste" title="Link to this heading">#</a></h3>
-<p>Die Anzahl der Spiele (<code class="docutils literal notranslate"><span class="pre">Matches</span></code>) und die Anzahl der gespielten Minuten in der
-kompletten Saison (<code class="docutils literal notranslate"><span class="pre">Mins</span></code>) die Anzahl der Spiele (‘Matches’) miteinander könnte
-aufschlussreich sein, um die durchschnittliche Minutenzahl pro Spiel zu
-ermitteln. Da die Spalten nicht nebeneinander liegen, müssen wir eine Liste
-benutzen, um sie zu selektieren.</p>
-<figure class="align-center" id="fig08-06">
-<a class="reference internal image-reference" href="../_images/tabelle_spalte_selektion.png"><img alt="Selektion von Spalten einer Tabelle" src="../_images/tabelle_spalte_selektion.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Auf mehrere unzusammenhängende Spalten der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">list]</span></code> zugegriffen. Das nennt man Selektion.</span><a class="headerlink" href="#fig08-06" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiele_minuten</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Matches&#39;</span><span class="p">,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spiele_minuten</span><span class="p">)</span>
+<p>Damit wird die <code class="docutils literal notranslate"><span class="pre">8</span></code> aus der Matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> extrahiert und kann weiter verarbeitet
+werden.</p>
+<p>Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu
+existiert das sogenannte <strong>Slicing</strong>. Mit Slicing ist gemeint, dass auf einen
+zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll.
+Wir betrachten die <span class="math notranslate nohighlight">\(3\times 5\)</span>-Matrix <span class="math notranslate nohighlight">\(A\)</span> von vorhin, also</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Matches  Mins
-Name                             
-Manuel Neuer             33  2970
-Thomas Müller            32  2674
-David Alaba              32  2675
-Jérôme Boateng           29  2368
-Robert Lewandowski       29  2458
-...                     ...   ...
-Loris Karius              4   292
-Akaki Gogia               7   140
-Leon Dajaku               2    37
-Tim Maciejewski           1     8
-Joshua Mees               1     5
-
-[177 rows x 2 columns]
+<p>Um jetzt einen zusammenhängenden Bereich aus der Matrix zu extrahieren,
+verwenden wir den Doppelpunkt-Operator ‘:’. Mit</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie sich die folgenden Spalten anzeigen:</p>
-<ul class="simple">
-<li><p>Nationality</p></li>
-<li><p>Nationality bis Age</p></li>
-<li><p>Nationality, Age und Matches</p></li>
-</ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+<p>greifen wir auf Elemente der ersten Zeile zu und gehen dabei in der Spalte von
+Anfang bis Ende, da vor dem Doppelpunkt und nach dem Doppelpunkt nichts steht.
+Das Ergebnis ist also die komplette erste Zeile <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>. Möchten wir
+in der ersten Zeile von der zweiten Spalte zur vierten Spalte auf die Elemente
+der Matrix zugreifen, schreiben wir den Startindex vor den Doppelpunkt und den
+Stoppindex nach dem Doppelpunkt.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_spalte</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Nationality&#39;</span><span class="p">]</span>
-<span class="n">data_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Nationality&#39;</span> <span class="p">:</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="n">data_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Matches&#39;</span><span class="p">]]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">data_spalte</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_slice</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_selektion</span><span class="p">)</span>
+<p>Das Ergebnis sind die Elemente <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>. Diese Vorgehensweise funktioniert
+auch für die Zeile. Der folgende MATLAB-Code extrahiert die komplette zweite und
+dritte Zeile.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span>
 </pre></div>
 </div>
-</div>
-</section>
-</section>
-<section id="zugriff-auf-zellen">
-<h2>Zugriff auf Zellen<a class="headerlink" href="#zugriff-auf-zellen" title="Link to this heading">#</a></h2>
-<p>Es kann auch vorkommen, dass man gezielt auf eine einzelne Zelle oder einen
-Bereich von Zellen zugreifen möchte. Auch dazu benutzen wir das Attribut
-<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
-<p>Eine Zelle ist ein einzelnes Element der Tabelle, sozusagen der Kreuzungspunkt
-zwischen Zeile und Spalte. Die Zelle mit dem Zeilenindex <code class="docutils literal notranslate"><span class="pre">Thomas</span> <span class="pre">Müller</span></code> und dem
-Spaltenindex <code class="docutils literal notranslate"><span class="pre">Age</span></code>enthält das Alter von Thomas Müller.</p>
-<figure class="align-center" id="fig08-07">
-<a class="reference internal image-reference" href="../_images/tabelle_zelle_einzeln.png"><img alt="Einzelne Zelle einer Tabelle" src="../_images/tabelle_zelle_einzeln.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Auf ein einzelne Zelle der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[zeilenindex,</span> <span class="pre">spaltenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-07" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Der Trick ist nun, die drei Möglichkeiten (einzeln, Slice und Selektion per
-Liste) für die Zeilen mit den gleichen drei Möglichkeiten des Zugriffes für
-Spalten zu kombinieren.</p>
-<p>Wollen wir beispielsweise das Alter von Thomas Müller aus der Tabelle
-heraussuchen, so gehen wir folgendermaßen vor.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_mueller</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Thomas Müller&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Thomas Müller ist </span><span class="si">{</span><span class="n">alter_mueller</span><span class="si">}</span><span class="s1"> Jahre alt.&#39;</span><span class="p">)</span>
+<p>Das Ergebnis ist</p>
+<code>
+    6     7     8     9    10 <br>
+    11    12    13    14    15
+</code>
+<p>Das Slicing kann auch verwendet werden, um Teile einer Matrix zu ändern. Nehmen
+wir an, wir möchten die zweite Spalte von A durch die Zahlen 102, 107 und 112
+ersetzen. Wir könnten durch den folgenden Code erreichen.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">102</span><span class="p">;</span><span class="w"> </span><span class="mi">107</span><span class="p">;</span><span class="w"> </span><span class="mi">112</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das
+Slicing zusammen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.1 Doppelpunkt- bzw. Colon-Operator” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thomas Müller ist 30 Jahre alt.
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.2 Zugriff auf Teile von Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">
+<h2>Fortgeschrittene Rechenoperationen für Vektoren und Matrizen<a class="headerlink" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen" title="Link to this heading">#</a></h2>
+<p>Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden Komponenten der Vektoren und die Summierung dieser Produkte berechnet.</p>
+<p>In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion <code class="docutils literal notranslate"><span class="pre">dot()</span></code> berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+<span class="n">skalarprodukt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Wollen wir Beispielsweise das Alter der Fußballprofis von ‘David Alaba’ bis
-‘Robert Lewandowski’ wissen, so gehen wir folgendermaßen vor:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;David Alaba&#39;</span> <span class="p">:</span> <span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter_slice</span><span class="p">)</span>
+<p>Das Ergbnis ist <span class="math notranslate nohighlight">\(1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32\)</span>.</p>
+<p>Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.</p>
+<p>In MATLAB wird das Vektorprodukt mit der Funktion <code class="docutils literal notranslate"><span class="pre">cross()</span></code> berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+<span class="n">vektorprodukt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cross</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-David Alaba           28
-Jérôme Boateng        31
-Robert Lewandowski    31
-Name: Age, dtype: int64
+<p>Das Vektorprodukt ist der Vektor <code class="docutils literal notranslate"><span class="pre">[-3,</span> <span class="pre">6,</span> <span class="pre">-3]</span></code>.</p>
+<p>Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.</p>
+<p>In MATLAB wird die Determinante einer Matrix mit der Funktion <code class="docutils literal notranslate"><span class="pre">det()</span></code> berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
+<span class="n">det_A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Und möchten wir von den Herren Thomas Müller und Joshua Kimmich sowhl die
-Nationalität als auch das Alter selektieren, so gehen wir wie folgt vor:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spezialauswahl</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Thomas Müller&#39;</span><span class="p">,</span> <span class="s1">&#39;Joshua Kimmich&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spezialauswahl</span><span class="p">)</span>
+<p>Die Determinante der obigen Matrix <span class="math notranslate nohighlight">\(A\)</span> ist <span class="math notranslate nohighlight">\(\det(A) = 1\cdot 4 - 3\cdot 2 = -2\)</span>.</p>
+<p>Eigenwerte und Eigenvektoren sind weitere wichtige Konzepte in der linearen
+Algebra, die in vielen Anwendungen, einschließlich der
+Maschinenbauingenieurwissenschaften, der Informatik und der Datenanalyse,
+nützlich sind. Die Eigenwerte einer Matrix sind die Lösungen der
+charakteristischen Gleichung</p>
+<div class="math notranslate nohighlight">
+\[\det(A-\lambda E) = 0,\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(E\)</span> die Einheitsmatrix der passenden Dimension ist. Zu jedem Eigenwert
+<span class="math notranslate nohighlight">\(\lambda\)</span> kann dann der Eigenvektor <span class="math notranslate nohighlight">\(\vec{v}\)</span> berechnet werden, der die
+Gleichung</p>
+<div class="math notranslate nohighlight">
+\[A\cdot \vec{v} = \lambda \vec{v}\]</div>
+<p>erfüllt. Ein Eigenvektor ist also ein Vektor, der sich bei der Anwendung einer
+linearen Transformation (repräsentiert durch die Matrix) nur um einen
+Skalierungsfaktor ändert.</p>
+<p>In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion <code class="docutils literal notranslate"><span class="pre">eig()</span></code>
+berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>In diesem Beispiel gibt der Code die Matrix <code class="docutils literal notranslate"><span class="pre">V</span></code> der Eigenvektoren und die
+Diagonalmatrix <code class="docutils literal notranslate"><span class="pre">D</span></code> aus. Jede Spalte in V ist ein Eigenvektor, und die
+entsprechenden Eigenwerte sind die Elemente auf der Diagonale in D.</p>
+<p>Für weitere Betrachtungen empfehle ich die folgenden beiden Videos.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.3 Kombination und Transformation von Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               Nationality  Age
-Name                           
-Thomas Müller          GER   30
-Joshua Kimmich         GER   25
-</pre></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.4 Operationen auf Matrizen” Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie sich das Alter von Robert Lewandowski und Thomas Müller anzeigen.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas Müller&#39;</span><span class="p">],</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="filtern">
-<h2>Filtern<a class="headerlink" href="#filtern" title="Link to this heading">#</a></h2>
-<p>Vielleicht haben Sie sich schon gefragt, warum wir nur Bayern-Spieler analysiert
-haben. Die Antwort ist simpel, Bayern stand im Datensatz oben in den ersten
-Zeilen. Tatsächlich sind aber die Spielerdaten von sieben Vereinen im Datensatz
-enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
-<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>ansehen.</p>
-<p>In einem ersten Schritt lesen wir die Spalte mit den Vereinen aus (Spalte
-‘Club’). Dann wenden wir auf das Ergnis die Methode <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> an.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vereine</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span>
-<span class="n">vereinsnamen</span> <span class="o">=</span> <span class="n">vereine</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vereinsnamen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bayern Munich&#39; &#39;Borussia Dortmund&#39; &#39;RB Leipzig&#39; &#39;Wolfsburg&#39;
- &#39;Eintracht Frankfurt&#39; &#39;Bayer Leverkusen&#39; &#39;Union Berlin&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wenn man möchte, kann man auch beide Schritte in einem Schritt ausführen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vereinsnamen</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vereinsnamen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bayern Munich&#39; &#39;Borussia Dortmund&#39; &#39;RB Leipzig&#39; &#39;Wolfsburg&#39;
- &#39;Eintracht Frankfurt&#39; &#39;Bayer Leverkusen&#39; &#39;Union Berlin&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Jetzt wo wir wissen, dass auch Eintracht Frankfurt dabei ist, würden wir den
-Datensatz gerne nach Eintracht Frankfurt filtern. Dazu benutzen wir einen
-Vergleich und speichern das Ergebnis des Vergleichs in einer Variablen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filter_eintracht</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">filter_eintracht</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Manuel Neuer          False
-Thomas Müller         False
-David Alaba           False
-Jérôme Boateng        False
-Robert Lewandowski    False
-                      ...  
-Loris Karius          False
-Akaki Gogia           False
-Leon Dajaku           False
-Tim Maciejewski       False
-Joshua Mees           False
-Name: Club, Length: 177, dtype: bool
-</pre></div>
-</div>
-</div>
-</div>
-<p>Das Ergebnis des Vergleichs, der in der Variablen <code class="docutils literal notranslate"><span class="pre">filter_eintracht</span></code> gespeichert
-ist, ist ein Pandas-Series-Objekt, das für jede Zeile gespeichert hat, ob der
-Vergleich wahr (True) oder falsch (False) ist. Ist in einer Zeile der Club
-gleich ‘Eintracht Frankfurt’, so ist in dem booleschen Objekt an dieser Stelle
-True eingetragen und ansonsten False. Der Datenyp dtype wird mit <code class="docutils literal notranslate"><span class="pre">bool</span></code>
-angegeben.</p>
-<p>Wir können nun anstatt einer Liste diesen booleschen Index nutzen, um Zeilen zu
-selektieren. Steht in einer Zeile des booleschen Series-Objektes <code class="docutils literal notranslate"><span class="pre">True</span></code>, so wird
-diese Zeile ausgewählt. Ansonsten wird die Zeile übersprungen. Damit erhalten
-wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">filter_eintracht</span><span class="p">,</span> <span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Club Nationality Position  Age  Matches  \
-Name                                                                         
-Kevin Trapp         Eintracht Frankfurt         GER       GK   30       33   
-André Silva         Eintracht Frankfurt         POR       FW   24       32   
-Filip Kostić        Eintracht Frankfurt         SRB       DF   27       30   
-Martin Hinteregger  Eintracht Frankfurt         AUT       DF   27       29   
-Daichi Kamada       Eintracht Frankfurt         JPN    MF,FW   23       32   
-Makoto Hasebe       Eintracht Frankfurt         JPN    DF,MF   36       29   
-Djibril Sow         Eintracht Frankfurt         SUI       MF   23       28   
-Obite N&#39;Dicka       Eintracht Frankfurt         FRA       DF   20       23   
-Sebastian Rode      Eintracht Frankfurt         GER       MF   29       27   
-Erik Durm           Eintracht Frankfurt         GER       DF   28       21   
-Stefan Ilsanker     Eintracht Frankfurt         AUT    MF,DF   31       27   
-Tuta                Eintracht Frankfurt         BRA       DF   21       19   
-Amin Younes         Eintracht Frankfurt         GER    MF,FW   26       26   
-David Abraham       Eintracht Frankfurt         ARG       DF   34       14   
-Aymen Barkok        Eintracht Frankfurt         MAR    FW,MF   22       26   
-Bas Dost            Eintracht Frankfurt         NED       FW   31       12   
-Luka Jović          Eintracht Frankfurt         SRB    FW,MF   22       18   
-Almamy Touré        Eintracht Frankfurt         MLI       DF   24       17   
-Steven Zuber        Eintracht Frankfurt         SUI    DF,MF   28       20   
-Timothy Chandler    Eintracht Frankfurt         USA       DF   30       15   
-Dominik Kohr        Eintracht Frankfurt         GER    MF,FW   26        7   
-Ajdin Hrustic       Eintracht Frankfurt         AUS    MF,FW   24       11   
-Danny da Costa      Eintracht Frankfurt         GER       DF   27        6   
-Elias Bördner       Eintracht Frankfurt         GER       GK   18        1   
-Ragnar Ache         Eintracht Frankfurt         GER    FW,DF   22        7   
-
-                    Starts  Mins  Goals  Assists  Penalty_Goals  \
-Name                                                              
-Kevin Trapp             33  2970      0        0              0   
-André Silva             32  2760     28        7              7   
-Filip Kostić            29  2534      4       14              0   
-Martin Hinteregger      29  2527      2        1              0   
-Daichi Kamada           28  2356      5       12              0   
-Makoto Hasebe           26  2288      0        0              0   
-Djibril Sow             25  2175      0        2              0   
-Obite N&#39;Dicka           23  2044      3        1              0   
-Sebastian Rode          19  1625      1        0              0   
-Erik Durm               19  1480      1        2              0   
-Stefan Ilsanker         17  1578      1        0              0   
-Tuta                    16  1459      0        0              0   
-Amin Younes             16  1391      3        3              0   
-David Abraham           14  1222      1        0              0   
-Aymen Barkok             9   977      2        3              0   
-Bas Dost                 9   817      4        2              1   
-Luka Jović               8   894      4        1              0   
-Almamy Touré             8   704      1        1              0   
-Steven Zuber             6   585      0        3              0   
-Timothy Chandler         3   432      1        0              0   
-Dominik Kohr             2   260      0        0              0   
-Ajdin Hrustic            1   272      1        0              0   
-Danny da Costa           1   110      0        0              0   
-Elias Bördner            1    90      0        0              0   
-Ragnar Ache              0   100      1        0              0   
-
-                    Penalty_Attempted    xG    xA  Yellow_Cards  Red_Cards  
-Name                                                                        
-Kevin Trapp                         0  0.00  0.00             0          0  
-André Silva                         7  0.79  0.18             1          0  
-Filip Kostić                        0  0.14  0.41             4          0  
-Martin Hinteregger                  0  0.07  0.03             4          0  
-Daichi Kamada                       0  0.21  0.28             3          0  
-Makoto Hasebe                       0  0.01  0.01             5          0  
-Djibril Sow                         0  0.02  0.06             6          0  
-Obite N&#39;Dicka                       0  0.05  0.01            10          0  
-Sebastian Rode                      0  0.01  0.07            10          0  
-Erik Durm                           0  0.10  0.13             1          0  
-Stefan Ilsanker                     0  0.07  0.01             4          0  
-Tuta                                0  0.01  0.02             5          0  
-Amin Younes                         0  0.22  0.11             5          0  
-David Abraham                       0  0.05  0.03             5          1  
-Aymen Barkok                        0  0.15  0.27             5          0  
-Bas Dost                            1  0.47  0.25             3          0  
-Luka Jović                          0  0.28  0.06             2          0  
-Almamy Touré                        0  0.15  0.16             2          0  
-Steven Zuber                        0  0.12  0.29             1          0  
-Timothy Chandler                    0  0.18  0.07             2          0  
-Dominik Kohr                        0  0.19  0.01             1          0  
-Ajdin Hrustic                       0  0.10  0.14             2          0  
-Danny da Costa                      0  0.14  0.00             0          0  
-Elias Bördner                       0  0.00  0.00             0          0  
-Ragnar Ache                         0  0.24  0.00             1          0  
-</pre></div>
-</div>
-</div>
-</div>
-<p>Da der print()-Befehl nicht alle Einträge anzeigt, gehen wir jetzt Zeile für
-Zeile durch. Den Zeilenindex erhalten wir über das Attribut <code class="docutils literal notranslate"><span class="pre">.index</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zeilenindex</span> <span class="ow">in</span> <span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">zeilenindex</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kevin Trapp
-André Silva
-Filip Kostić
-Martin Hinteregger
-Daichi Kamada
-Makoto Hasebe
-Djibril Sow
-Obite N&#39;Dicka
-Sebastian Rode
-Erik Durm
-Stefan Ilsanker
-Tuta
-Amin Younes
-David Abraham
-Aymen Barkok
-Bas Dost
-Luka Jović
-Almamy Touré
-Steven Zuber
-Timothy Chandler
-Dominik Kohr
-Ajdin Hrustic
-Danny da Costa
-Elias Bördner
-Ragnar Ache
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
-<p>In diesem Abschnitt konnten wir nur die Basis-Funktionalitäten streifen.
-Natürlich ist auch möglich, Bereiche zu sortieren oder gruppieren. Im nächsten
-Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
-</section>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1521,7 +826,7 @@ Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8.1 Series und DataFrame</p>
+        <p class="prev-next-title">8.1 Einführung MATLAB</p>
       </div>
     </a>
     <a class="right-next"
@@ -1529,7 +834,7 @@ Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8.3 Statistik mit Pandas</p>
+        <p class="prev-next-title">8.3 Programmieren in MATLAB</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1551,21 +856,21 @@ Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zeilen">Zugriff auf Zeilen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-zeile">Einzelne Zeile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-zeilen-slicing">Zusammenhängende Zeilen: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-zeilen-per-liste">Selektion unzusammenhängender Zeilen per Liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren">Vektoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-zeilenvektor">Erzeugung Zeilenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-spaltenvektor">Erzeugung Spaltenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator">Erzeugung eines Vektors mittels Doppelpunkt-Operator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-spalten">Zugriff auf Spalten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-spalte">Einzelne Spalte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-spalten-slicing">Zusammenhängende Spalten: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-spalten-per-liste">Selektion unzusammenhängender Spalten per Liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizen">Matrizen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-matrizen">Erzeugung von Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-speziellen-matrizen">Erzeugung von speziellen Matrizen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zellen">Zugriff auf Zellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtern">Filtern</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skripte">Skripte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-vektor-und-matrixelemente">Zugriff auf Vektor- und Matrixelemente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">Fortgeschrittene Rechenoperationen für Vektoren und Matrizen</a></li>
 </ul>
   </nav></div>
 

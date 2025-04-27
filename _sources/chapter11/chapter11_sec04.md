@@ -1,270 +1,266 @@
-# Übungen
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.5
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 
-```{admonition} Übung 11.1
-:class: miniexercise
-Ordnen Sie ein: welche der beiden Programmiersprachen MATLAB oder Python ist
-eine Interpreter-Sprache und welche eine Compiler-Sprache? Welche Vor- und Nachteile haben Interpreter-Sprachen?
+# 11.4 Histogramme (optional) 
 
-Recherchieren Sie im Internet: Was ist Cython und was ist der MATLAB Coder?
-```
-```{admonition} Lösung
-:class: miniexercise, toggle
-Sowohl MATLAB als auch Python sind beides Interpreter-Sprachen. Sie werden in Echtzeit ausgeführt, anstatt vorab in Maschinencode kompiliert zu werden, wie es bei Compiler-Sprachen der Fall ist.
+## Lernziele
 
-Vorteile von Interpreter-Sprachen sind:
-
-* **Leichtere Fehlersuche:** Da der Interpreter den Code Zeile für Zeile ausführt, erkennt man leichter, in welcher Zeile der Fehler auftritt.
-
-* **Plattformunabhängigkeit:** Interpreter-Sprachen sind oft plattformübergreifend, was bedeutet, dass sie auf verschiedenen Betriebssystemen ausgeführt werden können, ohne dass der Code geändert werden muss.
-
-
-Nachteile von Interpreter-Sprachen sind:
-
-* **Geschwindigkeit:** Interpreter-Sprachen sind in der Regel langsamer als kompilierte Sprachen, da der Code zur Laufzeit und nicht vorab übersetzt wird.
-
-* **Schutz des Quellcodes:** Bei Interpreter-Sprachen ist es einfacher, den Quellcode zu lesen und zu verstehen, was bedeutet, dass er weniger geschützt ist als bei kompilierten Sprachen.
-
-Was Cython und MATLAB Coder betrifft:
-
-**Cython** ist eine Erweiterung von Python, die zusätzlich C-Datentypen unterstützt. Mit Cython können Python-Entwickler Python-Code in die Compiler-Sprachen C oder C++ übersetzen und kompilieren, um die Ausführungszeit zu verkürzen.
-
-**MATLAB Coder** ist ein MATLAB-Tool, das MATLAB-Code in C oder C++ Code umwandelt. Dies kann verwendet werden, um den MATLAB-Code auf Plattformen auszuführen, die MATLAB nicht unterstützen, oder um die Geschwindigkeit der Ausführung zu verbessern, indem der Code vorab kompiliert wird.
+```{admonition} Lernziele
+:class: important
+* Sie wissen, was ein **Histogramm** ist.
+* Sie können mit der Funktion **hist()** ein Histogramm erzeugen und visualisieren.
+* Sie wissen, dass die Einteilung des Intervalls in die Teilintervalle **Bin**
+  kritisch ist und daher sehr sorgfältig gewählt werden muss.
 ```
 
-````{admonition} Übung 11.2
-:class: miniexercise
-Was gibt der folgende Code aus? Lesen Sie das Programm und versuchen Sie nur durch Nachdenken die Ausgabe des Programms auf Papier zu schreiben.
+## Notenspiegel ist ein Histogramm
 
-```python
-def meine_funktion(n):
-    a = 0
-    b = 1
-    meine_liste = [a, b]
-    for i in range(n-2):
-        c = a + b
-        meine_liste.append(c)
-        a = b
-        b = c
-    return meine_liste
+Das erste Histogramm, das Ihnen wahrscheinlich begegnet ist, ist der
+Notenspiegel in der Schule gewesen. Für jedes Merkmal (hier = Note) des
+Datensatzes (hier = Klasse) wird die Anzahl der Schülerinnen und Schüler
+angegeben, die diese Note erreicht haben. Eine typische Klassenarbeit könnte
+beispielsweise so aussehen:
 
-zahlen = meine_funktion(8)
-print(zahlen)
-```
-````
-```{admonition} Lösung
-:class: miniexercise, toggle
-Das Python-Programm gibt 
+|1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---| --- |
+| 2 | 4  | 8  | 6  | 3  | 1 |
 
-[0, 1, 1, 2, 3, 5, 8, 13]
+Ein Histogramm ist eine Visualisierung einer solchen Tabelle. Dabei werden in
+der Regel Balken benutzt. Auf der x-Achse sind also die Merkmale aufgetragen und
+auf der y-Achse finden wir die Anzahl der Merkmale in dem Datensatz. Die Anzahl
+kann dabei in absoluten Zahlen angegeben werden oder in relativen (Prozent).  
 
-aus. Das ist übrigens die sogenannte [Fibonacci-Folge](https://de.wikipedia.org/wiki/Fibonacci-Folge).
-```
+So sieht das Histogramm des Notenspiegels aus:
 
-```{admonition} Übung 11.3
-:class: miniexercise
-Schreiben Sie ein **Python**-Programm, das das Spiel ["Schere - Stein - Papier"](https://de.wikipedia.org/wiki/Schere,_Stein,_Papier) umsetzt.
-
-Die Spielregeln sind wie folgt:
-
-Der Computer fragt den wählt zufällig einen Gegenstand aus (ohne ihn auszugeben)
-und fragt den Spieler nach seiner Wahl. Schere gewinnt gegen Papier, Papier
-gewinnt gegen Stein und Stein gewinnt gegen Schere. Der Sieg bringt dem
-jeweiligen Spieler einen Punkt. Haben beide den gleichen Gegenstand gewählt,
-zählt das als unentschieden, also 0 Punkte. Lassen Sie Spieler und Computer
-solange gegeneinander spielen, bis einer von beiden 3 Punkte erreicht hat.
-
-Wünschenswert sind auch Ausgaben wie z.B. der aktuelle Spielstand oder am Ende die Gratulation an den Sieger.
-```
-````{admonition} Lösung 
-:class: miniexercise, toggle
-```python
-from numpy.random import randint 
-
-gegenstaende = ['Schere', 'Stein', 'Papier']
-
-punkte_computer = 0
-punkte_spieler  = 0
-
-while True:
-    # Wahl des Computers
-    zufallsindex = randint(0,3)
-    computerwahl = gegenstaende[zufallsindex]
-
-    # Wahl des Spielers
-    spielerwahl  = input('Was wählen Sie? Schere, Stein oder Papier?')
-    while spielerwahl not in gegenstaende:
-        print(f'Sie haben {spielerwahl} gewählt, was nicht in der Liste ist. Achten Sie auf die korrekte Schreibweise.')
-        spielerwahl  = input('Was wählen Sie? Schere, Stein oder Papier?')
-    
-    # Vergleich, wer gewonnen hat
-    if computerwahl == 'Schere':
-        if spielerwahl == 'Schere':
-            print('Unentschieden')
-        elif spielerwahl == 'Stein':
-            print('Stein schleift Schere, der Spieler hat gewonnen.')
-            punkte_spieler = punkte_spieler + 1
-        else:
-            print('Schere schneidet Papier, der Computer hat gewonnen.')
-            punkte_computer = punkte_computer + 1
-    elif computerwahl == 'Stein':
-        if spielerwahl == 'Schere':
-            print('Stein schleift Schere, der Computer hat gewonnen.')
-            punkte_computer = punkte_computer + 1
-        elif spielerwahl == 'Stein':
-            print('Unentschieden.')
-        else:
-            print('Papier umwickelt Stein, der Spieler hat gewonnen.')
-            punkte_spieler = punkte_spieler + 1
-    else:
-        if spielerwahl == 'Schere':
-            print('Schere schneidet Papier, der Spieler hat gewonnen.')
-            punkte_spieler = punkte_spieler + 1
-        elif spielerwahl == 'Stein':
-            print('Papier umwickelt Stein, der Computer hat gewonnen.')
-            punkte_computer = punkte_computer + 1
-        else:
-            print('Unentschieden.')
-
-    # Ausgabe des aktuellen Spielstandes
-    print(f'### Spielstand {punkte_spieler} : {punkte_computer} (Spieler : Computer) ###')
-
-    # Abbruch der Schleife, wenn Computer oder Spieler 3 Punkte erreicht hat
-    if punkte_computer == 3 or punkte_spieler == 3:
-        break
-
-# Gratulation
-if punkte_spieler == 3:
-    print('Herzlichen Glückwunsch, Sie haben gewonnnen.')
-else:
-    print('Leider hat der Computer gewonnen.')
-```
-````
-
-````{admonition} Übung 11.4
-:class: miniexercise
-Suchen Sie in dem folgenden Code die Fehler durch Nachdenken. Korrigieren Sie anschließend das Programm in Python.
-
-```python
-def berechne_wurzel(x):
-    ergebnis = sqrt(x)
-    return ergebnis
-
-x = input('Geben Sie eine Zahl ein: ')
-
-print(f'Die Wurzel der Zahl ist {x}.')
-```
-````
-````{admonition} Lösung
-:class: miniexercise, toggle
-1. Die Funktion `sqrt()` existiert nicht im Python-Standard, sondern muss zuerst
-   durch ein Modul wie beispielsweise Math oder NumPy importiert werden. 
-2. Die Wurzel existiert nur für nicht-negative Zahlen. Es sollte also vorab
-   überprüft werden, ob der Benutzer eine nicht-negative Zahl eingegeben hat.
-3. Die input()-Funktion gibt einen String zurück, der in einer Zahl konvertiert
-   werden muss.
-4. Die print()-Anweisung gibt nicht die Wurzel aus, sondern die eingebene Zahl.
-
-Das korrigierte Programm könnte folgendermaßen aussehen:
-```python
-from numpy import sqrt
-
-def berechne_wurzel(x):
-    ergebnis = sqrt(x)
-    return ergebnis
-
-x = float(input('Geben Sie eine Zahl ein: '))
-while x < 0:
-    x = float(input('Die Zahl muss nicht-negativ sein. Geben Sie eine Zahl ein: '))
-y = berechne_wurzel(x)
-
-print(f'Die Wurzel der Zahl ist {y}.')
-```
-````
-```{admonition} Übung 11.5
-:class: miniexercise
-1. Laden Sie die Kursdaten des DAX aus dem Jahr 2022 herunter (→ hier [Download](https://nextcloud.frankfurt-university.de/s/5qNaNjb945p2mk3),
-   Quelle: [https://www.boerse-frankfurt.de](https://www.boerse-frankfurt.de/index/DAX/kurshistorie/historische-kurse-und-umsaetze). 
-2. Importieren Sie die Tabelle. Überspringen Sie dazu die erste Zeile.
-3. Verschaffen Sie sich einen Überblick. 
-    * Wie viele Datensätze sind in der Tabelle enthalten?
-    * Gibt es leere Zellen?
-    * Was steht in den einzelnen Spalten?
-    * Was ist das höchste Tageshoch, das 2022 erreicht wurde?
-    * Wie viele Tage sind in der Tabelle enthalten? Speichern Sie diese Zahl in
-      der Variablen `anzahl_tage`? Warum sind es eigentlich nicht 365 Tage?
-4. Visualisieren Sie den Kurs zum Börsenschluss `Schluss`. Lassen Sie dazu auf
-   der x-Achse die Tage von 1 bis `anzahl_tage` laufen.
-5. Lassen Sie eine Regressionsgerade durch den Kursstand zum Börsenschluss
-   berechnen.
-6. Visualisieren Sie den Börsenkurs zusammen mit der Regressionsgeraden.
-7. Was prognostiziert das Regressionsmodell für Mitte 2023? Tipp: Sie können mit
-   251 Werktagen für das gesamte Jahr rechnen, siehe https://www.ferienwiki.de/tools/werktagerechner
-```
-````{admonition} Lösung
-:class: miniexercise, toggle
-Import und Übersicht:
-```python
-import pandas as pd
-data = pd.read_csv('dax2022.csv', skiprows=1)
-data.info()
-```
-Es sind 257 Datensätze, alle Zellen sind gefüllt. Es gibt die Spalten Datum, Eröffnung, Schluss, Tageshoch, Tagestief und Umsatz in EUR. Die statistischen Kennzahlen ermitteln wir mit `.describe()`.
-```python
-data.describe()
-```
-Das höchste Tageshoch waren 16285.35 EUR.
-
-In der Tabelle sind 257 Tage enthalten, weil die Börse nur an Werktagen geöffnet hat.
-```python
-anzahl_tage = data.loc[:, 'Datum'].count()
-print(anzahl_tage)
-```
-Visualisierung als Liniendiagramm
-```python
+```{code-cell} ipython3
 import matplotlib.pyplot as plt
 
-x = range(1, anzahl_tage+1)
-y = data.loc[:, 'Schluss'] 
+# data
+x = [1, 2, 3, 4, 5, 6]
+y = [2, 4, 8, 6, 3, 1]
 
+# plot
 plt.figure()
-plt.plot(x,y)
-plt.xlabel('Tag')
-plt.ylabel('Schluss')
-plt.title('DAX 2022');
+plt.bar(x,y)
+plt.xlabel('Note')
+plt.ylabel('Anzahl')
+plt.title('Klassenarbeit');
 ```
 
-Das Regressionsmodell prognostiziert für Mitte 2023 einen DAX-Wert von 12031.61 EUR.
+Diese Analysemethode wird sehr häufig eingesetzt. Daher stellen alle drei Module
+[Matplotlib](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html),
+[Numpy](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html)
+und
+[Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html)
+Methoden für Histogramme zur Verfügung. Da wir ohnehin das Histogramm
+visualisieren wollen, überspringen wir das Numpy-Histogramm und wenden uns
+gleich dem Matplotlib-Histogramm zu, das auch die Basis für das
+Pandas-Histogramm bildet.
 
-```python
+Um die Optionen des Histogramms kennenzulernen, lassen wir jetzt Matplotlib
+selbst das Histogramm, also den Notenspiegel berechnen und visualisieren. Zuerst
+notieren wir die Einzelnoten, die zu dem obigen Notenspiegel gehören. Dann
+wenden wir die Funktion `hist()` an.
+
+
+```{code-cell} ipython3
+# Einzelnoten der Klassenarbeit
+noten = [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6]
+
+# Berechnung und Visualisierung des Histogramms
+plt.figure()
+plt.hist(noten)
+plt.xlabel('Note')
+plt.ylabel('Anzahl')
+plt.title('Klassenarbeit');
+```
+
+Warum sind bei den Noten 1 bis 4 Balken mit Abstand zueinander zu sehen, aber
+bei der Note 5 und 6 kleben die Balken aneinander? Die Funktion `hist()`
+funktioniert etwas anders, als wir Menschen vorgehen würden. Wir wissen, dass
+die Noten 1 bis 6 diskrete Werte sind und können einfach durchzählen, um zu
+bestimmen, wie häufig jede einzelne Note in der Klassenarbeit erzielt wurde.
+Matplotlib geht anders vor. Zunächst werden der minimale und der maximale
+vorkommene Wert ermittelt. Das sind in unserem Beispiel die 1 und die
+6. Danach wird das Intervall $[1,6]$ in 10 kleinere Teilintervalle unterteilt.
+Bei jedem Teilintervall gehört der minimale Wert zum Teilintervall dazu, aber
+der maximale nicht. Ausnahme ist nur das letzte Teilintervall, da gehört auch
+der maximale Wert, also die 6, zum Teilintervall dazu.
+
+\begin{align*}
+&\textcolor{red}{[}1,1.5), \, [1.5, 2), \, [2, 2.5), \, [2.5, 3), \, [3, 3.5) \\
+&[3.5, 4), \, [4, 4.5), \, [4.5,5), \, [5, 5.5), \, [5.5,6\textcolor{red}{]} 
+\end{align*}
+
+Die Häufigkeit der Note 1 gehört zum ersten Teilintervall $[1, 1.5)$, aber die
+Häufigkeit der Note 2 gehört nicht zum 2. Teilintervall, sondern zum 3.
+Teilintervall $[2, 2.5)$. Die Note 5 gehört zum 9. Teilintervall und die Note 6
+gehört zum 10. Teilintervall, weil es das letzte Teilintervall ist. Daher wird
+der Balken mit der Häufigkeit der Note 5 beim Teilintervall $[5, 5.5)$
+visualisiert und der Balken mit der Häufigkeit der Note 6 direkt daneben beim
+Teilintervall $[5.5, 6]$.
+
+Wenn dieses Verhalten nicht gewünscht ist, kann der Funktion `hist()` die
+Unterteilung in die Teilintervalle selbst vorgegeben werden. Wir hätten gerne
+die Intervalle
+
+$$[1,2), [2,3), [3,4), [4,5), [5,6), [6,7].$$
+
+Um diese Intervalle zu erzeugen, müssen wir immer den minimalen Wert eines
+Teilintervalles und zum Abschluss den maximalen Wert des letzten Teilintervalls
+in eine Liste notieren und dann der Funktion `hist()` als optionalen Parameter
+`bins= ` übergeben. Das englische Wort bin steht dabei nicht für Tonne, sondern
+bezeichnet die Teilintervalle. 
+
+```{code-cell} ipython3
+# Einzelnoten der Klassenarbeit
+noten = [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6]
+
+# Eigene Teilintervalle
+teilintervalle = [1, 2, 3, 4, 5, 6, 7]
+
+# Berechnung und Visualisierung des Histogramms
+plt.figure()
+plt.hist(noten, bins=teilintervalle)
+plt.xlabel('Note')
+plt.ylabel('Anzahl')
+plt.title('Klassenarbeit');
+```
+
+Die Balken werden jetzt über jedes Teilintervall platziert, so dass sie wieder
+"aneinanderkleben". Mit der Option `rwidth=` können wir sie etwas schmaler
+gestalten. Sollen sie beispielsweise nur 80 % der ursprünglichen Breite haben,
+so setzen wir `rwidth=0.8`. Mit der Option `align='left'` zentrieren wird die
+Balken um den Anfang des Teilintervalls. 
+
+```{code-cell} ipython3
+# Einzelnoten der Klassenarbeit
+noten = [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6]
+
+# Eigene Teilintervalle
+teilintervalle = [1, 2, 3, 4, 5, 6, 7]
+
+# Berechnung und Visualisierung des Histogramms
+plt.figure()
+plt.hist(noten, bins=teilintervalle, rwidth=0.8, align='left')
+plt.xlabel('Note')
+plt.ylabel('Anzahl')
+plt.title('Klassenarbeit');
+```
+
+Die Optionen sind ausführlich in der
+[Matplotlib-Dokumentation/hist](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html)
+dokumentiert. Kurz zusammengefasst bedeuten die drei Optionen
+
+* *bins=*: Wenn `bins` ein Integer ist, wird der kleinste x- und der größte
+  x-Wert ermittelt. Danach werden soviele Teilintervalle gebildet, wie dort
+  angegeben. Ist jedoch `bins` eine Liste von Zahlen, z.B. [1,2,3,4], so werden
+  als Behälter Intervalle zwischen den aufeinanderfolgenden Werten gebildet. In
+  diesem Fall wäre der 1. Behälter das Intervall [1,2), der 2. Behälter das
+  Intervall [2,3), der 3. Behälter [3,4]. Bei vier Zahlen in der Liste erhalten
+  wir drei Intervalle, wobei die ersten Intervalle immer rechts offen sind und
+  nur das letzte Intervall ist geschlossen.   
+* *align=*: Die Option `align` kann die Werte 'left', 'mid' und 'right'
+  annehmen. Verwendet man die Option nicht, so wird automatisch `align='mid'`
+  benutzt. Mit dieser Option wird die horizontale Ausrichtung der Balken
+  gesteuert.
+* *rwidth=*: Mit der dritten Option `rwidth` kann die Breite der Balken
+  eingestellt werden. Die Breite wird dabei relativ als Float angegeben.
+  `rwidth=0.9` würde einen Balken ergeben, der 90 % Breite zum Standard hat.
+
+## Wahl der Bins ist entscheidend zur Interpretation der Daten
+
+Nicht immer ist die Klasseneinteilung, also die Bins, vorher schon klar.
+Beispielsweise könnten wir die Körpergröße der teilnehmenden Studierenden dieser
+Vorlesung analysieren wollen. Und dabei sind wir bei der Einteilung in Bins
+frei. Beispielsweise könnten wir zwei Bins, nämlich $< 120~cm$ und $\geq 120~cm$
+wählen. So richtig viel verrät uns diese Aufteilung über die Verteilung der
+Körpergröße jedoch nicht, denn wahrscheinlich sind alle in der letzten Bin. Aber
+stattdessen Millimeterschritte zu wählen, wäre zuviel des Guten. Daher
+beschäftigen wir uns als Nächstes mit der Wahl der Bin-Größe im Verhältnis zu
+den gegebenen Daten.
+
+Wir wollen die folgenden Experimente mit den Zufallszahlen vergleichbar machen.
+Deswegen fixieren wir den Zufallszahlengenerator:
+
+```{code-cell} ipython3
 import numpy as np
-
-# Regressionsgerade
-koeffizienten = np.polyfit(x,y, 1)
-
-# Visualisierung
-x_modell = np.linspace(1, anzahl_tage, 100)
-y_modell = np.polyval(koeffizienten, x_modell)
-
-plt.figure()
-plt.plot(x,y)
-plt.plot(x_modell, y_modell, color='red')
-plt.xlabel('Tag')
-plt.ylabel('Schluss')
-plt.title('DAX 2022');
-
-# Prognose für Mitte 2023 
-x_prognose = 257 + 251/2 
-y_prognose = np.polyval(koeffizienten, x_prognose)
-
-print(f'Prognose DAX Mitte 2023: {y_prognose:.2f}')
+zufallszahlen_generator = np.random.RandomState(0)
 ```
-````
 
+Im Folgenden erzeugen wir zunächst einmal 1000 normalverteilte Zufallszahlen mit
+Mittelwert 0 und Standardabweichung 1. Bei (0,1)-normalverteilten Zufallszahlen
+wissen wir, dass
 
+* 68.27 % aller Zahlen zwischen -1 und 1 liegen,
+* 95.45 % aller Zahlen zwischen -2 und 2 liegen und
+* 99.73 % aller Zahlen zwischen -3 und 3 liegen. 
 
+Wenn wir jetzt 100 Bins wählen, wird eine Bin ca. 0.06 breit sein. Wir tragen
+jetzt die Anzahl der Zufallszahlen, die in eine Bin fällt, im Histogram auf:
 
+```{code-cell} ipython3
+# Generiere normalverteilte Zufallszahlen
+N = 1000
+zufallszahlen = zufallszahlen_generator.randn(N)
 
-  
-  
+# Histogramm
+plt.figure()
+plt.hist(zufallszahlen, bins=100);
+```
 
+Die normalverteilten Zufallszahlen zeigen die typische Gauß-Verteilung, die auch
+Glockenkurve genannt wird.
 
+```{admonition} Mini-Übung
+:class: miniexercise
+Ändern Sie bitte in der obigen Code-Zelle die Anzahl der Zufallszahlen.
+Probieren Sie z.B. N = 10, 100, 1000 oder 100000000 aus. Ab wann erkennen Sie
+die Gauß-Kurve? Gibt es eine Anzahl N von Punkten, ab der sich die Kurve nicht
+mehr ändert?
+```
+```{admonition} Lösung
+:class: miniexercise, toggle
+Für eine kleine Anzahl von Zufallszahlen wie beispielsweise $N=10$ oder $N=100$
+ist die Gauß-Kurve nicht erkennbar. Ab $N=1000$ ist die Gauß-Kurve deutlich
+erkennbar, für mehr Zufallszahlen natürlich auch.
+```
+
+In der Praxis ist es nicht so einfach, die Anzahl der Daten zu vergrößern. Daher
+probieren wir als nächstes das Umgekehrte. 
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Wir bleiben bei $N=1000$ Zufallszahlen, aber spielen mit der Anzahl der Bins und
+der Bingröße herum. Verändern Sie die Anzahl der Bins von 6, 10, 50, 100, 250,
+1000, 10000. Was beobachten Sie?
+```
+```{admonition} Lösung
+:class: miniexercise, toggle
+Wird die Anzahl der Bins klein gewählt, so sind die Teilintervalle größer. Somit
+liegen (normalerweise) auch in jedem Teilintervall Zufallszahlen, so dass jede
+Bin gefüllt ist. Gleichzeitig wird aber erschwert, den Typ der Verteilung
+abzulesen. Wird die Anzahl der Bins erhöht, so werden die Teilintervalle kleiner
+und die Struktur der Gaußschen Glockenkurve wird besser erkennbar. Wird die
+Anzahl der Bins jedoch zu groß gewählt, so sind die Teilintervalle teilweise so
+klein, dass in einigen Teilintervallen keine Zufallszahlen mehr liegen.
+```
+
+Zusammenfassend ist die Wahl der Bins, also die Anzahl der Teilintervalle,
+kritisch und muss passend zu den Daten gewählt werden.
+
+## Zusammenfassung 
+
+Bei einem Histogramm werden Daten in Klassen eingeteilt und ihre Anzahl
+bestimmt. Die Wahl der Klassen ist dabei kritisch und muss sorgsam erfolgen.

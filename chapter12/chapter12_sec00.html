@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12. Simulink &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>12. Messwerte und Regression &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/chapter12_sec00';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12.1 Simulink Einführung" href="chapter12_sec01.html" />
-    <link rel="prev" title="Übungen" href="../chapter11/chapter11_sec04.html" />
+    <link rel="next" title="12.1 Theorie Regression" href="chapter12_sec01.html" />
+    <link rel="prev" title="Übungen" href="../chapter11/chapter11_sec05.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -195,9 +195,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -223,44 +223,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">12. Simulink</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec01.html">12.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec02.html">12.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec03.html">12.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">12. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -411,7 +410,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>12. Simulink</h1>
+    <h1>12. Messwerte und Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -425,15 +424,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulink">
-<h1>12. Simulink<a class="headerlink" href="#simulink" title="Link to this heading">#</a></h1>
-<p>Was ist Simulink? Wikipedia erklärt Simulink folgendermaßend:</p>
-<blockquote>
-<div><p>Simulink ist eine Software des Herstellers The MathWorks zur Modellierung von
-technischen, physikalischen, finanzmathematischen und anderen Systemen.
-Simulink ist ein Zusatzprodukt zu MATLAB und benötigt dieses zum Ausführen.</p>
-</div></blockquote>
-<p>Quelle: <a class="reference external" href="https://de.wikipedia.org/wiki/Simulink">Wikipedia → Simulink</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="messwerte-und-regression">
+<h1>12. Messwerte und Regression<a class="headerlink" href="#messwerte-und-regression" title="Link to this heading">#</a></h1>
+<p>Nachdem wir gelernt haben, Messwerte einzulesen, statistische Kennzahlen zu
+berechnen und die Daten zu visualisieren, geht es in diesem Kapitel darum, eine
+Modellfunktion an die Messwerte anzupassen.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -469,7 +464,7 @@ Simulink ist ein Zusatzprodukt zu MATLAB und benötigt dieses zum Ausführen.</p
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../chapter11/chapter11_sec04.html"
+       href="../chapter11/chapter11_sec05.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -482,7 +477,7 @@ Simulink ist ein Zusatzprodukt zu MATLAB und benötigt dieses zum Ausführen.</p
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">12.1 Simulink Einführung</p>
+        <p class="prev-next-title">12.1 Theorie Regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

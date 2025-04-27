@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.3 Statistik mit Pandas &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.3 Programmieren in MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,18 +56,16 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter08_sec04.html" />
-    <link rel="prev" title="8.2 Arbeiten mit Tabellendaten" href="chapter08_sec02.html" />
+    <link rel="prev" title="8.2 Numerisches Rechnen mit MATLAB" href="chapter08_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -195,9 +193,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -223,44 +221,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Pandas anstatt Excel</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.3 Statistik mit Pandas</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -311,55 +308,6 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec03.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -383,23 +331,6 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/chapter08/chapter08_sec03.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -479,7 +410,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.3 Statistik mit Pandas</h1>
+    <h1>8.3 Programmieren in MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -490,13 +421,13 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schnelle-ubersicht-mit-describe">Schnelle Übersicht mit .describe()</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anzahl-count">Anzahl count</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mittelwert-mean">Mittelwert mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardabweichung-std">Standardabweichung std</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">Minimum und Maximum mit min und max</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantil-mit-quantile">Quantil mit quantile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">Eingabe, Verarbeitung und Ausgabe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen">Programmverzweigungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schleifen">Schleifen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramme">Diagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lehrmaterial">Weiteres Lehrmaterial</a></li>
 </ul>
             </nav>
         </div>
@@ -508,805 +439,306 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="statistik-mit-pandas">
-<h1>8.3 Statistik mit Pandas<a class="headerlink" href="#statistik-mit-pandas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="programmieren-in-matlab">
+<h1>8.3 Programmieren in MATLAB<a class="headerlink" href="#programmieren-in-matlab" title="Link to this heading">#</a></h1>
+<p>Ein Programmierkurs in MATLAB erfordert eine ganze Vorlesung. In diesem Kapitel vergleichen wir nur die Programmierkonstrukte aus Python mit denen von MATLAB. Gerne können Sie Details in dem Vorlesungsskript</p>
+<blockquote>
+<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/</a></p>
+</div></blockquote>
+<p>nachlesen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
+<p>Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich</p>
 <ul class="simple">
-<li><p>Sie können sich mit <strong>describe</strong> eine Übersicht über statistische Kennzahlen
-verschaffen.</p></li>
-<li><p>Sie wissen, wie Sie die Anzahl der gültigen Einträge mit <strong>count</strong> ermitteln.</p></li>
-<li><p>Sie kennen die statistischen Kennzahlen Mittelwert und Standardabweichung und
-wissen, wie diese mit <strong>mean</strong> und <strong>std</strong> berechnet werden.</p></li>
-<li><p>Sie können das Minimum und das Maximum mit <strong>min</strong> und <strong>max</strong> bestimmen.</p></li>
-<li><p>Sie wissen wie ein Quantil interpretiert wird und wie es mit <strong>quantile</strong>
-berechnet wird.</p></li>
+<li><p>Eingabe</p></li>
+<li><p>Verarbeitung (Variablen und Datentypen)</p></li>
+<li><p>Ausgabe</p></li>
+<li><p>Funktionen</p></li>
+<li><p>Vergleiche</p></li>
+<li><p>Programmverzweigungen</p></li>
+<li><p>Schleifen</p></li>
+<li><p>Diagramme</p></li>
+<li><p>Regression</p></li>
 </ul>
 </div>
 </section>
-<section id="schnelle-ubersicht-mit-describe">
-<h2>Schnelle Übersicht mit .describe()<a class="headerlink" href="#schnelle-ubersicht-mit-describe" title="Link to this heading">#</a></h2>
-<p>So wie die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> uns einen schnellen Überblick über die Daten eines
-DataFrame-Objektes gibt, so liefert die Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> eine schnelle
-Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
-Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<section id="eingabe-verarbeitung-und-ausgabe">
+<h2>Eingabe, Verarbeitung und Ausgabe<a class="headerlink" href="#eingabe-verarbeitung-und-ausgabe" title="Link to this heading">#</a></h2>
+<p>Die Eingabe erfolgt in MATLAB mit der Funktion <code class="docutils literal notranslate"><span class="pre">input()</span></code>. Im Unterschied zu
+Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
+ist es in MATLAB schwierig, eine Abfrage nach Text zu gestalten. Meist wird
+indirekt gearbeitet mit Abfragen a la “Haben Sie einen Führerschein? Geben Sie 0
+ein für Nein und 1 für Ja.”</p>
+<p>Für die Ausgabe gibt es zwei Funktionen. Die Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> gibt den Inhalt
+einer Variablen direkt aus. Die Funktion <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> ermöglicht weitere
+Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
+f-Strings. Es wird in den String ein Platzhalter <code class="docutils literal notranslate"><span class="pre">%f</span></code> eingesetzt und dann,
+nachdem der String abgeschlossen wurde, nach einem Komma die Variable.</p>
+<p>Das folgende Beispiel fragt nach einem Nettpreis und gibt dann den Bruttopreis
+mit einem Mehrwertsteuersatz von 19 %.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">nettopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie den Nettopreis ein: &#39;</span><span class="p">)</span>
+<span class="n">bruttopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nettopreis</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.19</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nettopreis</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Der Bruttopreis ist %f EUR.&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">bruttopreis</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Joshua Kimmich</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Kingsley Coman</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Benjamin Pavard</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Alphonso Davies</th>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Serge Gnabry</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Die Anwendung der <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>-Methode liefert fogende Ausgabe:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<p>Zwischenrechnungen werden von MATLAB automatisch am Bildschirm ausgegeben. Wenn
+das nicht gewünscht ist, kann die Ausgabe durch ein Semikolon am Ende der Zeile
+unterdrückt werden.</p>
+</section>
+<section id="funktionen">
+<h2>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading">#</a></h2>
+<p>In MATLAB werden häufig Funktionen gebraucht. Zunächst einmal sind Funktionen in
+MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
+implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
+stellen sie meist “echte” mathematische Funktionen mit einer Eingabe und einer
+Ausgabe dar.</p>
+<p>Die Grundstruktur einer Funktion in MATLAB ist eie folgt:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ergebnis1, ergebnis2,...] = funktionsname</span><span class="p">(</span>input1, input2,...<span class="p">)</span>
+<span class="w">    </span><span class="c">% Anweisungen</span>
+<span class="w">    </span><span class="n">ergebnis1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="n">ergebnis2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
+<span class="k">end</span>
 </pre></div>
 </div>
+<p>Die Funktion wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">function</span></code> eingeleitet. Danach kommen
+die Variablen, deren Werte von der Funktion zurückgegeben werden sollen. Das
+wird durch den Zuweisungsoperator <code class="docutils literal notranslate"><span class="pre">=</span></code> deutlich gemacht. Zuletzt folgt der
+Funktionsname mit den Eingabeparametern. Die Anweisungen im Inneren der Funktion
+werden durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
+<p>Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
+Fläche und gibt beide Werte zurück.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[umfang, flaeche] = berechne_umfang_flaeche</span><span class="p">(</span>radius<span class="p">)</span>
+<span class="w">    </span><span class="n">umfang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="n">flaeche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span>^<span class="mi">2</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-      <td>177.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>24.903955</td>
-      <td>19.858757</td>
-      <td>14.740113</td>
-      <td>1321.604520</td>
-      <td>2.542373</td>
-      <td>2.005650</td>
-      <td>0.214689</td>
-      <td>0.271186</td>
-      <td>0.157571</td>
-      <td>0.106328</td>
-      <td>2.254237</td>
-      <td>0.056497</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>4.309983</td>
-      <td>10.116219</td>
-      <td>10.526494</td>
-      <td>899.843857</td>
-      <td>4.911681</td>
-      <td>3.117941</td>
-      <td>0.976548</td>
-      <td>1.115447</td>
-      <td>0.226989</td>
-      <td>0.130900</td>
-      <td>2.258267</td>
-      <td>0.231534</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>15.000000</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>5.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>22.000000</td>
-      <td>13.000000</td>
-      <td>5.000000</td>
-      <td>456.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.020000</td>
-      <td>0.010000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>25.000000</td>
-      <td>22.000000</td>
-      <td>15.000000</td>
-      <td>1359.000000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.090000</td>
-      <td>0.080000</td>
-      <td>2.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>28.000000</td>
-      <td>29.000000</td>
-      <td>24.000000</td>
-      <td>2044.000000</td>
-      <td>3.000000</td>
-      <td>3.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.220000</td>
-      <td>0.160000</td>
-      <td>4.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>36.000000</td>
-      <td>34.000000</td>
-      <td>34.000000</td>
-      <td>3060.000000</td>
-      <td>41.000000</td>
-      <td>19.000000</td>
-      <td>8.000000</td>
-      <td>9.000000</td>
-      <td>2.020000</td>
-      <td>1.230000</td>
-      <td>10.000000</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<p>Sie muss unter dem Namen <code class="docutils literal notranslate"><span class="pre">berechne_umfang_flaeche.m</span></code> abgespeichert werden, damit
+sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">berechne_umfang_flaeche</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>Da es sich eingebürgert hat, Daten zeilenweise abzuspeichern und die Eigenschaft
-pro einzelnem Datensatz in den Spalten zu speichern, wertet <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> jede
-Spalte für sich aus. Für jede Eigenschaft werden dann die statistischen
-Kennzahlen</p>
+<p>Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 3.1 Einleitung Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 3.2 Input/Output bei Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/psyGbqwBD2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 3.3 Formale Definition von Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FMfTxKd3gOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 3.4 Unterfunktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i1c3IPCb82E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 3.5 Geltungsbereich” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ebqojVhnPwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="programmverzweigungen">
+<h2>Programmverzweigungen<a class="headerlink" href="#programmverzweigungen" title="Link to this heading">#</a></h2>
+<p>MATLAB kennt ebenfalls Vergleiche und den booleschen Datentyp. Die
+Vergleichsoperatoren sind mit Ausnahme des “ungleich”-Operators auch identisch:</p>
 <ul class="simple">
-<li><p>count</p></li>
-<li><p>mean</p></li>
-<li><p>std</p></li>
-<li><p>min</p></li>
-<li><p>max</p></li>
-<li><p>Quantile 25 %, 50 % und 75 %</p></li>
-<li><p>max</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> kleiner</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner oder gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> größer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer oder gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~=</span></code> ungleich</p></li>
 </ul>
-<p>ausgegeben.</p>
-<p>Die Bedeutung der Kennzahlen wird in der
-<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html">Pandas-Dokumentation/DataFrame.describe
-</a>
-erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.</p>
-</section>
-<section id="anzahl-count">
-<h2>Anzahl count<a class="headerlink" href="#anzahl-count" title="Link to this heading">#</a></h2>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">.count()</span></code> wird die Anzahl der Einträge bestimmt, die <em>nicht</em> ‘NA’ sind. Der
-Begriff ‘NA’ stammt dabei aus dem Bereich Data Science. Gemeint sind fehlende
-Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:</p>
-<ul class="simple">
-<li><p>NA = not available (der Messsensor hat versagt)</p></li>
-<li><p>NA = not applicable (es ist sinnlos bei einem Mann nachzufragen, ob er
-schwanger ist)</p></li>
-<li><p>NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)</p></li>
-</ul>
-<p>Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
-wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
-Methode <code class="docutils literal notranslate"><span class="pre">.count()</span></code> direkt auf den kompletten DataFrame angewendet, so erhalten
-wir ein Pandas-Series-Objekt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="p">)</span>
+<p>Das Ergebnis eines Vergleichs ist entweder <code class="docutils literal notranslate"><span class="pre">true</span></code> oder <code class="docutils literal notranslate"><span class="pre">false</span></code>. MATLAB verwendet
+hier also Kleinbuchstaben im Vergleich zu Python mit <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
+entsprechende Verzweigungskonstrukt lautet</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist kleiner als 10.&#39;</span><span class="p">)</span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist nicht kleiner als 10, aber kleiner als 15.&#39;</span><span class="p">)</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist größer oder gleich 15.&#39;</span><span class="p">)</span>
+<span class="k">end</span>
 </pre></div>
 </div>
+<p>Wie Sie sehen, werden nach den Bedingungen keine Doppelpunkte gesetzt. Die
+Verzweigung wird mit einem <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 4.1 if else elseif” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9FA1RP4vj6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Club                 177
-Nationality          177
-Position             177
-Age                  177
-Matches              177
-Starts               177
-Mins                 177
-Goals                177
-Assists              177
-Penalty_Goals        177
-Penalty_Attempted    177
-xG                   177
-xA                   177
-Yellow_Cards         177
-Red_Cards            177
-dtype: int64
+</details><p>In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
+gibt. Die sogenannte <code class="docutils literal notranslate"><span class="pre">switch</span></code>-Verzweigung ist vor allem dann interessant, wenn
+sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
+if-elseif-else ersetzt werden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 4.2 switch - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="schleifen">
+<h2>Schleifen<a class="headerlink" href="#schleifen" title="Link to this heading">#</a></h2>
+<p>Natürlich kennt MATLAB auch Schleifen. Sowohl die while-Schleife als auch die
+for-Schleife können in MATLAB benutzt werden.</p>
+<p>Eine Schleife mit Bedingung wird mit <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Wir setzen einen
+Zähler auf Eins und erhöhen in jedem Schleifendurchgang den Wert des Zählers um
+Eins, solange wie der Zähler kleiner gleich 10 ist.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zaehler</span><span class="p">)</span>
+<span class="w">    </span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
 </pre></div>
 </div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 4.3 while-Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sSw9QKAjESE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</div>
-<p>Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
-erst die Spalte mit dem Alter heraussgreifen und darauf <code class="docutils literal notranslate"><span class="pre">.count()</span></code> anwenden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methode01</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">methode01</span><span class="p">)</span>
+</details><p>Bei der for-Schleife wird eine Liste von Zahlen abgearbeitet oder ein
+Zahlenbereich durchlaufen. Das folgende Code-Beispiel gibt nacheinander die
+Zahlen 2, 6, 8 und -1 auf dem Bildschirm aus.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+<span class="k">end</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177
+<p>Wieder wird die Schleife nicht durch einen Doppelpunkt eingeleitet. Die Schleife
+wird durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> beendet. Alternativ kann der Doppelpunktoperator genutzt
+werden, um eine Liste mit Zahlen nach einem Muster zu generieren. Der folgende
+Code zählt von 10 runter.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Rakete startet...&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 4.4 for - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2qGElJdocnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+</details><p>In beiden Schleifen-Varianten sind <code class="docutils literal notranslate"><span class="pre">continue</span></code> und <code class="docutils literal notranslate"><span class="pre">break</span></code> möglich, um die
+Schleife vorzeitig zu einem neuen Schleifendurchgang zu veranlassen oder die
+Schleife vorzeitig abzubrechen. Wer an Details interessiert ist, findet sie in
+den folgenden Videos.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 4.5 continue - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VdHhQhIjasg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<p>Oder wir wenden zuerst <code class="docutils literal notranslate"><span class="pre">.count()</span></code>an und wählen dann im Series-Objekt das Alter
-‘Age’ aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methode02</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">methode02</span><span class="p">)</span>
-</pre></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 4.6 break - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bIXuZXPSblU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="mittelwert-mean">
-<h2>Mittelwert mean<a class="headerlink" href="#mittelwert-mean" title="Link to this heading">#</a></h2>
-<p>Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> den Mittelwert der Einträge in jeder Spalte berechnet.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwert</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                    24.903955
-Matches                19.858757
-Starts                 14.740113
-Mins                 1321.604520
-Goals                   2.542373
-Assists                 2.005650
-Penalty_Goals           0.214689
-Penalty_Attempted       0.271186
-xG                      0.157571
-xA                      0.106328
-Yellow_Cards            2.254237
-Red_Cards               0.056497
-dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>An der Stelle ist es wichtig, die Option <code class="docutils literal notranslate"><span class="pre">numeric_only=True</span></code> zu setzen, damit
-nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.</p>
-<p>Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
-Jahre alt sind und 1321.6 Minuten im Einsatz waren.</p>
-<p>Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
-wollen, können Sie folgendes Video ansehen.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="standardabweichung-std">
-<h2>Standardabweichung std<a class="headerlink" href="#standardabweichung-std" title="Link to this heading">#</a></h2>
-<p>Das ‘st’ in <code class="docutils literal notranslate"><span class="pre">.std()</span></code>für Standard steht, ist nachvollziehbar. Der dritte
-Buchstabe ‘d’ kommt von ‘deviation’, also Abweichung. Somit ist wiederum die
-Methode nach dem englischen Fachbegriff ‘standard deviation’ benannt.  Welche
-Standardabweichung erhalten wir beim Alter?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">standardabweichung</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                    4.309983
-Matches               10.116219
-Starts                10.526494
-Mins                 899.843857
-Goals                  4.911681
-Assists                3.117941
-Penalty_Goals          0.976548
-Penalty_Attempted      1.115447
-xG                     0.226989
-xA                     0.130900
-Yellow_Cards           2.258267
-Red_Cards              0.231534
-dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
-extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
-dann <code class="docutils literal notranslate"><span class="pre">.std()</span></code> oder erst <code class="docutils literal notranslate"><span class="pre">.std()</span></code>und dann Selektion nach ‘Age’. Probieren wir es
-aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_std</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter_std</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.309982619427105
-</pre></div>
-</div>
-</div>
-</div>
-<p>Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
-Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="minimum-und-maximum-mit-min-und-max">
-<h2>Minimum und Maximum mit min und max<a class="headerlink" href="#minimum-und-maximum-mit-min-und-max" title="Link to this heading">#</a></h2>
-<p>Die Namen der Methoden <code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">max()</span></code> sind fast schon wieder
-selbsterklärend. Die Methode <code class="docutils literal notranslate"><span class="pre">.min()</span></code> liefert den kleinsten Werte zurück, der in
-einer Spalte gefunden wird. Umgekehrt liefert <code class="docutils literal notranslate"><span class="pre">.max()</span></code> den größten Eintrag, der
-in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
-vorkommen, ist dabei egal.</p>
-<p>Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
-(haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
-Anzahl von Toren ist.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tore_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tore_min</span><span class="p">)</span>
+</details></section>
+<section id="diagramme">
+<h2>Diagramme<a class="headerlink" href="#diagramme" title="Link to this heading">#</a></h2>
+<p>Bei der Einführung in die Datenvisualisierung mit Matplotlib in Python haben wir
+absichtlich die zustandsorientierte Schnittstelle der Bibliothek genutzt. Diese
+wurde nach dem Vorbild von MATLAB gestaltet, so dass Diagramme mit den uns
+bekannten Anweisungen funktionieren.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
 
-<span class="n">tore_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tore_max</span><span class="p">)</span>
+<span class="nb">figure</span><span class="p">();</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Liniendiagramm&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>Auch das Balkendiagramm mit <code class="docutils literal notranslate"><span class="pre">bar()</span></code> und das Streudiagramm mit <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>
+funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
+bestehen. Die Verarbeitung von Strings istg in MATLAB etwas komplizierter, so
+dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
+umzusetzen sind.</p>
+<p>Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
+gemeinsam dargestellt werden sollen. Dann muss nach dem ersten Diagramm der
+Befehl <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on</span></code> ausgeführt werden, damit die nachfolgenden Diagramme in
+dieselbe Grafik gezeichnet werden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 5.1 Plot erstellen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2admMlXzlSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-41
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wenig verwunderlich ist die minimale Anzahl an Toren 0 und die maximale Anzahl
-an Toren, die ein oder mehrere Spieler der Top7 2020/21 geschossen haben, war
-41. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore geschafft hat,
-natürlich Lewandowski).</p>
-<p>Von Verteidigern wird nicht erwartet, Tore zu schieen, sondern von Stürmern. Was
-ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
-Spalte ‘Position’. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
-Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
-manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
-bei denen nur ‘FW’ eingetragen ist.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Position&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FW&#39;</span>
-<span class="n">stuermer</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span>
+</details></section>
+<section id="regression">
+<h2>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h2>
+<p>Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
+betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
+als Streudiagramm visualisieren.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stürmer&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stuermer</span><span class="p">)</span>
+<span class="nb">figure</span><span class="p">()</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Die Funktion zur Bestimmung eines Regressionspolynoms lautet <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code>. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
+die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
+Argument wird der gewüunschte Polynomgrad übergeben. Wir probieren eine
+Regressionsparabel.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">polyval(p,</span> <span class="pre">x)</span></code> werten wir ein Polynom <code class="docutils literal notranslate"><span class="pre">p</span></code> an der Stelle <code class="docutils literal notranslate"><span class="pre">x</span></code> aus. Um also
+die Regressionsparabel zusätzlich zu den Messwerten zu visualisieren, verwenden
+wir den folgenden Code.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Künstliche Messdaten</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">];</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==============&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimale Tore: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stuermer</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+<span class="c">% Regression</span>
+<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">x_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="n">y_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">x_modell</span><span class="p">);</span>
+
+<span class="c">% Visualisierung</span>
+<span class="nb">figure</span><span class="p">();</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span><span class="w"> </span><span class="n">y_modell</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stürmer
-Name
-Robert Lewandowski    41
-Joshua Zirkzee         0
-Mickaël Cuisance       0
-Erling Haaland        27
-Steffen Tigges         0
-Yussuf Poulsen         5
-Alexander Sørloth      5
-Justin Kluivert        3
-Wout Weghorst         20
-Josip Brekalo          7
-André Silva           28
-Bas Dost               4
-Patrik Schick          9
-Lucas Alario          11
-Demarai Gray           1
-Paulinho               0
-Taiwo Awoniyi          5
-Joel Pohjanpalo        6
-Petar Musa             1
-Akaki Gogia            0
-Leon Dajaku            0
-Joshua Mees            0
-Name: Goals, dtype: int64
-==============
-Minimale Tore: 0
-</pre></div>
-</div>
-</div>
-</div>
+<p>In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
+Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
+Kommentarzeichen in MATLAB ein Prozentzeichen <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
 </section>
-<section id="quantil-mit-quantile">
-<h2>Quantil mit quantile<a class="headerlink" href="#quantil-mit-quantile" title="Link to this heading">#</a></h2>
-<p>Das Quantil <span class="math notranslate nohighlight">\(p \%\)</span> ist der Wert, bei dem <span class="math notranslate nohighlight">\(p %\)</span> der Einträge kleiner als diese
-Zahl sind und <span class="math notranslate nohighlight">\(100 \% - p \%\)</span> sind größer. Meist werden nicht Prozentzahlen
-verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht.</p>
-<p>Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
-Karten wissen. Mit der Methode <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code> können wir diesen Wert leicht aus
-den Daten holen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gelbe_karten_50prozent_quantil</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">gelbe_karten_50prozent_quantil</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
-weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
-gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gelbe_karten_75prozent_quantil</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">gelbe_karten_75prozent_quantil</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. SChauen wir uns
-die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
-sind?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">4.0</span>
-<span class="n">gelbkarten_spieler</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">gelbkarten_spieler</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Position  Yellow_Cards
-Name                                      
-Sebastian Rode            MF            10
-Obite N&#39;Dicka             DF            10
-Christopher Trimmel       DF             9
-Marcel Sabitzer           MF             8
-Grischa Prömel            MF             7
-Paulo Otávio              DF             7
-Kevin Mbabu               DF             7
-Xaver Schlager            MF             7
-Maximilian Arnold         MF             7
-Leon Bailey            FW,MF             6
-Djibril Sow               MF             6
-Mats Hummels              DF             6
-Jérôme Boateng            DF             6
-Kevin Kampl               MF             6
-Dayot Upamecano           DF             6
-Thomas Delaney            MF             6
-Jude Bellingham           MF             6
-Maxence Lacroix           DF             5
-Edmond Tapsoba            DF             5
-Robert Andrich            MF             5
-Emre Can               DF,MF             5
-Nadiem Amiri              MF             5
-Moussa Diaby           FW,MF             5
-David Abraham             DF             5
-Aymen Barkok           FW,MF             5
-John Brooks               DF             5
-Amin Younes            MF,FW             5
-Tuta                      DF             5
-Nordi Mukiele             DF             5
-Makoto Hasebe          DF,MF             5
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
-<p>In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
-beschäftigt, die Pandas mit der Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> zusammenfasst, die aber
-auch einzeln über</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.quantile()</span></code></p></li>
-</ul>
-<p>berechnet und ausgegeben werden können.</p>
+<section id="weiteres-lehrmaterial">
+<h2>Weiteres Lehrmaterial<a class="headerlink" href="#weiteres-lehrmaterial" title="Link to this heading">#</a></h2>
+<p>Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript</p>
+<blockquote>
+<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/intro.html</a></p>
+</div></blockquote>
+<p>nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
+anderen empfehle ich die YouTube-Playlist</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY">So lernst Du
+Matlab</a></p>
+</div></blockquote>
+<p>von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
+auch noch anderen Themen behandelt.</p>
 </section>
 </section>
 
@@ -1346,7 +778,7 @@ auch einzeln über</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8.2 Arbeiten mit Tabellendaten</p>
+        <p class="prev-next-title">8.2 Numerisches Rechnen mit MATLAB</p>
       </div>
     </a>
     <a class="right-next"
@@ -1376,13 +808,13 @@ auch einzeln über</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schnelle-ubersicht-mit-describe">Schnelle Übersicht mit .describe()</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anzahl-count">Anzahl count</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mittelwert-mean">Mittelwert mean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardabweichung-std">Standardabweichung std</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">Minimum und Maximum mit min und max</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantil-mit-quantile">Quantil mit quantile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">Eingabe, Verarbeitung und Ausgabe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen">Programmverzweigungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schleifen">Schleifen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramme">Diagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lehrmaterial">Weiteres Lehrmaterial</a></li>
 </ul>
   </nav></div>
 

@@ -12,284 +12,240 @@ kernelspec:
   name: python3
 ---
 
-# 10.1 Theorie Regression 
+# 10.1 Series und DataFrame 
 
-In der Analyse technischer und physikalischer Daten ist die Methode der
-Regression ein fundamentales Werkzeug. Einfach ausgedrückt, ist die Regression
-ein statistisches Verfahren, das den Zusammenhang zwischen Variablen ermittelt.
-In diesem Kapitel beschäftigen wir uns zunächst mit der Theorie von
-Regressionsverfahren.
+Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
+effizient zu speichern. Dazu benutzen Data Scientists die Datentypen `Series`
+oder `DataFrame` aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
+mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
+verwendete Datenformat `csv` kennen.
+
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie wissen, was **Regression** ist.
-* Sie wissen, was das **Bestimmtheitsmaß** $R^2$ ist und können es für **lineare Regression** interpretieren:
-  * Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
-    Modellfunktion ist eine sehr gute Anpassung an die Messdaten.
-  * Wenn $R^2 = 0$ oder gar negativ ist, dann funktioniert die lineare
-    Modellfunktion überhaupt nicht.
+* Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
+* Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
+* Sie kennen das **CSV-Dateiformat**.
+* Sie können eine csv-Datei mit **read_csv()** einlesen.
+* Sie konnen mit **.info()** sich einen Überblick über die importierten Daten verschaffen.
 ```
 
-## Regression kommt aus der Statistik
+## Import von pandas
 
-In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits
-seit Jahrhunderten damit, Analyseverfahren zu entwickeln, mit denen
-experimentelle Daten gut erklärt werden können. Falls wir eine “erklärende”
-Variable haben und wir versuchen, die Abhängigkeit einer Messgröße von der
-erklärenden Variable zu beschreiben, nennen wir das Regressionsanalyse oder kurz
-**Regression**. Bei vielen Problemen suchen wir nach einem linearen Zusammenhang
-und sprechen daher von **linearer Regression**. Mehr Details finden Sie auch bei
-[Wikipedia → Regressionsanalyse](https://de.wikipedia.org/wiki/Regressionsanalyse).
+Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
+Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
+und DataFrame. Dabei wird **Series** für Datenreihen genommen, also sozusagen
+die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
+**DataFrame** repräsentiert Tabellen, also sozusagen Matrizen bzw.
+verallgemeinerte zweidimensionale Arrays. 
 
-Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
-Einflussgröße $x$ und eine Zielgröße $y$ mit $N$ Paaren von dazugehörigen
-Messwerten $(x^{(1)},y^{(1)})$, $(x^{(2)},y^{(2)})$, $\ldots$,
-$(x^{(N)},y^{(N)})$ gibt. Dann sollen zwei Parameter $m$ und $b$ geschätzt
-werden, so dass möglichst für alle Datenpunkte $(x^{(i)}, y^{(i)})$ die lineare
-Gleichung $y^{(i)} = m\cdot x^{(i)}+ b$ gilt. Geometrisch ausgedrückt: durch die
-Daten soll eine Gerade gelegt werden. Da bei den Messungen auch Messfehler
-auftreten, werden wir die Gerade nicht perfekt treffen, sondern kleine Fehler
-machen, die wir hier mit $\varepsilon^{(i)}$ bezeichnen. Wir suchen also die
-beiden Parameter $m$ und $b$, so dass  
-
-$$y^{(i)} =  m \cdot x^{(i)} + b + \varepsilon^{(i)}.$$
-
-Die folgende Grafik veranschaulicht das lineare Regressionsmodell. Die Paare von
-Daten sind in blau gezeichnet, das lineare Regressionsmodell in rot.
-
-```{figure} pics/Linear_regression.svg
----
-name: fig_linear_regression
----
-Lineare Regression: die erklärende Variable (= Input oder unabhängige Variable oder Ursache) ist auf der x-Achse, die
-abhängige Variable (= Output oder Wirkung) ist auf der y-Achse aufgetragen, Paare von Messungen sind in blau
-gekennzeichnet, das Modell in rot.
-
-([Quelle:](https://en.wikipedia.org/wiki/Linear_regression#/media/File:Linear_regression.svg) "Example of simple linear regression, which has one independent variable" von Sewaqu. Lizenz: Public domain))
-```
-
-Zu einer Regressionsanalyse gehört mehr als nur die Regressionskoeffizienten zu
-bestimmen. Daten müssen vorverarbeitet werden, unter mehreren unabhängigen
-Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
-Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
-Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
-werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
-feinjustiert werden können und die Prognosefähigkeit verbessern.
-
-Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
-wie lineare Regression funktioniert.
-
-## Beispiel: weltweiter CO2-Ausstoß
-
-Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
-Einwohner ([hier Download](https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz)).
+Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
+ist üblich, dabei dem Modul die Abkürzung **pd** zu geben, damit wir nicht immer
+pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.
 
 ```{code-cell} ipython3
-import pandas as pd
-
-data = pd.read_csv('data/co2_emissionen_worldwide.csv', skiprows=1, index_col=0)
-data.head()
+import pandas as pd # kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen
 ```
 
-Wir verschaffen uns mit den Funktionen `info()` und `describe()` einen Überblick
-über den Datensatz. Wie üblich benutzen wir `info()` zuerst.
+## Series aus Liste erzeugen
+
+Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
+Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
+über die Methode `pd.Series(liste)` ein neues Series-Objekt erzeugt, dass die
+Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
+Liste, also `[25, 22, 43, 37]` und initialisieren über `pd.Series()` die
+Variable `alter`:
 
 ```{code-cell} ipython3
-print(data.info())
+alter = pd.Series([25, 22, 43, 37])
+print(alter)
 ```
 
-Offensichtlich enthält der Datensatz 29 Zeilen (= Jahre) mit gültigen Einträgen
-zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahlen
-sind:
+Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
+bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
+Numpy-Array nehmen? Der wichtigste Unterschied ist der **Index**.
+
+Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
+ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, ...
+angelegt wird. Wenn bei einer Liste `l = [25, 22, 43, 37]` auf das zweite
+Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
+Python zählt ab 0) und schreiben
 
 ```{code-cell} ipython3
-print(data.describe())
+l = [25, 22, 43, 37]
+print("2. Element der Liste: ", l[1])
 ```
 
-Nun folgt noch die Visualisierung der Daten.
+Die Datenstruktur Series ermöglich es aber, einen *expliziten Index* zu setzen.
+Über den optionalen Parameter `index=` speichern wir als Zusatzinformation noch
+ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
+Personen Alice, Bob, Charlie und Dora.
 
 ```{code-cell} ipython3
-import matplotlib.pyplot as plt
-
-jahre = data.index
-co2 = data.loc[:, 'Metrische_Tonnen_pro_Einwohner']
-
-plt.figure()
-plt.scatter(jahre, co2)
-plt.xlabel('Jahre')
-plt.ylabel('Metrische Tonnen / Einwohner')
-plt.title('Weltweiter C02-Ausstoß');
+alter = pd.Series([25, 22, 43, 30], index=["Alice", "Bob", "Charlie", "Dora"])
+print(alter)
 ```
 
-Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
-einer linearen Funktion. Die “erklärende” Variable ist in dem Beispiel das Jahr.
-Wir versuchen, die Abhängigkeit einer Messgröße (hier die CO2-Emissionen pro
-Einwohner) von der erklärenden Variable als lineare Funktion zu beschreiben.
+Jetzt ist auch klar, warum beim ersten Mal, als wir `print(alter)` ausgeführt
+haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
+Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
+Informationen ausgegeben wird, ist das Attribut `dtype`. Darin gespeichert ist
+der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
+dem Punktoperator zugegegriffen werden.
+
+```{code-cell} ipython3
+print(alter.dtype)
+```
+
+Offensichtlich sind die gespeicherten Werte Integer.
 
 ```{admonition} Mini-Übung
-:class: miniexercise
-Denken Sie sich Werte für die Steigung m und den y-Achsenabschnitt b einer
-linearen Funktion aus. Erzeugen Sie einen Vektor mit 100 x-Werten von 1990 bis
-2018 und einen Vektor y mit $y = mx + b$. Lassen Sie diese lineare Funktion als
-durchgezogene rote Linie in den gleichen Plot wie die gepunkteten Messwerte
-zeichnen. Welche Werte für $m$ und $b$ müssen Sie wählen, damit die rote Linie
-passend zu den blauen Punkten ist? Spielen Sie mit $m$ und $b$ herum, bis es
-passen könnte.
+:class: miniexercise 
+Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
+Vorlesungs/Übungs-Stunden an diesem Wochentag.
+```
 
-Tipp: `linspace(start, stopp, anzahl)` aus dem NumPy-Modul generiert `anzahl`
-Werte von `start` bis `stopp`. 
-```
 ```{code-cell} ipython3
-# Hier Ihr Code
+# Hier Ihr Code:
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
-import numpy as np
-
-x_modell = np.linspace(1990, 2018, 100)
-
-m = 0.0344
-b = -64.7516
-y_modell = m * x_modell + b
-
-plt.figure()
-plt.scatter(jahre,co2)
-plt.plot(x_modell, y_modell, color='red')
-plt.xlabel('Jahr') 
-plt.ylabel('Metrische Tonnen pro Einwohner')
-plt.title('Weltweiter CO2-Ausstoß von 1990 bis 2018'); 
+stundenplan = pd.Series([4, 0, 4, 6, 8], index=["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"])
+print(stundenplan)
 ```
 ````
 
-Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, können wir den Wert
-in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von
-5.1 metrischen Tonnen pro Einwohner :-(
++++
 
-## Das Bestimmheitsmaß R²
+## DataFrame für Tabellen
 
-Woher wissen wir eigentlich, dass diese Steigung $m$ und dieser
-y-Achsenabschnitt $b$ am besten passen? Dazu berechnen wir, wie weit weg die
-Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der
-folgenden Grafik.
+Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
+einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
+sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
+auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
+zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
+darstellt und die Spalten die Eigenschaften speichern.
 
-```{figure} pics/fig10_regression.png
----
-name: fig10_regression
----
-Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)
+Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
+Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
+kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
+gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei. 
 
-([Quelle:](https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate#/media/Datei:MDKQ1.svg) Autor: Christian Schirm, Lizenz: CC0)
-```
+## Import von Tabellen 
 
-Die rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir
-können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg
-ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen: 
+Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
+Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
+eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
+einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
+Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
+gestreift.
 
-$$r = y_{\text{blau}}-y_{\text{rot}}.$$ 
+### Import von Tabellen im CSV-Format
 
-Diese Differenz nennt man **Residuum**. Danach summieren wir die Fehler (also
-die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren,
-dass am Ende als Gesamtfehler 0 herauskommt, weil beispielsweise für den 1.
-Messpunkt die blaue y-Koordinate unter der roten y-Koordinate liegt und damit
-ein negatives Residuum herauskommt, aber für den 5. Messpunkt ein positives
-Residuum. Daher quadrieren wir die Residuen. Und damit nicht der Gesamtfehler
-größer wird nur, weil wir mehr Messpunkte dazunehmen, teilen wir noch durch die
-Anzahl der Messpunkte $N$. Mathematisch formuliert haben wir
+Das **Dateiformat CSV** speichert Daten zeilenweise ab. Dabei steht CSV für
+"comma separated value". Die Trennung der Spalten erfolgt durch ein
+Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
+gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
+der Nacchkommastellen verwenden.
 
-$$\frac{1}{N}\sum_{i=1}^{N} (y^{(i)} - f(x^{(i)})^2. $$
+Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
+`read_csv` an (siehe
+[Dokumentation/read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)).
+Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
+ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
+übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.
 
-Wir berechnen die Fehlerquadratsumme in Python mit der `sum()` Funktion aus
-NumPy. Insgesamt ergibt sich
+Am besten sehen wir uns die Funktionsweise von `read_csv` an einem Beispiel an.
+Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
+Datei
+[`bundesliga_top7_offensive.csv`](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)
+herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
+JupyterNotebook liegt. Die csv-Datei stammt von
+[Kaggle](https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv).
+Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
+der Bundesligasaison 2020/21 enthalten. 
 
-```{code-cell} ipython3
-import numpy as np
-
-# blaue y-Koordinaten = Messpunkte
-y_blau = co2
-
-# Berechnung der roten y-Koordinaten, indem wir x-Koordinaten der Messpunkte
-# in die Modellfunktion y = m*x + b einsetzen
-x = jahre
-y_rot = 0.0344 * x - 64.7516
-
-# Berechnung Gesamtfehler
-N = 29
-gesamtfehler = 1/N * np.sum( (y_blau - y_rot)**2 )
-
-print(f'Der Gesamtfehler ist {gesamtfehler}.')
-```
-
-Ist das jetzt groß oder klein? Liegt eine gute Modellfunktion vor, die die Daten
-gut nähert oder nicht? Um das zu beurteilen, berechnen wir, wie groß der Fehler
-wäre, wenn wir nicht die roten y-Koordinaten der Modellfunktion in die
-Fehlerformel einsetzen würden, sondern einfach nur den Mittelwert als
-Schätzwert, also
-
-$$\bar{y} = \frac{1}{N} \sum_{i=1}^{N} y^{(i)}.$$
-
-In Python ergibt sich der folgende Code:
+Führen Sie dann anschließend die folgende Code-Zelle aus.
 
 ```{code-cell} ipython3
-y_mittelwert = y_blau.mean()
-gesamtfehler_mittelwert = 1/N * np.sum( (y_blau - y_mittelwert)**2 )
-
-print(f'Der Gesamtfehler für den Mittelwert als Schätzung ist {gesamtfehler_mittelwert}.')
+import pandas as pd
+data = pd.read_csv('bundesliga_top7_offensive.csv')
 ```
 
-Offensichtlich ist der Gesamtfehler für die Modellfunktion kleiner als wenn wir
-einfach nur immer den Mittelwert prognostizieren würden. Wir rechnen das in
-Prozent um:
+Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
+trotzdem nicht. Dazu verwenden wir die Methode `.head()`.
 
 ```{code-cell} ipython3
-relativer_fehler = gesamtfehler / gesamtfehler_mittelwert
-
-print(f'Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: {relativer_fehler:.4f}')
-print(f'In Prozent umgerechnet ist das: {relativer_fehler * 100:.2f} %.')
+data.head()
 ```
 
-In der Statistik wurde diese Verhältnis (Gesamtfehler geteilt durch Gesamtfehler
-Mittelwert) als Qualitätkriterium für ein lineares Regressionsproblem
-festgelegt. Genaugenommen, rechnet man 1 - Gesamtfehler /  (Gesamtfehler
-Mittelwert) und nennt diese Zahl **Bestimmtheitsmaß $R^2$**. Details finden Sie
-bei [Wikipedia
-(Bestimmtheitsmaß)](https://de.wikipedia.org/wiki/Bestimmtheitsmaß). Die Formel
-lautet:
-
-$$R^2 = 1 - \frac{\sum_{i=1}^N (y_i - f(x_i))^2}{\sum_{i=1}^N(y_i-\bar{y})}. $$
-
-Dabei kürzt sich das $\frac{1}{N}$ im Zähler und Nenner weg. Nachdem der
-$R^2$-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
-beurteilen:
-
-* Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
-  Modellfunktion ist eine sehr gute Anpassung an die Messdaten.
-* Wenn $R^2 = 0$ oder gar negativ ist, dann funktioniert die lineare
-  Modellfunktion überhaupt nicht.
-
-Für das Beispiel ergibt sich ein Bestimmtheitsmaß $R^2$ von
+Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
+beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
+Methode `.head(10)`mit dem Argument 10.
 
 ```{code-cell} ipython3
-R2 = 1 - relativer_fehler
-print(f'R2 = {R2:.2f}')
+data.head(10)
 ```
 
-Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
-nicht perfekt.
+Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
+usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
+welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
+erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
+gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
+den Befehl mit `index_col=`. Die Namen stehen in der 1. Spalte, was in
+Python-Zählweise einer 0 entspricht.
 
-## Interaktive Visualisierung R²-Score
+```{code-cell} ipython3
+data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
+data.head(10)
+```
 
-Auf der Seite [https://mathweb.de](https://mathweb.de) finden Sie eine Reihe von
-Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
-gibt es dort auch eine interaktive Demonstration des R²-Scores.
+### Import von Tabellen im xlsx-Format
 
-Drücken Sie auf den zwei kreisförmigen Pfeile rechts oben. Dadurch wird ein
-neuer Datensatz erzeugt. Die Messdaten sind durch grüne Punkte dargestellt, das
-lineare Regressionsmodell durch eine blaue Gerade. Im Titel wird der aktuelle
-und der optimale R²-Wert angezeigt. Ziehen Sie an den weißen Punkten, um die
-Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
-Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.
+Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
+bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
+Dateiendung `.xlsx`. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
+als Excel-Datei
+[bundesliga_top7_offensive.xlsx](https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm)
+herunter.
 
-<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>
+```{code-cell} ipython3
+data = pd.read_excel('bundesliga_top7_offensive.xlsx', index_col=0)
+data.head(5)
+```
+
+Vermutlich erhalten Sie zunächst eine Fehlermeldung: `Missing optional
+dependency 'openpyxl'.  Use pip or conda to install openpyxl.` Falls das der
+Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
+schreiben zu können, installieren Sie bitte das Modul `openpyxl` mit `!conda
+install openpyxl` oder `!pip install openpyxl ` nach. In dieser Vorlesung
+verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
+Vorlesung/Übung nicht notwendig ist.
+
+## Übersicht verschaffen mit info 
+
+Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
+Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
+noch kommen, können wir mit der `.head()`-Methode nicht erfassen. Dafür stellt
+Pandas die Methode `.info()` zur Verfügung. Probieren wir es einfach aus.
+
+```{code-cell} ipython3
+data.info()
+```
+
+Mit `.info()` erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
+die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie `Name`
+selbsterklärend, aber was `xG` bedeutet, erschließt sich nicht von selbst. Dazu
+brauchen wir mehr Informationen von den Autor:innen der Daten.
+
+Weiterhin entnehmen wir der Ausgabe von `.info()`, dass in jeder Spalte 177
+Einträge sind, die 'non-null' sind. Damit ist gemeint, dass diese Zellen beim
+Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
+angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
+Datentyp 'object' angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
+und die mittlere erwartete Anzahl von Toren pro Spiel 'xG' (= expected number of
+goals from the player in a match) wird als Float angegeben.

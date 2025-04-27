@@ -1,320 +1,277 @@
-# 11.3 Programmieren in MATLAB
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.8
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 
-Ein Programmierkurs in MATLAB erfordert eine ganze Vorlesung. In diesem Kapitel vergleichen wir nur die Programmierkonstrukte aus Python mit denen von MATLAB. Gerne können Sie Details in dem Vorlesungsskript
-
-> [https://gramschs.github.io/book_matlab/](https://gramschs.github.io/book_matlab/intro.html)
-
-nachlesen.
+# 11.3 Visualisierung von DataFrames mit Fehlerbalken
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich
-* Eingabe
-* Verarbeitung (Variablen und Datentypen)
-* Ausgabe
-* Funktionen
-* Vergleiche
-* Programmverzweigungen
-* Schleifen
-* Diagramme
-* Regression
+* Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus einem DataFrame extrahieren.
+* Sie können den Text der Achsenbeschriftung drehen.
+* Sie können mit **axhline()** zu einem Plot eine horizontale
+  Linie hinzufügen.
+* Sie können Fehlerbalken mit **errorbar()** visualisieren.
 ```
 
-## Eingabe, Verarbeitung und Ausgabe
+## Visualisierung von DataFrames
 
-Die Eingabe erfolgt in MATLAB mit der Funktion `input()`. Im Unterschied zu
-Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
-ist es in MATLAB schwierig, eine Abfrage nach Text zu gestalten. Meist wird
-indirekt gearbeitet mit Abfragen a la "Haben Sie einen Führerschein? Geben Sie 0
-ein für Nein und 1 für Ja."
+Aber wie kombinieren wir jetzt die Funktionalitäten des Pandas-Moduls mit denen
+des Matplotlib-Moduls? Der grundlegende Datentyp für Matplotlib ist das
+NumPy-Array und auch in den Pandas-Datenobjekten stecken im Kern NumPy-Arrays.
+Daher funktionieren die Plotting-Funktionalitäten von Matplotlib direkt.
+Wünschenswert wäre allerdings, den Zeilen- oder den Spaltenindex für die
+Beschriftung zu nehmen. Beides ist in dem DataFrame-Objekt abgespeichert. Wir
+können mit
 
-Für die Ausgabe gibt es zwei Funktionen. Die Funktion `disp()` gibt den Inhalt
-einer Variablen direkt aus. Die Funktion `fprintf()` ermöglicht weitere
-Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
-f-Strings. Es wird in den String ein Platzhalter `%f` eingesetzt und dann,
-nachdem der String abgeschlossen wurde, nach einem Komma die Variable.
+* ``.index`` auf den Zeilenindex und
+* ``.columns`` auf den Spaltenindex
 
-Das folgende Beispiel fragt nach einem Nettpreis und gibt dann den Bruttopreis
-mit einem Mehrwertsteuersatz von 19 %.
+zugreifen. Übrigens, ``.values`` liefert die Werten in der Tabelle als
+NumPy-Array zurück. Aber das brauchen wir für die Visualisierung nicht, denn die
+Tabellendaten können direkt viualisiert werden. 
 
-```matlab
-nettopreis = input('Bitte geben Sie den Nettopreis ein: ')
-bruttopreis = nettopreis + 0.19 * nettopreis
-fprintf('Der Bruttopreis ist %f EUR.', bruttopreis)
+Wir verwenden wieder einen realistischen Datensatz und importieren den uns schon
+bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21
+([→ Download](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)).
+Dann lassen wir den Zeilen- und Spaltenindex direkt anzeigen:
+
+```{code-cell} ipython3
+import pandas as pd
+
+data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
+
+print('Zeilenindex: ')
+print(data.index)
+
+print('Spaltenindex:')
+print(data.columns)
 ```
 
-Zwischenrechnungen werden von MATLAB automatisch am Bildschirm ausgegeben. Wenn
-das nicht gewünscht ist, kann die Ausgabe durch ein Semikolon am Ende der Zeile
-unterdrückt werden.
+So kann man direkt die Daten aus einem Pandas-DataFrame extrahieren und
+visualisieren. Wenn wir beispielsweise wissen wollen, wie alt die Spieler der
+Eintracht Frankfurt sind, filtern wir zuerst. Danach stellen wir auf der x-Achse
+die Namen der Spieler (= Zeilenindex) dar und auf der y-Achse das Alter ('Age').
+Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
+verwenden wir ein Balkendiagramm.
 
-## Funktionen
+```{code-cell} ipython3
+import matplotlib.pyplot as plt
 
-In MATLAB werden häufig Funktionen gebraucht. Zunächst einmal sind Funktionen in
-MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
-implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
-stellen sie meist "echte" mathematische Funktionen mit einer Eingabe und einer
-Ausgabe dar.
+# data
+filter = data.loc[:, 'Club'] == 'Eintracht Frankfurt'
+data_eintracht_frankfurt = data.loc[filter, :]
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
 
-Die Grundstruktur einer Funktion in MATLAB ist eie folgt:
-
-```matlab
-function [ergebnis1, ergebnis2,...] = funktionsname(input1, input2,...)
-    % Anweisungen
-    ergebnis1 = ...
-    ergebnis2 = ...
-end
+# plot
+plt.figure()
+plt.bar(x,y)
+plt.xlabel('Spieler')
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
 ```
 
-Die Funktion wird mit dem Schlüsselwort `function` eingeleitet. Danach kommen
-die Variablen, deren Werte von der Funktion zurückgegeben werden sollen. Das
-wird durch den Zuweisungsoperator `=` deutlich gemacht. Zuletzt folgt der
-Funktionsname mit den Eingabeparametern. Die Anweisungen im Inneren der Funktion
-werden durch das `end` abgeschlossen.
+Leider kann man die Spielernamen nicht mehr lesen. Wir können händisch in das
+Styling der x-Achsenbeschriftung eingreifen und die die Beschriftung um 45 Grad
+drehen. Dann sieht der Code folgendermaßen aus:
 
-Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
-Fläche und gibt beide Werte zurück.
+```{code-cell} ipython3
+# plot
+plt.figure()
+plt.bar(x,y)
+plt.xlabel('Spieler')
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21')
 
-```matlab
-function [umfang, flaeche] = berechne_umfang_flaeche(radius)
-    umfang = 2 * pi * radius;
-    flaeche = pi * radius^2;
-end
+# Rotation der xticks um 45 Grad und horizontal alignment rechts
+plt.xticks(rotation = 45, ha='right');
 ```
 
-Sie muss unter dem Namen `berechne_umfang_flaeche.m` abgespeichert werden, damit
-sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.
-
-```matlab
-[U, A] = berechne_umfang_flaeche(5)
+```{admonition} Mini-Übung
+:class: miniexercise
+Visualisieren Sie die Anzahl der Minuten, die ein Spieler der Eintracht
+Frankfurt auf dem Platz stand. Beschriften Sie auch x- und y-Achse und geben Sie
+der Grafik einen aussagekräftigen Titel.
 ```
 
-Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.
-
-```{dropdown} Video zu "Matlab - 3.1 Einleitung Funktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{code-cell} ipython3
+# Hier Ihr Code
 ```
 
-```{dropdown} Video zu "Matlab - 3.2 Input/Output bei Funktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/psyGbqwBD2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# data
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Mins']
+
+# plot
+plt.figure()
+plt.bar(x,y)
+plt.xlabel('Spieler')
+plt.xticks(rotation = 45, ha='right')
+plt.ylabel('Minuten')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
+```
+````
+
+## Plot vom Mittelwert als horizontale Linie
+
+Als nächstes möchten wir in den Plot Zusatzinformationen mit einblenden. So
+würden wir gerne sichtbar machen, wo das Durchschnittsalter der Fußballspieler
+liegt. Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt
+liegt und welcher jünger als der Durchschnitt ist.
+
+Dazu müssen wir zunächst die Zusatzinformation aus den Daten herausholen, sprich
+den Mittelwert des Alters berechnen lassen.
+
+```{code-cell} ipython3
+mittelwert_alter = data_eintracht_frankfurt.loc[:, 'Age'].mean()
+print(f'Mittleres Alter der Spieler: {mittelwert_alter}')
 ```
 
-```{dropdown} Video zu "Matlab - 3.3 Formale Definition von Funktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FMfTxKd3gOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Und nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Dazu
+zeichnen wir eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu
+verwenden wir die Funktion `axhline()`.
+
+```{code-cell} ipython3
+# Daten
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
+
+# Visualisierung
+plt.figure()
+plt.bar(x,y)
+plt.xlabel('Spieler')
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
+
+# Rotation der xticks um 45 Grad und horizontal alignment rechts
+plt.xticks(rotation = 45, ha='right')
+
+# horizontale Linie
+plt.axhline(mittelwert_alter, color='red');
 ```
 
-```{dropdown} Video zu "Matlab - 3.4 Unterfunktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i1c3IPCb82E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{admonition} Mini-Übung
+:class: miniexercise
+Bilden Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
+Frankfurt durchschnittlich im Einsatz war. Ergänzen Sie Ihren Plot der letzten
+Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Mins']
+min_durchschnitt = y.mean()
+
+# plot
+plt.figure()
+plt.bar(x,y)
+plt.axhline(min_durchschnitt, color='black')
+plt.xlabel('Spieler')
+plt.xticks(rotation = 45, ha='right')
+plt.ylabel('Minuten')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
+```
+````
+
+## Plot der Standardabweichung als Fehlerbalken
+
+Bei allen Messungen treten Messfehler auf. Manchmal weiß man von Anfang an,
+welchen Messfehler das Messgerät hat. Ein anderes Mal hat man beispielsweise
+eine Messung zehnmal wiederholt und möchte nun den Mittelwert als Datenpunkt und
+die Standardabweichung der Messergebnisse als Fehlerbalken visualisieren. Durch
+die Angabe eines Fehlerbalkens kann man dem Betrachter eine Zusatzinformation
+mitteilen. Für die Darstellung von Fehlerbalken stellt das Matplotlib-Modul die
+Methode ``errorbar()`` zur Verfügung. Mehr Informationen gibt es auf der
+Hilfeseite
+
+> https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html
+
+
+```{code-cell} ipython3
+# data
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
+standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
+
+# plot data
+plt.figure()
+plt.errorbar(x, y, yerr=standardabweichung_alter)
+
+# styling
+plt.xlabel('Spieler')
+plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
 ```
 
-```{dropdown} Video zu "Matlab - 3.5 Geltungsbereich" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ebqojVhnPwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Die Grafik sieht irritierend aus, da die Altersangben der Spieler verbunden
+wurden. Ästhetischer und besser interpretierbar wird die Grafik, wenn wir noch
+ein wenig an den Optionen herumschrauben. Mit der Formatierung `fmt='o'` werden
+die Messwerte als Kreise dargestellt.
+
+```{code-cell} ipython3
+# data
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Age']
+standardabweichung_alter = data_eintracht_frankfurt.loc[:, 'Age'].std()
+
+# plot data
+plt.figure()
+plt.errorbar(x, y, yerr=standardabweichung_alter, fmt='o')
+
+# styling
+plt.xlabel('Spieler')
+plt.xticks(x, rotation = 45, ha='right')    # um 45 Grad
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
 ```
 
-## Programmverzweigungen
-
-MATLAB kennt ebenfalls Vergleiche und den booleschen Datentyp. Die
-Vergleichsoperatoren sind mit Ausnahme des "ungleich"-Operators auch identisch:
-
-* `<` kleiner
-* `<=` kleiner oder gleich
-* `>` größer
-* `>=` größer oder gleich
-* `==` gleich
-* `~=` ungleich
-
-Das Ergebnis eines Vergleichs ist entweder `true` oder `false`. MATLAB verwendet
-hier also Kleinbuchstaben im Vergleich zu Python mit `True` und `False`.
-
-Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
-entsprechende Verzweigungskonstrukt lautet
-
-```matlab
-if x < 10
-    disp('Die Zahl ist kleiner als 10.')
-elseif x < 15
-    disp('Die Zahl ist nicht kleiner als 10, aber kleiner als 15.')
-else
-    disp('Die Zahl ist größer oder gleich 15.')
-end
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie nun die Standardabweichung der Minuten visualisieren, die ein Spieler der Eintracht
+Frankfurt durchschnittlich im Einsatz war. 
 ```
-
-Wie Sie sehen, werden nach den Bedingungen keine Doppelpunkte gesetzt. Die
-Verzweigung wird mit einem `end` abgeschlossen.
-
-```{dropdown} Video zu "Matlab - 4.1 if else elseif" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9FA1RP4vj6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{code-cell} ipython3
+# Hier Ihr Code
 ```
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt.loc[:, 'Mins']
+min_standardabweichung = y.std()
 
-In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
-gibt. Die sogenannte `switch`-Verzweigung ist vor allem dann interessant, wenn
-sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
-if-elseif-else ersetzt werden.
-
-```{dropdown} Video zu "Matlab - 4.2 switch - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+# plot
+plt.figure()
+plt.errorbar(x,y, yerr=min_standardabweichung, fmt='o')
+plt.xlabel('Spieler')
+plt.xticks(rotation = 45, ha='right')
+plt.ylabel('Minuten')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21');
 ```
+````
 
-## Schleifen
+## Zusammenfassung und Ausblick
 
-Natürlich kennt MATLAB auch Schleifen. Sowohl die while-Schleife als auch die
-for-Schleife können in MATLAB benutzt werden.
-
-Eine Schleife mit Bedingung wird mit `while` eingeleitet. Wir setzen einen
-Zähler auf Eins und erhöhen in jedem Schleifendurchgang den Wert des Zählers um
-Eins, solange wie der Zähler kleiner gleich 10 ist.
-
-```matlab
-zaehler = 1;
-while zaehler <= 10
-    disp(zaehler)
-    zaehler = zaehler + 1;
-end
-```
-
-```{dropdown} Video zu "Matlab - 4.3 while-Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSw9QKAjESE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-Bei der for-Schleife wird eine Liste von Zahlen abgearbeitet oder ein
-Zahlenbereich durchlaufen. Das folgende Code-Beispiel gibt nacheinander die
-Zahlen 2, 6, 8 und -1 auf dem Bildschirm aus.
-
-```matlab
-for zahl = [2, 6, 8, -1]
-    disp(zahl)
-end
-```
-
-Wieder wird die Schleife nicht durch einen Doppelpunkt eingeleitet. Die Schleife
-wird durch das `end` beendet. Alternativ kann der Doppelpunktoperator genutzt
-werden, um eine Liste mit Zahlen nach einem Muster zu generieren. Der folgende
-Code zählt von 10 runter.
-
-```matlab
-for zahl = 10: -1 : 0
-    disp(zahl)
-end
-disp('Die Rakete startet...')
-```
-
-```{dropdown} Video zu "Matlab - 4.4 for - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2qGElJdocnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-In beiden Schleifen-Varianten sind `continue` und `break` möglich, um die
-Schleife vorzeitig zu einem neuen Schleifendurchgang zu veranlassen oder die
-Schleife vorzeitig abzubrechen. Wer an Details interessiert ist, findet sie in
-den folgenden Videos.
-
-```{dropdown} Video zu "Matlab - 4.5 continue - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VdHhQhIjasg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-```{dropdown} Video zu "Matlab - 4.6 break - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bIXuZXPSblU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-## Diagramme
-
-Bei der Einführung in die Datenvisualisierung mit Matplotlib in Python haben wir
-absichtlich die zustandsorientierte Schnittstelle der Bibliothek genutzt. Diese
-wurde nach dem Vorbild von MATLAB gestaltet, so dass Diagramme mit den uns
-bekannten Anweisungen funktionieren.
-
-```matlab
-x = linspace(-3, 3, 100);
-y = 3 .* x + 7;
-
-figure();
-plot(x,y);
-xlabel('Ursache');
-ylabel('Wirkung');
-title('Liniendiagramm');
-```
-
-Auch das Balkendiagramm mit `bar()` und das Streudiagramm mit `scatter()`
-funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
-bestehen. Die Verarbeitung von Strings istg in MATLAB etwas komplizierter, so
-dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
-umzusetzen sind.
-
-Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
-gemeinsam dargestellt werden sollen. Dann muss nach dem ersten Diagramm der
-Befehl `hold on` ausgeführt werden, damit die nachfolgenden Diagramme in
-dieselbe Grafik gezeichnet werden.
-
-```{dropdown} Video zu "Matlab - 5.1 Plot erstellen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2admMlXzlSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-## Regression
-
-Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
-betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
-als Streudiagramm visualisieren.
-
-```matlab
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
-
-figure()
-scatter(x,y)
-xlabel('Ursache')
-ylabel('Wirkung')
-title('Künstliche Messdaten');
-```
-
-Die Funktion zur Bestimmung eines Regressionspolynoms lautet `polyfit(x, y,
-grad)`. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
-die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
-Argument wird der gewüunschte Polynomgrad übergeben. Wir probieren eine
-Regressionsparabel.
-
-```matlab
-p = polyfit(x, y, 2)
-```
-
-Mit `polyval(p, x)` werten wir ein Polynom `p` an der Stelle `x` aus. Um also
-die Regressionsparabel zusätzlich zu den Messwerten zu visualisieren, verwenden
-wir den folgenden Code.
-
-```matlab
-% Künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5];
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586];
-
-% Regression
-p = polyfit(x, y, 2);
-x_modell = linspace(-1, 5, 100);
-y_modell = polyval(p, x_modell);
-
-% Visualisierung
-figure();
-scatter(x,y);
-hold on;
-plot(x_modell, y_modell);
-xlabel('Ursache');
-ylabel('Wirkung');
-title('Künstliche Messdaten');
-```
-
-In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
-Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
-Kommentarzeichen in MATLAB ein Prozentzeichen `%`.
-
-## Weiteres Lehrmaterial
-
-Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript
-
-> [https://gramschs.github.io/book_matlab/intro.html](https://gramschs.github.io/book_matlab/intro.html)
-
-nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
-anderen empfehle ich die YouTube-Playlist
-
-> [So lernst Du
-> Matlab](https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY)
-
-von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
-auch noch anderen Themen behandelt.
+Nachdem wir uns erarbeitet haben, wie Daten aus einem DataFrame für eine
+Visualisierung mit Matplotlib aufbereitet werden, lernen wir im nächsten
+Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.

@@ -1,168 +1,261 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
-
 # Übungen
 
 ```{admonition} Übung 8.1
 :class: miniexercise
-Laden Sie die Datei
-[20220801_Marktwert_Bundesliga.csv](https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC)
-herunter. Die ersten 5 Zeilen sind Kommentare, die beim Einlesen übersprungen
-werden sollten. Informieren Sie sich im Internet über die Option `skiprows` und
-importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.
+Ordnen Sie ein: welche der beiden Programmiersprachen MATLAB oder Python ist
+eine Interpreter-Sprache und welche eine Compiler-Sprache? Welche Vor- und Nachteile haben Interpreter-Sprachen?
 
-* Welche Daten sind in der Tabelle enthalten?
-* Welche Spalte wäre gut als Zeilenindex geeignet? 
-
-Importieren Sie die Daten mit einem geeigneten Zeilenindex.
+Recherchieren Sie im Internet: Was ist Cython und was ist der MATLAB Coder?
 ```
-````{admonition} Lösung
+```{admonition} Lösung
 :class: miniexercise, toggle
-Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro angegeben.
+Sowohl MATLAB als auch Python sind beides Interpreter-Sprachen. Sie werden in Echtzeit ausgeführt, anstatt vorab in Maschinencode kompiliert zu werden, wie es bei Compiler-Sprachen der Fall ist.
 
-Die Vereinsnamen sind ein guter Zeilenindex. Daher sollten die Daten folgendermaßen importiert werden:
+Vorteile von Interpreter-Sprachen sind:
 
-```python
-import pandas as pd
+* **Leichtere Fehlersuche:** Da der Interpreter den Code Zeile für Zeile ausführt, erkennt man leichter, in welcher Zeile der Fehler auftritt.
 
-data = pd.read_csv('20220801_Marktwert_Bundesliga.csv', skiprows=5, index_col=0)
-data.head(10)
+* **Plattformunabhängigkeit:** Interpreter-Sprachen sind oft plattformübergreifend, was bedeutet, dass sie auf verschiedenen Betriebssystemen ausgeführt werden können, ohne dass der Code geändert werden muss.
+
+
+Nachteile von Interpreter-Sprachen sind:
+
+* **Geschwindigkeit:** Interpreter-Sprachen sind in der Regel langsamer als kompilierte Sprachen, da der Code zur Laufzeit und nicht vorab übersetzt wird.
+
+* **Schutz des Quellcodes:** Bei Interpreter-Sprachen ist es einfacher, den Quellcode zu lesen und zu verstehen, was bedeutet, dass er weniger geschützt ist als bei kompilierten Sprachen.
+
+Was Cython und MATLAB Coder betrifft:
+
+**Cython** ist eine Erweiterung von Python, die zusätzlich C-Datentypen unterstützt. Mit Cython können Python-Entwickler Python-Code in die Compiler-Sprachen C oder C++ übersetzen und kompilieren, um die Ausführungszeit zu verkürzen.
+
+**MATLAB Coder** ist ein MATLAB-Tool, das MATLAB-Code in C oder C++ Code umwandelt. Dies kann verwendet werden, um den MATLAB-Code auf Plattformen auszuführen, die MATLAB nicht unterstützen, oder um die Geschwindigkeit der Ausführung zu verbessern, indem der Code vorab kompiliert wird.
 ```
-````
 
-```{admonition} Übung 8.2
+````{admonition} Übung 8.2
 :class: miniexercise
-Laden Sie die Tabelle aus Übung 8.1. 
-
-1. Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele Zeilen und  und wie viele Einträge sind gültig?
-2. Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (`2. Bundesliga`) und speichern Sie diese Daten in der Variable `zweite`.
-3. Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste Kaderwert, was der kleinste? Wie viele Speiler hat ein Verein in der 2. Bundesliga durchschnittlich?
-4. Lassen Sie sich die Daten des 1.FC Kaiserslautern anzeigen. 
-```
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-data.info()
-```
-Es gibt 3 Spalten (wenn wie oben die Vereine als Zeilenindex verwendet werden) und 56 Zeilen, die alle gültige Werte enthalten.
+Was gibt der folgende Code aus? Lesen Sie das Programm und versuchen Sie nur durch Nachdenken die Ausgabe des Programms auf Papier zu schreiben.
 
 ```python
-mein_filter = data.loc[:, 'Ligazugehörigkeit'] == '2. Bundesliga'
-zweite = data[mein_filter]
+def meine_funktion(n):
+    a = 0
+    b = 1
+    meine_liste = [a, b]
+    for i in range(n-2):
+        c = a + b
+        meine_liste.append(c)
+        a = b
+        b = c
+    return meine_liste
 
-zweite.describe()
-```
-Der höchste Kaderwert ist 34.85 Mio. EUR, der kleinste 8.83 Mio. EUR. Es spielen durchschnittlich 27 Fußballer in den Zweitligavereinen.
-```python
-fck = zweite.loc['1.FC Kaiserslautern', :]
-print(fck)
+zahlen = meine_funktion(8)
+print(zahlen)
 ```
 ````
+```{admonition} Lösung
+:class: miniexercise, toggle
+Das Python-Programm gibt 
+
+[0, 1, 1, 2, 3, 5, 8, 13]
+
+aus. Das ist übrigens die sogenannte [Fibonacci-Folge](https://de.wikipedia.org/wiki/Fibonacci-Folge).
+```
 
 ```{admonition} Übung 8.3
 :class: miniexercise
-Schreiben Sie ein Python-Programm, dass das Spiel Galgenmännchen umsetzt. Das
-Spiel funktioniert folgendermaßen:
+Schreiben Sie ein **Python**-Programm, das das Spiel ["Schere - Stein - Papier"](https://de.wikipedia.org/wiki/Schere,_Stein,_Papier) umsetzt.
 
-Der Computer wählt aus einer Liste von Wörtern zufällig eines aus. Anstatt das
-Wort anzuzeigen, werden Unterstriche angezeigt. Wurde beispielsweise zufällig
-das Wort "beispiel" ausgewählt, so wird 
+Die Spielregeln sind wie folgt:
 
-<code>_ _ _ _ _ _ _ _ </code>
+Der Computer fragt den wählt zufällig einen Gegenstand aus (ohne ihn auszugeben)
+und fragt den Spieler nach seiner Wahl. Schere gewinnt gegen Papier, Papier
+gewinnt gegen Stein und Stein gewinnt gegen Schere. Der Sieg bringt dem
+jeweiligen Spieler einen Punkt. Haben beide den gleichen Gegenstand gewählt,
+zählt das als unentschieden, also 0 Punkte. Lassen Sie Spieler und Computer
+solange gegeneinander spielen, bis einer von beiden 3 Punkte erreicht hat.
 
-angezeigt. Danach darf der Spieler einen Buchstaben raten. Ist der Buchstabe im
-gesuchten Wort, so wird er künftig korrekt angezeigt. Wurde beispielweise E
-geraten, dann sieht die Anzeige so aus:
-
-<code>_ e _ _ _ _ e _</code>
-
-Es dürfen maximal 10 Buchstaben falsch geraten werden. Ein Galgenmännchen muss
-nicht gezeichnet werden.
-
-Tipps:
-* Eine Liste der richtig geratenen Buchstaben ist hilfreich.
-* Um zu testen, ob schon alle Buchstaben korrekt geraten wurden, kann auf die
-  Existenz von `_` getestet werden. Das ist aber nur eine von vielen
-  Möglichkeiten.
+Wünschenswert sind auch Ausgaben wie z.B. der aktuelle Spielstand oder am Ende die Gratulation an den Sieger.
 ```
- 
-````{admonition} Lösung
+````{admonition} Lösung 
 :class: miniexercise, toggle
 ```python
-from numpy.random import randint
+from numpy.random import randint 
 
-def waehle_zufallswort():
-    # Erzeugung einer Liste mit Wörtern und zufällige Auswahl eines Wortes, indem der Index zufällig gezogen wird
-    woerterliste = ['python', 'matlab', 'cplusplus', 'java', 'javascript', 'ruby', 'perl', 'swift', 'golang', 'rust']
-    anzahl_woerter = len(woerterliste)
-    zufallsindex = randint(anzahl_woerter)
-    return woerterliste[zufallsindex]     
+gegenstaende = ['Schere', 'Stein', 'Papier']
 
-def generiere_anzeigetext(wort, korrekt_geratene_buchstaben):
-    # Starte mit leerem String
-    anzeigetext = ''
-    # ersetze jeden Buchstaben im Zufallswort durch sich Unterstrich und ein Leerzeichen,
-    # aber nur, wenn er nicht in der Liste der richtig geratenen Buchstaben ist
-    for zeichen in wort:
-        if zeichen in korrekt_geratene_buchstaben:
-            anzeigetext += zeichen + ' '
+punkte_computer = 0
+punkte_spieler  = 0
+
+while True:
+    # Wahl des Computers
+    zufallsindex = randint(0,3)
+    computerwahl = gegenstaende[zufallsindex]
+
+    # Wahl des Spielers
+    spielerwahl  = input('Was wählen Sie? Schere, Stein oder Papier?')
+    while spielerwahl not in gegenstaende:
+        print(f'Sie haben {spielerwahl} gewählt, was nicht in der Liste ist. Achten Sie auf die korrekte Schreibweise.')
+        spielerwahl  = input('Was wählen Sie? Schere, Stein oder Papier?')
+    
+    # Vergleich, wer gewonnen hat
+    if computerwahl == 'Schere':
+        if spielerwahl == 'Schere':
+            print('Unentschieden')
+        elif spielerwahl == 'Stein':
+            print('Stein schleift Schere, der Spieler hat gewonnen.')
+            punkte_spieler = punkte_spieler + 1
         else:
-            anzeigetext += '_ '
-
-    return anzeigetext
-
-# Start
-anzahl_versuche = 10
-zufallswort = waehle_zufallswort()
-
-print(f'Wir spielen Galgenmännchen. Sie haben {anzahl_versuche} Fehlversuche, um das Wort zu erraten.')
-print('Es darf immer nur ein Kleinbuchstabe eingegeben werden.')
-print('Los geht es.')
-
-# Bereite Liste vor, in der richtig geratene Buchstaben gesammelt werden
-geratene_richtige_buchstaben = []
-
-# Schleifen zum Anzeigen und Abfragen der Buchstaben
-anzeigetext = generiere_anzeigetext(zufallswort, geratene_richtige_buchstaben)
-while anzahl_versuche > 0:
-    # Anzeige des Rätselwortes und Abfrage eines Buchstabens
-    print(f'Sie haben noch {anzahl_versuche} Fehlversuche, das Rätselwort lautet: {anzeigetext}')
-    buchstabe = input('Welchen Buchstaben wählen Sie? ')
-
-    # Test, ob Buchstabe vorkommt; wenn nicht, Anzahl Versuche reduzieren
-    if buchstabe in zufallswort:
-            geratene_richtige_buchstaben.append(buchstabe)
-            print(f'Richtig, {buchstabe} ist im gesuchten Wort enthalten.')
+            print('Schere schneidet Papier, der Computer hat gewonnen.')
+            punkte_computer = punkte_computer + 1
+    elif computerwahl == 'Stein':
+        if spielerwahl == 'Schere':
+            print('Stein schleift Schere, der Computer hat gewonnen.')
+            punkte_computer = punkte_computer + 1
+        elif spielerwahl == 'Stein':
+            print('Unentschieden.')
+        else:
+            print('Papier umwickelt Stein, der Spieler hat gewonnen.')
+            punkte_spieler = punkte_spieler + 1
     else:
-            anzahl_versuche -= 1
-            print(f'Leider kommt der Buchstabe {buchstabe} im gesuchten Wort nicht vor.')
+        if spielerwahl == 'Schere':
+            print('Schere schneidet Papier, der Spieler hat gewonnen.')
+            punkte_spieler = punkte_spieler + 1
+        elif spielerwahl == 'Stein':
+            print('Papier umwickelt Stein, der Computer hat gewonnen.')
+            punkte_computer = punkte_computer + 1
+        else:
+            print('Unentschieden.')
 
-    # Aktualisierung des Anzeigetextes
-    anzeigetext = generiere_anzeigetext(zufallswort, geratene_richtige_buchstaben)
-   
-    # Test, ob bereits alle Buchstaben geraten wurden
-    if '_' not in anzeigetext:
-        print(f'Herzlichen Glückwunsch, Sie haben das Wort {zufallswort} erraten :-)')
+    # Ausgabe des aktuellen Spielstandes
+    print(f'### Spielstand {punkte_spieler} : {punkte_computer} (Spieler : Computer) ###')
+
+    # Abbruch der Schleife, wenn Computer oder Spieler 3 Punkte erreicht hat
+    if punkte_computer == 3 or punkte_spieler == 3:
         break
 
-if anzahl_versuche == 0 and '_' in anzeigetext:
-    print(f'Sie haben leider verloren. Das richtige Wort wäre {zufallswort} gewesen.') 
+# Gratulation
+if punkte_spieler == 3:
+    print('Herzlichen Glückwunsch, Sie haben gewonnnen.')
+else:
+    print('Leider hat der Computer gewonnen.')
 ```
 ````
 
+````{admonition} Übung 8.4
+:class: miniexercise
+Suchen Sie in dem folgenden Code die Fehler durch Nachdenken. Korrigieren Sie anschließend das Programm in Python.
 
-  
+```python
+def berechne_wurzel(x):
+    ergebnis = sqrt(x)
+    return ergebnis
 
+x = input('Geben Sie eine Zahl ein: ')
 
+print(f'Die Wurzel der Zahl ist {x}.')
+```
+````
+````{admonition} Lösung
+:class: miniexercise, toggle
+1. Die Funktion `sqrt()` existiert nicht im Python-Standard, sondern muss zuerst
+   durch ein Modul wie beispielsweise Math oder NumPy importiert werden. 
+2. Die Wurzel existiert nur für nicht-negative Zahlen. Es sollte also vorab
+   überprüft werden, ob der Benutzer eine nicht-negative Zahl eingegeben hat.
+3. Die input()-Funktion gibt einen String zurück, der in einer Zahl konvertiert
+   werden muss.
+4. Die print()-Anweisung gibt nicht die Wurzel aus, sondern die eingebene Zahl.
 
+Das korrigierte Programm könnte folgendermaßen aussehen:
+```python
+from numpy import sqrt
+
+def berechne_wurzel(x):
+    ergebnis = sqrt(x)
+    return ergebnis
+
+x = float(input('Geben Sie eine Zahl ein: '))
+while x < 0:
+    x = float(input('Die Zahl muss nicht-negativ sein. Geben Sie eine Zahl ein: '))
+y = berechne_wurzel(x)
+
+print(f'Die Wurzel der Zahl ist {y}.')
+```
+````
+```{admonition} Übung 8.5
+:class: miniexercise
+1. Laden Sie die Kursdaten des DAX aus dem Jahr 2022 herunter (→ hier [Download](https://nextcloud.frankfurt-university.de/s/5qNaNjb945p2mk3),
+   Quelle: [https://www.boerse-frankfurt.de](https://www.boerse-frankfurt.de/index/DAX/kurshistorie/historische-kurse-und-umsaetze). 
+2. Importieren Sie die Tabelle. Überspringen Sie dazu die erste Zeile.
+3. Verschaffen Sie sich einen Überblick. 
+    * Wie viele Datensätze sind in der Tabelle enthalten?
+    * Gibt es leere Zellen?
+    * Was steht in den einzelnen Spalten?
+    * Was ist das höchste Tageshoch, das 2022 erreicht wurde?
+    * Wie viele Tage sind in der Tabelle enthalten? Speichern Sie diese Zahl in
+      der Variablen `anzahl_tage`? Warum sind es eigentlich nicht 365 Tage?
+4. Visualisieren Sie den Kurs zum Börsenschluss `Schluss`. Lassen Sie dazu auf
+   der x-Achse die Tage von 1 bis `anzahl_tage` laufen.
+5. Lassen Sie eine Regressionsgerade durch den Kursstand zum Börsenschluss
+   berechnen.
+6. Visualisieren Sie den Börsenkurs zusammen mit der Regressionsgeraden.
+7. Was prognostiziert das Regressionsmodell für Mitte 2023? Tipp: Sie können mit
+   251 Werktagen für das gesamte Jahr rechnen, siehe https://www.ferienwiki.de/tools/werktagerechner
+```
+````{admonition} Lösung
+:class: miniexercise, toggle
+Import und Übersicht:
+```python
+import pandas as pd
+data = pd.read_csv('dax2022.csv', skiprows=1)
+data.info()
+```
+Es sind 257 Datensätze, alle Zellen sind gefüllt. Es gibt die Spalten Datum, Eröffnung, Schluss, Tageshoch, Tagestief und Umsatz in EUR. Die statistischen Kennzahlen ermitteln wir mit `.describe()`.
+```python
+data.describe()
+```
+Das höchste Tageshoch waren 16285.35 EUR.
+
+In der Tabelle sind 257 Tage enthalten, weil die Börse nur an Werktagen geöffnet hat.
+```python
+anzahl_tage = data.loc[:, 'Datum'].count()
+print(anzahl_tage)
+```
+Visualisierung als Liniendiagramm
+```python
+import matplotlib.pyplot as plt
+
+x = range(1, anzahl_tage+1)
+y = data.loc[:, 'Schluss'] 
+
+plt.figure()
+plt.plot(x,y)
+plt.xlabel('Tag')
+plt.ylabel('Schluss')
+plt.title('DAX 2022');
+```
+
+Das Regressionsmodell prognostiziert für Mitte 2023 einen DAX-Wert von 12031.61 EUR.
+
+```python
+import numpy as np
+
+# Regressionsgerade
+koeffizienten = np.polyfit(x,y, 1)
+
+# Visualisierung
+x_modell = np.linspace(1, anzahl_tage, 100)
+y_modell = np.polyval(koeffizienten, x_modell)
+
+plt.figure()
+plt.plot(x,y)
+plt.plot(x_modell, y_modell, color='red')
+plt.xlabel('Tag')
+plt.ylabel('Schluss')
+plt.title('DAX 2022');
+
+# Prognose für Mitte 2023 
+x_prognose = 257 + 251/2 
+y_prognose = np.polyval(koeffizienten, x_prognose)
+
+print(f'Prognose DAX Mitte 2023: {y_prognose:.2f}')
+```
+````

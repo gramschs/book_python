@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.3 Polynomiale Regression &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>10.3 Statistik mit Pandas &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter10_sec04.html" />
-    <link rel="prev" title="10.2 Lineare Regression mit polyfit und polyval" href="chapter10_sec02.html" />
+    <link rel="prev" title="10.2 Arbeiten mit Tabellendaten" href="chapter10_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -195,9 +195,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -223,44 +223,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter10_sec00.html">10. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter10_sec00.html">10. Pandas anstatt Excel</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -479,7 +478,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>10.3 Polynomiale Regression</h1>
+    <h1>10.3 Statistik mit Pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -490,9 +489,13 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionspolynome">Regressionspolynome</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-regressionsparabel">Beispiel Regressionsparabel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zuviel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schnelle-ubersicht-mit-describe">Schnelle Übersicht mit .describe()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anzahl-count">Anzahl count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mittelwert-mean">Mittelwert mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardabweichung-std">Standardabweichung std</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">Minimum und Maximum mit min und max</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantil-mit-quantile">Quantil mit quantile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
 </ul>
             </nav>
         </div>
@@ -504,333 +507,805 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="polynomiale-regression">
-<h1>10.3 Polynomiale Regression<a class="headerlink" href="#polynomiale-regression" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="statistik-mit-pandas">
+<h1>10.3 Statistik mit Pandas<a class="headerlink" href="#statistik-mit-pandas" title="Link to this heading">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können mit <strong>polyfit</strong> zu gegebenen Messdaten die Koeffizienten eines
-Regressionspolynoms bestimmen.</p></li>
-<li><p>Sie können mit <strong>polyval</strong> aus den Koeffizienten ein Regressionspolynom
-aufstellen.</p></li>
-<li><p>Sie wissen, was die Begriffe <strong>Underfitting</strong> und <strong>Overfitting</strong> bedeuten.</p></li>
-<li><p>Sie können mit dem Bestimmtheitsmaß R² abschätzen, welcher Polynomgrad <span class="math notranslate nohighlight">\(n\)</span> zu
-den Daten passt.</p></li>
+<li><p>Sie können sich mit <strong>describe</strong> eine Übersicht über statistische Kennzahlen
+verschaffen.</p></li>
+<li><p>Sie wissen, wie Sie die Anzahl der gültigen Einträge mit <strong>count</strong> ermitteln.</p></li>
+<li><p>Sie kennen die statistischen Kennzahlen Mittelwert und Standardabweichung und
+wissen, wie diese mit <strong>mean</strong> und <strong>std</strong> berechnet werden.</p></li>
+<li><p>Sie können das Minimum und das Maximum mit <strong>min</strong> und <strong>max</strong> bestimmen.</p></li>
+<li><p>Sie wissen wie ein Quantil interpretiert wird und wie es mit <strong>quantile</strong>
+berechnet wird.</p></li>
 </ul>
 </div>
 </section>
-<section id="regressionspolynome">
-<h2>Regressionspolynome<a class="headerlink" href="#regressionspolynome" title="Link to this heading">#</a></h2>
-<p>Ein Regressionspolynom ist eine Möglichkeit der Regressionsanalyse, bei der die
-Beziehung zwischen einer unabhängigen/erklärenden Variablen <span class="math notranslate nohighlight">\(x\)</span> und einer
-abhängigen Variablen <span class="math notranslate nohighlight">\(y\)</span> durch ein Polynom modelliert wird. Damit erweitert die
-polynomiale Regression die einfache lineare Regression, indem sie einen
-quadratischen oder kubischen Anteil berücksichtigt. Theoretisch sind noch höhere
-Polynomgrade möglich.</p>
-<p>Ein Polynom 2. Grades hat die Form</p>
-<div class="math notranslate nohighlight">
-\[y = ax^2 + bx + c,\]</div>
-<p>ein Polynom 3. Grades</p>
-<div class="math notranslate nohighlight">
-\[y = ax^3 + bx^2 + cx + d.\]</div>
-<p>Die reellen Zahlen <span class="math notranslate nohighlight">\(a, b, c, d\)</span> werden Koeffizienten des Polynoms genannt.</p>
+<section id="schnelle-ubersicht-mit-describe">
+<h2>Schnelle Übersicht mit .describe()<a class="headerlink" href="#schnelle-ubersicht-mit-describe" title="Link to this heading">#</a></h2>
+<p>So wie die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> uns einen schnellen Überblick über die Daten eines
+DataFrame-Objektes gibt, so liefert die Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> eine schnelle
+Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
+Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Joshua Kimmich</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Kingsley Coman</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pavard</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Alphonso Davies</th>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Serge Gnabry</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Die Anwendung der <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>-Methode liefert fogende Ausgabe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+      <td>177.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>24.903955</td>
+      <td>19.858757</td>
+      <td>14.740113</td>
+      <td>1321.604520</td>
+      <td>2.542373</td>
+      <td>2.005650</td>
+      <td>0.214689</td>
+      <td>0.271186</td>
+      <td>0.157571</td>
+      <td>0.106328</td>
+      <td>2.254237</td>
+      <td>0.056497</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.309983</td>
+      <td>10.116219</td>
+      <td>10.526494</td>
+      <td>899.843857</td>
+      <td>4.911681</td>
+      <td>3.117941</td>
+      <td>0.976548</td>
+      <td>1.115447</td>
+      <td>0.226989</td>
+      <td>0.130900</td>
+      <td>2.258267</td>
+      <td>0.231534</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>15.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>22.000000</td>
+      <td>13.000000</td>
+      <td>5.000000</td>
+      <td>456.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.020000</td>
+      <td>0.010000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>25.000000</td>
+      <td>22.000000</td>
+      <td>15.000000</td>
+      <td>1359.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.090000</td>
+      <td>0.080000</td>
+      <td>2.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>28.000000</td>
+      <td>29.000000</td>
+      <td>24.000000</td>
+      <td>2044.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.220000</td>
+      <td>0.160000</td>
+      <td>4.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>36.000000</td>
+      <td>34.000000</td>
+      <td>34.000000</td>
+      <td>3060.000000</td>
+      <td>41.000000</td>
+      <td>19.000000</td>
+      <td>8.000000</td>
+      <td>9.000000</td>
+      <td>2.020000</td>
+      <td>1.230000</td>
+      <td>10.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Da es sich eingebürgert hat, Daten zeilenweise abzuspeichern und die Eigenschaft
+pro einzelnem Datensatz in den Spalten zu speichern, wertet <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> jede
+Spalte für sich aus. Für jede Eigenschaft werden dann die statistischen
+Kennzahlen</p>
+<ul class="simple">
+<li><p>count</p></li>
+<li><p>mean</p></li>
+<li><p>std</p></li>
+<li><p>min</p></li>
+<li><p>max</p></li>
+<li><p>Quantile 25 %, 50 % und 75 %</p></li>
+<li><p>max</p></li>
+</ul>
+<p>ausgegeben.</p>
+<p>Die Bedeutung der Kennzahlen wird in der
+<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html">Pandas-Dokumentation/DataFrame.describe
+</a>
+erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.</p>
 </section>
-<section id="beispiel-regressionsparabel">
-<h2>Beispiel Regressionsparabel<a class="headerlink" href="#beispiel-regressionsparabel" title="Link to this heading">#</a></h2>
-<p>Wir betrachten als Beispiel die folgenden künstlichen Messwerte.</p>
+<section id="anzahl-count">
+<h2>Anzahl count<a class="headerlink" href="#anzahl-count" title="Link to this heading">#</a></h2>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">.count()</span></code> wird die Anzahl der Einträge bestimmt, die <em>nicht</em> ‘NA’ sind. Der
+Begriff ‘NA’ stammt dabei aus dem Bereich Data Science. Gemeint sind fehlende
+Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:</p>
+<ul class="simple">
+<li><p>NA = not available (der Messsensor hat versagt)</p></li>
+<li><p>NA = not applicable (es ist sinnlos bei einem Mann nachzufragen, ob er
+schwanger ist)</p></li>
+<li><p>NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)</p></li>
+</ul>
+<p>Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
+wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
+Methode <code class="docutils literal notranslate"><span class="pre">.count()</span></code> direkt auf den kompletten DataFrame angewendet, so erhalten
+wir ein Pandas-Series-Objekt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06c681b5c2af3a7aec8a50e7a21f9a9aa7bdce7877ec9d88957c28babd3da115.png" src="../_images/06c681b5c2af3a7aec8a50e7a21f9a9aa7bdce7877ec9d88957c28babd3da115.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Club                 177
+Nationality          177
+Position             177
+Age                  177
+Matches              177
+Starts               177
+Mins                 177
+Goals                177
+Assists              177
+Penalty_Goals        177
+Penalty_Attempted    177
+xG                   177
+xA                   177
+Yellow_Cards         177
+Red_Cards            177
+dtype: int64
+</pre></div>
 </div>
 </div>
-<p>Sieht nicht nach einer linearen Funktion, also einer Geraden aus. Wir probieren
-es mit einer quadratischen Funktion. Die Modellfunktion lautet</p>
-<div class="math notranslate nohighlight">
-\[f(x)=ax^2 + bx + c\]</div>
-<p>mit den Parametern <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>  und <span class="math notranslate nohighlight">\(c\)</span>. Wir setzen in der <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>-Funktion den
-Polynomgrad auf <code class="docutils literal notranslate"><span class="pre">grad=2</span></code>.</p>
+</div>
+<p>Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
+erst die Spalte mit dem Alter heraussgreifen und darauf <code class="docutils literal notranslate"><span class="pre">.count()</span></code> anwenden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methode01</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">methode01</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.90591667  7.37899524 14.53561429]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177
 </pre></div>
 </div>
 </div>
 </div>
-<p>Bei der Zuordnung der Koeffizienten müssen wir sorgsam auf die Sortierung
-achten. Unsere Modellfunktion beginnt beim quadratischen Anteil <span class="math notranslate nohighlight">\(ax^2\)</span>, dann
-kommt der lineare Anteil <span class="math notranslate nohighlight">\(bx\)</span> und zuletzt der konstante Part <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<p>Oder wir wenden zuerst <code class="docutils literal notranslate"><span class="pre">.count()</span></code>an und wählen dann im Series-Objekt das Alter
+‘Age’ aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methode02</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">methode02</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = -1.905916666666667
-b = 7.378995238095238
-c = 14.535614285714288
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177
 </pre></div>
 </div>
-</div>
-</div>
-<p>Wir erhalten also als Regressionsfunktion</p>
-<div class="math notranslate nohighlight">
-\[r(x)=-1.9 x^2 + 7.4 x + 14.5.\]</div>
-<p>Visualisieren wir die Modellfunktion zusammen mit den Messpunkten.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-
-<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="n">y_plot</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x_plot</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x_plot</span> <span class="o">+</span> <span class="n">c</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" src="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" />
-</div>
-</div>
-<p>Alternativ kann die Funktion <code class="docutils literal notranslate"><span class="pre">polyval</span></code> dazu genutzt werden, um die Parabel aufzustellen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-
-<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-<span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" src="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" />
 </div>
 </div>
 </section>
-<section id="zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">
-<h2>Zuviel des Guten, höhere Polynomgrade sind nicht besser<a class="headerlink" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser" title="Link to this heading">#</a></h2>
-<p>Regressionspolynom scheinen zunächst besser zu sein als Regressionsgeraden.
-Durch die zusätzlichen Terme können auch nichtlineare Beziehungen und komplexere
-Muster in den Daten erklärt werden. Allerdings birgt die Verwendung von höhere
-Polynomgraden auch das Risiko des Overfittings. Der Begriff <strong>Overfitting</strong>
-bedeutet, dass das Regressionspolynom zu genau an die Daten angepasst wurde und
-neue Daten schlechter prognostiziert. Das Gegenteil davon ist <strong>Underfitting</strong>.
-Das Regressionspolynom hat einen zu kleinen Polynomgrad und kann daher die Daten
-kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr wichtig.</p>
-<p>Wir betrachten dazu das Beispiel von oben und verändern den Polynomgrad.</p>
+<section id="mittelwert-mean">
+<h2>Mittelwert mean<a class="headerlink" href="#mittelwert-mean" title="Link to this heading">#</a></h2>
+<p>Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> den Mittelwert der Einträge in jeder Spalte berechnet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
-
-<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
-  <span class="c1"># berechne Regressionspolynom</span>
-  <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
-  <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
-  <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwert</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c4d3bdfbb01ed8e37f993e96e1d3c18e8850dd7c6c872a89e4da872e3a9ef69.png" src="../_images/5c4d3bdfbb01ed8e37f993e96e1d3c18e8850dd7c6c872a89e4da872e3a9ef69.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                    24.903955
+Matches                19.858757
+Starts                 14.740113
+Mins                 1321.604520
+Goals                   2.542373
+Assists                 2.005650
+Penalty_Goals           0.214689
+Penalty_Attempted       0.271186
+xG                      0.157571
+xA                      0.106328
+Yellow_Cards            2.254237
+Red_Cards               0.056497
+dtype: float64
+</pre></div>
 </div>
 </div>
-<p>Eine Regressionsgerade kann die Messdaten nicht gut erklären, aber die
-Regressionspolynome Grad 2 bis 4 passen sehr gut zu den künstlichen Messdaten
-des Beispiels. Probieren wir noch höhere Polynomgrade aus.</p>
+</div>
+<p>An der Stelle ist es wichtig, die Option <code class="docutils literal notranslate"><span class="pre">numeric_only=True</span></code> zu setzen, damit
+nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.</p>
+<p>Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
+Jahre alt sind und 1321.6 Minuten im Einsatz waren.</p>
+<p>Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
+wollen, können Sie folgendes Video ansehen.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="standardabweichung-std">
+<h2>Standardabweichung std<a class="headerlink" href="#standardabweichung-std" title="Link to this heading">#</a></h2>
+<p>Das ‘st’ in <code class="docutils literal notranslate"><span class="pre">.std()</span></code>für Standard steht, ist nachvollziehbar. Der dritte
+Buchstabe ‘d’ kommt von ‘deviation’, also Abweichung. Somit ist wiederum die
+Methode nach dem englischen Fachbegriff ‘standard deviation’ benannt.  Welche
+Standardabweichung erhalten wir beim Alter?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
-
-<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]:</span>
-  <span class="c1"># berechne Regressionspolynom</span>
-  <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
-  <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
-  <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">standardabweichung</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-</pre></div>
-</div>
-<img alt="../_images/6e562350d881950330a1b92ab526be2bd64a79306bb2e582033deb217a72fde0.png" src="../_images/6e562350d881950330a1b92ab526be2bd64a79306bb2e582033deb217a72fde0.png" />
-</div>
-</div>
-<p>Grad 5 ist schon gut, aber die Regressionspolynome Grad 6 bis 8 scheinen perfekt
-zu sein. Allerdings gibt es auch eine Warnung, denn wenn mehr
-Polynomkoeffizienten da sind als Messpunkte, ist die Bestimmung der
-Polynomkoeffizienten nicht mehr eindeutig. Dennoch, jeder Messpunkt wird exakt
-von dem Regressionspolynom getroffen. Demnach müssten alle Residuen 0 sein und
-damit für das Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2 = 1\)</span> gelten. Am besten lassen wir eine
-Tabelle für den Polynomgrad und das jeweilige Residuum ausgeben. Dazu schreiben
-wir aber erst eine Funktion, die das Bestimmtheitsmaß ausrechnet.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_r2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">):</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">y_mittelwert</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">messwert</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
-        <span class="n">y_mittelwert</span> <span class="o">=</span> <span class="n">y_mittelwert</span> <span class="o">+</span> <span class="n">messwert</span>
-    <span class="n">y_mittelwert</span> <span class="o">=</span> <span class="n">y_mittelwert</span> <span class="o">/</span> <span class="n">N</span>
-
-    <span class="n">zaehler</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">nenner</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="n">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_modell</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
-        <span class="n">nenner</span>  <span class="o">=</span> <span class="n">nenner</span>  <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_mittelwert</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="n">r2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">zaehler</span> <span class="o">/</span> <span class="n">nenner</span>
-    <span class="k">return</span> <span class="n">r2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                    4.309983
+Matches               10.116219
+Starts                10.526494
+Mins                 899.843857
+Goals                  4.911681
+Assists                3.117941
+Penalty_Goals          0.976548
+Penalty_Attempted      1.115447
+xG                     0.226989
+xA                     0.130900
+Yellow_Cards           2.258267
+Red_Cards              0.231534
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
-<p>Das war eine sehr händische Implementierung des R2-Bestimmtheitsmaßes. Mit
-NumPy-Arrays hätte das eleganter funktioniert. Das Modul Sciki-Learn stellt auch
-schon eine Implementierung zur Verfügung. Jetzt verwenden wir die Funktion, um
-für die Polynomgrade von 1 bis 8 das Bestimmtheitsmaß zu bestimmen.</p>
+<p>Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
+extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
+dann <code class="docutils literal notranslate"><span class="pre">.std()</span></code> oder erst <code class="docutils literal notranslate"><span class="pre">.std()</span></code>und dann Selektion nach ‘Age’. Probieren wir es
+aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
-    <span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">berechne_r2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polynomgrad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">: R2 = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_std</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter_std</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomgrad 1: R2 = 0.0054
-Polynomgrad 2: R2 = 0.9834
-Polynomgrad 3: R2 = 0.9834
-Polynomgrad 4: R2 = 0.9847
-Polynomgrad 5: R2 = 0.9855
-Polynomgrad 6: R2 = 1.0000
-Polynomgrad 7: R2 = 1.0000
-Polynomgrad 8: R2 = 1.0000
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.309982619427105
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wenn wir den Polynomgrad noch höher treiben, passiert etwas Seltsames.</p>
+<p>Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
+Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="minimum-und-maximum-mit-min-und-max">
+<h2>Minimum und Maximum mit min und max<a class="headerlink" href="#minimum-und-maximum-mit-min-und-max" title="Link to this heading">#</a></h2>
+<p>Die Namen der Methoden <code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">max()</span></code> sind fast schon wieder
+selbsterklärend. Die Methode <code class="docutils literal notranslate"><span class="pre">.min()</span></code> liefert den kleinsten Werte zurück, der in
+einer Spalte gefunden wird. Umgekehrt liefert <code class="docutils literal notranslate"><span class="pre">.max()</span></code> den größten Eintrag, der
+in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
+vorkommen, ist dabei egal.</p>
+<p>Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
+(haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
+Anzahl von Toren ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tore_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tore_min</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
-
-<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">]:</span>
-  <span class="c1"># berechne Regressionspolynom</span>
-  <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
-  <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
-  <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">tore_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tore_max</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2944/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+41
 </pre></div>
 </div>
-<img alt="../_images/099c7c07642603fd0d54db8a1fcfc61fe855d8a813e33464f3f402233cefeec7.png" src="../_images/099c7c07642603fd0d54db8a1fcfc61fe855d8a813e33464f3f402233cefeec7.png" />
 </div>
 </div>
-<p>Die Polynome beginnen zwischen <span class="math notranslate nohighlight">\(x=4\)</span> und <span class="math notranslate nohighlight">\(x=5\)</span> immer höher zu schwingen. Es ist
-unplausibel, dass diese Polynome die Messdaten gut erklären. Daher empfiehlt es
-sich, möglichst den kleinsten Polynomgrad zu nehmen, der sehr gut, aber nicht
-perfekt ist. Bei der Tabelle der R2-Werte haben wir gesehen, dass der R2-Wert
-von 0.0054 (Grad 1) auf 0.9834 (Grad 2) springt. Danach sind aber keine
-wesentlichen Verbesserungen mehr erkennbar. Daher wählen wir Grad 2 als
-Regressionspolynom.</p>
+<p>Wenig verwunderlich ist die minimale Anzahl an Toren 0 und die maximale Anzahl
+an Toren, die ein oder mehrere Spieler der Top7 2020/21 geschossen haben, war
+41. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore geschafft hat,
+natürlich Lewandowski).</p>
+<p>Von Verteidigern wird nicht erwartet, Tore zu schieen, sondern von Stürmern. Was
+ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
+Spalte ‘Position’. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
+Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
+manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
+bei denen nur ‘FW’ eingetragen ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Position&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FW&#39;</span>
+<span class="n">stuermer</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="s1">&#39;Goals&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stürmer&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stuermer</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==============&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimale Tore: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stuermer</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stürmer
+Name
+Robert Lewandowski    41
+Joshua Zirkzee         0
+Mickaël Cuisance       0
+Erling Haaland        27
+Steffen Tigges         0
+Yussuf Poulsen         5
+Alexander Sørloth      5
+Justin Kluivert        3
+Wout Weghorst         20
+Josip Brekalo          7
+André Silva           28
+Bas Dost               4
+Patrik Schick          9
+Lucas Alario          11
+Demarai Gray           1
+Paulinho               0
+Taiwo Awoniyi          5
+Joel Pohjanpalo        6
+Petar Musa             1
+Akaki Gogia            0
+Leon Dajaku            0
+Joshua Mees            0
+Name: Goals, dtype: int64
+==============
+Minimale Tore: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quantil-mit-quantile">
+<h2>Quantil mit quantile<a class="headerlink" href="#quantil-mit-quantile" title="Link to this heading">#</a></h2>
+<p>Das Quantil <span class="math notranslate nohighlight">\(p \%\)</span> ist der Wert, bei dem <span class="math notranslate nohighlight">\(p %\)</span> der Einträge kleiner als diese
+Zahl sind und <span class="math notranslate nohighlight">\(100 \% - p \%\)</span> sind größer. Meist werden nicht Prozentzahlen
+verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht.</p>
+<p>Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
+Karten wissen. Mit der Methode <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code> können wir diesen Wert leicht aus
+den Daten holen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gelbe_karten_50prozent_quantil</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gelbe_karten_50prozent_quantil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
+weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
+gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gelbe_karten_75prozent_quantil</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gelbe_karten_75prozent_quantil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. SChauen wir uns
+die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
+sind?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">4.0</span>
+<span class="n">gelbkarten_spieler</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gelbkarten_spieler</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Yellow_Cards&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Position  Yellow_Cards
+Name                                      
+Sebastian Rode            MF            10
+Obite N&#39;Dicka             DF            10
+Christopher Trimmel       DF             9
+Marcel Sabitzer           MF             8
+Grischa Prömel            MF             7
+Paulo Otávio              DF             7
+Kevin Mbabu               DF             7
+Xaver Schlager            MF             7
+Maximilian Arnold         MF             7
+Leon Bailey            FW,MF             6
+Djibril Sow               MF             6
+Mats Hummels              DF             6
+Jérôme Boateng            DF             6
+Kevin Kampl               MF             6
+Dayot Upamecano           DF             6
+Thomas Delaney            MF             6
+Jude Bellingham           MF             6
+Maxence Lacroix           DF             5
+Edmond Tapsoba            DF             5
+Robert Andrich            MF             5
+Emre Can               DF,MF             5
+Nadiem Amiri              MF             5
+Moussa Diaby           FW,MF             5
+David Abraham             DF             5
+Aymen Barkok           FW,MF             5
+John Brooks               DF             5
+Amin Younes            MF,FW             5
+Tuta                      DF             5
+Nordi Mukiele             DF             5
+Makoto Hasebe          DF,MF             5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
+<p>In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
+beschäftigt, die Pandas mit der Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> zusammenfasst, die aber
+auch einzeln über</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.quantile()</span></code></p></li>
+</ul>
+<p>berechnet und ausgegeben werden können.</p>
 </section>
 </section>
 
@@ -870,7 +1345,7 @@ Regressionspolynom.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">10.2 Lineare Regression mit polyfit und polyval</p>
+        <p class="prev-next-title">10.2 Arbeiten mit Tabellendaten</p>
       </div>
     </a>
     <a class="right-next"
@@ -900,9 +1375,13 @@ Regressionspolynom.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionspolynome">Regressionspolynome</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-regressionsparabel">Beispiel Regressionsparabel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zuviel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schnelle-ubersicht-mit-describe">Schnelle Übersicht mit .describe()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anzahl-count">Anzahl count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mittelwert-mean">Mittelwert mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardabweichung-std">Standardabweichung std</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">Minimum und Maximum mit min und max</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantil-mit-quantile">Quantil mit quantile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
 </ul>
   </nav></div>
 

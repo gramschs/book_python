@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.2 Streudiagramme &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>9.2 Simulink-Bibliothek &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter09/chapter09_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.3 Visualisierung von DataFrames mit Fehlerbalken" href="chapter09_sec03.html" />
-    <link rel="prev" title="9.1 Linien- und Balkendiagramme" href="chapter09_sec01.html" />
+    <link rel="next" title="9.3 Ableitung, Integration und Differentialgleichung mit Simulink" href="chapter09_sec03.html" />
+    <link rel="prev" title="9.1 Simulink Einführung" href="chapter09_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -195,9 +195,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -223,44 +223,43 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter09_sec05.html">Übungen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter09_sec00.html">9. Simulink</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wissenschaftliche Software</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -479,7 +478,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>9.2 Streudiagramme</h1>
+    <h1>9.2 Simulink-Bibliothek</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -490,8 +489,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Streudiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabeblocke-bzw-sources">Eingabeblöcke bzw. Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ausgabeblocke-oder-sinks">Ausgabeblöcke oder Sinks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitungsblocke">Verarbeitungsblöcke</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-lineare-funktion-als-eingangssignal">Beispiel: lineare Funktion als Eingangssignal</a></li>
 </ul>
             </nav>
         </div>
@@ -503,154 +504,150 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="streudiagramme">
-<h1>9.2 Streudiagramme<a class="headerlink" href="#streudiagramme" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="simulink-bibliothek">
+<h1>9.2 Simulink-Bibliothek<a class="headerlink" href="#simulink-bibliothek" title="Link to this heading">#</a></h1>
+<p>Simulink stellt viele Blöcke zur Verfügung. In diesem Kapitel gehen wir die Liste der wichtigsten Blöcke durch. Darüber hinaus betrachten wir Ableitungen und Integrale.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können Messwerte mit <strong>Streudiagrammen</strong> darstellen.</p></li>
+<li><p>Sie kennen die wichtigsten Eingabe-, Verarbeitungs- und Ausgabeblöcke.</p></li>
+<li><p>Sie können ein Eingangssignal ableiten und integrieren.</p></li>
 </ul>
 </div>
 </section>
-<section id="id1">
-<h2>Streudiagramme<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Bei Streudiagrammen werden nicht die Punkte <span class="math notranslate nohighlight">\((x_1,y_2)\)</span> mit <span class="math notranslate nohighlight">\((x_2,y_2)\)</span> mit
-<span class="math notranslate nohighlight">\((x_3,y_3)\)</span> usw. durch Linien verbunden, sondern jeder Punkt selbst wird an der
-Stelle seiner Koordinaten eingezeichnet. Ob dazu ein Punkt, Kreis, Dreieck oder
-Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
-Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
-Matplotlib-Funktion auch <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># scatter plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/f63e7be0b84bb4dc0d64ac44de3aff6ee1ac44bc2a03657025580270e807738f.png" src="../_images/f63e7be0b84bb4dc0d64ac44de3aff6ee1ac44bc2a03657025580270e807738f.png" />
-</div>
-</div>
-<p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span></code> lässt sich das Symbol einstellen, mit dem das
-Streudiagramm erzeugt wird. Wie Sie sehen, ist ein ausgefüllter Kreis
-voreingestellt. Lesen Sie auf der Internetseite</p>
-<blockquote>
-<div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
-</div></blockquote>
-<p>nach, welche Marker-Symbole existieren. Probieren Sie einige der Symbole hier
-aus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># scatter plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/89bb817152037f6a0c21a838375b0ccae62ea296858b3c1cc483cd36aa1c53f4.png" src="../_images/89bb817152037f6a0c21a838375b0ccae62ea296858b3c1cc483cd36aa1c53f4.png" />
-</div>
-</div>
-<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man Liniendiagramme
-verwenden. Streudiagramme eignen sich eher für die Visualisierung einzelner
-Messungen. Wenn Sie beispielsweise an jeden Wochentag die Temperatur an zwei
-Orten messen, bietet es sich an, beide Messreihen in einem Streudiagramm zu
-visualisieren. Dazu sollten Sie unterschiedliche Marker und unterschiedliche
-Farben verwenden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Zufallszahlen, um Temperaturmessung zu simulieren</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Zufallszahlen, um Temperaturmessung zu simulieren</span>
-
-<span class="c1"># scatter plots</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/5f57a38ec371f791a5849a3350bdba47b6fae3bca161a1b34dacbd22236ce9fb.png" src="../_images/5f57a38ec371f791a5849a3350bdba47b6fae3bca161a1b34dacbd22236ce9fb.png" />
-</div>
-</div>
-<p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
-man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
-<code class="docutils literal notranslate"><span class="pre">plt.scatter(x,y1,</span> <span class="pre">label='Messung1')</span></code>. Zuletzt verwendet man die Funktion
-<code class="docutils literal notranslate"><span class="pre">legend()</span></code>, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
-Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
-werden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-
-<span class="c1"># scatter plots</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Offenbach&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Durchschnittstemperatur&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/b4ec9f99bcbe81aa886a21781d10654c5e51fa8adfe614aa86fb5a2479edabf4.png" src="../_images/b4ec9f99bcbe81aa886a21781d10654c5e51fa8adfe614aa86fb5a2479edabf4.png" />
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Erzeugen Sie eine Wertetabelle mit den Zahlen 1 bis 50 für x und 50
-normalverteilten Zufallszahlen mit Mittelwert 0 und Standardabweichung 1 für y.
-Visualisieren Sie diese als Streudiagramm. Die Marker sollen rot gefärbte
-Diamenten sein.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># data </span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-
-<span class="c1"># plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<section id="eingabeblocke-bzw-sources">
+<h2>Eingabeblöcke bzw. Sources<a class="headerlink" href="#eingabeblocke-bzw-sources" title="Link to this heading">#</a></h2>
+<p>In der
+<a class="reference external" href="https://de.mathworks.com/help/simulink/sources.html">Simulink-Dokumentation</a>
+finden Sie eine Übersicht der möglichen Eingabeblöcke für Simulink. Die folgende
+Liste und vor allem die Beschreibungen sind von dort übernommen. Eingabeblöcke,
+die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.</p>
+<ul class="simple">
+<li><p><em>Band-Limited White Noise</em>: Dieser Block erzeugt normalverteilte Zufallszahlen
+(weißes Rauschen).</p></li>
+<li><p><em>Chirp Signal</em>: Dieser Block erzeugt eine Sinusfunktion, bei der die Frequenz
+ansteigt.</p></li>
+<li><p><em>Clock</em>: Dieser Block gibt bei jedem Simulationsschritt die aktuelle
+Simulationszeit aus. Dieser Block ist nützlich für andere Blöcke, die die
+Simulationszeit benötigen.</p></li>
+<li><p><strong>Constant</strong>: Diser Block erzeugt ein reelles oder komplexes konstantes
+Signal. Verwenden Sie diesen Block, um einen konstanten Signaleingang
+bereitzustellen.</p></li>
+<li><p><em>Counter Free-Running</em>: Dieser Block zählt hoch und beginnt wieder bei 0,
+nachdem der Wert <span class="math notranslate nohighlight">\(2^N+1\)</span> überschritten wurde, dabei ist <span class="math notranslate nohighlight">\(N\)</span> die Anzahl der
+Bits</p></li>
+<li><p><em>Counter Limited</em>: Dieser Block zählt hoch und beginnt wieder bei 0, nachdem
+ein vorher festgelegter maximaler Wert überschritten wurde</p></li>
+<li><p><em>Digital Clock</em>: Dieser Block gibt ebenfalls die Simuationszeit aus, aber nur
+zu bestimmten Zeiten.</p></li>
+<li><p><em>Enumerated Constant</em>: Dieser Block erzeugt eine Aufzählungskonstante.</p></li>
+<li><p><strong>From File</strong>: Mit diesem Block laden Sie Daten aus einer MAT-Datei in das
+Simulink-Modell.</p></li>
+<li><p><em>From Spreadsheet</em>: Dieser Block liest Daten aus einer Tabelle.</p></li>
+<li><p><strong>From Workspace</strong>: Dieser Block lädt Signaldaten aus dem MATLAB-Workspace in
+das Simulink-Modell.</p></li>
+<li><p><em>Ground</em>: Dieser Block erdet nicht verbundene Eingangssignale.</p></li>
+<li><p><em>In Bus Element</em>: Dieser Block ermöglicht die Auswahl von Eingaben eines
+externen Ports.</p></li>
+<li><p><em>Inport</em>: Inport-Blöcke verbinden Signale von außerhalb eines Systems mit dem
+System.</p></li>
+<li><p><em>Pulse Generator</em>: Der Impulsgeneratorblock erzeugt in regelmäßigen Abständen
+Rechteckimpulse.</p></li>
+<li><p><strong>Ramp</strong>: Der Rampenblock erzeugt ein Signal, das zu einem bestimmten
+Zeitpunkt und mit einem bestimmten Wert beginnt und sich mit einer bestimmten
+Rate ändert.</p></li>
+<li><p><em>Random Number</em>: Der Zufallszahlenblock erzeugt normalverteilte Zufallszahlen.</p></li>
+<li><p><em>Repeating Sequence</em>: Dieser Block gibt ein periodisches skalares Signal mit
+einer Wellenform aus, die Sie mit den Parametern Zeitwerte und Ausgangswerte
+festlegen.</p></li>
+<li><p><em>Repeating Sequence Interpolated</em>: Dieser Block gibt eine periodische
+zeitdiskrete Folge aus, die auf den Werten der Parameter “Vector of time
+values” und “Vector of output values” basiert.</p></li>
+<li><p><em>Repeating Sequence Stair</em>: Dieser Block gibt eine Treppenfolge aus und
+wiederholt sie.</p></li>
+<li><p><strong>Signal Builder</strong>: Mit diesem Block können Sie austauschbare Gruppen von
+stückweise linearen Signalquellen erstellen und in einem Modell verwenden.</p></li>
+<li><p><strong>Signal Editor</strong>: Dieser Block dient der Anzeige, Erstellung und Bearbeitung
+von austauschbaren Szenarien.</p></li>
+<li><p><em>Signal Generator</em>:  Dieser Block kann eine der folgenden vier verschiedenen
+Wellenformen erzeugen: Sinus, Rechteck, Sägezahn und Zufallsgenerator.</p></li>
+<li><p><em>Sine Wave</em>: Dieser Block gibt eine sinusförmige Wellenform aus.</p></li>
+<li><p><strong>Step</strong>: Dieser Block erzeugt eine Treppenfunktion mit zwei Stufen, der zu
+einer spezifizierten Zeit wechselt.</p></li>
+<li><p><em>Uniform Random Number</em>: Dieser Block erzeugt gleichmäßig verteilte
+Zufallszahlen in einem von Ihnen festgelegtem Intervall.</p></li>
+<li><p><em>Waveform Generator</em>: Dieser Block erzeugt wellenförmige Signale.</p></li>
+</ul>
 </section>
-<section id="zusammenfassung-und-ausblick">
-<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>Das Linien- und das Streudiagramm werden für die Visualisierung von
-kontinuierlichen Daten verwendet, wohingegen das Balkendiagramm dem Plot von
-diskreten Daten (Kategorien) dient. Im folgenden Abschnitt verknüpfen wir
-Matplotlib mit Pandas zur Visualisierung von Tabellendaten in einem DataFrame.</p>
+<section id="ausgabeblocke-oder-sinks">
+<h2>Ausgabeblöcke oder Sinks<a class="headerlink" href="#ausgabeblocke-oder-sinks" title="Link to this heading">#</a></h2>
+<p>Mit den folgenden Blöcken erzeugen Sie Ausgaben oder exportieren Ergebnisse.
+Diese Liste enststammt der
+<a class="reference external" href="https://de.mathworks.com/help/simulink/sinks.html">Simulink-Dokumentation</a>.</p>
+<ul class="simple">
+<li><p><em>Display</em>: Dieser Block zeigt den Wert der Eingangsdaten an.</p></li>
+<li><p><em>Floating Scope and Scope Viewer</em>: Der Simulink® Scope Viewer und der Floating
+Scope Block zeigen Zeitsignale abhängig von der Simulationszeit an. Der Scope
+Viewer und der Floating Scope-Block haben die gleiche Funktionalität wie der
+Scope-Block, sind aber nicht mit Signalleitungen verbunden.</p></li>
+<li><p><em>Out Bus Element</em>: Dieser Block kombiniert die Funktionalität eines
+Outport-Blocks und eines Bus-Creator-Blocks.</p></li>
+<li><p><em>Outport</em>: Diese Blöcke verbinden Signale aus einem System mit einem Ziel
+außerhalb des Systems.</p></li>
+<li><p><strong>Record, XY Graph</strong>: Sie können sowohl den Block Record oder den Block XY
+Graph verwenden, um Daten im Workspace, in einer Datei oder sowohl im
+Workspace als auch in einer Datei aufzuzeichnen.</p></li>
+<li><p><strong>Scope</strong>: Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.</p></li>
+<li><p><em>Stop Simulation</em>: Dieser Block stoppt die Simulation, wenn der Eingang
+ungleich Null ist.</p></li>
+<li><p><em>Terminator</em>: Dieser Block wird verwendet, um Blöcke zu kappen, deren
+Ausgangsports nicht mit anderen Blöcken verbunden sind.</p></li>
+<li><p><em>To File</em>: Der To File-Block schreibt Eingangssignaldaten in eine MAT-Datei.T</p></li>
+<li><p><em>To Workspace</em>: Dieser Block protokolliert die an seinem Eingangsport
+angeschlossenen Daten im Workspace.</p></li>
+</ul>
+</section>
+<section id="verarbeitungsblocke">
+<h2>Verarbeitungsblöcke<a class="headerlink" href="#verarbeitungsblocke" title="Link to this heading">#</a></h2>
+<p>Um die Eingabesignale zu verarbeiten, gibt es ebenfalls eine lange Liste von
+Blöcken, siehe
+<a class="reference external" href="https://de.mathworks.com/help/simulink/block-libraries.html">Simulink-Dokumentation</a>.
+Ein erstes Beispiel haben wir mit dem Gain-Block schon kennengelernt, der ein
+Eingangssignal verstärkt und mathematisch gesehen eine multiplikativer Faktor
+ist. Die Liste der Verbeitungsblöcke ist zu lang, um sie hier eingehend zu
+behandeln. Wichtig sind jedoch die <a class="reference external" href="https://de.mathworks.com/help/simulink/math-operations.html">mathematischen
+Blöcke</a>
+zusammengefasst in dem Modul <strong>Maths Blocks</strong> und die sogenannten
+<a class="reference external" href="https://de.mathworks.com/help/simulink/continuous.html">kontinuierlichen
+Blöcke</a> aus dem Modul
+<strong>Continuous Blocks</strong>, das Ableitungen und Löser von Differentialgleichungen
+beinhaltet.</p>
+</section>
+<section id="beispiel-lineare-funktion-als-eingangssignal">
+<h2>Beispiel: lineare Funktion als Eingangssignal<a class="headerlink" href="#beispiel-lineare-funktion-als-eingangssignal" title="Link to this heading">#</a></h2>
+<p>Wollen wir die lineare Funktion <span class="math notranslate nohighlight">\(u(t) = 2\cdot t + 3\)</span> in Simulink modellieren,
+so brauchen wir zwei Eingangssignale, nämlich <span class="math notranslate nohighlight">\(t\)</span> und <span class="math notranslate nohighlight">\(1\)</span>. Daher ziehen wir
+zuerst die Sources-Blöcke <code class="docutils literal notranslate"><span class="pre">Ramp</span></code> und <code class="docutils literal notranslate"><span class="pre">Constant</span></code> aus der Simulink-Bibliothek auf
+den Arbeitsplatz. Die Eigenschaften beider Blöcke können durch Doppelklick
+angezeigt werden.</p>
+<p>Die Rampe ist eine Funktion, die Null ist und ab einem bestimmten Zeitpunkt
+linear ansteigt. Sowohl der Zeitpunkt, ab dem der lineare Anstieg beginnt, als
+auch die Steigung können eingestellt werden. Wir lassen die Voreinstellung
+<code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Time</span></code> auf Null. Normalerweise müssten wir jetzt die Steigung, also
+<code class="docutils literal notranslate"><span class="pre">Slope</span></code> auf den Wert 2 setzen, aber um den prinzipiellen Zusammenbau von Termen
+zu zeigen, benutzen wir erneut den Verstärker-Block <code class="docutils literal notranslate"><span class="pre">Gain</span></code>.</p>
+<p>Der Block <code class="docutils literal notranslate"><span class="pre">Constant</span></code> produziert ein konstantes Eingangssignal. Auch hier könnten
+wir den Wert 3 direkt eingeben, indem wir einen Doppelklick auf den Block machen
+und den <code class="docutils literal notranslate"><span class="pre">Constant</span> <span class="pre">Value</span></code> auf 3 abändern. Aber auch hier benutzen wir den
+Verstärker-Block <code class="docutils literal notranslate"><span class="pre">Gain</span></code>.</p>
+<p>Beide Terme müssen nach der Verstärkung mit 2 bzw. 3 noch summiert werden. Das
+erledigt der Mathematik-Block <code class="docutils literal notranslate"><span class="pre">Sum</span></code>. Die beiden verstärkten Signale werden mit
+den beiden Eingangports des <code class="docutils literal notranslate"><span class="pre">Sum</span></code>-Blocks verbunden. Den <code class="docutils literal notranslate"><span class="pre">Sum</span></code>-Block verbinden
+wir wiederum mit einer Ausgabe, dem Scope-Block. Dann können wir die Simulation
+laufen lassen.</p>
+<p><img alt="Screenshot des Simulink-Modells zu lineare Funktion" src="../_images/simulink_lineare_funktion.png" /></p>
 </section>
 </section>
 
@@ -690,7 +687,7 @@ Matplotlib mit Pandas zur Visualisierung von Tabellendaten in einem DataFrame.</
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">9.1 Linien- und Balkendiagramme</p>
+        <p class="prev-next-title">9.1 Simulink Einführung</p>
       </div>
     </a>
     <a class="right-next"
@@ -698,7 +695,7 @@ Matplotlib mit Pandas zur Visualisierung von Tabellendaten in einem DataFrame.</
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">9.3 Visualisierung von DataFrames mit Fehlerbalken</p>
+        <p class="prev-next-title">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -720,8 +717,10 @@ Matplotlib mit Pandas zur Visualisierung von Tabellendaten in einem DataFrame.</
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Streudiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabeblocke-bzw-sources">Eingabeblöcke bzw. Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ausgabeblocke-oder-sinks">Ausgabeblöcke oder Sinks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitungsblocke">Verarbeitungsblöcke</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-lineare-funktion-als-eingangssignal">Beispiel: lineare Funktion als Eingangssignal</a></li>
 </ul>
   </nav></div>
 

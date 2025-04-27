@@ -12,129 +12,148 @@ kernelspec:
   name: python3
 ---
 
-# 9.2 Streudiagramme
+# 9.2 Simulink-Bibliothek
+
+Simulink stellt viele Blöcke zur Verfügung. In diesem Kapitel gehen wir die Liste der wichtigsten Blöcke durch. Darüber hinaus betrachten wir Ableitungen und Integrale.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie können Messwerte mit **Streudiagrammen** darstellen. 
+* Sie kennen die wichtigsten Eingabe-, Verarbeitungs- und Ausgabeblöcke.
+* Sie können ein Eingangssignal ableiten und integrieren.
 ```
 
+## Eingabeblöcke bzw. Sources
 
-## Streudiagramme
+In der
+[Simulink-Dokumentation](https://de.mathworks.com/help/simulink/sources.html)
+finden Sie eine Übersicht der möglichen Eingabeblöcke für Simulink. Die folgende
+Liste und vor allem die Beschreibungen sind von dort übernommen. Eingabeblöcke,
+die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.
 
-Bei Streudiagrammen werden nicht die Punkte $(x_1,y_2)$ mit $(x_2,y_2)$ mit
-$(x_3,y_3)$ usw. durch Linien verbunden, sondern jeder Punkt selbst wird an der
-Stelle seiner Koordinaten eingezeichnet. Ob dazu ein Punkt, Kreis, Dreieck oder
-Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
-Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
-Matplotlib-Funktion auch `scatter()`.
+* *Band-Limited White Noise*: Dieser Block erzeugt normalverteilte Zufallszahlen
+  (weißes Rauschen).  
+* *Chirp Signal*: Dieser Block erzeugt eine Sinusfunktion, bei der die Frequenz
+  ansteigt.
+* *Clock*: Dieser Block gibt bei jedem Simulationsschritt die aktuelle
+  Simulationszeit aus. Dieser Block ist nützlich für andere Blöcke, die die
+  Simulationszeit benötigen.
+* **Constant**: Diser Block erzeugt ein reelles oder komplexes konstantes
+  Signal. Verwenden Sie diesen Block, um einen konstanten Signaleingang
+  bereitzustellen.
+* *Counter Free-Running*: Dieser Block zählt hoch und beginnt wieder bei 0,
+  nachdem der Wert $2^N+1$ überschritten wurde, dabei ist $N$ die Anzahl der
+  Bits
+* *Counter Limited*: Dieser Block zählt hoch und beginnt wieder bei 0, nachdem
+  ein vorher festgelegter maximaler Wert überschritten wurde
+* *Digital Clock*: Dieser Block gibt ebenfalls die Simuationszeit aus, aber nur
+  zu bestimmten Zeiten.
+* *Enumerated Constant*: Dieser Block erzeugt eine Aufzählungskonstante.
+* **From File**: Mit diesem Block laden Sie Daten aus einer MAT-Datei in das
+  Simulink-Modell.
+* *From Spreadsheet*: Dieser Block liest Daten aus einer Tabelle.
+* **From Workspace**: Dieser Block lädt Signaldaten aus dem MATLAB-Workspace in
+  das Simulink-Modell.
+* *Ground*: Dieser Block erdet nicht verbundene Eingangssignale.
+* *In Bus Element*: Dieser Block ermöglicht die Auswahl von Eingaben eines
+  externen Ports.
+* *Inport*: Inport-Blöcke verbinden Signale von außerhalb eines Systems mit dem
+  System.
+* *Pulse Generator*: Der Impulsgeneratorblock erzeugt in regelmäßigen Abständen
+  Rechteckimpulse.
+* **Ramp**: Der Rampenblock erzeugt ein Signal, das zu einem bestimmten
+  Zeitpunkt und mit einem bestimmten Wert beginnt und sich mit einer bestimmten
+  Rate ändert.  
+* *Random Number*: Der Zufallszahlenblock erzeugt normalverteilte Zufallszahlen.
+* *Repeating Sequence*: Dieser Block gibt ein periodisches skalares Signal mit
+  einer Wellenform aus, die Sie mit den Parametern Zeitwerte und Ausgangswerte
+  festlegen.
+* *Repeating Sequence Interpolated*: Dieser Block gibt eine periodische
+  zeitdiskrete Folge aus, die auf den Werten der Parameter "Vector of time
+  values" und "Vector of output values" basiert.
+* *Repeating Sequence Stair*: Dieser Block gibt eine Treppenfolge aus und
+  wiederholt sie.
+* **Signal Builder**: Mit diesem Block können Sie austauschbare Gruppen von
+  stückweise linearen Signalquellen erstellen und in einem Modell verwenden.
+* **Signal Editor**: Dieser Block dient der Anzeige, Erstellung und Bearbeitung
+  von austauschbaren Szenarien.
+* *Signal Generator*:  Dieser Block kann eine der folgenden vier verschiedenen
+  Wellenformen erzeugen: Sinus, Rechteck, Sägezahn und Zufallsgenerator.
+* *Sine Wave*: Dieser Block gibt eine sinusförmige Wellenform aus.
+* **Step**: Dieser Block erzeugt eine Treppenfunktion mit zwei Stufen, der zu
+  einer spezifizierten Zeit wechselt.
+* *Uniform Random Number*: Dieser Block erzeugt gleichmäßig verteilte
+  Zufallszahlen in einem von Ihnen festgelegtem Intervall.
+* *Waveform Generator*: Dieser Block erzeugt wellenförmige Signale.
 
-```{code-cell} ipython3
-import numpy as np
-import matplotlib.pyplot as plt
+## Ausgabeblöcke oder Sinks
 
-# data
-x = np.linspace(-2*np.pi, 2*np.pi, 50)
-y = np.sin(x)
+Mit den folgenden Blöcken erzeugen Sie Ausgaben oder exportieren Ergebnisse.
+Diese Liste enststammt der
+[Simulink-Dokumentation](https://de.mathworks.com/help/simulink/sinks.html).
 
-# scatter plot
-plt.figure()
-plt.scatter(x,y);
-```
+* *Display*: Dieser Block zeigt den Wert der Eingangsdaten an.
+* *Floating Scope and Scope Viewer*: Der Simulink® Scope Viewer und der Floating
+  Scope Block zeigen Zeitsignale abhängig von der Simulationszeit an. Der Scope
+  Viewer und der Floating Scope-Block haben die gleiche Funktionalität wie der
+  Scope-Block, sind aber nicht mit Signalleitungen verbunden.
+* *Out Bus Element*: Dieser Block kombiniert die Funktionalität eines
+  Outport-Blocks und eines Bus-Creator-Blocks.
+* *Outport*: Diese Blöcke verbinden Signale aus einem System mit einem Ziel
+  außerhalb des Systems.
+* **Record, XY Graph**: Sie können sowohl den Block Record oder den Block XY
+  Graph verwenden, um Daten im Workspace, in einer Datei oder sowohl im
+  Workspace als auch in einer Datei aufzuzeichnen.
+* **Scope**: Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.
+* *Stop Simulation*: Dieser Block stoppt die Simulation, wenn der Eingang
+  ungleich Null ist.
+* *Terminator*: Dieser Block wird verwendet, um Blöcke zu kappen, deren
+  Ausgangsports nicht mit anderen Blöcken verbunden sind.
+* *To File*: Der To File-Block schreibt Eingangssignaldaten in eine MAT-Datei.T
+* *To Workspace*: Dieser Block protokolliert die an seinem Eingangsport
+  angeschlossenen Daten im Workspace.
 
-Über die Option `marker=` lässt sich das Symbol einstellen, mit dem das
-Streudiagramm erzeugt wird. Wie Sie sehen, ist ein ausgefüllter Kreis
-voreingestellt. Lesen Sie auf der Internetseite 
+## Verarbeitungsblöcke
 
-> https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers
+Um die Eingabesignale zu verarbeiten, gibt es ebenfalls eine lange Liste von
+Blöcken, siehe
+[Simulink-Dokumentation](https://de.mathworks.com/help/simulink/block-libraries.html).
+Ein erstes Beispiel haben wir mit dem Gain-Block schon kennengelernt, der ein
+Eingangssignal verstärkt und mathematisch gesehen eine multiplikativer Faktor
+ist. Die Liste der Verbeitungsblöcke ist zu lang, um sie hier eingehend zu
+behandeln. Wichtig sind jedoch die [mathematischen
+Blöcke](https://de.mathworks.com/help/simulink/math-operations.html)
+zusammengefasst in dem Modul **Maths Blocks** und die sogenannten
+[kontinuierlichen
+Blöcke](https://de.mathworks.com/help/simulink/continuous.html) aus dem Modul
+**Continuous Blocks**, das Ableitungen und Löser von Differentialgleichungen
+beinhaltet.
 
-nach, welche Marker-Symbole existieren. Probieren Sie einige der Symbole hier
-aus:
+## Beispiel: lineare Funktion als Eingangssignal
 
-```{code-cell} ipython3
-# data
-x = np.linspace(-2*np.pi, 2*np.pi, 50)
-y = np.sin(x)
+Wollen wir die lineare Funktion $u(t) = 2\cdot t + 3$ in Simulink modellieren,
+so brauchen wir zwei Eingangssignale, nämlich $t$ und $1$. Daher ziehen wir
+zuerst die Sources-Blöcke `Ramp` und `Constant` aus der Simulink-Bibliothek auf
+den Arbeitsplatz. Die Eigenschaften beider Blöcke können durch Doppelklick
+angezeigt werden.
 
-# scatter plot
-fig, ax = plt.subplots()
-ax.scatter(x,y, marker='x');
-```
+Die Rampe ist eine Funktion, die Null ist und ab einem bestimmten Zeitpunkt
+linear ansteigt. Sowohl der Zeitpunkt, ab dem der lineare Anstieg beginnt, als
+auch die Steigung können eingestellt werden. Wir lassen die Voreinstellung
+`Start Time` auf Null. Normalerweise müssten wir jetzt die Steigung, also
+`Slope` auf den Wert 2 setzen, aber um den prinzipiellen Zusammenbau von Termen
+zu zeigen, benutzen wir erneut den Verstärker-Block `Gain`.
 
-Für bekannte Funktionen wie Sinus oder Kosinus würde man Liniendiagramme
-verwenden. Streudiagramme eignen sich eher für die Visualisierung einzelner
-Messungen. Wenn Sie beispielsweise an jeden Wochentag die Temperatur an zwei
-Orten messen, bietet es sich an, beide Messreihen in einem Streudiagramm zu
-visualisieren. Dazu sollten Sie unterschiedliche Marker und unterschiedliche
-Farben verwenden.
+Der Block `Constant` produziert ein konstantes Eingangssignal. Auch hier könnten
+wir den Wert 3 direkt eingeben, indem wir einen Doppelklick auf den Block machen
+und den `Constant Value` auf 3 abändern. Aber auch hier benutzen wir den
+Verstärker-Block `Gain`.
 
-```{code-cell} ipython3
-# data
-x  = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
-y1 = np.random.uniform(15,23,7) # Zufallszahlen, um Temperaturmessung zu simulieren
-y2 = np.random.uniform(15,23,7) # Zufallszahlen, um Temperaturmessung zu simulieren
+Beide Terme müssen nach der Verstärkung mit 2 bzw. 3 noch summiert werden. Das
+erledigt der Mathematik-Block `Sum`. Die beiden verstärkten Signale werden mit
+den beiden Eingangports des `Sum`-Blocks verbunden. Den `Sum`-Block verbinden
+wir wiederum mit einer Ausgabe, dem Scope-Block. Dann können wir die Simulation
+laufen lassen.
 
-# scatter plots
-plt.figure()
-plt.scatter(x, y1, marker='+')
-plt.scatter(x, y2, marker='.');
-```
-
-Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
-man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
-`plt.scatter(x,y1, label='Messung1')`. Zuletzt verwendet man die Funktion
-`legend()`, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
-Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
-werden.
-
-```{code-cell} ipython3
-# data
-x  = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
-y1 = np.random.uniform(15,23,7)
-y2 = np.random.uniform(15,23,7)
-
-# scatter plots
-plt.figure()
-plt.scatter(x, y1, marker='+', label='Frankfurt')
-plt.scatter(x, y2, marker='.', label='Offenbach')
-plt.legend()
-plt.title('Durchschnittstemperatur');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise 
-Erzeugen Sie eine Wertetabelle mit den Zahlen 1 bis 50 für x und 50
-normalverteilten Zufallszahlen mit Mittelwert 0 und Standardabweichung 1 für y.
-Visualisieren Sie diese als Streudiagramm. Die Marker sollen rot gefärbte
-Diamenten sein.
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# data 
-x = np.linspace(1, 50, 50)
-y = np.random.normal(0, 1, 50)
-
-# plot
-plt.figure()
-plt.scatter(x,y, c='red', marker='D')
-```
-````
-
-
-## Zusammenfassung und Ausblick
-
-Das Linien- und das Streudiagramm werden für die Visualisierung von
-kontinuierlichen Daten verwendet, wohingegen das Balkendiagramm dem Plot von
-diskreten Daten (Kategorien) dient. Im folgenden Abschnitt verknüpfen wir
-Matplotlib mit Pandas zur Visualisierung von Tabellendaten in einem DataFrame.
+![Screenshot des Simulink-Modells zu lineare Funktion](pics/simulink_lineare_funktion.png)

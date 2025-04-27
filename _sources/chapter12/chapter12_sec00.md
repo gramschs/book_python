@@ -1,9 +1,5 @@
-# 12. Simulink
+# 12. Messwerte und Regression
 
-Was ist Simulink? Wikipedia erklärt Simulink folgendermaßend:
-
-> Simulink ist eine Software des Herstellers The MathWorks zur Modellierung von
-> technischen, physikalischen, finanzmathematischen und anderen Systemen.
-> Simulink ist ein Zusatzprodukt zu MATLAB und benötigt dieses zum Ausführen.
-
-Quelle: [Wikipedia → Simulink](https://de.wikipedia.org/wiki/Simulink)
+Nachdem wir gelernt haben, Messwerte einzulesen, statistische Kennzahlen zu
+berechnen und die Daten zu visualisieren, geht es in diesem Kapitel darum, eine
+Modellfunktion an die Messwerte anzupassen.

@@ -1,399 +1,398 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
+# 8.2 Numerisches Rechnen mit MATLAB
 
-# 8.2 Arbeiten mit Tabellendaten
-
-Eine Tabellenkalkulationssoftware wie LibreOffice Calc, Excel oder Number ist
-nicht nur nützlich, um Daten zu sammeln und zu speichern, sondern auch um
-statistische Auswertungen durchzuführen. In diesem Kapitel geht es darum, wie
-auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.
+MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
+ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenen Datentypen und
+Rechenoperationen für Vektoren und Matrizen.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie können auf ganze Zeilen und Spalten zugreifen:
-  * Zugriff auf eine einzelne Zeile oder Spalte, indem ein Index spezifiziert wird
-  * Zugriff auf mehrere zusammenhängende Zeilen oder Spalten (Slice) 
-  * Zugriff auf mehrere unzusammenhängende Zeilen oder Spalten (Selektion)
-* Sie können auf einzelne oder mehrere Zellen der Tabelle zugreifen.
-* Sie können ein DataFrame-Objekt nach einer Eigenschaft filtern.
+* Sie können einen **Vektor** oder eine **Matrix** in MATLAB erzeugen.
+* Sie wissen, wie Sie auf einzelne Elemente eines Vektors oder ein MAtrix
+  zugreifen.
+* Sie beherrschen das Slicing in MATLAB.
+* Sie können grundlegende Rechenoperationen mit Vektoren oder Matrizen
+  ausführen.
+* Sie können mit MATLAB das Skalarprodukt oder das Vektorprodukt von Vektoren
+  berechnen.
+* Sie können die Determinante, die Eigenwerte oder die Eigenvektoren einer
+  Matrix berechnen.
 ```
 
-## Zugriff auf Zeilen
+## Vektoren
 
-Als erstes möchten wir ganze Zeilen der Tabelle lesen. Dazu verwenden wir das
-Attribut `.loc` mit passenden Indizes. 
+Vektoren sind sozusagen technisch gesehen Listen, die nur Zahlen enthalten, und
+für die die typischen Vektoroperationen definiert sind. Zunächst beschäftigen
+wir uns mit der Erzeugung von Vektoren.
 
-Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
-Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
-bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex. 
+### Erzeugung Zeilenvektor
 
-```{code-cell} ipython3
-import pandas as pd
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-data.head(10)
+Ein Vektor wird in MATLAB durch eckige Klammern `[  ]` erzeugt. Sie finden das
+Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
+eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
+drücken, um die eckigen Klammern auf der Tastatur einzugeben.
+
+Betrachten wir ein Beispiel. Hier wird ein Vektor mit den Elementen 1, 2, 3, 4,
+5 erzeugt und dann anschließend in der Variablen `v` gespeichert. Zur Trennung
+der einzelnen Elemente des Vektors verwenden wir das Komma. Tatsächlich würde
+MATLAB auch ein Leerzeichen als Trennung akzeptieren. Im Zusammenhang mit
+Matrizen ist aber das Komma einprägsamer, so dass wir beim Komma bleiben.
+
+```matlab
+v = [1, 2, 3, 4, 5]
 ```
 
-### Einzelne Zeile
+### Erzeugung Spaltenvektor
 
-Uns interessieren die Spielerdaten von Thomas Müller näher. 
+Der Vektor, so wie wir ihn bisher erzeugt haben, ist ein Zeilenvektor. Möchten
+wir ihn in einen Spaltenvektor umwandeln, so müssen wir ihn transponieren. Dafür
+steht in MATLAB der einzelne Hochstrich `'`.
 
-```{figure} pics/tabelle_zeile_einzeln.png
-:name: fig08_01
-:alt: Eine einzelne Zeile der Tabelle ist markiert.
+```matlab
+a'
+```
+
+Soll direkt ein Spaltenvektor erzeugt werden, so verwenden wir das Semikolon
+anstatt des Kommas.
+
+```matlab
+spaltenvektor = [1; 2; 3]
+```
+
+### Einfache Rechenoperationen
+
+Mit Vektoren kann auch direkt gerechnet werden. Natürlich müssen dabei die
+Dimensionen der Vektoren übereinstimmen. Bei der folgenden Addition  
+
+```matlab
+a = [-1.5, 2, 3.7]
+b = [0, -1, -1.7]
+a + b
+```
+
+wird von MATLAB das Ergebnis `[-1.5, 1, 2]` berechnet und angezeigt. Die
+Subtraktion erfolgt analog.
+
+Die Multiplikation `a * b` funktioniert jedoch nicht. Es erscheint eine
+Fehlermeldung. Das liegt daran, dass es eine direkte Multiplikation von Vektoren
+nicht gibt. Wir müssen erst entscheiden, ob elementweise multipliziert werden
+soll oder ob vielleicht das Skalarprodukt oder das Vektorprodukt gemeint ist.
+
+Bei der elementweisen Multiplikation wird dem Mulitiplikationsoperator `*` ein
+Punkt `.` vorangestellt, also `.*`:
+
+```matlab
+a .* b
+```
+
+Das Ergebnis ist dann der Vektor `[0, -2.0000, -6.2900]`. So funktioniert auch
+die elementweise Division. Dabei gibt es zwei Varianten:
+
+```matlab
+a ./ b
+a .\ b
+```
+
+Bei der ersten Variante wird jedes Element des Vektors `a` durch das
+entsprechende Element des Vektors `b` geteilt. Das `b`steht in Nenner des
+Bruchstrichs `/`. Bei der zweiten Variante wird jedes Elemet des Vektors `b`
+durch die entsprechenden Elemente des Vektors `a` geteilt. Der Bruchstrich `\`
+zeigt an, dass `a` im Nenner stehen soll.
+
+### Erzeugung eines Vektors mittels Doppelpunkt-Operator
+
+Python verfügt über die Funktion `range()`, um Listen mit Zahlen zu erzeugen,
+die einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
+gebraucht, dass sie sogar durch einen eigenen Operator anstatt einer Funktion
+erreicht wird, durch den Doppelpunkt-Operator `:`.
+
+Eine Liste mit den Zahlen von 5 bis 11 wird folgendermaßen generiert:
+
+```matlab
+a = 5 : 11
+```
+
+Auch hier ist eine Schrittweite versteckt enthalten. Der folgende Code erzeugt
+gerade Zahlen von 4 bis 12:
+
+```matlab
+a = 4 : 2 : 12
+```
+
+So kann auch rückwärts gezählt werden.
+
+```matlab
+a = 12 : -2 :  4
+```
+
+Das folgende Video fasst die obigen Erklärungen zusammen.
+
+```{dropdown} Video zu "Matlab - 1.4 Vektoren" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
+## Matrizen
+
+MATLAB würde nicht Matrix-Labor heißen, wenn es nicht einen eigenen Datentyp für
+Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrix ab. Ein
+Zeilenvektor ist eine $1\times N$-Matrix und ein Spaltenvektor eine $M\times
+1$-Matrix. Daher betrachten wir uns als nächstes, wie Matrizen in MATLAB erzeugt
+werden.
+
+### Erzeugung von Matrizen
+
+Bei den Vektoren haben wir gelernt, Leerzeichen oder Komma, um Elemente eines
+Zeilenvektors aufzulisten, und Semikolon, um Elemente in einem Spaltenvektor
+voneinander abzugrenzen. Eine Matrix wird zeilenweise eingegeben. Das Semikolon
+markiert das Ende der Zeile.
+
+```matlab
+A = [1, 2, 3; 4, 5, 6; 7, 8, 9]
+```
+
+### Erzeugung von speziellen Matrizen
+
+Für Matrizen, die häufig gebraucht werden, hat MATLAB eigene
+Erzeugungsfunktionen. Beispielsweise generiert die Funktion
+
+```matlab
+A = zeros(5,3)
+```
+
+eine Matrix, die nur die Zahl Null enthält und die 5 Zeilen und 3 Spalten hat.
+Analog dazu funktioniert das Kommando
+
+```matlab
+A = ones(5,3)
+```
+
+das eine Matrix mit Einsen erzeugt, die 5 Zeilen und 3 Spalten hat. Sehr häufig
+gebraucht wird auch die Einheitsmatrix. Mit der Funktion `eye(N)` wird sie
+erzeugt, wobei der Parameter `N` die Dimension der quadratischen Matrix angibt.
+
+```matlab
+E = eye(5)
+```
+
+Hier noch ein Video zu Matrizen in MATLAB.
+
+```{dropdown} Video zu "Matlab - 1.5 Matrizen" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
+## Skripte
+
+Es ist umständlich, immer alles in das Kommandofenster einzugeben. Die
+Entwicklungsumgebung MATLAB bietet einen Texteditor, um ein sogenanntes Skript
+zu schreiben. Ein Skript ist wie ein Programm, also eine Aneinanderreihung von
+Anweisungen an den MATLAB-Interpreter. Es wird als Text abgespeichert und trägt
+die Dateiendung `.m`. Am einfachsten starten Sie den Editor, indem Sie auf `New
+Script` klicken.
+
+```{figure} pics/screenshot03.png
+:alt: Screenshot MATLAB mit "New Script"
+:width: 75%
 :align: center
-:width: 50%
-
-Auf eine einzelne Zeile der Tabelle wird mit `.loc[zeilenindex]` zugegriffen.
+Screenshot MATLAB mit dem Button "New Script"
 ```
 
-Um eine ganze Zeile aus der Tabelle herauszugreifen, verwenden wir das Attribut
-`.loc[zeilenindex]` und geben in eckigen Klammern den Index der Zeile an, die
-wir betrachten wollen. Da wir beim Import die Namen als Zeileindex gesetzt
-haben, lautet der Zugriff also wie folgt:
+Sobald MATLAB den Texteditor öffnet, verändert sich das Layout von MATLAB. Das
+Kommandofenster rutscht nach unten und wird kleiner, wohingegen der Texteditor
+nun den größten Raum einnimmt.
 
-```{code-cell} ipython3
-zeile = data.loc['Thomas Müller']
-print(zeile)
-```
-
-### Zusammenhängende Zeilen: Slicing
-
-Wenn wir auf mehrere Zeilen gleichzeitig zugreifen wollen, gibt es zwei
-Möglichkeiten:
-
-1. Die Zeilen folgen direkt aufeinander, sind also zusammenhängend.
-2. Zwischen den einzelnen Zeilen sind Lücken. 
-
-Als erstes betrachten wir zusammenhängende Zeilen. Der Zugriff auf
-zusammenhängende Bereiche wird in der Informatik **Slicing** genannt.
-
-```{figure} pics/tabelle_zeile_slice.png
-:name: fig08_02
-:alt: Mehrere zusammenhängende Zeilen der Tabelle sind markiert.
+```{figure} pics/screenshot04.png
+:alt: Screenshot MATLAB mit Texteditor
+:width: 75%
 :align: center
-:width: 50%
-
-Auf mehrere zusammenhängende Zeilen der Tabelle wird mit `.loc[start:stopp]` zugegriffen. Das nennt man Slicing.
+Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem
+auf den Button "Run" geklickt wird (siehe 3)
 ```
 
-Bei der Angabe des Bereiches gibt man den Anfangsindex gefolgt von einem
-Doppelpunkt an und dann den Endindex der letzten Zeile, die "herausgeschnitten"
-werden soll.
+Das Skript wird ausgeführt, indem Sie auf den Button "Run" klicken (siehe
+Screenshot, 3). Es ist ratsam, am Anfang des Skriptes den Befehl `clear all`
+einzufügen. Diese Anweisung sorgt dafür, dass alle sich im Speicher befindlichen
+Variablen gelöscht werden.
 
-```{code-cell} ipython3
-zeilen_slice = data.loc['Thomas Müller' : 'Jérôme Boateng']
-print(zeilen_slice)
+Ein weiteres Video zu Skripten in MATLAB finden Sie hier.
+
+```{dropdown} Video zu "Matlab - 1.6 Skripte" von Mathe? logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Beim Slicing können wir den Angangsindex oder den Endindex oder sogar beides
-weglassen. Wenn wir den Anfangsindex weglassen, fängt Pandas bei der ersten
-Zeile an. Lassen wir den Endindex weg, geht der Slice automatisch bis zum Ende. 
+## Zugriff auf Vektor- und Matrixelemente
 
-Im folgenden Beispiel startet der Slice bei 'Robert Lewandowski'und geht bis zur
-letzten Zeile. Obwohl nicht alle Zeilendargestellt werden, erkennen wir das an
-der Anzahl der Zeilen: 173 rows (und 15 Spalten columns). Zur Erinnerung, es
-sind insgesamt 177 Zeilen.
+Der Zugriff auf die Elemente eines Vektors erfolgt durch Angabe des Index des
+Elements in runden Klammern. Beachten Sie, dass MATLAB im Gegensatz zu vielen
+anderen Programmiersprachen einen Index verwendet, der bei 1 beginnt. Das
+folgende Beispiel zeigt, wie auf das dritte Element des Vektors zugegriffen
+wird.
 
-```{code-cell} ipython3
-data_slice_from_lewandowski = data.loc['Robert Lewandowski': ]
-print(data_slice_from_lewandowski)
+```matlab
+a = [1, 2, 3, 4, 5]
+drittes_element = a(3)
 ```
 
-### Selektion unzusammenhängender Zeilen per Liste
+Soll hingegen auf Elemente einer Matrix zugefriffen werden, müssen wir die Zeile
+und die Spalte über den jeweiligen Index angeben. Auf die zweite Zeile und die
+dritte Spalte wird folgendermaßen zugegriffen.
 
-Soll auf mehrere Zeilen zugegriffen werdenn, die nicht zusammenhängen, so nennt
-man das **Selektion**.
-
-```{figure} pics/tabelle_zeile_selektion.png
-:name: fig08_03
-:alt: Slicing von Zeilen einer Tabelle
-:align: center
-:width: 50%
-
-Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit `.loc[list]` zugegriffen. Das nennt man Selektion.
+```matlab
+A = [1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15]
+element = A(2,3)
 ```
 
-Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir `.loc[]` eine
-Liste mit den gewünschten Zeilenindizes.
+Damit wird die `8` aus der Matrix `A` extrahiert und kann weiter verarbeitet
+werden.
 
-```{code-cell} ipython3
-zeilen_selektion = data.loc[ ['Manuel Neuer', 'David Alaba'] ]
-print(zeilen_selektion)
+Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu
+existiert das sogenannte **Slicing**. Mit Slicing ist gemeint, dass auf einen
+zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll.
+Wir betrachten die $3\times 5$-Matrix $A$ von vorhin, also
+
+```matlab
+A = [1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15]
 ```
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie sich die folgenden Zeilen anzeigen:
-* Kingsley Coman
-* Kingsley Coman bis Alphonso Davies
-* Robert Lewandowski, Kingsley Coman und Serge Gnabry
+Um jetzt einen zusammenhängenden Bereich aus der Matrix zu extrahieren,
+verwenden wir den Doppelpunkt-Operator ':'. Mit
+
+```matlab
+A(1, :)
 ```
 
-```{code-cell} ipython3
-# Hier Ihr Code
+greifen wir auf Elemente der ersten Zeile zu und gehen dabei in der Spalte von
+Anfang bis Ende, da vor dem Doppelpunkt und nach dem Doppelpunkt nichts steht.
+Das Ergebnis ist also die komplette erste Zeile `[1, 2, 3, 4, 5]`. Möchten wir
+in der ersten Zeile von der zweiten Spalte zur vierten Spalte auf die Elemente
+der Matrix zugreifen, schreiben wir den Startindex vor den Doppelpunkt und den
+Stoppindex nach dem Doppelpunkt.
+
+```matlab
+A(1, 2:4)
 ```
 
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-data_zeile = data.loc['Kingsley Coman']
-data_slice = data.loc['Kingsley Coman' : 'Alphonso Davies']
-data_selektion = data.loc[['Robert Lewandowski','Kingsley Coman', 'Serge Gnabry']]
+Das Ergebnis sind die Elemente `[2, 3, 4]`. Diese Vorgehensweise funktioniert
+auch für die Zeile. Der folgende MATLAB-Code extrahiert die komplette zweite und
+dritte Zeile.
 
-print(data_zeile)
-print(data_slice)
-print(data_selektion)
-```
-````
-
-## Zugriff auf Spalten
-
-Auf Spalten können wir zugreifen, indem wir `.loc` mit zwei Argumenten benutzen.
-Dann steht das 1. Argument für den Zeilenindex und das 2. Argument für den
-Spaltenindex. Wenn wir die komplette Spalte betrachten wollen, setzen wir für
-den Zeilenindex einfach einen Doppelpunkt `:`. Damit werden automatisch als
-Anfangsindex die erste Zeile und als Endindex die letzte Zeile gewählt.
-Ansonsten erfolgen die Zugriffe auf Spalten analog zu den Zugriffen auf Zeilen
-über die drei Möglichkeiten
-
-* einzelne Spalte,
-* zusammenhängende Spalten (Slicing) und
-* unzusammenhängende Spalten als Liste (Selektion).
-
-### Einzelne Spalte
-
-Als nächstes greifen wir auf eine Spalte der Tabelle zu.
-
-```{figure} pics/tabelle_spalte_einzeln.png
-:name: fig08_04
-:alt: Einzelne Spalte einer Tabelle
-:align: center
-:width: 50%
-
-Auf eine einzelne Spalte der Tabelle wird mit `.loc[:, spaltenindex]` zugegriffen. 
+```matlab
+A(2:3, :)
 ```
 
-Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex `Age`.
+Das Ergebnis ist
 
+<code>
+    6     7     8     9    10 <br>
+    11    12    13    14    15
+</code>
 
-```{code-cell} ipython3
-alter = data.loc[:, 'Age']
-print(alter)
+Das Slicing kann auch verwendet werden, um Teile einer Matrix zu ändern. Nehmen
+wir an, wir möchten die zweite Spalte von A durch die Zahlen 102, 107 und 112
+ersetzen. Wir könnten durch den folgenden Code erreichen.
+
+```matlab
+A(:, 2) = [102; 107; 112]
 ```
 
-### Zusammenhängende Spalten: Slicing
+Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das
+Slicing zusammen.
 
-Wenn wir beispielsweise die Anzahl der Spiele (`Matches`), die ein Spieler in
-der Saison absolviert hat, mit der Anzahl der Spiele, in denen er vom Anfang an
-auf dem Platz stand (`Starts`) vergleichen wollen, so können wir die beiden
-aufeinanderfolgenden Spalten 'Matches' und 'Starts' als Slice ausschneiden.
-
-```{figure} pics/tabelle_spalte_slice.png
-:name: fig08_05
-:alt: Slice von Spalten einer Tabelle
-:align: center
-:width: 50%
-
-Auf mehrere zusammenhängende Spalten der Tabelle wird mit `.loc[:, start:stopp]` zugegriffen. Das nennt man Slicing.
+```{dropdown} Video zu "Matlab - 2.1 Doppelpunkt- bzw. Colon-Operator" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Analog zum Slicing von Zeilen wird ein Slicing von Spalten durchgeführt, indem
-der Anfangsspaltenindex hingeschrieben wird, dann ein Doppelpunkt gesetzt wird
-und dann der Endspaltenindex notiert wird. Das folgende Beispiel zeigt das
-Slicing zweier Spalten.
-
-
-```{code-cell} ipython3
-spiele = data.loc[:, 'Matches' : 'Starts']
-print(spiele)
+```{dropdown} Video zu "Matlab - 2.2 Zugriff auf Teile von Matrizen" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-### Selektion unzusammenhängender Spalten per Liste
+## Fortgeschrittene Rechenoperationen für Vektoren und Matrizen
 
-Die Anzahl der Spiele (`Matches`) und die Anzahl der gespielten Minuten in der
-kompletten Saison (`Mins`) die Anzahl der Spiele ('Matches') miteinander könnte
-aufschlussreich sein, um die durchschnittliche Minutenzahl pro Spiel zu
-ermitteln. Da die Spalten nicht nebeneinander liegen, müssen wir eine Liste
-benutzen, um sie zu selektieren. 
+Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden Komponenten der Vektoren und die Summierung dieser Produkte berechnet.
 
-```{figure} pics/tabelle_spalte_selektion.png
-:name: fig08_06
-:alt: Selektion von Spalten einer Tabelle
-:align: center
-:width: 50%
+In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion `dot()` berechnet:
 
-Auf mehrere unzusammenhängende Spalten der Tabelle wird mit `.loc[:, list]` zugegriffen. Das nennt man Selektion.
+```matlab
+v = [1, 2, 3]
+w = [4, 5, 6]
+skalarprodukt = dot(v, w)
 ```
 
-Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.
+Das Ergbnis ist $1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32$.
 
-```{code-cell} ipython3
-spiele_minuten = data.loc[:, ['Matches', 'Mins'] ]
-print(spiele_minuten)
+Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.
+
+In MATLAB wird das Vektorprodukt mit der Funktion `cross()` berechnet:
+
+```matlab
+v = [1, 2, 3]
+w = [4, 5, 6]
+vektorprodukt = cross(v, w)
 ```
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie sich die folgenden Spalten anzeigen:
-* Nationality
-* Nationality bis Age
-* Nationality, Age und Matches
+Das Vektorprodukt ist der Vektor `[-3, 6, -3]`.
+
+Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.
+
+In MATLAB wird die Determinante einer Matrix mit der Funktion `det()` berechnet:
+
+```matlab
+A = [1, 2; 3, 4]
+det_A = det(A)
 ```
 
-```{code-cell} ipython3
-# Hier Ihr Code
+Die Determinante der obigen Matrix $A$ ist $\det(A) = 1\cdot 4 - 3\cdot 2 = -2$.
+
+Eigenwerte und Eigenvektoren sind weitere wichtige Konzepte in der linearen
+Algebra, die in vielen Anwendungen, einschließlich der
+Maschinenbauingenieurwissenschaften, der Informatik und der Datenanalyse,
+nützlich sind. Die Eigenwerte einer Matrix sind die Lösungen der
+charakteristischen Gleichung
+
+$$\det(A-\lambda E) = 0,$$
+
+wobei $E$ die Einheitsmatrix der passenden Dimension ist. Zu jedem Eigenwert
+$\lambda$ kann dann der Eigenvektor $\vec{v}$ berechnet werden, der die
+Gleichung
+
+$$A\cdot \vec{v} = \lambda \vec{v}$$
+
+erfüllt. Ein Eigenvektor ist also ein Vektor, der sich bei der Anwendung einer
+linearen Transformation (repräsentiert durch die Matrix) nur um einen
+Skalierungsfaktor ändert.
+
+In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion `eig()`
+berechnet:
+
+```matlab
+A = [1, 2; 3, 4]
+[V, D] = eig(A)
 ```
 
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-data_spalte = data.loc[:, 'Nationality']
-data_slice = data.loc[:, 'Nationality' : 'Age']
-data_selektion = data.loc[:, ['Nationality','Age', 'Matches']]
+In diesem Beispiel gibt der Code die Matrix `V` der Eigenvektoren und die
+Diagonalmatrix `D` aus. Jede Spalte in V ist ein Eigenvektor, und die
+entsprechenden Eigenwerte sind die Elemente auf der Diagonale in D.
 
-print(data_spalte)
-print(data_slice)
-print(data_selektion)
-```
-````
+Für weitere Betrachtungen empfehle ich die folgenden beiden Videos.
 
-## Zugriff auf Zellen
-
-Es kann auch vorkommen, dass man gezielt auf eine einzelne Zelle oder einen
-Bereich von Zellen zugreifen möchte. Auch dazu benutzen wir das Attribut
-`.loc[]`. 
-
-Eine Zelle ist ein einzelnes Element der Tabelle, sozusagen der Kreuzungspunkt
-zwischen Zeile und Spalte. Die Zelle mit dem Zeilenindex `Thomas Müller` und dem
-Spaltenindex `Age`enthält das Alter von Thomas Müller.
-
-```{figure} pics/tabelle_zelle_einzeln.png
-:name: fig08_07
-:alt: Einzelne Zelle einer Tabelle
-:align: center
-:width: 50%
-
-Auf ein einzelne Zelle der Tabelle wird mit `.loc[zeilenindex, spaltenindex]` zugegriffen.
+```{dropdown} Video zu "Matlab - 2.3 Kombination und Transformation von Matrizen" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Der Trick ist nun, die drei Möglichkeiten (einzeln, Slice und Selektion per
-Liste) für die Zeilen mit den gleichen drei Möglichkeiten des Zugriffes für
-Spalten zu kombinieren.
-
-Wollen wir beispielsweise das Alter von Thomas Müller aus der Tabelle
-heraussuchen, so gehen wir folgendermaßen vor.
-
-```{code-cell} ipython3
-alter_mueller = data.loc['Thomas Müller', 'Age']
-print(f'Thomas Müller ist {alter_mueller} Jahre alt.')
+```{dropdown} Video zu "Matlab - 2.4 Operationen auf Matrizen" Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
-
-Wollen wir Beispielsweise das Alter der Fußballprofis von 'David Alaba' bis
-'Robert Lewandowski' wissen, so gehen wir folgendermaßen vor:
-
-```{code-cell} ipython3
-alter_slice = data.loc['David Alaba' : 'Robert Lewandowski', 'Age']
-print(alter_slice)
-```
-
-Und möchten wir von den Herren Thomas Müller und Joshua Kimmich sowhl die
-Nationalität als auch das Alter selektieren, so gehen wir wie folgt vor:
-
-```{code-cell} ipython3
-spezialauswahl = data.loc[ ['Thomas Müller', 'Joshua Kimmich'], ['Nationality', 'Age'] ]
-print(spezialauswahl)
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie sich das Alter von Robert Lewandowski und Thomas Müller anzeigen.
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-alter = data.loc[['Robert Lewandowski', 'Thomas Müller'], 'Age']
-print(alter)
-```
-````
-
-## Filtern
-
-Vielleicht haben Sie sich schon gefragt, warum wir nur Bayern-Spieler analysiert
-haben. Die Antwort ist simpel, Bayern stand im Datensatz oben in den ersten
-Zeilen. Tatsächlich sind aber die Spielerdaten von sieben Vereinen im Datensatz
-enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
-`.unique()`ansehen.
-
-In einem ersten Schritt lesen wir die Spalte mit den Vereinen aus (Spalte
-'Club'). Dann wenden wir auf das Ergnis die Methode `.unique()` an.
-
-```{code-cell} ipython3
-vereine = data.loc[:, 'Club']
-vereinsnamen = vereine.unique()
-print(vereinsnamen)
-```
-
-Wenn man möchte, kann man auch beide Schritte in einem Schritt ausführen:
-
-```{code-cell} ipython3
-vereinsnamen = data.loc[:, 'Club'].unique()
-print(vereinsnamen)
-```
-
-Jetzt wo wir wissen, dass auch Eintracht Frankfurt dabei ist, würden wir den
-Datensatz gerne nach Eintracht Frankfurt filtern. Dazu benutzen wir einen
-Vergleich und speichern das Ergebnis des Vergleichs in einer Variablen.
-
-```{code-cell} ipython3
-filter_eintracht = data.loc[:, 'Club'] == 'Eintracht Frankfurt'
-print(filter_eintracht)
-```
-
-Das Ergebnis des Vergleichs, der in der Variablen `filter_eintracht` gespeichert
-ist, ist ein Pandas-Series-Objekt, das für jede Zeile gespeichert hat, ob der
-Vergleich wahr (True) oder falsch (False) ist. Ist in einer Zeile der Club
-gleich 'Eintracht Frankfurt', so ist in dem booleschen Objekt an dieser Stelle
-True eingetragen und ansonsten False. Der Datenyp dtype wird mit `bool`
-angegeben. 
-
-Wir können nun anstatt einer Liste diesen booleschen Index nutzen, um Zeilen zu
-selektieren. Steht in einer Zeile des booleschen Series-Objektes `True`, so wird
-diese Zeile ausgewählt. Ansonsten wird die Zeile übersprungen. Damit erhalten
-wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.
-
-```{code-cell} ipython3
-eintracht_frankfurt = data.loc[ filter_eintracht, :]
-print(eintracht_frankfurt)
-```
-
-Da der print()-Befehl nicht alle Einträge anzeigt, gehen wir jetzt Zeile für
-Zeile durch. Den Zeilenindex erhalten wir über das Attribut `.index`: 
-
-```{code-cell} ipython3
-for zeilenindex in eintracht_frankfurt.index:
-    print(zeilenindex)
-```
-
-## Zusammenfassung
-
-In diesem Abschnitt konnten wir nur die Basis-Funktionalitäten streifen.
-Natürlich ist auch möglich, Bereiche zu sortieren oder gruppieren. Im nächsten
-Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.
