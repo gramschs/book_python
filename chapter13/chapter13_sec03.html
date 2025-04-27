@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Übungen zur Wiederholung &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/chapter13_sec03';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="13.2 Überwachtes, unüberwachtes und verstärkendes Lernen" href="chapter13_sec02.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/book_logo.png" class="logo__image only-light" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>
+    <img src="../_static/book_logo.png" class="logo__image only-dark pst-js-only" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zum interaktiven Vorlesungsskript Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec02.html">1.2 Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec03.html">1.3 Installation und Start von Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/chapter02_sec00.html">2. Eingabe, Verarbeitung und Ausgabe</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec01.html">2.1 Taschenrechner und Ausgabe (print)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec02.html">2.2 Datentypen und Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec03.html">2.3 Eingabe (input) und Zuweisungsoperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/chapter03_sec00.html">3. Listen und Module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec01.html">3.1 Listen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec02.html">3.2 Das Modul NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec03.html">3.3 Das Modul Turtle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">5. Programmverzweigung (if - elif - else)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">5.1 Vergleiche und der boolesche Datentyp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">5.2 Programmverzweigungen: if</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">6. Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">6.1 Funktionen selbst schreiben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">6.2 Funktionen mit Parameter und Rückgabe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">6.3 Lokale und globale Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Zufallszahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Übungen zur Wiederholung</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/gramschs/book_python" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter13/chapter13_sec03.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Übungen zur Wiederholung</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ubungen-zur-wiederholung">
+<h1>Übungen zur Wiederholung<a class="headerlink" href="#ubungen-zur-wiederholung" title="Link to this heading">#</a></h1>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Ordnen Sie ein: welche der beiden Programmiersprachen MATLAB oder Python ist
+eine Interpreter-Sprache und welche eine Compiler-Sprache? Welche Vor- und Nachteile haben Interpreter-Sprachen?</p>
+<p>Recherchieren Sie im Internet: Was ist Cython und was ist der MATLAB Coder?</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Sowohl MATLAB als auch Python sind beides Interpreter-Sprachen. Sie werden in Echtzeit ausgeführt, anstatt vorab in Maschinencode kompiliert zu werden, wie es bei Compiler-Sprachen der Fall ist.</p>
+<p>Vorteile von Interpreter-Sprachen sind:</p>
+<ul class="simple">
+<li><p><strong>Leichtere Fehlersuche:</strong> Da der Interpreter den Code Zeile für Zeile ausführt, erkennt man leichter, in welcher Zeile der Fehler auftritt.</p></li>
+<li><p><strong>Plattformunabhängigkeit:</strong> Interpreter-Sprachen sind oft plattformübergreifend, was bedeutet, dass sie auf verschiedenen Betriebssystemen ausgeführt werden können, ohne dass der Code geändert werden muss.</p></li>
+</ul>
+<p>Nachteile von Interpreter-Sprachen sind:</p>
+<ul class="simple">
+<li><p><strong>Geschwindigkeit:</strong> Interpreter-Sprachen sind in der Regel langsamer als kompilierte Sprachen, da der Code zur Laufzeit und nicht vorab übersetzt wird.</p></li>
+<li><p><strong>Schutz des Quellcodes:</strong> Bei Interpreter-Sprachen ist es einfacher, den Quellcode zu lesen und zu verstehen, was bedeutet, dass er weniger geschützt ist als bei kompilierten Sprachen.</p></li>
+</ul>
+<p>Was Cython und MATLAB Coder betrifft:</p>
+<p><strong>Cython</strong> ist eine Erweiterung von Python, die zusätzlich C-Datentypen unterstützt. Mit Cython können Python-Entwickler Python-Code in die Compiler-Sprachen C oder C++ übersetzen und kompilieren, um die Ausführungszeit zu verkürzen.</p>
+<p><strong>MATLAB Coder</strong> ist ein MATLAB-Tool, das MATLAB-Code in C oder C++ Code umwandelt. Dies kann verwendet werden, um den MATLAB-Code auf Plattformen auszuführen, die MATLAB nicht unterstützen, oder um die Geschwindigkeit der Ausführung zu verbessern, indem der Code vorab kompiliert wird.</p>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Was gibt der folgende Code aus? Lesen Sie das Programm und versuchen Sie nur durch Nachdenken die Ausgabe des Programms auf Papier zu schreiben.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">meine_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+    <span class="k">return</span> <span class="n">meine_liste</span>
+
+<span class="n">zahlen</span> <span class="o">=</span> <span class="n">meine_funktion</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Das Python-Programm gibt</p>
+<p>[0, 1, 1, 2, 3, 5, 8, 13]</p>
+<p>aus. Das ist übrigens die sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Fibonacci-Folge">Fibonacci-Folge</a>.</p>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Schreiben Sie ein <strong>Python</strong>-Programm, das das Spiel <a class="reference external" href="https://de.wikipedia.org/wiki/Schere,_Stein,_Papier">“Schere - Stein - Papier”</a> umsetzt.</p>
+<p>Die Spielregeln sind wie folgt:</p>
+<p>Der Computer fragt den wählt zufällig einen Gegenstand aus (ohne ihn auszugeben)
+und fragt den Spieler nach seiner Wahl. Schere gewinnt gegen Papier, Papier
+gewinnt gegen Stein und Stein gewinnt gegen Schere. Der Sieg bringt dem
+jeweiligen Spieler einen Punkt. Haben beide den gleichen Gegenstand gewählt,
+zählt das als unentschieden, also 0 Punkte. Lassen Sie Spieler und Computer
+solange gegeneinander spielen, bis einer von beiden 3 Punkte erreicht hat.</p>
+<p>Wünschenswert sind auch Ausgaben wie z.B. der aktuelle Spielstand oder am Ende die Gratulation an den Sieger.</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span> 
+
+<span class="n">gegenstaende</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Schere&#39;</span><span class="p">,</span> <span class="s1">&#39;Stein&#39;</span><span class="p">,</span> <span class="s1">&#39;Papier&#39;</span><span class="p">]</span>
+
+<span class="n">punkte_computer</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">punkte_spieler</span>  <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Wahl des Computers</span>
+    <span class="n">zufallsindex</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">computerwahl</span> <span class="o">=</span> <span class="n">gegenstaende</span><span class="p">[</span><span class="n">zufallsindex</span><span class="p">]</span>
+
+    <span class="c1"># Wahl des Spielers</span>
+    <span class="n">spielerwahl</span>  <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Was wählen Sie? Schere, Stein oder Papier?&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">spielerwahl</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gegenstaende</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sie haben </span><span class="si">{</span><span class="n">spielerwahl</span><span class="si">}</span><span class="s1"> gewählt, was nicht in der Liste ist. Achten Sie auf die korrekte Schreibweise.&#39;</span><span class="p">)</span>
+        <span class="n">spielerwahl</span>  <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Was wählen Sie? Schere, Stein oder Papier?&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Vergleich, wer gewonnen hat</span>
+    <span class="k">if</span> <span class="n">computerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stein schleift Schere, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
+            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Schere schneidet Papier, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
+            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">computerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stein schleift Schere, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
+            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Papier umwickelt Stein, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
+            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Schere schneidet Papier, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
+            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Papier umwickelt Stein, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
+            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Ausgabe des aktuellen Spielstandes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;### Spielstand </span><span class="si">{</span><span class="n">punkte_spieler</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">punkte_computer</span><span class="si">}</span><span class="s1"> (Spieler : Computer) ###&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Abbruch der Schleife, wenn Computer oder Spieler 3 Punkte erreicht hat</span>
+    <span class="k">if</span> <span class="n">punkte_computer</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">punkte_spieler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="c1"># Gratulation</span>
+<span class="k">if</span> <span class="n">punkte_spieler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Herzlichen Glückwunsch, Sie haben gewonnnen.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Leider hat der Computer gewonnen.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Suchen Sie in dem folgenden Code die Fehler durch Nachdenken. Korrigieren Sie anschließend das Programm in Python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ergebnis</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine Zahl ein: &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Wurzel der Zahl ist </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<ol class="arabic simple">
+<li><p>Die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> existiert nicht im Python-Standard, sondern muss zuerst
+durch ein Modul wie beispielsweise Math oder NumPy importiert werden.</p></li>
+<li><p>Die Wurzel existiert nur für nicht-negative Zahlen. Es sollte also vorab
+überprüft werden, ob der Benutzer eine nicht-negative Zahl eingegeben hat.</p></li>
+<li><p>Die input()-Funktion gibt einen String zurück, der in einer Zahl konvertiert
+werden muss.</p></li>
+<li><p>Die print()-Anweisung gibt nicht die Wurzel aus, sondern die eingebene Zahl.</p></li>
+</ol>
+<p>Das korrigierte Programm könnte folgendermaßen aussehen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">def</span> <span class="nf">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ergebnis</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine Zahl ein: &#39;</span><span class="p">))</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Die Zahl muss nicht-negativ sein. Geben Sie eine Zahl ein: &#39;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Wurzel der Zahl ist </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<ol class="arabic simple">
+<li><p>Laden Sie die Kursdaten des DAX aus dem Jahr 2022 herunter (→ hier <a class="reference external" href="https://nextcloud.frankfurt-university.de/s/5qNaNjb945p2mk3">Download</a>,
+Quelle: <a class="reference external" href="https://www.boerse-frankfurt.de/index/DAX/kurshistorie/historische-kurse-und-umsaetze">https://www.boerse-frankfurt.de</a>.</p></li>
+<li><p>Importieren Sie die Tabelle. Überspringen Sie dazu die erste Zeile.</p></li>
+<li><p>Verschaffen Sie sich einen Überblick.</p>
+<ul class="simple">
+<li><p>Wie viele Datensätze sind in der Tabelle enthalten?</p></li>
+<li><p>Gibt es leere Zellen?</p></li>
+<li><p>Was steht in den einzelnen Spalten?</p></li>
+<li><p>Was ist das höchste Tageshoch, das 2022 erreicht wurde?</p></li>
+<li><p>Wie viele Tage sind in der Tabelle enthalten? Speichern Sie diese Zahl in
+der Variablen <code class="docutils literal notranslate"><span class="pre">anzahl_tage</span></code>? Warum sind es eigentlich nicht 365 Tage?</p></li>
+</ul>
+</li>
+<li><p>Visualisieren Sie den Kurs zum Börsenschluss <code class="docutils literal notranslate"><span class="pre">Schluss</span></code>. Lassen Sie dazu auf
+der x-Achse die Tage von 1 bis <code class="docutils literal notranslate"><span class="pre">anzahl_tage</span></code> laufen.</p></li>
+<li><p>Lassen Sie eine Regressionsgerade durch den Kursstand zum Börsenschluss
+berechnen.</p></li>
+<li><p>Visualisieren Sie den Börsenkurs zusammen mit der Regressionsgeraden.</p></li>
+<li><p>Was prognostiziert das Regressionsmodell für Mitte 2023? Tipp: Sie können mit
+251 Werktagen für das gesamte Jahr rechnen, siehe <a class="reference external" href="https://www.ferienwiki.de/tools/werktagerechner">https://www.ferienwiki.de/tools/werktagerechner</a></p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Import und Übersicht:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dax2022.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Es sind 257 Datensätze, alle Zellen sind gefüllt. Es gibt die Spalten Datum, Eröffnung, Schluss, Tageshoch, Tagestief und Umsatz in EUR. Die statistischen Kennzahlen ermitteln wir mit <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Das höchste Tageshoch waren 16285.35 EUR.</p>
+<p>In der Tabelle sind 257 Tage enthalten, weil die Börse nur an Werktagen geöffnet hat.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_tage</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Datum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">anzahl_tage</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Visualisierung als Liniendiagramm</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">anzahl_tage</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Schluss&#39;</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schluss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DAX 2022&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Das Regressionsmodell prognostiziert für Mitte 2023 einen DAX-Wert von 12031.61 EUR.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Regressionsgerade</span>
+<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung</span>
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">anzahl_tage</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schluss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DAX 2022&#39;</span><span class="p">);</span>
+
+<span class="c1"># Prognose für Mitte 2023 </span>
+<span class="n">x_prognose</span> <span class="o">=</span> <span class="mi">257</span> <span class="o">+</span> <span class="mi">251</span><span class="o">/</span><span class="mi">2</span> 
+<span class="n">y_prognose</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_prognose</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prognose DAX Mitte 2023: </span><span class="si">{</span><span class="n">y_prognose</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gramschs/book_python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter13_sec02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Simone Gramsch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

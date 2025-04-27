@@ -72,16 +72,18 @@ print(koeffizienten)
 
 Die gefundene Regressionsgerade lautet also
 
-$$f(x) = 2.98\cdot x + 0.59.$$ 
+$$f(x) = 2.98\cdot x + 0.59.$$
 
 ```{admonition} Mini-Übung
 :class: miniexercise
 Lassen Sie zusätzlich zu den Messwerten die gefundene Regressionsgerade in der
 Farbe rot visualisieren.
 ```
+
 ```{code-cell} ipython3
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -129,9 +131,11 @@ Lassen Sie die Regressionsgerade mit `polyval` aus den mit `polyfit` für das
 Intervall $[-1,5]$ auswerten und visualisieren Sie die Messwerte (in blau)
 zusammen mit der Regressionsgeraden (in rot).
 ```
+
 ```{code-cell} ipython3
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -148,4 +152,3 @@ plt.ylabel('Wirkung')
 plt.title('Künstliche Messdaten mit linearem Zusammenhang');
 ```
 ````
-

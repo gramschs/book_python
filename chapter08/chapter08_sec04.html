@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Übungen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>Übung &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -227,13 +227,14 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Übungen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Übung</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
@@ -263,6 +264,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">Übungen zur Wiederholung</a></li>
 </ul>
 </details></li>
 </ul>
@@ -413,7 +415,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Übungen</h1>
+    <h1>Übung</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,253 +429,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
-<h1>Übungen<a class="headerlink" href="#ubungen" title="Link to this heading">#</a></h1>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung 8.1</p>
-<p>Ordnen Sie ein: welche der beiden Programmiersprachen MATLAB oder Python ist
-eine Interpreter-Sprache und welche eine Compiler-Sprache? Welche Vor- und Nachteile haben Interpreter-Sprachen?</p>
-<p>Recherchieren Sie im Internet: Was ist Cython und was ist der MATLAB Coder?</p>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Sowohl MATLAB als auch Python sind beides Interpreter-Sprachen. Sie werden in Echtzeit ausgeführt, anstatt vorab in Maschinencode kompiliert zu werden, wie es bei Compiler-Sprachen der Fall ist.</p>
-<p>Vorteile von Interpreter-Sprachen sind:</p>
-<ul class="simple">
-<li><p><strong>Leichtere Fehlersuche:</strong> Da der Interpreter den Code Zeile für Zeile ausführt, erkennt man leichter, in welcher Zeile der Fehler auftritt.</p></li>
-<li><p><strong>Plattformunabhängigkeit:</strong> Interpreter-Sprachen sind oft plattformübergreifend, was bedeutet, dass sie auf verschiedenen Betriebssystemen ausgeführt werden können, ohne dass der Code geändert werden muss.</p></li>
-</ul>
-<p>Nachteile von Interpreter-Sprachen sind:</p>
-<ul class="simple">
-<li><p><strong>Geschwindigkeit:</strong> Interpreter-Sprachen sind in der Regel langsamer als kompilierte Sprachen, da der Code zur Laufzeit und nicht vorab übersetzt wird.</p></li>
-<li><p><strong>Schutz des Quellcodes:</strong> Bei Interpreter-Sprachen ist es einfacher, den Quellcode zu lesen und zu verstehen, was bedeutet, dass er weniger geschützt ist als bei kompilierten Sprachen.</p></li>
-</ul>
-<p>Was Cython und MATLAB Coder betrifft:</p>
-<p><strong>Cython</strong> ist eine Erweiterung von Python, die zusätzlich C-Datentypen unterstützt. Mit Cython können Python-Entwickler Python-Code in die Compiler-Sprachen C oder C++ übersetzen und kompilieren, um die Ausführungszeit zu verkürzen.</p>
-<p><strong>MATLAB Coder</strong> ist ein MATLAB-Tool, das MATLAB-Code in C oder C++ Code umwandelt. Dies kann verwendet werden, um den MATLAB-Code auf Plattformen auszuführen, die MATLAB nicht unterstützen, oder um die Geschwindigkeit der Ausführung zu verbessern, indem der Code vorab kompiliert wird.</p>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung 8.2</p>
-<p>Was gibt der folgende Code aus? Lesen Sie das Programm und versuchen Sie nur durch Nachdenken die Ausgabe des Programms auf Papier zu schreiben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-        <span class="n">meine_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
-    <span class="k">return</span> <span class="n">meine_liste</span>
-
-<span class="n">zahlen</span> <span class="o">=</span> <span class="n">meine_funktion</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zahlen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Das Python-Programm gibt</p>
-<p>[0, 1, 1, 2, 3, 5, 8, 13]</p>
-<p>aus. Das ist übrigens die sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Fibonacci-Folge">Fibonacci-Folge</a>.</p>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung 8.3</p>
-<p>Schreiben Sie ein <strong>Python</strong>-Programm, das das Spiel <a class="reference external" href="https://de.wikipedia.org/wiki/Schere,_Stein,_Papier">“Schere - Stein - Papier”</a> umsetzt.</p>
-<p>Die Spielregeln sind wie folgt:</p>
-<p>Der Computer fragt den wählt zufällig einen Gegenstand aus (ohne ihn auszugeben)
-und fragt den Spieler nach seiner Wahl. Schere gewinnt gegen Papier, Papier
-gewinnt gegen Stein und Stein gewinnt gegen Schere. Der Sieg bringt dem
-jeweiligen Spieler einen Punkt. Haben beide den gleichen Gegenstand gewählt,
-zählt das als unentschieden, also 0 Punkte. Lassen Sie Spieler und Computer
-solange gegeneinander spielen, bis einer von beiden 3 Punkte erreicht hat.</p>
-<p>Wünschenswert sind auch Ausgaben wie z.B. der aktuelle Spielstand oder am Ende die Gratulation an den Sieger.</p>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span> 
-
-<span class="n">gegenstaende</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Schere&#39;</span><span class="p">,</span> <span class="s1">&#39;Stein&#39;</span><span class="p">,</span> <span class="s1">&#39;Papier&#39;</span><span class="p">]</span>
-
-<span class="n">punkte_computer</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">punkte_spieler</span>  <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># Wahl des Computers</span>
-    <span class="n">zufallsindex</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">computerwahl</span> <span class="o">=</span> <span class="n">gegenstaende</span><span class="p">[</span><span class="n">zufallsindex</span><span class="p">]</span>
-
-    <span class="c1"># Wahl des Spielers</span>
-    <span class="n">spielerwahl</span>  <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Was wählen Sie? Schere, Stein oder Papier?&#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">spielerwahl</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gegenstaende</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sie haben </span><span class="si">{</span><span class="n">spielerwahl</span><span class="si">}</span><span class="s1"> gewählt, was nicht in der Liste ist. Achten Sie auf die korrekte Schreibweise.&#39;</span><span class="p">)</span>
-        <span class="n">spielerwahl</span>  <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Was wählen Sie? Schere, Stein oder Papier?&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># Vergleich, wer gewonnen hat</span>
-    <span class="k">if</span> <span class="n">computerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden&#39;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stein schleift Schere, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Schere schneidet Papier, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">computerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stein schleift Schere, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden.&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Papier umwickelt Stein, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Schere schneidet Papier, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Papier umwickelt Stein, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden.&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Ausgabe des aktuellen Spielstandes</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;### Spielstand </span><span class="si">{</span><span class="n">punkte_spieler</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">punkte_computer</span><span class="si">}</span><span class="s1"> (Spieler : Computer) ###&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Abbruch der Schleife, wenn Computer oder Spieler 3 Punkte erreicht hat</span>
-    <span class="k">if</span> <span class="n">punkte_computer</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">punkte_spieler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">break</span>
-
-<span class="c1"># Gratulation</span>
-<span class="k">if</span> <span class="n">punkte_spieler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Herzlichen Glückwunsch, Sie haben gewonnnen.&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Leider hat der Computer gewonnen.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung 8.4</p>
-<p>Suchen Sie in dem folgenden Code die Fehler durch Nachdenken. Korrigieren Sie anschließend das Programm in Python.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ergebnis</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine Zahl ein: &#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Wurzel der Zahl ist </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<ol class="arabic simple">
-<li><p>Die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> existiert nicht im Python-Standard, sondern muss zuerst
-durch ein Modul wie beispielsweise Math oder NumPy importiert werden.</p></li>
-<li><p>Die Wurzel existiert nur für nicht-negative Zahlen. Es sollte also vorab
-überprüft werden, ob der Benutzer eine nicht-negative Zahl eingegeben hat.</p></li>
-<li><p>Die input()-Funktion gibt einen String zurück, der in einer Zahl konvertiert
-werden muss.</p></li>
-<li><p>Die print()-Anweisung gibt nicht die Wurzel aus, sondern die eingebene Zahl.</p></li>
-</ol>
-<p>Das korrigierte Programm könnte folgendermaßen aussehen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
-
-<span class="k">def</span> <span class="nf">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ergebnis</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine Zahl ein: &#39;</span><span class="p">))</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Die Zahl muss nicht-negativ sein. Geben Sie eine Zahl ein: &#39;</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Wurzel der Zahl ist </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung 8.5</p>
-<ol class="arabic simple">
-<li><p>Laden Sie die Kursdaten des DAX aus dem Jahr 2022 herunter (→ hier <a class="reference external" href="https://nextcloud.frankfurt-university.de/s/5qNaNjb945p2mk3">Download</a>,
-Quelle: <a class="reference external" href="https://www.boerse-frankfurt.de/index/DAX/kurshistorie/historische-kurse-und-umsaetze">https://www.boerse-frankfurt.de</a>.</p></li>
-<li><p>Importieren Sie die Tabelle. Überspringen Sie dazu die erste Zeile.</p></li>
-<li><p>Verschaffen Sie sich einen Überblick.</p>
-<ul class="simple">
-<li><p>Wie viele Datensätze sind in der Tabelle enthalten?</p></li>
-<li><p>Gibt es leere Zellen?</p></li>
-<li><p>Was steht in den einzelnen Spalten?</p></li>
-<li><p>Was ist das höchste Tageshoch, das 2022 erreicht wurde?</p></li>
-<li><p>Wie viele Tage sind in der Tabelle enthalten? Speichern Sie diese Zahl in
-der Variablen <code class="docutils literal notranslate"><span class="pre">anzahl_tage</span></code>? Warum sind es eigentlich nicht 365 Tage?</p></li>
-</ul>
-</li>
-<li><p>Visualisieren Sie den Kurs zum Börsenschluss <code class="docutils literal notranslate"><span class="pre">Schluss</span></code>. Lassen Sie dazu auf
-der x-Achse die Tage von 1 bis <code class="docutils literal notranslate"><span class="pre">anzahl_tage</span></code> laufen.</p></li>
-<li><p>Lassen Sie eine Regressionsgerade durch den Kursstand zum Börsenschluss
-berechnen.</p></li>
-<li><p>Visualisieren Sie den Börsenkurs zusammen mit der Regressionsgeraden.</p></li>
-<li><p>Was prognostiziert das Regressionsmodell für Mitte 2023? Tipp: Sie können mit
-251 Werktagen für das gesamte Jahr rechnen, siehe <a class="reference external" href="https://www.ferienwiki.de/tools/werktagerechner">https://www.ferienwiki.de/tools/werktagerechner</a></p></li>
-</ol>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Import und Übersicht:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dax2022.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Es sind 257 Datensätze, alle Zellen sind gefüllt. Es gibt die Spalten Datum, Eröffnung, Schluss, Tageshoch, Tagestief und Umsatz in EUR. Die statistischen Kennzahlen ermitteln wir mit <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Das höchste Tageshoch waren 16285.35 EUR.</p>
-<p>In der Tabelle sind 257 Tage enthalten, weil die Börse nur an Werktagen geöffnet hat.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_tage</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Datum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">anzahl_tage</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Visualisierung als Liniendiagramm</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">anzahl_tage</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Schluss&#39;</span><span class="p">]</span> 
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tag&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schluss&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DAX 2022&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Das Regressionsmodell prognostiziert für Mitte 2023 einen DAX-Wert von 12031.61 EUR.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Regressionsgerade</span>
-<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Visualisierung</span>
-<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">anzahl_tage</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tag&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schluss&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DAX 2022&#39;</span><span class="p">);</span>
-
-<span class="c1"># Prognose für Mitte 2023 </span>
-<span class="n">x_prognose</span> <span class="o">=</span> <span class="mi">257</span> <span class="o">+</span> <span class="mi">251</span><span class="o">/</span><span class="mi">2</span> 
-<span class="n">y_prognose</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_prognose</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prognose DAX Mitte 2023: </span><span class="si">{</span><span class="n">y_prognose</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="ubung">
+<h1>Übung<a class="headerlink" href="#ubung" title="Link to this heading">#</a></h1>
+<p>Diese Übung dient als Prüfungsvorleistung. Alles Weitere erfahren Sie in campUAS.</p>
 </section>
 
     <script type="text/x-thebe-config">

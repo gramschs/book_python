@@ -9,15 +9,15 @@ Rechenoperationen für Vektoren und Matrizen.
 ```{admonition} Lernziele
 :class: admonition-goals
 * Sie können einen **Vektor** oder eine **Matrix** in MATLAB erzeugen.
-* Sie wissen, wie Sie auf einzelne Elemente eines Vektors oder ein MAtrix
+* Sie wissen, wie Sie auf einzelne **Elemente** eines Vektors oder einer Matrix
   zugreifen.
-* Sie beherrschen das Slicing in MATLAB.
-* Sie können grundlegende Rechenoperationen mit Vektoren oder Matrizen
+* Sie beherrschen das **Slicing** in MATLAB.
+* Sie können grundlegende **Rechenoperationen** mit Vektoren oder Matrizen
   ausführen.
-* Sie können mit MATLAB das Skalarprodukt oder das Vektorprodukt von Vektoren
-  berechnen.
-* Sie können die Determinante, die Eigenwerte oder die Eigenvektoren einer
-  Matrix berechnen.
+* Sie können mit MATLAB das **Skalarprodukt** oder das **Vektorprodukt** von
+  Vektoren berechnen.
+* Sie können die **Determinante**, die **Eigenwerte** oder die **Eigenvektoren**
+  einer Matrix berechnen.
 ```
 
 ## Vektoren
