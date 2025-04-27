@@ -81,3 +81,7 @@ parts:
       - file: chapter12/chapter12_sec02.md
       - file: chapter12/chapter12_sec03.md
       - file: chapter12/chapter12_sec04.md
+  - file: chapter13/chapter13_sec00.md
+    sections:
+      - file: chapter13/chapter13_sec01.md        
+      - file: chapter13/chapter13_sec02.md
