@@ -12,148 +12,140 @@ kernelspec:
   name: python3
 ---
 
-# 12.2 Simulink-Bibliothek
-
-Simulink stellt viele Blöcke zur Verfügung. In diesem Kapitel gehen wir die Liste der wichtigsten Blöcke durch. Darüber hinaus betrachten wir Ableitungen und Integrale.
+# 12.2 Lineare Regression mit polyfit und polyval
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie kennen die wichtigsten Eingabe-, Verarbeitungs- und Ausgabeblöcke.
-* Sie können ein Eingangssignal ableiten und integrieren.
+* Sie können mit **polyfit** die Koeffizienten einer Regressionsgerade zu
+  gegebenen Messwerten bestimmen.
+* Sie können mit **polyval** aus den berechneten Koeffizienten die
+  Regressionsgerade bestimmen.
 ```
 
-## Eingabeblöcke bzw. Sources
+## Koeffizienten der Regressionsgerade berechnen mit polyfit
 
-In der
-[Simulink-Dokumentation](https://de.mathworks.com/help/simulink/sources.html)
-finden Sie eine Übersicht der möglichen Eingabeblöcke für Simulink. Die folgende
-Liste und vor allem die Beschreibungen sind von dort übernommen. Eingabeblöcke,
-die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.
+Python bzw. das Modul NumPy unterstützt die Suche nach der Regressionspolynomen
+mit der Funktion `polyfit()`. Eine detaillierte Bechreibung finden Sie ìn der
+[NumPy-Dokumentation
+(polyfit)](https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.polyfit.html).
+Aufgerufen wird polyfit mit
 
-* *Band-Limited White Noise*: Dieser Block erzeugt normalverteilte Zufallszahlen
-  (weißes Rauschen).  
-* *Chirp Signal*: Dieser Block erzeugt eine Sinusfunktion, bei der die Frequenz
-  ansteigt.
-* *Clock*: Dieser Block gibt bei jedem Simulationsschritt die aktuelle
-  Simulationszeit aus. Dieser Block ist nützlich für andere Blöcke, die die
-  Simulationszeit benötigen.
-* **Constant**: Diser Block erzeugt ein reelles oder komplexes konstantes
-  Signal. Verwenden Sie diesen Block, um einen konstanten Signaleingang
-  bereitzustellen.
-* *Counter Free-Running*: Dieser Block zählt hoch und beginnt wieder bei 0,
-  nachdem der Wert $2^N+1$ überschritten wurde, dabei ist $N$ die Anzahl der
-  Bits
-* *Counter Limited*: Dieser Block zählt hoch und beginnt wieder bei 0, nachdem
-  ein vorher festgelegter maximaler Wert überschritten wurde
-* *Digital Clock*: Dieser Block gibt ebenfalls die Simuationszeit aus, aber nur
-  zu bestimmten Zeiten.
-* *Enumerated Constant*: Dieser Block erzeugt eine Aufzählungskonstante.
-* **From File**: Mit diesem Block laden Sie Daten aus einer MAT-Datei in das
-  Simulink-Modell.
-* *From Spreadsheet*: Dieser Block liest Daten aus einer Tabelle.
-* **From Workspace**: Dieser Block lädt Signaldaten aus dem MATLAB-Workspace in
-  das Simulink-Modell.
-* *Ground*: Dieser Block erdet nicht verbundene Eingangssignale.
-* *In Bus Element*: Dieser Block ermöglicht die Auswahl von Eingaben eines
-  externen Ports.
-* *Inport*: Inport-Blöcke verbinden Signale von außerhalb eines Systems mit dem
-  System.
-* *Pulse Generator*: Der Impulsgeneratorblock erzeugt in regelmäßigen Abständen
-  Rechteckimpulse.
-* **Ramp**: Der Rampenblock erzeugt ein Signal, das zu einem bestimmten
-  Zeitpunkt und mit einem bestimmten Wert beginnt und sich mit einer bestimmten
-  Rate ändert.  
-* *Random Number*: Der Zufallszahlenblock erzeugt normalverteilte Zufallszahlen.
-* *Repeating Sequence*: Dieser Block gibt ein periodisches skalares Signal mit
-  einer Wellenform aus, die Sie mit den Parametern Zeitwerte und Ausgangswerte
-  festlegen.
-* *Repeating Sequence Interpolated*: Dieser Block gibt eine periodische
-  zeitdiskrete Folge aus, die auf den Werten der Parameter "Vector of time
-  values" und "Vector of output values" basiert.
-* *Repeating Sequence Stair*: Dieser Block gibt eine Treppenfolge aus und
-  wiederholt sie.
-* **Signal Builder**: Mit diesem Block können Sie austauschbare Gruppen von
-  stückweise linearen Signalquellen erstellen und in einem Modell verwenden.
-* **Signal Editor**: Dieser Block dient der Anzeige, Erstellung und Bearbeitung
-  von austauschbaren Szenarien.
-* *Signal Generator*:  Dieser Block kann eine der folgenden vier verschiedenen
-  Wellenformen erzeugen: Sinus, Rechteck, Sägezahn und Zufallsgenerator.
-* *Sine Wave*: Dieser Block gibt eine sinusförmige Wellenform aus.
-* **Step**: Dieser Block erzeugt eine Treppenfunktion mit zwei Stufen, der zu
-  einer spezifizierten Zeit wechselt.
-* *Uniform Random Number*: Dieser Block erzeugt gleichmäßig verteilte
-  Zufallszahlen in einem von Ihnen festgelegtem Intervall.
-* *Waveform Generator*: Dieser Block erzeugt wellenförmige Signale.
+`p = polyfit(x, y, grad)`
 
-## Ausgabeblöcke oder Sinks
+Dabei sind x und y die die Messdaten und `grad` ist ein Integer mit dem
+Polynomgrad. Für eine lineare Funktion setzen wir `grad = 1`. Das Ergebnis ist
+eine Liste (genauer gesagt ein Tupel). Die Liste enthält die Koeffizienten des
+Polynoms in absteigender Reihenfolge.
 
-Mit den folgenden Blöcken erzeugen Sie Ausgaben oder exportieren Ergebnisse.
-Diese Liste enststammt der
-[Simulink-Dokumentation](https://de.mathworks.com/help/simulink/sinks.html).
+Ist der Polynomgrad 1, dann ist `p[0]` die Steigung der linearen
+Regressionsgerade und der y-Achsenabschnitt ist in `p[1]` gespeichert:
 
-* *Display*: Dieser Block zeigt den Wert der Eingangsdaten an.
-* *Floating Scope and Scope Viewer*: Der Simulink® Scope Viewer und der Floating
-  Scope Block zeigen Zeitsignale abhängig von der Simulationszeit an. Der Scope
-  Viewer und der Floating Scope-Block haben die gleiche Funktionalität wie der
-  Scope-Block, sind aber nicht mit Signalleitungen verbunden.
-* *Out Bus Element*: Dieser Block kombiniert die Funktionalität eines
-  Outport-Blocks und eines Bus-Creator-Blocks.
-* *Outport*: Diese Blöcke verbinden Signale aus einem System mit einem Ziel
-  außerhalb des Systems.
-* **Record, XY Graph**: Sie können sowohl den Block Record oder den Block XY
-  Graph verwenden, um Daten im Workspace, in einer Datei oder sowohl im
-  Workspace als auch in einer Datei aufzuzeichnen.
-* **Scope**: Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.
-* *Stop Simulation*: Dieser Block stoppt die Simulation, wenn der Eingang
-  ungleich Null ist.
-* *Terminator*: Dieser Block wird verwendet, um Blöcke zu kappen, deren
-  Ausgangsports nicht mit anderen Blöcken verbunden sind.
-* *To File*: Der To File-Block schreibt Eingangssignaldaten in eine MAT-Datei.T
-* *To Workspace*: Dieser Block protokolliert die an seinem Eingangsport
-  angeschlossenen Daten im Workspace.
+$$f(x) = p[0] \cdot x + p[1].$$
 
-## Verarbeitungsblöcke
+Um die Anwendung von `polyfit()` zu zeigen, werden zunächst die folgenden sieben
+Messpunkte visualisiert:
 
-Um die Eingabesignale zu verarbeiten, gibt es ebenfalls eine lange Liste von
-Blöcken, siehe
-[Simulink-Dokumentation](https://de.mathworks.com/help/simulink/block-libraries.html).
-Ein erstes Beispiel haben wir mit dem Gain-Block schon kennengelernt, der ein
-Eingangssignal verstärkt und mathematisch gesehen eine multiplikativer Faktor
-ist. Die Liste der Verbeitungsblöcke ist zu lang, um sie hier eingehend zu
-behandeln. Wichtig sind jedoch die [mathematischen
-Blöcke](https://de.mathworks.com/help/simulink/math-operations.html)
-zusammengefasst in dem Modul **Maths Blocks** und die sogenannten
-[kontinuierlichen
-Blöcke](https://de.mathworks.com/help/simulink/continuous.html) aus dem Modul
-**Continuous Blocks**, das Ableitungen und Löser von Differentialgleichungen
-beinhaltet.
+```{code-cell} ipython3
+import matplotlib.pyplot as plt
 
-## Beispiel: lineare Funktion als Eingangssignal
+x = [-1, 0, 1, 2,  3, 4, 5]
+y = [-2.52,  0.85,   3.21,  7.19,  8.93, 12.89, 15.40]
 
-Wollen wir die lineare Funktion $u(t) = 2\cdot t + 3$ in Simulink modellieren,
-so brauchen wir zwei Eingangssignale, nämlich $t$ und $1$. Daher ziehen wir
-zuerst die Sources-Blöcke `Ramp` und `Constant` aus der Simulink-Bibliothek auf
-den Arbeitsplatz. Die Eigenschaften beider Blöcke können durch Doppelklick
-angezeigt werden.
+plt.figure()
+plt.scatter(x,y)
+plt.xlabel('Ursache')
+plt.ylabel('Wirkung')
+plt.title('Künstliche Messdaten mit linearem Zusammenhang');
+```
 
-Die Rampe ist eine Funktion, die Null ist und ab einem bestimmten Zeitpunkt
-linear ansteigt. Sowohl der Zeitpunkt, ab dem der lineare Anstieg beginnt, als
-auch die Steigung können eingestellt werden. Wir lassen die Voreinstellung
-`Start Time` auf Null. Normalerweise müssten wir jetzt die Steigung, also
-`Slope` auf den Wert 2 setzen, aber um den prinzipiellen Zusammenbau von Termen
-zu zeigen, benutzen wir erneut den Verstärker-Block `Gain`.
+Als nächstes verwenden wir `polyfit`, um die Koeffizienten einer
+Regressionsgerade von Python berechnen zu lassen.
 
-Der Block `Constant` produziert ein konstantes Eingangssignal. Auch hier könnten
-wir den Wert 3 direkt eingeben, indem wir einen Doppelklick auf den Block machen
-und den `Constant Value` auf 3 abändern. Aber auch hier benutzen wir den
-Verstärker-Block `Gain`.
+```{code-cell} ipython3
+import numpy as np
 
-Beide Terme müssen nach der Verstärkung mit 2 bzw. 3 noch summiert werden. Das
-erledigt der Mathematik-Block `Sum`. Die beiden verstärkten Signale werden mit
-den beiden Eingangports des `Sum`-Blocks verbunden. Den `Sum`-Block verbinden
-wir wiederum mit einer Ausgabe, dem Scope-Block. Dann können wir die Simulation
-laufen lassen.
+koeffizienten = np.polyfit(x,y, 1)
+print(koeffizienten)
+```
 
-![Screenshot des Simulink-Modells zu lineare Funktion](pics/simulink_lineare_funktion.png)
+Die gefundene Regressionsgerade lautet also
+
+$$f(x) = 2.98\cdot x + 0.59.$$ 
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie zusätzlich zu den Messwerten die gefundene Regressionsgerade in der
+Farbe rot visualisieren.
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# Wertetabelle für Regressionsgerade
+x_modell = np.linspace(-1, 5)
+y_modell = 2.98 * x_modell + 0.59
+
+# Visualisierung Messwerte und Regressionsgerade
+plt.figure()
+plt.scatter(x,y)
+plt.plot(x_modell, y_modell, color='red')
+plt.xlabel('Ursache')
+plt.ylabel('Wirkung')
+plt.title('Künstliche Messdaten mit linearem Zusammenhang');
+```
+````
+
+## Regressionsgerade aus Koeffizienten mit polyval aufstellen
+
+Eine weitere Funktion aus dem NumPy-Modul ist die Funktion `polyval()`. Die
+polyval-Funktion wird dazu benutzt, ein Polynom aufzustellen. Der Aufruf der
+polyval-Funktion sieht prinzipiell so aus:
+
+```python
+y = np.polyval(koeffizienten, x)
+```
+
+Dabei ist `koeffizienten` die Liste mit den Koeffizienten des Polynoms, die z.B.
+aus der Berechnung `polyfit()`stammen. Die Koeffizienten sind dabei wieder
+absteigend sortiert. Zuerst kommt der Koeffizient der höchsten Potenz. `x` ist
+eine Liste von Zahlen oder ein NumPy-Array, für die das Polynom ausgewertet
+werden soll.
+
+Wenn wir beispielhaft die Regressionsgerade des Beispiels an der Stelle $x =
+2.5$ auswerten wollen, so schreiben wir
+
+```{code-cell} ipython3
+y = np.polyval(koeffizienten, 2.5)
+print(f'Die Regressionsgerade an der Stelle x = 2.5 ist {y:.2f}.')
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie die Regressionsgerade mit `polyval` aus den mit `polyfit` für das
+Intervall $[-1,5]$ auswerten und visualisieren Sie die Messwerte (in blau)
+zusammen mit der Regressionsgeraden (in rot).
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# Wertetabelle für Regressionsgerade
+x_modell = np.linspace(-1, 5)
+y_modell = np.polyval(koeffizienten, x_modell)
+
+# Visualisierung Messwerte und Regressionsgerade
+plt.figure()
+plt.scatter(x,y)
+plt.plot(x_modell, y_modell, color='red')
+plt.xlabel('Ursache')
+plt.ylabel('Wirkung')
+plt.title('Künstliche Messdaten mit linearem Zusammenhang');
+```
+````
+

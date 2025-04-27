@@ -14,206 +14,149 @@ kernelspec:
 
 # Übungen
 
-````{admonition} Übung 10.1
+```{admonition} Übung 10.1
 :class: miniexercise
-Gegeben ist der folgende Code mit Zeilennummern, um Messdaten zu visualisieren. Suchen Sie die darin enthaltenen Fehler. Korrigieren Sie anschließend das Programm.
-```python
-1  # Datenimport Messdaten
-2  x = [-20, -15, -10, -5, 0, 5]
-3  y = [152.38, 124.43, 88.91, 37.43, 5.52, -27.41]
-4    
-5  # Parabel durch die Messdaten
-6  y_parabel = x**2
-7   
-8  # Plot der Messdaten mit zusätzlicher Parabel
-9  plt.figure()
-10 plt.scatter(x,y)
-11 plt.plot(x, y_parabel)
-12 plt.xlabel('Temperatur')
-13 plt.ylabel('Materialeigenschaft')
-14 plt.titel('Messdaten');
+Laden Sie die Datei
+[20220801_Marktwert_Bundesliga.csv](https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC)
+herunter. Die ersten 5 Zeilen sind Kommentare, die beim Einlesen übersprungen
+werden sollten. Informieren Sie sich im Internet über die Option `skiprows` und
+importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.
+
+* Welche Daten sind in der Tabelle enthalten?
+* Welche Spalte wäre gut als Zeilenindex geeignet? 
+
+Importieren Sie die Daten mit einem geeigneten Zeilenindex.
 ```
-````
 ````{admonition} Lösung
 :class: miniexercise, toggle
-* Zeile 6: Listen dürfen nicht quadriert werden.
-* Zeile 9: Der Aufruf plt.figure() fürht zu einer Fehlermeldung, da Matplotlib nicht importiert wurde.
-* Zeile 14: plt.title() ist falsch geschrieben.
+Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro angegeben.
+
+Die Vereinsnamen sind ein guter Zeilenindex. Daher sollten die Daten folgendermaßen importiert werden:
+
 ```python
-import matplotlib.pyplot as plt
+import pandas as pd
 
-# Datenimport Messdaten
-x = [-20, -15, -10, -5, 0, 5]
-y = [152.38, 124.43, 88.91, 37.43, 5.52, -27.41]
-    
-# Parabel durch die Messdaten
-y_parabel = []
-for zahl in x:
-    y_parabel.append(zahl**2)
-   
-# Plot der Messdaten mit zusätzlicher Parabel
-plt.figure()
-plt.scatter(x,y)
-plt.plot(x, y_parabel)
-plt.xlabel('Temperatur')
-plt.ylabel('Materialeigenschaft')
-plt.title('Messdaten');
-```
-
-Bemerkung: Hätten wir nicht eine Liste, sondern NumPy-Arrays genommen, um die Messwerte zu speichern, hätte die Quadratur funktioniert. Die folgende Alternative korrigiert auch alle Fehler.
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Datenimport Messdaten
-x = np.array([-20, -15, -10, -5, 0, 5])
-y = np.array([152.38, 124.43, 88.91, 37.43, 5.52, -27.41])
-    
-# Parabel durch die Messdaten
-y_parabel = x**2
-   
-# Plot der Messdaten mit zusätzlicher Parabel
-plt.figure()
-plt.scatter(x,y)
-plt.plot(x, y_parabel)
-plt.xlabel('Temperatur')
-plt.ylabel('Materialeigenschaft')
-plt.title('Messdaten');
+data = pd.read_csv('20220801_Marktwert_Bundesliga.csv', skiprows=5, index_col=0)
+data.head(10)
 ```
 ````
 
 ```{admonition} Übung 10.2
 :class: miniexercise
-Laden Sie den Datensatz `studierendenzahlen_frankfurt_uas.csv` ([→ hier Download](https://nextcloud.frankfurt-university.de/s/MzxHw2rDRdx5eRA)) herunter und
-importieren Sie ihn mit Pandas. Die ersten drei Zeilen sind Kommentare und
-müssen daher mit dem Argument `skiprows=3` übersprungen werden. 
+Laden Sie die Tabelle aus Übung 8.1. 
 
-1. Lassen Sie die Studierendenzahlen männlich und weiblich visualisieren.
-2. Berechne Sie eine Regressionsgerade jeweils für die Studierendenzahlen
-   weiblich und männlich. Wächst die Anzahl der männlichen oder der weiblichen
-   Studierenden schneller?
-3. Lassen Sie die Regressionsgeraden zusammen mit den Studierendenzahlen
-   visualisieren.
+1. Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele Zeilen und  und wie viele Einträge sind gültig?
+2. Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (`2. Bundesliga`) und speichern Sie diese Daten in der Variable `zweite`.
+3. Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste Kaderwert, was der kleinste? Wie viele Speiler hat ein Verein in der 2. Bundesliga durchschnittlich?
+4. Lassen Sie sich die Daten des 1.FC Kaiserslautern anzeigen. 
 ```
-````{admonition} Lösung 
+````{admonition} Lösung
 :class: miniexercise, toggle
-Der Code zum Import der Studierendenzahlen ist:
 ```python
-import pandas as pd
-
-studizahlen = pd.read_csv('studierendenzahlen_frankfurt_uas.csv', skiprows=3, index_col=0)
-studizahlen.head()
+data.info()
 ```
-Der Index kann auf die erste Spalte gesetzt werden, muss aber nicht. Die Visualisierung als Streudiagramm erfolgt mit folgenden Python-Code:
+Es gibt 3 Spalten (wenn wie oben die Vereine als Zeilenindex verwendet werden) und 56 Zeilen, die alle gültige Werte enthalten.
+
 ```python
-# Extraktion der Daten aus der Tabelle
-y_maennlich = studizahlen.loc[:,'männlich']
-y_weiblich = studizahlen.loc[:, 'weiblich']
-semester = studizahlen.index
+mein_filter = data.loc[:, 'Ligazugehörigkeit'] == '2. Bundesliga'
+zweite = data[mein_filter]
 
-# Streudiagramm
-plt.figure()
-plt.scatter(semester, y_maennlich)
-plt.scatter(semester, y_weiblich)
-plt.xticks(rotation = 45, ha='right')
-plt.xlabel('Semester')
-plt.ylabel('Anzahl Studierende')
-plt.title('Entwicklung der Studierendenzahlen Frankfurt UAS');
+zweite.describe()
 ```
-Für die Regressionsgeraden brauchen wir Zahlen als Ursache, nicht Semester. Daher basteln wir mit der `range`-Funktion x-Werte von 0 bis zur Anzahl der Semester. Danach wenden wir `polyfit` mit Grad 1 an und lassen die beiden Steigungen ausgeben. 
-```python3
-anzahl_semester = len(semester)
-x = range(anzahl_semester)
-
-p_maennlich = np.polyfit(x, y_maennlich, 1)
-p_weiblich  = np.polyfit(x, y_weiblich, 1)
-
-print(f'Steigung bei der Entwicklung Studenten: {p_maennlich[0]:.2f}')
-print(f'Steigung bei der Entwicklung Studentinnen: {p_weiblich[0]:.2f}')
-```
-Die Anzahl der weiblichen Studierenden wächst schneller als die der männlichen Studierenden.
-
-Zuletzt wird alles zusammen visualisiert.
-```python3
-# Erstelle Wertetabelle für das Diagramm
-x_modell = np.linspace(0, anzahl_semester)
-y_modell_maennlich = np.polyval(p_maennlich, x_modell)
-y_modell_weiblich = np.polyval(p_weiblich, x_modell)
-
-# Visualisierung Streudiagramm und Reggressionsgeraden als Liniendiagramm
-plt.figure()
-plt.scatter(semester, y_maennlich)
-plt.scatter(semester, y_weiblich)
-plt.plot(x_modell, y_modell_maennlich)
-plt.plot(x_modell, y_modell_weiblich)
-plt.xticks(rotation = 45, ha='right')
-plt.xlabel('Semester')
-plt.ylabel('Anzahl Studierende')
-plt.title('Entwicklung der Studierendenzahlen Frankfurt UAS');
+Der höchste Kaderwert ist 34.85 Mio. EUR, der kleinste 8.83 Mio. EUR. Es spielen durchschnittlich 27 Fußballer in den Zweitligavereinen.
+```python
+fck = zweite.loc['1.FC Kaiserslautern', :]
+print(fck)
 ```
 ````
 
 ```{admonition} Übung 10.3
 :class: miniexercise
-Laden Sie die Biersteuerstatistik
-([Download](https://nextcloud.frankfurt-university.de/s/Ejc2LFEW3Hz3mA9)) herunter.
-1. Importieren Sie die Daten mit Pandas (8 Zeilen müssen Úbersprungen werden).
-Lassen Sie sich einen Überblick anzeigen. Was enthält die Tabelle?
-2. Filtern Sie die Tabelle nach den Jahren 2020, 2021 und 2022 lassen Sie den
-Absatz von Bier in Hektolitern pro Monat visualisieren.
-3. Stellen Sie eine Vermutung an. Durch welches Regressionspolynom könnte der
-Absatz von Bier pro Monat am besten erklärt werden?
-4. Stellen Sie das Regressionspolynom für 2022 auf und visualisieren Sie es
-   zusammen mit den Messwerten.
-```
+Schreiben Sie ein Python-Programm, dass das Spiel Galgenmännchen umsetzt. Das
+Spiel funktioniert folgendermaßen:
 
+Der Computer wählt aus einer Liste von Wörtern zufällig eines aus. Anstatt das
+Wort anzuzeigen, werden Unterstriche angezeigt. Wurde beispielsweise zufällig
+das Wort "beispiel" ausgewählt, so wird 
+
+<code>_ _ _ _ _ _ _ _ </code>
+
+angezeigt. Danach darf der Spieler einen Buchstaben raten. Ist der Buchstabe im
+gesuchten Wort, so wird er künftig korrekt angezeigt. Wurde beispielweise E
+geraten, dann sieht die Anzeige so aus:
+
+<code>_ e _ _ _ _ e _</code>
+
+Es dürfen maximal 10 Buchstaben falsch geraten werden. Ein Galgenmännchen muss
+nicht gezeichnet werden.
+
+Tipps:
+* Eine Liste der richtig geratenen Buchstaben ist hilfreich.
+* Um zu testen, ob schon alle Buchstaben korrekt geraten wurden, kann auf die
+  Existenz von `_` getestet werden. Das ist aber nur eine von vielen
+  Möglichkeiten.
+```
+ 
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
-import pandas as pd
+from numpy.random import randint
 
-daten = pd.read_csv('biersteuerstatistik.csv', skiprows=8)
-daten.info()
-```
+def waehle_zufallswort():
+    # Erzeugung einer Liste mit Wörtern und zufällige Auswahl eines Wortes, indem der Index zufällig gezogen wird
+    woerterliste = ['python', 'matlab', 'cplusplus', 'java', 'javascript', 'ruby', 'perl', 'swift', 'golang', 'rust']
+    anzahl_woerter = len(woerterliste)
+    zufallsindex = randint(anzahl_woerter)
+    return woerterliste[zufallsindex]     
 
-Die Datei enthält 360 Einträge mit Jahr, Monat und Absatz von Bier in Hektolitern.
+def generiere_anzeigetext(wort, korrekt_geratene_buchstaben):
+    # Starte mit leerem String
+    anzeigetext = ''
+    # ersetze jeden Buchstaben im Zufallswort durch sich Unterstrich und ein Leerzeichen,
+    # aber nur, wenn er nicht in der Liste der richtig geratenen Buchstaben ist
+    for zeichen in wort:
+        if zeichen in korrekt_geratene_buchstaben:
+            anzeigetext += zeichen + ' '
+        else:
+            anzeigetext += '_ '
 
-```python
-import matplotlib.pyplot as plt
+    return anzeigetext
 
-for jahr in [2020, 2021, 2022]:
-    daten_pro_jahr = daten.loc[ daten.loc[:, 'Jahr'] == jahr, :]
-    x = daten_pro_jahr.loc[:, 'Monat']
-    y = daten_pro_jahr.loc[:, 'Absatz von Bier [hl]'] 
-    plt.scatter(x,y, label=str(jahr))
-plt.legend()
-plt.xticks(rotation = 45, ha='right')
-plt.xlabel('Monat')
-plt.ylabel('Absatz von Bier [hl]')
-plt.title('Bierstatistik');
-```
+# Start
+anzahl_versuche = 10
+zufallswort = waehle_zufallswort()
 
-Aufgrund der Visualisierung entscheiden wir uns für eine Annäherung durch eine
-Regressionsparabel.
+print(f'Wir spielen Galgenmännchen. Sie haben {anzahl_versuche} Fehlversuche, um das Wort zu erraten.')
+print('Es darf immer nur ein Kleinbuchstabe eingegeben werden.')
+print('Los geht es.')
 
-```python
-import numpy as np
+# Bereite Liste vor, in der richtig geratene Buchstaben gesammelt werden
+geratene_richtige_buchstaben = []
 
-data_2022 = data.loc[data['Jahr'] == 2022, :]
+# Schleifen zum Anzeigen und Abfragen der Buchstaben
+anzeigetext = generiere_anzeigetext(zufallswort, geratene_richtige_buchstaben)
+while anzahl_versuche > 0:
+    # Anzeige des Rätselwortes und Abfrage eines Buchstabens
+    print(f'Sie haben noch {anzahl_versuche} Fehlversuche, das Rätselwort lautet: {anzeigetext}')
+    buchstabe = input('Welchen Buchstaben wählen Sie? ')
 
-x = range(1, 13)
-y = data_2022.loc[:, 'Absatz von Bier [hl]']
+    # Test, ob Buchstabe vorkommt; wenn nicht, Anzahl Versuche reduzieren
+    if buchstabe in zufallswort:
+            geratene_richtige_buchstaben.append(buchstabe)
+            print(f'Richtig, {buchstabe} ist im gesuchten Wort enthalten.')
+    else:
+            anzahl_versuche -= 1
+            print(f'Leider kommt der Buchstabe {buchstabe} im gesuchten Wort nicht vor.')
 
-p2022 = np.polyfit(x, y, 2)
+    # Aktualisierung des Anzeigetextes
+    anzeigetext = generiere_anzeigetext(zufallswort, geratene_richtige_buchstaben)
+   
+    # Test, ob bereits alle Buchstaben geraten wurden
+    if '_' not in anzeigetext:
+        print(f'Herzlichen Glückwunsch, Sie haben das Wort {zufallswort} erraten :-)')
+        break
 
-x_modell = np.linspace(1, 12)
-y_modell = np.polyval(p2022, x_modell)
-
-plt.figure()
-plt.scatter(x, y)
-plt.plot(x_modell, y_modell)
-plt.xlabel('Monat')
-plt.ylabel('Absatz von Bier [hl]')
-plt.title('Bierstatistik für das Jahr 2022');
+if anzahl_versuche == 0 and '_' in anzeigetext:
+    print(f'Sie haben leider verloren. Das richtige Wort wäre {zufallswort} gewesen.') 
 ```
 ````

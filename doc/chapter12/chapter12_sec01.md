@@ -12,130 +12,284 @@ kernelspec:
   name: python3
 ---
 
-# 12.1 Simulink Einführung
+# 12.1 Theorie Regression 
 
-MATLAB bietet neben einer Reihe von Toolboxen auch eine Zusatzsoftware an, die
-es Ingenieur:innen erleichtert, technische Systeme zu modellieren. Diese
-Software heißt Simulink und benötigt MATLAB. Detaillierte Informationen zu
-Simulink finden Sie auf der Produktseite von
-[MATLAB](https://de.mathworks.com/products/simulink.html). Die Besonderheit von
-Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt.
-
-In diesem Kapitel werden wir uns zunächst mit der Modellierung technischer
-Systeme beschäftigen und uns dann die ersten grundlegenden Schritte in Simulink
-erarbeiten.
+In der Analyse technischer und physikalischer Daten ist die Methode der
+Regression ein fundamentales Werkzeug. Einfach ausgedrückt, ist die Regression
+ein statistisches Verfahren, das den Zusammenhang zwischen Variablen ermittelt.
+In diesem Kapitel beschäftigen wir uns zunächst mit der Theorie von
+Regressionsverfahren.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie können Simulink starten.
-* Sie kennen den Unterschied zwischen **Sources** (Quellen) und **Sinks**
-  Senken.
-* Sie können ein Simulink-Signal mit Hilfe des **Scope**-Blocks visualisieren.
-* Sie können ein Signal mit dem **Gain**-Block verstärken.
-* Sie können ein Simulink-Modell abspeichern.
+* Sie wissen, was **Regression** ist.
+* Sie wissen, was das **Bestimmtheitsmaß** $R^2$ ist und können es für **lineare Regression** interpretieren:
+  * Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
+    Modellfunktion ist eine sehr gute Anpassung an die Messdaten.
+  * Wenn $R^2 = 0$ oder gar negativ ist, dann funktioniert die lineare
+    Modellfunktion überhaupt nicht.
 ```
 
-## Was ist Modellierung?
+## Regression kommt aus der Statistik
 
-Das erste Modell, das Sie vermutlich hatten, war eine Modelleisenbahn oder eine
-Playmobil-Spiellandschaft – vielleicht haben Sie aber auch aus Legosteinen ein
-Auto gebaut? Ein Modell beschreibt die reale Welt in vereinfachter und meist
-verkleinerter Form. In den Natur- und Ingenieurwissenschaften sind Modelle die
-Grundlage des wissenschaftlichen Arbeitens.
+In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits
+seit Jahrhunderten damit, Analyseverfahren zu entwickeln, mit denen
+experimentelle Daten gut erklärt werden können. Falls wir eine “erklärende”
+Variable haben und wir versuchen, die Abhängigkeit einer Messgröße von der
+erklärenden Variable zu beschreiben, nennen wir das Regressionsanalyse oder kurz
+**Regression**. Bei vielen Problemen suchen wir nach einem linearen Zusammenhang
+und sprechen daher von **linearer Regression**. Mehr Details finden Sie auch bei
+[Wikipedia → Regressionsanalyse](https://de.wikipedia.org/wiki/Regressionsanalyse).
 
-**Modellierung** beschreibt nun den Prozess, ein geeignetes Modell zu finden, um
-eine bestimmte Fragestellung zu beantworten. Normalerweise ist kein Modell so
-komplex wie die Wirklichkeit. Die Modellierer:innen müssen sich also
-entscheiden, welche Details wichtig sind und welche sie weglassen können.
-Beispielsweise werden sehr häufig bei Spielzeugfiguren die einzelnen Finger
-weggelassen. Aber auch bei Experimenten müssen solche Entscheidungen getroffen
-werden. Einmal angenommen, ich möchte wissen, wie lange ich mein Eis in die
-Sonne legen kann, bevor es komplett geschmolzen ist. Dann kann ich die
-Sonneneinstrahlung oder die Temperatur messen, verschiedene Eissorten nehmen und
-die Zeitdauer messen, bis wann das Eis geschmolzen ist. Aber es ist nicht
-sinnvoll zusätzlich die Information zu erheben, wie viele Eisbären am Nordpol
-gerade einen Fisch gefangen haben.
+Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
+Einflussgröße $x$ und eine Zielgröße $y$ mit $N$ Paaren von dazugehörigen
+Messwerten $(x^{(1)},y^{(1)})$, $(x^{(2)},y^{(2)})$, $\ldots$,
+$(x^{(N)},y^{(N)})$ gibt. Dann sollen zwei Parameter $m$ und $b$ geschätzt
+werden, so dass möglichst für alle Datenpunkte $(x^{(i)}, y^{(i)})$ die lineare
+Gleichung $y^{(i)} = m\cdot x^{(i)}+ b$ gilt. Geometrisch ausgedrückt: durch die
+Daten soll eine Gerade gelegt werden. Da bei den Messungen auch Messfehler
+auftreten, werden wir die Gerade nicht perfekt treffen, sondern kleine Fehler
+machen, die wir hier mit $\varepsilon^{(i)}$ bezeichnen. Wir suchen also die
+beiden Parameter $m$ und $b$, so dass  
 
-In den Ingenieurwissenschaften versuchen die Forscher:innen dann aus den Daten
-oder den vermuteten Zusammenhängen eine Funktion zu basteln, die hilft die
-Zusammenhänge zu verstehen oder Prognosen zu treffen. Wenn diese Modellierung
-rein datenbasiert erfolgt, so benutzen wir Methoden der Statistik oder des
-maschinellen Lernens. Wenn stattdessen oder zusätzlich prinzipielle
-Zusammenhänge einfließen, verwenden wir Gleichungen oder
-Differentialgleichungen. Bei Simulink legen wir den Schwerpunkt der Modellierung
-auf die Differentialgleichungen.
+$$y^{(i)} =  m \cdot x^{(i)} + b + \varepsilon^{(i)}.$$
 
-## Start von Simulink
+Die folgende Grafik veranschaulicht das lineare Regressionsmodell. Die Paare von
+Daten sind in blau gezeichnet, das lineare Regressionsmodell in rot.
 
-Da Simulink ein Zusatzprogramm von MATLAB ist, öffnen Sie zuerst MATLAB. Es kann
-sein, dass Sie Simulink erst nachinstallieren müssen. Wenn Simulink installiert
-ist, finden Sie im Hauptmenü von MATLAB einen Button mit Simulink. Starten Sie
-Simulink, legen Sie ein `Blank Model` an und öffnen Sie die Bibliothek mit den
-Blockdiagrammen. Die folgende Animationen zeigt Ihnen die notwendigen Schritte.
+```{figure} pics/Linear_regression.svg
+---
+name: fig_linear_regression
+---
+Lineare Regression: die erklärende Variable (= Input oder unabhängige Variable oder Ursache) ist auf der x-Achse, die
+abhängige Variable (= Output oder Wirkung) ist auf der y-Achse aufgetragen, Paare von Messungen sind in blau
+gekennzeichnet, das Modell in rot.
 
-![Screencast Start von Simulink](screencasts/part10_start_simulink.gif)
+([Quelle:](https://en.wikipedia.org/wiki/Linear_regression#/media/File:Linear_regression.svg) "Example of simple linear regression, which has one independent variable" von Sewaqu. Lizenz: Public domain))
+```
 
-## Quellen und Senken
+Zu einer Regressionsanalyse gehört mehr als nur die Regressionskoeffizienten zu
+bestimmen. Daten müssen vorverarbeitet werden, unter mehreren unabhängigen
+Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
+Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
+Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
+werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
+feinjustiert werden können und die Prognosefähigkeit verbessern.
 
-Als ein erstes einfaches Beispiel simulieren wir ein System, das durch die
-mathematische Funktion $f(x)=2\sin(x)$ beschrieben wird. Damit betrachten wir
-zwar noch keine Differentialgleichung, sondern nur eine einfache
-Funktionsgleichung, aber können schon die wichtigsten Prinzipien in Simulink
-kennenlernen, nämlich die grafische Block-Modellierung. In Simulink wird jede
-Eingabe, jeder Verarbeitungsschritt und jede Ausgabe durch einen Block
-beschrieben. Diese Blöcke können dann seriell (hintereinander) oder parallel
-zusammengebaut werden. Die Idee hinter den zusammengeschalteten Blöcken erinnert
-an einen Fluss und seine Nebenflüsse, der letztendlich ins Meer fließt wie
-beispielsweise der Rhein. Nur wird in Simulink nicht Wasser transportiert,
-sondern Informationen.
+Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
+wie lineare Regression funktioniert.
 
-![Bild des Rhein](pics/part10_rhein_small.jpg)
+## Beispiel: weltweiter CO2-Ausstoß
 
-Die Quelle an Informationen wird in Simulink **Source**, so wie der englische
-Begriff. Die weiteren Informationen wie beispielsweise Anfangswerte oder
-Randbedingungen sind ebenfalls Quellen, also Sources und fließen wie die
-Nebenflüsse in den Hauptfluss. Der Abfluss, die Senke oder das Spülbecken heißen
-auf Englisch **Sink**. Unter den Sink-Blöcken finden Sie also das Ergebnis, die
-Ausgabe der Simulation. Wir wollen uns nun das Beispiel
+Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
+Einwohner ([hier Download](https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz)).
 
-$$f(x)=2\sin(x)$$
+```{code-cell} ipython3
+import pandas as pd
 
-in Simulink ansehen. Die Quelle/Source ist die rechte Seite, genauer gesagt die
-Sinusfunktion $\sin(x)$. Die Quelle wird noch verstärkt. Verstärker heißt auf
-Englisch Gain, also wird noch ein Gain-Block zur Verstärkung dazgeschaltet. Am
-Ende mündet alles in eine Visualisierung. Der entsprechende Sink-Block Scope
-zeigt das Ergebnis $f(x)$.
+data = pd.read_csv('data/co2_emissionen_worldwide.csv', skiprows=1, index_col=0)
+data.head()
+```
 
-Die Blöcke werden in der Bibliothek gesucht. Zur leichteren Navigation dient die
-linke Seitenleiste der Library. Dort wird Sink oder Source ausgewählt, um den
-Eingabeblock Sinus oder den Ausgabeblock Scope auszuwählen. Der Verstärkerblock
-Gain befindet sich bei den häufig genutzten Blöcken. Am einfachsten ist es, die
-Blöcke anzuklicken und auf den Arbeitsplatz zu ziehen, wie in dem folgenden
-Screencast gezeigt wird.
+Wir verschaffen uns mit den Funktionen `info()` und `describe()` einen Überblick
+über den Datensatz. Wie üblich benutzen wir `info()` zuerst.
 
-![Screencast erstes Projekt in Simulink](screencasts/part10_simulink_firstproject.gif)
+```{code-cell} ipython3
+print(data.info())
+```
 
-## Layout und Speichern
+Offensichtlich enthält der Datensatz 29 Zeilen (= Jahre) mit gültigen Einträgen
+zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahlen
+sind:
 
-Die genaue Anordnung der Blöcke ist nicht wichtig, da durch das Routing
-(Verbinden der Blöcke) die Fließrichtung definiert ist. Dennoch empfiehlt es
-sich, das Layout übersichtlich zu halten. Der folgende Screencast zeigt, wie die
-Blöcke mit der Maus verschoben werden, bis das Verbindungssignal horizontal
-ausgerichtet ist. Danach wird gezeigt, wie das erste Projekt unter dem Namen
-"firstProject" gespeichert wird.
+```{code-cell} ipython3
+print(data.describe())
+```
 
-![Screencast Speichern](screencasts/part10_simulink_saveing.gif)
+Nun folgt noch die Visualisierung der Daten.
 
-## Die erste Simulation
+```{code-cell} ipython3
+import matplotlib.pyplot as plt
 
-Nun können wir die Simulation laufen lassen. Im folgenden Screencast werden zwei
-Möglichkeiten gezeigt. Zum einen wird direkt aus dem Hautmenü die Simulation
-gestartet. Anschließend wird durch Doppelklick auf den Scope-Block die
-Visualisierung eingeblendet. Zum anderen kann auch der Scope-Block zuerst
-geöffnet werden und von dort aus die Simulation gestartet werden. Zuletzt wird
-moch gezeigt, wie die Verdopplung des Verstärkungsfaktors von 1 auf 2 dazu
-führt, dass die Sinusfunktion Funktionswerte zwischen -2 und 2 annimmt.
+jahre = data.index
+co2 = data.loc[:, 'Metrische_Tonnen_pro_Einwohner']
 
-![Screencast Visualisierung mit dem Scope-Block](screencasts/part10_simulink_scope.gif)
+plt.figure()
+plt.scatter(jahre, co2)
+plt.xlabel('Jahre')
+plt.ylabel('Metrische Tonnen / Einwohner')
+plt.title('Weltweiter C02-Ausstoß');
+```
+
+Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
+einer linearen Funktion. Die “erklärende” Variable ist in dem Beispiel das Jahr.
+Wir versuchen, die Abhängigkeit einer Messgröße (hier die CO2-Emissionen pro
+Einwohner) von der erklärenden Variable als lineare Funktion zu beschreiben.
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Denken Sie sich Werte für die Steigung m und den y-Achsenabschnitt b einer
+linearen Funktion aus. Erzeugen Sie einen Vektor mit 100 x-Werten von 1990 bis
+2018 und einen Vektor y mit $y = mx + b$. Lassen Sie diese lineare Funktion als
+durchgezogene rote Linie in den gleichen Plot wie die gepunkteten Messwerte
+zeichnen. Welche Werte für $m$ und $b$ müssen Sie wählen, damit die rote Linie
+passend zu den blauen Punkten ist? Spielen Sie mit $m$ und $b$ herum, bis es
+passen könnte.
+
+Tipp: `linspace(start, stopp, anzahl)` aus dem NumPy-Modul generiert `anzahl`
+Werte von `start` bis `stopp`. 
+```
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+import numpy as np
+
+x_modell = np.linspace(1990, 2018, 100)
+
+m = 0.0344
+b = -64.7516
+y_modell = m * x_modell + b
+
+plt.figure()
+plt.scatter(jahre,co2)
+plt.plot(x_modell, y_modell, color='red')
+plt.xlabel('Jahr') 
+plt.ylabel('Metrische Tonnen pro Einwohner')
+plt.title('Weltweiter CO2-Ausstoß von 1990 bis 2018'); 
+```
+````
+
+Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, können wir den Wert
+in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von
+5.1 metrischen Tonnen pro Einwohner :-(
+
+## Das Bestimmheitsmaß R²
+
+Woher wissen wir eigentlich, dass diese Steigung $m$ und dieser
+y-Achsenabschnitt $b$ am besten passen? Dazu berechnen wir, wie weit weg die
+Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der
+folgenden Grafik.
+
+```{figure} pics/fig10_regression.png
+---
+name: fig10_regression
+---
+Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)
+
+([Quelle:](https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate#/media/Datei:MDKQ1.svg) Autor: Christian Schirm, Lizenz: CC0)
+```
+
+Die rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir
+können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg
+ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen: 
+
+$$r = y_{\text{blau}}-y_{\text{rot}}.$$ 
+
+Diese Differenz nennt man **Residuum**. Danach summieren wir die Fehler (also
+die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren,
+dass am Ende als Gesamtfehler 0 herauskommt, weil beispielsweise für den 1.
+Messpunkt die blaue y-Koordinate unter der roten y-Koordinate liegt und damit
+ein negatives Residuum herauskommt, aber für den 5. Messpunkt ein positives
+Residuum. Daher quadrieren wir die Residuen. Und damit nicht der Gesamtfehler
+größer wird nur, weil wir mehr Messpunkte dazunehmen, teilen wir noch durch die
+Anzahl der Messpunkte $N$. Mathematisch formuliert haben wir
+
+$$\frac{1}{N}\sum_{i=1}^{N} (y^{(i)} - f(x^{(i)})^2. $$
+
+Wir berechnen die Fehlerquadratsumme in Python mit der `sum()` Funktion aus
+NumPy. Insgesamt ergibt sich
+
+```{code-cell} ipython3
+import numpy as np
+
+# blaue y-Koordinaten = Messpunkte
+y_blau = co2
+
+# Berechnung der roten y-Koordinaten, indem wir x-Koordinaten der Messpunkte
+# in die Modellfunktion y = m*x + b einsetzen
+x = jahre
+y_rot = 0.0344 * x - 64.7516
+
+# Berechnung Gesamtfehler
+N = 29
+gesamtfehler = 1/N * np.sum( (y_blau - y_rot)**2 )
+
+print(f'Der Gesamtfehler ist {gesamtfehler}.')
+```
+
+Ist das jetzt groß oder klein? Liegt eine gute Modellfunktion vor, die die Daten
+gut nähert oder nicht? Um das zu beurteilen, berechnen wir, wie groß der Fehler
+wäre, wenn wir nicht die roten y-Koordinaten der Modellfunktion in die
+Fehlerformel einsetzen würden, sondern einfach nur den Mittelwert als
+Schätzwert, also
+
+$$\bar{y} = \frac{1}{N} \sum_{i=1}^{N} y^{(i)}.$$
+
+In Python ergibt sich der folgende Code:
+
+```{code-cell} ipython3
+y_mittelwert = y_blau.mean()
+gesamtfehler_mittelwert = 1/N * np.sum( (y_blau - y_mittelwert)**2 )
+
+print(f'Der Gesamtfehler für den Mittelwert als Schätzung ist {gesamtfehler_mittelwert}.')
+```
+
+Offensichtlich ist der Gesamtfehler für die Modellfunktion kleiner als wenn wir
+einfach nur immer den Mittelwert prognostizieren würden. Wir rechnen das in
+Prozent um:
+
+```{code-cell} ipython3
+relativer_fehler = gesamtfehler / gesamtfehler_mittelwert
+
+print(f'Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: {relativer_fehler:.4f}')
+print(f'In Prozent umgerechnet ist das: {relativer_fehler * 100:.2f} %.')
+```
+
+In der Statistik wurde diese Verhältnis (Gesamtfehler geteilt durch Gesamtfehler
+Mittelwert) als Qualitätkriterium für ein lineares Regressionsproblem
+festgelegt. Genaugenommen, rechnet man 1 - Gesamtfehler /  (Gesamtfehler
+Mittelwert) und nennt diese Zahl **Bestimmtheitsmaß $R^2$**. Details finden Sie
+bei [Wikipedia
+(Bestimmtheitsmaß)](https://de.wikipedia.org/wiki/Bestimmtheitsmaß). Die Formel
+lautet:
+
+$$R^2 = 1 - \frac{\sum_{i=1}^N (y_i - f(x_i))^2}{\sum_{i=1}^N(y_i-\bar{y})}. $$
+
+Dabei kürzt sich das $\frac{1}{N}$ im Zähler und Nenner weg. Nachdem der
+$R^2$-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
+beurteilen:
+
+* Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
+  Modellfunktion ist eine sehr gute Anpassung an die Messdaten.
+* Wenn $R^2 = 0$ oder gar negativ ist, dann funktioniert die lineare
+  Modellfunktion überhaupt nicht.
+
+Für das Beispiel ergibt sich ein Bestimmtheitsmaß $R^2$ von
+
+```{code-cell} ipython3
+R2 = 1 - relativer_fehler
+print(f'R2 = {R2:.2f}')
+```
+
+Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
+nicht perfekt.
+
+## Interaktive Visualisierung R²-Score
+
+Auf der Seite [https://mathweb.de](https://mathweb.de) finden Sie eine Reihe von
+Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
+gibt es dort auch eine interaktive Demonstration des R²-Scores.
+
+Drücken Sie auf den zwei kreisförmigen Pfeile rechts oben. Dadurch wird ein
+neuer Datensatz erzeugt. Die Messdaten sind durch grüne Punkte dargestellt, das
+lineare Regressionsmodell durch eine blaue Gerade. Im Titel wird der aktuelle
+und der optimale R²-Wert angezeigt. Ziehen Sie an den weißen Punkten, um die
+Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
+Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.
+
+<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>

@@ -12,249 +12,237 @@ kernelspec:
   name: python3
 ---
 
-# 10.3 Polynomiale Regression
+# 10.3 Statistik mit Pandas
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie können mit **polyfit** zu gegebenen Messdaten die Koeffizienten eines
-  Regressionspolynoms bestimmen.
-* Sie können mit **polyval** aus den Koeffizienten ein Regressionspolynom
-  aufstellen.
-* Sie wissen, was die Begriffe **Underfitting** und **Overfitting** bedeuten.
-* Sie können mit dem Bestimmtheitsmaß R² abschätzen, welcher Polynomgrad $n$ zu
-  den Daten passt.
+* Sie können sich mit **describe** eine Übersicht über statistische Kennzahlen
+  verschaffen.
+* Sie wissen, wie Sie die Anzahl der gültigen Einträge mit **count** ermitteln.
+* Sie kennen die statistischen Kennzahlen Mittelwert und Standardabweichung und
+  wissen, wie diese mit **mean** und **std** berechnet werden.
+* Sie können das Minimum und das Maximum mit **min** und **max** bestimmen.
+* Sie wissen wie ein Quantil interpretiert wird und wie es mit **quantile**
+  berechnet wird.
 ```
 
-## Regressionspolynome
 
-Ein Regressionspolynom ist eine Möglichkeit der Regressionsanalyse, bei der die
-Beziehung zwischen einer unabhängigen/erklärenden Variablen $x$ und einer
-abhängigen Variablen $y$ durch ein Polynom modelliert wird. Damit erweitert die
-polynomiale Regression die einfache lineare Regression, indem sie einen
-quadratischen oder kubischen Anteil berücksichtigt. Theoretisch sind noch höhere
-Polynomgrade möglich.
+## Schnelle Übersicht mit .describe()
 
-Ein Polynom 2. Grades hat die Form 
-
-$$y = ax^2 + bx + c,$$
-
-ein Polynom 3. Grades
-
-$$y = ax^3 + bx^2 + cx + d.$$
-
-Die reellen Zahlen $a, b, c, d$ werden Koeffizienten des Polynoms genannt.
-
-## Beispiel Regressionsparabel
-
-Wir betrachten als Beispiel die folgenden künstlichen Messwerte.
+So wie die Methode `.info()` uns einen schnellen Überblick über die Daten eines
+DataFrame-Objektes gibt, so liefert die Methode `.describe()` eine schnelle
+Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
+Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21. 
 
 ```{code-cell} ipython3
-import matplotlib.pyplot as plt
+import pandas as pd
 
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
-
-plt.figure()
-plt.scatter(x,y)
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten');
+data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
+data.head(10)
 ```
 
-Sieht nicht nach einer linearen Funktion, also einer Geraden aus. Wir probieren
-es mit einer quadratischen Funktion. Die Modellfunktion lautet 
-
-$$f(x)=ax^2 + bx + c$$
-
-mit den Parametern $a$, $b$  und $c$. Wir setzen in der `polyfit()`-Funktion den
-Polynomgrad auf `grad=2`.
+Die Anwendung der `.describe()`-Methode liefert fogende Ausgabe:
 
 ```{code-cell} ipython3
-import numpy as np
-
-p = np.polyfit(x, y, 2)
-print(p)
+data.describe()
 ```
 
-Bei der Zuordnung der Koeffizienten müssen wir sorgsam auf die Sortierung
-achten. Unsere Modellfunktion beginnt beim quadratischen Anteil $ax^2$, dann
-kommt der lineare Anteil $bx$ und zuletzt der konstante Part $c$. 
+Da es sich eingebürgert hat, Daten zeilenweise abzuspeichern und die Eigenschaft
+pro einzelnem Datensatz in den Spalten zu speichern, wertet `.describe()` jede
+Spalte für sich aus. Für jede Eigenschaft werden dann die statistischen
+Kennzahlen
+
+* count
+* mean
+* std
+* min
+* max
+* Quantile 25 %, 50 % und 75 %
+* max
+
+ausgegeben.
+
+Die Bedeutung der Kennzahlen wird in der
+[Pandas-Dokumentation/DataFrame.describe
+](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html)
+erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.
+
+
+## Anzahl count
+
+Mit `.count()` wird die Anzahl der Einträge bestimmt, die *nicht* 'NA' sind. Der
+Begriff 'NA' stammt dabei aus dem Bereich Data Science. Gemeint sind fehlende
+Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:
+
+* NA = not available (der Messsensor hat versagt)
+* NA = not applicable (es ist sinnlos bei einem Mann nachzufragen, ob er
+  schwanger ist)
+* NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)
+
+Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
+wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
+Methode `.count()` direkt auf den kompletten DataFrame angewendet, so erhalten
+wir ein Pandas-Series-Objekt. 
 
 ```{code-cell} ipython3
-a = p[0]
-b = p[1]
-c = p[2]
-
-print(f'a = {a}')
-print(f'b = {b}')
-print(f'c = {c}')
+print( data.count() )
 ```
 
-Wir erhalten also als Regressionsfunktion
+Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
+erst die Spalte mit dem Alter heraussgreifen und darauf `.count()` anwenden.
 
-$$r(x)=-1.9 x^2 + 7.4 x + 14.5.$$
-
-Visualisieren wir die Modellfunktion zusammen mit den Messpunkten.
 
 ```{code-cell} ipython3
-plt.figure();
-plt.scatter(x,y);
-
-x_plot = np.linspace(-1, 5, 100);
-y_plot = a * x_plot**2 + b * x_plot + c
-plt.plot(x_plot, y_plot, color='red')
-
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten');
+methode01 = data.loc[:, 'Age'].count()
+print(methode01)
 ```
 
-Alternativ kann die Funktion `polyval` dazu genutzt werden, um die Parabel aufzustellen.
+Oder wir wenden zuerst `.count()`an und wählen dann im Series-Objekt das Alter
+'Age' aus.
 
 ```{code-cell} ipython3
-plt.figure();
-plt.scatter(x,y);
-
-x_plot = np.linspace(-1, 5, 100);
-y_plot = np.polyval(p, x_plot)
-plt.plot(x_plot, y_plot, color='red')
-
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten');
+methode02 = data.count().loc['Age']
+print(methode02)
 ```
 
-## Zuviel des Guten, höhere Polynomgrade sind nicht besser
+## Mittelwert mean
 
-Regressionspolynom scheinen zunächst besser zu sein als Regressionsgeraden.
-Durch die zusätzlichen Terme können auch nichtlineare Beziehungen und komplexere
-Muster in den Daten erklärt werden. Allerdings birgt die Verwendung von höhere
-Polynomgraden auch das Risiko des Overfittings. Der Begriff **Overfitting**
-bedeutet, dass das Regressionspolynom zu genau an die Daten angepasst wurde und
-neue Daten schlechter prognostiziert. Das Gegenteil davon ist **Underfitting**.
-Das Regressionspolynom hat einen zu kleinen Polynomgrad und kann daher die Daten
-kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr wichtig.
-
-Wir betrachten dazu das Beispiel von oben und verändern den Polynomgrad.
+Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode `.mean()` den Mittelwert der Einträge in jeder Spalte berechnet.
 
 ```{code-cell} ipython3
-# künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
-
-plt.figure()
-plt.scatter(x,y, color='black')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
-
-x_plot = np.linspace(-1,5)
-
-for grad in [1, 2, 3, 4]:
-  # berechne Regressionspolynom
-  p = np.polyfit(x, y, grad)
-  y_plot = np.polyval(p, x_plot)
-  # visualisiere zusätzlich das Regressionspolynon
-  plt.plot(x_plot, y_plot, label=f'Grad {grad}')
-plt.legend();
+mittelwert = data.mean(numeric_only=True)
+print(mittelwert)
 ```
 
-Eine Regressionsgerade kann die Messdaten nicht gut erklären, aber die
-Regressionspolynome Grad 2 bis 4 passen sehr gut zu den künstlichen Messdaten
-des Beispiels. Probieren wir noch höhere Polynomgrade aus.
+An der Stelle ist es wichtig, die Option `numeric_only=True` zu setzen, damit
+nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.
+
+Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
+Jahre alt sind und 1321.6 Minuten im Einsatz waren.
+
+Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
+wollen, können Sie folgendes Video ansehen.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Standardabweichung std
+
+Das 'st' in `.std()`für Standard steht, ist nachvollziehbar. Der dritte
+Buchstabe 'd' kommt von 'deviation', also Abweichung. Somit ist wiederum die
+Methode nach dem englischen Fachbegriff 'standard deviation' benannt.  Welche
+Standardabweichung erhalten wir beim Alter?
 
 ```{code-cell} ipython3
-# künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
-
-plt.figure()
-plt.scatter(x,y, color='black')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
-
-x_plot = np.linspace(-1,5, 200)
-
-for grad in [5, 6, 7, 8]:
-  # berechne Regressionspolynom
-  p = np.polyfit(x, y, grad)
-  y_plot = np.polyval(p, x_plot)
-  # visualisiere zusätzlich das Regressionspolynon
-  plt.plot(x_plot, y_plot, label=f'Grad {grad}')
-plt.legend();
+standardabweichung = data.std(numeric_only=True)
+print(standardabweichung)
 ```
 
-Grad 5 ist schon gut, aber die Regressionspolynome Grad 6 bis 8 scheinen perfekt
-zu sein. Allerdings gibt es auch eine Warnung, denn wenn mehr
-Polynomkoeffizienten da sind als Messpunkte, ist die Bestimmung der
-Polynomkoeffizienten nicht mehr eindeutig. Dennoch, jeder Messpunkt wird exakt
-von dem Regressionspolynom getroffen. Demnach müssten alle Residuen 0 sein und
-damit für das Bestimmtheitsmaß $R^2 = 1$ gelten. Am besten lassen wir eine
-Tabelle für den Polynomgrad und das jeweilige Residuum ausgeben. Dazu schreiben
-wir aber erst eine Funktion, die das Bestimmtheitsmaß ausrechnet.
+Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
+extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
+dann `.std()` oder erst `.std()`und dann Selektion nach 'Age'. Probieren wir es
+aus.
 
 ```{code-cell} ipython3
-def berechne_r2(y, y_modell):
-    N = len(y)
-    y_mittelwert = 0
-    for messwert in y:
-        y_mittelwert = y_mittelwert + messwert
-    y_mittelwert = y_mittelwert / N
-
-    zaehler = 0
-    nenner = 0
-    for i in range(N):
-        zaehler = zaehler + (y[i] - y_modell[i])**2
-        nenner  = nenner  + (y[i] - y_mittelwert)**2
-
-    r2 = 1 - zaehler / nenner
-    return r2
+alter_std = data.loc[:, 'Age'].std()
+print(alter_std) 
 ```
 
-Das war eine sehr händische Implementierung des R2-Bestimmtheitsmaßes. Mit
-NumPy-Arrays hätte das eleganter funktioniert. Das Modul Sciki-Learn stellt auch
-schon eine Implementierung zur Verfügung. Jetzt verwenden wir die Funktion, um
-für die Polynomgrade von 1 bis 8 das Bestimmtheitsmaß zu bestimmen.
+Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
+Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Minimum und Maximum mit min und max
+
+Die Namen der Methoden `.min()` und `max()` sind fast schon wieder
+selbsterklärend. Die Methode `.min()` liefert den kleinsten Werte zurück, der in
+einer Spalte gefunden wird. Umgekehrt liefert `.max()` den größten Eintrag, der
+in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
+vorkommen, ist dabei egal. 
+
+Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
+(haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
+Anzahl von Toren ist.
 
 ```{code-cell} ipython3
-for grad in range(1,9):
-    p = np.polyfit(x, y, grad)
-    y_modell = np.polyval(p, x)
-    r2 = berechne_r2(y, y_modell)
-    print(f'Polynomgrad {grad}: R2 = {r2:.4f}')
+tore_min = data.loc[:, 'Goals'].min()
+print(tore_min)
+
+tore_max = data.loc[:, 'Goals'].max()
+print(tore_max)
 ```
- 
-Wenn wir den Polynomgrad noch höher treiben, passiert etwas Seltsames.
+
+Wenig verwunderlich ist die minimale Anzahl an Toren 0 und die maximale Anzahl
+an Toren, die ein oder mehrere Spieler der Top7 2020/21 geschossen haben, war
+41. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore geschafft hat,
+natürlich Lewandowski).
+
+Von Verteidigern wird nicht erwartet, Tore zu schieen, sondern von Stürmern. Was
+ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
+Spalte 'Position'. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
+Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
+manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
+bei denen nur 'FW' eingetragen ist.  
 
 ```{code-cell} ipython3
-# künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
+filter = data.loc[:, 'Position'] == 'FW'
+stuermer = data.loc[filter, 'Goals']
 
-plt.figure()
-plt.scatter(x,y, color='black')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
+print('Stürmer')
+print(stuermer)
 
-x_plot = np.linspace(-1,5, 200)
-
-for grad in [9, 10, 15, 25]:
-  # berechne Regressionspolynom
-  p = np.polyfit(x, y, grad)
-  y_plot = np.polyval(p, x_plot)
-  # visualisiere zusätzlich das Regressionspolynon
-  plt.plot(x_plot, y_plot, label=f'Grad {grad}')
-plt.legend();
+print('==============')
+print('Minimale Tore: {}'.format(stuermer.min()))
 ```
 
-Die Polynome beginnen zwischen $x=4$ und $x=5$ immer höher zu schwingen. Es ist
-unplausibel, dass diese Polynome die Messdaten gut erklären. Daher empfiehlt es
-sich, möglichst den kleinsten Polynomgrad zu nehmen, der sehr gut, aber nicht
-perfekt ist. Bei der Tabelle der R2-Werte haben wir gesehen, dass der R2-Wert
-von 0.0054 (Grad 1) auf 0.9834 (Grad 2) springt. Danach sind aber keine
-wesentlichen Verbesserungen mehr erkennbar. Daher wählen wir Grad 2 als
-Regressionspolynom.
+## Quantil mit quantile
+
+Das Quantil $p \%$ ist der Wert, bei dem $p %$ der Einträge kleiner als diese
+Zahl sind und $100 \% - p \%$ sind größer. Meist werden nicht Prozentzahlen
+verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht. 
+
+Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
+Karten wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus
+den Daten holen.
+
+```{code-cell} ipython3
+gelbe_karten_50prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.5)
+print(gelbe_karten_50prozent_quantil)
+```
+
+Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
+weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
+gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an. 
+
+```{code-cell} ipython3
+gelbe_karten_75prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.75)
+print(gelbe_karten_75prozent_quantil)
+```
+
+75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. SChauen wir uns
+die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
+sind?
+
+```{code-cell} ipython3
+filter = data.loc[:, 'Yellow_Cards'] > 4.0
+gelbkarten_spieler = data.loc[filter, ['Position', 'Yellow_Cards']]
+print(gelbkarten_spieler.sort_values(by='Yellow_Cards', ascending=False))
+```
+
+## Zusammenfassung
+
+In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
+beschäftigt, die Pandas mit der Methode `.describe()` zusammenfasst, die aber
+auch einzeln über 
+
+* `.count()`
+* `.mean()`
+* `.std()`
+* `.min()` und `.max()`
+* `.quantile()`
+
+berechnet und ausgegeben werden können.

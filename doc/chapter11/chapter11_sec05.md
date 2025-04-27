@@ -14,7 +14,7 @@ kernelspec:
 
 # Übungen
 
-```{admonition} Übung 9.1
+```{admonition} Übung 11.1
 :class: miniexercise
 Laden Sie die Datei
 [20220801_Marktwert_Bundesliga.csv](https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC)
@@ -79,7 +79,7 @@ plt.title('Dritte Bundesliga');
 ```
 ````
 
-```{admonition} Übung 9.2
+```{admonition} Übung 11.2
 :class: miniexercise
 Verwenden Sie nun die Daten aus der vorherigen Übung, um die Kadergröße der
 Vereine zu visualisieren. Lassen Sie für jede Liga ein eigenes Diagramm
@@ -146,7 +146,7 @@ plt.title('Dritte Bundesliga');
 ```
 ````
 
-```{admonition} Übung 9.3
+```{admonition} Übung 11.3
 :class: miniexercise
 Teilaufgabe 1: 
    
@@ -171,6 +171,7 @@ Roboters auf `0`, also `robo.speed(0)`, falls Ihr Roboter `robo` heißt. Fügen
 Sie außerdem nach der letzten Bewegung den Befehl `robo.done()`ein. Dann wird
 die Bewegung nicht mehr animiert und nur der Laufweg angezeigt.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 Teilaufgabe 1: Implementierung eines Random Walks als Funktion

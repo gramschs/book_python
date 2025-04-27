@@ -12,266 +12,130 @@ kernelspec:
   name: python3
 ---
 
-# 9.1 Linien- und Balkendiagramme
+# 9.1 Simulink Einführung
+
+MATLAB bietet neben einer Reihe von Toolboxen auch eine Zusatzsoftware an, die
+es Ingenieur:innen erleichtert, technische Systeme zu modellieren. Diese
+Software heißt Simulink und benötigt MATLAB. Detaillierte Informationen zu
+Simulink finden Sie auf der Produktseite von
+[MATLAB](https://de.mathworks.com/products/simulink.html). Die Besonderheit von
+Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt.
+
+In diesem Kapitel werden wir uns zunächst mit der Modellierung technischer
+Systeme beschäftigen und uns dann die ersten grundlegenden Schritte in Simulink
+erarbeiten.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie können **Matplotlib** mit der üblichen Abkürzung **plt** importieren.
-* Sie können Funktionen als **Liniendiagramm** visualisieren.
-* Sie können diskrete Daten als **Balkendiagramm** visualisieren.
+* Sie können Simulink starten.
+* Sie kennen den Unterschied zwischen **Sources** (Quellen) und **Sinks**
+  Senken.
+* Sie können ein Simulink-Signal mit Hilfe des **Scope**-Blocks visualisieren.
+* Sie können ein Signal mit dem **Gain**-Block verstärken.
+* Sie können ein Simulink-Modell abspeichern.
 ```
 
-## Liniendiagramme 
+## Was ist Modellierung?
 
-Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
-sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
-wenn die Daten von einer mathematischen Funktion stammen. Obwohl die Daten
-theoretisch für jeden x-Wert vorliegen und wir daher Millionen von (x,y)-Punkten
-zeichnen könnten, benutzen wir eine Weretabelle mit weniger (x,y)-Paaren. Die
-Anzahl der (x,y)-Paare bestimmt dann, wie "glatt" die Visualisierung wirkt.
+Das erste Modell, das Sie vermutlich hatten, war eine Modelleisenbahn oder eine
+Playmobil-Spiellandschaft – vielleicht haben Sie aber auch aus Legosteinen ein
+Auto gebaut? Ein Modell beschreibt die reale Welt in vereinfachter und meist
+verkleinerter Form. In den Natur- und Ingenieurwissenschaften sind Modelle die
+Grundlage des wissenschaftlichen Arbeitens.
 
-Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten.
+**Modellierung** beschreibt nun den Prozess, ein geeignetes Modell zu finden, um
+eine bestimmte Fragestellung zu beantworten. Normalerweise ist kein Modell so
+komplex wie die Wirklichkeit. Die Modellierer:innen müssen sich also
+entscheiden, welche Details wichtig sind und welche sie weglassen können.
+Beispielsweise werden sehr häufig bei Spielzeugfiguren die einzelnen Finger
+weggelassen. Aber auch bei Experimenten müssen solche Entscheidungen getroffen
+werden. Einmal angenommen, ich möchte wissen, wie lange ich mein Eis in die
+Sonne legen kann, bevor es komplett geschmolzen ist. Dann kann ich die
+Sonneneinstrahlung oder die Temperatur messen, verschiedene Eissorten nehmen und
+die Zeitdauer messen, bis wann das Eis geschmolzen ist. Aber es ist nicht
+sinnvoll zusätzlich die Information zu erheben, wie viele Eisbären am Nordpol
+gerade einen Fisch gefangen haben.
 
-```{code-cell} ipython3
-x = [-2, -1, 0, 1, 2]
-y = [4, 1, 0, 1, 4]
-```
+In den Ingenieurwissenschaften versuchen die Forscher:innen dann aus den Daten
+oder den vermuteten Zusammenhängen eine Funktion zu basteln, die hilft die
+Zusammenhänge zu verstehen oder Prognosen zu treffen. Wenn diese Modellierung
+rein datenbasiert erfolgt, so benutzen wir Methoden der Statistik oder des
+maschinellen Lernens. Wenn stattdessen oder zusätzlich prinzipielle
+Zusammenhänge einfließen, verwenden wir Gleichungen oder
+Differentialgleichungen. Bei Simulink legen wir den Schwerpunkt der Modellierung
+auf die Differentialgleichungen.
 
-Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
-wir das Modul `matplotlib`, genauer gesagt nur einen Teil dieses Moduls namens
-`pylab`. Daher laden wir es zuerst mit der typischen Abkürzung `plt`.
+## Start von Simulink
 
-```{code-cell} ipython3
-import matplotlib.pyplot as plt
-```
+Da Simulink ein Zusatzprogramm von MATLAB ist, öffnen Sie zuerst MATLAB. Es kann
+sein, dass Sie Simulink erst nachinstallieren müssen. Wenn Simulink installiert
+ist, finden Sie im Hauptmenü von MATLAB einen Button mit Simulink. Starten Sie
+Simulink, legen Sie ein `Blank Model` an und öffnen Sie die Bibliothek mit den
+Blockdiagrammen. Die folgende Animationen zeigt Ihnen die notwendigen Schritte.
 
-Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
-zu benutzen. Die erste Schnittstelle ist **zustandsorientiert**, die zweite
-**objektorientiert**. Die zustandsorientierte Schnittstelle ist älter. Die
-Entwickler:innen des Matplotlib-Moduls orientierten sich zunächst an der
-kommerziellen Software MATLAB und griffen erst in einer späteren Phase auf
-Objektorientierung zurück. 
+![Screencast Start von Simulink](screencasts/part10_start_simulink.gif)
 
-Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
-das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
-in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
-gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
-die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten. 
+## Quellen und Senken
 
-Trotz der Nachteile werden wir in dieser Vorlesung die zustandsorientierte
-Schnittstelle benutzen, um den Vorteil auszunutzen, MATLAB-Syntax verwenden zu
-können.
+Als ein erstes einfaches Beispiel simulieren wir ein System, das durch die
+mathematische Funktion $f(x)=2\sin(x)$ beschrieben wird. Damit betrachten wir
+zwar noch keine Differentialgleichung, sondern nur eine einfache
+Funktionsgleichung, aber können schon die wichtigsten Prinzipien in Simulink
+kennenlernen, nämlich die grafische Block-Modellierung. In Simulink wird jede
+Eingabe, jeder Verarbeitungsschritt und jede Ausgabe durch einen Block
+beschrieben. Diese Blöcke können dann seriell (hintereinander) oder parallel
+zusammengebaut werden. Die Idee hinter den zusammengeschalteten Blöcken erinnert
+an einen Fluss und seine Nebenflüsse, der letztendlich ins Meer fließt wie
+beispielsweise der Rhein. Nur wird in Simulink nicht Wasser transportiert,
+sondern Informationen.
 
-Zunächst erzeugen wir das Grafik-Objekt bestehend aus einer Figure (=Grafik als
-Ganzes) und Axes (=Achsen) explizit mit der Funktion ``plt.subplots()``und
-speichern diese in entsprechenden Variablen. Dann verwenden wir Methoden, das
-Grafikobjekt zu manipulieren. Beispielsweise fügen wir den Achsen einen
-Linienplot und Beschriftungen hinzu.
+![Bild des Rhein](pics/part10_rhein_small.jpg)
 
-```{code-cell} ipython3
-plt.figure()
-plt.plot(x,y)
-```
+Die Quelle an Informationen wird in Simulink **Source**, so wie der englische
+Begriff. Die weiteren Informationen wie beispielsweise Anfangswerte oder
+Randbedingungen sind ebenfalls Quellen, also Sources und fließen wie die
+Nebenflüsse in den Hauptfluss. Der Abfluss, die Senke oder das Spülbecken heißen
+auf Englisch **Sink**. Unter den Sink-Blöcken finden Sie also das Ergebnis, die
+Ausgabe der Simulation. Wir wollen uns nun das Beispiel
 
-PS: Ohne Strichpunkt/Semikolon gibt Jupyter-Lab noch Objekttyp und Referenz des
-Speicherplatzes aus. In einem normalen Python-Skript würde das nicht passieren.
-Sie können diese Angabe durch den Strichpunkt/Semikolon in der letzten Zeile
-unterdrücken.
+$$f(x)=2\sin(x)$$
 
-Aber zurück zum Plot, sieht ziemlich krakelig aus. Eigentlich sollte dies eine
-Parabel im Intervall $[-2,2]$ werden. Mit nur 5 Punkten und der Tatsache, dass
-diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus.
-Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand
-erzeugen. Wir verwenden das Modul `numpy` für numerisches Python, das wir wieder
-einmal zuerst laden müssen.
+in Simulink ansehen. Die Quelle/Source ist die rechte Seite, genauer gesagt die
+Sinusfunktion $\sin(x)$. Die Quelle wird noch verstärkt. Verstärker heißt auf
+Englisch Gain, also wird noch ein Gain-Block zur Verstärkung dazgeschaltet. Am
+Ende mündet alles in eine Visualisierung. Der entsprechende Sink-Block Scope
+zeigt das Ergebnis $f(x)$.
 
-Die Funktion `np.linspace(a,b, Anzahl)` erzeugt Punkte im Intervall $[a,b]$ je
-nach eingestellter Anzahl. Damit können wir jetzt eine feiner aufgelöste
-Wertetabelle erstellen und visualisieren.
+Die Blöcke werden in der Bibliothek gesucht. Zur leichteren Navigation dient die
+linke Seitenleiste der Library. Dort wird Sink oder Source ausgewählt, um den
+Eingabeblock Sinus oder den Ausgabeblock Scope auszuwählen. Der Verstärkerblock
+Gain befindet sich bei den häufig genutzten Blöcken. Am einfachsten ist es, die
+Blöcke anzuklicken und auf den Arbeitsplatz zu ziehen, wie in dem folgenden
+Screencast gezeigt wird.
 
-```{code-cell} ipython3
-import numpy as np
+![Screencast erstes Projekt in Simulink](screencasts/part10_simulink_firstproject.gif)
 
-x = np.linspace(-2, 2, 100) 
-y = x**2
+## Layout und Speichern
 
-plt.figure()
-plt.plot(x,y);
-```
+Die genaue Anordnung der Blöcke ist nicht wichtig, da durch das Routing
+(Verbinden der Blöcke) die Fließrichtung definiert ist. Dennoch empfiehlt es
+sich, das Layout übersichtlich zu halten. Der folgende Screencast zeigt, wie die
+Blöcke mit der Maus verschoben werden, bis das Verbindungssignal horizontal
+ausgerichtet ist. Danach wird gezeigt, wie das erste Projekt unter dem Namen
+"firstProject" gespeichert wird.
 
-Nächstes Thema, Beschriftungen. Mit den Funktionen `xlabel()` und
-`ylabel()` beschriften Sie die x- und y-Achse. Mit `title()` wird der
-Titel gesetzt.
+![Screencast Speichern](screencasts/part10_simulink_saveing.gif)
 
-```{code-cell} ipython3
-# data
-x = np.linspace(-10,10,200)
-y = np.sin(x)
+## Die erste Simulation
 
-# plot
-plt.figure()
-plt.plot(x,y)
-plt.xlabel('Zeit in Sekunden')
-plt.ylabel('Stromstärke in Ampere')
-plt.title('Wechselstrom');
-```
+Nun können wir die Simulation laufen lassen. Im folgenden Screencast werden zwei
+Möglichkeiten gezeigt. Zum einen wird direkt aus dem Hautmenü die Simulation
+gestartet. Anschließend wird durch Doppelklick auf den Scope-Block die
+Visualisierung eingeblendet. Zum anderen kann auch der Scope-Block zuerst
+geöffnet werden und von dort aus die Simulation gestartet werden. Zuletzt wird
+moch gezeigt, wie die Verdopplung des Verstärkungsfaktors von 1 auf 2 dazu
+führt, dass die Sinusfunktion Funktionswerte zwischen -2 und 2 annimmt.
 
-Zuletzt soll unser Plot gespeichert werden. Dazu wird die Funktion `savefig()`
-verwendet. Das erste Argument der Funktion ist ein String mit dem Dateinamen,
-unter dem die Grafik abgespeichert werden soll. Die Dateiendung wird von
-Matplotlib automatisch dazu benutzt, das Grafikformat festzulegen. Es stehen
-mehrere Grafikformate zur Verfügung. Mehr Details finden Sie auf der
-Internetseite [Dokumentation
-savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
-Ein typisches Ausgabeformat ist eine Rastergrafik wie z.B. png. Danach können
-noch weitere optionale Argumente folgen, die beispielsweise die Auflösung der
-Grafik festlegen.
-
-Die folgende Anweisung speichert das Liniendiagramm unter dem Dateinamen
-`plot_stromstaerke.png` ab, verwendet dabei das png-Format und eine Auflösung
-von 300 dpi, also 300 Punkten pro Inch.
-
-```{code-cell} ipython3
-plt.savefig('plot_stromstaerke.png', dpi=300);
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise 
-Bitte plotten Sie folgende Funktionen: 
-    
-* lineare Funktion, z.B. f(x) = 7x + 2
-* Sinus,
-* Kosinus,
-* Exponentialfunktion und
-* Wurzelfunktion.
-
-Verändern Sie auch das Definitionsgebiet der Funktionen, also das Intervall für
-$x$. (Bei welcher Funktion müssen Sie besonders auf das Defiitionsgebiet der
-Funktion achten?)
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code:
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-x1 = np.linspace(-3, 3, 101)
-y1 = 3 * x1 + 7
-
-x2 = np.linspace(-2 * np.pi, 2 * np.pi, 101)
-y2 = np.sin(x2)
-y3 = np.cos(x2)
-
-x4 = np.linspace(-3, 3, 101)
-y4 = np.exp(x4)
-
-x5 = np.linspace(0, 5, 101)
-y5 = np.sqrt(x5)
-
-plt.figure()
-plt.plot(x5,y5)
-plt.xlabel('x-Achse')
-plt.ylabel('y-Achse')
-plt.title('Mini-Übung');
-```
-````
-
-+++
-
-## Balkendiagramme
-
-Mit der Funktion `bar()` kann ein Balkendiagramm erstellt werden. Nehmen wir mal
-an, wir möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter
-Notebooks zum Download zugegriffen haben:
-
-| Woche | Anzahl Nutzer/innen |
-| --- | --- |
-| 2 | 14 |
-| 3 | 12 |
-| 4 | 10 |
-| 5 | 10 |
-| 6 | 9  |
-
-Dann wird das Balkendiagramm mit folgenden Code erzeugt:
-
-```{code-cell} ipython3
-# data
-x = [2,3,4,5,6]
-y = [14,12,10,10,9]
-
-# bar plot
-plt.figure()
-plt.bar(x,y)
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22');
-```
-
-Farben können mit dem optionalen Argument `color=` eingestellt werden. Dabei
-funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
-Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
-RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
-Blau-Anteil. Details finden Sie dazu hier
-
-> https://matplotlib.org/stable/tutorials/colors/colors.html
-
-Im folgenden Balkendiagramm sind die Balken grau eingefärbt.
-
-```{code-cell} ipython3
-# data
-x = [2,3,4,5,6]
-y = [14,12,10,10,9]
-
-# bar plot
-plt.figure()
-plt.bar(x,y, color='gray')
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22');
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise 
-
-Hier ist eine Tabelle mit den Zugriffszahlen auf das MATLAB Live Script in der
-Vorlesung angewandte Informatik im Sommersemester 2021. Bitte stellen Sie die
-Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken schwarz.
-
-|Woche |Anzahl Nutzer/innen|
-| --- | --- |
-| 3 | 9  |
-| 4 | 17 |
-| 5 | 15 |
-| 6 | 10 |
-| 7 | 11 |
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code:
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = [3, 4, 5, 6, 7]
-y = [9, 17, 15, 10, 11]
-
-plt.figure()
-plt.bar(x,y, color='black')
-plt.xlabel('Woche')
-plt.ylabel('Zugriffe')
-plt.title('Zugriffszahlen MATLAB Live Skripte SoSe 22');
-```
-````
-
-+++
+![Screencast Visualisierung mit dem Scope-Block](screencasts/part10_simulink_scope.gif)
