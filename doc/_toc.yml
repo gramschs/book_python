@@ -60,7 +60,8 @@ parts:
     sections:
     - file: chapter09/chapter09_sec01.md
     - file: chapter09/chapter09_sec02.md
-    - file: chapter09/chapter09_sec03.md 
+    - file: chapter09/chapter09_sec03.md
+    - file: chapter09/chapter09_sec04.md
 - caption: Einführung Data Science
   chapters:
   - file: chapter10/chapter10_sec00.md
@@ -85,3 +86,4 @@ parts:
     sections:
       - file: chapter13/chapter13_sec01.md        
       - file: chapter13/chapter13_sec02.md
+      - file: chapter13/chapter13_sec03.md
