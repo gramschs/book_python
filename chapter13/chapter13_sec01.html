@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>13.1 Was ist maschinelles Lernen? &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/chapter13_sec01';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="13.2 Überwachtes, unüberwachtes und verstärkendes Lernen" href="chapter13_sec02.html" />
+    <link rel="prev" title="13. Grundbegriffe Künstliche Intelligenz" href="chapter13_sec00.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/book_logo.png" class="logo__image only-light" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>
+    <img src="../_static/book_logo.png" class="logo__image only-dark pst-js-only" alt="Python für Studierende der Ingenieurwissenschaften - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zum interaktiven Vorlesungsskript Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec02.html">1.2 Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec03.html">1.3 Installation und Start von Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/chapter02_sec00.html">2. Eingabe, Verarbeitung und Ausgabe</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec01.html">2.1 Taschenrechner und Ausgabe (print)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec02.html">2.2 Datentypen und Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec03.html">2.3 Eingabe (input) und Zuweisungsoperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/chapter03_sec00.html">3. Listen und Module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec01.html">3.1 Listen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec02.html">3.2 Das Modul NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec03.html">3.3 Das Modul Turtle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">5. Programmverzweigung (if - elif - else)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">5.1 Vergleiche und der boolesche Datentyp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">5.2 Programmverzweigungen: if</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">6. Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">6.1 Funktionen selbst schreiben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">6.2 Funktionen mit Parameter und Rückgabe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">6.3 Lokale und globale Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Zufallszahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Streudiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter13/chapter13_sec01.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/gramschs/book_python" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter13/chapter13_sec01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/chapter13/chapter13_sec01.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>13.1 Was ist maschinelles Lernen?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-wenig-geschichte">Ein wenig Geschichte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-sind-algorithmen-und-modelle">Was sind Algorithmen und Modelle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maschinelles-lernen-ist-wie-kuchenbacken">Maschinelles Lernen ist wie Kuchenbacken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="was-ist-maschinelles-lernen">
+<h1>13.1 Was ist maschinelles Lernen?<a class="headerlink" href="#was-ist-maschinelles-lernen" title="Link to this heading">#</a></h1>
+<p>KI (Künstliche Intelligenz) ist in aller Munde. Etwas seltener wird der Begriff
+<strong>maschinelles Lernen</strong> verwendet. Maschinelles Lernen, oft auch <strong>Machine
+Learning</strong> genannt, ist ein Teilgebiet der Künstlichen Intelligenz.</p>
+<p>Wir kürzen in dieser Vorlesung maschinelles Lernen oft mit <strong>ML</strong> ab. Damit
+umgehen wir die Diskussion, warum Künstliche Intelligenz mit einem
+Großbuchstaben beginnt und maschinelles Lernen mit einem Kleinbuchstaben.
+Gleichzeitig ist das auch die gängige Abkürzung im englischen Sprachgebrauch.
+Dieses Kapitel klärt, was maschinelles Lernen ist und führt in die
+grundlegenenden Bestandteile eines ML-Systems ein.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
+<div class="admonition-goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, wie langes es das Forschungsgebiet <strong>maschinelles Lernen</strong> gibt
+und warum es sich in den letzten beiden Jahrzehnten so stark entwickelt hat.</p></li>
+<li><p>Sie kennen die Bestandteile eines ML-Systems: <strong>Daten</strong>, <strong>Algorithmus</strong> und
+<strong>Modell</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="ein-wenig-geschichte">
+<h2>Ein wenig Geschichte<a class="headerlink" href="#ein-wenig-geschichte" title="Link to this heading">#</a></h2>
+<p>Viele glauben, dass die Forschungsgebiete Künstliche Intelligenz und
+maschinelles Lernen Neuentwicklungen des 21. Jahrhunderts sind. Doch tatsächlich
+hat Arthur L. Samuel bereits 1959 maschinelles Lernen wie folgt definiert:</p>
+<blockquote class="epigraph">
+<div><p>»… ein Forschungsgebiet, das Computer in die Lage versetzen soll, zu lernen,
+ohne explizit darauf programmiert zu sein.«</p>
+<p>Arthur L. Samuel, 1959</p>
+</div></blockquote>
+<p><a class="reference external" href="https://de.wikipedia.org/wiki/Maschinelles_Lernen">Wikipedia → Maschinelles Lernen</a>
+bietet eine weitere Definition:</p>
+<blockquote class="epigraph">
+<div><p>»Maschinelles Lernen (ML) ist ein Oberbegriff für die „künstliche“ Generierung
+von Wissen aus Erfahrung: Ein künstliches System lernt aus Beispielen und kann
+diese nach Beendigung der Lernphase verallgemeinern.«</p>
+</div></blockquote>
+<p>Auch hier wird der Aspekt betont, dass das künstliche System selbst lernt. Aber
+was ist mit selbst Lernen gemeint? Ein Kind lernt beispielsweise selbst das
+Laufen. Auch wenn Eltern präzise beschreiben könnten, welcher Muskel zu welchem
+Zeitpunkt kontrahiert werden muss und mit welcher Geschwindigkeit in welche
+Richtung das Bein bewegt werden soll, würde das Kind die Anweisungen nicht
+verstehen können. Ein Kind lernt selbst durch Versuch und Irrtum. In der
+Anfangszeit der Robotik versuchten Forscherinnen und Forscher, Roboter durch
+explizite Befehle zu steuern. Doch bei unvorhergesehenen Hindernissen stießen
+solche Roboter an ihre Grenzen. Aus der Notwendigkeit, dass Roboter ähnlich wie
+Menschen lernen, entwickelte sich das Teilgebiet maschinelles Lernen innerhalb
+der Künstlichen Intelligenz.</p>
+<p>Doch nicht nur in der Robotik spielt maschinelles Lernen eine wichtige Rolle.
+Auch bei der Datenanalyse kann es hilfreich sein, wenn ein Computersystem
+eigenständig Muster in den Daten erkennt. Ein Klassiker dafür ist die
+Spam-Erkennung. Natürlich ist es möglich, den Spam-Filter mit expliziten Regeln
+zu programmieren. Schon nach kurzer Zeit ändern jedoch Spammer die E-Mail-Texte
+und schon greifen die expliziten Regeln nicht mehr. Hier helfen maschinell
+gelernte Regeln. Durch die Markierung von E-Mails als Spam lernt das
+E-Mail-Programm nach und nach selbst Regeln, um Spam-E-Mails zu identifizieren.</p>
+<p>Die exponentiell wachsende Datenmenge der letzten beiden Jahrzehnte hat das
+Interesse an maschinellen Lernverfahren stark erhöht. Es gibt aber auch noch
+andere Gründe, die zum aktuellen Boom des maschinellen Lernens beigetragen
+haben.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schauen Sie sich das folgende Video an. Welche drei Gründe werden dort genannt,
+warum maschinelles Lernen zuletzt so stark nachgefragt wurde?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l_HSWmxMRlU" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Jannik nennt bei Zeitindex 2:44 min drei Gründe, warum in den letzten zwei Jahrzehnten maschinelles Lernen an Bedeutung gewonnen hat:</p>
+<ol class="arabic simple">
+<li><p>mehr Daten</p></li>
+<li><p>schnellere Computer</p></li>
+<li><p>Forschung</p></li>
+</ol>
+</div>
+<p>Es gibt einige Gründe, warum ML in den letzten zwei Jahrzehnten so stark an
+Bedeutung gewonnen hat. Im Folgenden werden die wichtigsten Gründe für den
+Bedeutungsgewinn erläutert.</p>
+<p><strong>Datenverfügbarkeit</strong>: Die Produktion von Daten hat mit der Digitalisierung
+massiv zugenommen. Mit der Einführung der Smartphones ist auch die Anzahl der
+Bilder und Videos deutlich gewachsen, die täglich aufgenommen werden. Das
+Kaufverhalten von Kunden in Online-Shops wird beobachtet, Fußballspiele werden
+statistisch analysiert oder Maschinen mit Messsensoren bestückt. Das
+Beratungsunternehmen IDC (International Data Corporation) prognostiziert, dass
+sich die Datenmenge von 33 Zettabytes im Jahr 2018 auf 175 Zettebytes im Jahr
+2025 mehr als verfünffachen wird <span id="id1">[]</span>.</p>
+<p><strong>Rechenleistung</strong>: Der rasante Fortschritt in der Computertechnologie hat die
+Rechenleistung, die für maschinelles Lernen erforderlich ist, drastisch erhöht.
+Speziell für die Entwicklung sogenannter neuronaler Netze werden sogar häufig
+Grafikkarten (GPUs) anstatt eines Prozessors (CPU) bevorzugt.</p>
+<p><strong>Algorithmen und Modelle</strong>: Natürlich ist auch die Erforschung neuer
+Algorithmen und Modelle nicht stehengeblieben. Ein Durchbruch in der Forschung
+war dabei die Entwicklung von den sogenannten Deep-Learning-Modellen, einer
+Variante der neuronalen Netze.</p>
+<p><strong>Software und Tools</strong>: Es gibt jetzt eine Vielzahl von Softwarebibliotheken und
+Tools (z.B. <a class="reference external" href="https://www.tensorflow.org">TensorFlow</a>,
+<a class="reference external" href="https://pytorch.org">PyTorch</a>,
+<a class="reference external" href="https://scikit-learn.org/stable/index.html">Scikit-learn</a> usw.), die es
+ermöglichen, auch ohne tiefergehende Mathematik- und Programmierkenntnissen
+maschinelles Lernen in der Praxis einzusetzen. Daher werden immer mehr
+Anwendungen mit maschinellem Lernen analysiert und optimiert.</p>
+<p>Bisher haben wir nicht besprochen, was es mit Künstlicher Intelligenz und Deep
+Learning auf sich hat. Beide Begriffe werden oft in einem Atemzug mit ML
+genannt. Das folgende Video gibt eine Einführung dazu.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “ML Tutorial - #1 Einführung in ML” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tCApwsdijDk?si=Qf6x6MhoAuEBZv7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="was-sind-algorithmen-und-modelle">
+<h2>Was sind Algorithmen und Modelle?<a class="headerlink" href="#was-sind-algorithmen-und-modelle" title="Link to this heading">#</a></h2>
+<p>Ein notwendiger Baustein des maschinellen Lernens sind Daten, am besten ganz,
+ganz viele! Aber selbst ein riesiger Haufen an Daten ist alleine wertlos. Erst
+durch Algorithmen, die in diesen Daten Muster finden, gewinnen wir neues Wissen,
+können Prozesse analysieren und Entscheidungen treffen.</p>
+<p>Aber was ist nun ein Algorithmus? In dem folgenden Video wird zuerst erklärt,
+was ein Algorithmus ist. Danach werden die ersten grundlegenden Fachbegriffe des
+maschinellen Lernens eingeführt.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schauen Sie sich das folgende Video an und beantworten Sie die folgenden Fragen:</p>
+<ol class="arabic simple">
+<li><p>Welche drei Beispiele für Algorithmen werden aufgezählt?</p></li>
+<li><p>In dem Video werden die Fachbegriff »Feature« und »Label« eingeführt. Was bedeuten die
+Begriffe?</p></li>
+<li><p>Was bedeutet »überwachtes Lernen«?</p></li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HmUzceKCI9I" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<ol class="arabic simple">
+<li><p>Bei Zeitindex 0:28 min wird erklärt, dass ein Algorithmus eine exakte
+Handlungsvorschrift zum Lösen eines Problems ist. Als erstes Beispiel wird
+die Anweisung, wie ein mathematisches Problem zu lösen ist, genannt. Als
+weitere Beispiele werden ein Kochrezept oder eine Spieleanleitung aufgezählt.
+Ab Zeitindex 0:38 min wird Tic-Tac-Toe als Algorithmus formuliert.</p></li>
+<li><p>Ab Zeitindex 3:19 min werden die Begriffe Feature und Label eingeführt. Die
+Eingangsdaten (z.B. Bilder von Hunden und Katzen), die wir dem Computer zum
+Lernen geben, werden Features genannt. Daraus soll der Computer lernen, Hunde
+von Katzen zu unterscheiden. Dazu müssen zuerst die Bilder, die einen Hund
+zeigen, als »Hundebild« gekennzeichnet werden und die anderen als
+»Katzenbild«. Die Kennzeichnung wird Label genannt. Die Zielgröße bzw. Ziel ist die
+Einordnung Hund/Katze.</p></li>
+<li><p>Überwachtes Lernen ist das Lernen aus Beispielen (Zeitindex 4:03 min). Bevor
+der Computer lernt, auf Bildern Hunde und Katzen zu unterscheiden, müssen die
+Bilder mit den Labels Hund/Katze versehen werden.</p></li>
+</ol>
+</div>
+<p>Ein <strong>Algorithmus</strong> ist also eine Anleitung, wie ein Problem zu lösen ist.
+Typisch für einen Algorithmus ist, das in sehr kleinen Schritten detailliert
+Anweisungen formuliert werden, um das Problem zu lösen. In der Informatik sind
+Algorithmen besonders wichtig, da durch sie festgelegt wird, wie der Computer
+Daten verarbeiten und ein Problem lösen soll. Jeder einzelne Schritt zur
+Problemlösung muss eindeutig und konkret beschrieben werden. Wird der
+Algorithmus in einer Programmiersprache formuliert, verwendet man den Begriff
+<strong>Computerprogramm</strong>.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … ein Algorithmus?</p>
+<p>Ein Algorithmus ist eine spezifische Anleitung mit einzelnen Anweisungen, wie ein
+bestimmtes Problem gelöst werden soll.</p>
+</div>
+<p>Der Begriff <strong>Modell</strong> hat viele verschiedenen Bedeutungen (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Modell_(Begriffskl%C3%A4rung)">Wikipedia →
+Modell
+(Begriffsklärung)</a>).
+Zunächst einmal bedeutet Modell, das ein Original vereinfacht beschrieben wird.
+Vereinfacht heißt, dass beispielsweise Details weggelassen werden oder die
+Abmessungen geändert werden. In der Architektur wird beispielsweise ein Haus in
+kleinem Maßstab gebaut, um potentiellen Kunden durch das Modell einen besseren
+Eindruck zu vermitteln, wie das Haus in echt aussehen wird. Im Maschinenbau wird
+das Modell eines Flugzeugs in einen Windkanal gehalten, um die Flugzeuggeometrie
+zu optimieren. In manchen naturwissenschaftlichen Museen gibt es begehbare
+Modelle von Organen wie beispielsweise dem Darm, um den Aufbau des Darms
+begreifbar zu machen. Es gibt auch auch virtuelle Modelle wie  das
+<a class="reference external" href="https://de.wikipedia.org/wiki/Vier-Seiten-Modell">Vier-Ohren-Modell</a> des
+Kommunikationswissenschaftlers Friedemann Schulz von Thun, das das
+Kommunikationsverhalten von Menschen beschreibt.</p>
+<p>In der Welt des maschinellen Lernens bezieht sich der begriff Modell darauf,
+Daten zu interpretieren und basierend auf diesen Daten Vorhersagen oder
+Entscheidungen zu treffen.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … ein Modell?</p>
+<p>Ein Modell ist ein vereinfachtes Abbild der Wirklichkeit. Im Kontext das
+maschinellen Lernens ist das ML-Modell eine abstrake Beschreibung eines Systems,
+das unbekannte Daten interpretieren kann oder basierend auf diesen Daten
+Vorhersagen oder Entscheidungen treffen kann.</p>
+</div>
+</section>
+<section id="maschinelles-lernen-ist-wie-kuchenbacken">
+<h2>Maschinelles Lernen ist wie Kuchenbacken<a class="headerlink" href="#maschinelles-lernen-ist-wie-kuchenbacken" title="Link to this heading">#</a></h2>
+<p>Damit kommen beim maschinellen Lernen drei Dinge zusammen: Daten, Algorithmus
+und Modell. Um das Verhältnis zwischen den drei Konzepten zu verdeutlichen,
+vergleichen wir die Konzepte mit dem Kuchenbacken. Die Daten sind die Zutaten,
+aus denen ein Kuchen gebacken werden soll. Der Algorithmus ist das Rezept mit
+einer detaillierten Schritt-für-Schritt-Anleitung, wie der Kuchen gebacken
+werden soll. Das Modell hingegen ist der fertige Kuchen, der aus dem Prozess
+herauskommt. Es ist somit das Endprodukt, das erstellt wird, indem man den
+Anweisungen des Rezepts (dem Algorithmus) folgt und die Zutaten zusammenfügt.</p>
+<p>Sobald das Modell bzw. der Kuchen fertig ist, wird dieses Modell
+dann verwendet, um Vorhersagen zu treffen oder Entscheidungen zu treffen, genau
+wie man einen Kuchen essen würde, nachdem er gebacken ist.</p>
+<figure class="align-default" id="fig-ml-as-baking">
+<img alt="../_images/ml_as_baking.png" src="../_images/ml_as_baking.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Analogie zwischen dem ML-Workflow und dem Kuchenbacken (Quelle: eigene Darstellung)</span><a class="headerlink" href="#fig-ml-as-baking" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Allerdings ist es damit nicht getan. Je nachdem, wie viele und welche Gäste
+erwartet werden, benötigen wir einen anderen Kuchen. Bei einer großen
+Geburtstagsparty brauchen wir einen Blechkuchen, damit jeder Gast ein Stückchen
+Kuchen bekommt. Haben wir Diabetiker eingeladen, sollten wir keine
+Schokoladentorte anbieten. Auch beim maschinellen Lernen ist es daher sehr
+wichtig, je nach Einsatzzweck das passende Modell bzw. den passenden Algorithmus
+zu wählen.</p>
+<p>Natürlich hängt die Wahl des Kuchens auch von den vorhandenen Zutaten ab. Fehlt
+die Schokolade, so kann ich keinen Schokoladenkuchen backen. Entweder backen wir
+dann einen anderen Kuchen oder wir entscheiden uns, noch schnell zum Supermarkt
+zu gehen und Schokolade einzukaufen. Vielleicht stellen wir auch fest, dass die
+Milch abgelaufen ist und nicht mehr genießbar ist. Dann ist unser Plan nicht
+durchführbar. Und auch hier können wir uns entscheiden, einen anderen Kuchen zu
+backen oder die Zutaten zu erneuern. Diese Analogie passt auch zu maschinellem
+Lernen. Fehlen Daten oder sind die Daten nicht qualititativ hochwertig, können
+wir die Datenlage verbessern, indem wir beispielsweise mehr Experimente
+durchführen oder offensichtlich schiefgelaufene Experimente wiederholen. Diese
+Phase des maschinellen Lernen wird auch <strong>Datenerkundung</strong> oder
+<strong>Datenexploration</strong> genannt. Sollten wir die Daten jedoch nicht verbessern
+können (oder wollen, weil zu teuer oder die Abgabefrist der Bachelorarbeit
+ansteht), dann müssen wir die Auswahl des Modells an die vorhandenen Daten
+anpassen.</p>
+<p>Zutaten komplett, Rezept ausgewählt, Kuchen gebacken, der Gast beißt in den
+Kuchen und verzieht das Gesicht … Zucker und Salz verwechselt. Hätten wir den
+Kuchen lieber einmal vor dem Servieren probiert. Auch beim maschinellen Lernen
+ist es mit dem “Backen” des Modells nicht getan. Ist ein Modell erstellt, so
+muss es auch bewertet werden. Der Prozess des maschinellen Lernens wird mit der
+<strong>Validierung</strong> abgeschlossen, bevor das Modell dann produktiv eingesetzt wird.
+Die Erstellung und Verwendung von Modellen im maschinellen Lernen ist ein
+fortlaufender Prozess. Modelle werden oft mehrfach getestet und angepasst, um
+ihre Leistung zu verbessern. Beim Kuchenbacken könnte der Bäcker auf die Idee
+kommen, den Kuchen nicht bei 160 °C, sondern bei 162 °C zu backen, weil dann der
+Kuchen noch besser schmeckt. Solche Parameter zum Finetunen eines Modells werden
+<strong>Hyperparameter</strong> genannt. Hyperparameter haben nichts mit den vorhanden Daten
+zu tun, sondern gehören zum ML-Modell. Aber auch wenn sich Daten verändern und
+neue Daten hinzukommen, muss das Modell aktualisiert werden, um mit den sich
+ändernden Bedingungen zurechtzukommen.</p>
+<p>Die folgende Skizze zeigt den schematischen Ablauf eines typischen ML-Projektes.
+Dabei benutzen wir das sogenannte QUA3CK-Modell nach einem Vorschlag von
+<span id="id2">[]</span>. Das QUA3CK-Modell zeigt den typischen Ablauf eines
+ML-Projektes von der wissenschaftlichen Fragestellung (Q – Question) bis zu
+deren Beantwortung (K – Knowledge Transfer). Dazu gehört das Sammeln und
+Erkunden der Daten (U – Understanding the data), mit Hilfe derer die Frage
+beantwortet werden soll. Die Phase der ML-Modellbildung wird mehrfach
+durchlaufen und besteht aus der Auswahl und dem Training des Algorithmus bzw.
+des Modells (A – Algorithm selection and training), dazu passend der Auswahl
+und Anpassung der Daten (A – Adaption of the data) sowie der Anpassung der
+Hyperparamter (A – Adjustement of the hyperparameter). Die Modelle, die durch
+diese Schleife erstellt werden, werden letztendlich miteinander verglichen und
+bewertet (C – Comparison and Conclusion), bevor sie produktiv eingesetzt
+werden.</p>
+<figure class="align-default" id="fig-qua3ck-process">
+<a class="reference internal image-reference" href="../_images/qua3ck_process.png"><img alt="../_images/qua3ck_process.png" src="../_images/qua3ck_process.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Typischer Ablauf eines ML-Projektes als QUA<sup>3</sup>CK-Prozess dargestellt
+(Quelle: in Anlehnung an <span id="id3">[]</span>)</span><a class="headerlink" href="#fig-qua3ck-process" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Das folgende Video erklärt den ML-Workflow etwas detaillierter, als wir es mit
+der Kuchenbacken-Analogie getan haben. Als Ausblick auf die weitere Vorlesung
+bietet dieses Video dennoch eine sehr gute Übersicht über die Vorgehenweise in
+einem ML-Projekt und ist daher sehr empfehlenswert.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “ML Tutorial - #2 ML-Workflow” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f9QT2dqeW04?si=ScwgvnYzsCvbicb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir zwar die drei grundlegenden Bestandteile eines
+ML-Systems (Daten, Algorithmus und Modell) kennengelernt, aber entscheidend ist
+auch die Anwendung, welche Art von Daten vorliegen. Im nächsten Kapitel werden
+wir die drei großen Kategorien betrachten, in die ML-Modelle eingeteilt werden:</p>
+<ul class="simple">
+<li><p>Überwachtes Lernen (Supervised Learning),</p></li>
+<li><p>Unüberwachtes Lernen (Unsupervised Learning) und</p></li>
+<li><p>Verstärkendes Lernen (Reinforcement Learning).</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "gramschs/book_python",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter13_sec00.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">13. Grundbegriffe Künstliche Intelligenz</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter13_sec02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-wenig-geschichte">Ein wenig Geschichte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-sind-algorithmen-und-modelle">Was sind Algorithmen und Modelle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maschinelles-lernen-ist-wie-kuchenbacken">Maschinelles Lernen ist wie Kuchenbacken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Simone Gramsch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
