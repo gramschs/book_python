@@ -25,15 +25,16 @@ erstellen. Da wir jedoch in dieser Vorlesung mit **Jupyter Notebooks** arbeiten,
 verwenden wir das Modul `ColabTurtlePlus`. Es erweitert die Standardfunktionen
 und ist speziell für den Einsatz in Notebooks geeignet.
 
-```{admonition} Hinweis: Installation notwendig
+````{admonition} Hinweis: Installation notwendig
 :class: warning
 Das Modul colabTurtlePlus ist kein Standardmodul und muss daher nachinstalliert
 werden. Bitte beachten Sie die Hinweise zur Installation "Module
 nachinstallieren" und die dazugehörige Mini-Übung unten. Falls Sie mit JupyterLite
 arbeiten, verwenden Sie bitte
-
+```python
 %pip install -q ColabTurtlePlus
 ```
+````
 
 ## Lernziele
 
