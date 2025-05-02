@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4.2 Strings" href="chapter04_sec02.html" />
-    <link rel="prev" title="4. Zählschleifen (for) und Strings" href="chapter04_sec00.html" />
+    <link rel="prev" title="4. Zählschleifen (for), Strings und Zufallszahlen" href="chapter04_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">4. Zählschleifen (for), Strings und Zufallszahlen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1 for-Schleifen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">4.2 Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">4.3 Zufallszahlen</a></li>
@@ -630,6 +630,13 @@ Ich bin fertig!
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Programm, das die ersten 10 Quadratzahlen berechnet und ausgibt.</p>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]:</span>
@@ -675,6 +682,13 @@ Dezember
 »ungenügend« einzeln ausgibt. Zur Erinnerung: die deutschen Schulnoten
 lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.</p>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erzeugung Liste</span>
@@ -703,9 +717,9 @@ können. Natürlich kann die Liste von Zahlen auch für andere Dinge genutzt
 werden, aber die Verwendung für for-Schleifen ist sicherlich der häufigste
 Einsatzzweck von range().</p>
 <p>Die Syntax der range()-Funktion ist:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>               <span class="c1"># erzeugt eine Liste von 0 bis (stop - 1)</span>
-<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>        <span class="c1"># erzeugt eine Liste von start bis (stop - 1)</span>
-<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>  <span class="c1"># erzeugt eine Liste von start bis (stop - 1) mit der Schrittweite step</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>               <span class="c1"># erzeugt Zahlen von 0 bis (stop - 1)</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>        <span class="c1"># erzeugt Zahlen von start bis (stop - 1)</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>  <span class="c1"># erzeugt Zahlen von start bis (stop - 1) mit der Schrittweite step</span>
 </pre></div>
 </div>
 <p>Es ist schwierig, sich den Inhalt von <code class="docutils literal notranslate"><span class="pre">range()</span></code> direkt anzuschauen. Am
@@ -803,6 +817,13 @@ rückwärts zählt.</p>
 <p class="admonition-title">Mini-Übung</p>
 <p>Lassen Sie die Dreier-Zahlen von 3 bis 99 ausgeben, also 3, 6, 9, 12, 15, …, 96, 99.</p>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
@@ -851,6 +872,13 @@ weitere Beispiele an.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Programm, dass die Summe der ersten n Quadratzahlen berechnet.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code.</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -926,7 +954,7 @@ werden wir das Thema Strings erneut aufgreifen und vertiefen.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">4. Zählschleifen (for) und Strings</p>
+        <p class="prev-next-title">4. Zählschleifen (for), Strings und Zufallszahlen</p>
       </div>
     </a>
     <a class="right-next"

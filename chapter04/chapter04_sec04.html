@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
@@ -194,7 +194,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">4. Zählschleifen (for), Strings und Zufallszahlen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec01.html">4.1 for-Schleifen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">4.2 Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">4.3 Zufallszahlen</a></li>
@@ -599,6 +599,38 @@ Februar ist der 2. Monat im Jahr. <br>
 
 <span class="c1"># Ausgabe</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Fakultät von </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">, also </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">! = </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 4.6</p>
+<p>Ein Firma stellt Schraiben her, deren Länge im Mittel 50 mm beträgt. Aufgrund
+von Fertigungstoleranzen sind die Längen normalverteilt mit einer
+Standardabweichung von 0.4 mm.</p>
+<ol class="arabic simple">
+<li><p>Erzeugen Sie zufällig die Längen von 1000 Schrauben.</p></li>
+<li><p>Schreiben Sie Python-Code, um den Mittelwert dieser 1000 Schrauben zu
+berechnen. Lassen Sie ihn auf 2 Nachkommastellen genau ausgeben.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Simulation von 1000 Schrauben</span>
+<span class="n">mittelwert</span> <span class="o">=</span> <span class="mf">50.0</span>
+<span class="n">stdabw</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">anzahl</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">laengen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">stdabw</span><span class="p">,</span> <span class="n">anzahl</span><span class="p">)</span>
+
+<span class="c1"># Berechnung des Mittelwerts mit for-Schleife</span>
+<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">laenge</span> <span class="ow">in</span> <span class="n">laengen</span><span class="p">:</span>
+    <span class="n">summe</span> <span class="o">+=</span> <span class="n">laenge</span>
+
+<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">/</span> <span class="n">anzahl</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Berechneter Mittelwert der Schrauben-Längen: </span><span class="si">{</span><span class="n">mittelwert</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

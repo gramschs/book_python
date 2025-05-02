@@ -51,7 +51,7 @@ print(eintracht_frankfurt[6])
 ```
 ````
 
-```{admonition} Übung 3.2 
+```{admonition} Übung 3.2
 :class: miniexercise
 Schreiben Sie ein Programm, das den Benutzer zwei Seitenlängen für die beiden
 Katheten $a$ und $b$ eines rechtwinkligen Dreiecks eingeben lässt. Anschließend
