@@ -24,6 +24,7 @@ Februar ist der 2. Monat im Jahr. <br>
 
 Verwenden Sie dazu eine Liste der Monate und eine for-Schleife.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -40,6 +41,7 @@ for i in range(12):
 :class: miniexercise
 Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei eine for-Schleife.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -57,6 +59,7 @@ for i in range(4):
 :class: miniexercise
 Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden. Testen Sie anschließend ein Dreieck und ein Siebeneck.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -76,6 +79,7 @@ for i in range(anzahl_seiten):
 :class: miniexercise
 Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in der Liste mithilfe einer for-Schleife berechnen und ausgeben.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -130,6 +134,35 @@ print(f'Die Fakultät von {n} ist {ergebnis}, also {n}! = {ergebnis}.')
 ```
 ````
 
+```{admonition} Übung 4.6
+:class: miniexercise
+Ein Firma stellt Schraiben her, deren Länge im Mittel 50 mm beträgt. Aufgrund
+von Fertigungstoleranzen sind die Längen normalverteilt mit einer
+Standardabweichung von 0.4 mm.
 
+1. Erzeugen Sie zufällig die Längen von 1000 Schrauben.
+2. Schreiben Sie Python-Code, um den Mittelwert dieser 1000 Schrauben zu
+   berechnen. Lassen Sie ihn auf 2 Nachkommastellen genau ausgeben.
+```
 
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+import numpy as np
 
+# Simulation von 1000 Schrauben
+mittelwert = 50.0
+stdabw = 0.4
+anzahl = 1000
+
+laengen = np.random.normal(mittelwert, stdabw, anzahl)
+
+# Berechnung des Mittelwerts mit for-Schleife
+summe = 0
+for laenge in laengen:
+    summe += laenge
+
+mittelwert = summe / anzahl
+print(f"Berechneter Mittelwert der Schrauben-Längen: {mittelwert:.2f} mm")
+```
+````

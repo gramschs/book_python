@@ -112,6 +112,10 @@ print('Ich bin fertig!')
 Schreiben Sie ein Programm, das die ersten 10 Quadratzahlen berechnet und ausgibt.
 ```
 
+```{code-cell} ipython3
+# Hier Ihr Code.
+```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -140,6 +144,10 @@ Am besten probieren Sie es einmal selbst aus:
 Schreiben Sie eine for-Schleife, die die klassischen Schulnoten »sehr gut«  bis
 »ungenügend« einzeln ausgibt. Zur Erinnerung: die deutschen Schulnoten
 lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code.
 ```
 
 ````{admonition} Lösung
@@ -172,9 +180,9 @@ Einsatzzweck von range().
 Die Syntax der range()-Funktion ist:
 
 ```python
-range(stop)               # erzeugt eine Liste von 0 bis (stop - 1)
-range(start, stop)        # erzeugt eine Liste von start bis (stop - 1)
-range(start, stop, step)  # erzeugt eine Liste von start bis (stop - 1) mit der Schrittweite step
+range(stop)               # erzeugt Zahlen von 0 bis (stop - 1)
+range(start, stop)        # erzeugt Zahlen von start bis (stop - 1)
+range(start, stop, step)  # erzeugt Zahlen von start bis (stop - 1) mit der Schrittweite step
 ```
 
 Es ist schwierig, sich den Inhalt von `range()` direkt anzuschauen. Am
@@ -229,6 +237,10 @@ rückwärts zählt.
 Lassen Sie die Dreier-Zahlen von 3 bis 99 ausgeben, also 3, 6, 9, 12, 15, ..., 96, 99.
 ```
 
+```{code-cell} ipython3
+# Hier Ihr Code.
+```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -261,6 +273,10 @@ for i in range(2, 11, 2):
 ```{admonition} Mini-Übung
 :class: miniexercise
 Schreiben Sie ein Programm, dass die Summe der ersten n Quadratzahlen berechnet.
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code.
 ```
 
 ````{admonition} Lösung

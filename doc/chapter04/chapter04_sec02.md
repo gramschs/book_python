@@ -23,11 +23,14 @@ f-Strings auch formatierte Ausgaben zu produzieren.
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* Sie wissen, dass Strings unveränderliche Container sind und welche Konsequenzen das für die Programmierung hat.
+* Sie wissen, dass Strings unveränderliche Container sind und welche
+  Konsequenzen das für die Programmierung hat.
 * Sie können mit dem Index auf einzelne Zeichen eines Strings zugreifen.
 * Sie können Strings mit dem Plus-Operator **verketten**.
-* Sie können mit der **.replace()**-Methode einen Teilstring in einem String durch einen anderen Teilstring ersetzen.
-* Sie können mit einem **f-String** den Wert einer Variablen in einen String einbetten und zur Laufzeit anzeigen lassen.
+* Sie können mit der **.replace()**-Methode einen Teilstring in einem String
+  durch einen anderen Teilstring ersetzen.
+* Sie können mit einem **f-String** den Wert einer Variablen in einen String
+  einbetten und zur Laufzeit anzeigen lassen.
 ```
 
 ## Strings sind Container
@@ -49,26 +52,33 @@ print(mein_string[1])
 
 Aber welche Zeichen gehören dazu? Probieren Sie die folgende Mini-Übung aus.
 
-````{admonition} Mini-Übung
+```{admonition} Mini-Übung
 :class: miniexercise
-Speichern Sie den String 'Hallo, Du da!' in einer Variable. Beantworten Sie folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.
+Speichern Sie den String 'Hallo, Du da!' in einer Variable. Beantworten Sie
+folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.
 
 * Was ist der größte Index des String 'Hallo, Du da!'?
-* Was passiert, wenn Sie auf den Index 20 zugreifen wollen?
+* Was passiert, wenn Sie versuchen, auf den Index 20 zuzugreifen?
 * Welches Zeichen hat den Index 6?
-````
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code.
+```
 
 ````{admonition} Lösung
 :class: miniexercise, toggle
-
 * Der größte Index ist 12.
-* Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung: 'IndexError: string index out of range'. Der Index 20 ist außerhalb des zulässigen Indexbereichs von 0 bis 12.
-* Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch Zeichen und müssen mitgezählt werden.
+* Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung:
+  'IndexError: string index out of range'. Der Index 20 ist außerhalb des
+  zulässigen Indexbereichs von 0 bis 12.
+* Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch
+* Zeichen und müssen mitgezählt werden.
 ````
 
-Mit den beiden for-Schleifen der letzten beiden Abschnitte, können wir die
-Zeichen auch einzeln ausgeben lassen. Als erstes die for-Schleife mit
-Liste/String:
+Mit den beiden for-Schleifen der letzten beiden Abschnitte können wir die
+Zeichen auch einzeln ausgeben lassen. Als erstes nutzen wir die for-Schleife
+direkt:
 
 ```{code-cell} ipython3
 for zeichen in 'Hallo, Du Da!':
@@ -81,6 +91,17 @@ mehrfache Wiederholen einer Anweisung.
 ```{code-cell} ipython3
 mein_string = 'Hallo, Du da!'
 for i in range(13):
+    zeichen = mein_string[i]
+    print(zeichen)
+```
+
+Woher kommt die magische Zahl 13 in dem obigen `range()`-Objekt? Das ist die
+Länge des Strings, die wir besser mit der `len()`-Funktion bestimmen lassen.
+
+```{code-cell} ipython3
+mein_string = 'Hallo, Du da!'
+laenge = len(mein_string)
+for i in range(laenge):
     zeichen = mein_string[i]
     print(zeichen)
 ```
@@ -101,9 +122,9 @@ print('Nach dem Austausch:')
 print(meine_liste)
 ```
 
-Obwohl Strings auch Container sind, funktioniert die Manipulation eines
-einzelnen Zeichens in einem String leider nicht. Entfernen Sie in der folgenden
-Code-Zelle den Kommentar vor `wort[0] = 'H'`. Was passiert?
+Obwohl Strings genau wie Listen Container sind, funktioniert die Manipulation
+eines einzelnen Zeichens in einem String leider nicht. Entfernen Sie in der
+folgenden Code-Zelle den Kommentar vor `wort[0] = 'H'`. Was passiert?
 
 ```{code-cell} ipython3
 wort = 'hallo!'
@@ -117,8 +138,8 @@ print(wort)
 ```
 
 Der Python-Interpreter gibt eine Fehlermeldung aus: 'str' object does not
-support item assignment. Ein item ist ein einzelnes Element der Liste und
-assignment ist das englische Wort für Zuweisung. Auf deutsch lautet diese
+support item assignment'. Ein item ist ein einzelnes Element der Liste und
+assignment ist das englische Wort für Zuweisung. Auf Deutsch lautet diese
 Fehlermeldung also, dass ein String-Objekt die Zuweisung eines einzelnen
 Elements/Zeichens nicht unterstützt. Oder anders ausgedrückt, es ist verboten,
 einen String durch eine Zuweisung zu ändern.
@@ -172,8 +193,8 @@ In diesem Beispiel haben wir den Teilstring "MATLAB" durch den Teilstring
 "Python" ersetzt. Wie Sie sehen, mussten wir für den abgeänderten Text eine neue
 Variable namens `neuer_text` verwenden. Wenn mehrfach Änderungen des Strings
 durchgeführt werden sollen, ist das Ausdenken von neuen Variablennamen lästig.
-Dann kann auch der alte Variablenname wiederverwendet werden, wie in dem
-folgendem Beispiel.
+Dann kann der ursprüngliche Variablenname wiederverwendet werden, wie im
+folgenden Beispiel.
 
 ```{code-cell} ipython3
 text = 'MATLAB ist eine großartige Programmiersprache!'
@@ -190,19 +211,25 @@ die `.replace()`-Methode aus.
 
 ````{admonition} Mini-Übung
 :class: miniexercise
-Schreiben Sie ein Programm, das in dem Spruch "Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo." die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den Spruch vor und nach der Korrektur ausgeben.
+Schreiben Sie ein Programm, das in dem Spruch "Zehn Ziegen zogen 10 Kilogramm
+Zucker zum Zoo." die Einheit Kilogramm durch Zentner ersetzt. Lassen Sie den
+Spruch vor und nach der Korrektur ausgeben.
 ````
+
+```{code-cell} ipython3
+# Hier Ihr Code.
+```
 
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
 spruch = 'Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.'
 
-print('Vorher dem Anwenden der .replace()-Methode: ')
+print('Vor dem Anwenden der .replace()-Methode: ')
 print(spruch)
 
 print('Jetzt wird .replace() angewendet: ')
-spruch.replace('Kilogramm', 'Zentner')
+spruch = spruch.replace('Kilogramm', 'Zentner')
 print(spruch)
 ```
 ````
@@ -240,19 +267,23 @@ geben wir $\pi$ auf zwei Nachkommastellen an.
 ```{code-cell} ipython3
 from numpy import pi
 
-print(f'Pi = {pi:1.2f}')
+print(f'Pi = {pi:.2f}')
 ```
 
 Es ist schwierig, sich alle Formatierungsoptionen zu merken. Auf der
 Internetseite
 [https://cheatography.com/brianallan/cheat-sheets/python-f-strings-basics/](https://cheatography.com/brianallan/cheat-sheets/python-f-strings-basics/)
-finden Sie eine umfangreiche Übersicht und können sich zudem ein pdf-Ddokument
+finden Sie eine umfangreiche Übersicht und können sich zudem ein pdf-Dokument
 herunterladen.
 
 ````{admonition} Mini-Übung
 :class: miniexercise
 Schreiben Sie ein Programm, mit dem der Flächeninhalt eines Rechtecks berechnet werden soll. Die beide Seitenlängen werden jeweils in den Variablen `laenge` und `breite` gespeichert (suchen Sie sich eigene Zahlen aus). Ausgegeben werden soll dann: "Der Flächeninhalt eines Rechtecks mit den Seiten XX und XX ist XX.", wobei XX durch die korrekten Zahlen ersetzt werden und der Flächeninhalt auf eine Nachkommastelle gerundet werden soll.
 ````
+
+```{code-cell} ipython3
+# Hier Ihr Code.
+```
 
 ````{admonition} Lösung
 :class: miniexercise, toggle
@@ -268,3 +299,10 @@ flaeche = laenge * breite
 print(f'Der Flächeninhalt eines Rechtecks mit den Seiten {laenge} und {breite} ist {flaeche:.1f}.')
 ```
 ````
+
+## Zusammenfassung und Ausblick
+
+In diesem Kapitel haben wir gelernt, dass Strings unveränderlich sind. Werden
+Strings manipuliert, müssen wir das Ergebnis explizit in einer neuen Variablen
+speichern, sollten wir mit dem manipuliertem String weiter arbeiten wollen. Im
+nächsten Kapitel betrachten wir Zufallszahlen.
