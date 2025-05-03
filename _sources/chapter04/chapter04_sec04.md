@@ -136,7 +136,7 @@ print(f'Die Fakultät von {n} ist {ergebnis}, also {n}! = {ergebnis}.')
 
 ```{admonition} Übung 4.6
 :class: miniexercise
-Ein Firma stellt Schrauben her, deren Länge im Mittel 50 mm beträgt. Aufgrund
+Eine Firma stellt Schrauben her, deren Länge im Mittel 50 mm beträgt. Aufgrund
 von Fertigungstoleranzen sind die Längen normalverteilt mit einer
 Standardabweichung von 0.4 mm.
 
