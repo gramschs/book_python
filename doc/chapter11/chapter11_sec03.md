@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus einem DataFrame extrahieren.
 * Sie können den Text der Achsenbeschriftung drehen.
 * Sie können mit **axhline()** zu einem Plot eine horizontale

@@ -24,7 +24,7 @@ abgeschaltet. Solche Wiederholungen wollen wir nun mit Python umsetzen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können eine Schleife mit Bedingung als **while**-Schleife in Python
   implementieren.
 * Sie können mit **break** eine Schleife vorzeitig abbrechen.

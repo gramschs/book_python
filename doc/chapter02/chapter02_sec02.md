@@ -24,7 +24,7 @@ Datentypen und dem Speichern von Informationen in Variablen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie wissen, was **Datentypen** sind.
 * Sie kennen den Unterschied zwischen **Ganzzahlen** und **Fließkommazahlen**
   und die dazugehörigen Datentypen **Integer** und **Float**.

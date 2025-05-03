@@ -23,7 +23,7 @@ Kapitel den Unterschied beleuchten.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 Sie kennen den Unterschied zwischen **lokalen** und **globalen** Variablen.
 ```
 

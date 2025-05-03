@@ -25,7 +25,7 @@ Betriebssystem, Anwendungssoftware und Bibliothek kennen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie kennen die Definition von **Hardware** und **Software**. 
 * Sie können häufige Hardware-Komponenten benennen und den verschiedenen
   Kategorien (Eingabe, Verarbeitung, Ausgabe, Speicher) zuordnen.

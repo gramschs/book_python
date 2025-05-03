@@ -25,7 +25,7 @@ auch den Umgang mit dem Jupyter Notebook noch weiter zu festigen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie kennen die grundlegenden Rechenoperationen in Python.
 * Sie wissen, was ein **Kommentar** ist.
 * Sie können in Python einen Kommentar mit **#** schreiben.

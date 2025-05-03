@@ -23,7 +23,7 @@ Regressionsverfahren.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie wissen, was **Regression** ist.
 * Sie wissen, was das **Bestimmtheitsmaß** $R^2$ ist und können es für **lineare Regression** interpretieren:
   * Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die

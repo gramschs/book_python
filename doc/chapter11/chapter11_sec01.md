@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können **Matplotlib** mit der üblichen Abkürzung **plt** importieren.
 * Sie können Funktionen als **Liniendiagramm** visualisieren.
 * Sie können diskrete Daten als **Balkendiagramm** visualisieren.

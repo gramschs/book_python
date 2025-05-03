@@ -28,7 +28,7 @@ erarbeiten.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können Simulink starten.
 * Sie kennen den Unterschied zwischen **Sources** (Quellen) und **Sinks**
   Senken.

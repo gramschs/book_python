@@ -28,7 +28,7 @@ grundlegenenden Bestandteile eines ML-Systems ein.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie wissen, wie langes es das Forschungsgebiet **maschinelles Lernen** gibt
   und warum es sich in den letzten beiden Jahrzehnten so stark entwickelt hat.
 * Sie kennen die Bestandteile eines ML-Systems: **Daten**, **Algorithmus** und

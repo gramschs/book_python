@@ -22,7 +22,7 @@ ML-Modellen: überwachtes Lernen (Supervised Learning), unüberwachtes Lernen
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können anhand eines Beispiels erklären, was die Fachbegriffe
   * **überwachtes Lernen (Supervised Learning)**,
   * **unüberwachtes Lernen (Unsupervised Learning)** und

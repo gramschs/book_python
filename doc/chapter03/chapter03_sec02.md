@@ -27,7 +27,7 @@ NumPy-Moduls kennenlernen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können erklären, was ein **Modul** in Python ist.
 * Sie können ein Modul komplett mit **import modul** importieren und auf die
   darin enthaltenen Funktionalitäten mit **modul.funktionalitaet** zugreifen.

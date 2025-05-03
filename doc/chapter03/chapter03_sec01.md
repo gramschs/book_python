@@ -29,7 +29,7 @@ Notebook mit Listen beschäftigen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie wissen, dass **Container** Datentypen sind, die andere Objekte als Sammlung verwalten.
 * Sie können eine **Liste** erzeugen.
 * Sie wissen, was der Fachbegriff **Index** bedeutet.

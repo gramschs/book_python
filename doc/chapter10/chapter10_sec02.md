@@ -22,7 +22,7 @@ auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können auf ganze Zeilen und Spalten zugreifen:
   * Zugriff auf eine einzelne Zeile oder Spalte, indem ein Index spezifiziert wird
   * Zugriff auf mehrere zusammenhängende Zeilen oder Spalten (Slice) 

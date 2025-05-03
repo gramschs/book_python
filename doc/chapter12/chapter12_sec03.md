@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können mit **polyfit** zu gegebenen Messdaten die Koeffizienten eines
   Regressionspolynoms bestimmen.
 * Sie können mit **polyval** aus den Koeffizienten ein Regressionspolynom

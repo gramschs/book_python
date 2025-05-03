@@ -26,7 +26,7 @@ Verwenden Sie dazu eine Liste der Monate und eine for-Schleife.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 monate = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 
 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
@@ -43,7 +43,7 @@ Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei 
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 
@@ -61,7 +61,7 @@ Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu l
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 import ColabTurtlePlus.Turtle as turtle
 
@@ -81,7 +81,7 @@ Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in ei
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 # Initalisierung der leeren Liste
 zahlen = []
@@ -119,7 +119,7 @@ Die Fakultät von 5 ist 120, also 5! = 120.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 # Eingabe des Benutzers
 n = int(input('Bitte gegen Sie die Zahl n ein, zu der die Fakultät berechnet werden soll: '))
@@ -146,7 +146,7 @@ Standardabweichung von 0.4 mm.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 import numpy as np
 
