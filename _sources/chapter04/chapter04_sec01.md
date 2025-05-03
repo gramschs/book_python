@@ -32,7 +32,7 @@ mit einem Zahlenbereich.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können eine **for-Schleife mit Liste** programmieren.
 * Sie wissen, wie die Fachbegriffe der einzelnen Bestandteil der Schleife
   lauten:
@@ -117,7 +117,7 @@ Schreiben Sie ein Programm, das die ersten 10 Quadratzahlen berechnet und ausgib
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 for i in [1,2,3,4,5,6,7,8,9,10]:
     quadrat = i ** 2
@@ -125,7 +125,7 @@ for i in [1,2,3,4,5,6,7,8,9,10]:
 ```
 ````
 
- Für den Python-Interpreter ist es unerheblich, mit welchen Datentypen die Liste
+Für den Python-Interpreter ist es unerheblich, mit welchen Datentypen die Liste
 gefüllt ist, die in der for-Schleife durchlaufen wird. Auch eine Liste mit
 Strings stellt kein Problem dar, wie das folgende Beispiel zeigt:
 
@@ -151,7 +151,7 @@ lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 # Erzeugung Liste
 noten_liste = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"]
@@ -242,7 +242,7 @@ Lassen Sie die Dreier-Zahlen von 3 bis 99 ausgeben, also 3, 6, 9, 12, 15, ..., 9
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 for i in range(3, 100, 3):
     print(i)
@@ -280,7 +280,7 @@ Schreiben Sie ein Programm, dass die Summe der ersten n Quadratzahlen berechnet.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 n = 5  # Beispielwert
 summe = 0

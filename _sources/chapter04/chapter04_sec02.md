@@ -22,7 +22,7 @@ f-Strings auch formatierte Ausgaben zu produzieren.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie wissen, dass Strings unveränderliche Container sind und welche
   Konsequenzen das für die Programmierung hat.
 * Sie können mit dem Index auf einzelne Zeichen eines Strings zugreifen.
@@ -67,7 +67,7 @@ folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 * Der größte Index ist 12.
 * Beim Versuch, auf Index 20 zuzugreifen, gibt es eine Fehlermeldung:
   'IndexError: string index out of range'. Der Index 20 ist außerhalb des
@@ -221,7 +221,7 @@ Spruch vor und nach der Korrektur ausgeben.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 spruch = 'Zehn Ziegen zogen 10 Kilogramm Zucker zum Zoo.'
 
@@ -286,7 +286,7 @@ Schreiben Sie ein Programm, mit dem der Flächeninhalt eines Rechtecks berechnet
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 # Eingabe
 laenge = 5.5

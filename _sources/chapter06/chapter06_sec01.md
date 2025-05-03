@@ -37,7 +37,7 @@ eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie kennen die Fachbegriffe 
   * **Aufruf** einer Funktion,
   * **Argumente** oder **Parameter** einer Funktion und

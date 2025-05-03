@@ -17,7 +17,7 @@ kernelspec:
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können mit **polyfit** die Koeffizienten einer Regressionsgerade zu
   gegebenen Messwerten bestimmen.
 * Sie können mit **polyval** aus den berechneten Koeffizienten die

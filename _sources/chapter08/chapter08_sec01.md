@@ -11,7 +11,7 @@ Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe [htt
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können MATLAB starten.
 * Sie können MATLAB als Taschenrechner benutzen.
 * Sie können die Dokumentation mit der Anweisung **doc** aufrufen. 

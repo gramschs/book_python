@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -517,7 +517,7 @@ Zufallszahlen in Python beschäftigen. Wir nutzen dazu das Modul <code class="do
 aus der Bibliothek NumPy.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
-<div class="admonition-goals admonition">
+<div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
 <li><p>Sie kennen das Modul <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>.</p></li>
@@ -546,7 +546,7 @@ simulieren möchten, können wir die Funktion <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -570,7 +570,7 @@ gleichverteilte Integers zwischen 1 und 6 zufällig gezogen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 3 5 3 3 2 6 2 3 6]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3 5 6 6 5 3 6 1 3 2]
 </pre></div>
 </div>
 </div>
@@ -589,7 +589,7 @@ gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.</p>
 </div>
 </div>
 </div>
-<div class="miniexercise toggle admonition">
+<div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -615,7 +615,7 @@ wir scheinbar auf die Angabe eines Bereichs verzichten.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1349729261389877
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.41371579523916013
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ Argument (exklusiv).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.831334097008187
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8879434772478143
 </pre></div>
 </div>
 </div>
@@ -649,7 +649,7 @@ erzeugen lassen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.02393352 14.07525679 15.136082   17.97802187 12.80031043]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10.52728866 14.23282718 17.56065007 11.01474179 16.45916202]
 </pre></div>
 </div>
 </div>
@@ -677,7 +677,7 @@ später).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a650fbe63749e0c4073bfea182908c0353d52e32cc48722a82e1976939865986.png" src="../_images/a650fbe63749e0c4073bfea182908c0353d52e32cc48722a82e1976939865986.png" />
+<img alt="../_images/50a1ae6f8af29731532427fd99c157fd1966053b7b7327c6f58b0c17085af9a7.png" src="../_images/50a1ae6f8af29731532427fd99c157fd1966053b7b7327c6f58b0c17085af9a7.png" />
 </div>
 </div>
 <p>Ordnet man die gezogenen Zufallszahlen den 10 Teilintervallen zu, so sind in
@@ -704,7 +704,7 @@ Zufallszahlen erzeugen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.17367421034825883
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2262606303329127
 </pre></div>
 </div>
 </div>
@@ -720,7 +720,7 @@ bedeutet, dass die Normalverteiung eine Standardabweichung von 1 hat.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.07563554 -2.33411599 -0.98699296  0.87095043  0.7423476 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.02968775 -1.37937699 -0.31659197  0.13356548 -0.48371437]
 </pre></div>
 </div>
 </div>
@@ -742,7 +742,7 @@ und 13 Jungen) erzeugen und ausgeben.</p>
 </div>
 </div>
 </div>
-<div class="miniexercise toggle admonition">
+<div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -775,7 +775,7 @@ Zufallszahlen pro Teilintervall anzeigen zu lassen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3e91c0fcf0b2b9a66f4640108ff5721d98e0e4715f889db4d7f09ef75b03b8ee.png" src="../_images/3e91c0fcf0b2b9a66f4640108ff5721d98e0e4715f889db4d7f09ef75b03b8ee.png" />
+<img alt="../_images/ef997716e7c28460c20d2be5f486e8a79d0cb724352bacec77d0f456512d6d29.png" src="../_images/ef997716e7c28460c20d2be5f486e8a79d0cb724352bacec77d0f456512d6d29.png" />
 </div>
 </div>
 </section>

@@ -23,7 +23,7 @@ Datentyp Bool.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie kennen den Datentyp **Bool** mit seinen beiden Werte True oder False.
 * Sie kennen die wichtigsten Vergleichsoperatoren für Zahlen und Strings.
 ```

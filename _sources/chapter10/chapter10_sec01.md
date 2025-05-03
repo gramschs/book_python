@@ -24,7 +24,7 @@ verwendete Datenformat `csv` kennen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
 * Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
 * Sie kennen das **CSV-Dateiformat**.

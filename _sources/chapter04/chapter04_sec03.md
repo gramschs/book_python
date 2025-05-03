@@ -21,7 +21,7 @@ aus der Bibliothek NumPy.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie kennen das Modul `numpy.random`.
 * Sie können mit `.randint()` **gleichverteilte Integers** und mit `.uniform()`
   **gleichverteilte Floats** erzeugen lassen.
@@ -78,7 +78,7 @@ Könnte damit die Ziehung der Lottozahlen simuliert werden?
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 import numpy as np
 
@@ -196,7 +196,7 @@ und 13 Jungen) erzeugen und ausgeben.
 ```
 
 ````{admonition} Lösung
-:class: miniexercise, toggle
+:class: minisolution, toggle
 ```python
 import numpy as np
 

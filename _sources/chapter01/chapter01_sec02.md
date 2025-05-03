@@ -30,7 +30,7 @@ Zeit zu sparen. Dies kann Fehler minimieren und die Effizienz steigern.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können erklären, was ein **Algorithmus** ist.
 * Sie wissen, was eine **Programmiersprache** ist.
 * Sie kennen den Unterschied zwischen **höheren Prorgammiersprachen** und

@@ -1,86 +1,67 @@
 /* anything related to the light theme */
 html[data-theme="light"] {
-    --my-color-goals: #ffc107;
-    --my-color-goals-bg: #FFF8E6;
+  --my-color-goals: #ffc107;
+  --my-color-goals-bg: #FFF8E6;
 }
 
 /* anything related to the dark theme */
 html[data-theme="dark"] {
-    --my-color-goals: #ffc107;
-    --my-color-goals-bg: #584306;
+  --my-color-goals: #ffc107;
+  --my-color-goals-bg: #584306;
 }
 
-div.admonition.admonition-goals {
-    border-color: var(--my-color-goals); 
-  }
-  div.admonition.admonition-goals > .admonition-title {
-    background-color: var(--my-color-goals-bg); 
-  }
-  div.admonition.admonition-goals > .admonition-title:after {
-    color: var(--my-color-goals);
-    content: "\f046"; /* fa-solid fa-tv */
-  }
+div.admonition.goals {
+  border-color: var(--my-color-goals); 
+}
+div.admonition.goals > .admonition-title {
+  background-color: var(--my-color-goals-bg); 
+}
+div.admonition.goals > .admonition-title:after {
+  color: var(--my-color-goals);
+  content: "\f046"; /* fa-solid fa-tv */
+}
 
-  div.admonition.miniexercise {
-    border-color: var(--pst-color-success); 
-  }
-  div.admonition.miniexercise > .admonition-title {
-    background-color: var(--pst-color-success-bg); 
-  }
-  div.admonition.miniexercise > .admonition-title:after {
-    color: var(--pst-color-success);
-    content: var(--pst-icon-admonition-todo);
-  }
-
+div.admonition.miniexercise {
+  border-color: var(--pst-color-success); 
+}
+div.admonition.miniexercise > .admonition-title {
+  background-color: var(--pst-color-success-bg); 
+}
+div.admonition.miniexercise > .admonition-title:after {
+  color: var(--pst-color-success);
+  content: var(--pst-icon-admonition-todo);
+}
+div.admonition.minisolution {
+  border-color: var(--pst-color-success); 
+}
+div.admonition.minisolution > .admonition-title {
+  background-color: var(--pst-color-success-bg); 
+}
+div.admonition.minisolution > .admonition-title:after {
+  color: var(--pst-color-success);
+  content: var(--pst-icon-admonition-todo);
+}
 /* Start by hiding the tablet/laptop image */
 .image43 {
-    display: none;
+  display: none;
 }
 
 /* For devices with a width of at least 768px, hide the smartphone image and show the tablet/laptop image */
 @media (min-width: 768px) {
-    .image43 {
-        display: none; /* Hide smartphone image */
-    }
-    .image169 {
-        display: block; /* Show tablet/laptop image */
-    }
+  .image43 {
+      display: none; /* Hide smartphone image */
+  }
+  .image169 {
+      display: block; /* Show tablet/laptop image */
+  }
 }
 
 /* For devices smaller than 768px (typically smartphones), show the smartphone image */
 @media (max-width: 767px) {
-    .image43 {
-        display: block; /* Show smartphone image */
-    }
-    .image169 {
-        display: none; /* Hide tablet/laptop image */
-    }
-}
-
-
-
-/* Lösung */
-div.minisolution{
-    border-color: var(--first-color);
-    background-color: none;
-}
-  
-div.minisolution p.admonition-title {
-    background-color: transparent;
-    text-decoration: none;
-}
-  
-  /* Remove content box */
-div.minisolution p.admonition-title::before {
-    content: none;
-}
-
-.scbs-carousel-control-prev,
-.scbs-carousel-control-next{
-          bottom: 88%;
-}
-
-div.ascii-art {
-    font-family: monospace;
-    white-space: pre;
+  .image43 {
+      display: block; /* Show smartphone image */
+  }
+  .image169 {
+      display: none; /* Hide tablet/laptop image */
+  }
 }

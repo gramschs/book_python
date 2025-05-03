@@ -39,7 +39,7 @@ arbeiten, verwenden Sie bitte
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können ein fehlendes Modul mit **conda** oder **pip** nachinstallieren.
 * Sie wissen, was eine **Turtle-Grafik** ist.
 * Sie können das Modul **colabTurtlePlus** importieren.

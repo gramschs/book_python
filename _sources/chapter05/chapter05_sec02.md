@@ -24,7 +24,7 @@ werden, wenn eine Bedingung erfüllt ist.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können mit **if** eine Programmverzweigung implementieren.
 ```
 

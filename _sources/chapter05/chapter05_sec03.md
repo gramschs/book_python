@@ -26,7 +26,7 @@ Programmverzweigungen mit mehreren Zweigen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können Programmverzweigungen mit zwei Zweigen mittels **if - else**
   implementieren.
 * Sie können mehrteilige Programmverzweigungen mit **if - elif - else**

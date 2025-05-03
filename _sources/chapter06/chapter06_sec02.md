@@ -22,7 +22,7 @@ Rückgabewerte liefert.
 ## Lernziele
 
 ```{admonition} Lernziel
-:class: admonition-goals
+:class: goals
 Sie können eine Funktion mit Parametern und Rückgabewerten selbst
 implementieren.
 ```
