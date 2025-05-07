@@ -496,6 +496,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">Programmverzweigungen mit zwei Zweigen: if – else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen-mit-vielen-zweigen-if-elif-else">Programmverzweigungen mit vielen Zweigen: if – elif – else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -511,12 +512,12 @@
 <h1>5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else<a class="headerlink" href="#programmverzweigungen-mit-mehreren-zweigen-if-elif-else" title="Link to this heading">#</a></h1>
 <p>In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor.
 Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts?
-Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein
+Betrete ich ein Gebäude, entscheide ich zwischen Treppe und Fahrstuhl. Mein
 Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl
-zwischen zwei Möglichkeiten gibt es zweiteilige Programmverzweigungen. Und auch
-bei zweiteiligen Programmverzweigungen ist noch nicht Schluss, denn vielleicht
-kommt man ja an eine Viererkreuzung … Daher behandeln wir in diesem Kapitel
-Programmverzweigungen mit mehreren Zweigen.</p>
+zwischen zwei Möglichkeiten gibt es Programmverzweigungen mit zwei Weigen. Und
+auch bei Programmverzweigungen mit zwei Zweigen hört es noch nicht auf, denn
+vielleicht kommt man ja an eine Viererkreuzung. Daher behandeln wir in diesem
+Kapitel Programmverzweigungen mit mehreren Zweigen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -545,7 +546,7 @@ eingerückt sind!</p>
 ansonsten der 2. Anweisungsblock. Danach führt der Python-Interpreter alles nach
 dem if-else-Konstrukt aus, d.h. der Interpreter macht mit dem normalen
 Programmablauf weiter.</p>
-<p>Hier wieder das Beispiel mit dem Alter:</p>
+<p>Hier erneut ein Beispiel mit dem Alter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie? &#39;</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie sind volljährig, Sie dürfen Alkohol kaufen.&#39;</span><span class="p">)</span>
@@ -555,33 +556,7 @@ Programmablauf weiter.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jetzt haben wir aber genug über den Alkoholkauf geredet...&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2
-für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist,
-soll ausgegeben werden: “Dieser Monat gehört zur 1. Jahreshälfte.” Ansonsten
-soll ausgegeben werden: “Dieser Monat gehört zur 2. Jahreshälfte.”</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
-<span class="n">monat</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.&#39;</span><span class="p">))</span>
-
-<span class="c1"># Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">monat</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dieser Monat gehört zur 1. Jahreshälfte.&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dieser Monat gehört zur 2. Jahreshälfte.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>Wir vertiefen die zweifache Verzweigung mit einer Mini-Übung.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die
@@ -611,7 +586,7 @@ aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben:
 </section>
 <section id="programmverzweigungen-mit-vielen-zweigen-if-elif-else">
 <h2>Programmverzweigungen mit vielen Zweigen: if – elif – else<a class="headerlink" href="#programmverzweigungen-mit-vielen-zweigen-if-elif-else" title="Link to this heading">#</a></h2>
-<p>Eins, zwei, drei, viele … häufig müssen mehr als zwei Fälle unterschieden
+<p>Eins, zwei, drei – viele … häufig müssen mehr als zwei Fälle unterschieden
 werden. In einer Mini-Übung haben wir beispielsweise überprüft, ob eine Zahl
 negativ oder positiv oder Null ist. Ein Beispiel aus dem Alltag ist der Kauf
 einer Fahrkarte für den ÖPNV. Meist wird beim Ticketpreis unterschieden, ob die
@@ -620,6 +595,9 @@ Person jünger als 6 ist (keine Fahrkarte notwendig), zwischen 6 und 14 ist
 Altersklassen gibt, können wir kein if-else-Konstrukt benutzen, denn nur weil
 die Person beispielsweise nicht jünger als 6 ist wissen wir noch lange nicht, ob
 die Person eine Schülerfahrkarte oder eine Erwachsenenfahrkarte braucht.</p>
+<p>Beachten Sie die Wahl der Vergleichsoperatoren: Bei <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code> ist eine
+Person mit genau 14 Jahren noch in der Kategorie ‘Schülerfahrkarte’. Bei <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">15</span></code> wäre dies ebenso der Fall. Überlegen Sie bei der Implementierung genau, ob
+Randwerte in- oder exklusiv behandelt werden sollen.</p>
 <p>Probieren wir es einfach:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,8 +642,8 @@ Schülerfahrkarte
 <p>Wir erhalten die Ausgabe <code class="docutils literal notranslate"><span class="pre">&quot;keine</span> <span class="pre">Fahrkarte</span> <span class="pre">notwendig&quot;</span></code>, weil die Bedingung des
 ersten if-Konstrukts erfüllt ist (<code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>). Danach wird aber auch noch die
 Ausgabe <code class="docutils literal notranslate"><span class="pre">&quot;Schülerfahrkarte&quot;</span></code> angezeigt, weil auch die Bedingung des zweiten
-if-Konstrukts (<code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code>) erfüllt ist. So geht es also nicht, zwischen drei
-Bedingungen zu unterscheiden.</p>
+if-Konstrukts (<code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code>) erfüllt ist. Diese Variante eignet sich also nicht
+zur Unterscheidung dreier Bedingungen.</p>
 <p>Probieren wir es mit einem zusätzlichen if-else-Konstrukt für die Unterscheidung
 der Kinder.</p>
 <div class="cell docutils container">
@@ -710,8 +688,8 @@ Erwachsenenfahrkarte
 </div>
 </div>
 </div>
-<p>Tatsächlich läuft unser Programm-Code nur korrekt, wenn wir in den else-Zweig
-noch zusätzlich zwischen “jünger als 14” und “älter als 14” unterscheiden.</p>
+<p>Der Programmcode funktioniert nur korrekt, wenn wir in den else-Zweig noch
+zusätzlich zwischen “jünger als 14” und “älter als 14” unterscheiden.</p>
 <p>Führen Sie die folgende Code-Zelle mehrfach aus. Ändern Sie dabei das Alter.
 Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus.</p>
 <div class="cell docutils container">
@@ -739,8 +717,10 @@ Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus.</p>
 <p>Es wäre schöner, wenn es für solche Mehrfachverzweigungen etwas
 übersichtlicheren Code gäbe. Und in der Tat, den gibt es. Man könnte sozusagen
 den Start des else-Konstruktes mit dem nachfolgenden if-Konstrukt verschmelzen.
-Das Ergebnis davon ist die if-elif-else-Syntax. Allgemein sieht das
-<strong>if-elif-else-Konstrukt</strong> so aus:</p>
+<code class="docutils literal notranslate"><span class="pre">elif</span></code> ist eine Kurzform für <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> und ermöglicht es, mehrere Bedingungen
+nacheinander zu prüfen, ohne die Einrückungstiefe zu erhöhen. Das Ergebnis davon
+ist die if-elif-else-Syntax. Allgemein sieht das <strong>if-elif-else-Konstrukt</strong> so
+aus:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span> <span class="mi">1</span><span class="p">:</span>
     <span class="n">anweisungsblock</span> <span class="mi">1</span>
 <span class="k">elif</span> <span class="n">bedingung</span> <span class="mi">2</span><span class="p">:</span>
@@ -752,8 +732,13 @@ Das Ergebnis davon ist die if-elif-else-Syntax. Allgemein sieht das
     <span class="n">anweisungsblock</span> <span class="n">n</span>
 </pre></div>
 </div>
+<p>Wichtig: Bei einem if-elif-else-Konstrukt werden die Bedingungen der Reihe nach
+geprüft. Sobald eine Bedingung erfüllt ist, wird der zugehörige Anweisungsblock
+ausgeführt und alle nachfolgenden Bedingungen werden ignoriert. Daher ist die
+Reihenfolge der Bedingungen entscheidend für die korrekte Funktionsweise des
+Programms.</p>
 <p>Hier die besser lesbare Version der Unterscheidung von Zahlen in negative
-Zahlen, 0 und positive Zahlen aus der obigen Mini-Übung:</p>
+Zahlen, 0 und positive Zahlen aus der Mini-Übung:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">17</span>
@@ -772,7 +757,7 @@ Zahlen, 0 und positive Zahlen aus der obigen Mini-Übung:</p>
 </div>
 </div>
 </div>
-<p>Und jetzt noch einmal eine besser lesbare Version des Fahrkartenautomaten:</p>
+<p>Hier die besser lesbare Version des Fahrkartenautomaten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">27</span>
@@ -838,47 +823,24 @@ folgt:</p>
 </pre></div>
 </div>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur</p>
-<ul class="simple">
-<li><p>&lt;= - 10 ˚C ist, dann Ausgabe: “Es ist bitterkalt.”</p></li>
-<li><p>&lt;= 0 ˚C ist, dann Ausgabe: “Es ist kalt.”</p></li>
-<li><p>&lt;= 10 ˚C ist, dann Ausgabe: “Es ist kühl, aber OK.”</p></li>
-<li><p>&lt;= 20 ˚C ist, dann Ausgabe: “Es ist frühlingshaft.”</p></li>
-<li><p>&lt;= 30 ˚C ist, dann Ausgabe: “Es ist heiß!”</p></li>
-<li><p>&gt; 30 ˚C ist, dann Ausgabe: “Das ist ja nicht mehr auszuhalten heiß!!!”</p></li>
-</ul>
+<p>Wenn Sie das Thema elif/else vertiefen wollen, können Sie sich das folgende
+Video ansehen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “elif und else” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
-<span class="n">temperatur</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Welche Temperatur haben wir aktuell? &#39;</span><span class="p">))</span>
-
-<span class="c1"># Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="o">-</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es ist bitterkalt.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es ist kalt.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es ist kühl, aber OK.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es ist frühlingshaft.&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es ist heiß!&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Das ist ja nicht mehr auszuhalten heiß!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir gelernt, wie man mit if, elif und else in Python
+Programmverzweigungen mit zwei oder mehr Entscheidungszweigen umsetzt, um
+unterschiedliche Fälle gezielt abzufragen und übersichtlich zu strukturieren. Im
+nächsten Kapitel werden wir die Strukturierung des Code in kleinere Einheiten
+erlernen (Funktionen).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -949,6 +911,7 @@ folgt:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">Programmverzweigungen mit zwei Zweigen: if – else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen-mit-vielen-zweigen-if-elif-else">Programmverzweigungen mit vielen Zweigen: if – elif – else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

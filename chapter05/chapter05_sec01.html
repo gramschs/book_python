@@ -497,6 +497,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-datentyp-bool">Der Datentyp Bool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vergleiche-mit-zahlen">Vergleiche mit Zahlen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vergleiche-mit-strings">Vergleiche mit Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -520,25 +521,25 @@ Datentyp Bool.</p>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie kennen den Datentyp <strong>Bool</strong> mit seinen beiden Werte True oder False.</p></li>
-<li><p>Sie kennen die wichtigsten Vergleichsoperatoren für Zahlen und Strings.</p></li>
+<li><p>Sie kennen den Datentyp <strong>Bool</strong> mit seinen beiden Werten <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>Sie kennen die wichtigsten <strong>Vergleichsoperatoren</strong> für Zahlen und Strings.</p></li>
 </ul>
 </div>
 </section>
 <section id="der-datentyp-bool">
 <h2>Der Datentyp Bool<a class="headerlink" href="#der-datentyp-bool" title="Link to this heading">#</a></h2>
 <p>Zurück zu dem Beispiel mit der Überprüfung der Volljährigkeit. Angenommen, wir
-würden das Alter der Benutzers oder der Benutzerin in der Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>
-speichern. Damit wäre ein simples Beispiel für eine einfache Bedingung der
-mathematische Ausdruck <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">18</span></code>. Der Wert der Variablen <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird also
-mit der Zahl 18 verglichen. Dieser Vergleich ist entweder <strong>wahr (True)</strong> oder
-<strong>falsch (False)</strong>. Oder anders formuliert, diese Bedingung ist entweder erfüllt
-oder nicht erfüllt.</p>
+speichern das Alter der Benutzers oder der Benutzerin in der Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>.
+Damit wäre ein simples Beispiel für eine einfache Bedingung der mathematische
+Ausdruck <code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">18</span></code>. Der Wert der Variablen <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird also mit der Zahl 18
+verglichen. Dieser Vergleich ist entweder <strong>wahr (True)</strong> oder <strong>falsch
+(False)</strong>. Oder anders formuliert, diese Bedingung ist entweder erfüllt oder
+nicht erfüllt.</p>
 <p>Um den Wahrheitswert einer Bedingung zu speichern, hat Python einen eigenen
 Datentyp, einen sogenannten booleschen Datentyp. Nach dem englischen Wort wird
-dieser Datentyp in der Informatik üblicherweise <strong>Bool</strong> oder <strong>Boolean</strong> genannt. Das
-besondere an diesem Datentyp ist, dass eine Variable diesen Datentyps nur zwei
-verschiedene Werte annehmen kann, nämlich</p>
+dieser Datentyp in der Informatik üblicherweise <strong>Bool</strong> oder <strong>Boolean</strong>
+genannt. Das besondere an diesem Datentyp ist, dass eine Variable diesen
+Datentyps nur zwei verschiedene Werte annehmen kann, nämlich</p>
 <ul class="simple">
 <li><p>True: Wahrheitswert ist wahr oder</p></li>
 <li><p>False: Wahrheitswert ist falsch.</p></li>
@@ -568,7 +569,7 @@ eines Vergleichs speichert, kommen wir nun zu dem Vergleich selbst.</p>
 ist ein Vergleich ein Ausdruck mit zwei Argumenten und einem Vergleichsoperator
 in der Mitte. Die beiden Argumente können auch unterschiedliche Datentypen
 haben, dann muss der Vergleichsoperator aber sinnvoll für diese Datentypen
-definiert sein. Z.B. darf man einen Integer mit einem Float vergleichen</p>
+definiert sein. Zum Beispiel darf man einen Integer mit einem Float vergleichen</p>
 <p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">17.2</span></code></p>
 <p>aber</p>
 <p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">'vier'</span></code></p>
@@ -580,7 +581,7 @@ in Python:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>   größer</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>  größer oder gleich</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>  gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">!=</span> </code> ungleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> ungleich</p></li>
 </ul>
 <p>Im interaktiven Modus von Python können wir leicht den Wahrheitsgehalt von
 Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:</p>
@@ -711,8 +712,14 @@ Vergleichsoperatoren aus.</p>
 </pre></div>
 </div>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Vergleiche in Python” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ucsv_Nhhxmk"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details></section>
 <section id="vergleiche-mit-strings">
 <h2>Vergleiche mit Strings<a class="headerlink" href="#vergleiche-mit-strings" title="Link to this heading">#</a></h2>
 <p>Als nächstes werden wir uns mit der Verwendung von Strings in Vergleichen
@@ -753,8 +760,7 @@ Operator <code class="docutils literal notranslate"><span class="pre">in</span><
 in dem anderen String enthalten ist, und <code class="docutils literal notranslate"><span class="pre">False</span></code>, wenn nicht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
-<span class="n">string01</span> <span class="o">=</span> <span class="s1">&#39;Hallo Welt&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string01</span> <span class="o">=</span> <span class="s1">&#39;Hallo Welt&#39;</span>
 <span class="n">string02</span> <span class="o">=</span> <span class="s1">&#39;Welt&#39;</span>
 <span class="n">string03</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
 
@@ -803,10 +809,69 @@ False
 </div>
 <p>In diesem Beispiel ist <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> kleiner als <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code>, da “A” im Alphabet vor
 “B” steht, daher ist das Ergebnis des <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>-Operators <code class="docutils literal notranslate"><span class="pre">True</span></code>. Der <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>-Operator
-gibt <code class="docutils literal notranslate"><span class="pre">False</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> größer als <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code> ist. Der <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>-Operator
-gibt <code class="docutils literal notranslate"><span class="pre">True</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> kleiner oder gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code> ist. Der
-<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>-Operator gibt <code class="docutils literal notranslate"><span class="pre">False</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> nicht größer oder gleich
-<code class="docutils literal notranslate"><span class="pre">'Banane</span></code>’ ist.</p>
+gibt <code class="docutils literal notranslate"><span class="pre">False</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> nicht größer als <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code> ist. Der
+<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>-Operator gibt <code class="docutils literal notranslate"><span class="pre">True</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> kleiner oder gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code>
+ist. Der <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>-Operator gibt <code class="docutils literal notranslate"><span class="pre">False</span></code> zurück, da <code class="docutils literal notranslate"><span class="pre">'Apfel'</span></code> nicht größer oder
+gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</span></code> ist.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Gegeben sind die folgenden Strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">material1</span> <span class="o">=</span> <span class="s2">&quot;Stahl&quot;</span>
+<span class="n">material2</span> <span class="o">=</span> <span class="s2">&quot;Aluminium&quot;</span>
+<span class="n">material3</span> <span class="o">=</span> <span class="s2">&quot;Stahllegierung&quot;</span>
+<span class="n">material4</span> <span class="o">=</span> <span class="s2">&quot;stahl&quot;</span>
+</pre></div>
+</div>
+<p>Überprüfen Sie folgende Vergleiche und notieren Sie, ob das Ergebnis <code class="docutils literal notranslate"><span class="pre">True</span></code> oder
+<code class="docutils literal notranslate"><span class="pre">False</span></code> ist:</p>
+<ol class="arabic simple">
+<li><p>Ist <code class="docutils literal notranslate"><span class="pre">material1</span></code> lexikographisch größer als <code class="docutils literal notranslate"><span class="pre">material2</span></code>?</p></li>
+<li><p>Enthält <code class="docutils literal notranslate"><span class="pre">material3</span></code> den String <code class="docutils literal notranslate"><span class="pre">material1</span></code>?</p></li>
+<li><p>Sind <code class="docutils literal notranslate"><span class="pre">material1</span></code> und <code class="docutils literal notranslate"><span class="pre">material4</span></code> identisch?</p></li>
+<li><p>Überprüfen Sie mit dem <code class="docutils literal notranslate"><span class="pre">in-</span></code>Operator, ob die Zeichenfolge “leg” in
+<code class="docutils literal notranslate"><span class="pre">material3</span></code> vorkommt.</p></li>
+<li><p>Ist <code class="docutils literal notranslate"><span class="pre">material2</span></code> lexikographisch kleiner als <code class="docutils literal notranslate"><span class="pre">material4</span></code>?</p></li>
+</ol>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">material1</span> <span class="o">=</span> <span class="s2">&quot;Stahl&quot;</span>
+<span class="n">material2</span> <span class="o">=</span> <span class="s2">&quot;Aluminium&quot;</span>
+<span class="n">material3</span> <span class="o">=</span> <span class="s2">&quot;Stahllegierung&quot;</span>
+<span class="n">material4</span> <span class="o">=</span> <span class="s2">&quot;stahl&quot;</span>
+
+<span class="c1"># 1. Ist material1 lexikographisch größer als material2?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">material1</span> <span class="o">&gt;</span> <span class="n">material2</span><span class="p">)</span>  <span class="c1"># True, da &#39;S&#39; im Alphabet nach &#39;A&#39; kommt</span>
+
+<span class="c1"># 2. Enthält material3 den String material1?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">material1</span> <span class="ow">in</span> <span class="n">material3</span><span class="p">)</span>  <span class="c1"># True, da &quot;Stahl&quot; in &quot;Stahllegierung&quot; enthalten ist</span>
+
+<span class="c1"># 3. Sind material1 und material4 identisch?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">material1</span> <span class="o">==</span> <span class="n">material4</span><span class="p">)</span>  <span class="c1"># False, da Groß-/Kleinschreibung unterschiedlich ist</span>
+
+<span class="c1"># 4. Überprüfen Sie mit dem in-Operator, ob die Zeichenfolge &quot;leg&quot; in material3 vorkommt.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leg&quot;</span> <span class="ow">in</span> <span class="n">material3</span><span class="p">)</span>  <span class="c1"># True, da &quot;leg&quot; in &quot;Stahllegierung&quot; enthalten ist</span>
+
+<span class="c1"># 5. Ist material2 lexikographisch kleiner als material4?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">material2</span> <span class="o">&lt;</span> <span class="n">material4</span><span class="p">)</span>  <span class="c1"># False, da Großbuchstaben im ASCII-Code vor Kleinbuchstaben kommen</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir den booleschen Datentyp Bool mit seinen Werten True
+und False kennengelernt. Wir haben Vergleichsoperatoren (&lt;, &gt;, ==, !=, &lt;=, &gt;=)
+für Zahlen und Strings untersucht und gesehen, wie String-Vergleiche auf
+lexikographischer Ordnung basieren. Außerdem haben wir den ‘in’-Operator zur
+Überprüfung von Teil-Strings kennengelernt.</p>
 </section>
 </section>
 
@@ -879,6 +944,7 @@ gibt <code class="docutils literal notranslate"><span class="pre">True</span></c
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-datentyp-bool">Der Datentyp Bool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vergleiche-mit-zahlen">Vergleiche mit Zahlen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vergleiche-mit-strings">Vergleiche mit Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

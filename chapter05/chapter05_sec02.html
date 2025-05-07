@@ -495,6 +495,9 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-der-if-verzweigung">Syntax der if-Verzweigung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-modulo-operator">Der modulo-Operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typische-fehlerquellen-bei-if-anweisungen">Typische Fehlerquellen bei if-Anweisungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -510,7 +513,7 @@
 <h1>5.2 Programmverzweigungen: if<a class="headerlink" href="#programmverzweigungen-if" title="Link to this heading">#</a></h1>
 <p>Im letzten Kapitel haben wir gelernt, wie ein Vergleich in Python durchgeführt
 wird und mit welchem Datentyp das Ergebnis eines solchen Vergleichs gespeichert
-wird. In diesem Kapitel geht es nun darum, dass das Python-Programm auf das
+wird. In diesem Kapitel geht es nun darum, dass ein Python-Programm auf das
 Ergebnis eines Vergleichs reagiert, indem Code-Abschnitte nur dann ausgeführt
 werden, wenn eine Bedingung erfüllt ist.</p>
 <section id="lernziele">
@@ -519,6 +522,7 @@ werden, wenn eine Bedingung erfüllt ist.</p>
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
 <li><p>Sie können mit <strong>if</strong> eine Programmverzweigung implementieren.</p></li>
+<li><p>Sie kennen den *<em>modulo</em>-Operator <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p></li>
 </ul>
 </div>
 </section>
@@ -527,13 +531,21 @@ werden, wenn eine Bedingung erfüllt ist.</p>
 <p>Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt.
 Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span><span class="p">:</span>
-    <span class="n">anweisungsblock</span>
+    <span class="n">anweisung</span> <span class="mi">1</span> <span class="c1"># gehört zum if-Block</span>
+    <span class="n">anweisung</span> <span class="mi">2</span> <span class="c1"># gehört zum if-Block</span>
+<span class="n">anweisung</span> <span class="mi">3</span> <span class="c1"># gehört NICHT zum if-Block, wird immer ausgeführt</span>
 </pre></div>
 </div>
 <p>Ist die Bedingung erfüllt, also “True”, so wird der eingerückte Anweisungsblock
-ausgeführt, ansonsten übersprungen. Damit ist gemeint, dass der
-Python-Interpreter nach dem Ende des if-Blocks weiter macht, falls die Bedingung
-nicht erfüllt (= False) wird.</p>
+ausgeführt. Ist die Bedingung <em>nicht</em> erfüllt, wird dieser übersprungen. Damit
+ist gemeint, dass der Python-Interpreter nach dem Ende des if-Blocks
+weitermacht, falls die Bedingung nicht erfüllt ist (= False).</p>
+<p>Das Ende eines if-Blocks wird in Python durch die Einrückung bestimmt. Alle
+Anweisungen, die mit der gleichen Einrückung nach dem Doppelpunkt folgen,
+gehören zum if-Block. Sobald eine Zeile mit geringerer Einrückung (oder ohne
+Einrückung) erscheint, erkennt Python, dass der if-Block abgeschlossen ist.
+Diese Anweisungen werden dann unabhängig vom Ergebnis der if-Bedingung
+ausgeführt.</p>
 <p>Wir betrachten nun ein Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -555,10 +567,11 @@ Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...
 wahr, die Bedingung also erfüllt. Daher wird der Anweisungsblock, der nur aus
 einer einzigen Anweisung besteht, ausgeführt. Der Python-Interpreter gibt den
 String <code class="docutils literal notranslate"><span class="pre">Sie</span> <span class="pre">dürfen</span> <span class="pre">Alkohol</span> <span class="pre">kaufen.</span></code> aus und macht dann mit dem normalen Programm
-weiter.</p>
+weiter. In unserem Beispiel mit dem Alkoholkauf ist die Zeile <code class="docutils literal notranslate"><span class="pre">print('Bananen</span> <span class="pre">dürfen</span> <span class="pre">Sie</span> <span class="pre">immer</span> <span class="pre">kaufen...')</span></code> nicht eingerückt und wird daher unabhängig vom
+Alter immer ausgeführt.</p>
 <p>Dieser Code könnte beispielsweise mit einer Benutzerabfrage kombiniert werden:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie?&#39;</span><span class="p">))</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">):</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...&#39;</span><span class="p">)</span>
 </pre></div>
@@ -585,6 +598,8 @@ weiter.</p>
 </pre></div>
 </div>
 </div>
+<p>Nach dieser kurzen Mini-Übung kommt in der nächsten Mini-Übung eine etwas
+längere Aufgabenstellung.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt.
@@ -616,9 +631,159 @@ Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positi
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Die Zahl ist positiv.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Der Code erfordert drei if-Blöcke.</p>
+<p>Der Code erfordert drei if-Blöcke. In einem späteren Kapitel werden wir lernen,
+diese Aufgabe eleganter mit elif / else zu programmieren.</p>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “if-Anweisung” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b6KzYbM-Hvg"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="der-modulo-operator">
+<h2>Der modulo-Operator<a class="headerlink" href="#der-modulo-operator" title="Link to this heading">#</a></h2>
+<p>Ein nützlicher Operator für Verzweigungen ist der modulo-Operator <code class="docutils literal notranslate"><span class="pre">%</span></code>. Dieser
+berechnet den Rest einer Division und wird häufig verwendet, um festzustellen,
+ob eine Zahl durch eine andere teilbar ist oder um zyklische Muster zu erzeugen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beispiele für den modulo-Operator</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Ergebnis: 1 (Rest bei Division 10 durch 3)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># Ergebnis: 0 (Rest bei Division 8 durch 4)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der modulo-Operator ist besonders nützlich, um zu prüfen, ob eine Zahl gerade
+oder ungerade ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zahl</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="k">if</span> <span class="n">zahl</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zahl </span><span class="si">{</span><span class="n">zahl</span><span class="si">}</span><span class="s2"> ist gerade.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zahl </span><span class="si">{</span><span class="n">zahl</span><span class="si">}</span><span class="s2"> ist ungerade.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Zahl 15 ist ungerade.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Er wird auch häufig eingesetzt, um zu überprüfen, ob ein Wert ein Vielfaches
+eines anderen ist. Zum Beispiel kann man prüfen, ob eine fortlaufende Zahl ein
+Vielfaches von 10 ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zahl </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> ist ein Vielfaches von 10.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Zahl 10 ist ein Vielfaches von 10.
+Die Zahl 20 ist ein Vielfaches von 10.
+Die Zahl 30 ist ein Vielfaches von 10.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dieses Konzept werden wir später bei Schleifen wiedersehen, wenn wir
+beispielsweise nur jeden n-ten Wert verarbeiten oder anzeigen möchten.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie ein Programm, das die Zahlen von 1 bis 30 durchläuft und nur jede
+dritte Zahl ausgibt. Verwenden Sie den Modulo-Operator, um zu prüfen, ob eine
+Zahl durch 3 teilbar ist.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ausgabe jeder dritten Zahl von 1 bis 30</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">zahl</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="typische-fehlerquellen-bei-if-anweisungen">
+<h2>Typische Fehlerquellen bei if-Anweisungen<a class="headerlink" href="#typische-fehlerquellen-bei-if-anweisungen" title="Link to this heading">#</a></h2>
+<p>Bei der Implementierung von if-Anweisungen in Python gibt es einige häufige
+Fallstricke, die besonders Anfängern begegnen:</p>
+<p><strong>Vergessener Doppelpunkt:</strong> Nach der Bedingung muss immer ein Doppelpunkt
+stehen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Falsch</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind volljährig.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Richtig</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind volljährig.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Falsche Einrückung:</strong> Python verwendet Einrückungen, um Codeblöcke zu
+definieren. Alle Anweisungen, die zum if-Block gehören, müssen gleich eingerückt
+sein.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Falsch</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind volljährig.&quot;</span><span class="p">)</span>  <span class="c1"># Fehlende Einrückung!</span>
+
+<span class="c1"># Richtig</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind volljährig.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Verwechslung von Zuweisungs- und Vergleichsoperator:</strong> Für Vergleiche wird
+<code class="docutils literal notranslate"><span class="pre">==</span></code> verwendet, nicht <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Falsch (führt zu unerwarteten Ergebnissen)</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">=</span> <span class="mi">18</span><span class="p">:</span>  <span class="c1"># Zuweisung statt Vergleich!</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind genau 18.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Richtig</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind genau 18.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Ungeeignete Datentypen für Vergleiche:</strong> Achten Sie darauf, dass die
+verglichenen Werte kompatible Datentypen haben.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Problematisch</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie alt sind Sie? &quot;</span><span class="p">)</span>  <span class="c1"># alter ist ein String</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>  <span class="c1"># Vergleich zwischen String und Zahl führt zu TypeError</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind volljährig.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Richtig</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie alt sind Sie? &quot;</span><span class="p">))</span>  <span class="c1"># Umwandlung in Integer</span>
+<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sie sind volljährig.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Diese Fehler führen zu Syntax- oder Laufzeitfehlern, die den Programmablauf
+unterbrechen. Achten Sie daher besonders auf die korrekte Syntax und Einrückung
+bei if-Anweisungen.</p>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir uns mit einer einfachen Verzweigung beschäftigt. Im
+nächsten Kapitel geht es um mehrfache Verzweigungen mit elif und else.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -688,6 +853,9 @@ Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positi
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-der-if-verzweigung">Syntax der if-Verzweigung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-modulo-operator">Der modulo-Operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typische-fehlerquellen-bei-if-anweisungen">Typische Fehlerquellen bei if-Anweisungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

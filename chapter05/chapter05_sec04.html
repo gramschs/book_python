@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -194,7 +194,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for), Strings und Zufallszahlen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
@@ -514,12 +514,12 @@ das Programm ausgeben: “Du bist noch nicht volljährig.”</p>
 <span class="n">geburtsjahr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;In welchem Jahr wurden Sie geboren? &#39;</span><span class="p">))</span>
 
 <span class="c1"># Verarbeitung: berechne Alter</span>
-<span class="n">aktuelles_jahr</span> <span class="o">=</span> <span class="mi">2023</span>
+<span class="n">aktuelles_jahr</span> <span class="o">=</span> <span class="mi">2025</span>
 <span class="n">alter</span> <span class="o">=</span> <span class="n">aktuelles_jahr</span> <span class="o">-</span> <span class="n">geburtsjahr</span>
 
 <span class="c1"># Ausgabe</span>
 <span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du bist noch nicht volljährig.!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du bist noch nicht volljährig.&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">alter</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hurra, Sie werden oder wurden dieses Jahr volljährig!&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -549,7 +549,7 @@ Portokosten.</p>
 
 <span class="c1"># Eingabe der Bestellung</span>
 <span class="n">anzahl_tshirts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele T-Shirts werden bestellt? &#39;</span><span class="p">))</span>
-<span class="n">anzahl_pullover</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Pullover werden bestell? &#39;</span><span class="p">))</span>
+<span class="n">anzahl_pullover</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Pullover werden bestellt? &#39;</span><span class="p">))</span>
 <span class="n">anzahl_jacken</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Jacken werden bestellt? &#39;</span><span class="p">))</span>
 
 <span class="c1"># Verarbeitung</span>
@@ -565,44 +565,46 @@ Portokosten.</p>
 
 <span class="c1"># Ausgabe</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kaufpreis: </span><span class="si">{</span><span class="n">kaufpreis</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Portokosten: </span><span class="si">{</span><span class="n">portokosten</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Portokosten: </span><span class="si">{</span><span class="n">portokosten</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gesamtpreis: </span><span class="si">{</span><span class="n">gesamtpreis</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> EUR&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 5.3</p>
-<p>Wählen Sie sich Ihr Lieblingsrezept aus oder suchen Sie sich ein Rezept des
-Tages heraus (siehe <a class="reference external" href="https://www.chefkoch.de/rezepte/was-koche-ich-heute/">https://www.chefkoch.de/rezepte/was-koche-ich-heute/</a>).
-Notieren Sie sich die Zutatenlisten in zwei Listen. In der ersten Liste soll die
-Menge einer Zutat pro Person stehen, in der zweiten Liste die Zutat selbst.</p>
-<p>Lassen Sie dann den Computer fragen, für wie viele Personen gekocht werden soll.
-Dann soll der Computer eine Einkaufsliste ausgeben, bei der die Mengenangaben
-passend zur Personenanzahl skaliert sind.</p>
-<p>Beispiel Wrap-Pizza (<a class="reference external" href="https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html">https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html</a>):</p>
-<p>Computer: Für wie viele Personen soll gekocht werden?<br>
-Benutzer: 4<br>
-Computer:<br>
-Hier ist die Zutatenliste für 4 Personen: <br>
-4 Tortillas <br>
-8 EL Tomatenmark <br>
-4 EL Wasser <br>
-usw.</p>
+<p>In einer maschinenbautechnischen Anwendung müssen Sie einen geeigneten Werkstoff
+basierend auf der Betriebstemperatur auswählen. Es gelten folgende Regeln:</p>
+<ul class="simple">
+<li><p>Temperaturen unter 0°C: Verwenden Sie “Spezialstahl S420”</p></li>
+<li><p>Temperaturen zwischen 0°C und 100°C: Verwenden Sie “Standardstahl S235”</p></li>
+<li><p>Temperaturen zwischen 100°C und 500°C: Verwenden Sie “Hitzebeständiger Stahl
+S355”</p></li>
+<li><p>Temperaturen über 500°C: Verwenden Sie “Hochtemperaturlegierung Inconel”</p></li>
+</ul>
+<p>Schreiben Sie ein Python-Programm, das die Betriebstemperatur vom Benutzer
+abfragt und den empfohlenen Werkstoff ausgibt.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zutaten fuer Wrap-Pizza fuer eine Person</span>
-<span class="n">menge</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">zutat</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tortilla(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Tomatenmark&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Wasser&quot;</span><span class="p">,</span> <span class="s2">&quot;TL Pizzagewürz&quot;</span><span class="p">,</span> <span class="s2">&quot;Kochschinken&quot;</span><span class="p">,</span> <span class="s2">&quot;Parikaschote(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Zwiebeln&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomate(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Peperoni&quot;</span><span class="p">,</span> <span class="s2">&quot;Käse&quot;</span><span class="p">,</span> <span class="s2">&quot;Oregano&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
+<span class="n">temperatur</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie die Betriebstemperatur in °C ein: &#39;</span><span class="p">))</span>
 
-<span class="c1"># Eingabe: Abfrage Personenanzahl</span>
-<span class="n">personenanzahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Für wie viele Personen soll gekocht werden?&#39;</span><span class="p">))</span>
-
-<span class="c1"># Ausgabe</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hier ist die Zutatenliste für </span><span class="si">{</span><span class="n">personenanzahl</span><span class="si">}</span><span class="s1"> Personen:&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">menge</span><span class="p">)):</span>
-    <span class="n">aktuelle_menge</span> <span class="o">=</span> <span class="n">menge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">personenanzahl</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">aktuelle_menge</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">zutat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Verarbeitung und Ausgabe</span>
+<span class="k">if</span> <span class="n">temperatur</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Empfohlener Werkstoff: Spezialstahl S420&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Empfohlener Werkstoff: Standardstahl S235&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">500</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Empfohlener Werkstoff: Hitzebeständiger Stahl S355&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Empfohlener Werkstoff: Hochtemperaturlegierung Inconel&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -645,12 +647,225 @@ vorkommen.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anzahl u: </span><span class="si">{</span><span class="n">anzahl_u</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Bei der obigen Lösung werden Großbichstaben nicht mitgezählt. Entweder werden noch zusätzlich die Vergleiche mit  ‘A’, ‘E’, ‘I’, ‘O’ und ‘U’ durchgeführt, oder der eingebene Satz mit <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> vorab zu Kleinbuchstaben konvertiert.</p>
+<p>Bei der obigen Lösung werden Großbuchstaben nicht mitgezählt. Entweder werden
+noch zusätzlich die Vergleiche mit  ‘A’, ‘E’, ‘I’, ‘O’ und ‘U’ durchgeführt,
+oder der eingebene Satz mit <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> vorab zu Kleinbuchstaben konvertiert.</p>
 <p>Bemerkung: Eleganter wäre die Schreibweise <code class="docutils literal notranslate"><span class="pre">anzahl_a</span> <span class="pre">+=</span> <span class="pre">1</span></code>.</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 5.5</p>
-<p>Schreiben Sie ein Programm, das mit Turtle ein n-Eck zeichnet. Das -Eck soll in
+<p>Wählen Sie sich Ihr Lieblingsrezept aus oder suchen Sie sich ein Rezept des
+Tages heraus (siehe <a class="reference external" href="https://www.chefkoch.de/rezepte/was-koche-ich-heute/">https://www.chefkoch.de/rezepte/was-koche-ich-heute/</a>).
+Notieren Sie sich die Zutatenlisten in zwei Listen. In der ersten Liste soll die
+Menge einer Zutat pro Person stehen, in der zweiten Liste die Zutat selbst.</p>
+<p>Lassen Sie dann den Computer fragen, für wie viele Personen gekocht werden soll.
+Dann soll der Computer eine Einkaufsliste ausgeben, bei der die Mengenangaben
+passend zur Personenanzahl skaliert sind.</p>
+<p>Beispiel Wrap-Pizza (<a class="reference external" href="https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html">https://www.chefkoch.de/rezepte/3252151483799016/Wrap-Pizza.html</a>):</p>
+<p>Computer: Für wie viele Personen soll gekocht werden?<br>
+Benutzer: 4<br>
+Computer:<br>
+Hier ist die Zutatenliste für 4 Personen: <br>
+4 Tortillas <br>
+8 EL Tomatenmark <br>
+4 EL Wasser <br>
+usw.</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zutaten fuer Wrap-Pizza fuer eine Person</span>
+<span class="n">menge</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">zutat</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tortilla(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Tomatenmark&quot;</span><span class="p">,</span> <span class="s2">&quot;EL Wasser&quot;</span><span class="p">,</span> <span class="s2">&quot;TL Pizzagewürz&quot;</span><span class="p">,</span> <span class="s2">&quot;Kochschinken&quot;</span><span class="p">,</span> <span class="s2">&quot;Parikaschote(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Zwiebeln&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomate(n)&quot;</span><span class="p">,</span> <span class="s2">&quot;Peperoni&quot;</span><span class="p">,</span> <span class="s2">&quot;Käse&quot;</span><span class="p">,</span> <span class="s2">&quot;Oregano&quot;</span><span class="p">]</span>
+
+<span class="c1"># Eingabe: Abfrage Personenanzahl</span>
+<span class="n">personenanzahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Für wie viele Personen soll gekocht werden?&#39;</span><span class="p">))</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hier ist die Zutatenliste für </span><span class="si">{</span><span class="n">personenanzahl</span><span class="si">}</span><span class="s1"> Personen:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">menge</span><span class="p">)):</span>
+    <span class="n">aktuelle_menge</span> <span class="o">=</span> <span class="n">menge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">personenanzahl</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">aktuelle_menge</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">zutat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.6</p>
+<p>Ein Unternehmen fertigt Bauteile mit fortlaufenden Seriennummern. Zur
+Qualitätskontrolle sollen die Bauteile anhand ihrer Seriennummer wie folgt
+klassifiziert werden:</p>
+<ol class="arabic simple">
+<li><p>Wenn die Seriennummer durch 2 teilbar ist, wird das Bauteil der
+“Qualitätsprüfung A” unterzogen.</p></li>
+<li><p>Wenn die Seriennummer durch 5 teilbar ist, wird das Bauteil der
+“Spezialprüfung” unterzogen.</p></li>
+<li><p>Alle anderen Bauteile durchlaufen die “Standardprüfung”.</p></li>
+</ol>
+<p>Schreiben Sie ein Programm, das:</p>
+<ul class="simple">
+<li><p>Den Benutzer nach einer Seriennummer fragt.</p></li>
+<li><p>Die entsprechende Prüfkategorie bestimmt und ausgibt.</p></li>
+</ul>
+<p>Testen Sie Ihr Programm mit den Seriennummern 15, 10, 8 und 7.</p>
+<p><em>Tipp</em>: Verwenden Sie den modulo-Operator <code class="docutils literal notranslate"><span class="pre">%</span></code>, um die Teilbarkeit zu prüfen.</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe der Seriennummer</span>
+<span class="n">seriennummer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie die Seriennummer ein: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Initialisierung mit Standardprüfung</span>
+<span class="n">pruefkategorie</span> <span class="o">=</span> <span class="s2">&quot;Standardprüfung&quot;</span>
+
+<span class="c1"># Überprüfung der Teilbarkeit durch 2</span>
+<span class="k">if</span> <span class="n">seriennummer</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">pruefkategorie</span> <span class="o">=</span> <span class="s2">&quot;Qualitätsprüfung A&quot;</span>
+
+<span class="c1"># Überprüfung der Teilbarkeit durch 5 (überschreibt ggf. vorherige Kategorie)</span>
+<span class="k">if</span> <span class="n">seriennummer</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">pruefkategorie</span> <span class="o">=</span> <span class="s2">&quot;Spezialprüfung&quot;</span>
+
+<span class="c1"># Ausgabe der Ergebnisse</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Seriennummer </span><span class="si">{</span><span class="n">seriennummer</span><span class="si">}</span><span class="s2"> wird der &#39;</span><span class="si">{</span><span class="n">pruefkategorie</span><span class="si">}</span><span class="s2">&#39; zugewiesen.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Testfälle:</p>
+<ul class="simple">
+<li><p>Seriennummer 15: Spezialprüfung (teilbar durch 5)</p></li>
+<li><p>Seriennummer 10: Spezialprüfung (teilbar durch 5)</p></li>
+<li><p>Seriennummer 8: Qualitätsprüfung A (teilbar durch 2)</p></li>
+<li><p>Seriennummer 7: Standardprüfung (weder durch 5 noch durch 2 teilbar)</p></li>
+</ul>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.7</p>
+<p>Bei der Fertigung von Zahnrädern für Getriebe werden Toleranzen durch den
+Fertigungsprozess bedingt. Ein Zahnrad soll einen Durchmesser von 50 mm haben,
+jedoch schwankt der tatsächliche Durchmesser aufgrund von
+Fertigungsungenauigkeiten.</p>
+<p>Schreiben Sie ein Programm, das:</p>
+<ol class="arabic simple">
+<li><p>Die Fertigung von 200 Zahnrädern simuliert.</p></li>
+<li><p>Die Durchmesser der gefertigten Zahnräder folgen einer Normalverteilung mit
+Mittelwert 50 mm und Standardabweichung 0.1 mm.</p></li>
+<li><p>Die Qualitätskontrolle akzeptiert nur Zahnräder mit folgenden Eigenschaften:</p>
+<ul class="simple">
+<li><p>“Präzisionsklasse”: Durchmesser zwischen 49.9 mm und 50.1 mm</p></li>
+<li><p>“Standardklasse”: Durchmesser zwischen 49.8 mm und 49.9 mm oder zwischen
+50.1 mm und 50.2 mm</p></li>
+<li><p>“Ausschuss”: Durchmesser kleiner als 49.8 mm oder größer als 50.2 mm</p></li>
+</ul>
+</li>
+<li><p>Das Programm soll:</p>
+<ul class="simple">
+<li><p>Die Anzahl der Zahnräder in jeder Klasse ausgeben.</p></li>
+<li><p>Die prozentuale Ausbeute (Nicht-Ausschuss) berechnen und ausgeben.</p></li>
+<li><p>Die Kosten des Ausschusses berechnen, wenn jedes Zahnrad 15 €
+Materialkosten verursacht.</p></li>
+</ul>
+</li>
+</ol>
+<p>Hinweis: Vergleichen Sie auch, wie sich die Ausbeute verändert, wenn die
+Standardabweichung auf 0.15 mm erhöht wird (schlechtere Fertigungsqualität) oder
+auf 0.05 mm reduziert wird (bessere Fertigungsqualität).</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Parameter festlegen</span>
+<span class="n">anzahl_zahnraeder</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">soll_durchmesser</span> <span class="o">=</span> <span class="mf">50.0</span>  <span class="c1"># mm</span>
+<span class="n">standardabweichung</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># mm</span>
+<span class="n">materialkosten_pro_zahnrad</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># €</span>
+
+<span class="c1"># Grenzwerte für die Qualitätsklassen</span>
+<span class="n">praezision_min</span> <span class="o">=</span> <span class="mf">49.9</span>
+<span class="n">praezision_max</span> <span class="o">=</span> <span class="mf">50.1</span>
+<span class="n">standard_min</span> <span class="o">=</span> <span class="mf">49.8</span>
+<span class="n">standard_max</span> <span class="o">=</span> <span class="mf">50.2</span>
+
+<span class="c1"># Simulation der Fertigung (normalverteilte Durchmesser)</span>
+<span class="n">durchmesser</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">soll_durchmesser</span><span class="p">,</span> <span class="n">standardabweichung</span><span class="p">,</span> <span class="n">anzahl_zahnraeder</span><span class="p">)</span>
+
+<span class="c1"># Klassifizierung der Zahnräder</span>
+<span class="n">praezisionsklasse</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">standardklasse</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ausschuss</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Statt enumerate verwenden wir eine Zählvariable und eine for-Schleife</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_zahnraeder</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">durchmesser</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">praezision_min</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">praezision_max</span><span class="p">:</span>
+        <span class="n">klasse</span> <span class="o">=</span> <span class="s2">&quot;Präzisionsklasse&quot;</span>
+        <span class="n">praezisionsklasse</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">standard_min</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">praezision_min</span> <span class="ow">or</span> <span class="n">praezision_max</span> <span class="o">&lt;</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">standard_max</span><span class="p">:</span>
+        <span class="n">klasse</span> <span class="o">=</span> <span class="s2">&quot;Standardklasse&quot;</span>
+        <span class="n">standardklasse</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">klasse</span> <span class="o">=</span> <span class="s2">&quot;Ausschuss&quot;</span>
+        <span class="n">ausschuss</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Ausgabe für jedes 20. Zahnrad (zur übersichtlichen Darstellung)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">20</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zahnrad </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Durchmesser = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> mm - </span><span class="si">{</span><span class="n">klasse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Auswertung</span>
+<span class="n">ausbeute_prozent</span> <span class="o">=</span> <span class="p">(</span><span class="n">praezisionsklasse</span> <span class="o">+</span> <span class="n">standardklasse</span><span class="p">)</span> <span class="o">/</span> <span class="n">anzahl_zahnraeder</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">ausschuss_kosten</span> <span class="o">=</span> <span class="n">ausschuss</span> <span class="o">*</span> <span class="n">materialkosten_pro_zahnrad</span>
+
+<span class="c1"># Ergebnisausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Qualitätsauswertung:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Präzisionsklasse: </span><span class="si">{</span><span class="n">praezisionsklasse</span><span class="si">}</span><span class="s2"> Stück (</span><span class="si">{</span><span class="n">praezisionsklasse</span><span class="o">/</span><span class="n">anzahl_zahnraeder</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standardklasse: </span><span class="si">{</span><span class="n">standardklasse</span><span class="si">}</span><span class="s2"> Stück (</span><span class="si">{</span><span class="n">standardklasse</span><span class="o">/</span><span class="n">anzahl_zahnraeder</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ausschuss: </span><span class="si">{</span><span class="n">ausschuss</span><span class="si">}</span><span class="s2"> Stück (</span><span class="si">{</span><span class="n">ausschuss</span><span class="o">/</span><span class="n">anzahl_zahnraeder</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gesamtausbeute: </span><span class="si">{</span><span class="n">ausbeute_prozent</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kosten durch Ausschuss: </span><span class="si">{</span><span class="n">ausschuss_kosten</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> €&quot;</span><span class="p">)</span>
+
+<span class="c1"># Simulation mit veränderter Fertigungsqualität</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Simulation mit veränderter Fertigungsqualität ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Bessere Qualität (geringere Standardabweichung)</span>
+<span class="n">std_besser</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">durchmesser_besser</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">soll_durchmesser</span><span class="p">,</span> <span class="n">std_besser</span><span class="p">,</span> <span class="n">anzahl_zahnraeder</span><span class="p">)</span>
+<span class="n">praezision_besser</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">standard_besser</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Zählen ohne List Comprehension</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">durchmesser_besser</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">praezision_min</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">praezision_max</span><span class="p">:</span>
+        <span class="n">praezision_besser</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">standard_min</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">praezision_min</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">praezision_max</span> <span class="o">&lt;</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">standard_max</span><span class="p">):</span>
+        <span class="n">standard_besser</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">ausschuss_besser</span> <span class="o">=</span> <span class="n">anzahl_zahnraeder</span> <span class="o">-</span> <span class="n">praezision_besser</span> <span class="o">-</span> <span class="n">standard_besser</span>
+<span class="n">ausbeute_besser</span> <span class="o">=</span> <span class="p">(</span><span class="n">praezision_besser</span> <span class="o">+</span> <span class="n">standard_besser</span><span class="p">)</span> <span class="o">/</span> <span class="n">anzahl_zahnraeder</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Schlechtere Qualität (höhere Standardabweichung)</span>
+<span class="n">std_schlechter</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">durchmesser_schlechter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">soll_durchmesser</span><span class="p">,</span> <span class="n">std_schlechter</span><span class="p">,</span> <span class="n">anzahl_zahnraeder</span><span class="p">)</span>
+<span class="n">praezision_schlechter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">standard_schlechter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Zählen ohne List Comprehension</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">durchmesser_schlechter</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">praezision_min</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">praezision_max</span><span class="p">:</span>
+        <span class="n">praezision_schlechter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">standard_min</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">praezision_min</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">praezision_max</span> <span class="o">&lt;</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">standard_max</span><span class="p">):</span>
+        <span class="n">standard_schlechter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">ausschuss_schlechter</span> <span class="o">=</span> <span class="n">anzahl_zahnraeder</span> <span class="o">-</span> <span class="n">praezision_schlechter</span> <span class="o">-</span> <span class="n">standard_schlechter</span>
+<span class="n">ausbeute_schlechter</span> <span class="o">=</span> <span class="p">(</span><span class="n">praezision_schlechter</span> <span class="o">+</span> <span class="n">standard_schlechter</span><span class="p">)</span> <span class="o">/</span> <span class="n">anzahl_zahnraeder</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Vergleich der Ausbeuten</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ausbeute bei besserer Fertigung (Std.abw. = </span><span class="si">{</span><span class="n">std_besser</span><span class="si">}</span><span class="s2"> mm): </span><span class="si">{</span><span class="n">ausbeute_besser</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ausbeute bei Standardfertigung (Std.abw. = </span><span class="si">{</span><span class="n">standardabweichung</span><span class="si">}</span><span class="s2"> mm): </span><span class="si">{</span><span class="n">ausbeute_prozent</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ausbeute bei schlechterer Fertigung (Std.abw. = </span><span class="si">{</span><span class="n">std_schlechter</span><span class="si">}</span><span class="s2"> mm): </span><span class="si">{</span><span class="n">ausbeute_schlechter</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 5.7</p>
+<p>Schreiben Sie ein Programm, das mit Turtle ein n-Eck zeichnet. Das n-Eck soll in
 einen Kreis mit Radius <span class="math notranslate nohighlight">\(r\)</span> passen. Die Anzahl der Ecken, der Radius des Kreises
 und die Stiftfarbe sollen auf deutsch vom Benutzer abgefragt werden. Bei den
 Stiftfarben darf nur aus den Farben rot, grün und blau ausgewählt werden. Wählt
