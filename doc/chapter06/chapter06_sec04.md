@@ -86,7 +86,7 @@ else:
 ```
 ````
 
-```{admonition} Übung 6.3
+````{admonition} Übung 6.3
 :class: miniexercise
 Lassen Sie einen Tannenbaum als sogenannte ASCII-Art zeichnen. Damit ist
 gemeint, dass ein Bild durch Zeichen dargestellt wird. In diesem Fall sollen die
@@ -111,7 +111,7 @@ produzieren:
    |||
 Der Tannenbaum ist insgesamt 8 Zeilen hoch.
 </div>
-```
+````
 
 ````{admonition} Lösung
 :class: miniexercise, toggle
@@ -236,4 +236,3 @@ else:
     zeichne_R(start_R, robo)
 ```
 ````
-

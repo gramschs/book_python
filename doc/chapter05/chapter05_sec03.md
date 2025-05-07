@@ -16,12 +16,12 @@ kernelspec:
 
 In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor.
 Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts?
-Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein
+Betrete ich ein Gebäude, entscheide ich zwischen Treppe und Fahrstuhl. Mein
 Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl
-zwischen zwei Möglichkeiten gibt es zweiteilige Programmverzweigungen. Und auch
-bei zweiteiligen Programmverzweigungen ist noch nicht Schluss, denn vielleicht
-kommt man ja an eine Viererkreuzung ... Daher behandeln wir in diesem Kapitel
-Programmverzweigungen mit mehreren Zweigen.
+zwischen zwei Möglichkeiten gibt es Programmverzweigungen mit zwei Weigen. Und
+auch bei Programmverzweigungen mit zwei Zweigen hört es noch nicht auf, denn
+vielleicht kommt man ja an eine Viererkreuzung. Daher behandeln wir in diesem
+Kapitel Programmverzweigungen mit mehreren Zweigen.
 
 ## Lernziele
 
@@ -53,7 +53,7 @@ ansonsten der 2. Anweisungsblock. Danach führt der Python-Interpreter alles nac
 dem if-else-Konstrukt aus, d.h. der Interpreter macht mit dem normalen
 Programmablauf weiter.
 
-Hier wieder das Beispiel mit dem Alter:  
+Hier erneut ein Beispiel mit dem Alter.
 
 ```python
 alter = int(input('Wie alt sind Sie? '))
@@ -65,30 +65,7 @@ else:
 print('Jetzt haben wir aber genug über den Alkoholkauf geredet...')
 ```
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2
-für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist,
-soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten
-soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
-```
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-
-```
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-# Eingabe
-monat = int(input('Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.'))
-
-# Verarbeitung und Ausgabe
-if monat <= 6:
-    print('Dieser Monat gehört zur 1. Jahreshälfte.')
-else:
-    print('Dieser Monat gehört zur 2. Jahreshälfte.')
-```
-````
+Wir vertiefen die zweifache Verzweigung mit einer Mini-Übung.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
@@ -96,10 +73,12 @@ Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die
 aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben:
 "Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
 ```
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -116,7 +95,7 @@ else:
 
 ## Programmverzweigungen mit vielen Zweigen: if – elif – else
 
-Eins, zwei, drei, viele ... häufig müssen mehr als zwei Fälle unterschieden
+Eins, zwei, drei -- viele ... häufig müssen mehr als zwei Fälle unterschieden
 werden. In einer Mini-Übung haben wir beispielsweise überprüft, ob eine Zahl
 negativ oder positiv oder Null ist. Ein Beispiel aus dem Alltag ist der Kauf
 einer Fahrkarte für den ÖPNV. Meist wird beim Ticketpreis unterschieden, ob die
@@ -124,7 +103,12 @@ Person jünger als 6 ist (keine Fahrkarte notwendig), zwischen 6 und 14 ist
 (Schülerfahrkarte) oder älter als 14 (Erwachsenenfahrkarte). Da es jetzt drei
 Altersklassen gibt, können wir kein if-else-Konstrukt benutzen, denn nur weil
 die Person beispielsweise nicht jünger als 6 ist wissen wir noch lange nicht, ob
-die Person eine Schülerfahrkarte oder eine Erwachsenenfahrkarte braucht. 
+die Person eine Schülerfahrkarte oder eine Erwachsenenfahrkarte braucht.
+
+Beachten Sie die Wahl der Vergleichsoperatoren: Bei `alter <= 14` ist eine
+Person mit genau 14 Jahren noch in der Kategorie 'Schülerfahrkarte'. Bei `alter
+< 15` wäre dies ebenso der Fall. Überlegen Sie bei der Implementierung genau, ob
+Randwerte in- oder exklusiv behandelt werden sollen.
 
 Probieren wir es einfach:
 
@@ -155,8 +139,8 @@ if alter > 14:
 Wir erhalten die Ausgabe `"keine Fahrkarte notwendig"`, weil die Bedingung des
 ersten if-Konstrukts erfüllt ist (`alter < 6`). Danach wird aber auch noch die
 Ausgabe `"Schülerfahrkarte"` angezeigt, weil auch die Bedingung des zweiten
-if-Konstrukts (`alter <= 14`) erfüllt ist. So geht es also nicht, zwischen drei
-Bedingungen zu unterscheiden.
+if-Konstrukts (`alter <= 14`) erfüllt ist. Diese Variante eignet sich also nicht
+zur Unterscheidung dreier Bedingungen.
 
 Probieren wir es mit einem zusätzlichen if-else-Konstrukt für die Unterscheidung
 der Kinder.
@@ -187,11 +171,11 @@ if alter > 14:
     print('Erwachsenenfahrkarte')
 ```
 
-Tatsächlich läuft unser Programm-Code nur korrekt, wenn wir in den else-Zweig
-noch zusätzlich zwischen "jünger als 14" und "älter als 14" unterscheiden.
+Der Programmcode funktioniert nur korrekt, wenn wir in den else-Zweig noch
+zusätzlich zwischen "jünger als 14" und "älter als 14" unterscheiden.
 
 Führen Sie die folgende Code-Zelle mehrfach aus. Ändern Sie dabei das Alter.
-Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus. 
+Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus.
 
 ```{code-cell} ipython3
 alter = 27
@@ -214,9 +198,10 @@ Um den obigen Code besser zu verstehen, zeichen wir den Ablauf schematisch:
 Es wäre schöner, wenn es für solche Mehrfachverzweigungen etwas
 übersichtlicheren Code gäbe. Und in der Tat, den gibt es. Man könnte sozusagen
 den Start des else-Konstruktes mit dem nachfolgenden if-Konstrukt verschmelzen.
-Das Ergebnis davon ist die if-elif-else-Syntax. Allgemein sieht das
-**if-elif-else-Konstrukt** so aus:
-
+`elif` ist eine Kurzform für `else if` und ermöglicht es, mehrere Bedingungen
+nacheinander zu prüfen, ohne die Einrückungstiefe zu erhöhen. Das Ergebnis davon
+ist die if-elif-else-Syntax. Allgemein sieht das **if-elif-else-Konstrukt** so
+aus:
 
 ```python
 if bedingung 1:
@@ -230,8 +215,14 @@ else:
     anweisungsblock n
 ```
 
+Wichtig: Bei einem if-elif-else-Konstrukt werden die Bedingungen der Reihe nach
+geprüft. Sobald eine Bedingung erfüllt ist, wird der zugehörige Anweisungsblock
+ausgeführt und alle nachfolgenden Bedingungen werden ignoriert. Daher ist die
+Reihenfolge der Bedingungen entscheidend für die korrekte Funktionsweise des
+Programms.
+
 Hier die besser lesbare Version der Unterscheidung von Zahlen in negative
-Zahlen, 0 und positive Zahlen aus der obigen Mini-Übung:
+Zahlen, 0 und positive Zahlen aus der Mini-Übung:
 
 ```{code-cell} ipython3
 a = 17
@@ -243,7 +234,7 @@ else:
     print('a ist positiv.')
 ```
 
-Und jetzt noch einmal eine besser lesbare Version des Fahrkartenautomaten:
+Hier die besser lesbare Version des Fahrkartenautomaten:
 
 ```{code-cell} ipython3
 alter = 27
@@ -268,10 +259,12 @@ folgt:
 :name: part02_bussgeldkatalog
 ```
 ````
+
 ```{code-cell} ipython3
 # Geben Sie nach diesem Kommentar Ihren Code ein:
 
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -302,47 +295,19 @@ else:
 ```
 ````
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
-* <= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
-* <= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
-* <= 10 ˚C ist, dann Ausgabe: "Es ist kühl, aber OK."
-* <= 20 ˚C ist, dann Ausgabe: "Es ist frühlingshaft."
-* <= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
-* \> 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
+Wenn Sie das Thema elif/else vertiefen wollen, können Sie sich das folgende
+Video ansehen.
+
+```{dropdown} Video "elif und else" von Programmieren Starten
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-```
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-# Eingabe
-temperatur = float(input('Welche Temperatur haben wir aktuell? '))
+## Zusammenfassung und Ausblick
 
-# Verarbeitung und Ausgabe
-if temperatur <= - 10:
-    print('Es ist bitterkalt.')
-elif temperatur <= 0: 
-    print('Es ist kalt.')
-elif temperatur <= 10:
-    print('Es ist kühl, aber OK.')
-elif temperatur <= 20:
-    print('Es ist frühlingshaft.')
-elif temperatur <= 30:
-    print('Es ist heiß!')
-else:
-    print('Das ist ja nicht mehr auszuhalten heiß!')
-```
-````
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f3YdEdYSNdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-
-
-
-
+In diesem Kapitel haben wir gelernt, wie man mit if, elif und else in Python
+Programmverzweigungen mit zwei oder mehr Entscheidungszweigen umsetzt, um
+unterschiedliche Fälle gezielt abzufragen und übersichtlich zu strukturieren. Im
+nächsten Kapitel werden wir die Strukturierung des Code in kleinere Einheiten
+erlernen (Funktionen).
