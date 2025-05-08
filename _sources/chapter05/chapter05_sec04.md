@@ -106,10 +106,6 @@ Schreiben Sie ein Python-Programm, das die Betriebstemperatur vom Benutzer
 abfragt und den empfohlenen Werkstoff ausgibt.
 ```
 
-```{code-cell} ipython3
-# Geben Sie nach diesem Kommentar Ihren Code ein:
-```
-
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -391,7 +387,7 @@ print(f"Ausbeute bei schlechterer Fertigung (Std.abw. = {std_schlechter} mm): {a
 ```
 ````
 
-```{admonition} Übung 5.7
+```{admonition} Übung 5.8
 :class: miniexercise
 Schreiben Sie ein Programm, das mit Turtle ein n-Eck zeichnet. Das n-Eck soll in
 einen Kreis mit Radius $r$ passen. Die Anzahl der Ecken, der Radius des Kreises
