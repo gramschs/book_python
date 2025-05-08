@@ -496,6 +496,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-von-funktionen-mit-parametern">Definition von Funktionen mit Parametern</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-mit-parametern-und-ruckgabewerten">Funktionen mit Parametern und Rückgabewerten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -509,7 +510,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funktionen-mit-parameter-und-ruckgabe">
 <h1>6.2 Funktionen mit Parameter und Rückgabe<a class="headerlink" href="#funktionen-mit-parameter-und-ruckgabe" title="Link to this heading">#</a></h1>
-<p>Vorgefertigte Funktionen haben wir schon mir Argument und Rückgabewert
+<p>Vorgefertigte Funktionen haben wir schon mit Argument und Rückgabewert
 aufgerufen. In diesem Kapitel geht es darum, selbst eine Funktion zu
 implementieren, die Argumente entgegennimmt, diese verarbeitet und dann
 Rückgabewerte liefert.</p>
@@ -517,8 +518,11 @@ Rückgabewerte liefert.</p>
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziel</p>
-<p>Sie können eine Funktion mit Parametern und Rückgabewerten selbst
-implementieren.</p>
+<ul class="simple">
+<li><p>Sie können eine Funktion mit Parametern und Rückgabewerten selbst
+implementieren.</p></li>
+<li><p>Sie können zwischen Parametern und Argumenten einer Funktion unterscheiden.</p></li>
+</ul>
 </div>
 </section>
 <section id="definition-von-funktionen-mit-parametern">
@@ -528,14 +532,14 @@ zu können. Das Argument wird bei der Implementierung der Funktion mit einer
 Variablen eingeführt.</p>
 <p>Die allgemeine Syntax zur Definition einer eigenen Funktion mit Parametern sieht
 wie folgt aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">paran</span><span class="p">):</span>
     <span class="n">anweisung01</span>
     <span class="n">anweisung02</span>
      <span class="o">...</span>
 </pre></div>
 </div>
 <p>Funktionen werden mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und
-einer Liste von Parametern in Klammern definiert. Die Code-Anweisungen der
+einer Aufzählung von Parametern in Klammern definiert. Die Code-Anweisungen der
 Funktion werden eingerückt.</p>
 <p>Als Beispiel betrachten wir erneut die Funktion, die Grüße ausrichtet. Doch
 jetzt erweitern wir die Funktion. Die modifizierte Variante soll konkret eine
@@ -549,11 +553,15 @@ Person grüßen.</p>
 </div>
 </div>
 <p>Der Aufruf einer Funktion ohne passende Argumente führt nun zu einer
-Fehlermeldung.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">()</span>
+Fehlermeldung. Entfernen Sie in der nächsten Code-Zelle das Kommentarzeichen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gruesse_ausrichten_mit_parameter()</span>
 </pre></div>
 </div>
-<p>Daher müssen wir die modifizierte Funktion nun wie folgt aufrufen:</p>
+</div>
+</div>
+<p>Daher müssen wir die modifizierte Funktion nun mit einem Argument aufrufen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="s1">&#39;Anna&#39;</span><span class="p">)</span>
@@ -566,6 +574,14 @@ Fehlermeldung.</p>
 </div>
 </div>
 </div>
+<p>Hinweis: Bei Funktionen unterscheiden wir zwischen einem <strong>Parameter</strong> einer
+Funktion und einem <strong>Argument</strong>. Die formalen Parameter sind die Variablennamen
+in der Funktionsdefinition (z.B. <code class="docutils literal notranslate"><span class="pre">name</span></code> in <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">gruesse_ausrichten_mit_parameter(name):</span></code>). Sie dienen als Platzhalter für die
+Werte, die beim Funktionsaufruf übergeben werden. Die aktuellen Argumente sind
+dagegen die konkreten Werte, die beim Aufruf der Funktion übergeben werden (z.B.
+<code class="docutils literal notranslate"><span class="pre">'Anna'</span></code> in <code class="docutils literal notranslate"><span class="pre">gruesse_ausrichten_mit_parameter('Anna')</span></code>). Der formale Parameter
+<code class="docutils literal notranslate"><span class="pre">name</span></code> nimmt also beim Funktionsaufruf den Wert des Arguments <code class="docutils literal notranslate"><span class="pre">'Anna'</span></code> an und
+steht innerhalb der Funktion als Variable zur Verfügung.</p>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">gruesse_ausrichten_mit_parameter()</span></code> hat aber keinen Rückgabewert.
 Das können wir wie folgt testen:</p>
 <div class="cell docutils container">
@@ -584,8 +600,11 @@ Das können wir wie folgt testen:</p>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">x</span></code> ist vom Typ <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> oder anders ausgedrückt, in der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> ist
-kein Datentyp gepeichert.</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> ist vom Typ <code class="docutils literal notranslate"><span class="pre">NoneType</span></code>. Das bedeutet, dass in der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> der
+spezielle Python-Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> gespeichert ist. <code class="docutils literal notranslate"><span class="pre">None</span></code> ist ein eigener Datentyp in
+Python und repräsentiert die Abwesenheit eines Wertes oder ein ‘nichts’.
+Funktionen, die keinen expliziten Rückgabewert mit <code class="docutils literal notranslate"><span class="pre">return</span></code> angeben, geben
+automatisch <code class="docutils literal notranslate"><span class="pre">None</span></code> zurück.</p>
 <p>Sind Funktionen ohne Rückgabewert sinnvoll? Ja, denn so können Python-Programme
 vereinfacht werden. Sollte in einem Programm ein Block von Anweisungen mehrmals
 ausgeführt werden, lohnt es sich, diesen in eine Funktion auszulagern, um diese
@@ -595,6 +614,13 @@ einfach aufrufen zu können.</p>
 <p>Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Die beiden
 Seitenlängen des Rechtecks sollen als Argumente der Funktion übergeben werden.
 Testen Sie Ihre Funktion auch.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -615,20 +641,26 @@ Testen Sie Ihre Funktion auch.</p>
 </pre></div>
 </div>
 </div>
-<p>Das folgende Video fasst Funktionen mit Argumenten in Python zusammen.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/af9ORp1Pty0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section>
+<p>Das folgende Video fasst Funktionen mit Parametern in Python zusammen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Funktionen mit Parametern” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/af9ORp1Pty0"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
 <section id="funktionen-mit-parametern-und-ruckgabewerten">
 <h2>Funktionen mit Parametern und Rückgabewerten<a class="headerlink" href="#funktionen-mit-parametern-und-ruckgabewerten" title="Link to this heading">#</a></h2>
 <p>In der Regel jedoch haben Funktionen einen Rückgabewert. Die allgemeine Syntax
 zur Definition einer eigenen Funktion mit Parametern und Rückgabewert sieht wie
 folgt aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">paran</span><span class="p">):</span>
     <span class="n">anweisung01</span>
     <span class="n">anweisung02</span>
      <span class="o">...</span>
 
-    <span class="k">return</span> <span class="n">rueckgabewert1</span><span class="p">,</span> <span class="n">rückgabewert2</span><span class="p">,</span> <span class="o">...</span>  
+    <span class="k">return</span> <span class="n">rueckgabewert1</span><span class="p">,</span> <span class="n">rueckgabewert2</span><span class="p">,</span> <span class="o">...</span>  
 </pre></div>
 </div>
 <p>An der Definitionszeile ändert sich nichts. Zuerst wird das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code>
@@ -637,6 +669,11 @@ Klammern aufgelistet. Der Rückgabewert der Funktion wird dann durch das
 Schlüsselwort <code class="docutils literal notranslate"><span class="pre">return</span></code> im Inneren der Funktion, also im eingerückten Teil
 definiert. Die Funktion kann einen oder mehrere Rückgabewerte zurückliefern. Bei
 mehreren Rückgabewerten werden diese einfach durch Komma getrennt.</p>
+<p>Für Experten:  Bei mehreren Rückgabewerten erzeugt Python intern ein sogenanntes
+Tupel, das all diese Werte enthält. Daher kann man das Ergebnis einer solchen
+Funktion auch direkt einer einzelnen Variablen zuweisen und erhält dann ein
+Tupel, oder man kann die Werte durch Kommas getrennt mehreren Variablen zuweisen
+(Unpacking).</p>
 <p>Schauen wir uns ein Beispiel an. Die folgende Funktion nimmt einen Parameter
 entgegen und gibt einen Rückgabewert zurück.</p>
 <div class="cell docutils container">
@@ -702,12 +739,29 @@ x = 5, x^2 = 25, x^3 = 125
 </div>
 </div>
 </div>
+<p>Wenn eine Funktion mehrere Werte zurückgibt, haben wir verschiedene
+Möglichkeiten, diese zu verarbeiten. Meist weisen wir jedem Rückgabewert eine
+eigene Variable zu, wie in <code class="docutils literal notranslate"><span class="pre">x_hoch_2,</span> <span class="pre">x_hoch_3</span> <span class="pre">=</span> <span class="pre">berechne_quadrat_kubik(x)</span></code>. Man
+muss jedoch nicht immer alle Rückgabewerte verwenden. Benötigt man zum Beispiel
+nur den ersten Rückgabewert, kann man schreiben: <code class="docutils literal notranslate"><span class="pre">x_hoch_2,</span> <span class="pre">_</span> <span class="pre">=</span> <span class="pre">berechne_quadrat_kubik(x)</span></code>. Der Unterstrich <code class="docutils literal notranslate"><span class="pre">_</span></code> ist eine Konvention in Python,
+die signalisiert, dass dieser Wert ignoriert wird.</p>
+<p>Alternativ kann man auch alle Rückgabewerte als Tupel einer einzelnen Variable
+zuweisen: <code class="docutils literal notranslate"><span class="pre">ergebnis</span> <span class="pre">=</span> <span class="pre">berechne_quadrat_kubik(x)</span></code>. Dann greift man über den Index
+auf die einzelnen Werte zu: <code class="docutils literal notranslate"><span class="pre">ergebnis[0]</span></code> für das Quadrat und <code class="docutils literal notranslate"><span class="pre">ergebnis[1]</span></code> für
+den Kubikwert.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Schreiben Sie ein Programm, das mit Turtle ein Rechteck zeichnet, wobei die
 beiden Seitenlängen als Argumente der Funktion übergeben werden. Die Funktion
 soll den Umfang des Rechtecks und den Flächeninhalt zurückgeben. Lassen Sie
 anschließend Umfang und Flächeninhalt ausgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -739,7 +793,22 @@ anschließend Umfang und Flächeninhalt ausgeben.</p>
 </div>
 </div>
 <p>Auch zu dem Thema Funktionen mit Rückgabe gibt es ein Video.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ehSP-sYoKCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Funktionen mit Rückgabewert” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ehSP-sYoKCY"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Funktionen mit Parametern und Rückgabewerten ermöglichen flexible Eingaben und
+die Rückgabe von Ergebnissen, was unsere Programme modular und wiederverwendbar
+macht. Im nächsten Kapitel lernen wir, wie Variablen unterschiedliche
+Gültigkeitsbereiche haben können - entweder nur innerhalb einer Funktion (lokal)
+oder im gesamten Programm (global).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -810,6 +879,7 @@ anschließend Umfang und Flächeninhalt ausgeben.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-von-funktionen-mit-parametern">Definition von Funktionen mit Parametern</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-mit-parametern-und-ruckgabewerten">Funktionen mit Parametern und Rückgabewerten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

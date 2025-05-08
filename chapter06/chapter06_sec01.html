@@ -498,6 +498,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-benutzung-von-funktionen-oder-der-aufruf-von-funktionen">Die Benutzung von Funktionen (oder der Aufruf von Funktionen)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-von-einfachen-funktionen">Definition von einfachen Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -513,21 +514,22 @@
 <h1>6.1 Funktionen selbst schreiben<a class="headerlink" href="#funktionen-selbst-schreiben" title="Link to this heading">#</a></h1>
 <p>Eine Funktion in Python ist eine Zusammenfassung von Anweisungen, die dazu
 dienen, eine bestimmte Teilaufgabe zu lösen. Dabei arbeitet die Funktion in
-ihrer allgemeinsten Form nach dem EVA-Prinzip. Die Funktion übernimmt Objekte
-als Eingabe, verarbeitet diese und liefert Objekte als Ergebnis zurück. Wie die
-Funktion dabei im Inneren genau funktioniert (Verarbeitung), ist unwichtig.</p>
-<p>Beispielsweise gibt es im Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>. Wir wissen, dass
-wir der Funktion eine Zahl übergeben müssen (Eingabe), z.B. <code class="docutils literal notranslate"><span class="pre">sqrt(5)</span></code>. Die
-Funktion liefert dann als Ergebnis <span class="math notranslate nohighlight">\(\sqrt{5}\)</span> zurück. Welches Verfahren zur
-Berechnung der Wurzel verwendet wurde, wissen wir nicht.</p>
+ihrer allgemeinsten Form nach dem EVA-Prinzip: Eingabe, Verarbeitung, Ausgabe.
+Die Funktion übernimmt Objekte als Eingabe, verarbeitet diese und liefert
+Objekte als Ergebnis zurück. Wie die Funktion dabei im Inneren genau
+funktioniert (Verarbeitung), ist für den Anwender zunächst unwichtig.</p>
+<p>Beispielsweise gibt es im Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>. Wir übergeben der
+Funktion eine Zahl (Eingabe), z.B. <code class="docutils literal notranslate"><span class="pre">sqrt(5)</span></code>. Die Funktion liefert dann als
+Ergebnis <span class="math notranslate nohighlight">\(\sqrt{5}\)</span>​ zurück. Welches Verfahren zur Berechnung der Wurzel
+verwendet wurde, müssen wir als Anwender nicht wissen.</p>
 <p>Insbesondere muss die Teilaufgabe, die die Funktion löst, nichts mit Mathematik
-zu tun haben. Eine Funktion in der Informatik hat nichts mit einer
-mathematischen Funktion zu tun, auch wenn oft mathematische Funktionen als
-Beispiel verwendet werden. Ein Beispiel für eine nicht-mathematische Funktion
-haben Sie mit <code class="docutils literal notranslate"><span class="pre">input()</span></code> bereits kennengelernt. Die Funktion nimmt einen Text
-entgegen, z.B. die Frage “Wie groß sind Sie?”. Dann wird dieser Text
-verarbeitet, in diesem Fall auf dem Bidschirm angezeigt und die Antwort
-eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.</p>
+zu tun haben. Eine Funktion in der Informatik unterscheidet sich von einer
+mathematischen Funktion, auch wenn oft mathematische Funktionen als Beispiel
+verwendet werden. Ein Beispiel für eine nicht-mathematische Funktion haben Sie
+mit <code class="docutils literal notranslate"><span class="pre">input()</span></code> bereits kennengelernt. Die Funktion nimmt einen Text entgegen, z.B.
+die Frage “Wie groß sind Sie?”. Dann wird dieser Text verarbeitet, in diesem
+Fall auf dem Bildschirm angezeigt und die Antwort eingelesen. Die Antwort kann
+dann in einer Variablen gespeichert werden.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -536,11 +538,11 @@ eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.</p>
 <li><p>Sie kennen die Fachbegriffe</p>
 <ul>
 <li><p><strong>Aufruf</strong> einer Funktion,</p></li>
-<li><p><strong>Argumente</strong> oder <strong>Parameter</strong> einer Funktion und</p></li>
+<li><p><strong>Argumente</strong> einer Funktion und</p></li>
 <li><p><strong>Rückgabewert</strong> einer Funktion.</p></li>
 </ul>
 </li>
-<li><p>Sie können eine einfache Funktion selbst implementieren.</p></li>
+<li><p>Sie können eine einfache Funktion selbst implementieren und aufrufen.</p></li>
 </ul>
 </div>
 </section>
@@ -551,13 +553,11 @@ eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.</p>
 </pre></div>
 </div>
 <p>Eine Funktion wird benutzt, indem man den Namen der Funktion und dann in runden
-Klammern ihre <strong>Parameter</strong> als Liste hinschreibt. Die konkreten Parameter einer
-Funktion beim Aufruf werden die <strong>Argumente der Funktion</strong> genannt. Welche
-Argumente für eine Funktion verwendet werden dürfen, hängt von der
-Implementierung der Funktion ab.</p>
+Klammern ihre <strong>Argumente</strong> hinschreibt. In der Informatik wird das als
+<strong>Aufruf</strong> einer Funktion bezeichnet. Welche Argumente für eine Funktion
+verwendet werden dürfen, hängt von der Implementierung der Funktion ab.</p>
 <p>Beispielsweise kann als Argument für die <code class="docutils literal notranslate"><span class="pre">len()</span></code>-Funktion ein String übergeben
-werden oder eine Liste. Stellen Sie eine Vermutung auf: was könnte die
-<code class="docutils literal notranslate"><span class="pre">len()</span></code>-Funktion bewirken?</p>
+werden oder eine Liste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">)</span>
@@ -607,7 +607,9 @@ zugewiesen werden, um mit dem Ergebnis weiter zu arbeiten.</p>
 <section id="definition-von-einfachen-funktionen">
 <h2>Definition von einfachen Funktionen<a class="headerlink" href="#definition-von-einfachen-funktionen" title="Link to this heading">#</a></h2>
 <p>Einfache Funktionen werden mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom
-Funktionsnamen definiert. Die Code-Anweisungen der Funktion werden eingerückt.</p>
+Funktionsnamen definiert. In Python verwendet man für Funktionsnamen
+üblicherweise Kleinbuchstaben und Unterstriche zur Trennung von Wörtern. Die
+Code-Anweisungen der Funktion werden eingerückt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">():</span>
     <span class="n">anweisung01</span>
     <span class="n">anweisung02</span>
@@ -616,7 +618,8 @@ Funktionsnamen definiert. Die Code-Anweisungen der Funktion werden eingerückt.<
 </pre></div>
 </div>
 <p>Erstes Beispiel:</p>
-<p>Die folgende Funktion hat kein Argument und keine Rückgabe.</p>
+<p>Die folgende Funktion hat weder Eingabe noch Rückgabe, sondern führt einfach
+eine Aktion aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruesse_ausrichten</span><span class="p">():</span>
@@ -661,7 +664,15 @@ Ich grüße Sie!
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Testen Sie Ihre Funktion auch.</p>
+<p>Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Testen Sie
+Ihre Funktion auch.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -682,7 +693,21 @@ Ich grüße Sie!
 </div>
 <p>Das folgende Video zeigt Ihnen nochmal, wie in Python Funktionen definiert
 werden.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LQCfN5HS9xI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Funktionen” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQCfN5HS9xI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir einfache Funktionen in Python kennengelernt. Mit dem
+Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> können wir Anweisungen bündeln und über einen Funktionsnamen
+wiederholt aufrufen. Im nächsten Kapitel erweitern wir unsere Funktionen um
+Parameter und Rückgabewerte, wodurch sie flexibler und vielseitiger einsetzbar
+werden.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -753,6 +778,7 @@ werden.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-benutzung-von-funktionen-oder-der-aufruf-von-funktionen">Die Benutzung von Funktionen (oder der Aufruf von Funktionen)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-von-einfachen-funktionen">Definition von einfachen Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

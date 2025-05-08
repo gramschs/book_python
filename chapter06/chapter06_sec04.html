@@ -570,6 +570,144 @@ lautet: xx.</p></li>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 6.3</p>
+<p>Im Maschinenbau müssen Sie oft mit geometrischen Formen arbeiten. Erstellen Sie eine kleine Funktionsbibliothek zur Berechnung von Flächen und Volumen.</p>
+<ol class="arabic simple">
+<li><p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">kreisflaeche(radius)</span></code>, die die Fläche eines
+Kreises berechnet.</p></li>
+<li><p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">zylindervolumen(radius,</span> <span class="pre">hoehe)</span></code>, die das Volumen
+eines Zylinders berechnet. Nutzen Sie dabei die erste Funktion!</p></li>
+<li><p>Testen Sie beide Funktionen mit unterschiedlichen Werten.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">kreisflaeche</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">flaeche</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">flaeche</span>
+
+<span class="k">def</span> <span class="nf">zylindervolumen</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">hoehe</span><span class="p">):</span>
+    <span class="n">grundflaeche</span> <span class="o">=</span> <span class="n">kreisflaeche</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+    <span class="n">volumen</span> <span class="o">=</span> <span class="n">grundflaeche</span> <span class="o">*</span> <span class="n">hoehe</span>
+    <span class="k">return</span> <span class="n">volumen</span>
+
+<span class="c1"># Test der Funktionen</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ein Kreis mit Radius </span><span class="si">{</span><span class="n">r1</span><span class="si">}</span><span class="s2"> hat die Fläche: </span><span class="si">{</span><span class="n">kreisflaeche</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Flächeneinheiten&quot;</span><span class="p">)</span>
+
+<span class="n">r2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ein Zylinder mit Radius </span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s2"> und Höhe </span><span class="si">{</span><span class="n">h2</span><span class="si">}</span><span class="s2"> hat das Volumen: </span><span class="si">{</span><span class="n">zylindervolumen</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="n">h2</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Volumeneinheiten&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 6.4</p>
+<p>Im Ingenieurwesen müssen oft Temperaturwerte zwischen verschiedenen Einheiten
+umgerechnet werden. Die gebräuchlichsten Einheiten sind Celsius (°C), Fahrenheit
+(°F) und Kelvin (K).</p>
+<p>Schreiben Sie drei Funktionen:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">celsius_zu_fahrenheit(celsius)</span></code>: Diese Funktion soll einen Temperaturwert in
+Celsius als Parameter erhalten und den entsprechenden Wert in Fahrenheit
+zurückgeben. Die Formel lautet: F = C · 1.8 + 32</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fahrenheit_zu_celsius(fahrenheit)</span></code>: Diese Funktion soll einen Temperaturwert
+in Fahrenheit als Parameter erhalten und den entsprechenden Wert in Celsius
+zurückgeben. Die Formel lautet: C = (F - 32) / 1.8</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">celsius_zu_kelvin(celsius)</span></code>: Diese Funktion soll einen Temperaturwert in
+Celsius als Parameter erhalten und den entsprechenden Wert in Kelvin
+zurückgeben. Die Formel lautet: K = C + 273.15</p></li>
+</ol>
+<p>Schreiben Sie außerdem ein Hauptprogramm, das:</p>
+<ol class="arabic simple">
+<li><p>Den Benutzer nach einem Temperaturwert in Celsius fragt.</p></li>
+<li><p>Diesen Wert in Fahrenheit und Kelvin umrechnet.</p></li>
+<li><p>Die umgerechneten Werte ausgibt.</p></li>
+<li><p>Den Wert in Fahrenheit wieder zurück in Celsius umrechnet, um die Richtigkeit
+der Umrechnung zu überprüfen.</p></li>
+</ol>
+<p>Erweitern Sie Ihr Programm um eine Benutzerschnittstelle, die dem Benutzer
+ermöglicht, die gewünschte Umrechnungsrichtung auszuwählen (z.B. von Celsius
+nach Fahrenheit oder von Fahrenheit nach Celsius).</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celsius_zu_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">):</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">celsius</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="n">fahrenheit</span>
+
+
+<span class="k">def</span> <span class="nf">fahrenheit_zu_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">):</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+    <span class="k">return</span> <span class="n">celsius</span>
+
+
+<span class="k">def</span> <span class="nf">celsius_zu_kelvin</span><span class="p">(</span><span class="n">celsius</span><span class="p">):</span>
+    <span class="n">kelvin</span> <span class="o">=</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="k">return</span> <span class="n">kelvin</span>
+
+
+<span class="c1">### HAUPTPROGRAMM ###</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperaturumrechner&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1: Celsius → Fahrenheit und Kelvin&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2: Fahrenheit → Celsius&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3: Kelvin → Celsius&quot;</span><span class="p">)</span>
+
+<span class="n">auswahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Bitte wählen Sie die gewünschte Umrechnung (1-3): &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">auswahl</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># Celsius → Fahrenheit und Kelvin</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie die Temperatur in Celsius ein: &quot;</span><span class="p">))</span>
+    
+    <span class="c1"># Umrechnung</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">celsius_zu_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span>
+    <span class="n">kelvin</span> <span class="o">=</span> <span class="n">celsius_zu_kelvin</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span>
+    
+    <span class="c1"># Überprüfung durch Rückumrechnung</span>
+    <span class="n">celsius_pruefung</span> <span class="o">=</span> <span class="n">fahrenheit_zu_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">)</span>
+    
+    <span class="c1"># Ausgabe</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Temperaturumrechnung für </span><span class="si">{</span><span class="n">celsius</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fahrenheit: </span><span class="si">{</span><span class="n">fahrenheit</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °F&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kelvin: </span><span class="si">{</span><span class="n">kelvin</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Überprüfung: </span><span class="si">{</span><span class="n">fahrenheit</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °F = </span><span class="si">{</span><span class="n">celsius_pruefung</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Genauigkeitsüberprüfung mit Rundungsfehlertoleranz</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">celsius</span> <span class="o">-</span> <span class="n">celsius_pruefung</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.001</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Umrechnung ist korrekt!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hinweis: Es gibt eine kleine Abweichung aufgrund von Rundungsfehlern.&quot;</span><span class="p">)</span>
+        
+<span class="k">elif</span> <span class="n">auswahl</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="c1"># Fahrenheit → Celsius</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie die Temperatur in Fahrenheit ein: &quot;</span><span class="p">))</span>
+    
+    <span class="c1"># Umrechnung</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">fahrenheit_zu_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">)</span>
+    
+    <span class="c1"># Ausgabe</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">fahrenheit</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °F entspricht </span><span class="si">{</span><span class="n">celsius</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C&quot;</span><span class="p">)</span>
+    
+<span class="k">elif</span> <span class="n">auswahl</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="c1"># Kelvin → Celsius</span>
+    <span class="n">kelvin</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie die Temperatur in Kelvin ein: &quot;</span><span class="p">))</span>
+    
+    <span class="c1"># Umrechnung (Kelvin zu Celsius ist einfach K - 273.15)</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">kelvin</span> <span class="o">-</span> <span class="mf">273.15</span>
+    
+    <span class="c1"># Ausgabe</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">kelvin</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> K entspricht </span><span class="si">{</span><span class="n">celsius</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> °C&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fehler: Ungültige Auswahl. Bitte wählen Sie 1, 2 oder 3.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 6.5</p>
 <p>Lassen Sie einen Tannenbaum als sogenannte ASCII-Art zeichnen. Damit ist
 gemeint, dass ein Bild durch Zeichen dargestellt wird. In diesem Fall sollen die
 Blätter durch den Stern <code class="docutils literal notranslate"><span class="pre">*</span></code> dargestellt werden und der Stamm durch drei
@@ -581,16 +719,17 @@ Tannenbaums zurückgeben.</p>
 einer Stammhöhe von 3 zeichnen. Darüber hinaus soll ausgegeben werden, wie hoch
 der Tannenbaum insgesamt ist. Beispielhaft könnte Ihr Test folgende Ausgabe
 produzieren:</p>
-<div class="ascii-art">
-    *
-   ***
-  *****
- *******
-*********
-   |||
-   |||
-   |||
-Der Tannenbaum ist insgesamt 8 Zeilen hoch.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">*</span>
+   <span class="o">***</span>
+  <span class="o">*****</span>
+ <span class="o">*******</span>
+<span class="o">*********</span>
+   <span class="o">|||</span>
+   <span class="o">|||</span>
+   <span class="o">|||</span>
+
+<span class="n">Der</span> <span class="n">Tannenbaum</span> <span class="n">ist</span> <span class="n">insgesamt</span> <span class="mi">8</span> <span class="n">Zeilen</span> <span class="n">hoch</span><span class="o">.</span>
+</pre></div>
 </div>
 </div>
 <div class="miniexercise toggle admonition">
@@ -601,7 +740,7 @@ Der Tannenbaum ist insgesamt 8 Zeilen hoch.
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">blaetterhoehe</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
     <span class="c1"># Stamm zeichnen</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stammhoehe</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">blaetterhoehe</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">+</span> <span class="mi">3</span>  <span class="o">*</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">blaetterhoehe</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
 
     <span class="c1"># Gesamthöhe berechnen und zurückgeben</span>
     <span class="n">gesamthoehe</span> <span class="o">=</span> <span class="n">blaetterhoehe</span> <span class="o">+</span> <span class="n">stammhoehe</span>
@@ -615,7 +754,7 @@ Der Tannenbaum ist insgesamt 8 Zeilen hoch.
 </div>
 </div>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 6.4</p>
+<p class="admonition-title">Übung 6.6</p>
 <p>Schreiben Sie drei Funktionen. Die erste soll mit Hilfe des Turtle-Moduls den
 Buchstaben <code class="docutils literal notranslate"><span class="pre">R</span></code> zeichnen, die zweite den Buchstaben <code class="docutils literal notranslate"><span class="pre">O</span></code> und die dritte den
 Buchstaben <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
@@ -653,60 +792,73 @@ Auch <code class="docutils literal notranslate"><span class="pre">penup</span></
     <span class="n">robo</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Direkte Linie für das Bein von R</span>
     
-    <span class="c1"># Rückkehr</span>
+    <span class="c1"># Rückkehr zur Startposition und Ausrichtung nach Osten</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="mi">50</span>
+    <span class="k">return</span> <span class="mi">100</span>  <span class="c1"># Breite des R mit etwas Abstand</span>
 
 
 <span class="k">def</span> <span class="nf">zeichne_O</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">robo</span><span class="p">):</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Startposition für den Kreis</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Sicherstellen, dass der Roboter nach Osten zeigt</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">360</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
 
-    <span class="c1"># Rückkehr</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="mi">100</span>
-
-<span class="k">def</span> <span class="nf">zeichne_T</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">robo</span><span class="p">):</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
-    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-    
-    <span class="c1"># Rückkehr</span>
+    <span class="c1"># Rückkehr zur Startposition und Ausrichtung nach Osten</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="mi">100</span>
-   
-<span class="n">auswahl</span> <span class="o">=</span>  <span class="s1">&#39;ROT&#39;</span>
+    <span class="k">return</span> <span class="mi">100</span>  <span class="c1"># Breite des O</span>
+
+
+<span class="k">def</span> <span class="nf">zeichne_T</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">robo</span><span class="p">):</span>
+    <span class="c1"># Zeichne den vertikalen Strich des T</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Mittelposition für den vertikalen Strich</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Nach oben ausrichten</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    
+    <span class="c1"># Zeichne den horizontalen Strich des T</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># Linke Position für den horizontalen Strich</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Nach rechts ausrichten</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Zeichne den horizontalen Strich</span>
+    
+    <span class="c1"># Rückkehr zur Startposition und Ausrichtung nach Osten</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">robo</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="mi">100</span>  <span class="c1"># Breite des T</span>
+
+
+<span class="c1"># Test der Funktionen</span>
+<span class="n">auswahl</span> <span class="o">=</span> <span class="s1">&#39;ROT&#39;</span>  <span class="c1"># Kann zu &#39;TOR&#39; geändert werden für den anderen Test</span>
 
 <span class="k">if</span> <span class="n">auswahl</span> <span class="o">==</span> <span class="s1">&#39;ROT&#39;</span><span class="p">:</span>
-    <span class="n">start_R</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+    <span class="n">start_R</span> <span class="o">=</span> <span class="o">-</span><span class="mi">150</span>  <span class="c1"># Etwas weiter links beginnen für bessere Sichtbarkeit</span>
     <span class="n">breite_R</span> <span class="o">=</span> <span class="n">zeichne_R</span><span class="p">(</span><span class="n">start_R</span><span class="p">,</span> <span class="n">robo</span><span class="p">)</span>
-    <span class="n">start_O</span> <span class="o">=</span> <span class="n">start_R</span> <span class="o">+</span> <span class="n">breite_R</span> <span class="o">+</span> <span class="mi">10</span>
+    
+    <span class="n">start_O</span> <span class="o">=</span> <span class="n">start_R</span> <span class="o">+</span> <span class="n">breite_R</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># 10 Pixel Abstand zwischen den Buchstaben</span>
     <span class="n">breite_O</span> <span class="o">=</span> <span class="n">zeichne_O</span><span class="p">(</span><span class="n">start_O</span><span class="p">,</span> <span class="n">robo</span><span class="p">)</span>
+    
     <span class="n">start_T</span> <span class="o">=</span> <span class="n">start_O</span> <span class="o">+</span> <span class="n">breite_O</span> <span class="o">+</span> <span class="mi">10</span>
     <span class="n">zeichne_T</span><span class="p">(</span><span class="n">start_T</span><span class="p">,</span> <span class="n">robo</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">start_T</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+    <span class="n">start_T</span> <span class="o">=</span> <span class="o">-</span><span class="mi">150</span>
     <span class="n">breite_T</span> <span class="o">=</span> <span class="n">zeichne_T</span><span class="p">(</span><span class="n">start_T</span><span class="p">,</span> <span class="n">robo</span><span class="p">)</span>
+    
     <span class="n">start_O</span> <span class="o">=</span> <span class="n">start_T</span> <span class="o">+</span> <span class="n">breite_T</span> <span class="o">+</span> <span class="mi">10</span>
     <span class="n">breite_O</span> <span class="o">=</span> <span class="n">zeichne_O</span><span class="p">(</span><span class="n">start_O</span><span class="p">,</span> <span class="n">robo</span><span class="p">)</span>
+    
     <span class="n">start_R</span> <span class="o">=</span> <span class="n">start_O</span> <span class="o">+</span> <span class="n">breite_O</span> <span class="o">+</span> <span class="mi">10</span>
     <span class="n">zeichne_R</span><span class="p">(</span><span class="n">start_R</span><span class="p">,</span> <span class="n">robo</span><span class="p">)</span>
 </pre></div>

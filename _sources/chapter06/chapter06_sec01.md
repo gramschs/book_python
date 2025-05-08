@@ -16,23 +16,24 @@ kernelspec:
 
 Eine Funktion in Python ist eine Zusammenfassung von Anweisungen, die dazu
 dienen, eine bestimmte Teilaufgabe zu lösen. Dabei arbeitet die Funktion in
-ihrer allgemeinsten Form nach dem EVA-Prinzip. Die Funktion übernimmt Objekte
-als Eingabe, verarbeitet diese und liefert Objekte als Ergebnis zurück. Wie die
-Funktion dabei im Inneren genau funktioniert (Verarbeitung), ist unwichtig.
+ihrer allgemeinsten Form nach dem EVA-Prinzip: Eingabe, Verarbeitung, Ausgabe.
+Die Funktion übernimmt Objekte als Eingabe, verarbeitet diese und liefert
+Objekte als Ergebnis zurück. Wie die Funktion dabei im Inneren genau
+funktioniert (Verarbeitung), ist für den Anwender zunächst unwichtig.
 
-Beispielsweise gibt es im Modul `numpy` die Funktion `sqrt()`. Wir wissen, dass
-wir der Funktion eine Zahl übergeben müssen (Eingabe), z.B. `sqrt(5)`. Die
-Funktion liefert dann als Ergebnis $\sqrt{5}$ zurück. Welches Verfahren zur
-Berechnung der Wurzel verwendet wurde, wissen wir nicht. 
+Beispielsweise gibt es im Modul `numpy` die Funktion `sqrt()`. Wir übergeben der
+Funktion eine Zahl (Eingabe), z.B. `sqrt(5)`. Die Funktion liefert dann als
+Ergebnis $\sqrt{5}$​ zurück. Welches Verfahren zur Berechnung der Wurzel
+verwendet wurde, müssen wir als Anwender nicht wissen.
 
 Insbesondere muss die Teilaufgabe, die die Funktion löst, nichts mit Mathematik
-zu tun haben. Eine Funktion in der Informatik hat nichts mit einer
-mathematischen Funktion zu tun, auch wenn oft mathematische Funktionen als
-Beispiel verwendet werden. Ein Beispiel für eine nicht-mathematische Funktion
-haben Sie mit `input()` bereits kennengelernt. Die Funktion nimmt einen Text
-entgegen, z.B. die Frage "Wie groß sind Sie?". Dann wird dieser Text
-verarbeitet, in diesem Fall auf dem Bidschirm angezeigt und die Antwort
-eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.
+zu tun haben. Eine Funktion in der Informatik unterscheidet sich von einer
+mathematischen Funktion, auch wenn oft mathematische Funktionen als Beispiel
+verwendet werden. Ein Beispiel für eine nicht-mathematische Funktion haben Sie
+mit `input()` bereits kennengelernt. Die Funktion nimmt einen Text entgegen, z.B.
+die Frage "Wie groß sind Sie?". Dann wird dieser Text verarbeitet, in diesem
+Fall auf dem Bildschirm angezeigt und die Antwort eingelesen. Die Antwort kann
+dann in einer Variablen gespeichert werden.
 
 ## Lernziele
 
@@ -40,9 +41,9 @@ eingelesen. Die Antwort kann dann in einer Variablen gespeichert werden.
 :class: goals
 * Sie kennen die Fachbegriffe 
   * **Aufruf** einer Funktion,
-  * **Argumente** oder **Parameter** einer Funktion und
+  * **Argumente** einer Funktion und
   * **Rückgabewert** einer Funktion.
-* Sie können eine einfache Funktion selbst implementieren.
+* Sie können eine einfache Funktion selbst implementieren und aufrufen.
 ```
 
 ## Die Benutzung von Funktionen (oder der Aufruf von Funktionen)
@@ -54,14 +55,12 @@ rueckgabewert = funktion( argument1, argument2, ... )
 ```
 
 Eine Funktion wird benutzt, indem man den Namen der Funktion und dann in runden
-Klammern ihre **Parameter** als Liste hinschreibt. Die konkreten Parameter einer
-Funktion beim Aufruf werden die **Argumente der Funktion** genannt. Welche
-Argumente für eine Funktion verwendet werden dürfen, hängt von der
-Implementierung der Funktion ab.
+Klammern ihre **Argumente** hinschreibt. In der Informatik wird das als
+**Aufruf** einer Funktion bezeichnet. Welche Argumente für eine Funktion
+verwendet werden dürfen, hängt von der Implementierung der Funktion ab.
 
 Beispielsweise kann als Argument für die `len()`-Funktion ein String übergeben
-werden oder eine Liste. Stellen Sie eine Vermutung auf: was könnte die
-`len()`-Funktion bewirken?
+werden oder eine Liste.
 
 ```{code-cell} ipython3
 len('Hallo')
@@ -88,7 +87,9 @@ else:
 ## Definition von einfachen Funktionen
 
 Einfache Funktionen werden mit dem Schlüsselwort `def` gefolgt vom
-Funktionsnamen definiert. Die Code-Anweisungen der Funktion werden eingerückt. 
+Funktionsnamen definiert. In Python verwendet man für Funktionsnamen
+üblicherweise Kleinbuchstaben und Unterstriche zur Trennung von Wörtern. Die
+Code-Anweisungen der Funktion werden eingerückt.
 
 ```python
 def meine_funktion():
@@ -100,7 +101,8 @@ def meine_funktion():
 
 Erstes Beispiel:
 
-Die folgende Funktion hat kein Argument und keine Rückgabe.
+Die folgende Funktion hat weder Eingabe noch Rückgabe, sondern führt einfach
+eine Aktion aus.
 
 ```{code-cell} ipython3
 def gruesse_ausrichten():
@@ -123,8 +125,15 @@ for i in range(7):
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Testen Sie Ihre Funktion auch.
+Schreiben Sie eine Funktion, die mit Turtle ein Rechteck zeichnet. Testen Sie
+Ihre Funktion auch.
 ```
+
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
+
+```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -146,6 +155,15 @@ zeichne_rechteck()
 Das folgende Video zeigt Ihnen nochmal, wie in Python Funktionen definiert
 werden.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LQCfN5HS9xI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{dropdown} Video "Funktionen" von Programmieren Starten
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQCfN5HS9xI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
+## Zusammenfassung und Ausblick
 
+In diesem Kapitel haben wir einfache Funktionen in Python kennengelernt. Mit dem
+Schlüsselwort `def` können wir Anweisungen bündeln und über einen Funktionsnamen
+wiederholt aufrufen. Im nächsten Kapitel erweitern wir unsere Funktionen um
+Parameter und Rückgabewerte, wodurch sie flexibler und vielseitiger einsetzbar
+werden.

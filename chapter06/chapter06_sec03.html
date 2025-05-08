@@ -495,7 +495,9 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokale-variablen">Lokale Variablen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werte-aus-funktionen-zuruckgeben">Werte aus Funktionen zurückgeben</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globale-variablen">Globale Variablen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -510,15 +512,21 @@
   <section class="tex2jax_ignore mathjax_ignore" id="lokale-und-globale-variablen">
 <h1>6.3 Lokale und globale Variablen<a class="headerlink" href="#lokale-und-globale-variablen" title="Link to this heading">#</a></h1>
 <p>In Python gibt es zwei Arten von Variablen: lokale und globale Variablen. Der
-Unterschied zwischen beiden liegt in ihrem Geltungsbereich, also wo im Programm
-sie verwendet werden können. Vor allem bei der Definition von Funktionen ist die
-Nichtbeachtung des Unterschieds eine häufige Fehlerquelle, weshalb wir in diesem
-Kapitel den Unterschied beleuchten.</p>
+Unterschied zwischen beiden liegt in ihrem Geltungsbereich (auch “Scope”
+genannt), also wo im Programm sie verwendet werden können. Vor allem bei der
+Definition von Funktionen ist die Nichtbeachtung des Unterschieds eine häufige
+Fehlerquelle, weshalb wir in diesem Kapitel den Unterschied beleuchten.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
-<p>Sie kennen den Unterschied zwischen <strong>lokalen</strong> und <strong>globalen</strong> Variablen.</p>
+<ul class="simple">
+<li><p>Sie kennen den Unterschied zwischen <strong>lokalen</strong> und <strong>globalen</strong> Variablen.</p></li>
+<li><p>Sie können erklären, warum die Trennung von lokalen und globalen Variablen
+wichtig ist.</p></li>
+<li><p>Sie wissen, wie Sie Werte aus Funktionen an das Hauptprogramm zurückgeben
+können.</p></li>
+</ul>
 </div>
 </section>
 <section id="lokale-variablen">
@@ -551,8 +559,10 @@ Nach der Anwendung der Funktion ist x = 17.
 </div>
 </div>
 </div>
-<p>Wir schauen in die Funktion “hinein”, um zu sehen, ob vielleicht gar nicht
-erhöht wurde.</p>
+<p>Überraschung! Der Wert von <code class="docutils literal notranslate"><span class="pre">x</span></code> hat sich nicht verändert, obwohl die Funktion
+offensichtlich <code class="docutils literal notranslate"><span class="pre">x</span></code> um 1 erhöhen sollte. Um besser zu verstehen, was passiert,
+schauen wir in die Funktion “hinein”, indem wir einige <code class="docutils literal notranslate"><span class="pre">print</span></code>-Anweisungen
+hinzufügen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -588,16 +598,21 @@ Lokale Variablen sind Variablen, die innerhalb einer Funktion definiert werden.
 Ihr Geltungsbereich ist auf die Funktion beschränkt, in der sie definiert
 wurden. Das bedeutet, dass sie innerhalb der Funktion verwendet werden können,
 aber außerhalb der Funktion nicht sichtbar oder zugänglich sind.</p>
-<p>Es ist Absicht, dass Python strikt darauf achtet, lokale Variablen auf ihren
-Geltungsbereich zu beschänken. Die Programmierer:innen einer Funktion können
-vorab nicht wissen, wie alle anderen Variablen im Hauptprogramm heißen. Daher
-müssen alle Variablen in der Funktion lokal bleiben, um nicht unabsichtlich
-Variablen, die zufälligerweise den gleichen Namen tragen, zu überschreiben.</p>
-<p>Möchte man erreichen, dass eine Funktion den Wert einer Variable ändert, kann
-man dies über die Rückgabe und explizite Zuweisung erreichen. Dann ist aber
-jedem Programmier und jeder Programmiererin, die diese Funktion benutzt,
-explizit klar, dass damit der Wert der Variablen geändert wird.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># modifizierte Funktion mit Rückgabe</span>
+<div class="warning admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Wenn Sie eine Funktion aufrufen und ihr einen Wert übergeben, wird dieser Wert
+in eine neue, lokale Variable kopiert. Änderungen an dieser lokalen Variable
+wirken sich nicht auf Variablen außerhalb der Funktion aus, auch wenn diese
+denselben Namen haben.</p>
+</div>
+<p>Es ist Absicht, dass Python strikt darauf achtet, lokale Variablen auf ihren Geltungsbereich zu beschränken. Die Entwickler einer Funktion können vorab nicht wissen, wie alle anderen Variablen im Hauptprogramm heißen. Daher müssen alle Variablen in der Funktion lokal bleiben, um nicht unabsichtlich Variablen, die zufälligerweise den gleichen Namen tragen, zu überschreiben.</p>
+</section>
+<section id="werte-aus-funktionen-zuruckgeben">
+<h2>Werte aus Funktionen zurückgeben<a class="headerlink" href="#werte-aus-funktionen-zuruckgeben" title="Link to this heading">#</a></h2>
+<p>Möchte man erreichen, dass eine Funktion den Wert einer Variable ändert, kann man dies über die Rückgabe und explizite Zuweisung erreichen. Dann ist aber jedem Programmierer und jeder Programmiererin, die diese Funktion benutzt, explizit klar, dass damit der Wert der Variablen geändert wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modifizierte Funktion mit Rückgabe</span>
 <span class="k">def</span> <span class="nf">erhoehe_um_eins</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span>
@@ -610,18 +625,60 @@ explizit klar, dass damit der Wert der Variablen geändert wird.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Nach der Anwendung der Funktion ist x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vor der Anwendung der Funktion ist x = 17.
+Nach der Anwendung der Funktion ist x = 18.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt funktioniert es! Durch die Rückgabe des veränderten Wertes und die
+Zuweisung an die Variable <code class="docutils literal notranslate"><span class="pre">x</span></code> im Hauptprogramm wird der Wert tatsächlich
+geändert.</p>
 </section>
 <section id="globale-variablen">
 <h2>Globale Variablen<a class="headerlink" href="#globale-variablen" title="Link to this heading">#</a></h2>
-<p>Globale Variablen sind Variablen, die außerhalb von Funktionen definiert werden.
-Ihr Geltungsbereich erstreckt sich über das gesamte Programm, was bedeutet, dass
-sie sowohl innerhalb als auch außerhalb von Funktionen verwendet werden können.
-Das scheint zunächst unserem Experiment, eine Zahl um 1 zu erhöhen zu
-widersprechen. Tatsächlich ist die Verwendung einer globalen Variable innerhalb
-einer Funktion nur lesend möglich. Um auch einen Schreibzugriff zu erlauben,
-gibt es die Möglichkeit, eine Variable als <code class="docutils literal notranslate"><span class="pre">global</span></code> zu definieren. Meine
-persönliche Meinung ist aber, dass die Verwendung von globalen Variablen zu
-fehleranfällig ist. Daher werde ich auf dieses Thema nicht weiter eingehen.</p>
+<p>Globale Variablen sind Variablen, die außerhalb von Funktionen definiert werden. Ihr Geltungsbereich erstreckt sich über das gesamte Programm, was bedeutet, dass sie sowohl innerhalb als auch außerhalb von Funktionen verwendet werden können.
+In Python ist die Verwendung einer globalen Variable innerhalb einer Funktion standardmäßig nur lesend möglich. Um auch einen Schreibzugriff zu erlauben, gibt es die Möglichkeit, eine Variable mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">global</span></code> innerhalb der Funktion zu deklarieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Globale Variable</span>
+
+<span class="k">def</span> <span class="nf">aendere_global</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>  <span class="c1"># Deklaration, dass wir die globale Variable x verwenden wollen</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vor der Funktion: x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">aendere_global</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Nach der Funktion: x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vor der Funktion: x = 10
+Nach der Funktion: x = 15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Warnung</p>
+<p>Die Verwendung von globalen Variablen wird in der professionellen Programmierung
+oft vermieden, da sie zu schwer nachvollziehbaren Programmabläufen führen kann.
+Wenn mehrere Funktionen dieselbe globale Variable verändern, ist es schwierig zu
+verfolgen, wann und wie Variablen verändert werden. Dies führt zu Programmen,
+die fehleranfällig und schwer zu warten sind.</p>
+<p>Verwenden Sie stattdessen Parameter und Rückgabewerte, um Daten zwischen
+Funktionen und dem Hauptprogramm zu übertragen. Dies macht Ihren Code klarer,
+nachvollziehbarer und weniger fehleranfällig.</p>
+</div>
+<p>Um den Unterschied zwischen lokalen und globalen Variablen zu verdeutlichen, können wir uns den Geltungsbereich wie “Blasen” oder “Räume” vorstellen.</p>
+<img alt="../_images/variable-scope.svg" id="variable-scope-svg" src="../_images/variable-scope.svg" /></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir den Untrrschied zwischen globalen und lokalen
+Variablen gelernt. Im nächsten KApitel widmen wir uns dem Thema digitale Logik.</p>
 </section>
 </section>
 
@@ -692,7 +749,9 @@ fehleranfällig ist. Daher werde ich auf dieses Thema nicht weiter eingehen.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokale-variablen">Lokale Variablen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#werte-aus-funktionen-zuruckgeben">Werte aus Funktionen zurückgeben</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globale-variablen">Globale Variablen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
