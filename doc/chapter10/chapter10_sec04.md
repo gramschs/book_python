@@ -27,6 +27,7 @@ importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.
 
 Importieren Sie die Daten mit einem geeigneten Zeilenindex.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro angegeben.
@@ -43,13 +44,16 @@ data.head(10)
 
 ```{admonition} Übung 10.2
 :class: miniexercise
-Laden Sie die Tabelle aus Übung 8.1. 
+Laden Sie die Datei
+[20220801_Marktwert_Bundesliga.csv](https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC)
+herunter. 
 
 1. Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele Zeilen und  und wie viele Einträge sind gültig?
 2. Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (`2. Bundesliga`) und speichern Sie diese Daten in der Variable `zweite`.
 3. Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste Kaderwert, was der kleinste? Wie viele Speiler hat ein Verein in der 2. Bundesliga durchschnittlich?
 4. Lassen Sie sich die Daten des 1.FC Kaiserslautern anzeigen. 
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -96,7 +100,7 @@ Tipps:
   Existenz von `_` getestet werden. Das ist aber nur eine von vielen
   Möglichkeiten.
 ```
- 
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
