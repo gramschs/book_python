@@ -150,4 +150,4 @@ Um den Unterschied zwischen lokalen und globalen Variablen zu verdeutlichen, kö
 ## Zusammenfassung und Ausblick
 
 In diesem Kapitel haben wir den Untrrschied zwischen globalen und lokalen
-Variablen gelernt. Im nächsten KApitel widmen wir uns dem Thema digitale Logik.
+Variablen gelernt. Im nächsten Kapitel widmen wir uns dem Thema digitale Logik.
