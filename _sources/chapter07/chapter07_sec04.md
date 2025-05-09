@@ -20,6 +20,7 @@ Schreiben Sie ein Programm, das einen Benutzer oder eine Benutzerin auffordert,
 das Passwort einzugeben. Drei Versuche sind möglich. Bei dreimaliger
 Falscheingabe soll das Programm abgebrochen werden.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -47,6 +48,7 @@ Schreiben Sie einen 1x1-Trainer. Gehen Sie dabei wie folgt vor:
    werden. Am Ende soll das Hauptprogramm dem Benuzter mitteilen, wieviel
    Prozent der Aufgaben korrekt gelöst wurden.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -83,6 +85,7 @@ Hinweise, z.B. "Meine gedachte Zahl ist kleiner." oder "Meine gedachte Zahl ist
 größer." Sobald Sie die Zahl geraten haben, gibt der Computer aus, wie viele
 Versuche Sie gebraucht haben und beendet das Spiel.
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -115,6 +118,7 @@ Richtung zufällig bestimmt und der Roboter bewegt sich erneut 20 Schritte.
 Lassen Sie abfragen, wie viele Male diese Prozedur wiederholt werden soll.
 Testen Sie beispielsweise 100 mal. Verlässt der Roboter dabei das Turtle-Feld?
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
