@@ -73,7 +73,7 @@ folgende Fragen zuerst durch Überlegen, dann durch Ausprobieren.
   'IndexError: string index out of range'. Der Index 20 ist außerhalb des
   zulässigen Indexbereichs von 0 bis 12.
 * Das Zeichen an Indexposition 6 ist ein Leerzeichen. Leerzeichen sind auch
-* Zeichen und müssen mitgezählt werden.
+  Zeichen und müssen mitgezählt werden.
 ````
 
 Mit den beiden for-Schleifen der letzten beiden Abschnitte können wir die
@@ -108,8 +108,9 @@ for i in range(laenge):
 
 ## Strings sind unveränderlich
 
-Bei den Listen haben wir einzelne Elemente der Liste manipuliert, z.B. das
-dritte Element durch ein anderes ersetzt wie in dem folgenden Beispiel.
+Bei Listen können wir einzelne Elemente der Liste direkt manipulieren, z.B.
+können wir das dritte Element durch ein anderes ersetzen wie in dem folgenden
+Beispiel.
 
 ```{code-cell} ipython3
 meine_liste = ['Eins', 'Zwei', 'Drei', 'Vier', 'Fünf']

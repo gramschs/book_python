@@ -251,9 +251,9 @@ for i in range(3, 100, 3):
 
 Insbesondere, wenn die Anzahl der Wiederholungen feststeht, kommt die
 for-Schleife in Kombination mit range() zum Einsatz. Im Folgenden sehen wir uns
-weitere Beispiele an.
+ein Beispiel dazu an.
 
-Beispiel 1: Berechnung der Summe der ersten 10 natürlichen Zahlen
+Beispiel: Berechnung der Summe der ersten 10 natürlichen Zahlen
 
 ```{code-cell} ipython3
 summe = 0
@@ -261,13 +261,6 @@ for i in range(1, 11):
     summe += i
 
 print("Die Summe der ersten 10 natürlichen Zahlen ist: ", summe)
-```
-
-Beispiel 2: Nur jedes zweite Mal wird eine Aktion ausgeführt
-
-```{code-cell} ipython3
-for i in range(2, 11, 2):
-    print(i)
 ```
 
 ```{admonition} Mini-Übung
