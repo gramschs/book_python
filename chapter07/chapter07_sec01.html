@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -61,8 +61,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter07/chapter07_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -194,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for), Strings und Zufallszahlen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
@@ -496,11 +494,11 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolesche-algebra">Boolesche Algebra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-logische-und">Das logische UND</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-logische-oder">Das logische ODER</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-logische-nicht">Das logische NICHT</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prioritat-der-logischen-operatoren">Priorität der logischen Operatoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -514,67 +512,50 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="digitale-logik-und-oder-nicht">
 <h1>7.1 Digitale Logik: und, oder, nicht<a class="headerlink" href="#digitale-logik-und-oder-nicht" title="Link to this heading">#</a></h1>
-<p>In diesem Kapitel beschäftigen wir uns zuerst damit, wie kombinierte Bedingungen
-in der Programmiersprache Python formuliert werden. In der Informatik bezeichnet
-man dieses Themenfeld auch als <strong>digitale Logik</strong> oder <strong>boolesche Algebra</strong>.</p>
+<p>In früheren Kapiteln haben wir den booleschen Datentyp kennengelernt: wahr
+(<code class="docutils literal notranslate"><span class="pre">True</span></code>) oder falsch (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Man kann solche Ausdrücke auch kombinieren, z.B.
+wenn zwei Bedingungen gleichzeitig erfüllt sein sollen. Beispielsweise soll eine
+Maschine snur dann gestartet werden, wenn der Sicherheitsschalter aktiviert ist
+UND die Temperatur unter einem kritischen Wert liegt. Beide Bedingungen müssen
+erfüllt sein.</p>
+<p>Die Grundlage solcher Verknüpfungen bildet die <strong>boolesche Algebra</strong>, benannt
+nach dem Mathematiker <a class="reference external" href="https://de.wikipedia.org/wiki/George_Boole">George
+Boole</a>. In dieser Vorlesung
+konzentrieren wir uns auf die drei wichtigsten logischen Operatoren:</p>
+<ul class="simple">
+<li><p>UND (<code class="docutils literal notranslate"><span class="pre">and</span></code>): beide Bedingungen müssen erfüllt sein</p></li>
+<li><p>ODER (<code class="docutils literal notranslate"><span class="pre">or</span></code>): mindestens eine Bedingung muss erfüllt sein</p></li>
+<li><p>NICHT (<code class="docutils literal notranslate"><span class="pre">not</span></code>): kehrt den Wahrheitswert einer Bedingung um</p></li>
+</ul>
+<p>Diese Operatoren sind grundlegend für technische Systeme und werden häufig für
+Steuerungen, Regelungen und Sicherheitssysteme eingesetzt.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
-<div class="tip admonition">
+<div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
-<p>Sie kennen die logischen Operatoren und können diese in Python einsetzen:</p>
 <ul class="simple">
+<li><p>Sie kennen die logischen Operatoren und können diese in Python einsetzen:</p>
+<ul>
 <li><p>logisches UND: <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
 <li><p>logisches ODER: <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
 <li><p>logisches NICHT: <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
 </ul>
-</div>
-</section>
-<section id="boolesche-algebra">
-<h2>Boolesche Algebra<a class="headerlink" href="#boolesche-algebra" title="Link to this heading">#</a></h2>
-<p>In früheren Kapiteln haben wir den boolschen Datentyp kennengelernt: wahr oder
-falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man fordern,
-dass zwei Bedingungen gleichzeitg erfüllt sein sollen.</p>
-<p>Beispiel beim Busfahren: Kinder unter 6 Jahren können kostenlos Bus fahren. Ab 6
-Jahren braucht man eine Fahrkarte. Bis 14 Jahre zahlt man den Kinderpreis, ab 15
-Jahren den Erwachsenenpreis. Die Bedingung für eine Kinderkarte lautet also:</p>
-<div class="math notranslate nohighlight">
-\[\text{Alter} \geq 6 \text{ und } \text{Alter} \leq 14.\]</div>
-<p>Keine Kinderfahrkarte braucht man, wenn man jünger als 6 ist oder älter als 14,
-also:</p>
-<div class="math notranslate nohighlight">
-\[\text{Alter} &lt; 6 \text{ oder } \text{Alter} &gt; 14.\]</div>
-<p>Eine Fahrkarte (egal ob Kinderfahrkarte oder Erwachsenenfahrkarte) muss
-mankaufen, wenn man kein Kind ist, also wenn</p>
-<div class="math notranslate nohighlight">
-\[\text{nicht} \left( \text{Alter} &lt; 6\right).\]</div>
-<p>Gut, letzteres könnte man natürlicher einfacher mit <span class="math notranslate nohighlight">\(\text{Alter} \geq 6\)</span>
-ausdrücken, aber das klappt auch nicht bei jeder Bedingung.</p>
-<p>Im Folgenden beschäftigen wir uns daher mit der Verknüpfung von booleschen
-Ausdrücken. Dieses Fachgebiet nennt man auch boolsche Algebra oder digitale
-Logik. Wikipedia fasst hier die wichtigsten Regeln zur booleschen Algebra
-zusammen: <a class="reference external" href="https://de.wikipedia.org/wiki/Boolesche_Algebra">https://de.wikipedia.org/wiki/Boolesche_Algebra</a></p>
-<p>Wir werden in dieser Vorlesung uns aber auf die logischen Verknüpfungen oder
-logischen Operatoren</p>
-<ul class="simple">
-<li><p>UND</p></li>
-<li><p>ODER</p></li>
-<li><p>NICHT</p></li>
+</li>
+<li><p>Sie verstehen die Priorität der logischen Operatoren und können komplexe
+Bedingungen korrekt formulieren.</p></li>
 </ul>
-<p>beschränken.</p>
+</div>
 </section>
 <section id="das-logische-und">
 <h2>Das logische UND<a class="headerlink" href="#das-logische-und" title="Link to this heading">#</a></h2>
 <p>Beim logischen UND müssen beide Bedingungen erfüllt sein, damit insgesamt die
 kombinierte Bedingung erfüllt ist. Vergleichbar ist dies mit einer
-Reihenschaltung in der Elektrotechnik. Nur wenn beide Schalter eingeschaltet
+Reihenschaltung in der Elektrotechnik: Nur wenn beide Schalter eingeschaltet
 sind, kann der Strom fließen.</p>
-<p>Hier finden Sie den Link zu einem YouTube-Video (ca. 3:14 min) von Lehrer Schmidt zur UND-Schaltung:</p>
+<p>Hier finden Sie ein erläuterndes Video (ca. 3:14 min) zur UND-Schaltung:</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=79WVEr2BVZI">https://www.youtube.com/watch?v=79WVEr2BVZI</a></p>
-<p>Man schreibt die Ergebnisse der kombinierten Bedingungen normalerweise als eine
-Tabelle auf. Die erste Zeile würde man so lesen: Wenn “Bedingung 1 wahr” ist UND
-wenn “Bedingung 2 wahr” ist, so ist auch die kombinierte Bedingung “Bedingung 1
-UND Bedingung 2” wahr. Wir verwenden hier schon die Python-Werte <code class="docutils literal notranslate"><span class="pre">True</span></code> für wahr
-und <code class="docutils literal notranslate"><span class="pre">False</span></code> für falsch sowie den <code class="docutils literal notranslate"><span class="pre">and</span></code>-Operator für das logische UND:</p>
+<p>Die Ergebnisse der UND-Verknüpfung lassen sich in einer Wahrheitstabelle
+darstellen:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
@@ -602,30 +583,57 @@ und <code class="docutils literal notranslate"><span class="pre">False</span></c
 </tbody>
 </table>
 </div>
-<p>Beispiel: Zwei Personen wollen einen Kinofilm sehen, der erst ab 18 erlaubt ist.
-Nur wenn beide volljährig sind, können sie den Film gemeinsam besuchen:</p>
+<p>Beispiel aus der Industrie: Ein automatisches Werkzeug darf nur dann betätigt
+werden, wenn das Werkstück korrekt eingespannt ist UND der Sicherheitsbereich
+frei ist:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter_person1</span> <span class="o">=</span> <span class="mi">19</span>
-<span class="n">alter_person2</span> <span class="o">=</span> <span class="mi">22</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter_person1</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter_person2</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen beide den Film sehen.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">werkstueck_eingespannt</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">sicherheitsbereich_frei</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">werkstueck_eingespannt</span> <span class="ow">and</span> <span class="n">sicherheitsbereich_frei</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Werkzeug kann betätigt werden.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vielleicht darf einer von Ihnen den Film sehen, aber nicht beide.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sicherheitsvoraussetzungen nicht erfüllt.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie duerfen beide den Film sehen.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Werkzeug kann betätigt werden.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bei komplexeren Bedingungen kann die Verwendung von Klammern die Lesbarkeit
+verbessern, auch wenn dies syntaktisch nicht immer erforderlich ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">druck</span> <span class="o">=</span> <span class="mf">3.5</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">temperatur</span> <span class="o">&lt;</span> <span class="mi">80</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">druck</span> <span class="o">&lt;</span> <span class="mf">4.0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System arbeitet im normalen Betriebszustand.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System außerhalb der normalen Parameter.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>System arbeitet im normalen Betriebszustand.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter
-der Person zwischen 6 und 10 liegt, soll das Programm ausgeben “Wahrscheinlich
-gehst Du in die Grundschule.”</p>
+<p>Schreiben Sie ein Programm für die Steuerung einer Hydraulikpresse. Die Presse
+darf nur betätigt werden, wenn</p>
+<ol class="arabic simple">
+<li><p>die Betriebstemperatur zwischen 60°C und 85°C liegt und</p></li>
+<li><p>der Druck zwischen 2.5 und 5.0 bar beträgt.</p></li>
+</ol>
+<p>Lassen Sie die Werte vom Benutzer eingeben und geben Sie eine entsprechende
+Meldung aus.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,31 +645,28 @@ gehst Du in die Grundschule.”</p>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
-<span class="n">alter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt sind Sie?&#39;</span><span class="p">))</span>
+<span class="n">temperatur</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Aktuelle Betriebstemperatur (°C): &#39;</span><span class="p">))</span>
+<span class="n">druck</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Aktueller Druck (bar): &#39;</span><span class="p">))</span>
 
 <span class="c1"># Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">alter</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wahrscheinlich gehst Du in die Gundschule.&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">60</span> <span class="o">&lt;=</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">85</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">2.5</span> <span class="o">&lt;=</span> <span class="n">druck</span> <span class="o">&lt;=</span> <span class="mf">5.0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hydraulikpresse kann betätigt werden.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Betriebsparameter außerhalb des sicheren Bereichs!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="das-logische-oder">
 <h2>Das logische ODER<a class="headerlink" href="#das-logische-oder" title="Link to this heading">#</a></h2>
-<p>Beim logischen ODER muss nur eine der beiden Bedingungen erfüllt sein, damit
-insgesamt die kombinierte Bedingung erfüllt ist. Damit ist natürlich die
-Bedingung insgesamt auch erfüllt, wenn beide Bedingungen wahr sind. Vergleichbar
-ist dies mit einer Parallelschaltung in der Elektrotechnik. Es reicht, wenn
-einer der beiden Schalter eingeschaltet sind, damit der Strom fließen kann. Auch
-wenn beide Schalter eingeschaltet sind, fließt Strom.</p>
-<p>Hier finden Sie den Link zu einem YouTube-Video (ca. 2:42 min) von Lehrer
-Schmidt zur ODER-Schaltung: <a class="reference external" href="https://www.youtube.com/watch?v=UNkXbvSN9w8">https://www.youtube.com/watch?v=UNkXbvSN9w8</a></p>
-<p>Auch bei der ODER-Verknüpfung schreibt man üblicherweise die Ergebnisse der
-kombinierten Bedingungen in Form einer Tabelle. Die dritte Zeile würde man
-beispielsweise so lesen: Wenn “Bedingung 1 wahr” ist ODER wenn “Bedingung 2
-falsch” ist, so ist auch die kombinierte Bedingung “Bedingung 1 ODER Bedingung
-2” wahr. Wir verwenden hier wiederum die Python-Werte <code class="docutils literal notranslate"><span class="pre">True</span></code> für wahr und
-<code class="docutils literal notranslate"><span class="pre">False</span></code> für falsch sowie den logischen Oder-Operator <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
+<p>Beim logischen ODER muss nur eine der Bedingungen erfüllt sein, damit insgesamt
+die kombinierte Bedingung erfüllt ist. Die Bedingung ist auch erfüllt, wenn
+beide Teilbedingungen wahr sind. Vergleichbar ist dies mit einer
+Parallelschaltung in der Elektrotechnik: Es reicht, wenn einer der beiden
+Schalter eingeschaltet ist, damit der Strom fließen kann.</p>
+<p>Hier finden Sie ein erläuterndes Video (ca. 2:42 min) zur ODER-Schaltung:</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=UNkXbvSN9w8">https://www.youtube.com/watch?v=UNkXbvSN9w8</a></p>
+<p>Die Wahrheitstabelle für das logische ODER:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
@@ -689,52 +694,48 @@ falsch” ist, so ist auch die kombinierte Bedingung “Bedingung 1 ODER Bedingu
 </tbody>
 </table>
 </div>
-<p>Beispiel: Zwei Personen wollen ein Auto mieten, dazu muss aber mindestens einer
-von beiden den Führerschein besitzen.</p>
+<p>Beispiel aus der Produktion: Ein Notaus-System muss aktiviert werden, wenn
+entweder der Temperaturwert zu hoch ist ODER der Druckwert einen kritischen Wert
+überschreitet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">person2_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur</span> <span class="o">=</span> <span class="mi">95</span>  <span class="c1"># in Grad Celsius</span>
+<span class="n">druck</span> <span class="o">=</span> <span class="mf">4.8</span>      <span class="c1"># in bar</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">person1_hat_fuehrerschein</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">person2_hat_fuehrerschein</span> <span class="o">==</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen das Auto mieten.&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temperatur</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">druck</span> <span class="o">&gt;</span> <span class="mf">5.0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNUNG: Notabschaltung wird eingeleitet!&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keiner von beiden hat einen Fuehrerschein, geht nicht.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System arbeitet im normalen Betriebsbereich.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie duerfen das Auto mieten.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNUNG: Notabschaltung wird eingeleitet!
 </pre></div>
 </div>
 </div>
 </div>
-<p>Übrigens, der Vergleich <code class="docutils literal notranslate"><span class="pre">person1_hat_fuehrerschein</span> <span class="pre">==</span> <span class="pre">True</span></code> ist eigentlich
-doppelt gemoppelt, da ja die Variable bereits den Datentyp bool hat. Wir könnten
-also auch kürzer schreiben</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">person2_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="k">if</span> <span class="n">person1_hat_fuehrerschein</span> <span class="ow">or</span> <span class="n">person2_hat_fuehrerschein</span> <span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen das Auto mieten.&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keiner von beiden hat einen Fuehrerschein, geht nicht.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie duerfen das Auto mieten.
-</pre></div>
-</div>
-</div>
-</div>
+<p>Python verwendet eine sogenannte <strong>Kurzschlussauswertung</strong> für logische
+Operatoren. Dies bedeutet:</p>
+<ul class="simple">
+<li><p>Bei einem <code class="docutils literal notranslate"><span class="pre">and</span></code>-Ausdruck: Wenn der erste Teil <code class="docutils literal notranslate"><span class="pre">False</span></code> ist, wird der zweite
+Teil nicht mehr ausgewertet.</p></li>
+<li><p>Bei einem <code class="docutils literal notranslate"><span class="pre">or</span></code>-Ausdruck: Wenn der erste Teil <code class="docutils literal notranslate"><span class="pre">True</span></code> ist, wird der zweite Teil
+nicht mehr ausgewertet.</p></li>
+</ul>
+<p>Dies kann man sich zur Verbesserung der Performance zunutze machen, indem man
+bei <code class="docutils literal notranslate"><span class="pre">and</span></code>-Verknüpfungen die Bedingung mit der höheren Wahrscheinlichkeit für
+<code class="docutils literal notranslate"><span class="pre">False</span></code> zuerst platziert.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person
-jünger als 18 ist oder älter als 67, soll das Programm ausgeben: “Wahrscheinlich
-sind Sie/bist Du nicht berufstätig.”</p>
+<p>Schreiben Sie ein Programm für ein Alarmsystem einer CNC-Fräse. Das System soll
+einen Alarm auslösen, wenn:</p>
+<ol class="arabic simple">
+<li><p>Die Drehzahl unter 500 U/min fällt oder über 2000 U/min steigt</p></li>
+<li><p>Die Kühlmitteltemperatur über 60°C steigt</p></li>
+</ol>
+<p>Lassen Sie die Werte vom Benutzer eingeben und geben Sie eine entsprechende
+Meldung aus.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -746,24 +747,27 @@ sind Sie/bist Du nicht berufstätig.”</p>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe</span>
-<span class="n">alter</span> <span class="o">=</span>  <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Alter: &#39;</span><span class="p">))</span>
+<span class="n">drehzahl</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Aktuelle Drehzahl (U/min): &#39;</span><span class="p">))</span>
+<span class="n">kuehlmitteltemperatur</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Aktuelle Kühlmitteltemperatur (°C): &#39;</span><span class="p">))</span>
 
 <span class="c1"># Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">67</span> <span class="o">&lt;</span> <span class="n">alter</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wahrscheinlich sind Sie/bist Du nicht berufstätig.&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">drehzahl</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">drehzahl</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">kuehlmitteltemperatur</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ALARM: Betriebsparameter außerhalb des sicheren Bereichs!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;System arbeitet im normalen Betriebsbereich.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="das-logische-nicht">
 <h2>Das logische NICHT<a class="headerlink" href="#das-logische-nicht" title="Link to this heading">#</a></h2>
-<p>Das logische NICHT kehrt eine Aussage um. Wenn eine Bedingung wahr war, wird sie
-falsch. War jedoch die Bedingung vorher wahr, wird sie nach Anwendung des
-logischen NICHT falsch. Man schreibt auch diese Operation normalerweise als
-Tabelle auf, wobei wir den logischen Nicht-Opertor <code class="docutils literal notranslate"><span class="pre">not</span></code> verwenden:</p>
+<p>Das logische NICHT kehrt eine Aussage um. Wenn eine Bedingung wahr ist, wird sie
+falsch und umgekehrt. In Python verwenden wir den Operator <code class="docutils literal notranslate"><span class="pre">not</span></code> für diese
+Umkehrung.</p>
+<p>Die Wahrheitstabelle für das logische NICHT:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
+<tr class="row-odd"><th class="head"><p>Bedingung</p></th>
 <th class="head"><p>Ergebnis mit <code class="docutils literal notranslate"><span class="pre">not</span></code></p></th>
 </tr>
 </thead>
@@ -777,41 +781,101 @@ Tabelle auf, wobei wir den logischen Nicht-Opertor <code class="docutils literal
 </tbody>
 </table>
 </div>
-<p>Beispiel: Wenn eine Person keinen Führerschein hat, muss sie den Bus nehmen.</p>
+<p>Beispiel aus dem Maschinenbau: Eine Maschine darf nicht gestartet werden, wenn
+der Wartungsmodus aktiviert ist:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person_hat_fuehrerschein</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wartungsmodus_aktiv</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="k">if</span> <span class="ow">not</span> <span class="n">person_hat_fuehrerschein</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie muessen Bus fahren.&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">wartungsmodus_aktiv</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maschine kann gestartet werden.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sie duerfen Auto fahren.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maschine im Wartungsmodus: Start nicht möglich.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sie muessen Bus fahren.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maschine im Wartungsmodus: Start nicht möglich.
 </pre></div>
 </div>
 </div>
 </div>
+<p>Die Verwendung von <code class="docutils literal notranslate"><span class="pre">not</span></code> kann oft komplexe Bedingungen vereinfachen. Statt zu
+prüfen, ob ein Wert außerhalb eines Bereichs liegt, kann man prüfen, ob er nicht
+innerhalb des Bereichs liegt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur</span> <span class="o">=</span> <span class="mi">78</span>
+
+<span class="c1"># Diese beiden Bedingungen sind äquivalent</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temperatur</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">temperatur</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Temperatur außerhalb des Betriebsbereichs.&#39;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">60</span> <span class="o">&lt;=</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">85</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Temperatur außerhalb des Betriebsbereichs.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prioritat-der-logischen-operatoren">
+<h2>Priorität der logischen Operatoren<a class="headerlink" href="#prioritat-der-logischen-operatoren" title="Link to this heading">#</a></h2>
+<p>Bei mehreren logischen Operatoren in einem Ausdruck ist die Reihenfolge der
+Auswertung wichtig. In Python gilt folgende Priorität:</p>
+<ol class="arabic simple">
+<li><p>Klammern <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p>Nicht <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p>Und <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p>Oder <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+</ol>
+<p>Zur Verdeutlichung einige Beispiele:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Priorität der logischen Operatoren</span>
+<span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">c</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># not hat Vorrang vor and</span>
+<span class="n">ergebnis1</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span>  <span class="c1"># entspricht (not a) and b</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;not a and b = </span><span class="si">{</span><span class="n">ergebnis1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># and hat Vorrang vor or</span>
+<span class="n">ergebnis2</span> <span class="o">=</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">c</span>  <span class="c1"># entspricht (a and b) or c</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a and b or c = </span><span class="si">{</span><span class="n">ergebnis2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Klammern ändern die Priorität</span>
+<span class="n">ergebnis3</span> <span class="o">=</span> <span class="n">a</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="ow">or</span> <span class="n">c</span><span class="p">)</span>  <span class="c1"># erst b or c, dann and</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a and (b or c) = </span><span class="si">{</span><span class="n">ergebnis3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>not a and b = False
+a and b or c = True
+a and (b or c) = True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um Missverständnisse zu vermeiden, ist es oft ratsam, Klammern zu setzen, auch
+wenn sie aufgrund der Prioritätsregeln nicht unbedingt nötig wären. Dies
+verbessert die Lesbarkeit des Codes.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr
-oder falsch?</p>
-<ul class="simple">
-<li><p>wahr UND wahr</p></li>
-<li><p>wahr ODER falsch</p></li>
-<li><p>NICHT wahr</p></li>
-<li><p>falsch ODER wahr</p></li>
-<li><p>wahr ODER (NICHT falsch)</p></li>
-<li><p>(NICHT wahr) UND falsch</p></li>
-<li><p>NICHT (wahr ODER falsch)</p></li>
-<li><p>(NICHT falsch) ODER (falsch UND falsch)</p></li>
-</ul>
-<p>Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen
-Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in Python
-ausprobieren, also beispielsweise <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code> eingeben.</p>
+<p>Überlegen Sie zunächst, was das Ergebnis der folgenden logischen Verknüpfungen
+ist (wahr oder falsch):</p>
+<ol class="arabic simple">
+<li><p>True and True</p></li>
+<li><p>True or False</p></li>
+<li><p>not True</p></li>
+<li><p>False or True</p></li>
+<li><p>True or (not False)</p></li>
+<li><p>(not True) and False</p></li>
+<li><p>not (True or False)</p></li>
+<li><p>(not False) or (False and False)</p></li>
+</ol>
+<p>Prüfen Sie Ihre Antworten anschließend im Python-Interpreter.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -822,36 +886,48 @@ ausprobieren, also beispielsweise <code class="docutils literal notranslate"><sp
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># wahr UND wahr</span>
-<span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. True and True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True and True =&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># True</span>
 
-<span class="c1"># wahr ODER falsch</span>
-<span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+<span class="c1"># 2. True or False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True or False =&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># True</span>
 
-<span class="c1"># NICHT wahr</span>
-<span class="ow">not</span> <span class="kc">True</span>
+<span class="c1"># 3. not True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not True =&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># False</span>
 
-<span class="c1"># falsch ODER wahr</span>
-<span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span>
+<span class="c1"># 4. False or True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;False or True =&quot;</span><span class="p">,</span> <span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># True</span>
 
-<span class="c1"># wahr ODER (NICHT falsch)</span>
-<span class="kc">True</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1"># 5. True or (not False)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True or (not False) =&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">))</span>  <span class="c1"># True</span>
 
-<span class="c1"># (NICHT wahr) UND falsch</span>
-<span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="kc">False</span>
+<span class="c1"># 6. (not True) and False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(not True) and False =&quot;</span><span class="p">,</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># False</span>
 
-<span class="c1"># NICHT (wahr ODER falsch)</span>
-<span class="ow">not</span> <span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1"># 7. not (True or False)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not (True or False) =&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">))</span>  <span class="c1"># False</span>
 
-<span class="c1"># (NICHT falsch) ODER (falsch UND falsch)</span>
-<span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1"># 8. (not False) or (False and False)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(not False) or (False and False) =&quot;</span><span class="p">,</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">))</span>  <span class="c1"># True</span>
 </pre></div>
 </div>
 </div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Logische Operatoren” von Programmieren Starten</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Die booleschen Operatoren <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> und <code class="docutils literal notranslate"><span class="pre">not</span></code> sind fundamentale Werkzeuge für
+die Programmierung von Bedingungen in Python. Sie ermöglichen die Formulierung
+komplexer Entscheidungslogik und sind besonders für Steuerungs- und
+Regelungsanwendungen von großer Bedeutung. Im nächsten Kapitel beschäftigen wir
+uns mit Schleifen.</p>
 </section>
-<section id="video">
-<h2>Video<a class="headerlink" href="#video" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -920,11 +996,11 @@ ausprobieren, also beispielsweise <code class="docutils literal notranslate"><sp
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolesche-algebra">Boolesche Algebra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-logische-und">Das logische UND</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-logische-oder">Das logische ODER</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-logische-nicht">Das logische NICHT</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prioritat-der-logischen-operatoren">Priorität der logischen Operatoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

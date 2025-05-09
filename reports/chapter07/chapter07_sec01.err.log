@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Beispiel: Sicherheitslogik einer Fertigungsstraße
+notaus_gedrückt = False
+schutztuer_offen = False
+ueberlast_erkannt = False
+sensorfehler = False
+
+# Die Fertigungsstraße darf nur laufen, wenn kein Fehlerzustand vorliegt
+system_ok = not (notaus_gedrueckt or schutztuer_offen or ueberlast_erkannt or sensorfehler)
+
+if system_ok:
+    print("Fertigungsstraße kann gestartet werden.")
+else:
+    print("Sicherheitssystem verhindert den Start.")
+    
+    # Fehlerdiagnose
+    if notaus_gedrueckt:
+        print("- Notaus ist gedrückt.")
+    if schutztuer_offen:
+        print("- Schutztür ist geöffnet.")
+    if ueberlast_erkannt:
+        print("- Überlast erkannt.")
+    if sensorfehler:
+        print("- Sensorfehler vorhanden.")
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[18], line 8[0m
+[1;32m      5[0m sensorfehler [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+[1;32m      7[0m [38;5;66;03m# Die Fertigungsstraße darf nur laufen, wenn kein Fehlerzustand vorliegt[39;00m
+[0;32m----> 8[0m system_ok [38;5;241m=[39m [38;5;129;01mnot[39;00m ([43mnotaus_gedrueckt[49m [38;5;129;01mor[39;00m schutztuer_offen [38;5;129;01mor[39;00m ueberlast_erkannt [38;5;129;01mor[39;00m sensorfehler)
+[1;32m     10[0m [38;5;28;01mif[39;00m system_ok:
+[1;32m     11[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mFertigungsstraße kann gestartet werden.[39m[38;5;124m"[39m)
+
+[0;31mNameError[0m: name 'notaus_gedrueckt' is not defined
+
