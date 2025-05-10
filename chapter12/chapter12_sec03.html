@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -218,7 +218,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Zufallszahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -720,9 +720,9 @@ des Beispiels. Probieren wir noch höhere Polynomgrade aus.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
 </pre></div>
 </div>
@@ -783,9 +783,9 @@ Polynomgrad 7: R2 = 1.0000
 Polynomgrad 8: R2 = 1.0000
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
 </pre></div>
 </div>
@@ -817,13 +817,13 @@ Polynomgrad 8: R2 = 1.0000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_10321/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_13993/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
 </pre></div>
 </div>

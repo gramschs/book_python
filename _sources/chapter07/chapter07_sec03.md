@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 7.3 Dictionary
+# 7.3 Dictionaries
 
 Häufig müssen Daten strukturiert gespeichert werden. Beispielsweise sollen
 Maschinenkonfigurationen effizient verwaltet werden. Für solche Fälle gibt es

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -218,7 +218,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Zufallszahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -546,7 +546,7 @@ simulieren möchten, können wir die Funktion <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -570,7 +570,7 @@ gleichverteilte Integers zwischen 1 und 6 zufällig gezogen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3 5 6 6 5 3 6 1 3 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 5 2 2 5 5 4 3 1 3]
 </pre></div>
 </div>
 </div>
@@ -615,7 +615,7 @@ wir scheinbar auf die Angabe eines Bereichs verzichten.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.41371579523916013
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4563822048650338
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ Argument (exklusiv).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8879434772478143
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.8527232345449427
 </pre></div>
 </div>
 </div>
@@ -649,7 +649,7 @@ erzeugen lassen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10.52728866 14.23282718 17.56065007 11.01474179 16.45916202]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[19.41596622 13.25192734 15.30880041 16.05975984 15.53661969]
 </pre></div>
 </div>
 </div>
@@ -677,7 +677,7 @@ später).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50a1ae6f8af29731532427fd99c157fd1966053b7b7327c6f58b0c17085af9a7.png" src="../_images/50a1ae6f8af29731532427fd99c157fd1966053b7b7327c6f58b0c17085af9a7.png" />
+<img alt="../_images/fc0ca2d05fa057a15ce4242c25f56a0a4cd197022ab67c23e1bbc81cbc1f140e.png" src="../_images/fc0ca2d05fa057a15ce4242c25f56a0a4cd197022ab67c23e1bbc81cbc1f140e.png" />
 </div>
 </div>
 <p>Ordnet man die gezogenen Zufallszahlen den 10 Teilintervallen zu, so sind in
@@ -704,7 +704,7 @@ Zufallszahlen erzeugen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2262606303329127
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.684526972748424
 </pre></div>
 </div>
 </div>
@@ -720,7 +720,7 @@ bedeutet, dass die Normalverteiung eine Standardabweichung von 1 hat.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.02968775 -1.37937699 -0.31659197  0.13356548 -0.48371437]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.18114885 -0.31204076  0.32051354  1.44085585  0.29295812]
 </pre></div>
 </div>
 </div>
@@ -775,7 +775,7 @@ Zufallszahlen pro Teilintervall anzeigen zu lassen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ef997716e7c28460c20d2be5f486e8a79d0cb724352bacec77d0f456512d6d29.png" src="../_images/ef997716e7c28460c20d2be5f486e8a79d0cb724352bacec77d0f456512d6d29.png" />
+<img alt="../_images/26ca16708c19224e6b370b8cfcbd551b57a550f58e24bdbfdaaaf634e04a9b96.png" src="../_images/26ca16708c19224e6b370b8cfcbd551b57a550f58e24bdbfdaaaf634e04a9b96.png" />
 </div>
 </div>
 </section>
