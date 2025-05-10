@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3 Zufallszahlen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>7.3 Dictionary &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,10 +34,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=18615670" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for), Strings und Zufallszahlen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Zufallszahlen</a></li>
@@ -216,7 +216,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3 Zufallszahlen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3 Dictionary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter07_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -483,7 +483,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>7.3 Zufallszahlen</h1>
+    <h1>7.3 Dictionary</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -494,8 +494,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gleichverteilte-zufallszahlen">Gleichverteilte Zufallszahlen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalverteilte-zufallszahlen">Normalverteilte Zufallszahlen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagen-von-dictionaries">Grundlagen von Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbeiten-mit-dictionaries">Arbeiten mit Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-dictionary-konzepte">Fortgeschrittene Dictionary-Konzepte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
 </ul>
             </nav>
         </div>
@@ -507,124 +509,152 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zufallszahlen">
-<h1>7.3 Zufallszahlen<a class="headerlink" href="#zufallszahlen" title="Link to this heading">#</a></h1>
-<p>In diesem Kapitel werden wir uns mit der Erzeugung und Anwendung von
-Zufallszahlen in Python beschäftigen. Wir nutzen dazu das Modul <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>
-aus der Bibliothek NumPy.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dictionary">
+<h1>7.3 Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h1>
+<p>Häufig müssen Daten strukturiert gespeichert werden. Beispielsweise sollen
+Maschinenkonfigurationen effizient verwaltet werden. Für solche Fälle gibt es
+eine Datenstruktur, die besser als eine Liste geeignet ist, das sogenannte
+Dictionary.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
-<div class="important admonition">
+<div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie kennen den Unterscheid zwischen <strong>gleichverteilten</strong> und
-<strong>normalverteilten</strong> Zufallszahlen.</p></li>
-<li><p>Sie können gleichverteilte Integer und Floats erzeugen lassen.</p></li>
-<li><p>Sie können normalverteilte Floats zu einem vorgegebenen Mittelwert und einer
-vorgegebenen Standabweichung erzeugen lassen.</p></li>
+<li><p>Sie können Dictionary-Objekte mit <strong>Schlüssel</strong> und <strong>Wert</strong> anlegen und
+verstehen die grundlegende Syntax <strong>{key: value}</strong>.</p></li>
+<li><p>Sie beherrschen den Zugriff auf Werte über ihre Schlüssel und können
+überprüfen, ob bestimmte Schlüssel in einem Dictionary vorhanden sind.</p></li>
+<li><p>Sie können neue Schlüssel-Wert-Paare hinzufügen, bestehende Werte
+aktualisieren und Einträge aus einem Dictionary entfernen.</p></li>
+<li><p>Sie kennen und nutzen die wichtigsten Methoden wie <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">.values()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.items()</span></code> und <code class="docutils literal notranslate"><span class="pre">.get()</span></code> für effiziente Operationen.</p></li>
+<li><p>Sie können durch Schlüssel, Werte oder Schlüssel-Wert-Paare eines Dictionaries
+iterieren und diese in Schleifen verarbeiten.</p></li>
 </ul>
 </div>
 </section>
-<section id="gleichverteilte-zufallszahlen">
-<h2>Gleichverteilte Zufallszahlen<a class="headerlink" href="#gleichverteilte-zufallszahlen" title="Link to this heading">#</a></h2>
-<p>Eine gleichverteilte Zufallszahl ist eine Zufallszahl, bei der jedes mögliche
-Ergebnis die gleiche Wahrscheinlichkeit hat. Das ist ähnlich wie beim Würfeln:
-Jede der sechs Zahlen hat die gleiche Wahrscheinlichkeit aufzutauchen.</p>
-<p>In Python können wir mit der Funktion <code class="docutils literal notranslate"><span class="pre">.uniform()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>
-gleichverteilte Zufallszahlen erzeugen. Hier ist ein Beispiel:</p>
+<section id="grundlagen-von-dictionaries">
+<h2>Grundlagen von Dictionaries<a class="headerlink" href="#grundlagen-von-dictionaries" title="Link to this heading">#</a></h2>
+<p>Dictionaries (deutsch: Wörterbücher) sind eine der wichtigsten Datenstrukturen
+in Python. Sie speichern Daten in Form von Schlüssel-Wert-Paaren (key-value
+pairs), wobei jeder Schlüssel eindeutig sein muss. Wir können uns ein Dictionary
+wie ein technisches Handbuch vorstellen: Wir schlagen einen Begriff (Schlüssel)
+nach und erhalten die zugehörige Information (Wert).</p>
+<p>Ein Dictionary ist eine veränderbare, ungeordnete Sammlung von
+Schlüssel-Wert-Paaren. Im Gegensatz zu Listen, die über einen numerischen Index
+angesprochen werden, erfolgt der Zugriff bei Dictionaries über beliebige
+unveränderliche Objekte als Schlüssel (meist Strings oder Zahlen).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stahl</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Werkstoffnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;1.4301&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dichte&quot;</span><span class="p">:</span> <span class="mi">7900</span><span class="p">,</span>  <span class="c1"># kg/m³</span>
+    <span class="s2">&quot;E-Modul&quot;</span><span class="p">:</span> <span class="mi">200000</span><span class="p">,</span>  <span class="c1"># MPa</span>
+    <span class="s2">&quot;Streckgrenze&quot;</span><span class="p">:</span> <span class="mi">190</span>  <span class="c1"># MPa</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stahl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Werkstoffnummer&#39;: &#39;1.4301&#39;, &#39;Dichte&#39;: 7900, &#39;E-Modul&#39;: 200000, &#39;Streckgrenze&#39;: 190}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dictionaries werden mit geschweiften Klammern <code class="docutils literal notranslate"><span class="pre">{}</span></code> erstellt. Die
+Schlüssel-Wert-Paare werden durch Doppelpunkte <code class="docutils literal notranslate"><span class="pre">:</span></code> getrennt, mehrere Paare durch
+Kommas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verschiedene Möglichkeiten der Dictionary-Erstellung</span>
+<span class="c1"># 1. Direkte Erstellung</span>
+<span class="n">motor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Typ&quot;</span><span class="p">:</span> <span class="s2">&quot;V6&quot;</span><span class="p">,</span> <span class="s2">&quot;Leistung&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">&quot;Hubraum&quot;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">}</span>
 
-<span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+<span class="c1"># 2. Leeres Dictionary erstellen und befüllen</span>
+<span class="n">getriebe</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">getriebe</span><span class="p">[</span><span class="s2">&quot;Typ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Automatik&quot;</span>
+<span class="n">getriebe</span><span class="p">[</span><span class="s2">&quot;Gänge&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="c1"># 3. Mit der dict()-Funktion</span>
+<span class="n">reifen</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Breite</span><span class="o">=</span><span class="mi">225</span><span class="p">,</span> <span class="n">Verhältnis</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">Durchmesser</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motor:&quot;</span><span class="p">,</span> <span class="n">motor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getriebe:&quot;</span><span class="p">,</span> <span class="n">getriebe</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reifen:&quot;</span><span class="p">,</span> <span class="n">reifen</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0785380685962993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Motor: {&#39;Typ&#39;: &#39;V6&#39;, &#39;Leistung&#39;: 250, &#39;Hubraum&#39;: 3.0}
+Getriebe: {&#39;Typ&#39;: &#39;Automatik&#39;, &#39;Gänge&#39;: 8}
+Reifen: {&#39;Breite&#39;: 225, &#39;Verhältnis&#39;: 45, &#39;Durchmesser&#39;: 17}
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wir können auch mehrere Zahlen gleichzeitig erzeugen und dabei den Bereich der
-Zahlen bestimmen:</p>
+<p>Der Zugriff auf Werte erfolgt über die Angabe des Schlüssels in eckigen
+Klammern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zugriff auf einzelne Werte</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motorleistung:&quot;</span><span class="p">,</span> <span class="n">motor</span><span class="p">[</span><span class="s2">&quot;Leistung&quot;</span><span class="p">],</span> <span class="s2">&quot;kW&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Anzahl Gänge:&quot;</span><span class="p">,</span> <span class="n">getriebe</span><span class="p">[</span><span class="s2">&quot;Gänge&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reifenbreite:&quot;</span><span class="p">,</span> <span class="n">reifen</span><span class="p">[</span><span class="s2">&quot;Breite&quot;</span><span class="p">],</span> <span class="s2">&quot;mm&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ändern von Werten</span>
+<span class="n">motor</span><span class="p">[</span><span class="s2">&quot;Leistung&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">265</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neue Motorleistung:&quot;</span><span class="p">,</span> <span class="n">motor</span><span class="p">[</span><span class="s2">&quot;Leistung&quot;</span><span class="p">],</span> <span class="s2">&quot;kW&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[19.47479874 11.27523027 17.76355061 12.91781595 14.49216037]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Motorleistung: 250 kW
+Anzahl Gänge: 8
+Reifenbreite: 225 mm
+Neue Motorleistung: 265 kW
 </pre></div>
 </div>
 </div>
 </div>
-<p>Damit werden fünf gleichverteilte Zufallszahlen zwischen 10 und 20 generiert.</p>
-<p>Neben den Funktionen für kontinuierliche Zufallszahlen stellt <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>
-auch eine Funktion bereit, um zufällige Integer zu erzeugen. Die Funktion
-<code class="docutils literal notranslate"><span class="pre">randint()</span></code> erzeugt zufällige ganze Zahlen innerhalb eines angegebenen Intervalls.</p>
-<p>Dabei benötigt die Funktion <code class="docutils literal notranslate"><span class="pre">randint()</span></code> zwei Parameter: den Start des Intervalls
-und das Ende des Intervalls. Dabei gehört der Start des Intervalls dazu, aber
-das Ende des Intervalls nicht. Optional kann ein dritter Parameter hinzugefügt
-werden, um anzugeben, wie viele Zahlen erzeugt werden sollen.</p>
-<p>Hier ist ein Beispiel:</p>
+<p>Im Gegensatz zu Listen, die über numerische Indizes (0, 1, 2, …) angesprochen
+werden, verwenden Dictionaries aussagekräftige Schlüssel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vergleich: Liste vs. Dictionary</span>
+<span class="c1"># Als Liste (unübersichtlich)</span>
+<span class="n">werkstoff_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1.4301&quot;</span><span class="p">,</span> <span class="mi">7900</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="mi">190</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dichte (Liste):&quot;</span><span class="p">,</span> <span class="n">werkstoff_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Was bedeutet Index 1?</span>
+
+<span class="c1"># Als Dictionary (selbsterklärend)</span>
+<span class="n">werkstoff_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Werkstoffnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;1.4301&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dichte&quot;</span><span class="p">:</span> <span class="mi">7900</span><span class="p">,</span>
+    <span class="s2">&quot;E-Modul&quot;</span><span class="p">:</span> <span class="mi">200000</span><span class="p">,</span>
+    <span class="s2">&quot;Streckgrenze&quot;</span><span class="p">:</span> <span class="mi">190</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dichte (Dictionary):&quot;</span><span class="p">,</span> <span class="n">werkstoff_dict</span><span class="p">[</span><span class="s2">&quot;Dichte&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>71
-</pre></div>
-</div>
-</div>
-</div>
-<p>Der Code generiert eine zufällige ganze Zahl (Integer) zwischen 37 und 98. Die
-99 kann jedoch nicht zufällig gezogen werden, da das Ende des Intervalls nicht
-inkludiert ist.</p>
-<p>Und hier ist ein Beispiel für die Erzeugung mehrerer Zahlen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7 3 0 7 9]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Der Code generiert fünf ganzzahlige Zufallszahlen zwischen 0 und 9 und speichert
-sie in der Liste <code class="docutils literal notranslate"><span class="pre">zufallszahlen</span></code>.</p>
-<p>Es ist wichtig zu beachten, dass der obere Grenzwert bei <code class="docutils literal notranslate"><span class="pre">randint()</span></code> exklusiv
-ist, d.h. er wird selbst nicht als möglicher Ausgang berücksichtigt. Wenn also
-z.B. Zahlen von 1 bis 10 benötigt werden, sollte der obere Grenzwert als 11
-angegeben werden:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dichte (Liste): 7900
+Dichte (Dictionary): 7900
 </pre></div>
 </div>
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie sechs Lottozahlen erzeugen, d.h. sechs Integer, die zwischen 1 und 49
-gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.</p>
-<p>Könnte damit die Ziehung der Lottozahlen simuliert werden?</p>
+<p>Erstellen Sie ein Dictionary für die Eigenschaften von Aluminium mit folgenden Daten:</p>
+<ul class="simple">
+<li><p>Werkstoffnummer: “3.1645”</p></li>
+<li><p>Dichte: 2700 kg/m³</p></li>
+<li><p>E-Modul: 70000 MPa</p></li>
+<li><p>Streckgrenze: 160 MPa</p></li>
+<li><p>Wärmeleitfähigkeit: 140 W/(m·K)</p></li>
+</ul>
+<p>Greifen Sie dann auf die Dichte und die Wärmeleitfähigkeit zu und geben Sie diese mit passenden Einheiten aus.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,65 +665,227 @@ gleichmäßig verteilt sind. Die Lottozahlen sollen auch ausgegeben werden.</p>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionary für Aluminium erstellen</span>
+<span class="n">aluminium</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Werkstoffnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;3.1645&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dichte&quot;</span><span class="p">:</span> <span class="mi">2700</span><span class="p">,</span>
+    <span class="s2">&quot;E-Modul&quot;</span><span class="p">:</span> <span class="mi">70000</span><span class="p">,</span>
+    <span class="s2">&quot;Streckgrenze&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="s2">&quot;Wärmeleitfähigkeit&quot;</span><span class="p">:</span> <span class="mi">140</span>
+<span class="p">}</span>
 
-<span class="c1"># Erzeugung der Lottozahlen</span>
-<span class="n">lottozahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-
-<span class="c1"># Ausgabe</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lottozahlen</span><span class="p">)</span>
+<span class="c1"># Zugriff auf spezifische Eigenschaften</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dichte von Aluminium:&quot;</span><span class="p">,</span> <span class="n">aluminium</span><span class="p">[</span><span class="s2">&quot;Dichte&quot;</span><span class="p">],</span> <span class="s2">&quot;kg/m³&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wärmeleitfähigkeit:&quot;</span><span class="p">,</span> <span class="n">aluminium</span><span class="p">[</span><span class="s2">&quot;Wärmeleitfähigkeit&quot;</span><span class="p">],</span> <span class="s2">&quot;W/(m·K)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="normalverteilte-zufallszahlen">
-<h2>Normalverteilte Zufallszahlen<a class="headerlink" href="#normalverteilte-zufallszahlen" title="Link to this heading">#</a></h2>
-<p>Eine normalverteilte Zufallszahl folgt der sogenannten Normalverteilung oder
-Gaußschen Verteilung. Das ist eine Wahrscheinlichkeitsverteilung, die durch ihr
-Glockenkurven-Diagramm bekannt ist.</p>
-<p>Die Normalverteilung ist durch zwei Parameter definiert: Den Mittelwert (oder
-Erwartungswert) und die Standardabweichung. Der Mittelwert ist der Wert, um den
-die Werte im Durchschnitt zentriert sind. Die Standardabweichung ist ein Maß für
-die Streuung der Werte.</p>
-<p>In Python können wir mit der Funktion <code class="docutils literal notranslate"><span class="pre">numpy.random.normal()</span></code> normalverteilte
-Zufallszahlen erzeugen:</p>
+<section id="arbeiten-mit-dictionaries">
+<h2>Arbeiten mit Dictionaries<a class="headerlink" href="#arbeiten-mit-dictionaries" title="Link to this heading">#</a></h2>
+<p>In diesem Abschnitt betrachten wir, wie Dictionaries dynamisch verändert,
+durchsucht und mit verschiedenen Methoden effizient bearbeitet werden können.</p>
+<p>Dictionaries sind veränderbar. Wir können jederzeit neue Einträge hinzufügen
+oder bestehende entfernen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahl</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionary für eine Hydraulikpumpe</span>
+<span class="n">pumpe</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Typ&quot;</span><span class="p">:</span> <span class="s2">&quot;Axialkolbenpumpe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Volumenstrom&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>  <span class="c1"># l/min</span>
+    <span class="s2">&quot;Druck&quot;</span><span class="p">:</span> <span class="mi">250</span>  <span class="c1"># bar</span>
+<span class="p">}</span>
+
+<span class="c1"># Neue Einträge hinzufügen</span>
+<span class="n">pumpe</span><span class="p">[</span><span class="s2">&quot;Drehzahl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1450</span>  <span class="c1"># U/min</span>
+<span class="n">pumpe</span><span class="p">[</span><span class="s2">&quot;Wirkungsgrad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.92</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erweiterte Pumpendaten:&quot;</span><span class="p">,</span> <span class="n">pumpe</span><span class="p">)</span>
+
+<span class="c1"># Eintrag löschen mit del</span>
+<span class="k">del</span> <span class="n">pumpe</span><span class="p">[</span><span class="s2">&quot;Wirkungsgrad&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nach Löschen:&quot;</span><span class="p">,</span> <span class="n">pumpe</span><span class="p">)</span>
+
+<span class="c1"># Eintrag löschen mit pop() - gibt den Wert zurück</span>
+<span class="n">drehzahl</span> <span class="o">=</span> <span class="n">pumpe</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Drehzahl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entfernte Drehzahl:&quot;</span><span class="p">,</span> <span class="n">drehzahl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finale Pumpendaten:&quot;</span><span class="p">,</span> <span class="n">pumpe</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.025012998407243425
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Erweiterte Pumpendaten: {&#39;Typ&#39;: &#39;Axialkolbenpumpe&#39;, &#39;Volumenstrom&#39;: 120, &#39;Druck&#39;: 250, &#39;Drehzahl&#39;: 1450, &#39;Wirkungsgrad&#39;: 0.92}
+Nach Löschen: {&#39;Typ&#39;: &#39;Axialkolbenpumpe&#39;, &#39;Volumenstrom&#39;: 120, &#39;Druck&#39;: 250, &#39;Drehzahl&#39;: 1450}
+Entfernte Drehzahl: 1450
+Finale Pumpendaten: {&#39;Typ&#39;: &#39;Axialkolbenpumpe&#39;, &#39;Volumenstrom&#39;: 120, &#39;Druck&#39;: 250}
 </pre></div>
 </div>
 </div>
 </div>
-<p>Das erste Argument <code class="docutils literal notranslate"><span class="pre">0</span></code> steht für einen Mittelwert von 0. Das zweite Argument <code class="docutils literal notranslate"><span class="pre">1</span></code>
-bedeutet, dass die Normalverteiung eine Standardabweichung von 1 hat.</p>
-<p>Wir können auch mehrere Zahlen gleichzeitig erzeugen:</p>
+<p>Bevor Sie auf einen Schlüssel zugreifen, sollten wir prüfen, ob er existiert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zufallszahlen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zufallszahlen</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maschinenkonfiguration</span>
+<span class="n">maschine</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Modell&quot;</span><span class="p">:</span> <span class="s2">&quot;DMG MORI DMU 50&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Achsen&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;Arbeitsraum_X&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">&quot;Arbeitsraum_Y&quot;</span><span class="p">:</span> <span class="mi">450</span>
+<span class="p">}</span>
+
+<span class="c1"># Prüfen, ob Schlüssel existiert</span>
+<span class="k">if</span> <span class="s2">&quot;Arbeitsraum_Z&quot;</span> <span class="ow">in</span> <span class="n">maschine</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z-Achse:&quot;</span><span class="p">,</span> <span class="n">maschine</span><span class="p">[</span><span class="s2">&quot;Arbeitsraum_Z&quot;</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z-Achse nicht definiert&quot;</span><span class="p">)</span>
+    <span class="n">maschine</span><span class="p">[</span><span class="s2">&quot;Arbeitsraum_Z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="c1"># Negative Prüfung</span>
+<span class="k">if</span> <span class="s2">&quot;Spindeldrehzahl&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">maschine</span><span class="p">:</span>
+    <span class="n">maschine</span><span class="p">[</span><span class="s2">&quot;Spindeldrehzahl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12000</span>  <span class="c1"># U/min</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vollständige Maschinendaten:&quot;</span><span class="p">,</span> <span class="n">maschine</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.38063434  0.68293222  1.53402803  0.65660771 -0.69623946]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z-Achse nicht definiert
+Vollständige Maschinendaten: {&#39;Modell&#39;: &#39;DMG MORI DMU 50&#39;, &#39;Achsen&#39;: 5, &#39;Arbeitsraum_X&#39;: 500, &#39;Arbeitsraum_Y&#39;: 450, &#39;Arbeitsraum_Z&#39;: 400, &#39;Spindeldrehzahl&#39;: 12000}
 </pre></div>
 </div>
 </div>
 </div>
-<p>Jetzt wurden fünf normalverteilte Zufallszahlen erzeugt.</p>
+<p>Python bietet mehrere nützliche Methoden für die Arbeit mit Dictionaries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Werkzeugdaten für Fräswerkzeuge</span>
+<span class="n">werkzeuge</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;VHM_Schaftfraeser_6mm&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Durchmesser&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;Zaehne&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;VHM&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;HSS_Bohrer_8mm&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Durchmesser&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;HSS-E&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;Planfraeser_50mm&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Durchmesser&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Zaehne&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;HM&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># keys() - alle Schlüssel abrufen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Verfügbare Werkzeuge:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">werkzeug</span> <span class="ow">in</span> <span class="n">werkzeuge</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">werkzeug</span><span class="p">)</span>
+
+<span class="c1"># values() - alle Werte abrufen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Werkzeugdetails:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">details</span> <span class="ow">in</span> <span class="n">werkzeuge</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">details</span><span class="p">)</span>
+
+<span class="c1"># items() - Schlüssel-Wert-Paare abrufen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Komplette Werkzeugliste:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">eigenschaften</span> <span class="ow">in</span> <span class="n">werkzeuge</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">eigenschaften</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Verfügbare Werkzeuge:
+- VHM_Schaftfraeser_6mm
+- HSS_Bohrer_8mm
+- Planfraeser_50mm
+
+Werkzeugdetails:
+{&#39;Durchmesser&#39;: 6, &#39;Zaehne&#39;: 4, &#39;Material&#39;: &#39;VHM&#39;}
+{&#39;Durchmesser&#39;: 8, &#39;Material&#39;: &#39;HSS-E&#39;}
+{&#39;Durchmesser&#39;: 50, &#39;Zaehne&#39;: 5, &#39;Material&#39;: &#39;HM&#39;}
+
+Komplette Werkzeugliste:
+VHM_Schaftfraeser_6mm: {&#39;Durchmesser&#39;: 6, &#39;Zaehne&#39;: 4, &#39;Material&#39;: &#39;VHM&#39;}
+HSS_Bohrer_8mm: {&#39;Durchmesser&#39;: 8, &#39;Material&#39;: &#39;HSS-E&#39;}
+Planfraeser_50mm: {&#39;Durchmesser&#39;: 50, &#39;Zaehne&#39;: 5, &#39;Material&#39;: &#39;HM&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es gibt verschiedene Möglichkeiten, über ein Dictionary zu iterieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Materialdatenbank</span>
+<span class="n">materialien</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Stahl&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Dichte&quot;</span><span class="p">:</span> <span class="mi">7850</span><span class="p">,</span> <span class="s2">&quot;E_Modul&quot;</span><span class="p">:</span> <span class="mi">210000</span><span class="p">,</span> <span class="s2">&quot;Preis_kg&quot;</span><span class="p">:</span> <span class="mf">1.50</span><span class="p">},</span>
+    <span class="s2">&quot;Aluminium&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Dichte&quot;</span><span class="p">:</span> <span class="mi">2700</span><span class="p">,</span> <span class="s2">&quot;E_Modul&quot;</span><span class="p">:</span> <span class="mi">70000</span><span class="p">,</span> <span class="s2">&quot;Preis_kg&quot;</span><span class="p">:</span> <span class="mf">3.20</span><span class="p">},</span>
+    <span class="s2">&quot;Titan&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Dichte&quot;</span><span class="p">:</span> <span class="mi">4500</span><span class="p">,</span> <span class="s2">&quot;E_Modul&quot;</span><span class="p">:</span> <span class="mi">110000</span><span class="p">,</span> <span class="s2">&quot;Preis_kg&quot;</span><span class="p">:</span> <span class="mf">45.00</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Iteration über Schlüssel (Standard)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Materialien in der Datenbank:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">material</span> <span class="ow">in</span> <span class="n">materialien</span><span class="p">:</span>  <span class="c1"># äquivalent zu materialien.keys()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">material</span><span class="p">)</span>
+
+<span class="c1"># Iteration über Werte</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Materialdichten (kg/m³):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">eigenschaften</span> <span class="ow">in</span> <span class="n">materialien</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">eigenschaften</span><span class="p">[</span><span class="s2">&quot;Dichte&quot;</span><span class="p">])</span>
+
+<span class="c1"># Iteration über Schlüssel-Wert-Paare</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Materialpreise:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">material</span><span class="p">,</span> <span class="n">eigenschaften</span> <span class="ow">in</span> <span class="n">materialien</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">material</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">eigenschaften</span><span class="p">[</span><span class="s1">&#39;Preis_kg&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> €/kg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Materialien in der Datenbank:
+Stahl
+Aluminium
+Titan
+
+Materialdichten (kg/m³):
+7850
+2700
+4500
+
+Materialpreise:
+Stahl: 1.5 €/kg
+Aluminium: 3.2 €/kg
+Titan: 45.0 €/kg
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Methode <code class="docutils literal notranslate"><span class="pre">.get()</span></code> ermöglicht sicheren Zugriff mit Standardwerten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lagerdaten</span>
+<span class="n">lager</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Schrauben_M8&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">&quot;Muttern_M8&quot;</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span>
+    <span class="s2">&quot;Scheiben_M8&quot;</span><span class="p">:</span> <span class="mi">520</span>
+<span class="p">}</span>
+
+<span class="c1"># Unsicherer Zugriff (kann Fehler verursachen)</span>
+<span class="c1"># anzahl = lager[&quot;Schrauben_M10&quot;]  # KeyError!</span>
+
+<span class="c1"># Sicherer Zugriff mit get()</span>
+<span class="n">anzahl_m10</span> <span class="o">=</span> <span class="n">lager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Schrauben_M10&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Standardwert 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Schrauben M10 im Lager: </span><span class="si">{</span><span class="n">anzahl_m10</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mit get() auf vorhandene Werte zugreifen</span>
+<span class="n">anzahl_m8</span> <span class="o">=</span> <span class="n">lager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Schrauben_M8&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Schrauben M8 im Lager: </span><span class="si">{</span><span class="n">anzahl_m8</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Schrauben M10 im Lager: 0
+Schrauben M8 im Lager: 500
+</pre></div>
+</div>
+</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Bei einer Schulklasse wird die Körpergröße der Jugendlichen (Alter: 14 bis 18
-Jahre) gemessen. Der Mittelwert bei den Mädchen ist 166.3 cm (Standardabweichung
-6.39 cm) und bei den Jungen 176.8 cm (Standardabweichung 7.46 cm) (Quelle:
-<a class="reference external" href="https://de.wikipedia.org/wiki/Normalverteilung">Wikipedia </a>).</p>
-<p>Lassen Sie die Körpergrößen einer durchschnittlichen Schulklasse (= 13 Mädchen und 13 Jungen)erzeugen und ausgeben.</p>
+<p>Erstellen Sie ein Dictionary für verschiedene Stahlsorten mit ihren Preisen pro Kilogramm:</p>
+<ul class="simple">
+<li><p>S235: 1.20 €/kg</p></li>
+<li><p>S275: 1.35 €/kg</p></li>
+<li><p>S355: 1.50 €/kg</p></li>
+</ul>
+<p>Fügen Sie dann S460 mit 1.80 €/kg hinzu. Gehen Sie anschließend mit einer for-Schleife durch alle Einträge und geben aus, welche Stahlsorten teurer als 1.40 €/kg sind.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -704,18 +896,228 @@ Jahre) gemessen. Der Mittelwert bei den Mädchen ist 166.3 cm (Standardabweichun
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">miniexercise</span><span class="p">,</span> <span class="n">toggle</span>
+<span class="err">```</span><span class="n">python</span>
+<span class="c1"># Dictionary für Stahlsorten erstellen</span>
+<span class="n">stahlpreise</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;S235&quot;</span><span class="p">:</span> <span class="mf">1.20</span><span class="p">,</span>
+    <span class="s2">&quot;S275&quot;</span><span class="p">:</span> <span class="mf">1.35</span><span class="p">,</span>
+    <span class="s2">&quot;S355&quot;</span><span class="p">:</span> <span class="mf">1.50</span>
+<span class="p">}</span>
 
-<span class="c1"># Erzeugung der Körpergrößen</span>
-<span class="n">maedchen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">166.3</span><span class="p">,</span> <span class="mf">6.39</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
-<span class="n">jungen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">176.8</span><span class="p">,</span> <span class="mf">7.46</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="c1"># Neue Stahlsorte hinzufügen</span>
+<span class="n">stahlpreise</span><span class="p">[</span><span class="s2">&quot;S460&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.80</span>
 
-<span class="c1"># Ausgabe</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">maedchen</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jungen</span><span class="p">)</span>
+<span class="c1"># Teure Stahlsorten ausgeben</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stahlsorten über 1.40 €/kg:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">stahl</span><span class="p">,</span> <span class="n">preis</span> <span class="ow">in</span> <span class="n">stahlpreise</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">preis</span> <span class="o">&gt;</span> <span class="mf">1.40</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">stahl</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">preis</span><span class="si">}</span><span class="s2"> €/kg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="fortgeschrittene-dictionary-konzepte">
+<h2>Fortgeschrittene Dictionary-Konzepte<a class="headerlink" href="#fortgeschrittene-dictionary-konzepte" title="Link to this heading">#</a></h2>
+<p>In diesem Abschnitt vertiefen wir unser Wissen über Dictionaries durch
+verschachtelte Strukturen und erweiterte Methoden für komplexe Anwendungen im
+Maschinenbau.</p>
+<p>Dictionaries können andere Dictionaries als Werte enthalten, was hierarchische
+Datenstrukturen ermöglicht:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CNC-Maschinenkonfiguration mit verschachtelten Dictionaries</span>
+<span class="n">cnc_maschine</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Modell&quot;</span><span class="p">:</span> <span class="s2">&quot;DMG MORI NLX 2500&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Achsen&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Verfahrweg&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s2">&quot;Geschwindigkeit&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Beschleunigung&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Verfahrweg&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Geschwindigkeit&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Beschleunigung&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="s2">&quot;Z&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Verfahrweg&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Geschwindigkeit&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;Beschleunigung&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Spindel&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Max_Drehzahl&quot;</span><span class="p">:</span> <span class="mi">12000</span><span class="p">,</span>
+        <span class="s2">&quot;Leistung&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>  <span class="c1"># kW</span>
+        <span class="s2">&quot;Drehmoment&quot;</span><span class="p">:</span> <span class="mi">250</span>  <span class="c1"># Nm</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Werkzeugwechsler&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Plaetze&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+        <span class="s2">&quot;Wechselzeit&quot;</span><span class="p">:</span> <span class="mf">1.5</span>  <span class="c1"># Sekunden</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Zugriff auf verschachtelte Elemente</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X-Achse Verfahrweg:&quot;</span><span class="p">,</span> <span class="n">cnc_maschine</span><span class="p">[</span><span class="s2">&quot;Achsen&quot;</span><span class="p">][</span><span class="s2">&quot;X&quot;</span><span class="p">][</span><span class="s2">&quot;Verfahrweg&quot;</span><span class="p">],</span> <span class="s2">&quot;mm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spindelleistung:&quot;</span><span class="p">,</span> <span class="n">cnc_maschine</span><span class="p">[</span><span class="s2">&quot;Spindel&quot;</span><span class="p">][</span><span class="s2">&quot;Leistung&quot;</span><span class="p">],</span> <span class="s2">&quot;kW&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ändern eines verschachtelten Wertes</span>
+<span class="n">cnc_maschine</span><span class="p">[</span><span class="s2">&quot;Achsen&quot;</span><span class="p">][</span><span class="s2">&quot;Z&quot;</span><span class="p">][</span><span class="s2">&quot;Geschwindigkeit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neue Z-Geschwindigkeit:&quot;</span><span class="p">,</span> <span class="n">cnc_maschine</span><span class="p">[</span><span class="s2">&quot;Achsen&quot;</span><span class="p">][</span><span class="s2">&quot;Z&quot;</span><span class="p">][</span><span class="s2">&quot;Geschwindigkeit&quot;</span><span class="p">],</span> <span class="s2">&quot;m/min&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X-Achse Verfahrweg: 300 mm
+Spindelleistung: 30 kW
+Neue Z-Geschwindigkeit: 28 m/min
+</pre></div>
+</div>
+</div>
+</div>
+<p>Für sicheren Umgang mit möglicherweise fehlenden Schlüsseln bieten sich
+erweiterte Methoden an:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maschinenwartungsdaten</span>
+<span class="n">wartung</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Oelwechsel&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-03-15&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Inspektion&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Kalibrierung&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-02-20&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># get() mit Standardwert für nicht vorhandene Schlüssel</span>
+<span class="n">naechste_wartung</span> <span class="o">=</span> <span class="n">wartung</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Hauptwartung&quot;</span><span class="p">,</span> <span class="s2">&quot;nicht geplant&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nächste Hauptwartung:&quot;</span><span class="p">,</span> <span class="n">naechste_wartung</span><span class="p">)</span>
+
+<span class="c1"># setdefault() - fügt Schlüssel nur hinzu, wenn er nicht existiert</span>
+<span class="n">wartung</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;Schmierung&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-04-01&quot;</span><span class="p">)</span>
+<span class="n">wartung</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;Inspektion&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-12-31&quot;</span><span class="p">)</span>  <span class="c1"># Ändert nichts, da bereits vorhanden</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Aktuelle Wartungsliste:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">art</span><span class="p">,</span> <span class="n">datum</span> <span class="ow">in</span> <span class="n">wartung</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">art</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">datum</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nächste Hauptwartung: nicht geplant
+
+Aktuelle Wartungsliste:
+- Oelwechsel: 2024-03-15
+- Inspektion: 2024-01-10
+- Kalibrierung: 2024-02-20
+- Schmierung: 2024-04-01
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ein praktisches Beispiel zeigt, wie verschachtelte Dictionaries zur Verwaltung
+komplexer Maschinenkonfigurationen verwendet werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Werkzeugmagazin einer Fräsmaschine</span>
+<span class="n">werkzeugmagazin</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Platz_1&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Typ&quot;</span><span class="p">:</span> <span class="s2">&quot;Schaftfraeser&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Durchmesser&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;VHM&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Standzeit&quot;</span><span class="p">:</span> <span class="mi">120</span>  <span class="c1"># Minuten</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Platz_2&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Typ&quot;</span><span class="p">:</span> <span class="s2">&quot;Bohrer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Durchmesser&quot;</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;HSS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Standzeit&quot;</span><span class="p">:</span> <span class="mi">80</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Platz_3&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Typ&quot;</span><span class="p">:</span> <span class="s2">&quot;Gewindebohrer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Durchmesser&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;HSSE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Standzeit&quot;</span><span class="p">:</span> <span class="mi">60</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Übersicht über alle Werkzeuge</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Werkzeugmagazin-Übersicht:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">platz</span><span class="p">,</span> <span class="n">werkzeug</span> <span class="ow">in</span> <span class="n">werkzeugmagazin</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">platz</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Typ: </span><span class="si">{</span><span class="n">werkzeug</span><span class="p">[</span><span class="s1">&#39;Typ&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Durchmesser: </span><span class="si">{</span><span class="n">werkzeug</span><span class="p">[</span><span class="s1">&#39;Durchmesser&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Reststandzeit: </span><span class="si">{</span><span class="n">werkzeug</span><span class="p">[</span><span class="s1">&#39;Standzeit&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> min&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Werkzeugmagazin-Übersicht:
+
+Platz_1:
+  Typ: Schaftfraeser
+  Durchmesser: 10 mm
+  Reststandzeit: 120 min
+
+Platz_2:
+  Typ: Bohrer
+  Durchmesser: 8.5 mm
+  Reststandzeit: 80 min
+
+Platz_3:
+  Typ: Gewindebohrer
+  Durchmesser: 6 mm
+  Reststandzeit: 60 min
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erstellen Sie ein verschachteltes Dictionary für eine einfache Werkzeugmaschine mit:</p>
+<ul class="simple">
+<li><p>Name: “Drehbank DL-200”</p></li>
+<li><p>Zwei Achsen (X und Z) mit jeweils:</p>
+<ul>
+<li><p>Verfahrweg in mm</p></li>
+<li><p>Aktuelle Position in mm</p></li>
+</ul>
+</li>
+<li><p>Spindeldaten mit:</p>
+<ul>
+<li><p>Maximale Drehzahl</p></li>
+<li><p>Aktuelle Drehzahl</p></li>
+</ul>
+</li>
+</ul>
+<p>Geben Sie dann die aktuelle Position beider Achsen aus.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Werkzeugmaschine als verschachteltes Dictionary</span>
+<span class="n">drehbank</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Drehbank DL-200&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Achsen&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Verfahrweg&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+            <span class="s2">&quot;Aktuelle_Position&quot;</span><span class="p">:</span> <span class="mf">75.5</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Z&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Verfahrweg&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s2">&quot;Aktuelle_Position&quot;</span><span class="p">:</span> <span class="mf">250.0</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Spindel&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Max_Drehzahl&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+        <span class="s2">&quot;Aktuelle_Drehzahl&quot;</span><span class="p">:</span> <span class="mi">1500</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Ausgabe der aktuellen Positionen</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Aktuelle Positionen der </span><span class="si">{</span><span class="n">drehbank</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X-Achse: </span><span class="si">{</span><span class="n">drehbank</span><span class="p">[</span><span class="s1">&#39;Achsen&#39;</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">][</span><span class="s1">&#39;Aktuelle_Position&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Z-Achse: </span><span class="si">{</span><span class="n">drehbank</span><span class="p">[</span><span class="s1">&#39;Achsen&#39;</span><span class="p">][</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="s1">&#39;Aktuelle_Position&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
+<p>Dictionaries sind eine essenzielle Datenstruktur in Python für die Verwaltung
+von Schlüssel-Wert-Paaren. Sie bieten schnellen Zugriff über aussagekräftige
+Bezeichner statt numerischer Indizes.</p>
 </section>
 </section>
 
@@ -785,8 +1187,10 @@ Jahre) gemessen. Der Mittelwert bei den Mädchen ist 166.3 cm (Standardabweichun
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gleichverteilte-zufallszahlen">Gleichverteilte Zufallszahlen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalverteilte-zufallszahlen">Normalverteilte Zufallszahlen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagen-von-dictionaries">Grundlagen von Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbeiten-mit-dictionaries">Arbeiten mit Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-dictionary-konzepte">Fortgeschrittene Dictionary-Konzepte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
 </ul>
   </nav></div>
 
