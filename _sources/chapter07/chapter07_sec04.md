@@ -17,8 +17,9 @@ kernelspec:
 ```{admonition} Übung 7.1
 :class: miniexercise
 Schreiben Sie ein Programm, das einen Benutzer oder eine Benutzerin auffordert,
-das Passwort einzugeben. Drei Versuche sind möglich. Bei dreimaliger
-Falscheingabe soll das Programm abgebrochen werden.
+ein Passwort einzugeben (initialisieren Sie vorab ein Passwort). Drei Versuche
+sind möglich. Bei dreimaliger Falscheingabe soll das Programm abgebrochen
+werden.
 ```
 
 ````{admonition} Lösung
@@ -37,6 +38,44 @@ while versuche < 3:
 ````
 
 ```{admonition} Übung 7.2
+:class: miniexercise
+Erstellen Sie ein einfaches Programm, das einen Werkzeugkatalog mit Preisen
+verwaltet. Das Programm soll:
+
+1. Ein Dictionary mit 4 Werkzeugen und deren Preisen erstellen. 
+2. Den Preis eines bestimmten Werkzeugs ausgeben. 
+3. Ein neues Werkzeug zum Katalog hinzufügen. 
+4. Alle Werkzeuge mit ihren Preisen anzeigen.
+```
+
+````{admonition} Lösung
+:class: minisolution, toggle
+```python
+# 1. Werkzeugkatalog erstellen
+werkzeuge = {
+    "Hammer": 15.50,
+    "Schraubenzieher": 8.75,
+    "Zange": 12.30,
+    "Säge": 22.90
+}
+
+# 2. Preis eines bestimmten Werkzeugs ausgeben
+werkzeug = "Hammer"
+print(f"Der Preis für {werkzeug} beträgt {werkzeuge[werkzeug]} Euro.")
+
+# 3. Neues Werkzeug hinzufügen
+werkzeuge["Bohrmaschine"] = 89.99
+print(f"Bohrmaschine wurde zum Katalog hinzugefügt.")
+
+# 4. Alle Werkzeuge mit Preisen anzeigen
+print("\nWerkzeugkatalog:")
+print("-----------------")
+for name, preis in werkzeuge.items():
+    print(f"{name}: {preis} Euro")
+```
+````
+
+```{admonition} Übung 7.3
 :class: miniexercise
 Schreiben Sie einen 1x1-Trainer. Gehen Sie dabei wie folgt vor:
 1. Schreiben Sie eine *Funktion*, die eine 1x1-Aufgabe stellt (zum Beispiel:
@@ -76,7 +115,7 @@ print(f'Sie haben {prozent_richtige_antworten:.1f} % der Aufgaben richtig gelös
 ```
 ````
 
-```{admonition} Übung 7.3
+```{admonition} Übung 7.4
 :class: miniexercise
 Schreiben Sie das Spiel "Zahlenraten". Der Computer denkt sich eine Zahl
 zwischen 1 und 100 aus. Dann fragt er Sie solange, welche Zahl er sich
@@ -108,7 +147,7 @@ while True:
 ```
 ````
 
-```{admonition} Übung 7.4
+```{admonition} Übung 7.5
 :class: miniexercise
 Programmieren Sie einen Random Walk. Ein Random Walk ist eine zufällige
 Irrfahrt. Der Turtle-Roboter soll zufällig eine Richtung bestimmen (0, 90, 180
