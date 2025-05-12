@@ -46,7 +46,7 @@ data.head(10)
 :class: miniexercise
 Laden Sie die Datei
 [20220801_Marktwert_Bundesliga.csv](https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC)
-herunter. 
+herunter (siehe vorherige Aufgabe).
 
 1. Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele Zeilen und  und wie viele Einträge sind gültig?
 2. Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (`2. Bundesliga`) und speichern Sie diese Daten in der Variable `zweite`.
