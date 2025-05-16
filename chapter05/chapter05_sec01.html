@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -819,7 +819,7 @@ gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</sp
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">material1</span> <span class="o">=</span> <span class="s2">&quot;Stahl&quot;</span>
 <span class="n">material2</span> <span class="o">=</span> <span class="s2">&quot;Aluminium&quot;</span>
 <span class="n">material3</span> <span class="o">=</span> <span class="s2">&quot;Stahllegierung&quot;</span>
-<span class="n">material4</span> <span class="o">=</span> <span class="s2">&quot;stahl&quot;</span>
+<span class="n">material4</span> <span class="o">=</span> <span class="s2">&quot;aluminium&quot;</span>
 </pre></div>
 </div>
 <p>Überprüfen Sie folgende Vergleiche und notieren Sie, ob das Ergebnis <code class="docutils literal notranslate"><span class="pre">True</span></code> oder
@@ -827,10 +827,10 @@ gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</sp
 <ol class="arabic simple">
 <li><p>Ist <code class="docutils literal notranslate"><span class="pre">material1</span></code> lexikographisch größer als <code class="docutils literal notranslate"><span class="pre">material2</span></code>?</p></li>
 <li><p>Enthält <code class="docutils literal notranslate"><span class="pre">material3</span></code> den String <code class="docutils literal notranslate"><span class="pre">material1</span></code>?</p></li>
-<li><p>Sind <code class="docutils literal notranslate"><span class="pre">material1</span></code> und <code class="docutils literal notranslate"><span class="pre">material4</span></code> identisch?</p></li>
+<li><p>Sind <code class="docutils literal notranslate"><span class="pre">material2</span></code> und <code class="docutils literal notranslate"><span class="pre">material4</span></code> identisch?</p></li>
 <li><p>Überprüfen Sie mit dem <code class="docutils literal notranslate"><span class="pre">in-</span></code>Operator, ob die Zeichenfolge “leg” in
 <code class="docutils literal notranslate"><span class="pre">material3</span></code> vorkommt.</p></li>
-<li><p>Ist <code class="docutils literal notranslate"><span class="pre">material2</span></code> lexikographisch kleiner als <code class="docutils literal notranslate"><span class="pre">material4</span></code>?</p></li>
+<li><p>Ist <code class="docutils literal notranslate"><span class="pre">material4</span></code> lexikographisch kleiner als <code class="docutils literal notranslate"><span class="pre">material1</span></code>?</p></li>
 </ol>
 </div>
 <div class="cell docutils container">
@@ -845,7 +845,7 @@ gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</sp
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">material1</span> <span class="o">=</span> <span class="s2">&quot;Stahl&quot;</span>
 <span class="n">material2</span> <span class="o">=</span> <span class="s2">&quot;Aluminium&quot;</span>
 <span class="n">material3</span> <span class="o">=</span> <span class="s2">&quot;Stahllegierung&quot;</span>
-<span class="n">material4</span> <span class="o">=</span> <span class="s2">&quot;stahl&quot;</span>
+<span class="n">material4</span> <span class="o">=</span> <span class="s2">&quot;aluminium&quot;</span>
 
 <span class="c1"># 1. Ist material1 lexikographisch größer als material2?</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">material1</span> <span class="o">&gt;</span> <span class="n">material2</span><span class="p">)</span>  <span class="c1"># True, da &#39;S&#39; im Alphabet nach &#39;A&#39; kommt</span>
@@ -853,14 +853,14 @@ gleich <code class="docutils literal notranslate"><span class="pre">'Banane'</sp
 <span class="c1"># 2. Enthält material3 den String material1?</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">material1</span> <span class="ow">in</span> <span class="n">material3</span><span class="p">)</span>  <span class="c1"># True, da &quot;Stahl&quot; in &quot;Stahllegierung&quot; enthalten ist</span>
 
-<span class="c1"># 3. Sind material1 und material4 identisch?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">material1</span> <span class="o">==</span> <span class="n">material4</span><span class="p">)</span>  <span class="c1"># False, da Groß-/Kleinschreibung unterschiedlich ist</span>
+<span class="c1"># 3. Sind material2 und material4 identisch?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">material2</span> <span class="o">==</span> <span class="n">material4</span><span class="p">)</span>  <span class="c1"># False, da Groß-/Kleinschreibung unterschiedlich ist</span>
 
 <span class="c1"># 4. Überprüfen Sie mit dem in-Operator, ob die Zeichenfolge &quot;leg&quot; in material3 vorkommt.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;leg&quot;</span> <span class="ow">in</span> <span class="n">material3</span><span class="p">)</span>  <span class="c1"># True, da &quot;leg&quot; in &quot;Stahllegierung&quot; enthalten ist</span>
 
-<span class="c1"># 5. Ist material2 lexikographisch kleiner als material4?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">material2</span> <span class="o">&lt;</span> <span class="n">material4</span><span class="p">)</span>  <span class="c1"># False, da Großbuchstaben im ASCII-Code vor Kleinbuchstaben kommen</span>
+<span class="c1"># 5. Ist material4 lexikographisch kleiner als material1?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">material4</span> <span class="o">&lt;</span> <span class="n">material1</span><span class="p">)</span>  <span class="c1"># False, da Großbuchstaben im ASCII-Code vor Kleinbuchstaben kommen</span>
 </pre></div>
 </div>
 </div>
