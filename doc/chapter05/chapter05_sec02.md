@@ -92,7 +92,7 @@ Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktue
 :class: miniexercise, toggle
 ```python
 # Eingabe
-temperatur = int(input('Welche Temperatur haben wir aktuell?'))
+temperatur = float(input('Welche Temperatur haben wir aktuell?'))
 
 # Verarbeitung und Ausgabe
 if temperatur <= 10:
@@ -164,8 +164,6 @@ oder ungerade ist:
 zahl = 15
 if zahl % 2 == 0:
     print(f"Die Zahl {zahl} ist gerade.")
-else:
-    print(f"Die Zahl {zahl} ist ungerade.")
 ```
 
 Er wird auch häufig eingesetzt, um zu überprüfen, ob ein Wert ein Vielfaches

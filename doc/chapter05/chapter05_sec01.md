@@ -251,17 +251,17 @@ Gegeben sind die folgenden Strings:
 material1 = "Stahl"
 material2 = "Aluminium"
 material3 = "Stahllegierung"
-material4 = "stahl"
+material4 = "aluminium"
 ```
 Überprüfen Sie folgende Vergleiche und notieren Sie, ob das Ergebnis `True` oder
 `False` ist:
 
 1. Ist `material1` lexikographisch größer als `material2`?
 2. Enthält `material3` den String `material1`?
-3. Sind `material1` und `material4` identisch?
+3. Sind `material2` und `material4` identisch?
 4. Überprüfen Sie mit dem `in-`Operator, ob die Zeichenfolge "leg" in
    `material3` vorkommt.
-5. Ist `material2` lexikographisch kleiner als `material4`?
+5. Ist `material4` lexikographisch kleiner als `material1`?
 ````
 
 ```{code-cell} ipython3
@@ -275,7 +275,7 @@ material4 = "stahl"
 material1 = "Stahl"
 material2 = "Aluminium"
 material3 = "Stahllegierung"
-material4 = "stahl"
+material4 = "aluminium"
 
 # 1. Ist material1 lexikographisch größer als material2?
 print(material1 > material2)  # True, da 'S' im Alphabet nach 'A' kommt
@@ -283,14 +283,14 @@ print(material1 > material2)  # True, da 'S' im Alphabet nach 'A' kommt
 # 2. Enthält material3 den String material1?
 print(material1 in material3)  # True, da "Stahl" in "Stahllegierung" enthalten ist
 
-# 3. Sind material1 und material4 identisch?
-print(material1 == material4)  # False, da Groß-/Kleinschreibung unterschiedlich ist
+# 3. Sind material2 und material4 identisch?
+print(material2 == material4)  # False, da Groß-/Kleinschreibung unterschiedlich ist
 
 # 4. Überprüfen Sie mit dem in-Operator, ob die Zeichenfolge "leg" in material3 vorkommt.
 print("leg" in material3)  # True, da "leg" in "Stahllegierung" enthalten ist
 
-# 5. Ist material2 lexikographisch kleiner als material4?
-print(material2 < material4)  # False, da Großbuchstaben im ASCII-Code vor Kleinbuchstaben kommen
+# 5. Ist material4 lexikographisch kleiner als material1?
+print(material4 < material1)  # False, da Großbuchstaben im ASCII-Code vor Kleinbuchstaben kommen
 ```
 ````
 
