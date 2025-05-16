@@ -25,7 +25,7 @@ werden, wenn eine Bedingung erfüllt ist.
 ```{admonition} Lernziele
 :class: goals
 * Sie können mit **if** eine Programmverzweigung implementieren.
-* Sie kennen den **modulo*-Operator `%`.
+* Sie kennen den **modulo**-Operator `%`.
 ```
 
 ## Syntax der if-Verzweigung
