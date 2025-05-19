@@ -1,33 +1,31 @@
-<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Hintergrund für den globalen Scope -->
-  <rect x="50" y="50" width="700" height="300" rx="20" ry="20" fill="#e6f7ff" stroke="#4682b4" stroke-width="2"/>
-  <text x="400" y="80" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#4682b4">Globaler Geltungsbereich</text>
-  
-  <!-- Globale Variablendeklaration -->
-  <text x="150" y="120" font-family="Arial" font-size="16" fill="#333333">x = 17</text>
-  
-  <!-- Lokaler Scope für die Funktion -->
-  <rect x="100" y="150" width="600" height="180" rx="15" ry="15" fill="#fff8dc" stroke="#daa520" stroke-width="2"/>
-  <text x="400" y="180" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#daa520">Lokaler Geltungsbereich: erhoehe_um_eins(x)</text>
-  
-  <!-- Lokale Variablendeklaration -->
-  <text x="150" y="220" font-family="Arial" font-size="16" fill="#333333">Parameter x = 17 (Kopie des übergebenen Wertes)</text>
-  <text x="150" y="250" font-family="Arial" font-size="16" fill="#333333">x = x + 1   # x wird auf 18 erhöht (nur lokal)</text>
-  <text x="150" y="280" font-family="Arial" font-size="16" fill="#333333">return x   # gibt 18 zurück</text>
-  
-  <!-- Nach der Funktion im globalen Scope -->
-  <text x="150" y="360" font-family="Arial" font-size="16" fill="#333333">x = erhoehe_um_eins(x)   # Zuweisung des Rückgabewerts: x wird 18</text>
-  
-  <!-- Pfeile für die Visualisierung des Datenflusses -->
-  <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#333333"/>
-    </marker>
-  </defs>
-  
-  <!-- Pfeil von globaler zu lokaler Variable (Parameter) -->
-  <path d="M 150 130 C 100 130, 100 220, 140 220" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
-  
-  <!-- Pfeil von Rückgabewert zu globaler Variable -->
-  <path d="M 230 280 C 280 320, 100 320, 140 350" stroke="#333333" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1.1,0,-5)">
+        <path d="M750,68.182L750,331.818C750,341.853 741.038,350 730,350L70,350C58.962,350 50,341.853 50,331.818L50,68.182C50,58.147 58.962,50 70,50L730,50C741.038,50 750,58.147 750,68.182Z" style="fill:rgb(230,247,255);stroke:rgb(70,130,180);stroke-width:2px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,400,80)">
+        <text x="-110.026px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:18px;fill:rgb(70,130,180);">Globaler Geltungsbereich</text>
+    </g>
+    <g transform="matrix(1,0,0,1,150,120)">
+        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16px;fill:rgb(51,51,51);">x = 17</text>
+    </g>
+    <path d="M700,165L700,315C700,323.279 693.279,330 685,330L115,330C106.721,330 100,323.279 100,315L100,165C100,156.721 106.721,150 115,150L685,150C693.279,150 700,156.721 700,165Z" style="fill:rgb(255,248,220);stroke:rgb(218,165,32);stroke-width:2px;"/>
+    <g transform="matrix(1,0,0,1,400,180)">
+        <text x="-198.558px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:18px;fill:rgb(218,165,32);">Lokaler Geltungsbereich: erhoehe_um_eins(x)</text>
+    </g>
+    <g transform="matrix(1,0,0,1,150,220)">
+        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16px;fill:rgb(51,51,51);">Parameter x = 17 (Kopie des übergebenen W<tspan x="322.125px 331.023px " y="0px 0px ">er</tspan>tes)</text>
+    </g>
+    <g transform="matrix(1,0,0,1,150,250)">
+        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16px;fill:rgb(51,51,51);">x = x + 1   # x wird auf 18 erhöht (nur lokal)</text>
+    </g>
+    <g transform="matrix(1,0,0,1,150,280)">
+        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16px;fill:rgb(51,51,51);">return x   # gibt 18 zurück</text>
+    </g>
+    <g transform="matrix(1,0,0,1,150,360)">
+        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16px;fill:rgb(51,51,51);">x = erhoehe_um_eins(x)   # Zuweisung des Rückgabewerts: x wird 18</text>
+    </g>
+    <path d="M150,130C100,130 100,220 140,220" style="fill:none;fill-rule:nonzero;stroke:rgb(51,51,51);stroke-width:1.5px;"/>
+    <path d="M230,280C280,320 100,320 140,350" style="fill:none;fill-rule:nonzero;stroke:rgb(51,51,51);stroke-width:1.5px;"/>
 </svg>
