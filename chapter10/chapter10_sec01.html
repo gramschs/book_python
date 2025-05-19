@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -498,7 +498,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im CSV-Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im csv-Format</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
 </ul>
 </li>
@@ -528,7 +528,7 @@ verwendete Datenformat <code class="docutils literal notranslate"><span class="p
 <ul class="simple">
 <li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung pd importieren.</p></li>
 <li><p>Sie können aus einer Liste das Datenobjekt <strong>Series</strong> erzeugen.</p></li>
-<li><p>Sie kennen das <strong>CSV-Dateiformat</strong>.</p></li>
+<li><p>Sie kennen das <strong>csv-Dateiformat</strong>.</p></li>
 <li><p>Sie können eine csv-Datei mit <strong>read_csv()</strong> einlesen.</p></li>
 <li><p>Sie konnen mit <strong>.info()</strong> sich einen Überblick über die importierten Daten verschaffen.</p></li>
 </ul>
@@ -674,19 +674,19 @@ gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.</p>
 </section>
 <section id="import-von-tabellen">
 <h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Link to this heading">#</a></h2>
-<p>Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
+<p>Tabellen werden oft in demjenigen Dateiformat abgespeichert, das die jeweilige
 Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
-einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
+vorgibt. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in einem
+offenen Datenformat vorliegen und damit unabhängig von der verwendeten Software
+und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
 gestreift.</p>
 <section id="import-von-tabellen-im-csv-format">
-<h3>Import von Tabellen im CSV-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Link to this heading">#</a></h3>
-<p>Das <strong>Dateiformat CSV</strong> speichert Daten zeilenweise ab. Dabei steht CSV für
-“comma separated value”. Die Trennung der Spalten erfolgt durch ein
+<h3>Import von Tabellen im csv-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Link to this heading">#</a></h3>
+<p>Das <strong>Dateiformat csv</strong> speichert Daten zeilenweise ab. Dabei steht csv für
+“comma-separated values”. Die Trennung der Spalten erfolgt durch ein
 Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
 gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nacchkommastellen verwenden.</p>
+der Nachkommastellen verwenden.</p>
 <p>Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
 <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an (siehe
 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">Dokumentation/read_csv</a>).
@@ -1517,8 +1517,8 @@ herunter.</p>
 </div>
 <p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
 Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
-schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span> </code> nach. In dieser Vorlesung
-verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
+schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> nach. In dieser Vorlesung
+verwenden wir nur csv-Dateien, so dass ein Nachinstallieren für die
 Vorlesung/Übung nicht notwendig ist.</p>
 </section>
 </section>
@@ -1645,7 +1645,7 @@ goals from the player in a match) wird als Float angegeben.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im CSV-Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im csv-Format</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
 </ul>
 </li>

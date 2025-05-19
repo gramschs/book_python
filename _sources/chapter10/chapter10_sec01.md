@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 10.1 Series und DataFrame 
+# 10.1 Series und DataFrame
 
 Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
 effizient zu speichern. Dazu benutzen Data Scientists die Datentypen `Series`
@@ -20,14 +20,13 @@ oder `DataFrame` aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
 mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
 verwendete Datenformat `csv` kennen.
 
-
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
 * Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
 * Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
-* Sie kennen das **CSV-Dateiformat**.
+* Sie kennen das **csv-Dateiformat**.
 * Sie können eine csv-Datei mit **read_csv()** einlesen.
 * Sie konnen mit **.info()** sich einen Überblick über die importierten Daten verschaffen.
 ```
@@ -39,7 +38,7 @@ Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
 und DataFrame. Dabei wird **Series** für Datenreihen genommen, also sozusagen
 die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
 **DataFrame** repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays. 
+verallgemeinerte zweidimensionale Arrays.
 
 Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
 ist üblich, dabei dem Modul die Abkürzung **pd** zu geben, damit wir nicht immer
@@ -133,24 +132,24 @@ darstellt und die Spalten die Eigenschaften speichern.
 Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
 Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
 kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
-gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei. 
+gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.
 
-## Import von Tabellen 
+## Import von Tabellen
 
-Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
+Tabellen werden oft in demjenigen Dateiformat abgespeichert, das die jeweilige
 Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
-einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
+vorgibt. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in einem
+offenen Datenformat vorliegen und damit unabhängig von der verwendeten Software
+und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
 gestreift.
 
-### Import von Tabellen im CSV-Format
+### Import von Tabellen im csv-Format
 
-Das **Dateiformat CSV** speichert Daten zeilenweise ab. Dabei steht CSV für
-"comma separated value". Die Trennung der Spalten erfolgt durch ein
+Das **Dateiformat csv** speichert Daten zeilenweise ab. Dabei steht csv für
+"comma-separated values". Die Trennung der Spalten erfolgt durch ein
 Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
 gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nacchkommastellen verwenden.
+der Nachkommastellen verwenden.
 
 Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
 `read_csv` an (siehe
@@ -167,7 +166,7 @@ herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
 JupyterNotebook liegt. Die csv-Datei stammt von
 [Kaggle](https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv).
 Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
-der Bundesligasaison 2020/21 enthalten. 
+der Bundesligasaison 2020/21 enthalten.
 
 Führen Sie dann anschließend die folgende Code-Zelle aus.
 
@@ -222,11 +221,11 @@ Vermutlich erhalten Sie zunächst eine Fehlermeldung: `Missing optional
 dependency 'openpyxl'.  Use pip or conda to install openpyxl.` Falls das der
 Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
 schreiben zu können, installieren Sie bitte das Modul `openpyxl` mit `!conda
-install openpyxl` oder `!pip install openpyxl ` nach. In dieser Vorlesung
-verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
+install openpyxl` oder `!pip install openpyxl` nach. In dieser Vorlesung
+verwenden wir nur csv-Dateien, so dass ein Nachinstallieren für die
 Vorlesung/Übung nicht notwendig ist.
 
-## Übersicht verschaffen mit info 
+## Übersicht verschaffen mit info
 
 Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
 Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine

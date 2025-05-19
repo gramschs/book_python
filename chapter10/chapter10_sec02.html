@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -952,7 +952,7 @@ Joshua Mees         2.02  0.00             0          0
 </section>
 <section id="selektion-unzusammenhangender-zeilen-per-liste">
 <h3>Selektion unzusammenhängender Zeilen per Liste<a class="headerlink" href="#selektion-unzusammenhangender-zeilen-per-liste" title="Link to this heading">#</a></h3>
-<p>Soll auf mehrere Zeilen zugegriffen werdenn, die nicht zusammenhängen, so nennt
+<p>Soll auf mehrere Zeilen zugegriffen werden, die nicht zusammenhängen, so nennt
 man das <strong>Selektion</strong>.</p>
 <figure class="align-center" id="fig08-03">
 <a class="reference internal image-reference" href="../_images/tabelle_zeile_selektion.png"><img alt="Slicing von Zeilen einer Tabelle" src="../_images/tabelle_zeile_selektion.png" style="width: 50%;" /></a>
@@ -1190,7 +1190,7 @@ Bereich von Zellen zugreifen möchte. Auch dazu benutzen wir das Attribut
 <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
 <p>Eine Zelle ist ein einzelnes Element der Tabelle, sozusagen der Kreuzungspunkt
 zwischen Zeile und Spalte. Die Zelle mit dem Zeilenindex <code class="docutils literal notranslate"><span class="pre">Thomas</span> <span class="pre">Müller</span></code> und dem
-Spaltenindex <code class="docutils literal notranslate"><span class="pre">Age</span></code>enthält das Alter von Thomas Müller.</p>
+Spaltenindex <code class="docutils literal notranslate"><span class="pre">Age</span></code> enthält das Alter von Thomas Müller.</p>
 <figure class="align-center" id="fig08-07">
 <a class="reference internal image-reference" href="../_images/tabelle_zelle_einzeln.png"><img alt="Einzelne Zelle einer Tabelle" src="../_images/tabelle_zelle_einzeln.png" style="width: 50%;" /></a>
 <figcaption>
@@ -1277,7 +1277,7 @@ Joshua Kimmich         GER   25
 haben. Die Antwort ist simpel, Bayern stand im Datensatz oben in den ersten
 Zeilen. Tatsächlich sind aber die Spielerdaten von sieben Vereinen im Datensatz
 enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
-<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>ansehen.</p>
+<code class="docutils literal notranslate"><span class="pre">.unique()</span></code> ansehen.</p>
 <p>In einem ersten Schritt lesen wir die Spalte mit den Vereinen aus (Spalte
 ‘Club’). Dann wenden wir auf das Ergnis die Methode <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> an.</p>
 <div class="cell docutils container">
@@ -1350,7 +1350,7 @@ diese Zeile ausgewählt. Ansonsten wird die Zeile übersprungen. Damit erhalten
 wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">filter_eintracht</span><span class="p">,</span> <span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">filter_eintracht</span><span class="p">,</span> <span class="p">:]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">)</span>
 </pre></div>
 </div>

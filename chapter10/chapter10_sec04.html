@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -512,8 +512,13 @@ importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.<
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<p>Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro angegeben.</p>
-<p>Die Vereinsnamen sind ein guter Zeilenindex. Daher sollten die Daten folgendermaßen importiert werden:</p>
+<p>Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und
+Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die
+Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines
+wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro
+angegeben.</p>
+<p>Die Vereinsnamen sind ein guter Zeilenindex. Daher sollten die Daten
+folgendermaßen importiert werden:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;20220801_Marktwert_Bundesliga.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -527,10 +532,13 @@ importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.<
 <a class="reference external" href="https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC">20220801_Marktwert_Bundesliga.csv</a>
 herunter (siehe vorherige Aufgabe).</p>
 <ol class="arabic simple">
-<li><p>Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele Zeilen und  und wie viele Einträge sind gültig?</p></li>
+<li><p>Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele
+Zeilen und  und wie viele Einträge sind gültig?</p></li>
 <li><p>Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (<code class="docutils literal notranslate"><span class="pre">2.</span> <span class="pre">Bundesliga</span></code>) und speichern Sie diese Daten in der Variable <code class="docutils literal notranslate"><span class="pre">zweite</span></code>.</p></li>
-<li><p>Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste Kaderwert, was der kleinste? Wie viele Speiler hat ein Verein in der 2. Bundesliga durchschnittlich?</p></li>
-<li><p>Lassen Sie sich die Daten des 1.FC Kaiserslautern anzeigen.</p></li>
+<li><p>Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste
+Kaderwert, was der kleinste? Wie viele Spieler hat ein Verein in der 2.
+Bundesliga durchschnittlich?</p></li>
+<li><p>Lassen Sie sich die Daten des 1. FC Kaiserslautern anzeigen.</p></li>
 </ol>
 </div>
 <div class="miniexercise toggle admonition">
@@ -538,14 +546,16 @@ herunter (siehe vorherige Aufgabe).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Es gibt 3 Spalten (wenn wie oben die Vereine als Zeilenindex verwendet werden) und 56 Zeilen, die alle gültige Werte enthalten.</p>
+<p>Es gibt 3 Spalten (wenn wie oben die Vereine als Zeilenindex verwendet werden)
+und 56 Zeilen, die alle gültige Werte enthalten.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mein_filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2. Bundesliga&#39;</span>
-<span class="n">zweite</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">mein_filter</span><span class="p">]</span>
+<span class="n">zweite</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mein_filter</span><span class="p">,</span> <span class="p">:]</span>
 
 <span class="n">zweite</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Der höchste Kaderwert ist 34.85 Mio. EUR, der kleinste 8.83 Mio. EUR. Es spielen durchschnittlich 27 Fußballer in den Zweitligavereinen.</p>
+<p>Der höchste Kaderwert ist 34.85 Mio. EUR, der kleinste 8.83 Mio. EUR. Es spielen
+durchschnittlich 27 Fußballer in den Zweitligavereinen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fck</span> <span class="o">=</span> <span class="n">zweite</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;1.FC Kaiserslautern&#39;</span><span class="p">,</span> <span class="p">:]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fck</span><span class="p">)</span>
 </pre></div>
@@ -587,7 +597,7 @@ Möglichkeiten.</p></li>
 <span class="k">def</span> <span class="nf">generiere_anzeigetext</span><span class="p">(</span><span class="n">wort</span><span class="p">,</span> <span class="n">korrekt_geratene_buchstaben</span><span class="p">):</span>
     <span class="c1"># Starte mit leerem String</span>
     <span class="n">anzeigetext</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="c1"># ersetze jeden Buchstaben im Zufallswort durch sich Unterstrich und ein Leerzeichen,</span>
+    <span class="c1"># ersetze jeden Buchstaben im Zufallswort durch einen Unterstrich und ein Leerzeichen,</span>
     <span class="c1"># aber nur, wenn er nicht in der Liste der richtig geratenen Buchstaben ist</span>
     <span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">wort</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">korrekt_geratene_buchstaben</span><span class="p">:</span>

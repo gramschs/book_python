@@ -28,13 +28,12 @@ kernelspec:
   berechnet wird.
 ```
 
-
 ## Schnelle Übersicht mit .describe()
 
 So wie die Methode `.info()` uns einen schnellen Überblick über die Daten eines
 DataFrame-Objektes gibt, so liefert die Methode `.describe()` eine schnelle
 Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
-Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21. 
+Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21.
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -43,7 +42,7 @@ data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
 data.head(10)
 ```
 
-Die Anwendung der `.describe()`-Methode liefert fogende Ausgabe:
+Die Anwendung der `.describe()`-Methode liefert folgende Ausgabe:
 
 ```{code-cell} ipython3
 data.describe()
@@ -65,10 +64,8 @@ Kennzahlen
 ausgegeben.
 
 Die Bedeutung der Kennzahlen wird in der
-[Pandas-Dokumentation/DataFrame.describe
-](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html)
+[Pandas-Dokumentation/DataFrame.describe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html)
 erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.
-
 
 ## Anzahl count
 
@@ -84,7 +81,7 @@ Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:
 Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
 wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
 Methode `.count()` direkt auf den kompletten DataFrame angewendet, so erhalten
-wir ein Pandas-Series-Objekt. 
+wir ein Pandas-Series-Objekt.
 
 ```{code-cell} ipython3
 print( data.count() )
@@ -92,7 +89,6 @@ print( data.count() )
 
 Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
 erst die Spalte mit dem Alter heraussgreifen und darauf `.count()` anwenden.
-
 
 ```{code-cell} ipython3
 methode01 = data.loc[:, 'Age'].count()
@@ -125,8 +121,11 @@ Jahre alt sind und 1321.6 Minuten im Einsatz waren.
 Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
 wollen, können Sie folgendes Video ansehen.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+```{dropdown} Video "Mittelwert" von Datatab
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Standardabweichung std
 
@@ -153,8 +152,11 @@ print(alter_std)
 Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
 Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+```{dropdown} Video "Standardabweichung" von Datatab
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Minimum und Maximum mit min und max
 
@@ -162,7 +164,7 @@ Die Namen der Methoden `.min()` und `max()` sind fast schon wieder
 selbsterklärend. Die Methode `.min()` liefert den kleinsten Werte zurück, der in
 einer Spalte gefunden wird. Umgekehrt liefert `.max()` den größten Eintrag, der
 in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
-vorkommen, ist dabei egal. 
+vorkommen, ist dabei egal.
 
 Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
 (haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
@@ -176,13 +178,13 @@ tore_max = data.loc[:, 'Goals'].max()
 print(tore_max)
 ```
 
-Wenig verwunderlich ist die minimale Anzahl an Toren 0 und die maximale Anzahl
-an Toren, die ein oder mehrere Spieler der Top7 2020/21 geschossen haben, war
-41. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore geschafft hat,
-natürlich Lewandowski).
+Wenig verwunderlich ist die minimale Anzahl an Toren 0. Die maximale Anzahl an
+Toren, die ein oder mehrere Spieler der Top7 in der Saison 2020/21 geschossen
+haben, war 41\. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore
+geschafft hat, natürlich Lewandowski).
 
-Von Verteidigern wird nicht erwartet, Tore zu schieen, sondern von Stürmern. Was
-ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
+Von Verteidigern wird nicht erwartet, Tore zu schießen, sondern von Stürmern.
+Was ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
 Spalte 'Position'. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
 Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
 manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
@@ -196,14 +198,14 @@ print('Stürmer')
 print(stuermer)
 
 print('==============')
-print('Minimale Tore: {}'.format(stuermer.min()))
+print('Minimale Tore: {stuermer.min()}')
 ```
 
 ## Quantil mit quantile
 
 Das Quantil $p \%$ ist der Wert, bei dem $p %$ der Einträge kleiner als diese
 Zahl sind und $100 \% - p \%$ sind größer. Meist werden nicht Prozentzahlen
-verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht. 
+verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht.
 
 Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
 Karten wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus
@@ -215,15 +217,16 @@ print(gelbe_karten_50prozent_quantil)
 ```
 
 Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
-weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
-gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an. 
+weniger als 2 gelbe Karten oder genau 2 gelbe Karten kassiert. Und 50 % aller
+Spieler haben 2 oder mehr gelbe Karten kassiert. Wir schauen uns jetzt das 75 %
+Quantil an.
 
 ```{code-cell} ipython3
 gelbe_karten_75prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.75)
 print(gelbe_karten_75prozent_quantil)
 ```
 
-75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. SChauen wir uns
+75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. Schauen wir uns
 die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
 sind?
 
@@ -237,7 +240,7 @@ print(gelbkarten_spieler.sort_values(by='Yellow_Cards', ascending=False))
 
 In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
 beschäftigt, die Pandas mit der Methode `.describe()` zusammenfasst, die aber
-auch einzeln über 
+auch einzeln über
 
 * `.count()`
 * `.mean()`
