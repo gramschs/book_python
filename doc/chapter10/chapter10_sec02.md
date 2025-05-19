@@ -34,11 +34,11 @@ auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.
 ## Zugriff auf Zeilen
 
 Als erstes möchten wir ganze Zeilen der Tabelle lesen. Dazu verwenden wir das
-Attribut `.loc` mit passenden Indizes. 
+Attribut `.loc` mit passenden Indizes.
 
 Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
 Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
-bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex. 
+bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -48,7 +48,7 @@ data.head(10)
 
 ### Einzelne Zeile
 
-Uns interessieren die Spielerdaten von Thomas Müller näher. 
+Uns interessieren die Spielerdaten von Thomas Müller näher.
 
 ```{figure} pics/tabelle_zeile_einzeln.png
 :name: fig08_01
@@ -75,7 +75,7 @@ Wenn wir auf mehrere Zeilen gleichzeitig zugreifen wollen, gibt es zwei
 Möglichkeiten:
 
 1. Die Zeilen folgen direkt aufeinander, sind also zusammenhängend.
-2. Zwischen den einzelnen Zeilen sind Lücken. 
+2. Zwischen den einzelnen Zeilen sind Lücken.
 
 Als erstes betrachten wir zusammenhängende Zeilen. Der Zugriff auf
 zusammenhängende Bereiche wird in der Informatik **Slicing** genannt.
@@ -100,7 +100,7 @@ print(zeilen_slice)
 
 Beim Slicing können wir den Angangsindex oder den Endindex oder sogar beides
 weglassen. Wenn wir den Anfangsindex weglassen, fängt Pandas bei der ersten
-Zeile an. Lassen wir den Endindex weg, geht der Slice automatisch bis zum Ende. 
+Zeile an. Lassen wir den Endindex weg, geht der Slice automatisch bis zum Ende.
 
 Im folgenden Beispiel startet der Slice bei 'Robert Lewandowski'und geht bis zur
 letzten Zeile. Obwohl nicht alle Zeilendargestellt werden, erkennen wir das an
@@ -114,7 +114,7 @@ print(data_slice_from_lewandowski)
 
 ### Selektion unzusammenhängender Zeilen per Liste
 
-Soll auf mehrere Zeilen zugegriffen werdenn, die nicht zusammenhängen, so nennt
+Soll auf mehrere Zeilen zugegriffen werden, die nicht zusammenhängen, so nennt
 man das **Selektion**.
 
 ```{figure} pics/tabelle_zeile_selektion.png
@@ -188,7 +188,6 @@ Auf eine einzelne Spalte der Tabelle wird mit `.loc[:, spaltenindex]` zugegriffe
 
 Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex `Age`.
 
-
 ```{code-cell} ipython3
 alter = data.loc[:, 'Age']
 print(alter)
@@ -215,7 +214,6 @@ der Anfangsspaltenindex hingeschrieben wird, dann ein Doppelpunkt gesetzt wird
 und dann der Endspaltenindex notiert wird. Das folgende Beispiel zeigt das
 Slicing zweier Spalten.
 
-
 ```{code-cell} ipython3
 spiele = data.loc[:, 'Matches' : 'Starts']
 print(spiele)
@@ -227,7 +225,7 @@ Die Anzahl der Spiele (`Matches`) und die Anzahl der gespielten Minuten in der
 kompletten Saison (`Mins`) die Anzahl der Spiele ('Matches') miteinander könnte
 aufschlussreich sein, um die durchschnittliche Minutenzahl pro Spiel zu
 ermitteln. Da die Spalten nicht nebeneinander liegen, müssen wir eine Liste
-benutzen, um sie zu selektieren. 
+benutzen, um sie zu selektieren.
 
 ```{figure} pics/tabelle_spalte_selektion.png
 :name: fig08_06
@@ -274,11 +272,11 @@ print(data_selektion)
 
 Es kann auch vorkommen, dass man gezielt auf eine einzelne Zelle oder einen
 Bereich von Zellen zugreifen möchte. Auch dazu benutzen wir das Attribut
-`.loc[]`. 
+`.loc[]`.
 
 Eine Zelle ist ein einzelnes Element der Tabelle, sozusagen der Kreuzungspunkt
 zwischen Zeile und Spalte. Die Zelle mit dem Zeilenindex `Thomas Müller` und dem
-Spaltenindex `Age`enthält das Alter von Thomas Müller.
+Spaltenindex `Age` enthält das Alter von Thomas Müller.
 
 ```{figure} pics/tabelle_zelle_einzeln.png
 :name: fig08_07
@@ -340,7 +338,7 @@ Vielleicht haben Sie sich schon gefragt, warum wir nur Bayern-Spieler analysiert
 haben. Die Antwort ist simpel, Bayern stand im Datensatz oben in den ersten
 Zeilen. Tatsächlich sind aber die Spielerdaten von sieben Vereinen im Datensatz
 enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
-`.unique()`ansehen.
+`.unique()` ansehen.
 
 In einem ersten Schritt lesen wir die Spalte mit den Vereinen aus (Spalte
 'Club'). Dann wenden wir auf das Ergnis die Methode `.unique()` an.
@@ -372,7 +370,7 @@ ist, ist ein Pandas-Series-Objekt, das für jede Zeile gespeichert hat, ob der
 Vergleich wahr (True) oder falsch (False) ist. Ist in einer Zeile der Club
 gleich 'Eintracht Frankfurt', so ist in dem booleschen Objekt an dieser Stelle
 True eingetragen und ansonsten False. Der Datenyp dtype wird mit `bool`
-angegeben. 
+angegeben.
 
 Wir können nun anstatt einer Liste diesen booleschen Index nutzen, um Zeilen zu
 selektieren. Steht in einer Zeile des booleschen Series-Objektes `True`, so wird
@@ -380,12 +378,12 @@ diese Zeile ausgewählt. Ansonsten wird die Zeile übersprungen. Damit erhalten
 wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.
 
 ```{code-cell} ipython3
-eintracht_frankfurt = data.loc[ filter_eintracht, :]
+eintracht_frankfurt = data.loc[filter_eintracht, :]
 print(eintracht_frankfurt)
 ```
 
 Da der print()-Befehl nicht alle Einträge anzeigt, gehen wir jetzt Zeile für
-Zeile durch. Den Zeilenindex erhalten wir über das Attribut `.index`: 
+Zeile durch. Den Zeilenindex erhalten wir über das Attribut `.index`:
 
 ```{code-cell} ipython3
 for zeilenindex in eintracht_frankfurt.index:
