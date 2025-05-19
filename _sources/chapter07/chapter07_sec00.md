@@ -1,4 +1,4 @@
-# 7. Digitale Logik und Schleifen mit Bedingung
+# 7. Digitale Logik, Schleifen mit Bedingung, Dictionaries
 
 Bisher haben wir zwei Arten von Kontrollstrukturen kennengelernt. Bei den
 Zählschleifen werden Python-Anweisungen wiederholt ausgeführt. Dabei ist klar,
