@@ -45,7 +45,7 @@ hat folgende Struktur:
 Die bedingte Wiederholung wird mit dem Schlüsselwort `while` eingeleitet. Dann
 folgt die Bedingung, die mit einem `:` abgeschlossen wird. Alle Anweisungen, die
 wiederholt werden sollen, werden eingerückt. Diesen Teil nennt man das
-Schleifeninnere, die Zeile `while Bedingung:` nennt man den Schleifenkopf. 
+Schleifeninnere, die Zeile `while Bedingung:` nennt man den Schleifenkopf.
 
 ```{warning}
 While-Schleifen sind ein mächtiges Werkzeug in Python, aber es ist wichtig, sie
@@ -69,9 +69,11 @@ print('Das Wasser ist fertig gekocht!')
 :class: miniexercise
 Schreiben Sie ein Programm, das einen Countdown von 10 nach 0 implementiert.
 ```
+
 ```{code-cell} ipython
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -82,6 +84,11 @@ while zaehler >= 0:
 ```
 ````
 
+```{dropdown} Video "Schleifen mit Bedingung" von Programmieren Starten
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sXLicTuJzB4"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Schleifen abbrechen mit break
 
@@ -105,9 +112,11 @@ quadriert und ausgibt. Wird eine 0 eingegeben, soll die Eingabe der Zahlen
 abgebrochen werden und die Meldung "Sie haben 0 eingegeben, das Programm wird
 beendet." ausgegeben werden.
 ```
+
 ```{code-cell} ipython3
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -120,7 +129,6 @@ while True:
     print(f'Das Quadrat von {zahl} ist {quadratzahl}.')
 ```
 ````
-
 
 ## Schleifen vorzeitig fortsetzen mit continue
 
@@ -143,14 +151,16 @@ Schleifendurchgang begonnen wird, sobald `zaehler` den Wert `3` erreicht.
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Schreiben Sie ein Programm, dass eine Zahl abfragt und deren Wurzel berechnet
+Schreiben Sie ein Programm, das eine Zahl abfragt und deren Wurzel berechnet
 und ausgibt. Wird eine negative Zahl eingegeben, so soll die Wurzelberechnung
 übersprungen werden. Insgesamt soll das Programm solange laufen, bis drei
 Wurzeln berechnet wurden.
 ```
+
 ```{code-cell} ipython3
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -166,9 +176,7 @@ while zaehler < 3:
 ```
 ````
 
-## Video
+## Zusammenfassung und Ausblick
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sXLicTuJzB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
+Von den Schleifen kommen wir im nächsten Kapitel zu einem komplett anderem
+Thema: Dictionaries.
