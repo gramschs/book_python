@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -561,11 +561,11 @@ verwaltet. Das Programm soll:</p>
 <ol class="arabic simple">
 <li><p>Schreiben Sie eine <em>Funktion</em>, die eine 1x1-Aufgabe stellt (zum Beispiel:
 Wieviel ist 3 x 5?). Die Funktion soll überprüfen, ob die eingegebene Antwort
-korrekt ist. Bei einer falschen Antowrt soll das richtige Ergebnis ausgegeben
+korrekt ist. Bei einer falschen Antwort soll das richtige Ergebnis ausgegeben
 werden.</p></li>
-<li><p>Im Hauptprogramm soll der Benuzter gefragt werden, wie viele 1x1-Aufgaben
+<li><p>Im Hauptprogramm soll der Benutzer gefragt werden, wie viele 1x1-Aufgaben
 trainiert werden sollen. Danach sollen entsprechend viele aufgaben gestellt
-werden. Am Ende soll das Hauptprogramm dem Benuzter mitteilen, wieviel
+werden. Am Ende soll das Hauptprogramm dem Benutzer mitteilen, wieviel
 Prozent der Aufgaben korrekt gelöst wurden.</p></li>
 </ol>
 </div>
@@ -583,7 +583,7 @@ Prozent der Aufgaben korrekt gelöst wurden.</p></li>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Leider falsch, das richtige Ergebnis wäre </span><span class="si">{</span><span class="n">zahl01</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zahl02</span><span class="si">}</span><span class="s1"> gewesen.&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
     
-<span class="n">anzahl_aufgaben</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Aufgaben sollen gestellt werden?&#39;</span><span class="p">))</span>
+<span class="n">anzahl_aufgaben</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie viele Aufgaben sollen gestellt werden? &#39;</span><span class="p">))</span>
 <span class="n">anzahl_richtige_antworten</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_aufgaben</span><span class="p">):</span>
     <span class="n">ist_richtig</span> <span class="o">=</span> <span class="n">stelle_aufgabe</span><span class="p">()</span>
@@ -647,7 +647,7 @@ Testen Sie beispielsweise 100 mal. Verlässt der Roboter dabei das Turtle-Feld?<
 <span class="n">anzahl_wiederholungen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie oft soll der Roboter 20 Schritte laufen?&#39;</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_wiederholungen</span><span class="p">):</span>
-    <span class="n">zufallswinkel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90</span>
+    <span class="n">zufallswinkel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">90</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">zufallswinkel</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
