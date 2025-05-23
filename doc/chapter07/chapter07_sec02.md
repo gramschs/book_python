@@ -54,9 +54,10 @@ dass die Schleife **unendlich** läuft, was zu Problemen führen kann.
 ```
 
 Um auf das Beispiel mit dem Wasserkocher zurückzukommen ... auch wenn wir jetzt
-keinen echten Temperatursensor haben, würde eine while-Schleife
+keinen echten Temperatursensor haben, würde eine while-Schleife, die einen
+Wasserkocher simuliert, folgendermaßen aussehen.
 
-```{code-cell} ipython3
+```{code-cell}
 temperatur = 20
 while temperatur <= 100:
   print(f'aktuelle Wassertemperatur: {temperatur} ˚C')
@@ -70,7 +71,7 @@ print('Das Wasser ist fertig gekocht!')
 Schreiben Sie ein Programm, das einen Countdown von 10 nach 0 implementiert.
 ```
 
-```{code-cell} ipython
+```{code-cell}
 # Hier Ihr Code
 ```
 
@@ -96,7 +97,7 @@ Die `break`-Anweisung kann verwendet werden, um die Schleife vorzeitig zu
 beenden, auch wenn die Bedingung der `while`-Schleife noch `True` ist. Hier ist
 ein Beispiel:
 
-```{code-cell} ipython
+```{code-cell}
 zaehler = 0
 while zaehler < 5:
     if zaehler == 3:
@@ -113,7 +114,7 @@ abgebrochen werden und die Meldung "Sie haben 0 eingegeben, das Programm wird
 beendet." ausgegeben werden.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # Hier Ihr Code
 ```
 
@@ -136,7 +137,7 @@ Die `continue`-Anweisung wird verwendet, um den aktuellen Durchgang der Schleife
 zu beenden und sofort mit dem nächsten Schleifendurchgang zu beginnen. Hier ist
 ein Beispiel:
 
-```{code-cell} ipython
+```{code-cell}
 zaehler = 0
 while zaehler < 5:
     zaehler = zaehler + 1
@@ -157,7 +158,7 @@ und ausgibt. Wird eine negative Zahl eingegeben, so soll die Wurzelberechnung
 Wurzeln berechnet wurden.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # Hier Ihr Code
 ```
 

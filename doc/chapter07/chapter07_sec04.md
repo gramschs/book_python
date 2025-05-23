@@ -80,11 +80,11 @@ for name, preis in werkzeuge.items():
 Schreiben Sie einen 1x1-Trainer. Gehen Sie dabei wie folgt vor:
 1. Schreiben Sie eine *Funktion*, die eine 1x1-Aufgabe stellt (zum Beispiel:
    Wieviel ist 3 x 5?). Die Funktion soll überprüfen, ob die eingegebene Antwort
-   korrekt ist. Bei einer falschen Antowrt soll das richtige Ergebnis ausgegeben
+   korrekt ist. Bei einer falschen Antwort soll das richtige Ergebnis ausgegeben
    werden.
-2. Im Hauptprogramm soll der Benuzter gefragt werden, wie viele 1x1-Aufgaben
+2. Im Hauptprogramm soll der Benutzer gefragt werden, wie viele 1x1-Aufgaben
    trainiert werden sollen. Danach sollen entsprechend viele aufgaben gestellt
-   werden. Am Ende soll das Hauptprogramm dem Benuzter mitteilen, wieviel
+   werden. Am Ende soll das Hauptprogramm dem Benutzer mitteilen, wieviel
    Prozent der Aufgaben korrekt gelöst wurden.
 ```
 
@@ -103,7 +103,7 @@ def stelle_aufgabe():
         print(f'Leider falsch, das richtige Ergebnis wäre {zahl01 * zahl02} gewesen.')
         return False
     
-anzahl_aufgaben = int(input('Wie viele Aufgaben sollen gestellt werden?'))
+anzahl_aufgaben = int(input('Wie viele Aufgaben sollen gestellt werden? '))
 anzahl_richtige_antworten = 0
 for i in range(anzahl_aufgaben):
     ist_richtig = stelle_aufgabe()
@@ -172,7 +172,7 @@ robo.speed(13)
 anzahl_wiederholungen = int(input('Wie oft soll der Roboter 20 Schritte laufen?'))
 
 for i in range(anzahl_wiederholungen):
-    zufallswinkel = np.random.randint(3) * 90
+    zufallswinkel = np.random.randint(4) * 90
     robo.left(zufallswinkel)
     robo.forward(20)
 ```

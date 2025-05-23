@@ -17,7 +17,7 @@ kernelspec:
 In früheren Kapiteln haben wir den booleschen Datentyp kennengelernt: wahr
 (`True`) oder falsch (`False`). Man kann solche Ausdrücke auch kombinieren, z.B.
 wenn zwei Bedingungen gleichzeitig erfüllt sein sollen. Beispielsweise soll eine
-Maschine snur dann gestartet werden, wenn der Sicherheitsschalter aktiviert ist
+Maschine nur dann gestartet werden, wenn der Sicherheitsschalter aktiviert ist
 UND die Temperatur unter einem kritischen Wert liegt. Beide Bedingungen müssen
 erfüllt sein.
 
