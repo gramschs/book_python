@@ -1,7 +1,7 @@
 # 8.2 Numerisches Rechnen mit MATLAB
 
 MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
-ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenen Datentypen und
+ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenden Datentypen und
 Rechenoperationen für Vektoren und Matrizen.
 
 ## Lernziele
@@ -79,7 +79,7 @@ Fehlermeldung. Das liegt daran, dass es eine direkte Multiplikation von Vektoren
 nicht gibt. Wir müssen erst entscheiden, ob elementweise multipliziert werden
 soll oder ob vielleicht das Skalarprodukt oder das Vektorprodukt gemeint ist.
 
-Bei der elementweisen Multiplikation wird dem Mulitiplikationsoperator `*` ein
+Bei der elementweisen Multiplikation wird dem Multiplikationsoperator `*` ein
 Punkt `.` vorangestellt, also `.*`:
 
 ```matlab
@@ -95,8 +95,8 @@ a .\ b
 ```
 
 Bei der ersten Variante wird jedes Element des Vektors `a` durch das
-entsprechende Element des Vektors `b` geteilt. Das `b`steht in Nenner des
-Bruchstrichs `/`. Bei der zweiten Variante wird jedes Elemet des Vektors `b`
+entsprechende Element des Vektors `b` geteilt. Das `b` steht in Nenner des
+Bruchstrichs `/`. Bei der zweiten Variante wird jedes Element des Vektors `b`
 durch die entsprechenden Elemente des Vektors `a` geteilt. Der Bruchstrich `\`
 zeigt an, dass `a` im Nenner stehen soll.
 
@@ -239,7 +239,7 @@ a = [1, 2, 3, 4, 5]
 drittes_element = a(3)
 ```
 
-Soll hingegen auf Elemente einer Matrix zugefriffen werden, müssen wir die Zeile
+Soll hingegen auf Elemente einer Matrix zugegriffen werden, müssen wir die Zeile
 und die Spalte über den jeweiligen Index angeben. Auf die zweite Zeile und die
 dritte Spalte wird folgendermaßen zugegriffen.
 
@@ -288,10 +288,10 @@ A(2:3, :)
 
 Das Ergebnis ist
 
-<code>
-    6     7     8     9    10 <br>
-    11    12    13    14    15
-</code>
+$$\begin{pmatrix}
+6 & 7 & 8 & 9 & 10 \\
+11 & 12 & 13 & 14 & 15
+\end{pmatrix}.$$
 
 Das Slicing kann auch verwendet werden, um Teile einer Matrix zu ändern. Nehmen
 wir an, wir möchten die zweite Spalte von A durch die Zahlen 102, 107 und 112
@@ -328,7 +328,7 @@ w = [4, 5, 6]
 skalarprodukt = dot(v, w)
 ```
 
-Das Ergbnis ist $1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32$.
+Das Ergebnis ist $1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32$.
 
 Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.
 

@@ -26,9 +26,8 @@ Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und
 
 Die Eingabe erfolgt in MATLAB mit der Funktion `input()`. Im Unterschied zu
 Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
-ist es in MATLAB schwierig, eine Abfrage nach Text zu gestalten. Meist wird
-indirekt gearbeitet mit Abfragen a la "Haben Sie einen Führerschein? Geben Sie 0
-ein für Nein und 1 für Ja."
+wird oft mit indirekten Abfrgaen gearbeitet wie beispielsweise: "Haben Sie einen
+Führerschein? Geben Sie 0 ein für Nein und 1 für Ja."
 
 Für die Ausgabe gibt es zwei Funktionen. Die Funktion `disp()` gibt den Inhalt
 einer Variablen direkt aus. Die Funktion `fprintf()` ermöglicht weitere
@@ -57,7 +56,7 @@ implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
 stellen sie meist "echte" mathematische Funktionen mit einer Eingabe und einer
 Ausgabe dar.
 
-Die Grundstruktur einer Funktion in MATLAB ist eie folgt:
+Die Grundstruktur einer Funktion in MATLAB ist wie folgt:
 
 ```matlab
 function [ergebnis1, ergebnis2,...] = funktionsname(input1, input2,...)
@@ -236,7 +235,7 @@ title('Liniendiagramm');
 
 Auch das Balkendiagramm mit `bar()` und das Streudiagramm mit `scatter()`
 funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
-bestehen. Die Verarbeitung von Strings istg in MATLAB etwas komplizierter, so
+bestehen. Die Verarbeitung von Strings ist in MATLAB etwas komplizierter, so
 dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
 umzusetzen sind.
 
@@ -269,7 +268,7 @@ title('Künstliche Messdaten');
 Die Funktion zur Bestimmung eines Regressionspolynoms lautet `polyfit(x, y,
 grad)`. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
 die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
-Argument wird der gewüunschte Polynomgrad übergeben. Wir probieren eine
+Argument wird der gewünschte Polynomgrad übergeben. Wir probieren eine
 Regressionsparabel.
 
 ```matlab
