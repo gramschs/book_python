@@ -1,6 +1,7 @@
 # 8.1 Einführung MATLAB
 
-Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe [https://de.wikipedia.org/wiki/Matlab](https://de.wikipedia.org/wiki/Matlab)):
+Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe
+[https://de.wikipedia.org/wiki/Matlab](https://de.wikipedia.org/wiki/Matlab)):
 
 > “Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
 > US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
@@ -19,7 +20,7 @@ Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe [htt
 
 ## MATLAB starten und die Entwicklungsumgebung erkunden
 
-Im Folgenden benutzten wir MATLAB in der Cloud. Registrieren Sie sich zuerst bei
+Im Folgenden benutzen wir MATLAB in der Cloud. Registrieren Sie sich zuerst bei
 der Firma MathWorks
 
 > [Registrierung
@@ -68,7 +69,7 @@ Auch wenn MATLAB also zunächst von der Firma MathWorks für numerische
 Berechnungen ausgelegt wurde, können wir es wie einen Taschenrechner benutzen.
 In dem sogenannten **Kommandofenster** können wir nach dem Prompt (das sind die
 zwei spitzen Klammern >>) unsere Anweisungen an MATLAB eingeben. Durch das
-Drücken von Return wird die Eingabe abgschlossen und MATLAB führt die Anweisung
+Drücken von Return wird die Eingabe abgeschlossen und MATLAB führt die Anweisung
 aus.
 
 Probieren Sie es aus:
@@ -79,8 +80,8 @@ Probieren Sie es aus:
 * Division: 8/2
 * Potenzierung: 3^2
 
-Selbstverständlich beherrscht MATLAB auch Klammerregeln. Gerne können Sie den
-Term durch MATLAB berechnen lassen, probieren Sie es doch einmal selbst aus!
+Selbstverständlich beherrscht MATLAB auch Klammerregeln. Probieren Sie es doch
+einmal selbst aus!
 
 ```{dropdown} Video zu "1.2 Taschenrechner" von Mathe? Logisch!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA"

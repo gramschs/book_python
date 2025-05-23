@@ -475,9 +475,8 @@
 <h2>Eingabe, Verarbeitung und Ausgabe<a class="headerlink" href="#eingabe-verarbeitung-und-ausgabe" title="Link to this heading">#</a></h2>
 <p>Die Eingabe erfolgt in MATLAB mit der Funktion <code class="docutils literal notranslate"><span class="pre">input()</span></code>. Im Unterschied zu
 Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
-ist es in MATLAB schwierig, eine Abfrage nach Text zu gestalten. Meist wird
-indirekt gearbeitet mit Abfragen a la “Haben Sie einen Führerschein? Geben Sie 0
-ein für Nein und 1 für Ja.”</p>
+wird oft mit indirekten Abfrgaen gearbeitet wie beispielsweise: “Haben Sie einen
+Führerschein? Geben Sie 0 ein für Nein und 1 für Ja.”</p>
 <p>Für die Ausgabe gibt es zwei Funktionen. Die Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> gibt den Inhalt
 einer Variablen direkt aus. Die Funktion <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> ermöglicht weitere
 Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
@@ -501,7 +500,7 @@ MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
 implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
 stellen sie meist “echte” mathematische Funktionen mit einer Eingabe und einer
 Ausgabe dar.</p>
-<p>Die Grundstruktur einer Funktion in MATLAB ist eie folgt:</p>
+<p>Die Grundstruktur einer Funktion in MATLAB ist wie folgt:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ergebnis1, ergebnis2,...] = funktionsname</span><span class="p">(</span>input1, input2,...<span class="p">)</span>
 <span class="w">    </span><span class="c">% Anweisungen</span>
 <span class="w">    </span><span class="n">ergebnis1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
@@ -671,7 +670,7 @@ bekannten Anweisungen funktionieren.</p>
 </div>
 <p>Auch das Balkendiagramm mit <code class="docutils literal notranslate"><span class="pre">bar()</span></code> und das Streudiagramm mit <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>
 funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
-bestehen. Die Verarbeitung von Strings istg in MATLAB etwas komplizierter, so
+bestehen. Die Verarbeitung von Strings ist in MATLAB etwas komplizierter, so
 dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
 umzusetzen sind.</p>
 <p>Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
@@ -701,7 +700,7 @@ als Streudiagramm visualisieren.</p>
 </div>
 <p>Die Funktion zur Bestimmung eines Regressionspolynoms lautet <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code>. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
 die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
-Argument wird der gewüunschte Polynomgrad übergeben. Wir probieren eine
+Argument wird der gewünschte Polynomgrad übergeben. Wir probieren eine
 Regressionsparabel.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
