@@ -84,7 +84,7 @@ Methode `.count()` direkt auf den kompletten DataFrame angewendet, so erhalten
 wir ein Pandas-Series-Objekt.
 
 ```{code-cell} ipython3
-print( data.count() )
+print(data.count())
 ```
 
 Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
@@ -129,19 +129,19 @@ clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
 
 ## Standardabweichung std
 
-Das 'st' in `.std()`für Standard steht, ist nachvollziehbar. Der dritte
-Buchstabe 'd' kommt von 'deviation', also Abweichung. Somit ist wiederum die
-Methode nach dem englischen Fachbegriff 'standard deviation' benannt.  Welche
-Standardabweichung erhalten wir beim Alter?
+Das 'st' in `.std()` steht für Standard. Der dritte Buchstabe 'd' kommt von
+'deviation', also Abweichung. Somit ist wiederum die Methode nach dem englischen
+Fachbegriff 'standard deviation' benannt.  Welche Standardabweichung erhalten
+wir beim Alter?
 
 ```{code-cell} ipython3
 standardabweichung = data.std(numeric_only=True)
 print(standardabweichung)
 ```
 
-Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
+Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelesen. Wenn wir den Wert
 extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
-dann `.std()` oder erst `.std()`und dann Selektion nach 'Age'. Probieren wir es
+dann `.std()` oder erst `.std()` und dann Selektion nach 'Age'. Probieren wir es
 aus.
 
 ```{code-cell} ipython3
@@ -198,14 +198,15 @@ print('Stürmer')
 print(stuermer)
 
 print('==============')
-print('Minimale Tore: {stuermer.min()}')
+print(f'Minimale Tore: {stuermer.min()}')
 ```
 
 ## Quantil mit quantile
 
-Das Quantil $p \%$ ist der Wert, bei dem $p %$ der Einträge kleiner als diese
-Zahl sind und $100 \% - p \%$ sind größer. Meist werden nicht Prozentzahlen
-verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht.
+Das Quantil $p \%$ ist der Wert, bei dem $p %$ der Einträge kleiner oder gleich
+als diese Zahl sind und $100 \% - p \%$ sind größer. Meist werden nicht
+Prozentzahlen verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 %
+steht.
 
 Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
 Karten wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus
@@ -236,7 +237,7 @@ gelbkarten_spieler = data.loc[filter, ['Position', 'Yellow_Cards']]
 print(gelbkarten_spieler.sort_values(by='Yellow_Cards', ascending=False))
 ```
 
-## Zusammenfassung
+## Zusammenfassung und Ausblick
 
 In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
 beschäftigt, die Pandas mit der Methode `.describe()` zusammenfasst, die aber
@@ -248,4 +249,5 @@ auch einzeln über
 * `.min()` und `.max()`
 * `.quantile()`
 
-berechnet und ausgegeben werden können.
+berechnet und ausgegeben werden können. Im nächsten Kapitel werden wir lernen,
+die Daten zu visualisieren.

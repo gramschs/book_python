@@ -494,15 +494,11 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-pandas">Import von pandas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im csv-Format</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-fur-tabellen-erzeugen">DataFrames für Tabellen erzeugen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-aus-csv-dateien">Import von Tabellen aus csv-Dateien</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -517,31 +513,32 @@
   <section class="tex2jax_ignore mathjax_ignore" id="series-und-dataframe">
 <h1>10.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Link to this heading">#</a></h1>
 <p>Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
-effizient zu speichern. Dazu benutzen Data Scientists die Datentypen <code class="docutils literal notranslate"><span class="pre">Series</span></code>
-oder <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
-mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
-verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code> kennen.</p>
+effizient zu speichern. Dazu benutzen Data Scientists Pandas. Pandas ist eine
+Bibliothek zur Verarbeitung und Analyse von Daten in Form von Datenreihen und
+Tabellen. Die beiden grundlegenden Datenstrukturen sind Series und DataFrame.
+Dabei wird <strong>Series</strong> für Datenreihen genommen und ist damit die
+Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Die Datenstruktur
+<strong>DataFrame</strong> repräsentiert Tabellen, also sozusagen Matrizen bzw.
+verallgemeinerte zweidimensionale Arrays.</p>
+<p>Daher werden wir uns in diesem Kapitel mit diesen beiden Datenstrukturen
+beschäftigen. Darüber hinaus lernen wir das häufig verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code>
+kennen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung pd importieren.</p></li>
+<li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung <strong>pd</strong> importieren.</p></li>
 <li><p>Sie können aus einer Liste das Datenobjekt <strong>Series</strong> erzeugen.</p></li>
 <li><p>Sie kennen das <strong>csv-Dateiformat</strong>.</p></li>
 <li><p>Sie können eine csv-Datei mit <strong>read_csv()</strong> einlesen.</p></li>
-<li><p>Sie konnen mit <strong>.info()</strong> sich einen Überblick über die importierten Daten verschaffen.</p></li>
+<li><p>Sie können mit <strong>.info()</strong> sich einen Überblick über die importierten Daten
+verschaffen.</p></li>
 </ul>
 </div>
 </section>
-<section id="import-von-pandas">
-<h2>Import von pandas<a class="headerlink" href="#import-von-pandas" title="Link to this heading">#</a></h2>
-<p>Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
-Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
-und DataFrame. Dabei wird <strong>Series</strong> für Datenreihen genommen, also sozusagen
-die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
-<strong>DataFrame</strong> repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays.</p>
+<section id="series-aus-liste-erzeugen">
+<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Link to this heading">#</a></h2>
 <p>Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
 ist üblich, dabei dem Modul die Abkürzung <strong>pd</strong> zu geben, damit wir nicht immer
 pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.</p>
@@ -552,12 +549,9 @@ pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.<
 </div>
 </div>
 </div>
-</section>
-<section id="series-aus-liste-erzeugen">
-<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Link to this heading">#</a></h2>
-<p>Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
+<p>Die Datenstruktur Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
 Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, dass die
+über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, das die
 Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
 Liste, also <code class="docutils literal notranslate"><span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> und initialisieren über <code class="docutils literal notranslate"><span class="pre">pd.Series()</span></code> die
 Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>:</p>
@@ -580,21 +574,22 @@ dtype: int64
 </div>
 <p>Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
 bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
-Numpy-Array nehmen? Der wichtigste Unterschied ist der <strong>Index</strong>.</p>
-<p>Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
+Numpy-Array nehmen? Der wichtigste Unterschied zwischen der Datenstruktur Series
+und einer Liste ist der <strong>Index</strong>.</p>
+<p>Bei einer Liste oder einem Numpy-Array ist der Index <em>implizit</em> definiert. Damit
 ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, …
-angelegt wird. Wenn bei einer Liste <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> auf das zweite
+angelegt wird. Wenn bei einer Liste <code class="docutils literal notranslate"><span class="pre">liste</span> <span class="pre">=</span> <span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> auf das zweite
 Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
 Python zählt ab 0) und schreiben</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Element der Liste: &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2. Element der Liste: </span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste:  22
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste: 22
 </pre></div>
 </div>
 </div>
@@ -622,10 +617,12 @@ dtype: int64
 </div>
 <p>Jetzt ist auch klar, warum beim ersten Mal, als wir <code class="docutils literal notranslate"><span class="pre">print(alter)</span></code> ausgeführt
 haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
-Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
-Informationen ausgegeben wird, ist das Attribut <code class="docutils literal notranslate"><span class="pre">dtype</span></code>. Darin gespeichert ist
-der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
-dem Punktoperator zugegegriffen werden.</p>
+Series-Objekt noch einen impliziten Index wie eine Liste.</p>
+<p>Wenden wir uns nun der letzten Zeile der Ausgabe zu: <code class="docutils literal notranslate"><span class="pre">dtype:</span> <span class="pre">int64</span></code>. Für das
+Series-Objekt <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird automatisch der Datentyp der enthaltenen Werte
+ermittelt. In unserem Fall haben wir das Alter als vier Integers gespeichert,
+weshalb <code class="docutils literal notranslate"><span class="pre">int64</span></code> als Attribut <code class="docutils literal notranslate"><span class="pre">dtype</span></code> gespeichert wird. Auf dieses Attribut kann
+auch direkt mit dem Punktoperator zugegegriffen werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -638,7 +635,6 @@ dem Punktoperator zugegegriffen werden.</p>
 </div>
 </div>
 </div>
-<p>Offensichtlich sind die gespeicherten Werte Integer.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
 <p>Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
@@ -659,29 +655,97 @@ Vorlesungs/Übungs-Stunden an diesem Wochentag.</p>
 </div>
 </div>
 </section>
-<section id="dataframe-fur-tabellen">
-<h2>DataFrame für Tabellen<a class="headerlink" href="#dataframe-fur-tabellen" title="Link to this heading">#</a></h2>
-<p>Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
-einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
-sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
-auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
-zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
-darstellt und die Spalten die Eigenschaften speichern.</p>
-<p>Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
-Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
-kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
-gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.</p>
+<section id="dataframes-fur-tabellen-erzeugen">
+<h2>DataFrames für Tabellen erzeugen<a class="headerlink" href="#dataframes-fur-tabellen-erzeugen" title="Link to this heading">#</a></h2>
+<p>Bei Auswertung von Messungen kommt es häufig vor, dass die Daten in Form einer
+Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man sie
+beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl die Zeilen als
+auch die Spalten haben einen Index. Typischerweise werden die Daten in der
+Tabelle zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen
+Datensatz darstellt und die Eigenschaften der Daten als Spalte gespeichert
+werden.</p>
+<p>Bevor wir uns dem Import von Tabellen widmen, schauen wir uns kurz an, wie ein
+DataFrame-Objekt direkt erstellt werden kann. Dies ist besonders nützlich, wenn
+Sie kleinere Datensätze aus Berechnungen oder Messreihen zusammenstellen
+möchten.</p>
+<p>Die einfachste Methode ist die Erstellung aus einem Dictionary. Dabei entspricht
+jeder Schlüssel einer Spaltenüberschrift und die zugehörigen Werte bilden die
+Spalteninhalte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Messdaten von Zugversuchen verschiedener Materialien</span>
+<span class="n">messdaten</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Material&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Stahl&#39;</span><span class="p">,</span> <span class="s1">&#39;Aluminium&#39;</span><span class="p">,</span> <span class="s1">&#39;Kupfer&#39;</span><span class="p">,</span> <span class="s1">&#39;Messing&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Zugfestigkeit_MPa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">380</span><span class="p">],</span>
+    <span class="s1">&#39;Streckgrenze_MPa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="s1">&#39;Bruchdehnung_Prozent&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">daten_zugversuch</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messdaten</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">daten_zugversuch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Material  Zugfestigkeit_MPa  Streckgrenze_MPa  Bruchdehnung_Prozent
+0      Stahl                400               250                    25
+1  Aluminium                310               280                    12
+2     Kupfer                220                70                    45
+3    Messing                380               200                    15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sie können auch explizit einen Index festlegen, beispielsweise die
+Probennummern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">daten_zugversuch</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messdaten</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Probe_01&#39;</span><span class="p">,</span> <span class="s1">&#39;Probe_02&#39;</span><span class="p">,</span> <span class="s1">&#39;Probe_03&#39;</span><span class="p">,</span> <span class="s1">&#39;Probe_04&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">daten_zugversuch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Material  Zugfestigkeit_MPa  Streckgrenze_MPa  Bruchdehnung_Prozent
+Probe_01      Stahl                400               250                    25
+Probe_02  Aluminium                310               280                    12
+Probe_03     Kupfer                220                70                    45
+Probe_04    Messing                380               200                    15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternativ können Sie ein DataFrame aus mehreren Series-Objekten erstellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">materialien</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Stahl&#39;</span><span class="p">,</span> <span class="s1">&#39;Aluminium&#39;</span><span class="p">,</span> <span class="s1">&#39;Kupfer&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Material&#39;</span><span class="p">)</span>
+<span class="n">zugfestigkeit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">220</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Zugfestigkeit_MPa&#39;</span><span class="p">)</span>
+
+<span class="n">df_aus_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Material&#39;</span><span class="p">:</span> <span class="n">materialien</span><span class="p">,</span> <span class="s1">&#39;Zugfestigkeit&#39;</span><span class="p">:</span> <span class="n">zugfestigkeit</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_aus_series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Material  Zugfestigkeit
+0      Stahl            400
+1  Aluminium            310
+2     Kupfer            220
+</pre></div>
+</div>
+</div>
+</div>
+<p>In der Praxis werden wir DataFrames jedoch meist aus Dateien importieren, da
+größere Datensätze selten manuell erfasst werden. Dies betrachten wir im
+nächsten Abschnitt.</p>
 </section>
-<section id="import-von-tabellen">
-<h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Link to this heading">#</a></h2>
+<section id="import-von-tabellen-aus-csv-dateien">
+<h2>Import von Tabellen aus csv-Dateien<a class="headerlink" href="#import-von-tabellen-aus-csv-dateien" title="Link to this heading">#</a></h2>
 <p>Tabellen werden oft in demjenigen Dateiformat abgespeichert, das die jeweilige
 Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
 vorgibt. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in einem
 offenen Datenformat vorliegen und damit unabhängig von der verwendeten Software
-und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
-gestreift.</p>
-<section id="import-von-tabellen-im-csv-format">
-<h3>Import von Tabellen im csv-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Link to this heading">#</a></h3>
+und dem verwendeten Betriebssystem sind.</p>
 <p>Das <strong>Dateiformat csv</strong> speichert Daten zeilenweise ab. Dabei steht csv für
 “comma-separated values”. Die Trennung der Spalten erfolgt durch ein
 Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
@@ -693,12 +757,11 @@ der Nachkommastellen verwenden.</p>
 Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
 ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
 übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.</p>
-<p>Am besten sehen wir uns die Funktionsweise von <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an einem Beispiel an.
-Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
-Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL"><code class="docutils literal notranslate"><span class="pre">bundesliga_top7_offensive.csv</span></code></a>
-herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
-JupyterNotebook liegt. Die csv-Datei stammt von
+<p>Betrachten wir die Funktionsweise von <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> mit einem Beispiel. Sollten Sie
+mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die Datei
+<a class="reference download external" download="" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">bundesliga_top7_offensive.csv</span></code></a> herunter und
+speichern Sie sie in denselben Ordner, in dem auch dieses JupyterNotebook liegt.
+Die csv-Datei stammt von
 <a class="reference external" href="https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv">Kaggle</a>.
 Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
 der Bundesligasaison 2020/21 enthalten.</p>
@@ -1102,7 +1165,7 @@ usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
 welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
 erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
 gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
-den Befehl mit <code class="docutils literal notranslate"><span class="pre">index_col=</span></code>. Die Namen stehen in der 1. Spalte, was in
+den Befehl mit <code class="docutils literal notranslate"><span class="pre">index_col=0</span></code>. Die Namen stehen in der 1. Spalte, was in
 Python-Zählweise einer 0 entspricht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1350,184 +1413,26 @@ Python-Zählweise einer 0 entspricht.</p>
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="import-von-tabellen-im-xlsx-format">
-<h3>Import von Tabellen im xlsx-Format<a class="headerlink" href="#import-von-tabellen-im-xlsx-format" title="Link to this heading">#</a></h3>
+<div class="warning admonition">
+<p class="admonition-title">Import von Tabellen im xlsx-Format</p>
 <p>Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
 bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
-Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
-als Excel-Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm">bundesliga_top7_offensive.xlsx</a>
-herunter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Der Befehl zum Import einer Excel-Datei <a class="reference download external" download="" href="https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">bundesliga_top7_offensive.xlsx</span></code></a> lautet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
 Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
-schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> nach. In dieser Vorlesung
-verwenden wir nur csv-Dateien, so dass ein Nachinstallieren für die
-Vorlesung/Übung nicht notwendig ist.</p>
-</section>
+schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> nach.</p>
+</div>
 </section>
 <section id="ubersicht-verschaffen-mit-info">
 <h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Link to this heading">#</a></h2>
 <p>Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
-Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
-noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür stellt
-Pandas die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> zur Verfügung. Probieren wir es einfach aus.</p>
+Datensatzes an, aber wie viele Daten insgesamt enthalten sind oder welche
+Vereine noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür
+stellt Pandas die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> zur Verfügung. Probieren wir es einfach aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -1566,12 +1471,20 @@ die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie <cod
 selbsterklärend, aber was <code class="docutils literal notranslate"><span class="pre">xG</span></code> bedeutet, erschließt sich nicht von selbst. Dazu
 brauchen wir mehr Informationen von den Autor:innen der Daten.</p>
 <p>Weiterhin entnehmen wir der Ausgabe von <code class="docutils literal notranslate"><span class="pre">.info()</span></code>, dass in jeder Spalte 177
-Einträge sind, die ‘non-null’ sind. Damit ist gemeint, dass diese Zellen beim
+Einträge sind, die <code class="docutils literal notranslate"><span class="pre">non-null</span></code> sind. Damit ist gemeint, dass diese Zellen beim
 Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
 angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
-Datentyp ‘object’ angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
+Datentyp <code class="docutils literal notranslate"><span class="pre">object</span></code> angegeben. Beim Alter/Age wurden korrektweise Integers erkannt
 und die mittlere erwartete Anzahl von Toren pro Spiel ‘xG’ (= expected number of
 goals from the player in a match) wird als Float angegeben.</p>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir die beiden wichtigsten Pandas-Datenstrukturen
+kennengelernt: Series und DataFrame. Darüber hinaus haben wir uns damit
+beschäftigt, wie wir mir <code class="docutils literal notranslate"><span class="pre">.info()</span></code> und <code class="docutils literal notranslate"><span class="pre">.head()</span></code> uns einen ersten Überblick über
+die Daten verschaffen können. Wie wir auf Zeilen und Spalten zugreifen, lernen
+wir im nächsten Kapitel.</p>
 </section>
 </section>
 
@@ -1641,15 +1554,11 @@ goals from the player in a match) wird als Float angegeben.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-pandas">Import von pandas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im csv-Format</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-fur-tabellen-erzeugen">DataFrames für Tabellen erzeugen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-aus-csv-dateien">Import von Tabellen aus csv-Dateien</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

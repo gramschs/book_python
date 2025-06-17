@@ -1,0 +1,124 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+spiele = data.loc['Matches' : 'Starts']
+print(spiele)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexes/base.py:3805[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3804[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 3805[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[1;32m   3806[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [0;32mindex.pyx:167[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mindex.pyx:196[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7081[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+File [0;32mpandas/_libs/hashtable_class_helper.pxi:7089[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
+
+[0;31mKeyError[0m: 'Matches'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+Cell [0;32mIn[9], line 1[0m
+[0;32m----> 1[0m spiele [38;5;241m=[39m [43mdata[49m[38;5;241;43m.[39;49m[43mloc[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mMatches[39;49m[38;5;124;43m'[39;49m[43m [49m[43m:[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mStarts[39;49m[38;5;124;43m'[39;49m[43m][49m
+[1;32m      2[0m [38;5;28mprint[39m(spiele)
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexing.py:1191[0m, in [0;36m_LocationIndexer.__getitem__[0;34m(self, key)[0m
+[1;32m   1189[0m maybe_callable [38;5;241m=[39m com[38;5;241m.[39mapply_if_callable(key, [38;5;28mself[39m[38;5;241m.[39mobj)
+[1;32m   1190[0m maybe_callable [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_check_deprecated_callable_usage(key, maybe_callable)
+[0;32m-> 1191[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_getitem_axis[49m[43m([49m[43mmaybe_callable[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m)[49m
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexing.py:1411[0m, in [0;36m_LocIndexer._getitem_axis[0;34m(self, key, axis)[0m
+[1;32m   1409[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(key, [38;5;28mslice[39m):
+[1;32m   1410[0m     [38;5;28mself[39m[38;5;241m.[39m_validate_key(key, axis)
+[0;32m-> 1411[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_get_slice_axis[49m[43m([49m[43mkey[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m)[49m
+[1;32m   1412[0m [38;5;28;01melif[39;00m com[38;5;241m.[39mis_bool_indexer(key):
+[1;32m   1413[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getbool_axis(key, axis[38;5;241m=[39maxis)
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexing.py:1443[0m, in [0;36m_LocIndexer._get_slice_axis[0;34m(self, slice_obj, axis)[0m
+[1;32m   1440[0m     [38;5;28;01mreturn[39;00m obj[38;5;241m.[39mcopy(deep[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m   1442[0m labels [38;5;241m=[39m obj[38;5;241m.[39m_get_axis(axis)
+[0;32m-> 1443[0m indexer [38;5;241m=[39m [43mlabels[49m[38;5;241;43m.[39;49m[43mslice_indexer[49m[43m([49m[43mslice_obj[49m[38;5;241;43m.[39;49m[43mstart[49m[43m,[49m[43m [49m[43mslice_obj[49m[38;5;241;43m.[39;49m[43mstop[49m[43m,[49m[43m [49m[43mslice_obj[49m[38;5;241;43m.[39;49m[43mstep[49m[43m)[49m
+[1;32m   1445[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(indexer, [38;5;28mslice[39m):
+[1;32m   1446[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mobj[38;5;241m.[39m_slice(indexer, axis[38;5;241m=[39maxis)
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexes/base.py:6662[0m, in [0;36mIndex.slice_indexer[0;34m(self, start, end, step)[0m
+[1;32m   6618[0m [38;5;28;01mdef[39;00m [38;5;21mslice_indexer[39m(
+[1;32m   6619[0m     [38;5;28mself[39m,
+[1;32m   6620[0m     start: Hashable [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m   6621[0m     end: Hashable [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m   6622[0m     step: [38;5;28mint[39m [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m   6623[0m ) [38;5;241m-[39m[38;5;241m>[39m [38;5;28mslice[39m:
+[1;32m   6624[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m   6625[0m [38;5;124;03m    Compute the slice indexer for input labels and step.[39;00m
+[1;32m   6626[0m 
+[0;32m   (...)[0m
+[1;32m   6660[0m [38;5;124;03m    slice(1, 3, None)[39;00m
+[1;32m   6661[0m [38;5;124;03m    """[39;00m
+[0;32m-> 6662[0m     start_slice, end_slice [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mslice_locs[49m[43m([49m[43mstart[49m[43m,[49m[43m [49m[43mend[49m[43m,[49m[43m [49m[43mstep[49m[38;5;241;43m=[39;49m[43mstep[49m[43m)[49m
+[1;32m   6664[0m     [38;5;66;03m# return a slice[39;00m
+[1;32m   6665[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m is_scalar(start_slice):
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexes/base.py:6879[0m, in [0;36mIndex.slice_locs[0;34m(self, start, end, step)[0m
+[1;32m   6877[0m start_slice [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[1;32m   6878[0m [38;5;28;01mif[39;00m start [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m-> 6879[0m     start_slice [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_slice_bound[49m[43m([49m[43mstart[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mleft[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m   6880[0m [38;5;28;01mif[39;00m start_slice [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   6881[0m     start_slice [38;5;241m=[39m [38;5;241m0[39m
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexes/base.py:6804[0m, in [0;36mIndex.get_slice_bound[0;34m(self, label, side)[0m
+[1;32m   6801[0m         [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_searchsorted_monotonic(label, side)
+[1;32m   6802[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mValueError[39;00m:
+[1;32m   6803[0m         [38;5;66;03m# raise the original KeyError[39;00m
+[0;32m-> 6804[0m         [38;5;28;01mraise[39;00m err
+[1;32m   6806[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(slc, np[38;5;241m.[39mndarray):
+[1;32m   6807[0m     [38;5;66;03m# get_loc may return a boolean array, which[39;00m
+[1;32m   6808[0m     [38;5;66;03m# is OK as long as they are representable by a slice.[39;00m
+[1;32m   6809[0m     [38;5;28;01massert[39;00m is_bool_dtype(slc[38;5;241m.[39mdtype)
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexes/base.py:6798[0m, in [0;36mIndex.get_slice_bound[0;34m(self, label, side)[0m
+[1;32m   6796[0m [38;5;66;03m# we need to look up the label[39;00m
+[1;32m   6797[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 6798[0m     slc [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mlabel[49m[43m)[49m
+[1;32m   6799[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[1;32m   6800[0m     [38;5;28;01mtry[39;00m:
+
+File [0;32m/opt/homebrew/Caskroom/miniconda/base/envs/python312/lib/python3.12/site-packages/pandas/core/indexes/base.py:3812[0m, in [0;36mIndex.get_loc[0;34m(self, key)[0m
+[1;32m   3807[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(casted_key, [38;5;28mslice[39m) [38;5;129;01mor[39;00m (
+[1;32m   3808[0m         [38;5;28misinstance[39m(casted_key, abc[38;5;241m.[39mIterable)
+[1;32m   3809[0m         [38;5;129;01mand[39;00m [38;5;28many[39m([38;5;28misinstance[39m(x, [38;5;28mslice[39m) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m casted_key)
+[1;32m   3810[0m     ):
+[1;32m   3811[0m         [38;5;28;01mraise[39;00m InvalidIndexError(key)
+[0;32m-> 3812[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[1;32m   3813[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[1;32m   3814[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[1;32m   3815[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[1;32m   3816[0m     [38;5;66;03m#  the TypeError.[39;00m
+[1;32m   3817[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[0;31mKeyError[0m: 'Matches'
+

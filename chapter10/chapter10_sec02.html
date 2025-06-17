@@ -494,21 +494,24 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zeilen">Zugriff auf Zeilen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-zeile">Einzelne Zeile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-zeilen-slicing">Zusammenhängende Zeilen: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-zeilen-per-liste">Selektion unzusammenhängender Zeilen per Liste</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-spalten">Zugriff auf Spalten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-spalte">Einzelne Spalte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-spalten-slicing">Zusammenhängende Spalten: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-spalten-per-liste">Selektion unzusammenhängender Spalten per Liste</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-spalten-per-liste">Selektion Spalten per Liste</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zeilen">Zugriff auf Zeilen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-zeile">Einzelne Zeile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-zeilen-per-liste">Selektion Zeilen per Liste</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-von-zeilen">Slicing von Zeilen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-von-spalten">Slicing von Spalten</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zellen">Zugriff auf Zellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtern">Filtern</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -523,9 +526,9 @@
   <section class="tex2jax_ignore mathjax_ignore" id="arbeiten-mit-tabellendaten">
 <h1>10.2 Arbeiten mit Tabellendaten<a class="headerlink" href="#arbeiten-mit-tabellendaten" title="Link to this heading">#</a></h1>
 <p>Eine Tabellenkalkulationssoftware wie LibreOffice Calc, Excel oder Number ist
-nicht nur nützlich, um Daten zu sammeln und zu speichern, sondern auch um
-statistische Auswertungen durchzuführen. In diesem Kapitel geht es darum, wie
-auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.</p>
+nicht nur nützlich, um Daten zu sammeln, sondern auch um sie zu bearbeiten. In
+diesem Kapitel geht es darum zu lernen, wie mit Pandas auf einzelne Zeilen,
+Spalten oder Zellen zugegriffen wird.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -543,10 +546,8 @@ auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.</p>
 </ul>
 </div>
 </section>
-<section id="zugriff-auf-zeilen">
-<h2>Zugriff auf Zeilen<a class="headerlink" href="#zugriff-auf-zeilen" title="Link to this heading">#</a></h2>
-<p>Als erstes möchten wir ganze Zeilen der Tabelle lesen. Dazu verwenden wir das
-Attribut <code class="docutils literal notranslate"><span class="pre">.loc</span></code> mit passenden Indizes.</p>
+<section id="zugriff-auf-spalten">
+<h2>Zugriff auf Spalten<a class="headerlink" href="#zugriff-auf-spalten" title="Link to this heading">#</a></h2>
 <p>Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
 Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
 bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.</p>
@@ -797,13 +798,127 @@ bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.
 </table>
 </div></div></div>
 </div>
+<section id="einzelne-spalte">
+<h3>Einzelne Spalte<a class="headerlink" href="#einzelne-spalte" title="Link to this heading">#</a></h3>
+<p>Der Zugriff auf Spalten wird am häufigsten gebraucht, da üblicherweise in den
+Spalten die Merkmale der Datenobjekte stehen. Daher bietet Pandas dafür einen
+direkten Zugriff über die eckigen Klammern <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> an.</p>
+<figure class="align-center" id="fig08-04">
+<a class="reference internal image-reference" href="../_images/tabelle_spalte_einzeln.png"><img alt="Einzelne Spalte einer Tabelle" src="../_images/tabelle_spalte_einzeln.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Auf eine einzelne Spalte der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">[spaltenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-04" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex <code class="docutils literal notranslate"><span class="pre">Age</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
+Manuel Neuer          34
+Thomas Müller         30
+David Alaba           28
+Jérôme Boateng        31
+Robert Lewandowski    31
+                      ..
+Loris Karius          27
+Akaki Gogia           28
+Leon Dajaku           19
+Tim Maciejewski       19
+Joshua Mees           24
+Name: Age, Length: 177, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="selektion-spalten-per-liste">
+<h3>Selektion Spalten per Liste<a class="headerlink" href="#selektion-spalten-per-liste" title="Link to this heading">#</a></h3>
+<p>Wir möchten nun die Anzahl der Spiele (<code class="docutils literal notranslate"><span class="pre">Matches</span></code>) und die Anzahl der gespielten
+Minuten in der kompletten Saison (<code class="docutils literal notranslate"><span class="pre">Mins</span></code>) auswerten, um beispielsweise die
+durchschnittliche Minutenzahl pro Spiel zu ermitteln. Da die Spalten nicht
+nebeneinander liegen, müssen wir eine Liste benutzen, um sie zu selektieren. Die
+Auswahl der Spalten wird in der Fachsprache <strong>Selektion</strong> genannt.</p>
+<figure class="align-center" id="fig08-06">
+<a class="reference internal image-reference" href="../_images/tabelle_spalte_selektion.png"><img alt="Selektion von Spalten einer Tabelle" src="../_images/tabelle_spalte_selektion.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Auf mehrere unzusammenhängende Spalten der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">[list]</span></code>
+zugegriffen. Das nennt man Selektion.</span><a class="headerlink" href="#fig08-06" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiele_minuten</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Matches&#39;</span><span class="p">,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spiele_minuten</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Matches  Mins
+Name                             
+Manuel Neuer             33  2970
+Thomas Müller            32  2674
+David Alaba              32  2675
+Jérôme Boateng           29  2368
+Robert Lewandowski       29  2458
+...                     ...   ...
+Loris Karius              4   292
+Akaki Gogia               7   140
+Leon Dajaku               2    37
+Tim Maciejewski           1     8
+Joshua Mees               1     5
+
+[177 rows x 2 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie sich die folgenden Spalten anzeigen:</p>
+<ul class="simple">
+<li><p>Nationality</p></li>
+<li><p>Nationality, Age und Matches</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_spalte</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">]</span>
+<span class="n">data_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Matches&#39;</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data_spalte</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_selektion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="zugriff-auf-zeilen">
+<h2>Zugriff auf Zeilen<a class="headerlink" href="#zugriff-auf-zeilen" title="Link to this heading">#</a></h2>
+<p>Der Zugriff auf Zeilen erfordert eine Erweiterung der Syntax. Über das Attribut
+<code class="docutils literal notranslate"><span class="pre">loc[]</span></code> stellt Pandas nicht nur den Zugriff auf Zeilen zur Verfügung, sondern
+ermöglicht auch fortgeschritte Zugriffsmöglichkeiten wie beispielsweise das
+Slicing, wie wir später sehen werden. Aber zunächst starten wir mit dem Zugriff
+auf einzelne Zeilen.</p>
 <section id="einzelne-zeile">
 <h3>Einzelne Zeile<a class="headerlink" href="#einzelne-zeile" title="Link to this heading">#</a></h3>
 <p>Uns interessieren die Spielerdaten von Thomas Müller näher.</p>
 <figure class="align-center" id="fig08-01">
 <a class="reference internal image-reference" href="../_images/tabelle_zeile_einzeln.png"><img alt="Eine einzelne Zeile der Tabelle ist markiert." src="../_images/tabelle_zeile_einzeln.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Auf eine einzelne Zeile der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[zeilenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-01" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Auf eine einzelne Zeile der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[zeilenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-01" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Um eine ganze Zeile aus der Tabelle herauszugreifen, verwenden wir das Attribut
@@ -839,20 +954,99 @@ Name: Thomas Müller, dtype: object
 </div>
 </div>
 </section>
-<section id="zusammenhangende-zeilen-slicing">
-<h3>Zusammenhängende Zeilen: Slicing<a class="headerlink" href="#zusammenhangende-zeilen-slicing" title="Link to this heading">#</a></h3>
-<p>Wenn wir auf mehrere Zeilen gleichzeitig zugreifen wollen, gibt es zwei
-Möglichkeiten:</p>
+<section id="selektion-zeilen-per-liste">
+<h3>Selektion Zeilen per Liste<a class="headerlink" href="#selektion-zeilen-per-liste" title="Link to this heading">#</a></h3>
+<p>Wenn wir auf mehrere Zeilen zugreifen wollen, die nicht zusammenhängen, so nennt
+man das wie bei den Spalten ebenfalls Selektion.</p>
+<figure class="align-center" id="fig08-03">
+<a class="reference internal image-reference" href="../_images/tabelle_zeile_selektion.png"><img alt="Slicing von Zeilen einer Tabelle" src="../_images/tabelle_zeile_selektion.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[list]</span></code>
+zugegriffen. Das nennt man Selektion.</span><a class="headerlink" href="#fig08-03" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> eine
+Liste mit den gewünschten Zeilenindizes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Manuel Neuer&#39;</span><span class="p">,</span> <span class="s1">&#39;David Alaba&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zeilen_selektion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                       Club Nationality Position  Age  Matches  Starts  Mins  \
+Name                                                                           
+Manuel Neuer  Bayern Munich         GER       GK   34       33      33  2970   
+David Alaba   Bayern Munich         AUT    DF,MF   28       32      30  2675   
+
+              Goals  Assists  Penalty_Goals  Penalty_Attempted    xG    xA  \
+Name                                                                         
+Manuel Neuer      0        0              0                  0  0.00  0.01   
+David Alaba       2        4              0                  0  0.04  0.08   
+
+              Yellow_Cards  Red_Cards  
+Name                                   
+Manuel Neuer             1          0  
+David Alaba              4          0  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie sich die folgenden Zeilen anzeigen:</p>
+<ul class="simple">
+<li><p>Kingsley Coman</p></li>
+<li><p>Kingsley Coman bis Alphonso Davies</p></li>
+<li><p>Robert Lewandowski, Kingsley Coman und Serge Gnabry</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_zeile</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">]</span>
+<span class="n">data_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span><span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">,</span> <span class="s1">&#39;Serge Gnabry&#39;</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data_zeile</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_selektion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="slicing">
+<h2>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h2>
+<p>Wenn wir auf mehrere Zeilen oder Spalten gleichzeitig zugreifen wollen, gibt es
+zwei Möglichkeiten:</p>
 <ol class="arabic simple">
-<li><p>Die Zeilen folgen direkt aufeinander, sind also zusammenhängend.</p></li>
-<li><p>Zwischen den einzelnen Zeilen sind Lücken.</p></li>
+<li><p>Zwischen den einzelnen Zeilen/Spalten sind Lücken, wir haben eine
+unzusammenhängende Selektion.</p></li>
+<li><p>Die Zeilen oder Spalten folgen direkt aufeinander, sind also zusammenhängend.</p></li>
 </ol>
-<p>Als erstes betrachten wir zusammenhängende Zeilen. Der Zugriff auf
-zusammenhängende Bereiche wird in der Informatik <strong>Slicing</strong> genannt.</p>
+<p>Den ersten Fall haben wir bereits oben dargestellt. Bei Spalten wird die
+Selektion über eine Liste und eckige Klammern <code class="docutils literal notranslate"><span class="pre">[]</span></code> realisiert, bei Zeilen über
+eine Liste, die in <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> eingesetzt wird.</p>
+<p>Der Zugriff auf zusammenhängende Bereiche wird in der Informatik <strong>Slicing</strong>
+genannt. Wir werden uns die beiden Fälle</p>
+<ul class="simple">
+<li><p>Slicing für Zeilen</p></li>
+<li><p>Slicing für Spalten</p></li>
+</ul>
+<p>anschauen, aber zunächst betrachten wir das Slicing von Zeilen.</p>
+<section id="slicing-von-zeilen">
+<h3>Slicing von Zeilen<a class="headerlink" href="#slicing-von-zeilen" title="Link to this heading">#</a></h3>
 <figure class="align-center" id="fig08-02">
 <a class="reference internal image-reference" href="../_images/tabelle_zeile_slice.png"><img alt="Mehrere zusammenhängende Zeilen der Tabelle sind markiert." src="../_images/tabelle_zeile_slice.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Auf mehrere zusammenhängende Zeilen der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[start:stopp]</span></code> zugegriffen. Das nennt man Slicing.</span><a class="headerlink" href="#fig08-02" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Auf mehrere zusammenhängende Zeilen der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[start:stopp]</span></code>
+zugegriffen. Das nennt man Slicing.</span><a class="headerlink" href="#fig08-02" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Bei der Angabe des Bereiches gibt man den Anfangsindex gefolgt von einem
@@ -950,140 +1144,26 @@ Joshua Mees         2.02  0.00             0          0
 </div>
 </div>
 </section>
-<section id="selektion-unzusammenhangender-zeilen-per-liste">
-<h3>Selektion unzusammenhängender Zeilen per Liste<a class="headerlink" href="#selektion-unzusammenhangender-zeilen-per-liste" title="Link to this heading">#</a></h3>
-<p>Soll auf mehrere Zeilen zugegriffen werden, die nicht zusammenhängen, so nennt
-man das <strong>Selektion</strong>.</p>
-<figure class="align-center" id="fig08-03">
-<a class="reference internal image-reference" href="../_images/tabelle_zeile_selektion.png"><img alt="Slicing von Zeilen einer Tabelle" src="../_images/tabelle_zeile_selektion.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[list]</span></code> zugegriffen. Das nennt man Selektion.</span><a class="headerlink" href="#fig08-03" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> eine
-Liste mit den gewünschten Zeilenindizes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeilen_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;Manuel Neuer&#39;</span><span class="p">,</span> <span class="s1">&#39;David Alaba&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zeilen_selektion</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                       Club Nationality Position  Age  Matches  Starts  Mins  \
-Name                                                                           
-Manuel Neuer  Bayern Munich         GER       GK   34       33      33  2970   
-David Alaba   Bayern Munich         AUT    DF,MF   28       32      30  2675   
-
-              Goals  Assists  Penalty_Goals  Penalty_Attempted    xG    xA  \
-Name                                                                         
-Manuel Neuer      0        0              0                  0  0.00  0.01   
-David Alaba       2        4              0                  0  0.04  0.08   
-
-              Yellow_Cards  Red_Cards  
-Name                                   
-Manuel Neuer             1          0  
-David Alaba              4          0  
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie sich die folgenden Zeilen anzeigen:</p>
-<ul class="simple">
-<li><p>Kingsley Coman</p></li>
-<li><p>Kingsley Coman bis Alphonso Davies</p></li>
-<li><p>Robert Lewandowski, Kingsley Coman und Serge Gnabry</p></li>
-</ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_zeile</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">]</span>
-<span class="n">data_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Kingsley Coman&#39;</span> <span class="p">:</span> <span class="s1">&#39;Alphonso Davies&#39;</span><span class="p">]</span>
-<span class="n">data_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Robert Lewandowski&#39;</span><span class="p">,</span><span class="s1">&#39;Kingsley Coman&#39;</span><span class="p">,</span> <span class="s1">&#39;Serge Gnabry&#39;</span><span class="p">]]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">data_zeile</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_slice</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_selektion</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
-</section>
-<section id="zugriff-auf-spalten">
-<h2>Zugriff auf Spalten<a class="headerlink" href="#zugriff-auf-spalten" title="Link to this heading">#</a></h2>
-<p>Auf Spalten können wir zugreifen, indem wir <code class="docutils literal notranslate"><span class="pre">.loc</span></code> mit zwei Argumenten benutzen.
-Dann steht das 1. Argument für den Zeilenindex und das 2. Argument für den
-Spaltenindex. Wenn wir die komplette Spalte betrachten wollen, setzen wir für
-den Zeilenindex einfach einen Doppelpunkt <code class="docutils literal notranslate"><span class="pre">:</span></code>. Damit werden automatisch als
-Anfangsindex die erste Zeile und als Endindex die letzte Zeile gewählt.
-Ansonsten erfolgen die Zugriffe auf Spalten analog zu den Zugriffen auf Zeilen
-über die drei Möglichkeiten</p>
-<ul class="simple">
-<li><p>einzelne Spalte,</p></li>
-<li><p>zusammenhängende Spalten (Slicing) und</p></li>
-<li><p>unzusammenhängende Spalten als Liste (Selektion).</p></li>
-</ul>
-<section id="einzelne-spalte">
-<h3>Einzelne Spalte<a class="headerlink" href="#einzelne-spalte" title="Link to this heading">#</a></h3>
-<p>Als nächstes greifen wir auf eine Spalte der Tabelle zu.</p>
-<figure class="align-center" id="fig08-04">
-<a class="reference internal image-reference" href="../_images/tabelle_spalte_einzeln.png"><img alt="Einzelne Spalte einer Tabelle" src="../_images/tabelle_spalte_einzeln.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Auf eine einzelne Spalte der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">spaltenindex]</span></code> zugegriffen.</span><a class="headerlink" href="#fig08-04" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex <code class="docutils literal notranslate"><span class="pre">Age</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Manuel Neuer          34
-Thomas Müller         30
-David Alaba           28
-Jérôme Boateng        31
-Robert Lewandowski    31
-                      ..
-Loris Karius          27
-Akaki Gogia           28
-Leon Dajaku           19
-Tim Maciejewski       19
-Joshua Mees           24
-Name: Age, Length: 177, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="zusammenhangende-spalten-slicing">
-<h3>Zusammenhängende Spalten: Slicing<a class="headerlink" href="#zusammenhangende-spalten-slicing" title="Link to this heading">#</a></h3>
-<p>Wenn wir beispielsweise die Anzahl der Spiele (<code class="docutils literal notranslate"><span class="pre">Matches</span></code>), die ein Spieler in
-der Saison absolviert hat, mit der Anzahl der Spiele, in denen er vom Anfang an
-auf dem Platz stand (<code class="docutils literal notranslate"><span class="pre">Starts</span></code>) vergleichen wollen, so können wir die beiden
-aufeinanderfolgenden Spalten ‘Matches’ und ‘Starts’ als Slice ausschneiden.</p>
+<section id="slicing-von-spalten">
+<h3>Slicing von Spalten<a class="headerlink" href="#slicing-von-spalten" title="Link to this heading">#</a></h3>
+<p>Wenden wir uns nun dem Slicing von Spalten zu. Möchten wir beispielsweise die
+Anzahl der Spiele (<code class="docutils literal notranslate"><span class="pre">Matches</span></code>), die ein Spieler in der Saison absolviert hat, mit
+der Anzahl der Spiele, in denen er vom Anfang an auf dem Platz stand (<code class="docutils literal notranslate"><span class="pre">Starts</span></code>)
+vergleichen, so können wir die beiden aufeinanderfolgenden Spalten ‘Matches’ und
+‘Starts’ als sogenannten <strong>Slice</strong> ausschneiden. Dazu müssen wir jedoch das
+Attribut <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> verwenden, das uns fortgeschrittene Techniken des Zugriffs
+bietet. Allerdings müssen wir Python mitteilen, dass diesmal Spalten und nicht
+Zeilen gemeint sind. Die Dokumentation von <code class="docutils literal notranslate"><span class="pre">loc[]</span></code> zeigt uns, dass Spalten nach
+einem Komma angegeben werden. Damit alle Zeilen dabei sind, brauchen wir als
+erstes Argument den Doppelpunkt.</p>
 <figure class="align-center" id="fig08-05">
 <a class="reference internal image-reference" href="../_images/tabelle_spalte_slice.png"><img alt="Slice von Spalten einer Tabelle" src="../_images/tabelle_spalte_slice.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Auf mehrere zusammenhängende Spalten der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">start:stopp]</span></code> zugegriffen. Das nennt man Slicing.</span><a class="headerlink" href="#fig08-05" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Auf mehrere zusammenhängende Spalten der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">start:stopp]</span></code>
+zugegriffen. Das nennt man Slicing.</span><a class="headerlink" href="#fig08-05" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Analog zum Slicing von Zeilen wird ein Slicing von Spalten durchgeführt, indem
-der Anfangsspaltenindex hingeschrieben wird, dann ein Doppelpunkt gesetzt wird
-und dann der Endspaltenindex notiert wird. Das folgende Beispiel zeigt das
-Slicing zweier Spalten.</p>
+<p>Das folgende Beispiel zeigt das Slicing zweier Spalten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiele</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Matches&#39;</span> <span class="p">:</span> <span class="s1">&#39;Starts&#39;</span><span class="p">]</span>
@@ -1109,76 +1189,6 @@ Joshua Mees               1       0
 [177 rows x 2 columns]
 </pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="selektion-unzusammenhangender-spalten-per-liste">
-<h3>Selektion unzusammenhängender Spalten per Liste<a class="headerlink" href="#selektion-unzusammenhangender-spalten-per-liste" title="Link to this heading">#</a></h3>
-<p>Die Anzahl der Spiele (<code class="docutils literal notranslate"><span class="pre">Matches</span></code>) und die Anzahl der gespielten Minuten in der
-kompletten Saison (<code class="docutils literal notranslate"><span class="pre">Mins</span></code>) die Anzahl der Spiele (‘Matches’) miteinander könnte
-aufschlussreich sein, um die durchschnittliche Minutenzahl pro Spiel zu
-ermitteln. Da die Spalten nicht nebeneinander liegen, müssen wir eine Liste
-benutzen, um sie zu selektieren.</p>
-<figure class="align-center" id="fig08-06">
-<a class="reference internal image-reference" href="../_images/tabelle_spalte_selektion.png"><img alt="Selektion von Spalten einer Tabelle" src="../_images/tabelle_spalte_selektion.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Auf mehrere unzusammenhängende Spalten der Tabelle wird mit <code class="docutils literal notranslate"><span class="pre">.loc[:,</span> <span class="pre">list]</span></code> zugegriffen. Das nennt man Selektion.</span><a class="headerlink" href="#fig08-06" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiele_minuten</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Matches&#39;</span><span class="p">,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spiele_minuten</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Matches  Mins
-Name                             
-Manuel Neuer             33  2970
-Thomas Müller            32  2674
-David Alaba              32  2675
-Jérôme Boateng           29  2368
-Robert Lewandowski       29  2458
-...                     ...   ...
-Loris Karius              4   292
-Akaki Gogia               7   140
-Leon Dajaku               2    37
-Tim Maciejewski           1     8
-Joshua Mees               1     5
-
-[177 rows x 2 columns]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie sich die folgenden Spalten anzeigen:</p>
-<ul class="simple">
-<li><p>Nationality</p></li>
-<li><p>Nationality bis Age</p></li>
-<li><p>Nationality, Age und Matches</p></li>
-</ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_spalte</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Nationality&#39;</span><span class="p">]</span>
-<span class="n">data_slice</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Nationality&#39;</span> <span class="p">:</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="n">data_selektion</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Nationality&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Matches&#39;</span><span class="p">]]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">data_spalte</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_slice</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_selektion</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
 </section>
@@ -1483,8 +1493,8 @@ Ragnar Ache
 </div>
 </div>
 </section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
 <p>In diesem Abschnitt konnten wir nur die Basis-Funktionalitäten streifen.
 Natürlich ist auch möglich, Bereiche zu sortieren oder gruppieren. Im nächsten
 Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
@@ -1557,21 +1567,24 @@ Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zeilen">Zugriff auf Zeilen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-zeile">Einzelne Zeile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-zeilen-slicing">Zusammenhängende Zeilen: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-zeilen-per-liste">Selektion unzusammenhängender Zeilen per Liste</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-spalten">Zugriff auf Spalten</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-spalte">Einzelne Spalte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhangende-spalten-slicing">Zusammenhängende Spalten: Slicing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-unzusammenhangender-spalten-per-liste">Selektion unzusammenhängender Spalten per Liste</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-spalten-per-liste">Selektion Spalten per Liste</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zeilen">Zugriff auf Zeilen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einzelne-zeile">Einzelne Zeile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektion-zeilen-per-liste">Selektion Zeilen per Liste</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-von-zeilen">Slicing von Zeilen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-von-spalten">Slicing von Spalten</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-zellen">Zugriff auf Zellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtern">Filtern</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

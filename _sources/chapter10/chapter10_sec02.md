@@ -15,9 +15,9 @@ kernelspec:
 # 10.2 Arbeiten mit Tabellendaten
 
 Eine Tabellenkalkulationssoftware wie LibreOffice Calc, Excel oder Number ist
-nicht nur nützlich, um Daten zu sammeln und zu speichern, sondern auch um
-statistische Auswertungen durchzuführen. In diesem Kapitel geht es darum, wie
-auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.
+nicht nur nützlich, um Daten zu sammeln, sondern auch um sie zu bearbeiten. In
+diesem Kapitel geht es darum zu lernen, wie mit Pandas auf einzelne Zeilen,
+Spalten oder Zellen zugegriffen wird.
 
 ## Lernziele
 
@@ -31,20 +31,94 @@ auf einzelne Zeilen, Spalten oder Zellen zugegriffen wird.
 * Sie können ein DataFrame-Objekt nach einer Eigenschaft filtern.
 ```
 
-## Zugriff auf Zeilen
-
-Als erstes möchten wir ganze Zeilen der Tabelle lesen. Dazu verwenden wir das
-Attribut `.loc` mit passenden Indizes.
+## Zugriff auf Spalten
 
 Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
 Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
 bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.
 
-```{code-cell} ipython3
+```{code-cell}
 import pandas as pd
 data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
 data.head(10)
 ```
+
+### Einzelne Spalte
+
+Der Zugriff auf Spalten wird am häufigsten gebraucht, da üblicherweise in den
+Spalten die Merkmale der Datenobjekte stehen. Daher bietet Pandas dafür einen
+direkten Zugriff über die eckigen Klammern `[ ]` an.
+
+```{figure} pics/tabelle_spalte_einzeln.png
+:name: fig08_04
+:alt: Einzelne Spalte einer Tabelle
+:align: center
+:width: 50%
+
+Auf eine einzelne Spalte der Tabelle wird mit `[spaltenindex]` zugegriffen. 
+```
+
+Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex `Age`.
+
+```{code-cell}
+alter = data['Age']
+print(alter)
+```
+
+### Selektion Spalten per Liste
+
+Wir möchten nun die Anzahl der Spiele (`Matches`) und die Anzahl der gespielten
+Minuten in der kompletten Saison (`Mins`) auswerten, um beispielsweise die
+durchschnittliche Minutenzahl pro Spiel zu ermitteln. Da die Spalten nicht
+nebeneinander liegen, müssen wir eine Liste benutzen, um sie zu selektieren. Die
+Auswahl der Spalten wird in der Fachsprache **Selektion** genannt.
+
+```{figure} pics/tabelle_spalte_selektion.png
+:name: fig08_06
+:alt: Selektion von Spalten einer Tabelle
+:align: center
+:width: 50%
+
+Auf mehrere unzusammenhängende Spalten der Tabelle wird mit `[list]`
+zugegriffen. Das nennt man Selektion.
+```
+
+Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.
+
+```{code-cell}
+spiele_minuten = data[['Matches', 'Mins']]
+print(spiele_minuten)
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie sich die folgenden Spalten anzeigen:
+* Nationality
+* Nationality, Age und Matches
+```
+
+```{code-cell}
+# Hier Ihr Code
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+data_spalte = data['Nationality']
+data_selektion = data[['Nationality','Age', 'Matches']]
+
+print(data_spalte)
+print(data_selektion)
+```
+````
+
+## Zugriff auf Zeilen
+
+Der Zugriff auf Zeilen erfordert eine Erweiterung der Syntax. Über das Attribut
+`loc[]` stellt Pandas nicht nur den Zugriff auf Zeilen zur Verfügung, sondern
+ermöglicht auch fortgeschritte Zugriffsmöglichkeiten wie beispielsweise das
+Slicing, wie wir später sehen werden. Aber zunächst starten wir mit dem Zugriff
+auf einzelne Zeilen.
 
 ### Einzelne Zeile
 
@@ -64,21 +138,79 @@ Um eine ganze Zeile aus der Tabelle herauszugreifen, verwenden wir das Attribut
 wir betrachten wollen. Da wir beim Import die Namen als Zeileindex gesetzt
 haben, lautet der Zugriff also wie folgt:
 
-```{code-cell} ipython3
+```{code-cell}
 zeile = data.loc['Thomas Müller']
 print(zeile)
 ```
 
-### Zusammenhängende Zeilen: Slicing
+### Selektion Zeilen per Liste
 
-Wenn wir auf mehrere Zeilen gleichzeitig zugreifen wollen, gibt es zwei
-Möglichkeiten:
+Wenn wir auf mehrere Zeilen zugreifen wollen, die nicht zusammenhängen, so nennt
+man das wie bei den Spalten ebenfalls Selektion.
 
-1. Die Zeilen folgen direkt aufeinander, sind also zusammenhängend.
-2. Zwischen den einzelnen Zeilen sind Lücken.
+```{figure} pics/tabelle_zeile_selektion.png
+:name: fig08_03
+:alt: Slicing von Zeilen einer Tabelle
+:align: center
+:width: 50%
 
-Als erstes betrachten wir zusammenhängende Zeilen. Der Zugriff auf
-zusammenhängende Bereiche wird in der Informatik **Slicing** genannt.
+Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit `.loc[list]`
+zugegriffen. Das nennt man Selektion.
+```
+
+Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir `.loc[]` eine
+Liste mit den gewünschten Zeilenindizes.
+
+```{code-cell}
+zeilen_selektion = data.loc[['Manuel Neuer', 'David Alaba']]
+print(zeilen_selektion)
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie sich die folgenden Zeilen anzeigen:
+* Kingsley Coman
+* Kingsley Coman bis Alphonso Davies
+* Robert Lewandowski, Kingsley Coman und Serge Gnabry
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+data_zeile = data.loc['Kingsley Coman']
+data_selektion = data.loc[['Robert Lewandowski','Kingsley Coman', 'Serge Gnabry']]
+
+print(data_zeile)
+print(data_selektion)
+```
+````
+
+## Slicing
+
+Wenn wir auf mehrere Zeilen oder Spalten gleichzeitig zugreifen wollen, gibt es
+zwei Möglichkeiten:
+
+1. Zwischen den einzelnen Zeilen/Spalten sind Lücken, wir haben eine
+   unzusammenhängende Selektion.
+2. Die Zeilen oder Spalten folgen direkt aufeinander, sind also zusammenhängend.
+
+Den ersten Fall haben wir bereits oben dargestellt. Bei Spalten wird die
+Selektion über eine Liste und eckige Klammern `[]` realisiert, bei Zeilen über
+eine Liste, die in `.loc[]` eingesetzt wird.
+
+Der Zugriff auf zusammenhängende Bereiche wird in der Informatik **Slicing**
+genannt. Wir werden uns die beiden Fälle
+
+* Slicing für Zeilen
+* Slicing für Spalten
+
+anschauen, aber zunächst betrachten wir das Slicing von Zeilen.
+
+### Slicing von Zeilen
 
 ```{figure} pics/tabelle_zeile_slice.png
 :name: fig08_02
@@ -86,7 +218,8 @@ zusammenhängende Bereiche wird in der Informatik **Slicing** genannt.
 :align: center
 :width: 50%
 
-Auf mehrere zusammenhängende Zeilen der Tabelle wird mit `.loc[start:stopp]` zugegriffen. Das nennt man Slicing.
+Auf mehrere zusammenhängende Zeilen der Tabelle wird mit `.loc[start:stopp]`
+zugegriffen. Das nennt man Slicing.
 ```
 
 Bei der Angabe des Bereiches gibt man den Anfangsindex gefolgt von einem
@@ -112,93 +245,18 @@ data_slice_from_lewandowski = data.loc['Robert Lewandowski': ]
 print(data_slice_from_lewandowski)
 ```
 
-### Selektion unzusammenhängender Zeilen per Liste
+### Slicing von Spalten
 
-Soll auf mehrere Zeilen zugegriffen werden, die nicht zusammenhängen, so nennt
-man das **Selektion**.
-
-```{figure} pics/tabelle_zeile_selektion.png
-:name: fig08_03
-:alt: Slicing von Zeilen einer Tabelle
-:align: center
-:width: 50%
-
-Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit `.loc[list]` zugegriffen. Das nennt man Selektion.
-```
-
-Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir `.loc[]` eine
-Liste mit den gewünschten Zeilenindizes.
-
-```{code-cell} ipython3
-zeilen_selektion = data.loc[ ['Manuel Neuer', 'David Alaba'] ]
-print(zeilen_selektion)
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie sich die folgenden Zeilen anzeigen:
-* Kingsley Coman
-* Kingsley Coman bis Alphonso Davies
-* Robert Lewandowski, Kingsley Coman und Serge Gnabry
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-data_zeile = data.loc['Kingsley Coman']
-data_slice = data.loc['Kingsley Coman' : 'Alphonso Davies']
-data_selektion = data.loc[['Robert Lewandowski','Kingsley Coman', 'Serge Gnabry']]
-
-print(data_zeile)
-print(data_slice)
-print(data_selektion)
-```
-````
-
-## Zugriff auf Spalten
-
-Auf Spalten können wir zugreifen, indem wir `.loc` mit zwei Argumenten benutzen.
-Dann steht das 1. Argument für den Zeilenindex und das 2. Argument für den
-Spaltenindex. Wenn wir die komplette Spalte betrachten wollen, setzen wir für
-den Zeilenindex einfach einen Doppelpunkt `:`. Damit werden automatisch als
-Anfangsindex die erste Zeile und als Endindex die letzte Zeile gewählt.
-Ansonsten erfolgen die Zugriffe auf Spalten analog zu den Zugriffen auf Zeilen
-über die drei Möglichkeiten
-
-* einzelne Spalte,
-* zusammenhängende Spalten (Slicing) und
-* unzusammenhängende Spalten als Liste (Selektion).
-
-### Einzelne Spalte
-
-Als nächstes greifen wir auf eine Spalte der Tabelle zu.
-
-```{figure} pics/tabelle_spalte_einzeln.png
-:name: fig08_04
-:alt: Einzelne Spalte einer Tabelle
-:align: center
-:width: 50%
-
-Auf eine einzelne Spalte der Tabelle wird mit `.loc[:, spaltenindex]` zugegriffen. 
-```
-
-Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex `Age`.
-
-```{code-cell} ipython3
-alter = data.loc[:, 'Age']
-print(alter)
-```
-
-### Zusammenhängende Spalten: Slicing
-
-Wenn wir beispielsweise die Anzahl der Spiele (`Matches`), die ein Spieler in
-der Saison absolviert hat, mit der Anzahl der Spiele, in denen er vom Anfang an
-auf dem Platz stand (`Starts`) vergleichen wollen, so können wir die beiden
-aufeinanderfolgenden Spalten 'Matches' und 'Starts' als Slice ausschneiden.
+Wenden wir uns nun dem Slicing von Spalten zu. Möchten wir beispielsweise die
+Anzahl der Spiele (`Matches`), die ein Spieler in der Saison absolviert hat, mit
+der Anzahl der Spiele, in denen er vom Anfang an auf dem Platz stand (`Starts`)
+vergleichen, so können wir die beiden aufeinanderfolgenden Spalten 'Matches' und
+'Starts' als sogenannten **Slice** ausschneiden. Dazu müssen wir jedoch das
+Attribut `.loc[]` verwenden, das uns fortgeschrittene Techniken des Zugriffs
+bietet. Allerdings müssen wir Python mitteilen, dass diesmal Spalten und nicht
+Zeilen gemeint sind. Die Dokumentation von `loc[]` zeigt uns, dass Spalten nach
+einem Komma angegeben werden. Damit alle Zeilen dabei sind, brauchen wir als
+erstes Argument den Doppelpunkt.
 
 ```{figure} pics/tabelle_spalte_slice.png
 :name: fig08_05
@@ -206,67 +264,16 @@ aufeinanderfolgenden Spalten 'Matches' und 'Starts' als Slice ausschneiden.
 :align: center
 :width: 50%
 
-Auf mehrere zusammenhängende Spalten der Tabelle wird mit `.loc[:, start:stopp]` zugegriffen. Das nennt man Slicing.
+Auf mehrere zusammenhängende Spalten der Tabelle wird mit `.loc[:, start:stopp]`
+zugegriffen. Das nennt man Slicing.
 ```
 
-Analog zum Slicing von Zeilen wird ein Slicing von Spalten durchgeführt, indem
-der Anfangsspaltenindex hingeschrieben wird, dann ein Doppelpunkt gesetzt wird
-und dann der Endspaltenindex notiert wird. Das folgende Beispiel zeigt das
-Slicing zweier Spalten.
+Das folgende Beispiel zeigt das Slicing zweier Spalten.
 
 ```{code-cell} ipython3
 spiele = data.loc[:, 'Matches' : 'Starts']
 print(spiele)
 ```
-
-### Selektion unzusammenhängender Spalten per Liste
-
-Die Anzahl der Spiele (`Matches`) und die Anzahl der gespielten Minuten in der
-kompletten Saison (`Mins`) die Anzahl der Spiele ('Matches') miteinander könnte
-aufschlussreich sein, um die durchschnittliche Minutenzahl pro Spiel zu
-ermitteln. Da die Spalten nicht nebeneinander liegen, müssen wir eine Liste
-benutzen, um sie zu selektieren.
-
-```{figure} pics/tabelle_spalte_selektion.png
-:name: fig08_06
-:alt: Selektion von Spalten einer Tabelle
-:align: center
-:width: 50%
-
-Auf mehrere unzusammenhängende Spalten der Tabelle wird mit `.loc[:, list]` zugegriffen. Das nennt man Selektion.
-```
-
-Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.
-
-```{code-cell} ipython3
-spiele_minuten = data.loc[:, ['Matches', 'Mins'] ]
-print(spiele_minuten)
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie sich die folgenden Spalten anzeigen:
-* Nationality
-* Nationality bis Age
-* Nationality, Age und Matches
-```
-
-```{code-cell} ipython3
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-data_spalte = data.loc[:, 'Nationality']
-data_slice = data.loc[:, 'Nationality' : 'Age']
-data_selektion = data.loc[:, ['Nationality','Age', 'Matches']]
-
-print(data_spalte)
-print(data_slice)
-print(data_selektion)
-```
-````
 
 ## Zugriff auf Zellen
 
@@ -390,7 +397,7 @@ for zeilenindex in eintracht_frankfurt.index:
     print(zeilenindex)
 ```
 
-## Zusammenfassung
+## Zusammenfassung und Ausblick
 
 In diesem Abschnitt konnten wir nur die Basis-Funktionalitäten streifen.
 Natürlich ist auch möglich, Bereiche zu sortieren oder gruppieren. Im nächsten

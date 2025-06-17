@@ -502,7 +502,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardabweichung-std">Standardabweichung std</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">Minimum und Maximum mit min und max</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantil-mit-quantile">Quantil mit quantile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -986,7 +986,7 @@ Methode <code class="docutils literal notranslate"><span class="pre">.count()</s
 wir ein Pandas-Series-Objekt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1086,10 +1086,10 @@ clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
 </details></section>
 <section id="standardabweichung-std">
 <h2>Standardabweichung std<a class="headerlink" href="#standardabweichung-std" title="Link to this heading">#</a></h2>
-<p>Das ‘st’ in <code class="docutils literal notranslate"><span class="pre">.std()</span></code>für Standard steht, ist nachvollziehbar. Der dritte
-Buchstabe ‘d’ kommt von ‘deviation’, also Abweichung. Somit ist wiederum die
-Methode nach dem englischen Fachbegriff ‘standard deviation’ benannt.  Welche
-Standardabweichung erhalten wir beim Alter?</p>
+<p>Das ‘st’ in <code class="docutils literal notranslate"><span class="pre">.std()</span></code> steht für Standard. Der dritte Buchstabe ‘d’ kommt von
+‘deviation’, also Abweichung. Somit ist wiederum die Methode nach dem englischen
+Fachbegriff ‘standard deviation’ benannt.  Welche Standardabweichung erhalten
+wir beim Alter?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1115,9 +1115,9 @@ dtype: float64
 </div>
 </div>
 </div>
-<p>Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
+<p>Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelesen. Wenn wir den Wert
 extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
-dann <code class="docutils literal notranslate"><span class="pre">.std()</span></code> oder erst <code class="docutils literal notranslate"><span class="pre">.std()</span></code>und dann Selektion nach ‘Age’. Probieren wir es
+dann <code class="docutils literal notranslate"><span class="pre">.std()</span></code> oder erst <code class="docutils literal notranslate"><span class="pre">.std()</span></code> und dann Selektion nach ‘Age’. Probieren wir es
 aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1188,7 +1188,7 @@ bei denen nur ‘FW’ eingetragen ist.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">stuermer</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==============&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimale Tore: {stuermer.min()}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Minimale Tore: </span><span class="si">{</span><span class="n">stuermer</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1219,7 +1219,7 @@ Leon Dajaku            0
 Joshua Mees            0
 Name: Goals, dtype: int64
 ==============
-Minimale Tore: {stuermer.min()}
+Minimale Tore: 0
 </pre></div>
 </div>
 </div>
@@ -1227,9 +1227,10 @@ Minimale Tore: {stuermer.min()}
 </section>
 <section id="quantil-mit-quantile">
 <h2>Quantil mit quantile<a class="headerlink" href="#quantil-mit-quantile" title="Link to this heading">#</a></h2>
-<p>Das Quantil <span class="math notranslate nohighlight">\(p \%\)</span> ist der Wert, bei dem <span class="math notranslate nohighlight">\(p %\)</span> der Einträge kleiner als diese
-Zahl sind und <span class="math notranslate nohighlight">\(100 \% - p \%\)</span> sind größer. Meist werden nicht Prozentzahlen
-verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht.</p>
+<p>Das Quantil <span class="math notranslate nohighlight">\(p \%\)</span> ist der Wert, bei dem <span class="math notranslate nohighlight">\(p %\)</span> der Einträge kleiner oder gleich
+als diese Zahl sind und <span class="math notranslate nohighlight">\(100 \% - p \%\)</span> sind größer. Meist werden nicht
+Prozentzahlen verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 %
+steht.</p>
 <p>Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
 Karten wissen. Mit der Methode <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code> können wir diesen Wert leicht aus
 den Daten holen.</p>
@@ -1312,8 +1313,8 @@ Makoto Hasebe          DF,MF             5
 </div>
 </div>
 </section>
-<section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link to this heading">#</a></h2>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
 <p>In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
 beschäftigt, die Pandas mit der Methode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> zusammenfasst, die aber
 auch einzeln über</p>
@@ -1324,7 +1325,8 @@ auch einzeln über</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code> und <code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.quantile()</span></code></p></li>
 </ul>
-<p>berechnet und ausgegeben werden können.</p>
+<p>berechnet und ausgegeben werden können. Im nächsten Kapitel werden wir lernen,
+die Daten zu visualisieren.</p>
 </section>
 </section>
 
@@ -1400,7 +1402,7 @@ auch einzeln über</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardabweichung-std">Standardabweichung std</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-und-maximum-mit-min-und-max">Minimum und Maximum mit min und max</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantil-mit-quantile">Quantil mit quantile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
