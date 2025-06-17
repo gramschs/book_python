@@ -54,7 +54,7 @@ Laden Sie die Datei
 herunter (siehe vorherige Aufgabe).
 
 1. Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele
-   Zeilen und  und wie viele Einträge sind gültig?
+   Zeilen und wie viele Einträge sind gültig?
 2. Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (`2.
    Bundesliga`) und speichern Sie diese Daten in der Variable `zweite`.
 3. Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste
