@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -497,142 +497,257 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Link to this heading">#</a></h1>
+<p>Für alle Übungsaufgaben verwenden wir den Datensatz
+<code class="docutils literal notranslate"><span class="pre">schlaf_gesundheit_lifestyle_datensatz.csv</span></code>, der Informationen über
+Schlafgewohnheiten und Lebensstil von 374 Personen enthält. Der Datensatz ist
+eine deutsche Übersetzung des Datensatzes “Health and Sleep Relation” von
+<a class="reference external" href="https://www.kaggle.com/datasets/orvile/health-and-sleep-relation-2024/data">Kaggle</a>.</p>
+<p>Laden Sie ihn hier herunter: <a class="reference download external" download="" href="https://nextcloud.frankfurt-university.de/s/SGjPamEi4saWwaj"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">schlaf_gesundheit_lifestyle_datensatz.csv</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Datensatz einlesen</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schlaf_gesundheit_lifestyle_datensatz.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 11.1</p>
-<p>Laden Sie die Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC">20220801_Marktwert_Bundesliga.csv</a>
-herunter. Die ersten 5 Zeilen sind Kommentare, die beim Einlesen übersprungen
-werden sollten.</p>
+<p class="admonition-title">Übung 11.1: Streudiagramme</p>
+<p>Laden Sie die Datei <code class="docutils literal notranslate"><span class="pre">schlaf_gesundheit_lifestyle_datensatz.csv</span></code> herunter.</p>
 <ol class="arabic simple">
-<li><p>Verschaffen Sie sich erst einen Überblick über die Daten.</p></li>
-<li><p>Filtern Sie dann die Daten nach der Ligazugehörigkeit (‘Bundesliga’, ‘2.
-Bundesliga’ und ‘3. Liga’).</p></li>
-<li><p>Lassen Sie dann für jede der drei Ligen den Wert der Vereine visualisieren.</p></li>
+<li><p>Verschaffen Sie sich erst einen Überblick über die Daten mit <code class="docutils literal notranslate"><span class="pre">data.info()</span></code>
+und <code class="docutils literal notranslate"><span class="pre">data.head()</span></code>.</p></li>
+<li><p>Erstellen Sie ein Streudiagramm, das die Beziehung zwischen Alter (x-Achse)
+und Schlafdauer (y-Achse) zeigt. Verwenden Sie blaue Kreise als Marker und
+beschriften Sie die Achsen: “Alter [Jahre]” und “Schlafdauer [Stunden]”.
+Titel: “Zusammenhang zwischen Alter und Schlafdauer”. Fügen Sie mit
+<code class="docutils literal notranslate"><span class="pre">plt.grid(True,</span> <span class="pre">alpha=0.3)</span></code> Gitterlinien hinzu.</p></li>
+<li><p>Erstellen Sie ein zweites Streudiagramm, das die Beziehung zwischen
+Stresslevel (x-Achse) und Herzfrequenz (y-Achse) zeigt. Verwenden Sie rote
+Dreiecke als Marker (marker=‘^’). Beschriften Sie die Achsen entsprechend und
+setzen Sie einen aussagekräftigen Titel.</p></li>
 </ol>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.style</span> <span class="k">as</span> <span class="nn">style</span>
+<span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8&#39;</span><span class="p">)</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Import der Tabelle</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;20220801_Marktwert_Bundesliga.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Datensatz einlesen</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schlaf_gesundheit_lifestyle_datensatz.csv&#39;</span><span class="p">)</span>
 
-<span class="c1"># Überblick</span>
+<span class="c1"># 1. Überblick über die Daten</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="c1"># Filtern nach den drei Ligen</span>
-<span class="n">erste_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">zweite_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2. Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">dritte_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;3. Liga&#39;</span> <span class="p">]</span>
-
-<span class="c1"># 1. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Wert&#39;</span><span class="p">]</span>
-
+<span class="c1"># 2. Streudiagramm: Alter vs. Schlafdauer</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Erste Bundesliga&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Alter&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Schlafdauer&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Alter [Jahre]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schlafdauer [Stunden]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zusammenhang zwischen Alter und Schlafdauer&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1"># 2. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Wert&#39;</span><span class="p">]</span>
-
+<span class="c1"># 3. Streudiagramm: Stresslevel vs. Herzfrequenz</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zweite Bundesliga&#39;</span><span class="p">);</span>
-
-<span class="c1"># 3. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Wert&#39;</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dritte Bundesliga&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Stresslevel&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Herzfrequenz&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stresslevel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Herzfrequenz [Schläge/min]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zusammenhang zwischen Stress und Herzfrequenz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 11.2</p>
-<p>Verwenden Sie nun die Daten aus der vorherigen Übung, um die Kadergröße der
-Vereine zu visualisieren. Lassen Sie für jede Liga ein eigenes Diagramm
-generieren, das die Kadergröße für jeden Verein zeigt. Zudem soll jeweils der
-Mittelwert als rote horizontale Linie und die Standardabweichung als
-Fehlerbalken dargestellt werden.</p>
+<p class="admonition-title">Übung 11.2: Balkendiagramme und Histogramme</p>
+<ol class="arabic simple">
+<li><p>Erstellen Sie ein Balkendiagramm für eine Auswahl von 5 Personen aus dem
+Datensatz. Filtern Sie die ersten 5 Zeilen mit <code class="docutils literal notranslate"><span class="pre">data.head(5)</span></code> und stellen Sie
+deren Alter auf der x-Achse und Schlafdauer auf der y-Achse dar. Verwenden
+Sie verschiedene Farben, drehen Sie die x-Achsenbeschriftung um 45° und
+setzen Sie den Titel “Schlafdauer der ersten 5 Personen”.</p></li>
+<li><p>Erstellen Sie ein Histogramm der Schlafdauer aus dem Datensatz mit 15 Bins,
+Transparenz (alpha=0.7), grüner Farbe mit schwarzen Rändern. Berechnen Sie
+den Durchschnitt der Schlafdauer mit <code class="docutils literal notranslate"><span class="pre">data['Schlafdauer'].mean()</span></code> und fügen
+Sie eine vertikale Linie für diesen Durchschnittswert hinzu. Erstellen Sie
+eine Legende, die den Durchschnittswert anzeigt.</p></li>
+</ol>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Import der Tabelle</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;20220801_Marktwert_Bundesliga.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schlaf_gesundheit_lifestyle_datensatz.csv&#39;</span><span class="p">)</span>
 
-<span class="c1"># Filtern nach den drei Ligen</span>
-<span class="n">erste_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">zweite_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2. Bundesliga&#39;</span> <span class="p">]</span>
-<span class="n">dritte_bundesliga</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ligazugehörigkeit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;3. Liga&#39;</span> <span class="p">]</span>
-
-<span class="c1"># Visualisierung 1. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">erste_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Kadergröße&#39;</span><span class="p">]</span>
-<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="c1"># 1. Balkendiagramm: Erste 5 Personen</span>
+<span class="n">personen</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Kadergröße&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Erste Bundesliga&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">personen</span><span class="p">[</span><span class="s1">&#39;Schlafdauer&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schlafdauer [Stunden]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Schlafdauer der ersten 5 Personen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">personen</span><span class="p">[</span><span class="s1">&#39;Person_ID&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1"># Visualisierung 2. Bundesliga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">zweite_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Kadergröße&#39;</span><span class="p">]</span>
-<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="c1"># 2. Histogramm: Schlafdauer</span>
+<span class="n">durchschnitt_schlafdauer</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Schlafdauer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Kadergröße&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zweite Bundesliga&#39;</span><span class="p">);</span>
-
-<span class="c1"># Visualisierung 3. Liga</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">dritte_bundesliga</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Kadergröße&#39;</span><span class="p">]</span>
-<span class="n">mittelwert</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Kadergröße&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dritte Bundesliga&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Schlafdauer&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">durchschnitt_schlafdauer</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Durchschnitt: </span><span class="si">{</span><span class="n">durchschnitt_schlafdauer</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">h&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Schlafdauer [Stunden]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Häufigkeit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Verteilung der Schlafdauer&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="miniexercise admonition">
-<p class="admonition-title">Übung 11.3</p>
+<p class="admonition-title">Übung 11.3 Subplots</p>
+<p>Analysieren Sie die durchschnittliche Schlafqualität nach Berufsgruppen.</p>
+<ol class="arabic simple">
+<li><p>Berechnen Sie die durchschnittliche Schlafqualität pro Beruf.</p></li>
+<li><p>Erstellen Sie ein horizontales Balkendiagramm (<code class="docutils literal notranslate"><span class="pre">plt.barh</span></code>) und sortieren Sie
+die Berufe nach Schlafqualität (bester zuerst).</p></li>
+<li><p>Fügen Sie eine horizontale Linie für den Gesamtdurchschnitt hinzu.</p></li>
+<li><p>Verwenden Sie ein professionelles Styling-Theme
+(<code class="docutils literal notranslate"><span class="pre">plt.style.use('seaborn-v0_8')</span></code>).</p></li>
+<li><p>Titel: “Durchschnittliche Schlafqualität nach Beruf”.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schlaf_gesundheit_lifestyle_datensatz.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Professionelles Styling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8&#39;</span><span class="p">)</span>
+
+<span class="c1"># 1. Filtere Daten für 5 verschiedene Berufe</span>
+<span class="n">arzt_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Beruf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Arzt&#39;</span><span class="p">]</span>
+<span class="n">lehrer_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Beruf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Lehrer&#39;</span><span class="p">]</span>
+<span class="n">manager_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Beruf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Manager&#39;</span><span class="p">]</span>
+<span class="n">ingenieur_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Beruf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Ingenieur&#39;</span><span class="p">]</span>
+<span class="n">anwalt_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Beruf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Anwalt&#39;</span><span class="p">]</span>
+
+<span class="c1"># 2. Berechne Durchschnitte manuell</span>
+<span class="n">berufe</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Arzt&#39;</span><span class="p">,</span> <span class="s1">&#39;Lehrer&#39;</span><span class="p">,</span> <span class="s1">&#39;Manager&#39;</span><span class="p">,</span> <span class="s1">&#39;Ingenieur&#39;</span><span class="p">,</span> <span class="s1">&#39;Anwalt&#39;</span><span class="p">]</span>
+<span class="n">durchschnitte</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">arzt_data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="n">lehrer_data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="n">manager_data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="n">ingenieur_data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="n">anwalt_data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">durchschnitte</span><span class="p">)</span>
+
+<span class="c1"># 3. Gesamtdurchschnitt berechnen</span>
+<span class="n">gesamtdurchschnitt</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># 4. Balkendiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">berufe</span><span class="p">,</span> <span class="n">durchschnitte</span><span class="p">)</span>
+
+<span class="c1"># Horizontale Linie für Gesamtdurchschnitt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">gesamtdurchschnitt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Gesamtdurchschnitt: </span><span class="si">{</span><span class="n">gesamtdurchschnitt</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Durchschnittliche Schlafqualität (1-10)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Beruf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Durchschnittliche Schlafqualität nach Beruf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 11.4: Dashboard für Schlafanalyse</p>
+<p>Erstellen Sie ein 2x2 Subplot-Dashboard mit folgenden Visualisierungen:</p>
+<ul class="simple">
+<li><p>Subplot 1 (oben links): Histogramm der Schlafdauer für alle Personen</p></li>
+<li><p>Subplot 2 (oben rechts): Streudiagramm Stresslevel vs. Schlafqualität</p></li>
+<li><p>Subplot 3 (unten links): Balkendiagramm der Herzfrequenz für die ersten 6 Personen</p></li>
+<li><p>Subplot 4 (unten rechts): Streudiagramm Alter vs. Aktivitätslevel</p></li>
+</ul>
+<p>Zusätzliche Anforderungen:</p>
+<ul class="simple">
+<li><p>Figur-Größe: 15x12 Zoll</p></li>
+<li><p>Gemeinsamer Haupttitel: “Schlaf- und Gesundheitsdashboard”</p></li>
+</ul>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;schlaf_gesundheit_lifestyle_datensatz.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2x2 Subplot-Layout erstellen</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="c1"># Subplot 1: Histogramm der Schlafdauer</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Schlafdauer&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Schlafdauer [h]&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Häufigkeit&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Verteilung der Schlafdauer&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Subplot 2: Streudiagramm Stresslevel vs. Schlafqualität</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Stresslevel&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Schlafqualitaet&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Stresslevel&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Schlafqualität&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Stress vs. Schlafqualität&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Subplot 3: Balkendiagramm Herzfrequenz (erste 6 Personen)</span>
+<span class="n">erste_6</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">farben</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">]</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">erste_6</span><span class="p">)),</span> <span class="n">erste_6</span><span class="p">[</span><span class="s1">&#39;Herzfrequenz&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">farben</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Herzfrequenz [Schläge/min]&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Herzfrequenz (erste 6 Personen)&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">erste_6</span><span class="p">)))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;P</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">erste_6</span><span class="p">))])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Subplot 4: Streudiagramm Alter vs. Aktivitätslevel</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Alter&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Aktivitaetslevel&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Alter [Jahre]&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Aktivitätslevel&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Alter vs. Aktivitätslevel&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Schlaf- und Gesundheitsdashboard&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 11.5: Random Walk</p>
 <p>Teilaufgabe 1:</p>
 <p>Programmieren Sie eine Funktion, die einen Random Walk mit dem Turtle-Modul
-implementiert (siehe Übung 7.4). Der Roboter soll 100x zufällig eine Richtung
-Osten, Süden, Westen oder Norden wählen und dann 10 Schritte laufen. Lassen Sie dann den Abstand zum Ursprung berechnen und von der Funktion zurückgeben.</p>
+implementiert (siehe Übung 7.5). Der Roboter soll 100x zufällig eine Richtung
+Osten, Süden, Westen oder Norden wählen und dann 10 Schritte laufen. Lassen Sie
+dann den Abstand zum Ursprung berechnen und von der Funktion zurückgeben.</p>
 <p>Tipp: Die aktuelle Position des Roboters kann mit der Methode <code class="docutils literal notranslate"><span class="pre">.position()</span></code>
 bestimmt werden. Die Anweisung <code class="docutils literal notranslate"><span class="pre">x,y</span> <span class="pre">=</span> <span class="pre">robo.position()</span></code> speichert die x-Position
 in x und entsprechend die y-Position in y, wenn Ihr Roboter <code class="docutils literal notranslate"><span class="pre">robo</span></code> heißt.</p>
@@ -668,7 +783,8 @@ die Bewegung nicht mehr animiert und nur der Laufweg angezeigt.</p>
     <span class="k">return</span> <span class="n">entfernung</span>
 </pre></div>
 </div>
-<p>Teilaufgabe 2: Durchführung von vielen Random Walks und Sammeln der Entfernungen in einer Liste (hier 500 Randon Walks):</p>
+<p>Teilaufgabe 2: Durchführung von vielen Random Walks und Sammeln der Entfernungen
+in einer Liste (hier 500 Randon Walks):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">clearscreen</span><span class="p">()</span>
     
 <span class="n">liste_entfernungen</span> <span class="o">=</span> <span class="p">[]</span>
