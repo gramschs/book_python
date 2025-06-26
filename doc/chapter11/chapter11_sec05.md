@@ -16,7 +16,12 @@ kernelspec:
 
 Für alle Übungsaufgaben verwenden wir den Datensatz
 `schlaf_gesundheit_lifestyle_datensatz.csv`, der Informationen über
-Schlafgewohnheiten und Lebensstil von 374 Personen enthält.
+Schlafgewohnheiten und Lebensstil von 374 Personen enthält. Der Datensatz ist
+eine deutsche Übersetzung des Datensatzes "Health and Sleep Relation" von
+[Kaggle](https://www.kaggle.com/datasets/orvile/health-and-sleep-relation-2024/data).
+
+Laden Sie ihn hier herunter: {download}`Download
+schlaf_gesundheit_lifestyle_datensatz.csv<https://nextcloud.frankfurt-university.de/s/SGjPamEi4saWwaj>`
 
 ```python
 import pandas as pd
