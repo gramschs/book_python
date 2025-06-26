@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.3 Visualisierung von DataFrames mit Fehlerbalken &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>11.3 DataFrames visualisieren &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übungen" href="chapter11_sec05.html" />
-    <link rel="prev" title="11.2 Streudiagramme" href="chapter11_sec02.html" />
+    <link rel="prev" title="11.2 Diskrete Daten und Häufigkeiten" href="chapter11_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -248,9 +248,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec01.html">11.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Streudiagramme</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.3 DataFrames visualisieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -483,7 +483,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.3 Visualisierung von DataFrames mit Fehlerbalken</h1>
+    <h1>11.3 DataFrames visualisieren</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -495,8 +495,10 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisierung-von-dataframes">Visualisierung von DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-vom-mittelwert-als-horizontale-linie">Plot vom Mittelwert als horizontale Linie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-der-standardabweichung-als-fehlerbalken">Plot der Standardabweichung als Fehlerbalken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referenzlinien-hinzufugen">Referenzlinien hinzufügen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots-fur-komplexere-darstellungen">Subplots für komplexere Darstellungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korrelationsanalyse-mit-streudiagrammen">Korrelationsanalyse mit Streudiagrammen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-von-grafiken">Export von Grafiken</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -509,18 +511,23 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualisierung-von-dataframes-mit-fehlerbalken">
-<h1>11.3 Visualisierung von DataFrames mit Fehlerbalken<a class="headerlink" href="#visualisierung-von-dataframes-mit-fehlerbalken" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataframes-visualisieren">
+<h1>11.3 DataFrames visualisieren<a class="headerlink" href="#dataframes-visualisieren" title="Link to this heading">#</a></h1>
+<p>Bisher haben wir die Daten für die Visualisierung manuell erzeugt. In diesem
+Kapitel beschäftigen wir uns damit, wie Pandas-DataFrames professionell
+visualisiert werden. Wir lernen fortgeschrittene Techniken kennen, die beispielsweise für das Anfertigen einer Bachelorarbeit wichtig sind.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können den Zeilenindex <strong>.index</strong> und den Spaltenindex <strong>.columns</strong> aus einem DataFrame extrahieren.</p></li>
+<li><p>Sie können den Zeilenindex <strong>.index</strong> und den Spaltenindex <strong>.columns</strong> aus
+einem DataFrame extrahieren.</p></li>
 <li><p>Sie können den Text der Achsenbeschriftung drehen.</p></li>
-<li><p>Sie können mit <strong>axhline()</strong> zu einem Plot eine horizontale
-Linie hinzufügen.</p></li>
-<li><p>Sie können Fehlerbalken mit <strong>errorbar()</strong> visualisieren.</p></li>
+<li><p>Sie können mit <strong>axhline()</strong> und <strong>axvline()</strong> Referenzlinien zu Plots hinzufügen.</p></li>
+<li><p>Sie können <strong>Subplots</strong> für komplexere Visualisierungen erstellen.</p></li>
+<li><p>Sie können <strong>Korrelationsanalysen</strong> graphisch aufbereiten.</p></li>
+<li><p>Sie können Plots für Bachelorarbeiten und Präsentationen optimieren.</p></li>
 </ul>
 </div>
 </section>
@@ -537,23 +544,24 @@ können mit</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">.index</span></code> auf den Zeilenindex und</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.columns</span></code> auf den Spaltenindex</p></li>
 </ul>
-<p>zugreifen. Übrigens, <code class="docutils literal notranslate"><span class="pre">.values</span></code> liefert die Werten in der Tabelle als
-NumPy-Array zurück. Aber das brauchen wir für die Visualisierung nicht, denn die
-Tabellendaten können direkt viualisiert werden.</p>
-<p>Wir verwenden wieder einen realistischen Datensatz und importieren den uns schon
-bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21
-(<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL">→ Download</a>).
-Dann lassen wir den Zeilen- und Spaltenindex direkt anzeigen:</p>
+<p>zugreifen. Die Methode <code class="docutils literal notranslate"><span class="pre">.to_numpy()</span></code> liefert die Werte in der Tabelle als
+NumPy-Array zurück. Das brauchen wir für die Visualisierung jedoch nicht, denn die
+Tabellendaten können direkt visualisiert werden.</p>
+<p>Wir verwenden einen realistischen Datensatz und importieren den uns schon
+bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21 (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL">→
+Download</a>). Dann
+lassen wir den Zeilen- und Spaltenindex direkt anzeigen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zeilenindex: &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Spaltenindex:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Spaltenindex:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -568,6 +576,7 @@ Index([&#39;Manuel Neuer&#39;, &#39;Thomas Müller&#39;, &#39;David Alaba&#39;, 
        &#39;Niko Gießelmann&#39;, &#39;Loris Karius&#39;, &#39;Akaki Gogia&#39;, &#39;Leon Dajaku&#39;,
        &#39;Tim Maciejewski&#39;, &#39;Joshua Mees&#39;],
       dtype=&#39;object&#39;, name=&#39;Name&#39;, length=177)
+
 Spaltenindex:
 Index([&#39;Club&#39;, &#39;Nationality&#39;, &#39;Position&#39;, &#39;Age&#39;, &#39;Matches&#39;, &#39;Starts&#39;, &#39;Mins&#39;,
        &#39;Goals&#39;, &#39;Assists&#39;, &#39;Penalty_Goals&#39;, &#39;Penalty_Attempted&#39;, &#39;xG&#39;, &#39;xA&#39;,
@@ -577,140 +586,120 @@ Index([&#39;Club&#39;, &#39;Nationality&#39;, &#39;Position&#39;, &#39;Age&#39;,
 </div>
 </div>
 </div>
-<p>So kann man direkt die Daten aus einem Pandas-DataFrame extrahieren und
-visualisieren. Wenn wir beispielsweise wissen wollen, wie alt die Spieler der
-Eintracht Frankfurt sind, filtern wir zuerst. Danach stellen wir auf der x-Achse
-die Namen der Spieler (= Zeilenindex) dar und auf der y-Achse das Alter (‘Age’).
-Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
-verwenden wir ein Balkendiagramm.</p>
+<p>Nun können wir die Daten aus dem Pandas-DataFrame extrahieren und visualisieren.
+Wenn wir beispielsweise wissen wollen, wie alt die Spieler der Eintracht
+Frankfurt sind, filtern wir zuerst nach Eintracht Frankfurt. Dann speichern wir
+die Namen der Spieler mit dem Zeilenindex in der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und das Alter
+<code class="docutils literal notranslate"><span class="pre">Age</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten filtern</span>
+<span class="n">data_eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span> <span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
+verwenden wir ein Balkendiagramm zur Visualisierung. Für eine ansprechende
+Darstellung nutzen wir ein vordefiniertes Theme, das wir über <code class="docutils literal notranslate"><span class="pre">matplotlib.style</span></code>
+importieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># data</span>
-<span class="nb">filter</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span>
-<span class="n">data_eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">filter</span><span class="p">,</span> <span class="p">:]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="c1"># vordefiniertes Styling-Theme auswählen z.B. &#39;ggplot&#39;, &#39;seaborn-v0_8&#39;, &#39;dark_background&#39;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.style</span> <span class="k">as</span> <span class="nn">style</span>
+<span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8&#39;</span><span class="p">)</span> 
 
-<span class="c1"># plot</span>
+<span class="c1"># Visualisierung</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c3e3b1a06524487182ee373df019ca2e735f26c672875a1bd24b19e37c6780ef.png" src="../_images/c3e3b1a06524487182ee373df019ca2e735f26c672875a1bd24b19e37c6780ef.png" />
-</div>
-</div>
-<p>Leider kann man die Spielernamen nicht mehr lesen. Wir können händisch in das
-Styling der x-Achsenbeschriftung eingreifen und die die Beschriftung um 45 Grad
-drehen. Dann sieht der Code folgendermaßen aus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">)</span>
 
-<span class="c1"># Rotation der xticks um 45 Grad und horizontal alignment rechts</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">);</span>
+<span class="c1"># Rotation der x-Achsenbeschriftung um 45 Grad mit rechtsbündiger Ausrichtung</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b253113db6f5355ea82b3fa4874bfba135c9637aa82eb956f1b0ed33bf2dd941.png" src="../_images/b253113db6f5355ea82b3fa4874bfba135c9637aa82eb956f1b0ed33bf2dd941.png" />
+<img alt="../_images/23dff8fd16b311d0dbb9172ba14e10683160a9fe7bf6b4fcb6f07980ff333dc4.png" src="../_images/23dff8fd16b311d0dbb9172ba14e10683160a9fe7bf6b4fcb6f07980ff333dc4.png" />
 </div>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Visualisieren Sie die Anzahl der Minuten, die ein Spieler der Eintracht
-Frankfurt auf dem Platz stand. Beschriften Sie auch x- und y-Achse und geben Sie
-der Grafik einen aussagekräftigen Titel.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
-
-<span class="c1"># plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">xticks()</span></code> manipuliert die Beschriftung der x-Achse. Im obigen
+Code-Beispiel wird der Beschriftungstext um 45 Grad gedreht und rechtsbündig
+ausgerichtet. <code class="docutils literal notranslate"><span class="pre">tight_layout()</span></code> führt zu weniger Abständen zwischen dem Plot der
+umgebenden Zeichenfläche.</p>
 </section>
-<section id="plot-vom-mittelwert-als-horizontale-linie">
-<h2>Plot vom Mittelwert als horizontale Linie<a class="headerlink" href="#plot-vom-mittelwert-als-horizontale-linie" title="Link to this heading">#</a></h2>
-<p>Als nächstes möchten wir in den Plot Zusatzinformationen mit einblenden. So
-würden wir gerne sichtbar machen, wo das Durchschnittsalter der Fußballspieler
-liegt. Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt
-liegt und welcher jünger als der Durchschnitt ist.</p>
-<p>Dazu müssen wir zunächst die Zusatzinformation aus den Daten herausholen, sprich
-den Mittelwert des Alters berechnen lassen.</p>
+<section id="referenzlinien-hinzufugen">
+<h2>Referenzlinien hinzufügen<a class="headerlink" href="#referenzlinien-hinzufugen" title="Link to this heading">#</a></h2>
+<p>Als nächstes möchten wir in den Plot Zusatzinformationen einblenden. So würden
+wir gerne hervorheben, wo das Durchschnittsalter der Fußballspieler liegt.
+Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt liegt
+und welcher jünger als der Durchschnitt ist.</p>
+<p>Dazu müssen wir zunächst die Zusatzinformation, in diesem Beispiel den
+Mittelwert, aus den Daten berechnen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwert_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mittleres Alter der Spieler: </span><span class="si">{</span><span class="n">mittelwert_alter</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwert_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mittleres Alter der Spieler: </span><span class="si">{</span><span class="n">mittelwert_alter</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> Jahre&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mittleres Alter der Spieler: 26.12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mittleres Alter der Spieler: 26.1 Jahre
 </pre></div>
 </div>
 </div>
 </div>
-<p>Und nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Dazu
-zeichnen wir eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu
-verwenden wir die Funktion <code class="docutils literal notranslate"><span class="pre">axhline()</span></code>.</p>
+<p>Nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Wir zeichnen
+eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu verwenden wir
+die Funktion <code class="docutils literal notranslate"><span class="pre">axhline()</span></code>. Für vertikale Linien gibt es entsprechend <code class="docutils literal notranslate"><span class="pre">axvline()</span></code>.
+Zusätzlich fügen wir mit <code class="docutils literal notranslate"><span class="pre">legend()</span></code> eine Legende ein, um zu erklären, welche
+Bedeutung die Linie hat. Das sogenannte Label, also die Beschriftung der
+Legende, wir zuvor als Argument in <code class="docutils literal notranslate"><span class="pre">axhline()</span></code> übergeben. Auch die Formatierung
+der Linie mit roter Farbe <code class="docutils literal notranslate"><span class="pre">color='red'</span></code>, der Linienstil <code class="docutils literal notranslate"><span class="pre">linestyle='--'</span></code> und die
+Linienbreite <code class="docutils literal notranslate"><span class="pre">linewidth=2</span></code> werden an dieser Stelle als Argumente eingefügt, so
+dass wir insgesamt den folgenden Plot erhalten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
 
 <span class="c1"># Visualisierung</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">)</span>
 
-<span class="c1"># Rotation der xticks um 45 Grad und horizontal alignment rechts</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="c1"># Rotation der x-Achsenbeschriftung um 45 Grad mit rechtsbündiger Ausrichtung</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
 
-<span class="c1"># horizontale Linie</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert_alter</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="c1"># Horizontale Linie für den Mittelwert</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mittelwert_alter</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Durchschnittsalter: </span><span class="si">{</span><span class="n">mittelwert_alter</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> Jahre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a8c535c44ff02ac1fb936c7b0e3c2569411720e8bf8cf480561045056f22f3f8.png" src="../_images/a8c535c44ff02ac1fb936c7b0e3c2569411720e8bf8cf480561045056f22f3f8.png" />
+<img alt="../_images/c85d0589d23962441710015681ddfcf729d9c5a79453868246af3b0083e631de.png" src="../_images/c85d0589d23962441710015681ddfcf729d9c5a79453868246af3b0083e631de.png" />
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Bilden Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war. Ergänzen Sie Ihren Plot der letzten
-Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.</p>
+<p>Berechnen Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
+Frankfurt durchschnittlich im Einsatz war. Erstellen Sie ein Balkendiagramm
+der Spielzeiten und ergänzen Sie eine horizontale schwarze Linie für den Mittelwert.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,118 +711,183 @@ Mini-Übung um eine horizontale schwarze Linie, die den Mittelwert visualisiert.
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="p">[</span><span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
 <span class="n">min_durchschnitt</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="c1"># plot</span>
+<span class="c1"># Visualisierung</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">min_durchschnitt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">min_durchschnitt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Durchschnitt: </span><span class="si">{</span><span class="n">min_durchschnitt</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> Min&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielzeiten Eintracht Frankfurt 20/21&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="plot-der-standardabweichung-als-fehlerbalken">
-<h2>Plot der Standardabweichung als Fehlerbalken<a class="headerlink" href="#plot-der-standardabweichung-als-fehlerbalken" title="Link to this heading">#</a></h2>
-<p>Bei allen Messungen treten Messfehler auf. Manchmal weiß man von Anfang an,
-welchen Messfehler das Messgerät hat. Ein anderes Mal hat man beispielsweise
-eine Messung zehnmal wiederholt und möchte nun den Mittelwert als Datenpunkt und
-die Standardabweichung der Messergebnisse als Fehlerbalken visualisieren. Durch
-die Angabe eines Fehlerbalkens kann man dem Betrachter eine Zusatzinformation
-mitteilen. Für die Darstellung von Fehlerbalken stellt das Matplotlib-Modul die
-Methode <code class="docutils literal notranslate"><span class="pre">errorbar()</span></code> zur Verfügung. Mehr Informationen gibt es auf der
-Hilfeseite</p>
-<blockquote>
-<div><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html</a></p>
-</div></blockquote>
+<section id="subplots-fur-komplexere-darstellungen">
+<h2>Subplots für komplexere Darstellungen<a class="headerlink" href="#subplots-fur-komplexere-darstellungen" title="Link to this heading">#</a></h2>
+<p>Hier sehen wir eine wichtige Erweiterung zu den bisherigen Plots: Subplots
+ermöglichen es uns, mehrere Diagramme nebeneinander in einer Abbildung
+darzustellen. Der entscheidende Unterschied zu unseren bisherigen Plots ist,
+dass wir nun die Zeichenfläche mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>erzeugen und die <em>objektorientierte</em> Schnittstelle benutzen. Die obige
+Code-Zeile erstellt eine Abbildung (<code class="docutils literal notranslate"><span class="pre">fig</span></code>) mit 1 Zeile und 2 Spalten von Plots.
+Das <code class="docutils literal notranslate"><span class="pre">axes</span></code>-Array enthält die beiden einzelnen Plot-Bereiche. Auf die einzelnen
+Plots können wir folgendermaßen zugreifen:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axes[0]</span></code>: der erste Plot (links)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axes[1]</span></code>: der zweite Plot (rechts)</p></li>
+</ul>
+<p>Anstelle der gewohnten Funktion <code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code> verwenden wir nun
+<code class="docutils literal notranslate"><span class="pre">axes[0].bar(...)</span></code>oder <code class="docutils literal notranslate"><span class="pre">axes[1].bar(...)</span></code>. Auch werden die Funktionen wir
+<code class="docutils literal notranslate"><span class="pre">plt.title()</span></code>zu Methoden, die sich auf das konkrete Objekt beziehen, wie
+<code class="docutils literal notranslate"><span class="pre">axes[0].set_title()</span></code>. Wir verwenden noch weitere Optionen zum Styling der
+Plots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="n">standardabweichung_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten für Eintracht Frankfurt</span>
+<span class="n">eintracht_frankfurt</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Club&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eintracht Frankfurt&#39;</span><span class="p">]</span>
 
-<span class="c1"># plot data</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung_alter</span><span class="p">)</span>
+<span class="c1"># 1x2 Subplot-Layout erstellen</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
-<span class="c1"># styling</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>    <span class="c1"># um 45 Grad</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+<span class="c1"># Plot 1: Alter</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">eintracht_frankfurt</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Alter der Spieler&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+
+<span class="c1"># Erst die Tick-Positionen setzen, dann die Labels</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">)))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Plot 2: Spielminuten</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">eintracht_frankfurt</span><span class="p">[</span><span class="s1">&#39;Mins&#39;</span><span class="p">],</span>
+               <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Spielminuten&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="p">)))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Spielerstatistiken Eintracht Frankfurt 20/21&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f91108157f79bf93f7e757dc33a8c3e5eebe19128355d1e6add7ab385cece574.png" src="../_images/f91108157f79bf93f7e757dc33a8c3e5eebe19128355d1e6add7ab385cece574.png" />
+<img alt="../_images/dcb72bfa5daeef09eca6b67c8ebeee8d5e886d98de02e9f3905cb2e9edc87fbb.png" src="../_images/dcb72bfa5daeef09eca6b67c8ebeee8d5e886d98de02e9f3905cb2e9edc87fbb.png" />
 </div>
 </div>
-<p>Die Grafik sieht irritierend aus, da die Altersangben der Spieler verbunden
-wurden. Ästhetischer und besser interpretierbar wird die Grafik, wenn wir noch
-ein wenig an den Optionen herumschrauben. Mit der Formatierung <code class="docutils literal notranslate"><span class="pre">fmt='o'</span></code> werden
-die Messwerte als Kreise dargestellt.</p>
+</section>
+<section id="korrelationsanalyse-mit-streudiagrammen">
+<h2>Korrelationsanalyse mit Streudiagrammen<a class="headerlink" href="#korrelationsanalyse-mit-streudiagrammen" title="Link to this heading">#</a></h2>
+<p>Hier sehen wir eine wichtige statistische Methode: Korrelationsanalysen
+untersuchen, ob und wie stark zwei Variablen miteinander zusammenhängen. In
+unserem Beispiel fragen wir uns: Gibt es einen Zusammenhang zwischen
+Spielminuten und Toren? Oder zwischen Alter und Einsatzzeit?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span>
-<span class="n">standardabweichung_alter</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
-<span class="c1"># plot data</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">standardabweichung_alter</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="c1"># Streudiagramm: Spielminuten vs. Tore</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mins&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Goals&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Spielminuten&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Tore&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Spielminuten vs. Tore&#39;</span><span class="p">)</span>
 
-<span class="c1"># styling</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>    <span class="c1"># um 45 Grad</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+<span class="c1"># Streudiagramm: Alter vs. Spielminuten</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mins&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Alter&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Spielminuten&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Alter vs. Spielminuten&#39;</span><span class="p">)</span>
+
+<span class="c1"># Streudiagramm: Tore vs. Torvorbereitungen (= Assists)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Goals&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Assists&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Tore&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Assists&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Tore vs. Assists&#39;</span><span class="p">)</span>
+
+<span class="c1"># Streudiagramm: Spielminuten vs. Torvorbereitungen (= Assists)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mins&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Assists&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Spielminuten&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Assists&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Spielminuten vs. Assists&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Korrelationsanalyse Bundesliga-Spieler&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c91b5547ab52d9dd14d3f474058dfb2b341c8b8b784775708ecfbb60a3b4f9bc.png" src="../_images/c91b5547ab52d9dd14d3f474058dfb2b341c8b8b784775708ecfbb60a3b4f9bc.png" />
+<img alt="../_images/a971efdb57a9252e120ace5e2ba6d698dd086e1fd5f22e1f049d51374f95ed0a.png" src="../_images/a971efdb57a9252e120ace5e2ba6d698dd086e1fd5f22e1f049d51374f95ed0a.png" />
 </div>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie nun die Standardabweichung der Minuten visualisieren, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war.</p>
-</div>
+<p>Hier sehen wir die wichtigsten Muster in Streudiagrammen:</p>
+<ul class="simple">
+<li><p><strong>Positive Korrelation</strong>: Die Punkte bilden eine aufsteigende Linie: je höher
+die Ursache, desto höher die Wirkung. Beim Beispiel Spielminuten vs. Tore
+können wir interpretieren: “Wer mehr spielt, erzielt tendenziell mehr Tore”.</p></li>
+<li><p><strong>Negative Korrelation</strong>: Die Punkte bilden eine absteigende Linie: je höher
+die Ursache, desto niedriger die Wirkung. Beim Beispiel Alter vs. Spielminuten
+können wir interpretieren: “Ältere Spieler bekommen tendenziell weniger
+Einsatzzeit”.</p></li>
+<li><p><strong>Keine Korrelation</strong>: Die Punkte sind zufällig verteilt: kein erkennbares
+Muster. Wir interpretieren: “Zwischen den Variablen gibt es keinen
+systematischen Zusammenhang”.</p></li>
+</ul>
+</section>
+<section id="export-von-grafiken">
+<h2>Export von Grafiken<a class="headerlink" href="#export-von-grafiken" title="Link to this heading">#</a></h2>
+<p>Für die Verwendung in Dokumenten oder Präsentationen müssen Grafiken exportiert
+werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">index</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_eintracht_frankfurt</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mins&#39;</span><span class="p">]</span>
-<span class="n">min_standardabweichung</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beispiel-Plot erstellen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">verein_tore</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Club&#39;</span><span class="p">)[</span><span class="s1">&#39;Goals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1"># plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">min_standardabweichung</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Spieler&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minuten&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spielerdaten Eintracht Frankfurt 20/21&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">verein_tore</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">verein_tore</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Verein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Gesamtzahl Tore&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Tore pro Verein - Bundesliga 2020/21&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Export in verschiedenen Formaten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;bundesliga_tore.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  <span class="c1"># Für Web/Präsentationen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;bundesliga_tore.pdf&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>           <span class="c1"># Für LaTeX/Publikationen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;bundesliga_tore.svg&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>           <span class="c1"># Für Vektorgrafiken</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e9a208dd79d170e2a90625f1600d0b3c7242a9c45564904b68013ac418e510c1.png" src="../_images/e9a208dd79d170e2a90625f1600d0b3c7242a9c45564904b68013ac418e510c1.png" />
 </div>
 </div>
 </section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>Nachdem wir uns erarbeitet haben, wie Daten aus einem DataFrame für eine
-Visualisierung mit Matplotlib aufbereitet werden, lernen wir im nächsten
-Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.</p>
+<p>In diesem Kapitel haben wir gelernt, wie man DataFrames professionell
+visualisiert. Diese Techniken bilden die Grundlage für die Datenvisualisierung
+in der Praxis. Mit DataFrames und Matplotlib können wir reale Datensätze
+ansprechend präsentieren. Mit der Korrelationsanalyse haben wir auch einen
+ersten Schritt Richtung Data Science gemacht. Wie wir Trends und Muster in Daten
+finden, werden wir im nächsten Kapitel lernen, wenn wir uns der Regression
+widmen.</p>
 </section>
 </section>
 
@@ -873,7 +927,7 @@ Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">11.2 Streudiagramme</p>
+        <p class="prev-next-title">11.2 Diskrete Daten und Häufigkeiten</p>
       </div>
     </a>
     <a class="right-next"
@@ -904,8 +958,10 @@ Abschnitt noch einen weiteren Diagrammtyp kennen, das Histogramm.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisierung-von-dataframes">Visualisierung von DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-vom-mittelwert-als-horizontale-linie">Plot vom Mittelwert als horizontale Linie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-der-standardabweichung-als-fehlerbalken">Plot der Standardabweichung als Fehlerbalken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referenzlinien-hinzufugen">Referenzlinien hinzufügen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots-fur-komplexere-darstellungen">Subplots für komplexere Darstellungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korrelationsanalyse-mit-streudiagrammen">Korrelationsanalyse mit Streudiagrammen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-von-grafiken">Export von Grafiken</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.1 Linien- und Balkendiagramme &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>11.1 Kontinuierliche Daten visualisieren &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter11/chapter11_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.2 Streudiagramme" href="chapter11_sec02.html" />
+    <link rel="next" title="11.2 Diskrete Daten und Häufigkeiten" href="chapter11_sec02.html" />
     <link rel="prev" title="11. Visualisierung mit Matplotlib" href="chapter11_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -250,9 +250,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
@@ -485,7 +485,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.1 Linien- und Balkendiagramme</h1>
+    <h1>11.1 Kontinuierliche Daten visualisieren</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -497,7 +497,9 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liniendiagramme">Liniendiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balkendiagramme">Balkendiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streudiagramme">Streudiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wann-verwendet-man-welchen-diagrammtyp">Wann verwendet man welchen Diagrammtyp?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -509,8 +511,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linien-und-balkendiagramme">
-<h1>11.1 Linien- und Balkendiagramme<a class="headerlink" href="#linien-und-balkendiagramme" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="kontinuierliche-daten-visualisieren">
+<h1>11.1 Kontinuierliche Daten visualisieren<a class="headerlink" href="#kontinuierliche-daten-visualisieren" title="Link to this heading">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -518,7 +520,8 @@
 <ul class="simple">
 <li><p>Sie können <strong>Matplotlib</strong> mit der üblichen Abkürzung <strong>plt</strong> importieren.</p></li>
 <li><p>Sie können Funktionen als <strong>Liniendiagramm</strong> visualisieren.</p></li>
-<li><p>Sie können diskrete Daten als <strong>Balkendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können Messwerte als <strong>Streudiagramm</strong> darstellen.</p></li>
+<li><p>Sie verstehen den Unterschied zwischen Linien- und Streudiagrammen.</p></li>
 </ul>
 </div>
 </section>
@@ -526,11 +529,12 @@
 <h2>Liniendiagramme<a class="headerlink" href="#liniendiagramme" title="Link to this heading">#</a></h2>
 <p>Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
 sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
-wenn die Daten von einer mathematischen Funktion stammen. Obwohl die Daten
-theoretisch für jeden x-Wert vorliegen und wir daher Millionen von (x,y)-Punkten
-zeichnen könnten, benutzen wir eine Weretabelle mit weniger (x,y)-Paaren. Die
-Anzahl der (x,y)-Paare bestimmt dann, wie “glatt” die Visualisierung wirkt.</p>
-<p>Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten.</p>
+wenn die Daten von einer mathematischen Funktion stammen oder wenn Messungen über
+die Zeit erfasst werden. Obwohl die Daten theoretisch für jeden x-Wert vorliegen
+und wir daher Millionen von (x,y)-Punkten zeichnen könnten, benutzen wir eine
+Wertetabelle mit wenigen (x,y)-Paaren. Die Anzahl der (x,y)-Paare bestimmt dann,
+wie “glatt” die Visualisierung wirkt.</p>
+<p>Erzeugen wir eine Liste mit x-Werten und dazugehörigen y-Werten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -541,7 +545,7 @@ Anzahl der (x,y)-Paare bestimmt dann, wie “glatt” die Visualisierung wirkt.<
 </div>
 <p>Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
 wir das Modul <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, genauer gesagt nur einen Teil dieses Moduls namens
-<code class="docutils literal notranslate"><span class="pre">pylab</span></code>. Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -552,49 +556,40 @@ wir das Modul <code class="docutils literal notranslate"><span class="pre">matpl
 <p>Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
 zu benutzen. Die erste Schnittstelle ist <strong>zustandsorientiert</strong>, die zweite
 <strong>objektorientiert</strong>. Die zustandsorientierte Schnittstelle ist älter. Die
-Entwickler:innen des Matplotlib-Moduls orientierten sich zunächst an der
-kommerziellen Software MATLAB und griffen erst in einer späteren Phase auf
-Objektorientierung zurück.</p>
+Entwicklerinnen und Entwickler des Matplotlib-Moduls orientierten sich zunächst
+an der kommerziellen Software MATLAB und griffen erst in einer späteren Phase
+auf Objektorientierung zurück.</p>
 <p>Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
 das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
 in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
 gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
 die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten.</p>
-<p>Trotz der Nachteile werden wir in dieser Vorlesung die zustandsorientierte
-Schnittstelle benutzen, um den Vorteil auszunutzen, MATLAB-Syntax verwenden zu
-können.</p>
-<p>Zunächst erzeugen wir das Grafik-Objekt bestehend aus einer Figure (=Grafik als
-Ganzes) und Axes (=Achsen) explizit mit der Funktion <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>und
-speichern diese in entsprechenden Variablen. Dann verwenden wir Methoden, das
-Grafikobjekt zu manipulieren. Beispielsweise fügen wir den Achsen einen
-Linienplot und Beschriftungen hinzu.</p>
+<p>Zunächst werden wir die zustandsorientierte Schnittstelle benutzen, um den
+Vorteil auszunutzen, MATLAB-ähnliche Syntax verwenden zu können.</p>
+<p>Zunächst erstellen wir ein Liniendiagramm mit der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>. Zuvor
+öffnen wir mit <code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code> eine neue Zeichenfläche, die Figure genannt wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1244c0c80&gt;]
-</pre></div>
-</div>
 <img alt="../_images/139f711e555fe85cca7e78270c16fd338c5f483e42b176a900d0ab49bc514d71.png" src="../_images/139f711e555fe85cca7e78270c16fd338c5f483e42b176a900d0ab49bc514d71.png" />
 </div>
 </div>
-<p>PS: Ohne Strichpunkt/Semikolon gibt Jupyter-Lab noch Objekttyp und Referenz des
-Speicherplatzes aus. In einem normalen Python-Skript würde das nicht passieren.
-Sie können diese Angabe durch den Strichpunkt/Semikolon in der letzten Zeile
-unterdrücken.</p>
-<p>Aber zurück zum Plot, sieht ziemlich krakelig aus. Eigentlich sollte dies eine
-Parabel im Intervall <span class="math notranslate nohighlight">\([-2,2]\)</span> werden. Mit nur 5 Punkten und der Tatsache, dass
-diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus.
-Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand
-erzeugen. Wir verwenden das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> für numerisches Python, das wir wieder
-einmal zuerst laden müssen.</p>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(a,b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> je
-nach eingestellter Anzahl. Damit können wir jetzt eine feiner aufgelöste
-Wertetabelle erstellen und visualisieren.</p>
+<p>Aber zurück zum Plot, sieht krakelig aus. Eigentlich sollte dies eine Parabel im
+Intervall [-2,2] werden. Mit nur fünf Punkten und der Tatsache, dass diese fünf
+Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus. Besser
+wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand erzeugen. Wir
+verwenden das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> für numerisches Python, das wir wieder einmal zuerst
+laden müssen.</p>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(a,</span> <span class="pre">b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall [a,b] und
+zwar genauso viele, wie durch die Option <code class="docutils literal notranslate"><span class="pre">Anzahl</span></code> vorgegeben werden. Damit
+können wir jetzt eine feiner aufgelöste Wertetabelle erstellen und
+visualisieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -603,7 +598,8 @@ Wertetabelle erstellen und visualisieren.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -611,21 +607,22 @@ Wertetabelle erstellen und visualisieren.</p>
 <img alt="../_images/c224a840742956266a22ca034c61866c180897cbc09247b227a18939f6a1e856.png" src="../_images/c224a840742956266a22ca034c61866c180897cbc09247b227a18939f6a1e856.png" />
 </div>
 </div>
-<p>Nächstes Thema, Beschriftungen. Mit den Funktionen <code class="docutils literal notranslate"><span class="pre">xlabel()</span></code> und
-<code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> beschriften Sie die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">title()</span></code> wird der
-Titel gesetzt.</p>
+<p>Als nächstes beschäftigen wir uns mit Beschriftungen. Mit den Funktionen
+<code class="docutils literal notranslate"><span class="pre">xlabel()</span></code> und <code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> beschriften wir die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">title()</span></code> wird
+der Titel gesetzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># plot</span>
+<span class="c1"># Visualisierung</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -633,44 +630,17 @@ Titel gesetzt.</p>
 <img alt="../_images/b494f1ea47b1c9e0e93ab1e5bfff45f01cb2896ada364ad11301f38967df22a3.png" src="../_images/b494f1ea47b1c9e0e93ab1e5bfff45f01cb2896ada364ad11301f38967df22a3.png" />
 </div>
 </div>
-<p>Zuletzt soll unser Plot gespeichert werden. Dazu wird die Funktion <code class="docutils literal notranslate"><span class="pre">savefig()</span></code>
-verwendet. Das erste Argument der Funktion ist ein String mit dem Dateinamen,
-unter dem die Grafik abgespeichert werden soll. Die Dateiendung wird von
-Matplotlib automatisch dazu benutzt, das Grafikformat festzulegen. Es stehen
-mehrere Grafikformate zur Verfügung. Mehr Details finden Sie auf der
-Internetseite <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html">Dokumentation
-savefig</a>.
-Ein typisches Ausgabeformat ist eine Rastergrafik wie z.B. png. Danach können
-noch weitere optionale Argumente folgen, die beispielsweise die Auflösung der
-Grafik festlegen.</p>
-<p>Die folgende Anweisung speichert das Liniendiagramm unter dem Dateinamen
-<code class="docutils literal notranslate"><span class="pre">plot_stromstaerke.png</span></code> ab, verwendet dabei das png-Format und eine Auflösung
-von 300 dpi, also 300 Punkten pro Inch.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot_stromstaerke.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Bitte plotten Sie folgende Funktionen:</p>
+<p>Plotten Sie folgende Funktionen im Bereich x ∈ [-3, 3]:</p>
 <ul class="simple">
-<li><p>lineare Funktion, z.B. f(x) = 7x + 2</p></li>
-<li><p>Sinus,</p></li>
+<li><p>lineare Funktion, z.B. f(x) = 2x + 1</p></li>
 <li><p>Kosinus,</p></li>
 <li><p>Exponentialfunktion und</p></li>
 <li><p>Wurzelfunktion.</p></li>
 </ul>
-<p>Verändern Sie auch das Definitionsgebiet der Funktionen, also das Intervall für
-<span class="math notranslate nohighlight">\(x\)</span>. (Bei welcher Funktion müssen Sie besonders auf das Defiitionsgebiet der
-Funktion achten?)</p>
+<p>Bei welcher Funktion müssen Sie besonders auf das Definitionsgebiet der
+Funktion achten?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -704,120 +674,81 @@ Funktion achten?)</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mini-Übung&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>Bei der Wurzelfunktion muss man auf das Definitionsgebiet achten, da sie nur für
+<span class="math notranslate nohighlight">\(x &gt;= 0\)</span> definiert ist.</p>
 </div>
 </section>
-<section id="balkendiagramme">
-<h2>Balkendiagramme<a class="headerlink" href="#balkendiagramme" title="Link to this heading">#</a></h2>
-<p>Mit der Funktion <code class="docutils literal notranslate"><span class="pre">bar()</span></code> kann ein Balkendiagramm erstellt werden. Nehmen wir mal
-an, wir möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter
-Notebooks zum Download zugegriffen haben:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Woche</p></th>
-<th class="head"><p>Anzahl Nutzer/innen</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>14</p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>12</p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p>9</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Dann wird das Balkendiagramm mit folgenden Code erzeugt:</p>
+<section id="streudiagramme">
+<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Link to this heading">#</a></h2>
+<p>Bei Streudiagrammen werden nicht die Punkte (x₁,y₁) mit (x₂,y₂) mit
+(x₃,y₃) usw. durch Linien verbunden, sondern jeder Punkt wird einzeln an seiner
+Koordinatenstelle dargestellt. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Funktion auch <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># bar plot</span>
+<span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Streudiagramm</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sinus-Funktion als Streudiagramm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c4028de806b8e3470fb2e4340262d953103989e4b017a669dde9697c401b5b8.png" src="../_images/2c4028de806b8e3470fb2e4340262d953103989e4b017a669dde9697c401b5b8.png" />
+<img alt="../_images/2d59e138b3572be5f65aab4e08adae212abca52458f58186bc7927e91cfba39e.png" src="../_images/2d59e138b3572be5f65aab4e08adae212abca52458f58186bc7927e91cfba39e.png" />
 </div>
 </div>
-<p>Farben können mit dem optionalen Argument <code class="docutils literal notranslate"><span class="pre">color=</span></code> eingestellt werden. Dabei
-funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
-Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
-RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
-Blau-Anteil. Details finden Sie dazu hier</p>
+<p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span></code> lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Voreingestellt ist ein ausgefüllter Kreis. Weitere
+Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:</p>
 <blockquote>
-<div><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colors.html">https://matplotlib.org/stable/tutorials/colors/colors.html</a></p>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
 </div></blockquote>
-<p>Im folgenden Balkendiagramm sind die Balken grau eingefärbt.</p>
+<p>Wir probieren einige Symbole aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># bar plot</span>
+<span class="c1"># Streudiagramm mit x-Markern</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sinus-Funktion mit x-Markern&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/90ca883384438d598021a4adc9a7dd7a020d5ea7cbc04e0efca9eca1d653598d.png" src="../_images/90ca883384438d598021a4adc9a7dd7a020d5ea7cbc04e0efca9eca1d653598d.png" />
+<img alt="../_images/91e17319fd1a583bdcc199fd98d7073dd7894f70792536ab73cac89470f9fc34.png" src="../_images/91e17319fd1a583bdcc199fd98d7073dd7894f70792536ab73cac89470f9fc34.png" />
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Hier ist eine Tabelle mit den Zugriffszahlen auf das MATLAB Live Script in der
-Vorlesung angewandte Informatik im Sommersemester 2021. Bitte stellen Sie die
-Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken schwarz.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Woche</p></th>
-<th class="head"><p>Anzahl Nutzer/innen</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>9</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>17</p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>15</p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>11</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:</p>
+<ul class="simple">
+<li><p>x-Werte: Zahlen von 1 bis 20</p></li>
+<li><p>y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.random.uniform(10,</span> <span class="pre">30,</span> <span class="pre">20)</span></code>)</p></li>
+<li><p>Marker: rote Dreiecke (marker=‘^’)</p></li>
+<li><p>Titel: “Zufällige Messwerte”</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
 </pre></div>
 </div>
 </div>
@@ -827,17 +758,91 @@ Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken sc
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="c1"># Daten generieren</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Für reproduzierbare Ergebnisse</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>    <span class="c1"># Zahlen von 1 bis 20</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Zufallszahlen zwischen 10 und 30</span>
 
+<span class="c1"># Streudiagramm erstellen</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Zugriffe&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriffszahlen MATLAB Live Skripte SoSe 22&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Messung Nr.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Messwert&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zufällige Messwerte&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="wann-verwendet-man-welchen-diagrammtyp">
+<h2>Wann verwendet man welchen Diagrammtyp?<a class="headerlink" href="#wann-verwendet-man-welchen-diagrammtyp" title="Link to this heading">#</a></h2>
+<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
+Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
+von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.</p>
+<p>Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
+bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
+Dazu werden wir unterschiedliche Marker und unterschiedliche Farben verwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten - simulierte Temperaturmessungen</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>  <span class="c1"># Frankfurt</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Offenbach</span>
+
+<span class="c1"># Streudiagramme</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wochentag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatur [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperaturmessungen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/63860f4f79171bf87026d4682b78db43d5a8669f32b7dd3346e15bbb111a36f8.png" src="../_images/63860f4f79171bf87026d4682b78db43d5a8669f32b7dd3346e15bbb111a36f8.png" />
+</div>
+</div>
+<p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
+<code class="docutils literal notranslate"><span class="pre">plt.scatter(x,</span> <span class="pre">y1,</span> <span class="pre">label='Frankfurt')</span></code>. Zuletzt verwendet man die Funktion
+<code class="docutils literal notranslate"><span class="pre">legend()</span></code>, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
+Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>  <span class="c1"># Frankfurt</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Offenbach</span>
+
+<span class="c1"># Streudiagramme mit Legende</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Offenbach&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wochentag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatur [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperaturmessungen in der Region&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" src="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" />
+</div>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir die Grundlagen der Datenvisualisierung mit
+Matplotlib kennengelernt. Liniendiagramme eignen sich für kontinuierliche Daten,
+mathematische Funktionen und Zeitreihen, bei denen die Datenpunkte sinnvoll
+miteinander verbunden werden können. Streudiagramme sind ideal für diskrete
+Messpunkte, Korrelationsanalysen und Situationen, in denen die Einzelpunkte im
+Fokus stehen. Im nächsten Kapitel werden wir uns mit Balkendiagrammen und
+Histogrammen beschäftigen, die für andere Datentypen geeignet sind.</p>
 </section>
 </section>
 
@@ -885,7 +890,7 @@ Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken sc
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">11.2 Streudiagramme</p>
+        <p class="prev-next-title">11.2 Diskrete Daten und Häufigkeiten</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -908,7 +913,9 @@ Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken sc
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liniendiagramme">Liniendiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balkendiagramme">Balkendiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streudiagramme">Streudiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wann-verwendet-man-welchen-diagrammtyp">Wann verwendet man welchen Diagrammtyp?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
