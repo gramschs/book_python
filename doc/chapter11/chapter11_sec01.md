@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 11.1 Linien- und Balkendiagramme
+# 11.1 Kontinuierliche Daten visualisieren
 
 ## Lernziele
 
@@ -20,139 +20,115 @@ kernelspec:
 :class: goals
 * Sie können **Matplotlib** mit der üblichen Abkürzung **plt** importieren.
 * Sie können Funktionen als **Liniendiagramm** visualisieren.
-* Sie können diskrete Daten als **Balkendiagramm** visualisieren.
+* Sie können Messwerte als **Streudiagramm** darstellen.
+* Sie verstehen den Unterschied zwischen Linien- und Streudiagrammen.
 ```
 
-## Liniendiagramme 
+## Liniendiagramme
 
 Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
 sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
-wenn die Daten von einer mathematischen Funktion stammen. Obwohl die Daten
-theoretisch für jeden x-Wert vorliegen und wir daher Millionen von (x,y)-Punkten
-zeichnen könnten, benutzen wir eine Weretabelle mit weniger (x,y)-Paaren. Die
-Anzahl der (x,y)-Paare bestimmt dann, wie "glatt" die Visualisierung wirkt.
+wenn die Daten von einer mathematischen Funktion stammen oder wenn Messungen über
+die Zeit erfasst werden. Obwohl die Daten theoretisch für jeden x-Wert vorliegen
+und wir daher Millionen von (x,y)-Punkten zeichnen könnten, benutzen wir eine
+Wertetabelle mit wenigen (x,y)-Paaren. Die Anzahl der (x,y)-Paare bestimmt dann,
+wie "glatt" die Visualisierung wirkt.
 
-Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten.
+Erzeugen wir eine Liste mit x-Werten und dazugehörigen y-Werten.
 
-```{code-cell} ipython3
+```{code-cell}
 x = [-2, -1, 0, 1, 2]
 y = [4, 1, 0, 1, 4]
 ```
 
 Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
 wir das Modul `matplotlib`, genauer gesagt nur einen Teil dieses Moduls namens
-`pylab`. Daher laden wir es zuerst mit der typischen Abkürzung `plt`.
+`pyplot`. Daher laden wir es zuerst mit der typischen Abkürzung `plt`.
 
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
 ```
 
 Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
 zu benutzen. Die erste Schnittstelle ist **zustandsorientiert**, die zweite
 **objektorientiert**. Die zustandsorientierte Schnittstelle ist älter. Die
-Entwickler:innen des Matplotlib-Moduls orientierten sich zunächst an der
-kommerziellen Software MATLAB und griffen erst in einer späteren Phase auf
-Objektorientierung zurück. 
+Entwicklerinnen und Entwickler des Matplotlib-Moduls orientierten sich zunächst
+an der kommerziellen Software MATLAB und griffen erst in einer späteren Phase
+auf Objektorientierung zurück.
 
 Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
 das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
 in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
 gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
-die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten. 
+die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten.
 
-Trotz der Nachteile werden wir in dieser Vorlesung die zustandsorientierte
-Schnittstelle benutzen, um den Vorteil auszunutzen, MATLAB-Syntax verwenden zu
-können.
+Zunächst werden wir die zustandsorientierte Schnittstelle benutzen, um den
+Vorteil auszunutzen, MATLAB-ähnliche Syntax verwenden zu können.
 
-Zunächst erzeugen wir das Grafik-Objekt bestehend aus einer Figure (=Grafik als
-Ganzes) und Axes (=Achsen) explizit mit der Funktion ``plt.subplots()``und
-speichern diese in entsprechenden Variablen. Dann verwenden wir Methoden, das
-Grafikobjekt zu manipulieren. Beispielsweise fügen wir den Achsen einen
-Linienplot und Beschriftungen hinzu.
+Zunächst erstellen wir ein Liniendiagramm mit der Funktion `plt.plot()`. Zuvor
+öffnen wir mit `plt.figure()` eine neue Zeichenfläche, die Figure genannt wird.
 
-```{code-cell} ipython3
+```{code-cell}
 plt.figure()
-plt.plot(x,y)
+plt.plot(x, y)
+plt.show()
 ```
 
-PS: Ohne Strichpunkt/Semikolon gibt Jupyter-Lab noch Objekttyp und Referenz des
-Speicherplatzes aus. In einem normalen Python-Skript würde das nicht passieren.
-Sie können diese Angabe durch den Strichpunkt/Semikolon in der letzten Zeile
-unterdrücken.
+Aber zurück zum Plot, sieht krakelig aus. Eigentlich sollte dies eine Parabel im
+Intervall [-2,2] werden. Mit nur fünf Punkten und der Tatsache, dass diese fünf
+Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus. Besser
+wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand erzeugen. Wir
+verwenden das Modul `numpy` für numerisches Python, das wir wieder einmal zuerst
+laden müssen.
 
-Aber zurück zum Plot, sieht ziemlich krakelig aus. Eigentlich sollte dies eine
-Parabel im Intervall $[-2,2]$ werden. Mit nur 5 Punkten und der Tatsache, dass
-diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus.
-Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand
-erzeugen. Wir verwenden das Modul `numpy` für numerisches Python, das wir wieder
-einmal zuerst laden müssen.
+Die Funktion `np.linspace(a, b, Anzahl)` erzeugt Punkte im Intervall [a,b] und
+zwar genauso viele, wie durch die Option `Anzahl` vorgegeben werden. Damit
+können wir jetzt eine feiner aufgelöste Wertetabelle erstellen und
+visualisieren.
 
-Die Funktion `np.linspace(a,b, Anzahl)` erzeugt Punkte im Intervall $[a,b]$ je
-nach eingestellter Anzahl. Damit können wir jetzt eine feiner aufgelöste
-Wertetabelle erstellen und visualisieren.
-
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 
 x = np.linspace(-2, 2, 100) 
 y = x**2
 
 plt.figure()
-plt.plot(x,y);
+plt.plot(x, y)
+plt.show()
 ```
 
-Nächstes Thema, Beschriftungen. Mit den Funktionen `xlabel()` und
-`ylabel()` beschriften Sie die x- und y-Achse. Mit `title()` wird der
-Titel gesetzt.
+Als nächstes beschäftigen wir uns mit Beschriftungen. Mit den Funktionen
+`xlabel()` und `ylabel()` beschriften wir die x- und y-Achse. Mit `title()` wird
+der Titel gesetzt.
 
-```{code-cell} ipython3
-# data
-x = np.linspace(-10,10,200)
+```{code-cell}
+# Daten
+x = np.linspace(-10, 10, 200)
 y = np.sin(x)
 
-# plot
+# Visualisierung
 plt.figure()
-plt.plot(x,y)
+plt.plot(x, y)
 plt.xlabel('Zeit in Sekunden')
 plt.ylabel('Stromstärke in Ampere')
-plt.title('Wechselstrom');
-```
-
-Zuletzt soll unser Plot gespeichert werden. Dazu wird die Funktion `savefig()`
-verwendet. Das erste Argument der Funktion ist ein String mit dem Dateinamen,
-unter dem die Grafik abgespeichert werden soll. Die Dateiendung wird von
-Matplotlib automatisch dazu benutzt, das Grafikformat festzulegen. Es stehen
-mehrere Grafikformate zur Verfügung. Mehr Details finden Sie auf der
-Internetseite [Dokumentation
-savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
-Ein typisches Ausgabeformat ist eine Rastergrafik wie z.B. png. Danach können
-noch weitere optionale Argumente folgen, die beispielsweise die Auflösung der
-Grafik festlegen.
-
-Die folgende Anweisung speichert das Liniendiagramm unter dem Dateinamen
-`plot_stromstaerke.png` ab, verwendet dabei das png-Format und eine Auflösung
-von 300 dpi, also 300 Punkten pro Inch.
-
-```{code-cell} ipython3
-plt.savefig('plot_stromstaerke.png', dpi=300);
+plt.title('Wechselstrom')
+plt.show()
 ```
 
 ```{admonition} Mini-Übung
 :class: miniexercise 
-Bitte plotten Sie folgende Funktionen: 
+Plotten Sie folgende Funktionen im Bereich x ∈ [-3, 3]: 
     
-* lineare Funktion, z.B. f(x) = 7x + 2
-* Sinus,
+* lineare Funktion, z.B. f(x) = 2x + 1
 * Kosinus,
 * Exponentialfunktion und
 * Wurzelfunktion.
 
-Verändern Sie auch das Definitionsgebiet der Funktionen, also das Intervall für
-$x$. (Bei welcher Funktion müssen Sie besonders auf das Defiitionsgebiet der
-Funktion achten?)
+Bei welcher Funktion müssen Sie besonders auf das Definitionsgebiet der
+Funktion achten?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # Hier Ihr Code:
 ```
 
@@ -181,80 +157,69 @@ plt.xlabel('x-Achse')
 plt.ylabel('y-Achse')
 plt.title('Mini-Übung');
 ```
+Bei der Wurzelfunktion muss man auf das Definitionsgebiet achten, da sie nur für
+$x >= 0$ definiert ist.
 ````
 
-+++
+## Streudiagramme
 
-## Balkendiagramme
+Bei Streudiagrammen werden nicht die Punkte (x₁,y₁) mit (x₂,y₂) mit
+(x₃,y₃) usw. durch Linien verbunden, sondern jeder Punkt wird einzeln an seiner
+Koordinatenstelle dargestellt. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Funktion auch `scatter()`.
 
-Mit der Funktion `bar()` kann ein Balkendiagramm erstellt werden. Nehmen wir mal
-an, wir möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter
-Notebooks zum Download zugegriffen haben:
+```{code-cell}
+import numpy as np
+import matplotlib.pyplot as plt
 
-| Woche | Anzahl Nutzer/innen |
-| --- | --- |
-| 2 | 14 |
-| 3 | 12 |
-| 4 | 10 |
-| 5 | 10 |
-| 6 | 9  |
+# Daten
+x = np.linspace(-2*np.pi, 2*np.pi, 25)
+y = np.sin(x)
 
-Dann wird das Balkendiagramm mit folgenden Code erzeugt:
-
-```{code-cell} ipython3
-# data
-x = [2,3,4,5,6]
-y = [14,12,10,10,9]
-
-# bar plot
+# Streudiagramm
 plt.figure()
-plt.bar(x,y)
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22');
+plt.scatter(x, y)
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.title('Sinus-Funktion als Streudiagramm')
+plt.show()
 ```
 
-Farben können mit dem optionalen Argument `color=` eingestellt werden. Dabei
-funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
-Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
-RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
-Blau-Anteil. Details finden Sie dazu hier
+Über die Option `marker=` lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Voreingestellt ist ein ausgefüllter Kreis. Weitere
+Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:
 
-> https://matplotlib.org/stable/tutorials/colors/colors.html
+> <https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers>
 
-Im folgenden Balkendiagramm sind die Balken grau eingefärbt.
+Wir probieren einige Symbole aus:
 
-```{code-cell} ipython3
-# data
-x = [2,3,4,5,6]
-y = [14,12,10,10,9]
+```{code-cell}
+# Daten
+x = np.linspace(-2*np.pi, 2*np.pi, 25)
+y = np.sin(x)
 
-# bar plot
+# Streudiagramm mit x-Markern
 plt.figure()
-plt.bar(x,y, color='gray')
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22');
+plt.scatter(x, y, marker='x')
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.title('Sinus-Funktion mit x-Markern')
+plt.show()
 ```
 
 ```{admonition} Mini-Übung
-:class: miniexercise 
-
-Hier ist eine Tabelle mit den Zugriffszahlen auf das MATLAB Live Script in der
-Vorlesung angewandte Informatik im Sommersemester 2021. Bitte stellen Sie die
-Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken schwarz.
-
-|Woche |Anzahl Nutzer/innen|
-| --- | --- |
-| 3 | 9  |
-| 4 | 17 |
-| 5 | 15 |
-| 6 | 10 |
-| 7 | 11 |
+:class: miniexercise
+Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:
+- x-Werte: Zahlen von 1 bis 20
+- y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie `np.random.uniform(10, 30, 20)`)
+- Marker: rote Dreiecke (marker='^')
+- Titel: "Zufällige Messwerte"
 ```
 
-```{code-cell} ipython3
-# Hier Ihr Code:
+```{code-cell}
+# Hier Ihr Code
 ```
 
 ````{admonition} Lösung
@@ -263,15 +228,77 @@ Daten als Balkendiagramm inklusive Beschriftungen dar. Färben Sie die Balken sc
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = [3, 4, 5, 6, 7]
-y = [9, 17, 15, 10, 11]
+# Daten generieren
+np.random.seed(42)  # Für reproduzierbare Ergebnisse
+x = range(1, 21)    # Zahlen von 1 bis 20
+y = np.random.uniform(10, 30, 20)  # Zufallszahlen zwischen 10 und 30
 
+# Streudiagramm erstellen
 plt.figure()
-plt.bar(x,y, color='black')
-plt.xlabel('Woche')
-plt.ylabel('Zugriffe')
-plt.title('Zugriffszahlen MATLAB Live Skripte SoSe 22');
+plt.scatter(x, y, marker='^', color='red', s=60)
+plt.xlabel('Messung Nr.')
+plt.ylabel('Messwert')
+plt.title('Zufällige Messwerte')
+plt.show()
 ```
 ````
 
-+++
+## Wann verwendet man welchen Diagrammtyp?
+
+Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
+Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
+von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.
+
+Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
+bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
+Dazu werden wir unterschiedliche Marker und unterschiedliche Farben verwenden.
+
+```{code-cell}
+# Daten - simulierte Temperaturmessungen
+x = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+y1 = [18, 22, 19, 21, 20, 23, 24]  # Frankfurt
+y2 = [16, 20, 17, 19, 18, 21, 22]  # Offenbach
+
+# Streudiagramme
+plt.figure()
+plt.scatter(x, y1, marker='+', s=100, color='blue')
+plt.scatter(x, y2, marker='o', s=50, color='red')
+plt.xlabel('Wochentag')
+plt.ylabel('Temperatur [°C]')
+plt.title('Temperaturmessungen')
+plt.show()
+```
+
+Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
+`plt.scatter(x, y1, label='Frankfurt')`. Zuletzt verwendet man die Funktion
+`legend()`, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
+Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+werden.
+
+```{code-cell}
+# Daten
+x = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+y1 = [18, 22, 19, 21, 20, 23, 24]  # Frankfurt
+y2 = [16, 20, 17, 19, 18, 21, 22]  # Offenbach
+
+# Streudiagramme mit Legende
+plt.figure()
+plt.scatter(x, y1, marker='+', s=100, color='blue', label='Frankfurt')
+plt.scatter(x, y2, marker='o', s=50, color='red', label='Offenbach')
+plt.xlabel('Wochentag')
+plt.ylabel('Temperatur [°C]')
+plt.title('Temperaturmessungen in der Region')
+plt.legend()
+plt.show()
+```
+
+## Zusammenfassung und Ausblick
+
+In diesem Kapitel haben wir die Grundlagen der Datenvisualisierung mit
+Matplotlib kennengelernt. Liniendiagramme eignen sich für kontinuierliche Daten,
+mathematische Funktionen und Zeitreihen, bei denen die Datenpunkte sinnvoll
+miteinander verbunden werden können. Streudiagramme sind ideal für diskrete
+Messpunkte, Korrelationsanalysen und Situationen, in denen die Einzelpunkte im
+Fokus stehen. Im nächsten Kapitel werden wir uns mit Balkendiagrammen und
+Histogrammen beschäftigen, die für andere Datentypen geeignet sind.
