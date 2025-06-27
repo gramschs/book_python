@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -632,9 +632,10 @@ der Titel gesetzt.</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Plotten Sie folgende Funktionen im Bereich x ∈ [-3, 3]:</p>
+<p>Plotten Sie folgende Funktionen:</p>
 <ul class="simple">
-<li><p>lineare Funktion, z.B. f(x) = 2x + 1</p></li>
+<li><p>lineare Funktion, z.B. f(x) = 3x + 7</p></li>
+<li><p>Sinus,</p></li>
 <li><p>Kosinus,</p></li>
 <li><p>Exponentialfunktion und</p></li>
 <li><p>Wurzelfunktion.</p></li>
@@ -715,70 +716,8 @@ Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:<
 <blockquote>
 <div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
 </div></blockquote>
-<p>Wir probieren einige Symbole aus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># Streudiagramm mit x-Markern</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sinus-Funktion mit x-Markern&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/91e17319fd1a583bdcc199fd98d7073dd7894f70792536ab73cac89470f9fc34.png" src="../_images/91e17319fd1a583bdcc199fd98d7073dd7894f70792536ab73cac89470f9fc34.png" />
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:</p>
-<ul class="simple">
-<li><p>x-Werte: Zahlen von 1 bis 20</p></li>
-<li><p>y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.random.uniform(10,</span> <span class="pre">30,</span> <span class="pre">20)</span></code>)</p></li>
-<li><p>Marker: rote Dreiecke (marker=‘^’)</p></li>
-<li><p>Titel: “Zufällige Messwerte”</p></li>
-</ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Daten generieren</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Für reproduzierbare Ergebnisse</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>    <span class="c1"># Zahlen von 1 bis 20</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Zufallszahlen zwischen 10 und 30</span>
-
-<span class="c1"># Streudiagramm erstellen</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Messung Nr.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Messwert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zufällige Messwerte&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="wann-verwendet-man-welchen-diagrammtyp">
-<h2>Wann verwendet man welchen Diagrammtyp?<a class="headerlink" href="#wann-verwendet-man-welchen-diagrammtyp" title="Link to this heading">#</a></h2>
-<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
-Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
-von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.</p>
+<p>Die Farbe der Marker oder auch der Linien lässt sich mit dem optionalen Argument
+<code class="docutils literal notranslate"><span class="pre">color=</span></code> einstellen.</p>
 <p>Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
 bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
 Dazu werden wir unterschiedliche Marker und unterschiedliche Farben verwenden.</p>
@@ -833,6 +772,49 @@ werden.</p>
 <img alt="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" src="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" />
 </div>
 </div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:</p>
+<ul class="simple">
+<li><p>x-Werte: Zahlen von 1 bis 20</p></li>
+<li><p>y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.random.uniform(10,</span> <span class="pre">30,</span> <span class="pre">20)</span></code>)</p></li>
+<li><p>Marker: rote Dreiecke (marker=‘^’)</p></li>
+<li><p>Titel: “Zufällige Messwerte”</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Daten generieren</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Für reproduzierbare Ergebnisse</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>    <span class="c1"># Zahlen von 1 bis 20</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Zufallszahlen zwischen 10 und 30</span>
+
+<span class="c1"># Streudiagramm erstellen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Messung Nr.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Messwert&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zufällige Messwerte&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="wann-verwendet-man-welchen-diagrammtyp">
+<h2>Wann verwendet man welchen Diagrammtyp?<a class="headerlink" href="#wann-verwendet-man-welchen-diagrammtyp" title="Link to this heading">#</a></h2>
+<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
+Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
+von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.</p>
 </section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>

@@ -117,9 +117,10 @@ plt.show()
 
 ```{admonition} Mini-Übung
 :class: miniexercise 
-Plotten Sie folgende Funktionen im Bereich x ∈ [-3, 3]: 
+Plotten Sie folgende Funktionen: 
     
-* lineare Funktion, z.B. f(x) = 2x + 1
+* lineare Funktion, z.B. f(x) = 3x + 7
+* Sinus,
 * Kosinus,
 * Exponentialfunktion und
 * Wurzelfunktion.
@@ -193,61 +194,8 @@ Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:
 
 > <https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers>
 
-Wir probieren einige Symbole aus:
-
-```{code-cell}
-# Daten
-x = np.linspace(-2*np.pi, 2*np.pi, 25)
-y = np.sin(x)
-
-# Streudiagramm mit x-Markern
-plt.figure()
-plt.scatter(x, y, marker='x')
-plt.xlabel('x')
-plt.ylabel('sin(x)')
-plt.title('Sinus-Funktion mit x-Markern')
-plt.show()
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:
-- x-Werte: Zahlen von 1 bis 20
-- y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie `np.random.uniform(10, 30, 20)`)
-- Marker: rote Dreiecke (marker='^')
-- Titel: "Zufällige Messwerte"
-```
-
-```{code-cell}
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Daten generieren
-np.random.seed(42)  # Für reproduzierbare Ergebnisse
-x = range(1, 21)    # Zahlen von 1 bis 20
-y = np.random.uniform(10, 30, 20)  # Zufallszahlen zwischen 10 und 30
-
-# Streudiagramm erstellen
-plt.figure()
-plt.scatter(x, y, marker='^', color='red', s=60)
-plt.xlabel('Messung Nr.')
-plt.ylabel('Messwert')
-plt.title('Zufällige Messwerte')
-plt.show()
-```
-````
-
-## Wann verwendet man welchen Diagrammtyp?
-
-Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
-Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
-von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.
+Die Farbe der Marker oder auch der Linien lässt sich mit dem optionalen Argument
+`color=` einstellen.
 
 Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
 bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
@@ -292,6 +240,46 @@ plt.title('Temperaturmessungen in der Region')
 plt.legend()
 plt.show()
 ```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:
+- x-Werte: Zahlen von 1 bis 20
+- y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie `np.random.uniform(10, 30, 20)`)
+- Marker: rote Dreiecke (marker='^')
+- Titel: "Zufällige Messwerte"
+```
+
+```{code-cell}
+# Hier Ihr Code
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Daten generieren
+np.random.seed(42)  # Für reproduzierbare Ergebnisse
+x = range(1, 21)    # Zahlen von 1 bis 20
+y = np.random.uniform(10, 30, 20)  # Zufallszahlen zwischen 10 und 30
+
+# Streudiagramm erstellen
+plt.figure()
+plt.scatter(x, y, marker='^', color='red', s=60)
+plt.xlabel('Messung Nr.')
+plt.ylabel('Messwert')
+plt.title('Zufällige Messwerte')
+plt.show()
+```
+````
+
+## Wann verwendet man welchen Diagrammtyp?
+
+Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
+Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
+von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.
 
 ## Zusammenfassung und Ausblick
 
