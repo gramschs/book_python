@@ -27,7 +27,7 @@ kernelspec:
 ## Koeffizienten der Regressionsgerade berechnen mit polyfit
 
 Python bzw. das Modul NumPy unterstützt die Suche nach der Regressionspolynomen
-mit der Funktion `polyfit()`. Eine detaillierte Bechreibung finden Sie ìn der
+mit der Funktion `polyfit()`. Eine detaillierte Beschreibung finden Sie ìn der
 [NumPy-Dokumentation
 (polyfit)](https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.polyfit.html).
 Aufgerufen wird polyfit mit
