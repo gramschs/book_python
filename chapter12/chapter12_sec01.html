@@ -499,7 +499,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-kommt-aus-der-statistik">Regression kommt aus der Statistik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-weltweiter-co2-ausstosz">Beispiel: weltweiter CO2-Ausstoß</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-bestimmheitsmasz-r2">Das Bestimmheitsmaß R²</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaktive-visualisierung-r2-score">Interaktive Visualisierung R²-Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -514,10 +514,9 @@
   <section class="tex2jax_ignore mathjax_ignore" id="theorie-regression">
 <h1>12.1 Theorie Regression<a class="headerlink" href="#theorie-regression" title="Link to this heading">#</a></h1>
 <p>In der Analyse technischer und physikalischer Daten ist die Methode der
-Regression ein fundamentales Werkzeug. Einfach ausgedrückt, ist die Regression
-ein statistisches Verfahren, das den Zusammenhang zwischen Variablen ermittelt.
-In diesem Kapitel beschäftigen wir uns zunächst mit der Theorie von
-Regressionsverfahren.</p>
+Regression ein fundamentales Werkzeug. Sie ist ein statistisches Verfahren, das
+den Zusammenhang zwischen Variablen ermittelt. In diesem Kapitel beschäftigen
+wir uns zunächst mit der Theorie von Regressionsverfahren.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -537,14 +536,14 @@ Modellfunktion überhaupt nicht.</p></li>
 </section>
 <section id="regression-kommt-aus-der-statistik">
 <h2>Regression kommt aus der Statistik<a class="headerlink" href="#regression-kommt-aus-der-statistik" title="Link to this heading">#</a></h2>
-<p>In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits
-seit Jahrhunderten damit, Analyseverfahren zu entwickeln, mit denen
-experimentelle Daten gut erklärt werden können. Falls wir eine “erklärende”
-Variable haben und wir versuchen, die Abhängigkeit einer Messgröße von der
-erklärenden Variable zu beschreiben, nennen wir das Regressionsanalyse oder kurz
-<strong>Regression</strong>. Bei vielen Problemen suchen wir nach einem linearen Zusammenhang
-und sprechen daher von <strong>linearer Regression</strong>. Mehr Details finden Sie auch bei
-<a class="reference external" href="https://de.wikipedia.org/wiki/Regressionsanalyse">Wikipedia → Regressionsanalyse</a>.</p>
+<p>In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker damit,
+Analyseverfahren zu entwickeln, mit denen experimentelle Daten gut erklärt
+werden können. Falls wir eine “erklärende” Variable haben und versuchen, die
+Abhängigkeit einer Messgröße von der erklärenden Variable zu beschreiben, nennen
+wir das Regressionsanalyse oder kurz <strong>Regression</strong>. Bei vielen Problemen suchen
+wir nach einem linearen Zusammenhang und sprechen daher von <strong>linearer
+Regression</strong>. Mehr Details finden Sie auch bei <a class="reference external" href="https://de.wikipedia.org/wiki/Regressionsanalyse">Wikipedia →
+Regressionsanalyse</a>.</p>
 <p>Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
 Einflussgröße <span class="math notranslate nohighlight">\(x\)</span> und eine Zielgröße <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(N\)</span> Paaren von dazugehörigen
 Messwerten <span class="math notranslate nohighlight">\((x^{(1)},y^{(1)})\)</span>, <span class="math notranslate nohighlight">\((x^{(2)},y^{(2)})\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>,
@@ -575,7 +574,7 @@ Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
 Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
 Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
 werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
-feinjustiert werden können und die Prognosefähigkeit verbessern.</p>
+feinjustiert werden können, um die Prognosefähigkeit verbessern.</p>
 <p>Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
 wie lineare Regression funktioniert.</p>
 </section>
@@ -647,7 +646,7 @@ Einwohner (<a class="reference external" href="https://nextcloud.frankfurt-unive
 über den Datensatz. Wie üblich benutzen wir <code class="docutils literal notranslate"><span class="pre">info()</span></code> zuerst.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -660,7 +659,6 @@ Data columns (total 1 columns):
  0   Metrische_Tonnen_pro_Einwohner  29 non-null     float64
 dtypes: float64(1)
 memory usage: 464.0 bytes
-None
 </pre></div>
 </div>
 </div>
@@ -670,23 +668,68 @@ zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahle
 sind:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Metrische_Tonnen_pro_Einwohner
-count                       29.000000
-mean                         4.126993
-std                          0.324550
-min                          3.732385
-25%                          3.812655
-50%                          4.092267
-75%                          4.435536
-max                          4.606487
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metrische_Tonnen_pro_Einwohner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>29.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.126993</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.324550</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.732385</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.812655</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.092267</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.435536</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>4.606487</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Nun folgt noch die Visualisierung der Daten.</p>
 <div class="cell docutils container">
@@ -694,13 +737,14 @@ max                          4.606487
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">jahre</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
-<span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">]</span>
+<span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metrische Tonnen / Einwohner&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter C02-Ausstoß&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter C02-Ausstoß&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +790,8 @@ Werte von <code class="docutils literal notranslate"><span class="pre">start</sp
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahr&#39;</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metrische Tonnen pro Einwohner&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter CO2-Ausstoß von 1990 bis 2018&#39;</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter CO2-Ausstoß von 1990 bis 2018&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -862,7 +907,7 @@ bei <a class="reference external" href="https://de.wikipedia.org/wiki/Bestimmthe
 (Bestimmtheitsmaß)</a>. Die Formel
 lautet:</p>
 <div class="math notranslate nohighlight">
-\[R^2 = 1 - \frac{\sum_{i=1}^N (y_i - f(x_i))^2}{\sum_{i=1}^N(y_i-\bar{y})}. \]</div>
+\[R^2 =1-\frac{\sum_{i=1}^N (y^{(i)} - f(x^{(i)})^2}{\sum_{i=1}^N(y^{(i)}-\bar{y})^2}.\]</div>
 <p>Dabei kürzt sich das <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span> im Zähler und Nenner weg. Nachdem der
 <span class="math notranslate nohighlight">\(R^2\)</span>-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
 beurteilen:</p>
@@ -888,9 +933,24 @@ Modellfunktion überhaupt nicht.</p></li>
 </div>
 <p>Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
 nicht perfekt.</p>
-</section>
-<section id="interaktive-visualisierung-r2-score">
-<h2>Interaktive Visualisierung R²-Score<a class="headerlink" href="#interaktive-visualisierung-r2-score" title="Link to this heading">#</a></h2>
+<p>Damit wir nicht händisch den R2-Core berechnen lassen müssen, verwenden wir das
+Modul Scikit-Learn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_blau</span><span class="p">,</span> <span class="n">y_rot</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 aus Scikit-Learn: </span><span class="si">{</span><span class="n">R2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 aus Scikit-Learn: 0.78
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
 <p>Auf der Seite <a class="reference external" href="https://mathweb.de">https://mathweb.de</a> finden Sie eine Reihe von
 Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
 gibt es dort auch eine interaktive Demonstration des R²-Scores.</p>
@@ -900,7 +960,16 @@ lineare Regressionsmodell durch eine blaue Gerade. Im Titel wird der aktuelle
 und der optimale R²-Wert angezeigt. Ziehen Sie an den weißen Punkten, um die
 Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
 Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
-<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe></section>
+<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir gelernt, was Regression bedeutet und wie das
+Regressionsergebnis mit dem R2-Score bewertet wird. Im nächsten Kapitel werden
+wir uns damit beschäftigen, die Steigung und den y-Achsenabschnitt einer
+linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -972,7 +1041,7 @@ Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-kommt-aus-der-statistik">Regression kommt aus der Statistik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-weltweiter-co2-ausstosz">Beispiel: weltweiter CO2-Ausstoß</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-bestimmheitsmasz-r2">Das Bestimmheitsmaß R²</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaktive-visualisierung-r2-score">Interaktive Visualisierung R²-Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

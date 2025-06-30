@@ -12,13 +12,12 @@ kernelspec:
   name: python3
 ---
 
-# 12.1 Theorie Regression 
+# 12.1 Theorie Regression
 
 In der Analyse technischer und physikalischer Daten ist die Methode der
-Regression ein fundamentales Werkzeug. Einfach ausgedrückt, ist die Regression
-ein statistisches Verfahren, das den Zusammenhang zwischen Variablen ermittelt.
-In diesem Kapitel beschäftigen wir uns zunächst mit der Theorie von
-Regressionsverfahren.
+Regression ein fundamentales Werkzeug. Sie ist ein statistisches Verfahren, das
+den Zusammenhang zwischen Variablen ermittelt. In diesem Kapitel beschäftigen
+wir uns zunächst mit der Theorie von Regressionsverfahren.
 
 ## Lernziele
 
@@ -34,14 +33,14 @@ Regressionsverfahren.
 
 ## Regression kommt aus der Statistik
 
-In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits
-seit Jahrhunderten damit, Analyseverfahren zu entwickeln, mit denen
-experimentelle Daten gut erklärt werden können. Falls wir eine “erklärende”
-Variable haben und wir versuchen, die Abhängigkeit einer Messgröße von der
-erklärenden Variable zu beschreiben, nennen wir das Regressionsanalyse oder kurz
-**Regression**. Bei vielen Problemen suchen wir nach einem linearen Zusammenhang
-und sprechen daher von **linearer Regression**. Mehr Details finden Sie auch bei
-[Wikipedia → Regressionsanalyse](https://de.wikipedia.org/wiki/Regressionsanalyse).
+In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker damit,
+Analyseverfahren zu entwickeln, mit denen experimentelle Daten gut erklärt
+werden können. Falls wir eine “erklärende” Variable haben und versuchen, die
+Abhängigkeit einer Messgröße von der erklärenden Variable zu beschreiben, nennen
+wir das Regressionsanalyse oder kurz **Regression**. Bei vielen Problemen suchen
+wir nach einem linearen Zusammenhang und sprechen daher von **linearer
+Regression**. Mehr Details finden Sie auch bei [Wikipedia →
+Regressionsanalyse](https://de.wikipedia.org/wiki/Regressionsanalyse).
 
 Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
 Einflussgröße $x$ und eine Zielgröße $y$ mit $N$ Paaren von dazugehörigen
@@ -76,7 +75,7 @@ Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
 Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
 Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
 werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
-feinjustiert werden können und die Prognosefähigkeit verbessern.
+feinjustiert werden können, um die Prognosefähigkeit verbessern.
 
 Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
 wie lineare Regression funktioniert.
@@ -86,7 +85,7 @@ wie lineare Regression funktioniert.
 Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
 Einwohner ([hier Download](https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz)).
 
-```{code-cell} ipython3
+```{code-cell}
 import pandas as pd
 
 data = pd.read_csv('data/co2_emissionen_worldwide.csv', skiprows=1, index_col=0)
@@ -96,31 +95,32 @@ data.head()
 Wir verschaffen uns mit den Funktionen `info()` und `describe()` einen Überblick
 über den Datensatz. Wie üblich benutzen wir `info()` zuerst.
 
-```{code-cell} ipython3
-print(data.info())
+```{code-cell}
+data.info()
 ```
 
 Offensichtlich enthält der Datensatz 29 Zeilen (= Jahre) mit gültigen Einträgen
 zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahlen
 sind:
 
-```{code-cell} ipython3
-print(data.describe())
+```{code-cell}
+data.describe()
 ```
 
 Nun folgt noch die Visualisierung der Daten.
 
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
 
 jahre = data.index
-co2 = data.loc[:, 'Metrische_Tonnen_pro_Einwohner']
+co2 = data['Metrische_Tonnen_pro_Einwohner']
 
 plt.figure()
 plt.scatter(jahre, co2)
 plt.xlabel('Jahre')
 plt.ylabel('Metrische Tonnen / Einwohner')
-plt.title('Weltweiter C02-Ausstoß');
+plt.title('Weltweiter C02-Ausstoß')
+plt.show();
 ```
 
 Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
@@ -141,9 +141,11 @@ passen könnte.
 Tipp: `linspace(start, stopp, anzahl)` aus dem NumPy-Modul generiert `anzahl`
 Werte von `start` bis `stopp`. 
 ```
-```{code-cell} ipython3
+
+```{code-cell}
 # Hier Ihr Code
 ```
+
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
@@ -160,7 +162,8 @@ plt.scatter(jahre,co2)
 plt.plot(x_modell, y_modell, color='red')
 plt.xlabel('Jahr') 
 plt.ylabel('Metrische Tonnen pro Einwohner')
-plt.title('Weltweiter CO2-Ausstoß von 1990 bis 2018'); 
+plt.title('Weltweiter CO2-Ausstoß von 1990 bis 2018')
+plt.show();
 ```
 ````
 
@@ -186,9 +189,9 @@ Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)
 
 Die rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir
 können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg
-ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen: 
+ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen:
 
-$$r = y_{\text{blau}}-y_{\text{rot}}.$$ 
+$$r = y_{\text{blau}}-y_{\text{rot}}.$$
 
 Diese Differenz nennt man **Residuum**. Danach summieren wir die Fehler (also
 die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren,
@@ -204,7 +207,7 @@ $$\frac{1}{N}\sum_{i=1}^{N} (y^{(i)} - f(x^{(i)})^2. $$
 Wir berechnen die Fehlerquadratsumme in Python mit der `sum()` Funktion aus
 NumPy. Insgesamt ergibt sich
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 
 # blaue y-Koordinaten = Messpunkte
@@ -232,7 +235,7 @@ $$\bar{y} = \frac{1}{N} \sum_{i=1}^{N} y^{(i)}.$$
 
 In Python ergibt sich der folgende Code:
 
-```{code-cell} ipython3
+```{code-cell}
 y_mittelwert = y_blau.mean()
 gesamtfehler_mittelwert = 1/N * np.sum( (y_blau - y_mittelwert)**2 )
 
@@ -243,7 +246,7 @@ Offensichtlich ist der Gesamtfehler für die Modellfunktion kleiner als wenn wir
 einfach nur immer den Mittelwert prognostizieren würden. Wir rechnen das in
 Prozent um:
 
-```{code-cell} ipython3
+```{code-cell}
 relativer_fehler = gesamtfehler / gesamtfehler_mittelwert
 
 print(f'Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: {relativer_fehler:.4f}')
@@ -258,7 +261,7 @@ bei [Wikipedia
 (Bestimmtheitsmaß)](https://de.wikipedia.org/wiki/Bestimmtheitsmaß). Die Formel
 lautet:
 
-$$R^2 = 1 - \frac{\sum_{i=1}^N (y_i - f(x_i))^2}{\sum_{i=1}^N(y_i-\bar{y})}. $$
+$$R^2 =1-\frac{\sum_{i=1}^N (y^{(i)} - f(x^{(i)})^2}{\sum_{i=1}^N(y^{(i)}-\bar{y})^2}.$$
 
 Dabei kürzt sich das $\frac{1}{N}$ im Zähler und Nenner weg. Nachdem der
 $R^2$-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
@@ -271,7 +274,7 @@ beurteilen:
 
 Für das Beispiel ergibt sich ein Bestimmtheitsmaß $R^2$ von
 
-```{code-cell} ipython3
+```{code-cell}
 R2 = 1 - relativer_fehler
 print(f'R2 = {R2:.2f}')
 ```
@@ -279,8 +282,17 @@ print(f'R2 = {R2:.2f}')
 Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
 nicht perfekt.
 
-## Interaktive Visualisierung R²-Score
+Damit wir nicht händisch den R2-Core berechnen lassen müssen, verwenden wir das
+Modul Scikit-Learn.
 
+```{code-cell}
+from sklearn.metrics import r2_score
+R2 = r2_score(y_blau, y_rot)
+print(f'R2 aus Scikit-Learn: {R2:.2f}')
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
 Auf der Seite [https://mathweb.de](https://mathweb.de) finden Sie eine Reihe von
 Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
 gibt es dort auch eine interaktive Demonstration des R²-Scores.
@@ -293,3 +305,11 @@ Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
 Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.
 
 <iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>
+```
+
+## Zusammenfassung und Ausblick
+
+In diesem Kapitel haben wir gelernt, was Regression bedeutet und wie das
+Regressionsergebnis mit dem R2-Score bewertet wird. Im nächsten Kapitel werden
+wir uns damit beschäftigen, die Steigung und den y-Achsenabschnitt einer
+linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.
