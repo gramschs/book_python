@@ -113,7 +113,7 @@ Kaufverhalten von Kunden in Online-Shops wird beobachtet, Fußballspiele werden
 statistisch analysiert oder Maschinen mit Messsensoren bestückt. Das
 Beratungsunternehmen IDC (International Data Corporation) prognostiziert, dass
 sich die Datenmenge von 33 Zettabytes im Jahr 2018 auf 175 Zettebytes im Jahr
-2025 mehr als verfünffachen wird {cite}`reinsel2018`.
+2025 mehr als verfünffachen wird.
 
 **Rechenleistung**: Der rasante Fortschritt in der Computertechnologie hat die
 Rechenleistung, die für maschinelles Lernen erforderlich ist, drastisch erhöht.
@@ -290,26 +290,26 @@ neue Daten hinzukommen, muss das Modell aktualisiert werden, um mit den sich
 ändernden Bedingungen zurechtzukommen.
 
 Die folgende Skizze zeigt den schematischen Ablauf eines typischen ML-Projektes.
-Dabei benutzen wir das sogenannte QUA3CK-Modell nach einem Vorschlag von
-{cite}`stock2020`. Das QUA3CK-Modell zeigt den typischen Ablauf eines
-ML-Projektes von der wissenschaftlichen Fragestellung (Q -- Question) bis zu
-deren Beantwortung (K -- Knowledge Transfer). Dazu gehört das Sammeln und
-Erkunden der Daten (U -- Understanding the data), mit Hilfe derer die Frage
-beantwortet werden soll. Die Phase der ML-Modellbildung wird mehrfach
-durchlaufen und besteht aus der Auswahl und dem Training des Algorithmus bzw.
-des Modells (A -- Algorithm selection and training), dazu passend der Auswahl
-und Anpassung der Daten (A -- Adaption of the data) sowie der Anpassung der
-Hyperparamter (A -- Adjustement of the hyperparameter). Die Modelle, die durch
-diese Schleife erstellt werden, werden letztendlich miteinander verglichen und
-bewertet (C -- Comparison and Conclusion), bevor sie produktiv eingesetzt
-werden.
+Dabei benutzen wir das sogenannte
+[QUA3CK-Modell](https://www.researchgate.net/publication/339830240_The_QUACK_Machine_Learning_Development_Process_and_the_Laboratory_for_Applied_Machine_Learning_Approaches_LAMA).
+Das QUA3CK-Modell zeigt den typischen Ablauf eines ML-Projektes von der
+wissenschaftlichen Fragestellung (Q -- Question) bis zu deren Beantwortung (K --
+Knowledge Transfer). Dazu gehört das Sammeln und Erkunden der Daten (U --
+Understanding the data), mit Hilfe derer die Frage beantwortet werden soll. Die
+Phase der ML-Modellbildung wird mehrfach durchlaufen und besteht aus der Auswahl
+und dem Training des Algorithmus bzw. des Modells (A -- Algorithm selection and
+training), dazu passend der Auswahl und Anpassung der Daten (A -- Adaption of
+the data) sowie der Anpassung der Hyperparamter (A -- Adjustement of the
+hyperparameter). Die Modelle, die durch diese Schleife erstellt werden, werden
+letztendlich miteinander verglichen und bewertet (C -- Comparison and
+Conclusion), bevor sie produktiv eingesetzt werden.
 
 ```{figure} pics/qua3ck_process.png
 :name: fig_qua3ck_process
 :width: 60%
 
 Typischer Ablauf eines ML-Projektes als QUA<sup>3</sup>CK-Prozess dargestellt
-(Quelle: in Anlehnung an {cite}`stock2020`)
+(Quelle: in Anlehnung an [The QUA³CK Machine Learning Development Process and the Laboratory for Applied Machine Learning Approaches (LAMA)](https://www.researchgate.net/publication/339830240_The_QUACK_Machine_Learning_Development_Process_and_the_Laboratory_for_Applied_Machine_Learning_Approaches_LAMA))
 ```
 
 Das folgende Video erklärt den ML-Workflow etwas detaillierter, als wir es mit
