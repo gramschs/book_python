@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -498,7 +498,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionspolynome">Regressionspolynome</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-regressionsparabel">Beispiel Regressionsparabel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zuviel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zu viel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -512,6 +513,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="polynomiale-regression">
 <h1>12.3 Polynomiale Regression<a class="headerlink" href="#polynomiale-regression" title="Link to this heading">#</a></h1>
+<p>Die in den vorangegangenen Regressionstechniken erweitern wir nun von linearen
+Regressiongeraden auf Regressionspolynome wie beispielsweise
+Regressionsparabeln.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -520,7 +524,7 @@
 <li><p>Sie können mit <strong>polyfit</strong> zu gegebenen Messdaten die Koeffizienten eines
 Regressionspolynoms bestimmen.</p></li>
 <li><p>Sie können mit <strong>polyval</strong> aus den Koeffizienten ein Regressionspolynom
-aufstellen.</p></li>
+auswerten.</p></li>
 <li><p>Sie wissen, was die Begriffe <strong>Underfitting</strong> und <strong>Overfitting</strong> bedeuten.</p></li>
 <li><p>Sie können mit dem Bestimmtheitsmaß R² abschätzen, welcher Polynomgrad <span class="math notranslate nohighlight">\(n\)</span> zu
 den Daten passt.</p></li>
@@ -557,7 +561,8 @@ Polynomgrade möglich.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -624,7 +629,8 @@ c = 14.535614285714288
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -632,7 +638,7 @@ c = 14.535614285714288
 <img alt="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" src="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" />
 </div>
 </div>
-<p>Alternativ kann die Funktion <code class="docutils literal notranslate"><span class="pre">polyval</span></code> dazu genutzt werden, um die Parabel aufzustellen.</p>
+<p>Alternativ kann die Funktion <code class="docutils literal notranslate"><span class="pre">polyval</span></code> dazu genutzt werden, um die Parabel auszuwerten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
@@ -644,7 +650,8 @@ c = 14.535614285714288
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -653,16 +660,24 @@ c = 14.535614285714288
 </div>
 </div>
 </section>
-<section id="zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">
-<h2>Zuviel des Guten, höhere Polynomgrade sind nicht besser<a class="headerlink" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser" title="Link to this heading">#</a></h2>
-<p>Regressionspolynom scheinen zunächst besser zu sein als Regressionsgeraden.
+<section id="zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser">
+<h2>Zu viel des Guten, höhere Polynomgrade sind nicht besser<a class="headerlink" href="#zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser" title="Link to this heading">#</a></h2>
+<p>Regressionspolynome scheinen zunächst besser zu sein als Regressionsgeraden.
 Durch die zusätzlichen Terme können auch nichtlineare Beziehungen und komplexere
-Muster in den Daten erklärt werden. Allerdings birgt die Verwendung von höhere
-Polynomgraden auch das Risiko des Overfittings. Der Begriff <strong>Overfitting</strong>
+Muster in den Daten erklärt werden. Allerdings birgt die Verwendung höherer
+Polynomgrade auch das Risiko des Overfittings. Der Begriff <strong>Overfitting</strong>
 bedeutet, dass das Regressionspolynom zu genau an die Daten angepasst wurde und
 neue Daten schlechter prognostiziert. Das Gegenteil davon ist <strong>Underfitting</strong>.
-Das Regressionspolynom hat einen zu kleinen Polynomgrad und kann daher die Daten
-kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr wichtig.</p>
+Das Regressionspolynom hat einen zu kleinen/niedrigen Polynomgrad und kann daher
+die Daten kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr
+wichtig.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist Overfitting und Underfitting?</p>
+<p>Ist ein Modell zu stark an die Trainingsdaten angepasst und lässt es sich daher
+nicht mehr verallgemeinern, liegt <strong>Overfitting</strong> (Überanpassung) vor. Fehlen
+dahingegen erklärende Variablen, so dass die Komplexität der Daten nicht
+abgebildet werden kann, sprechen wir von <strong>Underfitting</strong> (Unteranpassung).</p>
+</div>
 <p>Wir betrachten dazu das Beispiel von oben und verändern den Polynomgrad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -684,7 +699,8 @@ kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr wichtig.
   <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
   <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -715,14 +731,15 @@ des Beispiels. Probieren wir noch höhere Polynomgrade aus.</p>
   <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
   <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/1100773175.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/1100773175.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
 </pre></div>
 </div>
@@ -732,42 +749,20 @@ des Beispiels. Probieren wir noch höhere Polynomgrade aus.</p>
 <p>Grad 5 ist schon gut, aber die Regressionspolynome Grad 6 bis 8 scheinen perfekt
 zu sein. Allerdings gibt es auch eine Warnung, denn wenn mehr
 Polynomkoeffizienten da sind als Messpunkte, ist die Bestimmung der
-Polynomkoeffizienten nicht mehr eindeutig. Dennoch, jeder Messpunkt wird exakt
-von dem Regressionspolynom getroffen. Demnach müssten alle Residuen 0 sein und
-damit für das Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2 = 1\)</span> gelten. Am besten lassen wir eine
-Tabelle für den Polynomgrad und das jeweilige Residuum ausgeben. Dazu schreiben
-wir aber erst eine Funktion, die das Bestimmtheitsmaß ausrechnet.</p>
+Polynomkoeffizienten nicht mehr eindeutig. Bei <span class="math notranslate nohighlight">\(n\)</span> Datenpunkten ist ein Polynom
+vom Grad <span class="math notranslate nohighlight">\(n-1\)</span> bereits eindeutig bestimmt und interpoliert alle Punkte exakt.</p>
+<p>Dennoch, jeder Messpunkt wird exakt von dem Regressionspolynom getroffen.
+Demnach müssten alle Residuen 0 sein und damit für das Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2 =
+1\)</span> gelten. Am besten lassen wir eine Tabelle für den Polynomgrad und das
+jeweilige Residuum ausgeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_r2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">):</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">y_mittelwert</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">messwert</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
-        <span class="n">y_mittelwert</span> <span class="o">=</span> <span class="n">y_mittelwert</span> <span class="o">+</span> <span class="n">messwert</span>
-    <span class="n">y_mittelwert</span> <span class="o">=</span> <span class="n">y_mittelwert</span> <span class="o">/</span> <span class="n">N</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 
-    <span class="n">zaehler</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">nenner</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="n">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_modell</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
-        <span class="n">nenner</span>  <span class="o">=</span> <span class="n">nenner</span>  <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_mittelwert</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="n">r2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">zaehler</span> <span class="o">/</span> <span class="n">nenner</span>
-    <span class="k">return</span> <span class="n">r2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Das war eine sehr händische Implementierung des R2-Bestimmtheitsmaßes. Mit
-NumPy-Arrays hätte das eleganter funktioniert. Das Modul Sciki-Learn stellt auch
-schon eine Implementierung zur Verfügung. Jetzt verwenden wir die Funktion, um
-für die Polynomgrade von 1 bis 8 das Bestimmtheitsmaß zu bestimmen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
     <span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">berechne_r2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polynomgrad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">: R2 = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -783,15 +778,18 @@ Polynomgrad 7: R2 = 1.0000
 Polynomgrad 8: R2 = 1.0000
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/731985486.py:4: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/731985486.py:4: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wenn wir den Polynomgrad noch höher treiben, passiert etwas Seltsames.</p>
+<p>Die mathematische Theorie wird in der Praxis bestätigt. Der <span class="math notranslate nohighlight">\(R^2\)</span>-Score hat ab
+dem Polynomgrad 6 den Wert 1. Wenn wir den Polynomgrad noch höher treiben,
+passiert etwas Seltsames, was aber nicht im <span class="math notranslate nohighlight">\(R^2\)</span>-Score zu entdecken ist,
+sondern in der Visualisierung der Regressionspolynome.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
@@ -812,18 +810,19 @@ Polynomgrad 8: R2 = 1.0000
   <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
   <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_5545/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_3891/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
   p = np.polyfit(x, y, grad)
 </pre></div>
 </div>
@@ -837,6 +836,17 @@ perfekt ist. Bei der Tabelle der R2-Werte haben wir gesehen, dass der R2-Wert
 von 0.0054 (Grad 1) auf 0.9834 (Grad 2) springt. Danach sind aber keine
 wesentlichen Verbesserungen mehr erkennbar. Daher wählen wir Grad 2 als
 Regressionspolynom.</p>
+<div class="note admonition">
+<p class="admonition-title">Tipp</p>
+<p>In der Ingenieurspraxis sollte immer das einfachste Modell gewählt werden, das
+die Daten ausreichend gut beschreibt. Dies folgt dem Prinzip »Ockhams
+Rasiermesser« (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Ockhams_Rasiermesser">Wikipedia →  Ockhams
+Rasiermesser</a>).</p>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir gelernt, Messdaten durch Regressionspolynome zu modellieren. Dabei ist die sorgsame Wahl des Polynomgrads sehr wichtig, um Overfitting und Underfitting zu vermeiden. Es gibt außer den Regressionsmodellen noch viele weitere Möglichkeiten, für Messdaten Modelle zu erstellen. Damit beschäftigt sich das maschinelle Lernen, das ein Teilgebiet der Künstlichen Intelligenz ist.</p>
 </section>
 </section>
 
@@ -908,7 +918,8 @@ Regressionspolynom.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionspolynome">Regressionspolynome</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-regressionsparabel">Beispiel Regressionsparabel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zuviel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zu viel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

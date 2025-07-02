@@ -282,7 +282,7 @@ print(f'R2 = {R2:.2f}')
 Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
 nicht perfekt.
 
-Damit wir nicht händisch den R2-Core berechnen lassen müssen, verwenden wir das
+Damit wir nicht händisch den R²-Core berechnen lassen müssen, verwenden wir das
 Modul Scikit-Learn.
 
 ```{code-cell}
@@ -310,6 +310,6 @@ Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.
 ## Zusammenfassung und Ausblick
 
 In diesem Kapitel haben wir gelernt, was Regression bedeutet und wie das
-Regressionsergebnis mit dem R2-Score bewertet wird. Im nächsten Kapitel werden
+Regressionsergebnis mit dem R²-Score bewertet wird. Im nächsten Kapitel werden
 wir uns damit beschäftigen, die Steigung und den y-Achsenabschnitt einer
 linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.

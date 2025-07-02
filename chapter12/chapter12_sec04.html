@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/chapter12_sec04';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -499,7 +501,8 @@
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Link to this heading">#</a></h1>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 12.1</p>
-<p>Gegeben ist der folgende Code mit Zeilennummern, um Messdaten zu visualisieren. Suchen Sie die darin enthaltenen Fehler. Korrigieren Sie anschließend das Programm.</p>
+<p>Gegeben ist der folgende Code mit Zeilennummern, um Messdaten zu visualisieren.
+Suchen Sie die darin enthaltenen Fehler. Korrigieren Sie anschließend den Code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>  <span class="c1"># Datenimport Messdaten</span>
 <span class="mi">2</span>  <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="mi">3</span>  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">]</span>
@@ -513,7 +516,8 @@
 <span class="mi">11</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
 <span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
 <span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
-<span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">titel</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+<span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">titel</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">)</span>
+<span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -521,7 +525,8 @@
 <p class="admonition-title">Lösung</p>
 <ul class="simple">
 <li><p>Zeile 6: Listen dürfen nicht quadriert werden.</p></li>
-<li><p>Zeile 9: Der Aufruf plt.figure() fürht zu einer Fehlermeldung, da Matplotlib nicht importiert wurde.</p></li>
+<li><p>Zeile 9: Der Aufruf plt.figure() fürht zu einer Fehlermeldung, da Matplotlib
+nicht importiert wurde.</p></li>
 <li><p>Zeile 14: plt.title() ist falsch geschrieben.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -541,40 +546,26 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Bemerkung: Hätten wir nicht eine Liste, sondern NumPy-Arrays genommen, um die Messwerte zu speichern, hätte die Quadratur funktioniert. Die folgende Alternative korrigiert auch alle Fehler.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Datenimport Messdaten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">152.38</span><span class="p">,</span> <span class="mf">124.43</span><span class="p">,</span> <span class="mf">88.91</span><span class="p">,</span> <span class="mf">37.43</span><span class="p">,</span> <span class="mf">5.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">27.41</span><span class="p">])</span>
-    
-<span class="c1"># Parabel durch die Messdaten</span>
-<span class="n">y_parabel</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-   
-<span class="c1"># Plot der Messdaten mit zusätzlicher Parabel</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_parabel</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperatur&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Materialeigenschaft&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Messdaten&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
+<p>Bemerkung: Hätten wir nicht eine Liste, sondern NumPy-Arrays genommen, um die
+Messwerte zu speichern, hätte die Quadratur funktioniert.</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 12.2</p>
-<p>Laden Sie den Datensatz <code class="docutils literal notranslate"><span class="pre">studierendenzahlen_frankfurt_uas.csv</span></code> (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/MzxHw2rDRdx5eRA">→ hier Download</a>) herunter und
-importieren Sie ihn mit Pandas. Die ersten drei Zeilen sind Kommentare und
+<p>Laden Sie den Datensatz <code class="docutils literal notranslate"><span class="pre">studierendenzahlen_frankfurt_uas.csv</span></code> (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/MzxHw2rDRdx5eRA">→ hier
+Download</a>) herunter
+und importieren Sie ihn mit Pandas. Die ersten drei Zeilen sind Kommentare und
 müssen daher mit dem Argument <code class="docutils literal notranslate"><span class="pre">skiprows=3</span></code> übersprungen werden.</p>
 <ol class="arabic simple">
 <li><p>Lassen Sie die Studierendenzahlen männlich und weiblich visualisieren.</p></li>
-<li><p>Berechne Sie eine Regressionsgerade jeweils für die Studierendenzahlen
+<li><p>Berechnen Sie eine Regressionsgerade jeweils für die Studierendenzahlen
 weiblich und männlich. Wächst die Anzahl der männlichen oder der weiblichen
 Studierenden schneller?</p></li>
+<li><p>Bewerten Sie mit Hilfe des <span class="math notranslate nohighlight">\(R^2\)</span>-Scores, ob die beiden Regressionsgeraden
+brauchbar sind.</p></li>
 <li><p>Lassen Sie die Regressionsgeraden zusammen mit den Studierendenzahlen
 visualisieren.</p></li>
 </ol>
@@ -588,10 +579,13 @@ visualisieren.</p></li>
 <span class="n">studizahlen</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Der Index kann auf die erste Spalte gesetzt werden, muss aber nicht. Die Visualisierung als Streudiagramm erfolgt mit folgenden Python-Code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraktion der Daten aus der Tabelle</span>
-<span class="n">y_maennlich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;männlich&#39;</span><span class="p">]</span>
-<span class="n">y_weiblich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;weiblich&#39;</span><span class="p">]</span>
+<p>Der Index kann auf die erste Spalte gesetzt werden, muss aber nicht. Die
+Visualisierung als Streudiagramm erfolgt mit folgenden Python-Code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Extraktion der Daten aus der Tabelle</span>
+<span class="n">y_maennlich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="p">[</span><span class="s1">&#39;männlich&#39;</span><span class="p">]</span>
+<span class="n">y_weiblich</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="p">[</span><span class="s1">&#39;weiblich&#39;</span><span class="p">]</span>
 <span class="n">semester</span> <span class="o">=</span> <span class="n">studizahlen</span><span class="o">.</span><span class="n">index</span>
 
 <span class="c1"># Streudiagramm</span>
@@ -601,11 +595,18 @@ visualisieren.</p></li>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Semester&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Studierende&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Für die Regressionsgeraden brauchen wir Zahlen als Ursache, nicht Semester. Daher basteln wir mit der <code class="docutils literal notranslate"><span class="pre">range</span></code>-Funktion x-Werte von 0 bis zur Anzahl der Semester. Danach wenden wir <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> mit Grad 1 an und lassen die beiden Steigungen ausgeben.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_semester</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">semester</span><span class="p">)</span>
+<p>Für die Regressionsgeraden brauchen wir Zahlen als Ursache, nicht Semester.
+Daher basteln wir mit der <code class="docutils literal notranslate"><span class="pre">range</span></code>-Funktion x-Werte von 0 bis zur Anzahl der
+Semester. Danach wenden wir <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> mit Grad 1 an und lassen die beiden
+Steigungen und die <span class="math notranslate nohighlight">\(R^2\)</span>-Scores ausgeben.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">anzahl_semester</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">semester</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">anzahl_semester</span><span class="p">)</span>
 
 <span class="n">p_maennlich</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_maennlich</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -613,9 +614,17 @@ visualisieren.</p></li>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung bei der Entwicklung Studenten: </span><span class="si">{</span><span class="n">p_maennlich</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung bei der Entwicklung Studentinnen: </span><span class="si">{</span><span class="n">p_weiblich</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">r2_maennlich</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_maennlich</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_maennlich</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">r2_weiblich</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_weiblich</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_weiblich</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2-Score für Studenten: </span><span class="si">{</span><span class="n">r2_maennlich</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2-Score für Studentinnen: </span><span class="si">{</span><span class="n">r2_weiblich</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Die Anzahl der weiblichen Studierenden wächst schneller als die der männlichen Studierenden.</p>
+<p>Die Anzahl der weiblichen Studierenden wächst schneller als die der männlichen
+Studierenden. Das Modell ist für Studenten weniger gut geeignet (R2 0.67), aber
+für Studentinnen sehr gut (R2 0.9).</p>
 <p>Zuletzt wird alles zusammen visualisiert.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erstelle Wertetabelle für das Diagramm</span>
 <span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">anzahl_semester</span><span class="p">)</span>
@@ -631,23 +640,25 @@ visualisieren.</p></li>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Semester&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Studierende&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung der Studierendenzahlen Frankfurt UAS&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 12.3</p>
 <p>Laden Sie die Biersteuerstatistik
-(<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/Ejc2LFEW3Hz3mA9">Download</a>) herunter.</p>
+(<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/Ejc2LFEW3Hz3mA9">→ hier Download</a>)
+herunter.</p>
 <ol class="arabic simple">
-<li><p>Importieren Sie die Daten mit Pandas (8 Zeilen müssen Úbersprungen werden).
+<li><p>Importieren Sie die Daten mit Pandas (8 Zeilen müssen übersprungen werden).
 Lassen Sie sich einen Überblick anzeigen. Was enthält die Tabelle?</p></li>
 <li><p>Filtern Sie die Tabelle nach den Jahren 2020, 2021 und 2022 lassen Sie den
 Absatz von Bier in Hektolitern pro Monat visualisieren.</p></li>
 <li><p>Stellen Sie eine Vermutung an. Durch welches Regressionspolynom könnte der
 Absatz von Bier pro Monat am besten erklärt werden?</p></li>
 <li><p>Stellen Sie das Regressionspolynom für 2022 auf und visualisieren Sie es
-zusammen mit den Messwerten.</p></li>
+zusammen mit den Messwerten. Bewerten Sie es mit dem <span class="math notranslate nohighlight">\(R^2\)</span>-Score.</p></li>
 </ol>
 </div>
 <div class="miniexercise toggle admonition">
@@ -662,7 +673,7 @@ zusammen mit den Messwerten.</p></li>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="k">for</span> <span class="n">jahr</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]:</span>
-    <span class="n">daten_pro_jahr</span> <span class="o">=</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">jahr</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">daten_pro_jahr</span> <span class="o">=</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">daten</span><span class="p">[</span><span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">jahr</span> <span class="p">]</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">daten_pro_jahr</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Monat&#39;</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">daten_pro_jahr</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">]</span> 
     <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">jahr</span><span class="p">))</span>
@@ -670,19 +681,23 @@ zusammen mit den Messwerten.</p></li>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Monat&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bierstatistik&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bierstatistik&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Aufgrund der Visualisierung entscheiden wir uns für eine Annäherung durch eine
 Regressionsparabel.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 
-<span class="n">data_2022</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2022</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">data_2022</span> <span class="o">=</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">daten</span><span class="p">[</span><span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2022</span><span class="p">]</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">data_2022</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">]</span>
 
 <span class="n">p2022</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p2022</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2-Score: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
 <span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p2022</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
@@ -692,9 +707,298 @@ Regressionsparabel.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Monat&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bierstatistik für das Jahr 2022&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bierstatistik für das Jahr 2022&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>Das Modell ist mit einem <span class="math notranslate nohighlight">\(R^2\)</span>-Score von 0.8 gut.</p>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 12.4</p>
+<p>Verwenden Sie die Bierstatistik-Daten von 2021 aus Übung 12.3 und vergleichen Sie Regressionspolynome der Grade 1, 2, 3 und 4.</p>
+<ol class="arabic simple">
+<li><p>Berechnen Sie für jeden Polynomgrad die Koeffizienten mit <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>.</p></li>
+<li><p>Erstellen Sie für jeden Grad das entsprechende Modell mit <code class="docutils literal notranslate"><span class="pre">polyval()</span></code>.</p></li>
+<li><p>Berechnen Sie jeweils den R²-Wert mit <code class="docutils literal notranslate"><span class="pre">r2_score()</span></code>.</p></li>
+<li><p>Erstellen Sie eine Tabelle mit Polynomgrad und R²-Wert.</p></li>
+<li><p>Visualisieren Sie alle vier Modelle zusammen mit den Originaldaten in einem Diagramm.</p></li>
+<li><p>Diskutieren Sie: Welcher Polynomgrad ist am besten geeignet? Begründen Sie Ihre Antwort anhand der R²-Werte und der Visualisierung.</p></li>
+<li><p>Was passiert, wenn Sie den Polynomgrad auf 11 erhöhen? Testen Sie es und erklären Sie das Ergebnis.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>Teilaufgabe 1. bis 4.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="c1"># Daten laden (gleich wie in Übung 12.3)</span>
+<span class="n">daten</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/biersteuerstatistik.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">data_2021</span> <span class="o">=</span> <span class="n">daten</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">daten</span><span class="p">[</span><span class="s1">&#39;Jahr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2021</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># x-Werte (Monate 1-12) und y-Werte (Bierabsatz)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_2021</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">]</span>
+
+<span class="c1"># Polynomgrade 1 bis 4 berechnen und R²-Werte ermitteln</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vergleich verschiedener Polynomgrade:&quot;</span><span class="p">)</span>
+
+<span class="n">r2_werte</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">modelle</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="c1"># Koeffizienten berechnen</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+    <span class="n">modelle</span><span class="p">[</span><span class="n">grad</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+    
+    <span class="c1"># Modell anwenden</span>
+    <span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    
+    <span class="c1"># R²-Wert berechnen</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
+    <span class="n">r2_werte</span><span class="p">[</span><span class="n">grad</span><span class="p">]</span> <span class="o">=</span> <span class="n">r2</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Polynomgrad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s2">: R² = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Teilaufgabe 5:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Messdaten 2021&#39;</span><span class="p">)</span>
+
+<span class="c1"># x-Werte für glatte Kurven</span>
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">modelle</span><span class="p">[</span><span class="n">grad</span><span class="p">],</span> <span class="n">x_plot</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1"> (R² = </span><span class="si">{</span><span class="n">r2_werte</span><span class="p">[</span><span class="n">grad</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Monat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Vergleich verschiedener Polynomgrade - Bierstatistik 2022&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Teilaufgabe 6:</p>
+<ul class="simple">
+<li><p>Grad 1 (linear): R² sehr niedrig, kann die Saisonalität nicht erfassen</p></li>
+<li><p>Grad 2 (quadratisch): deutliche Verbesserung, erfasst den Grundtrend</p></li>
+<li><p>Grad 3 (kubisch): weitere Verbesserung, kann asymmetrische Muster erfassen</p></li>
+<li><p>Grad 4: nur geringfügige Verbesserung, Risiko von Overfitting
+Empfehlung: Grad 3 bietet das beste Verhältnis zwischen Overfitting und Underfitting</p></li>
+</ul>
+<p>Teilaufgabe 7:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">y_modell_11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_11</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">r2_11</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell_11</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Polynomgrad 11: R² = </span><span class="si">{</span><span class="n">r2_11</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Vergleich: bestes Modell (Grad 3) vs. Overfitting (Grad 11)</span>
+<span class="n">y_plot_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">modelle</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">x_plot</span><span class="p">)</span>
+<span class="n">y_plot_11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p_11</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung von Grad 11</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Messdaten 2022&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot_3</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad 3 (R² = </span><span class="si">{</span><span class="n">r2_werte</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot_11</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad 11 (R² = </span><span class="si">{</span><span class="n">r2_11</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Monat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absatz von Bier [hl]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Overfitting-Beispiel: Grad 3 vs. Grad 11&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Erklärung zu Grad 11: Das Polynom 11. Grades hat einen perfekten R²-Wert, aber</p>
+<ul class="simple">
+<li><p>es schwingt stark zwischen den Datenpunkten und</p></li>
+<li><p>es würde neue Daten schlecht vorhersagen (Overfitting).</p></li>
+</ul>
+<p>Bei 12 Datenpunkten ist ein Polynom 11. Grades fast eine Interpolation und
+praktisch unbrauchbar für Prognosen.</p>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 12.5</p>
+<p>Laden Sie den Datensatz <code class="docutils literal notranslate"><span class="pre">stromverbrauch_hessen.csv</span></code> (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/ddfDzAAnJtJ4FZQ">→ hier
+Download</a>) herunter
+und analysieren Sie die Entwicklung des Stromverbrauchs in Hessen von 2000 bis
+2021.</p>
+<p>Hinweis: Die CSV-Datei enthält Kommentarzeilen am Anfang. Verwenden Sie
+<code class="docutils literal notranslate"><span class="pre">skiprows=4</span></code> beim Einlesen mit Pandas.</p>
+<ol class="arabic simple">
+<li><p>Datenexploration:</p>
+<ul class="simple">
+<li><p>Laden Sie den Datensatz und verschaffen Sie sich einen Überblick.</p></li>
+<li><p>In welchem Zeitraum liegen die Daten vor?</p></li>
+<li><p>Welche Verbrauchergruppen sind enthalten?</p></li>
+</ul>
+</li>
+<li><p>Visualisierung:</p>
+<ul class="simple">
+<li><p>Erstellen Sie ein Liniendiagramm, das die Entwicklung des
+Gesamtstromverbrauchs über die Jahre zeigt.</p></li>
+<li><p>Erstellen Sie ein weiteres Diagramm, das die drei Verbrauchergruppen
+(Industrie, Verkehr, Haushalte etc.) separat in diesem Diagramm darstellt.</p></li>
+</ul>
+</li>
+<li><p>Trend-Analyse mit linearer Regression:</p>
+<ul class="simple">
+<li><p>Berechnen Sie für jede der vier Kategorien (insgesamt, Industrie, Verkehr,
+Haushalte etc.) eine lineare Regressionsgerade.</p></li>
+<li><p>Ermitteln Sie jeweils die Steigung und interpretieren Sie diese: Welche
+Verbrauchergruppe zeigt den stärksten Rückgang/Anstieg pro Jahr?</p></li>
+<li><p>Berechnen Sie für jede Regression den R²-Wert. Welche Kategorie lässt sich
+am besten durch einen linearen Trend erklären?</p></li>
+</ul>
+</li>
+<li><p>Prognose:</p>
+<ul class="simple">
+<li><p>Verwenden Sie die lineare Regression für den Gesamtstromverbrauch, um eine
+Prognose für das Jahr 2025 zu erstellen.</p></li>
+<li><p>Diskutieren Sie: Ist diese Prognose realistisch? Was spricht dafür/dagegen?</p></li>
+</ul>
+</li>
+<li><p>Erweiterte Analyse:</p>
+<ul class="simple">
+<li><p>Der Verkehrssektor zeigt starke Schwankungen. Testen Sie, ob ein Polynom 2.
+oder 3. Grades den Verkehrsstromverbrauch besser erklärt als eine Gerade.</p></li>
+<li><p>Vergleichen Sie die R²-Werte und visualisieren Sie alle drei Modelle.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="minisolution toggle admonition">
+<p class="admonition-title">Lösung</p>
+<p>1. Datenexploration</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="c1"># Datenexploration</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/stromverbrauch_hessen.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Zeitraum: 2000 bis 2021
+Verbrauchergruppen:</p>
+<ul class="simple">
+<li><p>insgesamt</p></li>
+<li><p>Industrie</p></li>
+<li><p>Verkehr</p></li>
+<li><p>Haushalte, Gewerbe, Handel, Dienstleistungen und übrige Verbraucher</p></li>
+</ul>
+<p>2. Visualisierung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gesamtstromverbrauch</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;insgesamt&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entwicklung des Gesamtstromverbrauchs in Hessen (2000-2021)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromverbrauch [GWh]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Verbrauchergruppen separat</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Industrie&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Industrie&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Verkehr&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Verkehr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Haushalte, Gewerbe, Handel, Dienstleistungen und übrige Verbraucher&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Haushalte, Gewerbe etc.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stromverbrauch nach Verbrauchergruppen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromverbrauch [GWh]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>3. Trend-Analyse mit linearer Regression</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vorbereitung der Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2022</span><span class="p">)</span> 
+<span class="n">verbrauchergruppen</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+
+
+<span class="n">regressionen</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">gruppe</span> <span class="ow">in</span> <span class="n">verbrauchergruppen</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">gruppe</span><span class="p">]</span>
+    
+    <span class="c1"># Lineare Regression</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_prognose</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_prognose</span><span class="p">)</span>
+    
+    <span class="c1"># Steigung pro Jahr (p[0] ist Steigung, entspricht Änderung pro Jahr)</span>
+    <span class="n">steigung_pro_jahr</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># Ausgabe der Ergebnisse</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gruppe</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Steigung: </span><span class="si">{</span><span class="n">steigung_pro_jahr</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GWh/Jahr&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  R²-Wert: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>insgesamt: Steigung: -59.2 GWh/Jahr und R²-Wert: 0.0724<br>
+Industrie: Steigung: -59.7 GWh/Jahr und R²-Wert: 0.4206<br>
+Verkehr: Steigung: -4.5 GWh/Jahr und R²-Wert: 0.0268<br>
+Haushalte etc.: Steigung: 4.9 GWh/Jahr und R²-Wert: 0.0006<br></p>
+<p>Den stärksten Rückgang hat die Gruppe der Industrie (-59.7 GWh/Jahr), den
+stärksten Anstieg die Haushalte (+ 4.9 GWh/Jahr). Am ehesten lässt sich der
+Stromverbrauch der Industrie mit einem linearen Modell erklären (R² = 0.4206).</p>
+<p>4. Prognose</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;insgesamt&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">gesamtverbrauch_2025</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">2025</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gesamtverbrauch für 2025: </span><span class="si">{</span><span class="n">gesamtverbrauch_2025</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GWh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gesamtverbrauch für 2025: 34963.5 GWh</p>
+<p>Der R²-Wert von 0.0724 für den Gesamtverbrauch ist schlecht, daher ist diese
+Prognose fragwürdig.</p>
+<p>5. Erweiterte Analyse</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">verkehr</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Verkehr&#39;</span><span class="p">]</span>
+
+<span class="c1"># Teste verschiedene Polynomgrade</span>
+<span class="n">grade</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">verkehr_modelle</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">verkehr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Verkehrsdaten&#39;</span><span class="p">)</span>
+
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="n">grade</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">verkehr</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+    <span class="n">y_prognose</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">verkehr</span><span class="p">,</span> <span class="n">y_prognose</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2-Score für Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">verkehr_modelle</span><span class="p">[</span><span class="n">grad</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;koeffizienten&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;r2&#39;</span><span class="p">:</span> <span class="n">r2</span><span class="p">}</span>
+    
+    <span class="c1"># Visualisierung des Regressionspolynoms</span>
+    <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1"> (R² = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromverbrauch Verkehr [GWh]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Verkehrssektor: Vergleich verschiedener Regressionsmodelle&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>R2-Score für Grad 1 = 0.03<br>
+R2-Score für Grad 2 = 0.04<br>
+R2-Score für Grad 3 = 0.18<br></p>
+<p>Auch wenn der R²-Score für das Polynom 3. Grades besser ist als der für Grad 1
+oder 2, zeigt die Visualisierung, dass das kubische Modell ungeeignet ist. Das
+lokale Minimum liegt ungefähr im Jahr 2005, das lokale Maximum ungefähr 2025.
+Damit muss das Polynom für Jahre vor 2000 immer weiter steigen. Demnach wäre der
+Stromverbrauch für den Verkehrssektor umso höher, je weiter wir in die
+Vergangenheit zurückgehen, was nicht realistisch ist. Entweder wir verwerfen das
+Modell oder schränken es auf den betrachteten Zeitraum 2000 bis 2022 ein.</p>
 </div>
 </section>
 
