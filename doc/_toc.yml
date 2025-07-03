@@ -86,4 +86,4 @@ parts:
     sections:
       - file: chapter13/chapter13_sec01.md        
       - file: chapter13/chapter13_sec02.md
-      - file: chapter13/chapter13_sec03.md
+#      - file: chapter13/chapter13_sec03.md

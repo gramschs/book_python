@@ -295,8 +295,6 @@ Fügen Sie dann S460 mit 1.80 €/kg hinzu. Gehen Sie anschließend mit einer fo
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
-:class: miniexercise, toggle
-```python
 # Dictionary für Stahlsorten erstellen
 stahlpreise = {
     "S235": 1.20,
