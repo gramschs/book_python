@@ -301,7 +301,7 @@ for grad in range(1, 5):
 
 plt.xlabel('Monat')
 plt.ylabel('Absatz von Bier [hl]')
-plt.title('Vergleich verschiedener Polynomgrade - Bierstatistik 2022')
+plt.title('Vergleich verschiedener Polynomgrade - Bierstatistik 2021')
 plt.legend()
 plt.grid(True, alpha=0.3)
 plt.show()

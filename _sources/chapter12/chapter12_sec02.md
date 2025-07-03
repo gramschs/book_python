@@ -197,7 +197,7 @@ print(f'R2 = {r2:.4f}')
 
 Mit `polyfit()` erhalten wir eine Steigung von etwa 0.0344 und einen
 y-Achsenabschnitt von -64.75, was unseren durch Ausprobieren gefundenen Werten
-sehr nahe kommt. Der R2-Wert von 0.77 bestätigt, dass die lineare Regression die
+sehr nahe kommt. Der R²-Wert von 0.77 bestätigt, dass die lineare Regression die
 CO2-Emissionsdaten gut erklärt, aber nicht sehr gut. Dies macht die
 Regressionsgerade zu einem brauchbaren Modell für Prognosen, auch wenn die
 Abweichungen zeigen, dass andere Faktoren ebenfalls eine Rolle spielen.
