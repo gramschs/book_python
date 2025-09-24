@@ -1,10 +1,28 @@
-# 8. MATLAB
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.8
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 
-Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe
-[https://de.wikipedia.org/wiki/Matlab](https://de.wikipedia.org/wiki/Matlab)):
+# 8. Objektorientierte Programmierung
 
-> “Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
-> US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
-> und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für
-> numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der
-> Name ableitet: MATrix LABoratory.”
+Bis hierhin haben wir uns die Grundlagen der Programmierung erarbeitet:
+
+* Datentypen (Integer, Float, Bool, String) und Datenstrukturen (List,
+  Dictionary),
+* Kontrollstrukturen: Verzeigungen und Schleifen
+* Funktionen.
+
+In einigen Programmiersprachen wie beispielsweise C hätten wir damit auch alle
+Sprachelement kennengelernt. Diese Programmierung nennt man **prozedurale
+Programmierung**. Python gehört jedoch zu den objektorientierten
+Programmiersprachen, so dass wir uns jetzt noch dem Thema Objektorientierung
+widmen.

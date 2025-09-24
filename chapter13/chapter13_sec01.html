@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.1 Was ist maschinelles Lernen? &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>13.1 Theorie Regression &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -61,11 +61,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/chapter13_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13.2 Überwachtes, unüberwachtes und verstärkendes Lernen" href="chapter13_sec02.html" />
-    <link rel="prev" title="13. Grundbegriffe Künstliche Intelligenz" href="chapter13_sec00.html" />
+    <link rel="next" title="13.2 Lineare Regression mit polyfit und polyval" href="chapter13_sec02.html" />
+    <link rel="prev" title="13. Messwerte und Regression" href="chapter13_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,47 +225,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -482,7 +491,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>13.1 Was ist maschinelles Lernen?</h1>
+    <h1>13.1 Theorie Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -493,9 +502,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-wenig-geschichte">Ein wenig Geschichte</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-sind-algorithmen-und-modelle">Was sind Algorithmen und Modelle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maschinelles-lernen-ist-wie-kuchenbacken">Maschinelles Lernen ist wie Kuchenbacken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-kommt-aus-der-statistik">Regression kommt aus der Statistik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-weltweiter-co2-ausstosz">Beispiel: weltweiter CO2-Ausstoß</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-bestimmheitsmasz-r2">Das Bestimmheitsmaß R²</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -508,300 +517,464 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="was-ist-maschinelles-lernen">
-<h1>13.1 Was ist maschinelles Lernen?<a class="headerlink" href="#was-ist-maschinelles-lernen" title="Link to this heading">#</a></h1>
-<p>KI (Künstliche Intelligenz) ist in aller Munde. Etwas seltener wird der Begriff
-<strong>maschinelles Lernen</strong> verwendet. Maschinelles Lernen, oft auch <strong>Machine
-Learning</strong> genannt, ist ein Teilgebiet der Künstlichen Intelligenz.</p>
-<p>Wir kürzen in dieser Vorlesung maschinelles Lernen oft mit <strong>ML</strong> ab. Damit
-umgehen wir die Diskussion, warum Künstliche Intelligenz mit einem
-Großbuchstaben beginnt und maschinelles Lernen mit einem Kleinbuchstaben.
-Gleichzeitig ist das auch die gängige Abkürzung im englischen Sprachgebrauch.
-Dieses Kapitel klärt, was maschinelles Lernen ist und führt in die
-grundlegenenden Bestandteile eines ML-Systems ein.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="theorie-regression">
+<h1>13.1 Theorie Regression<a class="headerlink" href="#theorie-regression" title="Link to this heading">#</a></h1>
+<p>In der Analyse technischer und physikalischer Daten ist die Methode der
+Regression ein fundamentales Werkzeug. Sie ist ein statistisches Verfahren, das
+den Zusammenhang zwischen Variablen ermittelt. In diesem Kapitel beschäftigen
+wir uns zunächst mit der Theorie von Regressionsverfahren.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie wissen, wie langes es das Forschungsgebiet <strong>maschinelles Lernen</strong> gibt
-und warum es sich in den letzten beiden Jahrzehnten so stark entwickelt hat.</p></li>
-<li><p>Sie kennen die Bestandteile eines ML-Systems: <strong>Daten</strong>, <strong>Algorithmus</strong> und
-<strong>Modell</strong>.</p></li>
+<li><p>Sie wissen, was <strong>Regression</strong> ist.</p></li>
+<li><p>Sie wissen, was das <strong>Bestimmtheitsmaß</strong> <span class="math notranslate nohighlight">\(R^2\)</span> ist und können es für <strong>lineare Regression</strong> interpretieren:</p>
+<ul>
+<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 1\)</span>  ist, dann gibt es den perfekten linearen Zusammenhang und die
+Modellfunktion ist eine sehr gute Anpassung an die Messdaten.</p></li>
+<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 0\)</span> oder gar negativ ist, dann funktioniert die lineare
+Modellfunktion überhaupt nicht.</p></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
-<section id="ein-wenig-geschichte">
-<h2>Ein wenig Geschichte<a class="headerlink" href="#ein-wenig-geschichte" title="Link to this heading">#</a></h2>
-<p>Viele glauben, dass die Forschungsgebiete Künstliche Intelligenz und
-maschinelles Lernen Neuentwicklungen des 21. Jahrhunderts sind. Doch tatsächlich
-hat Arthur L. Samuel bereits 1959 maschinelles Lernen wie folgt definiert:</p>
-<blockquote class="epigraph">
-<div><p>»… ein Forschungsgebiet, das Computer in die Lage versetzen soll, zu lernen,
-ohne explizit darauf programmiert zu sein.«</p>
-<p>Arthur L. Samuel, 1959</p>
-</div></blockquote>
-<p><a class="reference external" href="https://de.wikipedia.org/wiki/Maschinelles_Lernen">Wikipedia → Maschinelles Lernen</a>
-bietet eine weitere Definition:</p>
-<blockquote class="epigraph">
-<div><p>»Maschinelles Lernen (ML) ist ein Oberbegriff für die „künstliche“ Generierung
-von Wissen aus Erfahrung: Ein künstliches System lernt aus Beispielen und kann
-diese nach Beendigung der Lernphase verallgemeinern.«</p>
-</div></blockquote>
-<p>Auch hier wird der Aspekt betont, dass das künstliche System selbst lernt. Aber
-was ist mit selbst Lernen gemeint? Ein Kind lernt beispielsweise selbst das
-Laufen. Auch wenn Eltern präzise beschreiben könnten, welcher Muskel zu welchem
-Zeitpunkt kontrahiert werden muss und mit welcher Geschwindigkeit in welche
-Richtung das Bein bewegt werden soll, würde das Kind die Anweisungen nicht
-verstehen können. Ein Kind lernt selbst durch Versuch und Irrtum. In der
-Anfangszeit der Robotik versuchten Forscherinnen und Forscher, Roboter durch
-explizite Befehle zu steuern. Doch bei unvorhergesehenen Hindernissen stießen
-solche Roboter an ihre Grenzen. Aus der Notwendigkeit, dass Roboter ähnlich wie
-Menschen lernen, entwickelte sich das Teilgebiet maschinelles Lernen innerhalb
-der Künstlichen Intelligenz.</p>
-<p>Doch nicht nur in der Robotik spielt maschinelles Lernen eine wichtige Rolle.
-Auch bei der Datenanalyse kann es hilfreich sein, wenn ein Computersystem
-eigenständig Muster in den Daten erkennt. Ein Klassiker dafür ist die
-Spam-Erkennung. Natürlich ist es möglich, den Spam-Filter mit expliziten Regeln
-zu programmieren. Schon nach kurzer Zeit ändern jedoch Spammer die E-Mail-Texte
-und schon greifen die expliziten Regeln nicht mehr. Hier helfen maschinell
-gelernte Regeln. Durch die Markierung von E-Mails als Spam lernt das
-E-Mail-Programm nach und nach selbst Regeln, um Spam-E-Mails zu identifizieren.</p>
-<p>Die exponentiell wachsende Datenmenge der letzten beiden Jahrzehnte hat das
-Interesse an maschinellen Lernverfahren stark erhöht. Es gibt aber auch noch
-andere Gründe, die zum aktuellen Boom des maschinellen Lernens beigetragen
-haben.</p>
+<section id="regression-kommt-aus-der-statistik">
+<h2>Regression kommt aus der Statistik<a class="headerlink" href="#regression-kommt-aus-der-statistik" title="Link to this heading">#</a></h2>
+<p>In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker damit,
+Analyseverfahren zu entwickeln, mit denen experimentelle Daten gut erklärt
+werden können. Falls wir eine “erklärende” Variable haben und versuchen, die
+Abhängigkeit einer Messgröße von der erklärenden Variable zu beschreiben, nennen
+wir das Regressionsanalyse oder kurz <strong>Regression</strong>. Bei vielen Problemen suchen
+wir nach einem linearen Zusammenhang und sprechen daher von <strong>linearer
+Regression</strong>. Mehr Details finden Sie auch bei <a class="reference external" href="https://de.wikipedia.org/wiki/Regressionsanalyse">Wikipedia →
+Regressionsanalyse</a>.</p>
+<p>Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
+Einflussgröße <span class="math notranslate nohighlight">\(x\)</span> und eine Zielgröße <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(N\)</span> Paaren von dazugehörigen
+Messwerten <span class="math notranslate nohighlight">\((x^{(1)},y^{(1)})\)</span>, <span class="math notranslate nohighlight">\((x^{(2)},y^{(2)})\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>,
+<span class="math notranslate nohighlight">\((x^{(N)},y^{(N)})\)</span> gibt. Dann sollen zwei Parameter <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span> geschätzt
+werden, so dass möglichst für alle Datenpunkte <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> die lineare
+Gleichung <span class="math notranslate nohighlight">\(y^{(i)} = m\cdot x^{(i)}+ b\)</span> gilt. Geometrisch ausgedrückt: durch die
+Daten soll eine Gerade gelegt werden. Da bei den Messungen auch Messfehler
+auftreten, werden wir die Gerade nicht perfekt treffen, sondern kleine Fehler
+machen, die wir hier mit <span class="math notranslate nohighlight">\(\varepsilon^{(i)}\)</span> bezeichnen. Wir suchen also die
+beiden Parameter <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span>, so dass</p>
+<div class="math notranslate nohighlight">
+\[y^{(i)} =  m \cdot x^{(i)} + b + \varepsilon^{(i)}.\]</div>
+<p>Die folgende Grafik veranschaulicht das lineare Regressionsmodell. Die Paare von
+Daten sind in blau gezeichnet, das lineare Regressionsmodell in rot.</p>
+<figure class="align-default" id="fig-linear-regression">
+<img alt="../_images/Linear_regression.svg" src="../_images/Linear_regression.svg" /><figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Lineare Regression: die erklärende Variable (= Input oder unabhängige Variable oder Ursache) ist auf der x-Achse, die
+abhängige Variable (= Output oder Wirkung) ist auf der y-Achse aufgetragen, Paare von Messungen sind in blau
+gekennzeichnet, das Modell in rot.</span><a class="headerlink" href="#fig-linear-regression" title="Link to this image">#</a></p>
+<div class="legend">
+<p>(<a class="reference external" href="https://en.wikipedia.org/wiki/Linear_regression#/media/File:Linear_regression.svg">Quelle:</a> “Example of simple linear regression, which has one independent variable” von Sewaqu. Lizenz: Public domain))</p>
+</div>
+</figcaption>
+</figure>
+<p>Zu einer Regressionsanalyse gehört mehr als nur die Regressionskoeffizienten zu
+bestimmen. Daten müssen vorverarbeitet werden, unter mehreren unabhängigen
+Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
+Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
+Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
+werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
+feinjustiert werden können, um die Prognosefähigkeit verbessern.</p>
+<p>Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
+wie lineare Regression funktioniert.</p>
+</section>
+<section id="beispiel-weltweiter-co2-ausstosz">
+<h2>Beispiel: weltweiter CO2-Ausstoß<a class="headerlink" href="#beispiel-weltweiter-co2-ausstosz" title="Link to this heading">#</a></h2>
+<p>Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
+Einwohner (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz">hier Download</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/co2_emissionen_worldwide.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metrische_Tonnen_pro_Einwohner</th>
+    </tr>
+    <tr>
+      <th>Jahr</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1990</th>
+      <td>3.902952</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>3.874590</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>3.804011</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>3.769328</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>3.732385</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Wir verschaffen uns mit den Funktionen <code class="docutils literal notranslate"><span class="pre">info()</span></code> und <code class="docutils literal notranslate"><span class="pre">describe()</span></code> einen Überblick
+über den Datensatz. Wie üblich benutzen wir <code class="docutils literal notranslate"><span class="pre">info()</span></code> zuerst.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 29 entries, 1990 to 2018
+Data columns (total 1 columns):
+ #   Column                          Non-Null Count  Dtype  
+---  ------                          --------------  -----  
+ 0   Metrische_Tonnen_pro_Einwohner  29 non-null     float64
+dtypes: float64(1)
+memory usage: 464.0 bytes
+</pre></div>
+</div>
+</div>
+</div>
+<p>Offensichtlich enthält der Datensatz 29 Zeilen (= Jahre) mit gültigen Einträgen
+zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahlen
+sind:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metrische_Tonnen_pro_Einwohner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>29.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.126993</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.324550</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.732385</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.812655</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.092267</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.435536</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>4.606487</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Nun folgt noch die Visualisierung der Daten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">jahre</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
+<span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metrische Tonnen / Einwohner&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter C02-Ausstoß&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a31663bb52e892e114e1f35e2a34e1bbfebe680f4ae3a7a83279dc6ead5530d2.png" src="../_images/a31663bb52e892e114e1f35e2a34e1bbfebe680f4ae3a7a83279dc6ead5530d2.png" />
+</div>
+</div>
+<p>Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
+einer linearen Funktion. Die “erklärende” Variable ist in dem Beispiel das Jahr.
+Wir versuchen, die Abhängigkeit einer Messgröße (hier die CO2-Emissionen pro
+Einwohner) von der erklärenden Variable als lineare Funktion zu beschreiben.</p>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Schauen Sie sich das folgende Video an. Welche drei Gründe werden dort genannt,
-warum maschinelles Lernen zuletzt so stark nachgefragt wurde?</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l_HSWmxMRlU" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Denken Sie sich Werte für die Steigung m und den y-Achsenabschnitt b einer
+linearen Funktion aus. Erzeugen Sie einen Vektor mit 100 x-Werten von 1990 bis
+2018 und einen Vektor y mit <span class="math notranslate nohighlight">\(y = mx + b\)</span>. Lassen Sie diese lineare Funktion als
+durchgezogene rote Linie in den gleichen Plot wie die gepunkteten Messwerte
+zeichnen. Welche Werte für <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span> müssen Sie wählen, damit die rote Linie
+passend zu den blauen Punkten ist? Spielen Sie mit <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span> herum, bis es
+passen könnte.</p>
+<p>Tipp: <code class="docutils literal notranslate"><span class="pre">linspace(start,</span> <span class="pre">stopp,</span> <span class="pre">anzahl)</span></code> aus dem NumPy-Modul generiert <code class="docutils literal notranslate"><span class="pre">anzahl</span></code>
+Werte von <code class="docutils literal notranslate"><span class="pre">start</span></code> bis <code class="docutils literal notranslate"><span class="pre">stopp</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<p>Jannik nennt bei Zeitindex 2:44 min drei Gründe, warum in den letzten zwei Jahrzehnten maschinelles Lernen an Bedeutung gewonnen hat:</p>
-<ol class="arabic simple">
-<li><p>mehr Daten</p></li>
-<li><p>schnellere Computer</p></li>
-<li><p>Forschung</p></li>
-</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.0344</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">64.7516</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">x_modell</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span><span class="n">co2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahr&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metrische Tonnen pro Einwohner&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter CO2-Ausstoß von 1990 bis 2018&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
 </div>
-<p>Es gibt einige Gründe, warum ML in den letzten zwei Jahrzehnten so stark an
-Bedeutung gewonnen hat. Im Folgenden werden die wichtigsten Gründe für den
-Bedeutungsgewinn erläutert.</p>
-<p><strong>Datenverfügbarkeit</strong>: Die Produktion von Daten hat mit der Digitalisierung
-massiv zugenommen. Mit der Einführung der Smartphones ist auch die Anzahl der
-Bilder und Videos deutlich gewachsen, die täglich aufgenommen werden. Das
-Kaufverhalten von Kunden in Online-Shops wird beobachtet, Fußballspiele werden
-statistisch analysiert oder Maschinen mit Messsensoren bestückt. Das
-Beratungsunternehmen IDC (International Data Corporation) prognostiziert, dass
-sich die Datenmenge von 33 Zettabytes im Jahr 2018 auf 175 Zettebytes im Jahr
-2025 mehr als verfünffachen wird.</p>
-<p><strong>Rechenleistung</strong>: Der rasante Fortschritt in der Computertechnologie hat die
-Rechenleistung, die für maschinelles Lernen erforderlich ist, drastisch erhöht.
-Speziell für die Entwicklung sogenannter neuronaler Netze werden sogar häufig
-Grafikkarten (GPUs) anstatt eines Prozessors (CPU) bevorzugt.</p>
-<p><strong>Algorithmen und Modelle</strong>: Natürlich ist auch die Erforschung neuer
-Algorithmen und Modelle nicht stehengeblieben. Ein Durchbruch in der Forschung
-war dabei die Entwicklung von den sogenannten Deep-Learning-Modellen, einer
-Variante der neuronalen Netze.</p>
-<p><strong>Software und Tools</strong>: Es gibt jetzt eine Vielzahl von Softwarebibliotheken und
-Tools (z.B. <a class="reference external" href="https://www.tensorflow.org">TensorFlow</a>,
-<a class="reference external" href="https://pytorch.org">PyTorch</a>,
-<a class="reference external" href="https://scikit-learn.org/stable/index.html">Scikit-learn</a> usw.), die es
-ermöglichen, auch ohne tiefergehende Mathematik- und Programmierkenntnissen
-maschinelles Lernen in der Praxis einzusetzen. Daher werden immer mehr
-Anwendungen mit maschinellem Lernen analysiert und optimiert.</p>
-<p>Bisher haben wir nicht besprochen, was es mit Künstlicher Intelligenz und Deep
-Learning auf sich hat. Beide Begriffe werden oft in einem Atemzug mit ML
-genannt. Das folgende Video gibt eine Einführung dazu.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “ML Tutorial - #1 Einführung in ML” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tCApwsdijDk?si=Qf6x6MhoAuEBZv7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details></section>
-<section id="was-sind-algorithmen-und-modelle">
-<h2>Was sind Algorithmen und Modelle?<a class="headerlink" href="#was-sind-algorithmen-und-modelle" title="Link to this heading">#</a></h2>
-<p>Ein notwendiger Baustein des maschinellen Lernens sind Daten, am besten ganz,
-ganz viele! Aber selbst ein riesiger Haufen an Daten ist alleine wertlos. Erst
-durch Algorithmen, die in diesen Daten Muster finden, gewinnen wir neues Wissen,
-können Prozesse analysieren und Entscheidungen treffen.</p>
-<p>Aber was ist nun ein Algorithmus? In dem folgenden Video wird zuerst erklärt,
-was ein Algorithmus ist. Danach werden die ersten grundlegenden Fachbegriffe des
-maschinellen Lernens eingeführt.</p>
+<p>Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, können wir den Wert
+in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von
+5.1 metrischen Tonnen pro Einwohner :-(</p>
+</section>
+<section id="das-bestimmheitsmasz-r2">
+<h2>Das Bestimmheitsmaß R²<a class="headerlink" href="#das-bestimmheitsmasz-r2" title="Link to this heading">#</a></h2>
+<p>Woher wissen wir eigentlich, dass diese Steigung <span class="math notranslate nohighlight">\(m\)</span> und dieser
+y-Achsenabschnitt <span class="math notranslate nohighlight">\(b\)</span> am besten passen? Dazu berechnen wir, wie weit weg die
+Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der
+folgenden Grafik.</p>
+<figure class="align-default" id="fig10-regression">
+<img alt="../_images/fig10_regression.png" src="../_images/fig10_regression.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)</span><a class="headerlink" href="#fig10-regression" title="Link to this image">#</a></p>
+<div class="legend">
+<p>(<a class="reference external" href="https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate#/media/Datei:MDKQ1.svg">Quelle:</a> Autor: Christian Schirm, Lizenz: CC0)</p>
+</div>
+</figcaption>
+</figure>
+<p>Die rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir
+können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg
+ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen:</p>
+<div class="math notranslate nohighlight">
+\[r = y_{\text{blau}}-y_{\text{rot}}.\]</div>
+<p>Diese Differenz nennt man <strong>Residuum</strong>. Danach summieren wir die Fehler (also
+die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren,
+dass am Ende als Gesamtfehler 0 herauskommt, weil beispielsweise für den 1.
+Messpunkt die blaue y-Koordinate unter der roten y-Koordinate liegt und damit
+ein negatives Residuum herauskommt, aber für den 5. Messpunkt ein positives
+Residuum. Daher quadrieren wir die Residuen. Und damit nicht der Gesamtfehler
+größer wird nur, weil wir mehr Messpunkte dazunehmen, teilen wir noch durch die
+Anzahl der Messpunkte <span class="math notranslate nohighlight">\(N\)</span>. Mathematisch formuliert haben wir</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N}\sum_{i=1}^{N} (y^{(i)} - f(x^{(i)})^2. \]</div>
+<p>Wir berechnen die Fehlerquadratsumme in Python mit der <code class="docutils literal notranslate"><span class="pre">sum()</span></code> Funktion aus
+NumPy. Insgesamt ergibt sich</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># blaue y-Koordinaten = Messpunkte</span>
+<span class="n">y_blau</span> <span class="o">=</span> <span class="n">co2</span>
+
+<span class="c1"># Berechnung der roten y-Koordinaten, indem wir x-Koordinaten der Messpunkte</span>
+<span class="c1"># in die Modellfunktion y = m*x + b einsetzen</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">jahre</span>
+<span class="n">y_rot</span> <span class="o">=</span> <span class="mf">0.0344</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">64.7516</span>
+
+<span class="c1"># Berechnung Gesamtfehler</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="n">gesamtfehler</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">y_blau</span> <span class="o">-</span> <span class="n">y_rot</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Gesamtfehler ist </span><span class="si">{</span><span class="n">gesamtfehler</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Gesamtfehler ist 0.02248906646562731.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ist das jetzt groß oder klein? Liegt eine gute Modellfunktion vor, die die Daten
+gut nähert oder nicht? Um das zu beurteilen, berechnen wir, wie groß der Fehler
+wäre, wenn wir nicht die roten y-Koordinaten der Modellfunktion in die
+Fehlerformel einsetzen würden, sondern einfach nur den Mittelwert als
+Schätzwert, also</p>
+<div class="math notranslate nohighlight">
+\[\bar{y} = \frac{1}{N} \sum_{i=1}^{N} y^{(i)}.\]</div>
+<p>In Python ergibt sich der folgende Code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_mittelwert</span> <span class="o">=</span> <span class="n">y_blau</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">gesamtfehler_mittelwert</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">y_blau</span> <span class="o">-</span> <span class="n">y_mittelwert</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Gesamtfehler für den Mittelwert als Schätzung ist </span><span class="si">{</span><span class="n">gesamtfehler_mittelwert</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Gesamtfehler für den Mittelwert als Schätzung ist 0.10170059696116414.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Offensichtlich ist der Gesamtfehler für die Modellfunktion kleiner als wenn wir
+einfach nur immer den Mittelwert prognostizieren würden. Wir rechnen das in
+Prozent um:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">relativer_fehler</span> <span class="o">=</span> <span class="n">gesamtfehler</span> <span class="o">/</span> <span class="n">gesamtfehler_mittelwert</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: </span><span class="si">{</span><span class="n">relativer_fehler</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;In Prozent umgerechnet ist das: </span><span class="si">{</span><span class="n">relativer_fehler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> %.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: 0.2211
+In Prozent umgerechnet ist das: 22.11 %.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In der Statistik wurde diese Verhältnis (Gesamtfehler geteilt durch Gesamtfehler
+Mittelwert) als Qualitätkriterium für ein lineares Regressionsproblem
+festgelegt. Genaugenommen, rechnet man 1 - Gesamtfehler /  (Gesamtfehler
+Mittelwert) und nennt diese Zahl <strong>Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2\)</span></strong>. Details finden Sie
+bei <a class="reference external" href="https://de.wikipedia.org/wiki/Bestimmtheitsma%C3%9F">Wikipedia
+(Bestimmtheitsmaß)</a>. Die Formel
+lautet:</p>
+<div class="math notranslate nohighlight">
+\[R^2 =1-\frac{\sum_{i=1}^N (y^{(i)} - f(x^{(i)})^2}{\sum_{i=1}^N(y^{(i)}-\bar{y})^2}.\]</div>
+<p>Dabei kürzt sich das <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span> im Zähler und Nenner weg. Nachdem der
+<span class="math notranslate nohighlight">\(R^2\)</span>-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
+beurteilen:</p>
+<ul class="simple">
+<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 1\)</span>  ist, dann gibt es den perfekten linearen Zusammenhang und die
+Modellfunktion ist eine sehr gute Anpassung an die Messdaten.</p></li>
+<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 0\)</span> oder gar negativ ist, dann funktioniert die lineare
+Modellfunktion überhaupt nicht.</p></li>
+</ul>
+<p>Für das Beispiel ergibt sich ein Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2\)</span> von</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">relativer_fehler</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 = </span><span class="si">{</span><span class="n">R2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 = 0.78
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
+nicht perfekt.</p>
+<p>Damit wir nicht händisch den R²-Core berechnen lassen müssen, verwenden wir das
+Modul Scikit-Learn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_blau</span><span class="p">,</span> <span class="n">y_rot</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 aus Scikit-Learn: </span><span class="si">{</span><span class="n">R2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 aus Scikit-Learn: 0.78
+</pre></div>
+</div>
+</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Schauen Sie sich das folgende Video an und beantworten Sie die folgenden Fragen:</p>
-<ol class="arabic simple">
-<li><p>Welche drei Beispiele für Algorithmen werden aufgezählt?</p></li>
-<li><p>In dem Video werden die Fachbegriff »Feature« und »Label« eingeführt. Was bedeuten die
-Begriffe?</p></li>
-<li><p>Was bedeutet »überwachtes Lernen«?</p></li>
-</ol>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HmUzceKCI9I" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<ol class="arabic simple">
-<li><p>Bei Zeitindex 0:28 min wird erklärt, dass ein Algorithmus eine exakte
-Handlungsvorschrift zum Lösen eines Problems ist. Als erstes Beispiel wird
-die Anweisung, wie ein mathematisches Problem zu lösen ist, genannt. Als
-weitere Beispiele werden ein Kochrezept oder eine Spieleanleitung aufgezählt.
-Ab Zeitindex 0:38 min wird Tic-Tac-Toe als Algorithmus formuliert.</p></li>
-<li><p>Ab Zeitindex 3:19 min werden die Begriffe Feature und Label eingeführt. Die
-Eingangsdaten (z.B. Bilder von Hunden und Katzen), die wir dem Computer zum
-Lernen geben, werden Features genannt. Daraus soll der Computer lernen, Hunde
-von Katzen zu unterscheiden. Dazu müssen zuerst die Bilder, die einen Hund
-zeigen, als »Hundebild« gekennzeichnet werden und die anderen als
-»Katzenbild«. Die Kennzeichnung wird Label genannt. Die Zielgröße bzw. Ziel ist die
-Einordnung Hund/Katze.</p></li>
-<li><p>Überwachtes Lernen ist das Lernen aus Beispielen (Zeitindex 4:03 min). Bevor
-der Computer lernt, auf Bildern Hunde und Katzen zu unterscheiden, müssen die
-Bilder mit den Labels Hund/Katze versehen werden.</p></li>
-</ol>
-</div>
-<p>Ein <strong>Algorithmus</strong> ist also eine Anleitung, wie ein Problem zu lösen ist.
-Typisch für einen Algorithmus ist, das in sehr kleinen Schritten detailliert
-Anweisungen formuliert werden, um das Problem zu lösen. In der Informatik sind
-Algorithmen besonders wichtig, da durch sie festgelegt wird, wie der Computer
-Daten verarbeiten und ein Problem lösen soll. Jeder einzelne Schritt zur
-Problemlösung muss eindeutig und konkret beschrieben werden. Wird der
-Algorithmus in einer Programmiersprache formuliert, verwendet man den Begriff
-<strong>Computerprogramm</strong>.</p>
-<div class="note admonition">
-<p class="admonition-title">Was ist … ein Algorithmus?</p>
-<p>Ein Algorithmus ist eine spezifische Anleitung mit einzelnen Anweisungen, wie ein
-bestimmtes Problem gelöst werden soll.</p>
-</div>
-<p>Der Begriff <strong>Modell</strong> hat viele verschiedenen Bedeutungen (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Modell_(Begriffskl%C3%A4rung)">Wikipedia →
-Modell
-(Begriffsklärung)</a>).
-Zunächst einmal bedeutet Modell, das ein Original vereinfacht beschrieben wird.
-Vereinfacht heißt, dass beispielsweise Details weggelassen werden oder die
-Abmessungen geändert werden. In der Architektur wird beispielsweise ein Haus in
-kleinem Maßstab gebaut, um potentiellen Kunden durch das Modell einen besseren
-Eindruck zu vermitteln, wie das Haus in echt aussehen wird. Im Maschinenbau wird
-das Modell eines Flugzeugs in einen Windkanal gehalten, um die Flugzeuggeometrie
-zu optimieren. In manchen naturwissenschaftlichen Museen gibt es begehbare
-Modelle von Organen wie beispielsweise dem Darm, um den Aufbau des Darms
-begreifbar zu machen. Es gibt auch auch virtuelle Modelle wie  das
-<a class="reference external" href="https://de.wikipedia.org/wiki/Vier-Seiten-Modell">Vier-Ohren-Modell</a> des
-Kommunikationswissenschaftlers Friedemann Schulz von Thun, das das
-Kommunikationsverhalten von Menschen beschreibt.</p>
-<p>In der Welt des maschinellen Lernens bezieht sich der begriff Modell darauf,
-Daten zu interpretieren und basierend auf diesen Daten Vorhersagen oder
-Entscheidungen zu treffen.</p>
-<div class="note admonition">
-<p class="admonition-title">Was ist … ein Modell?</p>
-<p>Ein Modell ist ein vereinfachtes Abbild der Wirklichkeit. Im Kontext das
-maschinellen Lernens ist das ML-Modell eine abstrake Beschreibung eines Systems,
-das unbekannte Daten interpretieren kann oder basierend auf diesen Daten
-Vorhersagen oder Entscheidungen treffen kann.</p>
+<p>Auf der Seite <a class="reference external" href="https://mathweb.de">https://mathweb.de</a> finden Sie eine Reihe von
+Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
+gibt es dort auch eine interaktive Demonstration des R²-Scores.</p>
+<p>Drücken Sie auf den zwei kreisförmigen Pfeile rechts oben. Dadurch wird ein
+neuer Datensatz erzeugt. Die Messdaten sind durch grüne Punkte dargestellt, das
+lineare Regressionsmodell durch eine blaue Gerade. Im Titel wird der aktuelle
+und der optimale R²-Wert angezeigt. Ziehen Sie an den weißen Punkten, um die
+Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
+Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
+<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>
 </div>
 </section>
-<section id="maschinelles-lernen-ist-wie-kuchenbacken">
-<h2>Maschinelles Lernen ist wie Kuchenbacken<a class="headerlink" href="#maschinelles-lernen-ist-wie-kuchenbacken" title="Link to this heading">#</a></h2>
-<p>Damit kommen beim maschinellen Lernen drei Dinge zusammen: Daten, Algorithmus
-und Modell. Um das Verhältnis zwischen den drei Konzepten zu verdeutlichen,
-vergleichen wir die Konzepte mit dem Kuchenbacken. Die Daten sind die Zutaten,
-aus denen ein Kuchen gebacken werden soll. Der Algorithmus ist das Rezept mit
-einer detaillierten Schritt-für-Schritt-Anleitung, wie der Kuchen gebacken
-werden soll. Das Modell hingegen ist der fertige Kuchen, der aus dem Prozess
-herauskommt. Es ist somit das Endprodukt, das erstellt wird, indem man den
-Anweisungen des Rezepts (dem Algorithmus) folgt und die Zutaten zusammenfügt.</p>
-<p>Sobald das Modell bzw. der Kuchen fertig ist, wird dieses Modell
-dann verwendet, um Vorhersagen zu treffen oder Entscheidungen zu treffen, genau
-wie man einen Kuchen essen würde, nachdem er gebacken ist.</p>
-<figure class="align-default" id="fig-ml-as-baking">
-<img alt="../_images/ml_as_baking.png" src="../_images/ml_as_baking.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Analogie zwischen dem ML-Workflow und dem Kuchenbacken (Quelle: eigene Darstellung)</span><a class="headerlink" href="#fig-ml-as-baking" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Allerdings ist es damit nicht getan. Je nachdem, wie viele und welche Gäste
-erwartet werden, benötigen wir einen anderen Kuchen. Bei einer großen
-Geburtstagsparty brauchen wir einen Blechkuchen, damit jeder Gast ein Stückchen
-Kuchen bekommt. Haben wir Diabetiker eingeladen, sollten wir keine
-Schokoladentorte anbieten. Auch beim maschinellen Lernen ist es daher sehr
-wichtig, je nach Einsatzzweck das passende Modell bzw. den passenden Algorithmus
-zu wählen.</p>
-<p>Natürlich hängt die Wahl des Kuchens auch von den vorhandenen Zutaten ab. Fehlt
-die Schokolade, so kann ich keinen Schokoladenkuchen backen. Entweder backen wir
-dann einen anderen Kuchen oder wir entscheiden uns, noch schnell zum Supermarkt
-zu gehen und Schokolade einzukaufen. Vielleicht stellen wir auch fest, dass die
-Milch abgelaufen ist und nicht mehr genießbar ist. Dann ist unser Plan nicht
-durchführbar. Und auch hier können wir uns entscheiden, einen anderen Kuchen zu
-backen oder die Zutaten zu erneuern. Diese Analogie passt auch zu maschinellem
-Lernen. Fehlen Daten oder sind die Daten nicht qualititativ hochwertig, können
-wir die Datenlage verbessern, indem wir beispielsweise mehr Experimente
-durchführen oder offensichtlich schiefgelaufene Experimente wiederholen. Diese
-Phase des maschinellen Lernen wird auch <strong>Datenerkundung</strong> oder
-<strong>Datenexploration</strong> genannt. Sollten wir die Daten jedoch nicht verbessern
-können (oder wollen, weil zu teuer oder die Abgabefrist der Bachelorarbeit
-ansteht), dann müssen wir die Auswahl des Modells an die vorhandenen Daten
-anpassen.</p>
-<p>Zutaten komplett, Rezept ausgewählt, Kuchen gebacken, der Gast beißt in den
-Kuchen und verzieht das Gesicht … Zucker und Salz verwechselt. Hätten wir den
-Kuchen lieber einmal vor dem Servieren probiert. Auch beim maschinellen Lernen
-ist es mit dem “Backen” des Modells nicht getan. Ist ein Modell erstellt, so
-muss es auch bewertet werden. Der Prozess des maschinellen Lernens wird mit der
-<strong>Validierung</strong> abgeschlossen, bevor das Modell dann produktiv eingesetzt wird.
-Die Erstellung und Verwendung von Modellen im maschinellen Lernen ist ein
-fortlaufender Prozess. Modelle werden oft mehrfach getestet und angepasst, um
-ihre Leistung zu verbessern. Beim Kuchenbacken könnte der Bäcker auf die Idee
-kommen, den Kuchen nicht bei 160 °C, sondern bei 162 °C zu backen, weil dann der
-Kuchen noch besser schmeckt. Solche Parameter zum Finetunen eines Modells werden
-<strong>Hyperparameter</strong> genannt. Hyperparameter haben nichts mit den vorhanden Daten
-zu tun, sondern gehören zum ML-Modell. Aber auch wenn sich Daten verändern und
-neue Daten hinzukommen, muss das Modell aktualisiert werden, um mit den sich
-ändernden Bedingungen zurechtzukommen.</p>
-<p>Die folgende Skizze zeigt den schematischen Ablauf eines typischen ML-Projektes.
-Dabei benutzen wir das sogenannte
-<a class="reference external" href="https://www.researchgate.net/publication/339830240_The_QUACK_Machine_Learning_Development_Process_and_the_Laboratory_for_Applied_Machine_Learning_Approaches_LAMA">QUA3CK-Modell</a>.
-Das QUA3CK-Modell zeigt den typischen Ablauf eines ML-Projektes von der
-wissenschaftlichen Fragestellung (Q – Question) bis zu deren Beantwortung (K –
-Knowledge Transfer). Dazu gehört das Sammeln und Erkunden der Daten (U –
-Understanding the data), mit Hilfe derer die Frage beantwortet werden soll. Die
-Phase der ML-Modellbildung wird mehrfach durchlaufen und besteht aus der Auswahl
-und dem Training des Algorithmus bzw. des Modells (A – Algorithm selection and
-training), dazu passend der Auswahl und Anpassung der Daten (A – Adaption of
-the data) sowie der Anpassung der Hyperparamter (A – Adjustement of the
-hyperparameter). Die Modelle, die durch diese Schleife erstellt werden, werden
-letztendlich miteinander verglichen und bewertet (C – Comparison and
-Conclusion), bevor sie produktiv eingesetzt werden.</p>
-<figure class="align-default" id="fig-qua3ck-process">
-<a class="reference internal image-reference" href="../_images/qua3ck_process.png"><img alt="../_images/qua3ck_process.png" src="../_images/qua3ck_process.png" style="width: 60%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Typischer Ablauf eines ML-Projektes als QUA<sup>3</sup>CK-Prozess dargestellt
-(Quelle: in Anlehnung an <a class="reference external" href="https://www.researchgate.net/publication/339830240_The_QUACK_Machine_Learning_Development_Process_and_the_Laboratory_for_Applied_Machine_Learning_Approaches_LAMA">The QUA³CK Machine Learning Development Process and the Laboratory for Applied Machine Learning Approaches (LAMA)</a>)</span><a class="headerlink" href="#fig-qua3ck-process" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Das folgende Video erklärt den ML-Workflow etwas detaillierter, als wir es mit
-der Kuchenbacken-Analogie getan haben. Als Ausblick auf die weitere Vorlesung
-bietet dieses Video dennoch eine sehr gute Übersicht über die Vorgehenweise in
-einem ML-Projekt und ist daher sehr empfehlenswert.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “ML Tutorial - #2 ML-Workflow” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f9QT2dqeW04?si=ScwgvnYzsCvbicb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>In diesem Kapitel haben wir zwar die drei grundlegenden Bestandteile eines
-ML-Systems (Daten, Algorithmus und Modell) kennengelernt, aber entscheidend ist
-auch die Anwendung, welche Art von Daten vorliegen. Im nächsten Kapitel werden
-wir die drei großen Kategorien betrachten, in die ML-Modelle eingeteilt werden:</p>
-<ul class="simple">
-<li><p>Überwachtes Lernen (Supervised Learning),</p></li>
-<li><p>Unüberwachtes Lernen (Unsupervised Learning) und</p></li>
-<li><p>Verstärkendes Lernen (Reinforcement Learning).</p></li>
-</ul>
+<p>In diesem Kapitel haben wir gelernt, was Regression bedeutet und wie das
+Regressionsergebnis mit dem R²-Score bewertet wird. Im nächsten Kapitel werden
+wir uns damit beschäftigen, die Steigung und den y-Achsenabschnitt einer
+linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.</p>
 </section>
 </section>
 
@@ -841,7 +1014,7 @@ wir die drei großen Kategorien betrachten, in die ML-Modelle eingeteilt werden:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">13. Grundbegriffe Künstliche Intelligenz</p>
+        <p class="prev-next-title">13. Messwerte und Regression</p>
       </div>
     </a>
     <a class="right-next"
@@ -849,7 +1022,7 @@ wir die drei großen Kategorien betrachten, in die ML-Modelle eingeteilt werden:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</p>
+        <p class="prev-next-title">13.2 Lineare Regression mit polyfit und polyval</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -871,9 +1044,9 @@ wir die drei großen Kategorien betrachten, in die ML-Modelle eingeteilt werden:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-wenig-geschichte">Ein wenig Geschichte</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-sind-algorithmen-und-modelle">Was sind Algorithmen und Modelle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maschinelles-lernen-ist-wie-kuchenbacken">Maschinelles Lernen ist wie Kuchenbacken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-kommt-aus-der-statistik">Regression kommt aus der Statistik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-weltweiter-co2-ausstosz">Beispiel: weltweiter CO2-Ausstoß</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-bestimmheitsmasz-r2">Das Bestimmheitsmaß R²</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

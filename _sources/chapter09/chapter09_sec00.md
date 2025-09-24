@@ -1,9 +1,10 @@
-# 9. Simulink
+# 9. MATLAB
 
-Was ist Simulink? Wikipedia erklärt Simulink folgendermaßend:
+Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe
+[https://de.wikipedia.org/wiki/Matlab](https://de.wikipedia.org/wiki/Matlab)):
 
-> Simulink ist eine Software des Herstellers The MathWorks zur Modellierung von
-> technischen, physikalischen, finanzmathematischen und anderen Systemen.
-> Simulink ist ein Zusatzprodukt zu MATLAB und benötigt dieses zum Ausführen.
-
-Quelle: [Wikipedia → Simulink](https://de.wikipedia.org/wiki/Simulink)
+> “Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
+> US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
+> und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für
+> numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der
+> Name ableitet: MATrix LABoratory.”

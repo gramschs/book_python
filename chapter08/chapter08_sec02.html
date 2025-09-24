@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.2 Numerisches Rechnen mit MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.2 Methoden und der self-Parameter &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -61,13 +61,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.3 Programmieren in MATLAB" href="chapter08_sec03.html" />
-    <link rel="prev" title="8.1 Einführung MATLAB" href="chapter08_sec01.html" />
+    <link rel="next" title="8.3 OOP in der Praxis" href="chapter08_sec03.html" />
+    <link rel="prev" title="8.1 Was sind Klassen und Objekte?" href="chapter08_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,47 +223,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Objektorientierte Programmierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -316,6 +321,55 @@
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec02.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -339,6 +393,23 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter08/chapter08_sec02.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
       
       
       
@@ -418,7 +489,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.2 Numerisches Rechnen mit MATLAB</h1>
+    <h1>8.2 Methoden und der self-Parameter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,21 +500,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren">Vektoren</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-zeilenvektor">Erzeugung Zeilenvektor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-spaltenvektor">Erzeugung Spaltenvektor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator">Erzeugung eines Vektors mittels Doppelpunkt-Operator</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizen">Matrizen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-matrizen">Erzeugung von Matrizen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-speziellen-matrizen">Erzeugung von speziellen Matrizen</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skripte">Skripte</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-vektor-und-matrixelemente">Zugriff auf Vektor- und Matrixelemente</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">Fortgeschrittene Rechenoperationen für Vektoren und Matrizen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-sind-funktionen-die-zu-einer-klasse-gehoren">Methoden sind Funktionen, die zu einer Klasse gehören</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-self-parameter">Der self-Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -455,346 +514,430 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numerisches-rechnen-mit-matlab">
-<h1>8.2 Numerisches Rechnen mit MATLAB<a class="headerlink" href="#numerisches-rechnen-mit-matlab" title="Link to this heading">#</a></h1>
-<p>MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
-ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenden Datentypen und
-Rechenoperationen für Vektoren und Matrizen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="methoden-und-der-self-parameter">
+<h1>8.2 Methoden und der self-Parameter<a class="headerlink" href="#methoden-und-der-self-parameter" title="Link to this heading">#</a></h1>
+<p>Bisher haben wir gelernt, wie wir Daten in Objekten speichern können. Aber
+Objekte können mehr als nur Daten speichern, sonst könnten wir auch Dictionaries
+nehmen. Ihren großen Vorteil erlangen Objekte durch Methoden.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können einen <strong>Vektor</strong> oder eine <strong>Matrix</strong> in MATLAB erzeugen.</p></li>
-<li><p>Sie wissen, wie Sie auf einzelne <strong>Elemente</strong> eines Vektors oder einer Matrix
-zugreifen.</p></li>
-<li><p>Sie beherrschen das <strong>Slicing</strong> in MATLAB.</p></li>
-<li><p>Sie können grundlegende <strong>Rechenoperationen</strong> mit Vektoren oder Matrizen
-ausführen.</p></li>
-<li><p>Sie können mit MATLAB das <strong>Skalarprodukt</strong> oder das <strong>Vektorprodukt</strong> von
-Vektoren berechnen.</p></li>
-<li><p>Sie können die <strong>Determinante</strong>, die <strong>Eigenwerte</strong> oder die <strong>Eigenvektoren</strong>
-einer Matrix berechnen.</p></li>
+<li><p>Sie verstehen, was Methoden sind und wie sie sich von normalen Funktionen
+unterscheiden.</p></li>
+<li><p>Sie können einfache Methoden in einer Klasse implementieren und aufrufen.</p></li>
+<li><p>Sie verstehen den <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter und wissen, warum er benötigt wird.</p></li>
+<li><p>Sie können über <code class="docutils literal notranslate"><span class="pre">self</span></code> auf Objektattribute zugreifen und diese verändern.</p></li>
+<li><p>Sie können Methoden schreiben, die mit den Daten des jeweiligen Objekts
+arbeiten.</p></li>
 </ul>
 </div>
 </section>
-<section id="vektoren">
-<h2>Vektoren<a class="headerlink" href="#vektoren" title="Link to this heading">#</a></h2>
-<p>Vektoren sind sozusagen technisch gesehen Listen, die nur Zahlen enthalten, und
-für die die typischen Vektoroperationen definiert sind. Zunächst beschäftigen
-wir uns mit der Erzeugung von Vektoren.</p>
-<section id="erzeugung-zeilenvektor">
-<h3>Erzeugung Zeilenvektor<a class="headerlink" href="#erzeugung-zeilenvektor" title="Link to this heading">#</a></h3>
-<p>Ein Vektor wird in MATLAB durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[</span>&#160; <span class="pre">]</span></code> erzeugt. Sie finden das
-Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
-eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
-drücken, um die eckigen Klammern auf der Tastatur einzugeben.</p>
-<p>Betrachten wir ein Beispiel. Hier wird ein Vektor mit den Elementen 1, 2, 3, 4,
-5 erzeugt und dann anschließend in der Variablen <code class="docutils literal notranslate"><span class="pre">v</span></code> gespeichert. Zur Trennung
-der einzelnen Elemente des Vektors verwenden wir das Komma. Tatsächlich würde
-MATLAB auch ein Leerzeichen als Trennung akzeptieren. Im Zusammenhang mit
-Matrizen ist aber das Komma einprägsamer, so dass wir beim Komma bleiben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+<section id="methoden-sind-funktionen-die-zu-einer-klasse-gehoren">
+<h2>Methoden sind Funktionen, die zu einer Klasse gehören<a class="headerlink" href="#methoden-sind-funktionen-die-zu-einer-klasse-gehoren" title="Link to this heading">#</a></h2>
+<p>Eine <strong>Methode</strong> ist im Grunde eine Funktion, die direkt zu einer Klasse gehört.
+Statt die Funktion separat zu schreiben, definieren wir sie innerhalb der
+Klasse. Dadurch kann die Funktion direkt mit den Daten des Objekts arbeiten.</p>
+<p>Schauen wir uns ein Beispiel an. Angenommen, wir möchten für einen Studierenden
+den vollständigen Namen ausgeben. Bisher würden wir das so machen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ohne Methoden, d.h. mit normaler Funktion</span>
+<span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vollstaendiger_name</span><span class="p">(</span><span class="n">student1</span><span class="p">))</span>  <span class="c1"># Anna Abendrot</span>
 </pre></div>
 </div>
-</section>
-<section id="erzeugung-spaltenvektor">
-<h3>Erzeugung Spaltenvektor<a class="headerlink" href="#erzeugung-spaltenvektor" title="Link to this heading">#</a></h3>
-<p>Der Vektor, so wie wir ihn bisher erzeugt haben, ist ein Zeilenvektor. Möchten
-wir ihn in einen Spaltenvektor umwandeln, so müssen wir ihn transponieren. Dafür
-steht in MATLAB der einzelne Hochstrich <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">&#39;</span>
+<p>Mit einer Methode können wir das eleganter lösen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="c1"># Das ist eine Methode!</span>
+    <span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Objekt erstellen</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+
+<span class="c1"># Methode aufrufen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">())</span>  <span class="c1"># Anna Abendrot</span>
 </pre></div>
 </div>
-<p>Soll direkt ein Spaltenvektor erzeugt werden, so verwenden wir das Semikolon
-anstatt des Kommas.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">spaltenvektor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anna Abendrot
 </pre></div>
 </div>
-</section>
-<section id="einfache-rechenoperationen">
-<h3>Einfache Rechenoperationen<a class="headerlink" href="#einfache-rechenoperationen" title="Link to this heading">#</a></h3>
-<p>Mit Vektoren kann auch direkt gerechnet werden. Natürlich müssen dabei die
-Dimensionen der Vektoren übereinstimmen. Bei der folgenden Addition</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7</span><span class="p">]</span>
-<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.7</span><span class="p">]</span>
-<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+</div>
+</div>
+<p>Der wichtigste Unterschied zwischen Funktionen und Methoden ist, wo und wie wir
+sie aufrufen:</p>
+<p>Normale Funktion:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion wird separat definiert</span>
+<span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Aufruf: funktion(objekt)</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="n">vollstaendiger_name</span><span class="p">(</span><span class="n">student1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>wird von MATLAB das Ergebnis <code class="docutils literal notranslate"><span class="pre">[-1.5,</span> <span class="pre">1,</span> <span class="pre">2]</span></code> berechnet und angezeigt. Die
-Subtraktion erfolgt analog.</p>
-<p>Die Multiplikation <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code> funktioniert jedoch nicht. Es erscheint eine
-Fehlermeldung. Das liegt daran, dass es eine direkte Multiplikation von Vektoren
-nicht gibt. Wir müssen erst entscheiden, ob elementweise multipliziert werden
-soll oder ob vielleicht das Skalarprodukt oder das Vektorprodukt gemeint ist.</p>
-<p>Bei der elementweisen Multiplikation wird dem Multiplikationsoperator <code class="docutils literal notranslate"><span class="pre">*</span></code> ein
-Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> vorangestellt, also <code class="docutils literal notranslate"><span class="pre">.*</span></code>:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">b</span>
+<p>Methode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Methode wird in der Klasse definiert</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Aufruf: objekt.methode()</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="n">student1</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Das Ergebnis ist dann der Vektor <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">-2.0000,</span> <span class="pre">-6.2900]</span></code>. So funktioniert auch
-die elementweise Division. Dabei gibt es zwei Varianten:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">b</span>
-<span class="n">a</span><span class="w"> </span><span class="o">.\</span><span class="w"> </span><span class="n">b</span>
+<p>Nicht nur der Ort (in oder außerhalb der Klasse) unterscheidet sich, sondern
+auch die Syntax beim Aufruf:</p>
+<ul class="simple">
+<li><p>Normale Funktion: <code class="docutils literal notranslate"><span class="pre">funktion(objekt)</span></code></p></li>
+<li><p>Methode: <code class="docutils literal notranslate"><span class="pre">objekt.methode()</span></code></p></li>
+</ul>
+<p>Erweitern wir unsere Klasse Student um eine weitere nützliche Methode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">begruessung</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hallo, ich bin </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> und studiere </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span><span class="si">}</span><span class="s2">.&quot;</span>
+
+<span class="c1"># Ausprobieren</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="n">student2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">())</span>  <span class="c1"># Anna Abendrot</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">begruessung</span><span class="p">())</span>          <span class="c1"># Hallo, ich bin Anna und studiere Maschinenbau.</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student2</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">())</span>  <span class="c1"># Bob Berliner</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student2</span><span class="o">.</span><span class="n">begruessung</span><span class="p">())</span>          <span class="c1"># Hallo, ich bin Bob und studiere Maschinenbau.</span>
 </pre></div>
 </div>
-<p>Bei der ersten Variante wird jedes Element des Vektors <code class="docutils literal notranslate"><span class="pre">a</span></code> durch das
-entsprechende Element des Vektors <code class="docutils literal notranslate"><span class="pre">b</span></code> geteilt. Das <code class="docutils literal notranslate"><span class="pre">b</span></code> steht in Nenner des
-Bruchstrichs <code class="docutils literal notranslate"><span class="pre">/</span></code>. Bei der zweiten Variante wird jedes Element des Vektors <code class="docutils literal notranslate"><span class="pre">b</span></code>
-durch die entsprechenden Elemente des Vektors <code class="docutils literal notranslate"><span class="pre">a</span></code> geteilt. Der Bruchstrich <code class="docutils literal notranslate"><span class="pre">\</span></code>
-zeigt an, dass <code class="docutils literal notranslate"><span class="pre">a</span></code> im Nenner stehen soll.</p>
-</section>
-<section id="erzeugung-eines-vektors-mittels-doppelpunkt-operator">
-<h3>Erzeugung eines Vektors mittels Doppelpunkt-Operator<a class="headerlink" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator" title="Link to this heading">#</a></h3>
-<p>Python verfügt über die Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code>, um Listen mit Zahlen zu erzeugen,
-die einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
-gebraucht, dass sie sogar durch einen eigenen Operator anstatt einer Funktion
-erreicht wird, durch den Doppelpunkt-Operator <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
-<p>Eine Liste mit den Zahlen von 5 bis 11 wird folgendermaßen generiert:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anna Abendrot
+Hallo, ich bin Anna und studiere Maschinenbau.
+
+Bob Berliner
+Hallo, ich bin Bob und studiere Maschinenbau.
 </pre></div>
 </div>
-<p>Auch hier ist eine Schrittweite versteckt enthalten. Der folgende Code erzeugt
-gerade Zahlen von 4 bis 12:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+</div>
+</div>
+<p>Anhand des obigen Beispiels stellen wir fest:</p>
+<ol class="arabic simple">
+<li><p>Der <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter: Jede Methode hat als ersten Parameter <code class="docutils literal notranslate"><span class="pre">self</span></code>. Dieser
+Parameter bezieht sich auf das konkrete Objekt, für das die Methode aufgerufen
+wird. Mehr dazu lernen wir im nächsten Abschnitt.</p></li>
+<li><p>Zugriff auf Attribute: Innerhalb einer Methode greifen wir mit
+<code class="docutils literal notranslate"><span class="pre">self.attributname</span></code> auf die Attribute des Objekts zu.</p></li>
+<li><p>Jedes Objekt ruft seine eigene Methode auf: Obwohl beide Objekte die gleiche
+Methode <code class="docutils literal notranslate"><span class="pre">begruessung()</span></code> verwenden, geben sie unterschiedliche Ergebnisse
+zurück, je nach ihren eigenen Daten.</p></li>
+</ol>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Versuchen Sie selbst, eine Methode zu schreiben! Erweitern Sie die
+Klasse Student um eine Methode <code class="docutils literal notranslate"><span class="pre">studieninfo()</span></code>, die eine Zeile wie “Anna
+Abendrot studiert Maschinenbau im 3. Semester” zurückgibt.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
 </pre></div>
 </div>
-<p>So kann auch rückwärts gezählt werden.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="mi">4</span>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">studieninfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">()</span><span class="si">}</span><span class="s2"> studiert </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span><span class="si">}</span><span class="s2"> im </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester&quot;</span>
+
+<span class="c1"># Test der neuen Methode</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">studieninfo</span><span class="p">())</span>  <span class="c1"># Max Müller studiert Maschinenbau im 3. Semester</span>
 </pre></div>
 </div>
-<p>Das folgende Video fasst die obigen Erklärungen zusammen.</p>
+<p>In dieser Musterlösung rufen wir in der <code class="docutils literal notranslate"><span class="pre">studieninfo()</span></code>-Methode die andere
+Methode <code class="docutils literal notranslate"><span class="pre">vollstaendiger_name()</span></code> auf. Das geht mit <code class="docutils literal notranslate"><span class="pre">self.vollstaendiger_name()</span></code>.
+Auch Methoden können andere Methoden der gleichen Klasse verwenden!</p>
+</div>
+<p>Im nächsten Abschnitt schauen wir uns genauer an, was es mit diesem mysteriösen
+<code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter auf sich hat.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 1.4 Vektoren” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<span class="sd-summary-text">Video zu “Methoden in Klassen” von Programmieren lernen</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/58IjjwHs_4A" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
 </details></section>
+<section id="der-self-parameter">
+<h2>Der self-Parameter<a class="headerlink" href="#der-self-parameter" title="Link to this heading">#</a></h2>
+<p>Im vorigen Abschnitt haben wir gesehen, dass jede Methode einen <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter
+hat. In diesem Abschnitt klären wir, was self ist, warum wir es brauchen und wie
+es funktioniert.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> ist ein Verweis auf das konkrete Objekt, für das eine Methode aufgerufen
+wird. Angenommen, wir haben mehrere Studierende und jeder soll sich vorstellen.
+Woher weiß die Methode <code class="docutils literal notranslate"><span class="pre">begruessung()</span></code>, ob sie “Hallo, ich bin Anna” oder
+“Hallo, ich bin Bob” sagen soll? Genau hier kommt <code class="docutils literal notranslate"><span class="pre">self</span></code> ins Spiel.</p>
+<p>Schauen wir uns ein Beispiel an:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="nf">begruessung</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># self bezieht sich auf das Objekt, das diese Methode aufruft</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hallo, ich bin </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Meine Matrikelnummer ist </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Zwei verschiedene Objekte erstellen</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="n">student2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gleiche Methode, aber verschiedene Objekte</span>
+<span class="n">student1</span><span class="o">.</span><span class="n">begruessung</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">student2</span><span class="o">.</span><span class="n">begruessung</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo, ich bin Anna Abendrot
+Meine Matrikelnummer ist 12345678
+
+Hallo, ich bin Bob Berliner
+Meine Matrikelnummer ist 87654321
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenn wir <code class="docutils literal notranslate"><span class="pre">student1.begruessung()</span></code> aufrufen, dann ist <code class="docutils literal notranslate"><span class="pre">self</span></code> in der Methode eine
+Referenz auf <code class="docutils literal notranslate"><span class="pre">student1</span></code>. Bei <code class="docutils literal notranslate"><span class="pre">student2.begruessung()</span></code> bezieht sich <code class="docutils literal notranslate"><span class="pre">self</span></code> auf
+<code class="docutils literal notranslate"><span class="pre">student2</span></code>. Ohne <code class="docutils literal notranslate"><span class="pre">self</span></code> wüsste eine Methode nicht, auf welches Objekt sie sich
+bezieht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="nf">zeige_semester</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> ist im </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verschiedene Studierende in verschiedenen Semestern</span>
+<span class="n">studierende</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Schmidt&quot;</span><span class="p">,</span> <span class="s2">&quot;Sarah&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Weber&quot;</span><span class="p">,</span> <span class="s2">&quot;Tim&quot;</span><span class="p">,</span> <span class="s2">&quot;Informatik&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;11111111&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Für jeden Studierenden die Methode aufrufen</span>
+<span class="k">for</span> <span class="n">studi</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="n">studi</span><span class="o">.</span><span class="n">zeige_semester</span><span class="p">()</span>  <span class="c1"># self wird automatisch gesetzt!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max ist im 3. Semester
+Sarah ist im 1. Semester
+Tim ist im 5. Semester
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mit self können wir auf alle Attribute des aktuellen Objekts zugreifen. Die
+Syntax ist einfach: <code class="docutils literal notranslate"><span class="pre">self.attributname</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="nf">alle_infos_anzeigen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Studierendendaten ---&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Studiengang: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Semester: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrikelnummer: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Johnson&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;98765432&quot;</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">alle_infos_anzeigen</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Studierendendaten ---
+Name: Lisa Johnson
+Studiengang: Maschinenbau
+Semester: 2
+Matrikelnummer: 98765432
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hier kommt der “magische Teil”: Obwohl jede Methode <code class="docutils literal notranslate"><span class="pre">self</span></code> als ersten Parameter
+hat, übergeben wir beim Aufruf keinen Wert dafür. Python macht das automatisch!
+Wir schreiben:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">alle_infos_anzeigen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Python macht daraus intern:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Student</span><span class="o">.</span><span class="n">alle_infos_anzeigen</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Das bedeutet: Wenn wir <code class="docutils literal notranslate"><span class="pre">objekt.methode()</span></code> schreiben, übergibt Python automatisch
+das Objekt als ersten Parameter <code class="docutils literal notranslate"><span class="pre">(self)</span></code> an die Methode.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> ermöglicht es uns nicht nur, Attribute zu lesen, sondern auch zu
+verändern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="nf">semester_erhoehen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Erhöht das Semester um 1 (für den Semesterübergang)&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> ist jetzt im </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">aktuelles_semester_anzeigen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> ist im </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ausprobieren</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">aktuelles_semester_anzeigen</span><span class="p">()</span>  <span class="c1"># Max ist im 3. Semester</span>
+
+<span class="n">student</span><span class="o">.</span><span class="n">semester_erhoehen</span><span class="p">()</span>            <span class="c1"># Max ist jetzt im 4. Semester</span>
+<span class="n">student</span><span class="o">.</span><span class="n">aktuelles_semester_anzeigen</span><span class="p">()</span>  <span class="c1"># Max ist im 4. Semester</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max ist im 3. Semester
+Max ist jetzt im 4. Semester
+Max ist im 4. Semester
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erweitern Sie die Klasse Student um zwei neue Methoden:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">note_eintragen(note)</span></code> - fügt eine Note zur Notenliste hinzu (verwenden Sie
+eine Liste <code class="docutils literal notranslate"><span class="pre">self.noten</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notendurchschnitt()</span></code> - berechnet und gibt den Durchschnitt aller Noten
+zurück</p></li>
+</ol>
+<p>Tipp: Initialisieren Sie die Notenliste in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> als leere Liste. Falls
+noch keine Noten vorhanden sind, soll die Methode den Durchschnitt 0.0
+zurückgeben.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noten</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Leere Liste für Noten</span>
+    
+    <span class="k">def</span> <span class="nf">note_eintragen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">note</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fügt eine Note zur Notenliste hinzu&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Note </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> für </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> eingetragen&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">notendurchschnitt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Berechnet den Durchschnitt aller Noten&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="p">)</span>
+
+<span class="c1"># Test der neuen Methoden</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">note_eintragen</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>  <span class="c1"># Note 2.3 für Max eingetragen</span>
+<span class="n">student</span><span class="o">.</span><span class="n">note_eintragen</span><span class="p">(</span><span class="mf">1.7</span><span class="p">)</span>  <span class="c1"># Note 1.7 für Max eingetragen</span>
+<span class="n">student</span><span class="o">.</span><span class="n">note_eintragen</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>  <span class="c1"># Note 2.0 für Max eingetragen</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Durchschnitt: </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">notendurchschnitt</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Durchschnitt: 2.0</span>
+</pre></div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Der self Parameter” von Programmieren lernen</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CLoK-_qNTnU" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Methoden sind Funktionen, die zu einer Klasse gehören und direkt mit Objektdaten
+arbeiten können. Der <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter ermöglicht jeder Methode den Zugriff auf das
+konkrete Objekt, das sie aufruft.</p>
 </section>
-<section id="matrizen">
-<h2>Matrizen<a class="headerlink" href="#matrizen" title="Link to this heading">#</a></h2>
-<p>MATLAB würde nicht Matrix-Labor heißen, wenn es nicht einen eigenen Datentyp für
-Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrix ab. Ein
-Zeilenvektor ist eine <span class="math notranslate nohighlight">\(1\times N\)</span>-Matrix und ein Spaltenvektor eine <span class="math notranslate nohighlight">\(M\times
-1\)</span>-Matrix. Daher betrachten wir uns als nächstes, wie Matrizen in MATLAB erzeugt
-werden.</p>
-<section id="erzeugung-von-matrizen">
-<h3>Erzeugung von Matrizen<a class="headerlink" href="#erzeugung-von-matrizen" title="Link to this heading">#</a></h3>
-<p>Bei den Vektoren haben wir gelernt, Leerzeichen oder Komma, um Elemente eines
-Zeilenvektors aufzulisten, und Semikolon, um Elemente in einem Spaltenvektor
-voneinander abzugrenzen. Eine Matrix wird zeilenweise eingegeben. Das Semikolon
-markiert das Ende der Zeile.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">]</span>
-</pre></div>
-</div>
-</section>
-<section id="erzeugung-von-speziellen-matrizen">
-<h3>Erzeugung von speziellen Matrizen<a class="headerlink" href="#erzeugung-von-speziellen-matrizen" title="Link to this heading">#</a></h3>
-<p>Für Matrizen, die häufig gebraucht werden, hat MATLAB eigene
-Erzeugungsfunktionen. Beispielsweise generiert die Funktion</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>eine Matrix, die nur die Zahl Null enthält und die 5 Zeilen und 3 Spalten hat.
-Analog dazu funktioniert das Kommando</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>das eine Matrix mit Einsen erzeugt, die 5 Zeilen und 3 Spalten hat. Sehr häufig
-gebraucht wird auch die Einheitsmatrix. Mit der Funktion <code class="docutils literal notranslate"><span class="pre">eye(N)</span></code> wird sie
-erzeugt, wobei der Parameter <code class="docutils literal notranslate"><span class="pre">N</span></code> die Dimension der quadratischen Matrix angibt.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Hier noch ein Video zu Matrizen in MATLAB.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 1.5 Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-</section>
-<section id="skripte">
-<h2>Skripte<a class="headerlink" href="#skripte" title="Link to this heading">#</a></h2>
-<p>Es ist umständlich, immer alles in das Kommandofenster einzugeben. Die
-Entwicklungsumgebung MATLAB bietet einen Texteditor, um ein sogenanntes Skript
-zu schreiben. Ein Skript ist wie ein Programm, also eine Aneinanderreihung von
-Anweisungen an den MATLAB-Interpreter. Es wird als Text abgespeichert und trägt
-die Dateiendung <code class="docutils literal notranslate"><span class="pre">.m</span></code>. Am einfachsten starten Sie den Editor, indem Sie auf <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Script</span></code> klicken.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/screenshot03.png"><img alt="Screenshot MATLAB mit &quot;New Script&quot;" src="../_images/screenshot03.png" style="width: 75%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Screenshot MATLAB mit dem Button “New Script”</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Sobald MATLAB den Texteditor öffnet, verändert sich das Layout von MATLAB. Das
-Kommandofenster rutscht nach unten und wird kleiner, wohingegen der Texteditor
-nun den größten Raum einnimmt.</p>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/screenshot04.png"><img alt="Screenshot MATLAB mit Texteditor" src="../_images/screenshot04.png" style="width: 75%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem
-auf den Button “Run” geklickt wird (siehe 3)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Das Skript wird ausgeführt, indem Sie auf den Button “Run” klicken (siehe
-Screenshot, 3). Es ist ratsam, am Anfang des Skriptes den Befehl <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code>
-einzufügen. Diese Anweisung sorgt dafür, dass alle sich im Speicher befindlichen
-Variablen gelöscht werden.</p>
-<p>Ein weiteres Video zu Skripten in MATLAB finden Sie hier.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 1.6 Skripte” von Mathe? logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="zugriff-auf-vektor-und-matrixelemente">
-<h2>Zugriff auf Vektor- und Matrixelemente<a class="headerlink" href="#zugriff-auf-vektor-und-matrixelemente" title="Link to this heading">#</a></h2>
-<p>Der Zugriff auf die Elemente eines Vektors erfolgt durch Angabe des Index des
-Elements in runden Klammern. Beachten Sie, dass MATLAB im Gegensatz zu vielen
-anderen Programmiersprachen einen Index verwendet, der bei 1 beginnt. Das
-folgende Beispiel zeigt, wie auf das dritte Element des Vektors zugegriffen
-wird.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="n">drittes_element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Soll hingegen auf Elemente einer Matrix zugegriffen werden, müssen wir die Zeile
-und die Spalte über den jeweiligen Index angeben. Auf die zweite Zeile und die
-dritte Spalte wird folgendermaßen zugegriffen.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span>
-<span class="n">element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Damit wird die <code class="docutils literal notranslate"><span class="pre">8</span></code> aus der Matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> extrahiert und kann weiter verarbeitet
-werden.</p>
-<p>Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu
-existiert das sogenannte <strong>Slicing</strong>. Mit Slicing ist gemeint, dass auf einen
-zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll.
-Wir betrachten die <span class="math notranslate nohighlight">\(3\times 5\)</span>-Matrix <span class="math notranslate nohighlight">\(A\)</span> von vorhin, also</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Um jetzt einen zusammenhängenden Bereich aus der Matrix zu extrahieren,
-verwenden wir den Doppelpunkt-Operator ‘:’. Mit</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span>
-</pre></div>
-</div>
-<p>greifen wir auf Elemente der ersten Zeile zu und gehen dabei in der Spalte von
-Anfang bis Ende, da vor dem Doppelpunkt und nach dem Doppelpunkt nichts steht.
-Das Ergebnis ist also die komplette erste Zeile <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>. Möchten wir
-in der ersten Zeile von der zweiten Spalte zur vierten Spalte auf die Elemente
-der Matrix zugreifen, schreiben wir den Startindex vor den Doppelpunkt und den
-Stoppindex nach dem Doppelpunkt.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Das Ergebnis sind die Elemente <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>. Diese Vorgehensweise funktioniert
-auch für die Zeile. Der folgende MATLAB-Code extrahiert die komplette zweite und
-dritte Zeile.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span>
-</pre></div>
-</div>
-<p>Das Ergebnis ist</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix}
-6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-11 &amp; 12 &amp; 13 &amp; 14 &amp; 15
-\end{pmatrix}.\end{split}\]</div>
-<p>Das Slicing kann auch verwendet werden, um Teile einer Matrix zu ändern. Nehmen
-wir an, wir möchten die zweite Spalte von A durch die Zahlen 102, 107 und 112
-ersetzen. Wir könnten durch den folgenden Code erreichen.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">102</span><span class="p">;</span><span class="w"> </span><span class="mi">107</span><span class="p">;</span><span class="w"> </span><span class="mi">112</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das
-Slicing zusammen.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 2.1 Doppelpunkt- bzw. Colon-Operator” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 2.2 Zugriff auf Teile von Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">
-<h2>Fortgeschrittene Rechenoperationen für Vektoren und Matrizen<a class="headerlink" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen" title="Link to this heading">#</a></h2>
-<p>Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden Komponenten der Vektoren und die Summierung dieser Produkte berechnet.</p>
-<p>In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion <code class="docutils literal notranslate"><span class="pre">dot()</span></code> berechnet:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
-<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
-<span class="n">skalarprodukt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Das Ergebnis ist <span class="math notranslate nohighlight">\(1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32\)</span>.</p>
-<p>Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.</p>
-<p>In MATLAB wird das Vektorprodukt mit der Funktion <code class="docutils literal notranslate"><span class="pre">cross()</span></code> berechnet:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
-<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
-<span class="n">vektorprodukt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cross</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Das Vektorprodukt ist der Vektor <code class="docutils literal notranslate"><span class="pre">[-3,</span> <span class="pre">6,</span> <span class="pre">-3]</span></code>.</p>
-<p>Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.</p>
-<p>In MATLAB wird die Determinante einer Matrix mit der Funktion <code class="docutils literal notranslate"><span class="pre">det()</span></code> berechnet:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
-<span class="n">det_A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Die Determinante der obigen Matrix <span class="math notranslate nohighlight">\(A\)</span> ist <span class="math notranslate nohighlight">\(\det(A) = 1\cdot 4 - 3\cdot 2 = -2\)</span>.</p>
-<p>Eigenwerte und Eigenvektoren sind weitere wichtige Konzepte in der linearen
-Algebra, die in vielen Anwendungen, einschließlich der
-Maschinenbauingenieurwissenschaften, der Informatik und der Datenanalyse,
-nützlich sind. Die Eigenwerte einer Matrix sind die Lösungen der
-charakteristischen Gleichung</p>
-<div class="math notranslate nohighlight">
-\[\det(A-\lambda E) = 0,\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(E\)</span> die Einheitsmatrix der passenden Dimension ist. Zu jedem Eigenwert
-<span class="math notranslate nohighlight">\(\lambda\)</span> kann dann der Eigenvektor <span class="math notranslate nohighlight">\(\vec{v}\)</span> berechnet werden, der die
-Gleichung</p>
-<div class="math notranslate nohighlight">
-\[A\cdot \vec{v} = \lambda \vec{v}\]</div>
-<p>erfüllt. Ein Eigenvektor ist also ein Vektor, der sich bei der Anwendung einer
-linearen Transformation (repräsentiert durch die Matrix) nur um einen
-Skalierungsfaktor ändert.</p>
-<p>In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion <code class="docutils literal notranslate"><span class="pre">eig()</span></code>
-berechnet:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
-<span class="p">[</span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>In diesem Beispiel gibt der Code die Matrix <code class="docutils literal notranslate"><span class="pre">V</span></code> der Eigenvektoren und die
-Diagonalmatrix <code class="docutils literal notranslate"><span class="pre">D</span></code> aus. Jede Spalte in V ist ein Eigenvektor, und die
-entsprechenden Eigenwerte sind die Elemente auf der Diagonale in D.</p>
-<p>Für weitere Betrachtungen empfehle ich die folgenden beiden Videos.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 2.3 Kombination und Transformation von Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 2.4 Operationen auf Matrizen” Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -833,7 +976,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></ifr
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8.1 Einführung MATLAB</p>
+        <p class="prev-next-title">8.1 Was sind Klassen und Objekte?</p>
       </div>
     </a>
     <a class="right-next"
@@ -841,7 +984,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></ifr
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8.3 Programmieren in MATLAB</p>
+        <p class="prev-next-title">8.3 OOP in der Praxis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -863,21 +1006,9 @@ encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></ifr
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren">Vektoren</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-zeilenvektor">Erzeugung Zeilenvektor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-spaltenvektor">Erzeugung Spaltenvektor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator">Erzeugung eines Vektors mittels Doppelpunkt-Operator</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizen">Matrizen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-matrizen">Erzeugung von Matrizen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-speziellen-matrizen">Erzeugung von speziellen Matrizen</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skripte">Skripte</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-vektor-und-matrixelemente">Zugriff auf Vektor- und Matrixelemente</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">Fortgeschrittene Rechenoperationen für Vektoren und Matrizen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-sind-funktionen-die-zu-einer-klasse-gehoren">Methoden sind Funktionen, die zu einer Klasse gehören</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-self-parameter">Der self-Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

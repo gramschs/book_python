@@ -1,141 +1,102 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
+# 9.1 Einführung MATLAB
 
-# 9.1 Simulink Einführung
+Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe
+[https://de.wikipedia.org/wiki/Matlab](https://de.wikipedia.org/wiki/Matlab)):
 
-MATLAB bietet neben einer Reihe von Toolboxen auch eine Zusatzsoftware an, die
-es Ingenieur:innen erleichtert, technische Systeme zu modellieren. Diese
-Software heißt Simulink und benötigt MATLAB. Detaillierte Informationen zu
-Simulink finden Sie auf der Produktseite von
-[MATLAB](https://de.mathworks.com/products/simulink.html). Die Besonderheit von
-Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt.
-
-In diesem Kapitel werden wir uns zunächst mit der Modellierung technischer
-Systeme beschäftigen und uns dann die ersten grundlegenden Schritte in Simulink
-erarbeiten.
+> “Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
+> US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
+> und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für
+> numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der
+> Name ableitet: MATrix LABoratory.”
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können Simulink starten.
-* Sie kennen den Unterschied zwischen **Sources** (Quellen) und **Sinks**
-  Senken.
-* Sie können ein Simulink-Signal mit Hilfe des **Scope**-Blocks visualisieren.
-* Sie können ein Signal mit dem **Gain**-Block verstärken.
-* Sie können ein Simulink-Modell abspeichern.
+* Sie können MATLAB starten.
+* Sie können MATLAB als Taschenrechner benutzen.
+* Sie können die Dokumentation mit der Anweisung **doc** aufrufen. 
 ```
 
-## Was ist Modellierung?
+## MATLAB starten und die Entwicklungsumgebung erkunden
 
-Das erste Modell, das Sie vermutlich hatten, war eine Modelleisenbahn oder eine
-Playmobil-Spiellandschaft – vielleicht haben Sie aber auch aus Legosteinen ein
-Auto gebaut? Ein Modell beschreibt die reale Welt in vereinfachter und meist
-verkleinerter Form. In den Natur- und Ingenieurwissenschaften sind Modelle die
-Grundlage des wissenschaftlichen Arbeitens.
+Im Folgenden benutzen wir MATLAB in der Cloud. Registrieren Sie sich zuerst bei
+der Firma MathWorks
 
-**Modellierung** beschreibt nun den Prozess, ein geeignetes Modell zu finden, um
-eine bestimmte Fragestellung zu beantworten. Normalerweise ist kein Modell so
-komplex wie die Wirklichkeit. Die Modellierer:innen müssen sich also
-entscheiden, welche Details wichtig sind und welche sie weglassen können.
-Beispielsweise werden sehr häufig bei Spielzeugfiguren die einzelnen Finger
-weggelassen. Aber auch bei Experimenten müssen solche Entscheidungen getroffen
-werden. Einmal angenommen, ich möchte wissen, wie lange ich mein Eis in die
-Sonne legen kann, bevor es komplett geschmolzen ist. Dann kann ich die
-Sonneneinstrahlung oder die Temperatur messen, verschiedene Eissorten nehmen und
-die Zeitdauer messen, bis wann das Eis geschmolzen ist. Aber es ist nicht
-sinnvoll zusätzlich die Information zu erheben, wie viele Eisbären am Nordpol
-gerade einen Fisch gefangen haben.
+> [Registrierung
+> MathWorks](https://de.mathworks.com/mwaccount/register?uri=https%3A%2F%2Fde.mathworks.com%2Fmwaccount%2F)
 
-In den Ingenieurwissenschaften versuchen die Forscher:innen dann aus den Daten
-oder den vermuteten Zusammenhängen eine Funktion zu basteln, die hilft die
-Zusammenhänge zu verstehen oder Prognosen zu treffen. Wenn diese Modellierung
-rein datenbasiert erfolgt, so benutzen wir Methoden der Statistik oder des
-maschinellen Lernens. Wenn stattdessen oder zusätzlich prinzipielle
-Zusammenhänge einfließen, verwenden wir Gleichungen oder
-Differentialgleichungen. Bei Simulink legen wir den Schwerpunkt der Modellierung
-auf die Differentialgleichungen.
+Sollten Sie Studentin oder Student einer Hochschule sein, verfügt Ihre
+Hochschule vielleicht über eine Campuslizenz. In diesem Fall reicht es, bei der
+Registrierung Ihre studentische E-Mail-Adresse anzugeben.
 
-## Start von Simulink
+Klicken Sie dann auf die folgende URL
 
-Da Simulink ein Zusatzprogramm von MATLAB ist, öffnen Sie zuerst MATLAB. Es kann
-sein, dass Sie Simulink erst nachinstallieren müssen. Wenn Simulink installiert
-ist, finden Sie im Hauptmenü von MATLAB einen Button mit Simulink. Starten Sie
-Simulink, legen Sie ein `Blank Model` an und öffnen Sie die Bibliothek mit den
-Blockdiagrammen. Die folgende Animationen zeigt Ihnen die notwendigen Schritte.
+> <https://matlab.mathworks.com>
 
-![Screencast Start von Simulink](screencasts/part10_start_simulink.gif)
+um sich mit Ihrem neuen Account anzumelden. Starten Sie danach MATLAB Online wie
+in der folgenden Abbildung gezeigt.
 
-## Quellen und Senken
+```{figure} pics/screenshot01.png
+:alt: Screenshot des Startbildschirms von MATLAB Online
+:class: bg-primary mb-1
+:width: 75%
+:align: center
+Screenshot des Startbildschirms von MATLAB Online
+```
 
-Als ein erstes einfaches Beispiel simulieren wir ein System, das durch die
-mathematische Funktion $f(x)=2\sin(x)$ beschrieben wird. Damit betrachten wir
-zwar noch keine Differentialgleichung, sondern nur eine einfache
-Funktionsgleichung, aber können schon die wichtigsten Prinzipien in Simulink
-kennenlernen, nämlich die grafische Block-Modellierung. In Simulink wird jede
-Eingabe, jeder Verarbeitungsschritt und jede Ausgabe durch einen Block
-beschrieben. Diese Blöcke können dann seriell (hintereinander) oder parallel
-zusammengebaut werden. Die Idee hinter den zusammengeschalteten Blöcken erinnert
-an einen Fluss und seine Nebenflüsse, der letztendlich ins Meer fließt wie
-beispielsweise der Rhein. Nur wird in Simulink nicht Wasser transportiert,
-sondern Informationen.
+Danach wird die MATLAB-Entwicklungsumgebung gestartet. Vorerst belassen wir es
+bei den Standardeinstellungen. In dem folgenden Video werden die einzelnen
+Bestandteile der Entwicklungsumgebung vorgestellt.
 
-![Bild des Rhein](pics/part10_rhein_small.jpg)
+```{dropdown} Video zu "1.1 Matlab - Umgebung" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HXyMG9gy4Oo"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
-Die Quelle an Informationen wird in Simulink **Source**, so wie der englische
-Begriff. Die weiteren Informationen wie beispielsweise Anfangswerte oder
-Randbedingungen sind ebenfalls Quellen, also Sources und fließen wie die
-Nebenflüsse in den Hauptfluss. Der Abfluss, die Senke oder das Spülbecken heißen
-auf Englisch **Sink**. Unter den Sink-Blöcken finden Sie also das Ergebnis, die
-Ausgabe der Simulation. Wir wollen uns nun das Beispiel
+## MATLAB als Taschenrechner
 
-$$f(x)=2\sin(x)$$
+```{figure} pics/screenshot02.png
+:alt: Screenshot des Kommandofensters
+:class: bg-primary mb-1
+:width: 75%
+:align: center
+Screenshot des MATLAB Kommandofensters
+```
 
-in Simulink ansehen. Die Quelle/Source ist die rechte Seite, genauer gesagt die
-Sinusfunktion $\sin(x)$. Die Quelle wird noch verstärkt. Verstärker heißt auf
-Englisch Gain, also wird noch ein Gain-Block zur Verstärkung dazgeschaltet. Am
-Ende mündet alles in eine Visualisierung. Der entsprechende Sink-Block Scope
-zeigt das Ergebnis $f(x)$.
+Auch wenn MATLAB also zunächst von der Firma MathWorks für numerische
+Berechnungen ausgelegt wurde, können wir es wie einen Taschenrechner benutzen.
+In dem sogenannten **Kommandofenster** können wir nach dem Prompt (das sind die
+zwei spitzen Klammern >>) unsere Anweisungen an MATLAB eingeben. Durch das
+Drücken von Return wird die Eingabe abgeschlossen und MATLAB führt die Anweisung
+aus.
 
-Die Blöcke werden in der Bibliothek gesucht. Zur leichteren Navigation dient die
-linke Seitenleiste der Library. Dort wird Sink oder Source ausgewählt, um den
-Eingabeblock Sinus oder den Ausgabeblock Scope auszuwählen. Der Verstärkerblock
-Gain befindet sich bei den häufig genutzten Blöcken. Am einfachsten ist es, die
-Blöcke anzuklicken und auf den Arbeitsplatz zu ziehen, wie in dem folgenden
-Screencast gezeigt wird.
+Probieren Sie es aus:
 
-![Screencast erstes Projekt in Simulink](screencasts/part10_simulink_firstproject.gif)
+* Addition: 2+3
+* Subtraktion: 2-3
+* Multiplikation: 2*4
+* Division: 8/2
+* Potenzierung: 3^2
 
-## Layout und Speichern
+Selbstverständlich beherrscht MATLAB auch Klammerregeln. Probieren Sie es doch
+einmal selbst aus!
 
-Die genaue Anordnung der Blöcke ist nicht wichtig, da durch das Routing
-(Verbinden der Blöcke) die Fließrichtung definiert ist. Dennoch empfiehlt es
-sich, das Layout übersichtlich zu halten. Der folgende Screencast zeigt, wie die
-Blöcke mit der Maus verschoben werden, bis das Verbindungssignal horizontal
-ausgerichtet ist. Danach wird gezeigt, wie das erste Projekt unter dem Namen
-"firstProject" gespeichert wird.
+```{dropdown} Video zu "1.2 Taschenrechner" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
 
-![Screencast Speichern](screencasts/part10_simulink_saveing.gif)
+## Hilfe
 
-## Die erste Simulation
+MATLAB ist nur in Englisch verfügbar. Alle Anweisungen an MATLAB basieren auf
+der englischen Sprache. Dafür besitzt MATLAB eine gute Dokumentation. Mit dem
+Kommando **doc** wird die entsprechende Webseite im Browser geladen.
 
-Nun können wir die Simulation laufen lassen. Im folgenden Screencast werden zwei
-Möglichkeiten gezeigt. Zum einen wird direkt aus dem Hautmenü die Simulation
-gestartet. Anschließend wird durch Doppelklick auf den Scope-Block die
-Visualisierung eingeblendet. Zum anderen kann auch der Scope-Block zuerst
-geöffnet werden und von dort aus die Simulation gestartet werden. Zuletzt wird
-moch gezeigt, wie die Verdopplung des Verstärkungsfaktors von 1 auf 2 dazu
-führt, dass die Sinusfunktion Funktionswerte zwischen -2 und 2 annimmt.
-
-![Screencast Visualisierung mit dem Scope-Block](screencasts/part10_simulink_scope.gif)
+```{dropdown} Video zu "1.3 Hilfe" von Mathe? Logisch!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FasuEz-bC40"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```

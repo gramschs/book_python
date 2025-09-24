@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Übungen zur Wiederholung &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>13.3 Polynomiale Regression &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -61,9 +61,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/chapter13_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Übungen" href="chapter13_sec04.html" />
+    <link rel="prev" title="13.2 Lineare Regression mit polyfit und polyval" href="chapter13_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -114,8 +118,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -223,47 +225,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -314,6 +323,55 @@
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter13/chapter13_sec03.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -337,6 +395,23 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter13/chapter13_sec03.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
       
       
       
@@ -403,7 +478,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -414,11 +491,23 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Übungen zur Wiederholung</h1>
+    <h1>13.3 Polynomiale Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionspolynome">Regressionspolynome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-regressionsparabel">Beispiel Regressionsparabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zu viel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,253 +517,343 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ubungen-zur-wiederholung">
-<h1>Übungen zur Wiederholung<a class="headerlink" href="#ubungen-zur-wiederholung" title="Link to this heading">#</a></h1>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Ordnen Sie ein: welche der beiden Programmiersprachen MATLAB oder Python ist
-eine Interpreter-Sprache und welche eine Compiler-Sprache? Welche Vor- und Nachteile haben Interpreter-Sprachen?</p>
-<p>Recherchieren Sie im Internet: Was ist Cython und was ist der MATLAB Coder?</p>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Sowohl MATLAB als auch Python sind beides Interpreter-Sprachen. Sie werden in Echtzeit ausgeführt, anstatt vorab in Maschinencode kompiliert zu werden, wie es bei Compiler-Sprachen der Fall ist.</p>
-<p>Vorteile von Interpreter-Sprachen sind:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="polynomiale-regression">
+<h1>13.3 Polynomiale Regression<a class="headerlink" href="#polynomiale-regression" title="Link to this heading">#</a></h1>
+<p>Die in den vorangegangenen Regressionstechniken erweitern wir nun von linearen
+Regressiongeraden auf Regressionspolynome wie beispielsweise
+Regressionsparabeln.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p><strong>Leichtere Fehlersuche:</strong> Da der Interpreter den Code Zeile für Zeile ausführt, erkennt man leichter, in welcher Zeile der Fehler auftritt.</p></li>
-<li><p><strong>Plattformunabhängigkeit:</strong> Interpreter-Sprachen sind oft plattformübergreifend, was bedeutet, dass sie auf verschiedenen Betriebssystemen ausgeführt werden können, ohne dass der Code geändert werden muss.</p></li>
+<li><p>Sie können mit <strong>polyfit</strong> zu gegebenen Messdaten die Koeffizienten eines
+Regressionspolynoms bestimmen.</p></li>
+<li><p>Sie können mit <strong>polyval</strong> aus den Koeffizienten ein Regressionspolynom
+auswerten.</p></li>
+<li><p>Sie wissen, was die Begriffe <strong>Underfitting</strong> und <strong>Overfitting</strong> bedeuten.</p></li>
+<li><p>Sie können mit dem Bestimmtheitsmaß R² abschätzen, welcher Polynomgrad <span class="math notranslate nohighlight">\(n\)</span> zu
+den Daten passt.</p></li>
 </ul>
-<p>Nachteile von Interpreter-Sprachen sind:</p>
-<ul class="simple">
-<li><p><strong>Geschwindigkeit:</strong> Interpreter-Sprachen sind in der Regel langsamer als kompilierte Sprachen, da der Code zur Laufzeit und nicht vorab übersetzt wird.</p></li>
-<li><p><strong>Schutz des Quellcodes:</strong> Bei Interpreter-Sprachen ist es einfacher, den Quellcode zu lesen und zu verstehen, was bedeutet, dass er weniger geschützt ist als bei kompilierten Sprachen.</p></li>
-</ul>
-<p>Was Cython und MATLAB Coder betrifft:</p>
-<p><strong>Cython</strong> ist eine Erweiterung von Python, die zusätzlich C-Datentypen unterstützt. Mit Cython können Python-Entwickler Python-Code in die Compiler-Sprachen C oder C++ übersetzen und kompilieren, um die Ausführungszeit zu verkürzen.</p>
-<p><strong>MATLAB Coder</strong> ist ein MATLAB-Tool, das MATLAB-Code in C oder C++ Code umwandelt. Dies kann verwendet werden, um den MATLAB-Code auf Plattformen auszuführen, die MATLAB nicht unterstützen, oder um die Geschwindigkeit der Ausführung zu verbessern, indem der Code vorab kompiliert wird.</p>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Was gibt der folgende Code aus? Lesen Sie das Programm und versuchen Sie nur durch Nachdenken die Ausgabe des Programms auf Papier zu schreiben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">meine_funktion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">meine_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-        <span class="n">meine_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
-    <span class="k">return</span> <span class="n">meine_liste</span>
+</section>
+<section id="regressionspolynome">
+<h2>Regressionspolynome<a class="headerlink" href="#regressionspolynome" title="Link to this heading">#</a></h2>
+<p>Ein Regressionspolynom ist eine Möglichkeit der Regressionsanalyse, bei der die
+Beziehung zwischen einer unabhängigen/erklärenden Variablen <span class="math notranslate nohighlight">\(x\)</span> und einer
+abhängigen Variablen <span class="math notranslate nohighlight">\(y\)</span> durch ein Polynom modelliert wird. Damit erweitert die
+polynomiale Regression die einfache lineare Regression, indem sie einen
+quadratischen oder kubischen Anteil berücksichtigt. Theoretisch sind noch höhere
+Polynomgrade möglich.</p>
+<p>Ein Polynom 2. Grades hat die Form</p>
+<div class="math notranslate nohighlight">
+\[y = ax^2 + bx + c,\]</div>
+<p>ein Polynom 3. Grades</p>
+<div class="math notranslate nohighlight">
+\[y = ax^3 + bx^2 + cx + d.\]</div>
+<p>Die reellen Zahlen <span class="math notranslate nohighlight">\(a, b, c, d\)</span> werden Koeffizienten des Polynoms genannt.</p>
+</section>
+<section id="beispiel-regressionsparabel">
+<h2>Beispiel Regressionsparabel<a class="headerlink" href="#beispiel-regressionsparabel" title="Link to this heading">#</a></h2>
+<p>Wir betrachten als Beispiel die folgenden künstlichen Messwerte.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">zahlen</span> <span class="o">=</span> <span class="n">meine_funktion</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zahlen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Das Python-Programm gibt</p>
-<p>[0, 1, 1, 2, 3, 5, 8, 13]</p>
-<p>aus. Das ist übrigens die sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Fibonacci-Folge">Fibonacci-Folge</a>.</p>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Schreiben Sie ein <strong>Python</strong>-Programm, das das Spiel <a class="reference external" href="https://de.wikipedia.org/wiki/Schere,_Stein,_Papier">“Schere - Stein - Papier”</a> umsetzt.</p>
-<p>Die Spielregeln sind wie folgt:</p>
-<p>Der Computer fragt den wählt zufällig einen Gegenstand aus (ohne ihn auszugeben)
-und fragt den Spieler nach seiner Wahl. Schere gewinnt gegen Papier, Papier
-gewinnt gegen Stein und Stein gewinnt gegen Schere. Der Sieg bringt dem
-jeweiligen Spieler einen Punkt. Haben beide den gleichen Gegenstand gewählt,
-zählt das als unentschieden, also 0 Punkte. Lassen Sie Spieler und Computer
-solange gegeneinander spielen, bis einer von beiden 3 Punkte erreicht hat.</p>
-<p>Wünschenswert sind auch Ausgaben wie z.B. der aktuelle Spielstand oder am Ende die Gratulation an den Sieger.</p>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span> 
-
-<span class="n">gegenstaende</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Schere&#39;</span><span class="p">,</span> <span class="s1">&#39;Stein&#39;</span><span class="p">,</span> <span class="s1">&#39;Papier&#39;</span><span class="p">]</span>
-
-<span class="n">punkte_computer</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">punkte_spieler</span>  <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># Wahl des Computers</span>
-    <span class="n">zufallsindex</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">computerwahl</span> <span class="o">=</span> <span class="n">gegenstaende</span><span class="p">[</span><span class="n">zufallsindex</span><span class="p">]</span>
-
-    <span class="c1"># Wahl des Spielers</span>
-    <span class="n">spielerwahl</span>  <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Was wählen Sie? Schere, Stein oder Papier?&#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">spielerwahl</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gegenstaende</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sie haben </span><span class="si">{</span><span class="n">spielerwahl</span><span class="si">}</span><span class="s1"> gewählt, was nicht in der Liste ist. Achten Sie auf die korrekte Schreibweise.&#39;</span><span class="p">)</span>
-        <span class="n">spielerwahl</span>  <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Was wählen Sie? Schere, Stein oder Papier?&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># Vergleich, wer gewonnen hat</span>
-    <span class="k">if</span> <span class="n">computerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden&#39;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stein schleift Schere, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Schere schneidet Papier, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">computerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stein schleift Schere, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden.&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Papier umwickelt Stein, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Schere&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Schere schneidet Papier, der Spieler hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_spieler</span> <span class="o">=</span> <span class="n">punkte_spieler</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">spielerwahl</span> <span class="o">==</span> <span class="s1">&#39;Stein&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Papier umwickelt Stein, der Computer hat gewonnen.&#39;</span><span class="p">)</span>
-            <span class="n">punkte_computer</span> <span class="o">=</span> <span class="n">punkte_computer</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unentschieden.&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Ausgabe des aktuellen Spielstandes</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;### Spielstand </span><span class="si">{</span><span class="n">punkte_spieler</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">punkte_computer</span><span class="si">}</span><span class="s1"> (Spieler : Computer) ###&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Abbruch der Schleife, wenn Computer oder Spieler 3 Punkte erreicht hat</span>
-    <span class="k">if</span> <span class="n">punkte_computer</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">punkte_spieler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">break</span>
-
-<span class="c1"># Gratulation</span>
-<span class="k">if</span> <span class="n">punkte_spieler</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Herzlichen Glückwunsch, Sie haben gewonnnen.&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Leider hat der Computer gewonnen.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<p>Suchen Sie in dem folgenden Code die Fehler durch Nachdenken. Korrigieren Sie anschließend das Programm in Python.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ergebnis</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine Zahl ein: &#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Wurzel der Zahl ist </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<ol class="arabic simple">
-<li><p>Die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> existiert nicht im Python-Standard, sondern muss zuerst
-durch ein Modul wie beispielsweise Math oder NumPy importiert werden.</p></li>
-<li><p>Die Wurzel existiert nur für nicht-negative Zahlen. Es sollte also vorab
-überprüft werden, ob der Benutzer eine nicht-negative Zahl eingegeben hat.</p></li>
-<li><p>Die input()-Funktion gibt einen String zurück, der in einer Zahl konvertiert
-werden muss.</p></li>
-<li><p>Die print()-Anweisung gibt nicht die Wurzel aus, sondern die eingebene Zahl.</p></li>
-</ol>
-<p>Das korrigierte Programm könnte folgendermaßen aussehen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
-
-<span class="k">def</span> <span class="nf">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ergebnis</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Geben Sie eine Zahl ein: &#39;</span><span class="p">))</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Die Zahl muss nicht-negativ sein. Geben Sie eine Zahl ein: &#39;</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">berechne_wurzel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Wurzel der Zahl ist </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Übung</p>
-<ol class="arabic simple">
-<li><p>Laden Sie die Kursdaten des DAX aus dem Jahr 2022 herunter (→ hier <a class="reference external" href="https://nextcloud.frankfurt-university.de/s/5qNaNjb945p2mk3">Download</a>,
-Quelle: <a class="reference external" href="https://www.boerse-frankfurt.de/index/DAX/kurshistorie/historische-kurse-und-umsaetze">https://www.boerse-frankfurt.de</a>.</p></li>
-<li><p>Importieren Sie die Tabelle. Überspringen Sie dazu die erste Zeile.</p></li>
-<li><p>Verschaffen Sie sich einen Überblick.</p>
-<ul class="simple">
-<li><p>Wie viele Datensätze sind in der Tabelle enthalten?</p></li>
-<li><p>Gibt es leere Zellen?</p></li>
-<li><p>Was steht in den einzelnen Spalten?</p></li>
-<li><p>Was ist das höchste Tageshoch, das 2022 erreicht wurde?</p></li>
-<li><p>Wie viele Tage sind in der Tabelle enthalten? Speichern Sie diese Zahl in
-der Variablen <code class="docutils literal notranslate"><span class="pre">anzahl_tage</span></code>? Warum sind es eigentlich nicht 365 Tage?</p></li>
-</ul>
-</li>
-<li><p>Visualisieren Sie den Kurs zum Börsenschluss <code class="docutils literal notranslate"><span class="pre">Schluss</span></code>. Lassen Sie dazu auf
-der x-Achse die Tage von 1 bis <code class="docutils literal notranslate"><span class="pre">anzahl_tage</span></code> laufen.</p></li>
-<li><p>Lassen Sie eine Regressionsgerade durch den Kursstand zum Börsenschluss
-berechnen.</p></li>
-<li><p>Visualisieren Sie den Börsenkurs zusammen mit der Regressionsgeraden.</p></li>
-<li><p>Was prognostiziert das Regressionsmodell für Mitte 2023? Tipp: Sie können mit
-251 Werktagen für das gesamte Jahr rechnen, siehe <a class="reference external" href="https://www.ferienwiki.de/tools/werktagerechner">https://www.ferienwiki.de/tools/werktagerechner</a></p></li>
-</ol>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<p>Import und Übersicht:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dax2022.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Es sind 257 Datensätze, alle Zellen sind gefüllt. Es gibt die Spalten Datum, Eröffnung, Schluss, Tageshoch, Tagestief und Umsatz in EUR. Die statistischen Kennzahlen ermitteln wir mit <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Das höchste Tageshoch waren 16285.35 EUR.</p>
-<p>In der Tabelle sind 257 Tage enthalten, weil die Börse nur an Werktagen geöffnet hat.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anzahl_tage</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Datum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">anzahl_tage</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Visualisierung als Liniendiagramm</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">anzahl_tage</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Schluss&#39;</span><span class="p">]</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tag&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schluss&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DAX 2022&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Das Regressionsmodell prognostiziert für Mitte 2023 einen DAX-Wert von 12031.61 EUR.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06c681b5c2af3a7aec8a50e7a21f9a9aa7bdce7877ec9d88957c28babd3da115.png" src="../_images/06c681b5c2af3a7aec8a50e7a21f9a9aa7bdce7877ec9d88957c28babd3da115.png" />
+</div>
+</div>
+<p>Sieht nicht nach einer linearen Funktion, also einer Geraden aus. Wir probieren
+es mit einer quadratischen Funktion. Die Modellfunktion lautet</p>
+<div class="math notranslate nohighlight">
+\[f(x)=ax^2 + bx + c\]</div>
+<p>mit den Parametern <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>  und <span class="math notranslate nohighlight">\(c\)</span>. Wir setzen in der <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>-Funktion den
+Polynomgrad auf <code class="docutils literal notranslate"><span class="pre">grad=2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Regressionsgerade</span>
-<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.90591667  7.37899524 14.53561429]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bei der Zuordnung der Koeffizienten müssen wir sorgsam auf die Sortierung
+achten. Unsere Modellfunktion beginnt beim quadratischen Anteil <span class="math notranslate nohighlight">\(ax^2\)</span>, dann
+kommt der lineare Anteil <span class="math notranslate nohighlight">\(bx\)</span> und zuletzt der konstante Part <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
-<span class="c1"># Visualisierung</span>
-<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">anzahl_tage</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = -1.905916666666667
+b = 7.378995238095238
+c = 14.535614285714288
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir erhalten also als Regressionsfunktion</p>
+<div class="math notranslate nohighlight">
+\[r(x)=-1.9 x^2 + 7.4 x + 14.5.\]</div>
+<p>Visualisieren wir die Modellfunktion zusammen mit den Messpunkten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="n">y_plot</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x_plot</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x_plot</span> <span class="o">+</span> <span class="n">c</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" src="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" />
+</div>
+</div>
+<p>Alternativ kann die Funktion <code class="docutils literal notranslate"><span class="pre">polyval</span></code> dazu genutzt werden, um die Parabel auszuwerten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" src="../_images/ab0e5c6b28b8f93190b20617b31b255faec83b4bc5c8b1d655eaea7a53fe1094.png" />
+</div>
+</div>
+</section>
+<section id="zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser">
+<h2>Zu viel des Guten, höhere Polynomgrade sind nicht besser<a class="headerlink" href="#zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser" title="Link to this heading">#</a></h2>
+<p>Regressionspolynome scheinen zunächst besser zu sein als Regressionsgeraden.
+Durch die zusätzlichen Terme können auch nichtlineare Beziehungen und komplexere
+Muster in den Daten erklärt werden. Allerdings birgt die Verwendung höherer
+Polynomgrade auch das Risiko des Overfittings. Der Begriff <strong>Overfitting</strong>
+bedeutet, dass das Regressionspolynom zu genau an die Daten angepasst wurde und
+neue Daten schlechter prognostiziert. Das Gegenteil davon ist <strong>Underfitting</strong>.
+Das Regressionspolynom hat einen zu kleinen/niedrigen Polynomgrad und kann daher
+die Daten kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr
+wichtig.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist Overfitting und Underfitting?</p>
+<p>Ist ein Modell zu stark an die Trainingsdaten angepasst und lässt es sich daher
+nicht mehr verallgemeinern, liegt <strong>Overfitting</strong> (Überanpassung) vor. Fehlen
+dahingegen erklärende Variablen, so dass die Komplexität der Daten nicht
+abgebildet werden kann, sprechen wir von <strong>Underfitting</strong> (Unteranpassung).</p>
+</div>
+<p>Wir betrachten dazu das Beispiel von oben und verändern den Polynomgrad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tag&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Schluss&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DAX 2022&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
 
-<span class="c1"># Prognose für Mitte 2023 </span>
-<span class="n">x_prognose</span> <span class="o">=</span> <span class="mi">257</span> <span class="o">+</span> <span class="mi">251</span><span class="o">/</span><span class="mi">2</span> 
-<span class="n">y_prognose</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_prognose</span><span class="p">)</span>
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prognose DAX Mitte 2023: </span><span class="si">{</span><span class="n">y_prognose</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+  <span class="c1"># berechne Regressionspolynom</span>
+  <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+  <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
+  <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/5c4d3bdfbb01ed8e37f993e96e1d3c18e8850dd7c6c872a89e4da872e3a9ef69.png" src="../_images/5c4d3bdfbb01ed8e37f993e96e1d3c18e8850dd7c6c872a89e4da872e3a9ef69.png" />
+</div>
+</div>
+<p>Eine Regressionsgerade kann die Messdaten nicht gut erklären, aber die
+Regressionspolynome Grad 2 bis 4 passen sehr gut zu den künstlichen Messdaten
+des Beispiels. Probieren wir noch höhere Polynomgrade aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]:</span>
+  <span class="c1"># berechne Regressionspolynom</span>
+  <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+  <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
+  <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/1100773175.py:15: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/1100773175.py:15: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+</pre></div>
+</div>
+<img alt="../_images/6e562350d881950330a1b92ab526be2bd64a79306bb2e582033deb217a72fde0.png" src="../_images/6e562350d881950330a1b92ab526be2bd64a79306bb2e582033deb217a72fde0.png" />
+</div>
+</div>
+<p>Grad 5 ist schon gut, aber die Regressionspolynome Grad 6 bis 8 scheinen perfekt
+zu sein. Allerdings gibt es auch eine Warnung, denn wenn mehr
+Polynomkoeffizienten da sind als Messpunkte, ist die Bestimmung der
+Polynomkoeffizienten nicht mehr eindeutig. Bei <span class="math notranslate nohighlight">\(n\)</span> Datenpunkten ist ein Polynom
+vom Grad <span class="math notranslate nohighlight">\(n-1\)</span> bereits eindeutig bestimmt und interpoliert alle Punkte exakt.</p>
+<p>Dennoch, jeder Messpunkt wird exakt von dem Regressionspolynom getroffen.
+Demnach müssten alle Residuen 0 sein und damit für das Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2 =
+1\)</span> gelten. Am besten lassen wir eine Tabelle für den Polynomgrad und das
+jeweilige Residuum ausgeben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+    <span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polynomgrad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">: R2 = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomgrad 1: R2 = 0.0054
+Polynomgrad 2: R2 = 0.9834
+Polynomgrad 3: R2 = 0.9834
+Polynomgrad 4: R2 = 0.9847
+Polynomgrad 5: R2 = 0.9855
+Polynomgrad 6: R2 = 1.0000
+Polynomgrad 7: R2 = 1.0000
+Polynomgrad 8: R2 = 1.0000
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/731985486.py:4: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/731985486.py:4: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die mathematische Theorie wird in der Praxis bestätigt. Der <span class="math notranslate nohighlight">\(R^2\)</span>-Score hat ab
+dem Polynomgrad 6 den Wert 1. Wenn wir den Polynomgrad noch höher treiben,
+passiert etwas Seltsames, was aber nicht im <span class="math notranslate nohighlight">\(R^2\)</span>-Score zu entdecken ist,
+sondern in der Visualisierung der Regressionspolynome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># künstliche Messdaten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span> <span class="mf">14.3252</span><span class="p">,</span> <span class="mf">19.2451</span><span class="p">,</span> <span class="mf">23.3703</span><span class="p">,</span> <span class="mf">18.2885</span><span class="p">,</span> <span class="mf">13.8978</span><span class="p">,</span> <span class="mf">3.7586</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten&#39;</span><span class="p">)</span>
+
+<span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">grad</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">]:</span>
+  <span class="c1"># berechne Regressionspolynom</span>
+  <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+  <span class="n">y_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_plot</span><span class="p">)</span>
+  <span class="c1"># visualisiere zusätzlich das Regressionspolynon</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">y_plot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Grad </span><span class="si">{</span><span class="n">grad</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_14110/71160088.py:15: RankWarning: Polyfit may be poorly conditioned
+  p = np.polyfit(x, y, grad)
+</pre></div>
+</div>
+<img alt="../_images/099c7c07642603fd0d54db8a1fcfc61fe855d8a813e33464f3f402233cefeec7.png" src="../_images/099c7c07642603fd0d54db8a1fcfc61fe855d8a813e33464f3f402233cefeec7.png" />
+</div>
+</div>
+<p>Die Polynome beginnen zwischen <span class="math notranslate nohighlight">\(x=4\)</span> und <span class="math notranslate nohighlight">\(x=5\)</span> immer höher zu schwingen. Es ist
+unplausibel, dass diese Polynome die Messdaten gut erklären. Daher empfiehlt es
+sich, möglichst den kleinsten Polynomgrad zu nehmen, der sehr gut, aber nicht
+perfekt ist. Bei der Tabelle der R2-Werte haben wir gesehen, dass der R2-Wert
+von 0.0054 (Grad 1) auf 0.9834 (Grad 2) springt. Danach sind aber keine
+wesentlichen Verbesserungen mehr erkennbar. Daher wählen wir Grad 2 als
+Regressionspolynom.</p>
+<div class="note admonition">
+<p class="admonition-title">Tipp</p>
+<p>In der Ingenieurspraxis sollte immer das einfachste Modell gewählt werden, das
+die Daten ausreichend gut beschreibt. Dies folgt dem Prinzip »Ockhams
+Rasiermesser« (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Ockhams_Rasiermesser">Wikipedia →  Ockhams
+Rasiermesser</a>).</p>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir gelernt, Messdaten durch Regressionspolynome zu modellieren. Dabei ist die sorgsame Wahl des Polynomgrads sehr wichtig, um Overfitting und Underfitting zu vermeiden. Es gibt außer den Regressionsmodellen noch viele weitere Möglichkeiten, für Messdaten Modelle zu erstellen. Damit beschäftigt sich das maschinelle Lernen, das ein Teilgebiet der Künstlichen Intelligenz ist.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -707,12 +886,50 @@ berechnen.</p></li>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter13_sec02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">13.2 Lineare Regression mit polyfit und polyval</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter13_sec04.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Übungen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionspolynome">Regressionspolynome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-regressionsparabel">Beispiel Regressionsparabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zu-viel-des-guten-hohere-polynomgrade-sind-nicht-besser">Zu viel des Guten, höhere Polynomgrade sind nicht besser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

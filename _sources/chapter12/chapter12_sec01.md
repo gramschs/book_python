@@ -12,134 +12,242 @@ kernelspec:
   name: python3
 ---
 
-# 12.1 Theorie Regression
-
-In der Analyse technischer und physikalischer Daten ist die Methode der
-Regression ein fundamentales Werkzeug. Sie ist ein statistisches Verfahren, das
-den Zusammenhang zwischen Variablen ermittelt. In diesem Kapitel beschäftigen
-wir uns zunächst mit der Theorie von Regressionsverfahren.
+# 12.1 Kontinuierliche Daten visualisieren
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie wissen, was **Regression** ist.
-* Sie wissen, was das **Bestimmtheitsmaß** $R^2$ ist und können es für **lineare Regression** interpretieren:
-  * Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
-    Modellfunktion ist eine sehr gute Anpassung an die Messdaten.
-  * Wenn $R^2 = 0$ oder gar negativ ist, dann funktioniert die lineare
-    Modellfunktion überhaupt nicht.
+* Sie können **Matplotlib** mit der üblichen Abkürzung **plt** importieren.
+* Sie können Funktionen als **Liniendiagramm** visualisieren.
+* Sie können Messwerte als **Streudiagramm** darstellen.
+* Sie verstehen den Unterschied zwischen Linien- und Streudiagrammen.
 ```
 
-## Regression kommt aus der Statistik
+## Liniendiagramme
 
-In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker damit,
-Analyseverfahren zu entwickeln, mit denen experimentelle Daten gut erklärt
-werden können. Falls wir eine “erklärende” Variable haben und versuchen, die
-Abhängigkeit einer Messgröße von der erklärenden Variable zu beschreiben, nennen
-wir das Regressionsanalyse oder kurz **Regression**. Bei vielen Problemen suchen
-wir nach einem linearen Zusammenhang und sprechen daher von **linearer
-Regression**. Mehr Details finden Sie auch bei [Wikipedia →
-Regressionsanalyse](https://de.wikipedia.org/wiki/Regressionsanalyse).
+Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
+sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
+wenn die Daten von einer mathematischen Funktion stammen oder wenn Messungen über
+die Zeit erfasst werden. Obwohl die Daten theoretisch für jeden x-Wert vorliegen
+und wir daher Millionen von (x,y)-Punkten zeichnen könnten, benutzen wir eine
+Wertetabelle mit wenigen (x,y)-Paaren. Die Anzahl der (x,y)-Paare bestimmt dann,
+wie "glatt" die Visualisierung wirkt.
 
-Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
-Einflussgröße $x$ und eine Zielgröße $y$ mit $N$ Paaren von dazugehörigen
-Messwerten $(x^{(1)},y^{(1)})$, $(x^{(2)},y^{(2)})$, $\ldots$,
-$(x^{(N)},y^{(N)})$ gibt. Dann sollen zwei Parameter $m$ und $b$ geschätzt
-werden, so dass möglichst für alle Datenpunkte $(x^{(i)}, y^{(i)})$ die lineare
-Gleichung $y^{(i)} = m\cdot x^{(i)}+ b$ gilt. Geometrisch ausgedrückt: durch die
-Daten soll eine Gerade gelegt werden. Da bei den Messungen auch Messfehler
-auftreten, werden wir die Gerade nicht perfekt treffen, sondern kleine Fehler
-machen, die wir hier mit $\varepsilon^{(i)}$ bezeichnen. Wir suchen also die
-beiden Parameter $m$ und $b$, so dass  
-
-$$y^{(i)} =  m \cdot x^{(i)} + b + \varepsilon^{(i)}.$$
-
-Die folgende Grafik veranschaulicht das lineare Regressionsmodell. Die Paare von
-Daten sind in blau gezeichnet, das lineare Regressionsmodell in rot.
-
-```{figure} pics/Linear_regression.svg
----
-name: fig_linear_regression
----
-Lineare Regression: die erklärende Variable (= Input oder unabhängige Variable oder Ursache) ist auf der x-Achse, die
-abhängige Variable (= Output oder Wirkung) ist auf der y-Achse aufgetragen, Paare von Messungen sind in blau
-gekennzeichnet, das Modell in rot.
-
-([Quelle:](https://en.wikipedia.org/wiki/Linear_regression#/media/File:Linear_regression.svg) "Example of simple linear regression, which has one independent variable" von Sewaqu. Lizenz: Public domain))
-```
-
-Zu einer Regressionsanalyse gehört mehr als nur die Regressionskoeffizienten zu
-bestimmen. Daten müssen vorverarbeitet werden, unter mehreren unabhängigen
-Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
-Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
-Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
-werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
-feinjustiert werden können, um die Prognosefähigkeit verbessern.
-
-Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
-wie lineare Regression funktioniert.
-
-## Beispiel: weltweiter CO2-Ausstoß
-
-Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
-Einwohner ([hier Download](https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz)).
+Erzeugen wir eine Liste mit x-Werten und dazugehörigen y-Werten.
 
 ```{code-cell}
-import pandas as pd
-
-data = pd.read_csv('data/co2_emissionen_worldwide.csv', skiprows=1, index_col=0)
-data.head()
+x = [-2, -1, 0, 1, 2]
+y = [4, 1, 0, 1, 4]
 ```
 
-Wir verschaffen uns mit den Funktionen `info()` und `describe()` einen Überblick
-über den Datensatz. Wie üblich benutzen wir `info()` zuerst.
-
-```{code-cell}
-data.info()
-```
-
-Offensichtlich enthält der Datensatz 29 Zeilen (= Jahre) mit gültigen Einträgen
-zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahlen
-sind:
-
-```{code-cell}
-data.describe()
-```
-
-Nun folgt noch die Visualisierung der Daten.
+Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
+wir das Modul `matplotlib`, genauer gesagt nur einen Teil dieses Moduls namens
+`pyplot`. Daher laden wir es zuerst mit der typischen Abkürzung `plt`.
 
 ```{code-cell}
 import matplotlib.pyplot as plt
-
-jahre = data.index
-co2 = data['Metrische_Tonnen_pro_Einwohner']
-
-plt.figure()
-plt.scatter(jahre, co2)
-plt.xlabel('Jahre')
-plt.ylabel('Metrische Tonnen / Einwohner')
-plt.title('Weltweiter C02-Ausstoß')
-plt.show();
 ```
 
-Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
-einer linearen Funktion. Die “erklärende” Variable ist in dem Beispiel das Jahr.
-Wir versuchen, die Abhängigkeit einer Messgröße (hier die CO2-Emissionen pro
-Einwohner) von der erklärenden Variable als lineare Funktion zu beschreiben.
+Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
+zu benutzen. Die erste Schnittstelle ist **zustandsorientiert**, die zweite
+**objektorientiert**. Die zustandsorientierte Schnittstelle ist älter. Die
+Entwicklerinnen und Entwickler des Matplotlib-Moduls orientierten sich zunächst
+an der kommerziellen Software MATLAB und griffen erst in einer späteren Phase
+auf Objektorientierung zurück.
+
+Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
+das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
+in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
+gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
+die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten.
+
+Zunächst werden wir die zustandsorientierte Schnittstelle benutzen, um den
+Vorteil auszunutzen, MATLAB-ähnliche Syntax verwenden zu können.
+
+Zunächst erstellen wir ein Liniendiagramm mit der Funktion `plt.plot()`. Zuvor
+öffnen wir mit `plt.figure()` eine neue Zeichenfläche, die Figure genannt wird.
+
+```{code-cell}
+plt.figure()
+plt.plot(x, y)
+plt.show()
+```
+
+Aber zurück zum Plot, sieht krakelig aus. Eigentlich sollte dies eine Parabel im
+Intervall [-2,2] werden. Mit nur fünf Punkten und der Tatsache, dass diese fünf
+Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus. Besser
+wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand erzeugen. Wir
+verwenden das Modul `numpy` für numerisches Python, das wir wieder einmal zuerst
+laden müssen.
+
+Die Funktion `np.linspace(a, b, Anzahl)` erzeugt Punkte im Intervall [a,b] und
+zwar genauso viele, wie durch die Option `Anzahl` vorgegeben werden. Damit
+können wir jetzt eine feiner aufgelöste Wertetabelle erstellen und
+visualisieren.
+
+```{code-cell}
+import numpy as np
+
+x = np.linspace(-2, 2, 100) 
+y = x**2
+
+plt.figure()
+plt.plot(x, y)
+plt.show()
+```
+
+Als nächstes beschäftigen wir uns mit Beschriftungen. Mit den Funktionen
+`xlabel()` und `ylabel()` beschriften wir die x- und y-Achse. Mit `title()` wird
+der Titel gesetzt.
+
+```{code-cell}
+# Daten
+x = np.linspace(-10, 10, 200)
+y = np.sin(x)
+
+# Visualisierung
+plt.figure()
+plt.plot(x, y)
+plt.xlabel('Zeit in Sekunden')
+plt.ylabel('Stromstärke in Ampere')
+plt.title('Wechselstrom')
+plt.show()
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise 
+Plotten Sie folgende Funktionen: 
+    
+* lineare Funktion, z.B. f(x) = 3x + 7
+* Sinus,
+* Kosinus,
+* Exponentialfunktion und
+* Wurzelfunktion.
+
+Bei welcher Funktion müssen Sie besonders auf das Definitionsgebiet der
+Funktion achten?
+```
+
+```{code-cell}
+# Hier Ihr Code:
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x1 = np.linspace(-3, 3, 101)
+y1 = 3 * x1 + 7
+
+x2 = np.linspace(-2 * np.pi, 2 * np.pi, 101)
+y2 = np.sin(x2)
+y3 = np.cos(x2)
+
+x4 = np.linspace(-3, 3, 101)
+y4 = np.exp(x4)
+
+x5 = np.linspace(0, 5, 101)
+y5 = np.sqrt(x5)
+
+plt.figure()
+plt.plot(x5,y5)
+plt.xlabel('x-Achse')
+plt.ylabel('y-Achse')
+plt.title('Mini-Übung');
+```
+Bei der Wurzelfunktion muss man auf das Definitionsgebiet achten, da sie nur für
+$x >= 0$ definiert ist.
+````
+
+## Streudiagramme
+
+Bei Streudiagrammen werden nicht die Punkte (x₁,y₁) mit (x₂,y₂) mit
+(x₃,y₃) usw. durch Linien verbunden, sondern jeder Punkt wird einzeln an seiner
+Koordinatenstelle dargestellt. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Funktion auch `scatter()`.
+
+```{code-cell}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Daten
+x = np.linspace(-2*np.pi, 2*np.pi, 25)
+y = np.sin(x)
+
+# Streudiagramm
+plt.figure()
+plt.scatter(x, y)
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.title('Sinus-Funktion als Streudiagramm')
+plt.show()
+```
+
+Über die Option `marker=` lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Voreingestellt ist ein ausgefüllter Kreis. Weitere
+Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:
+
+> <https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers>
+
+Die Farbe der Marker oder auch der Linien lässt sich mit dem optionalen Argument
+`color=` einstellen.
+
+Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
+bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
+Dazu werden wir unterschiedliche Marker und unterschiedliche Farben verwenden.
+
+```{code-cell}
+# Daten - simulierte Temperaturmessungen
+x = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+y1 = [18, 22, 19, 21, 20, 23, 24]  # Frankfurt
+y2 = [16, 20, 17, 19, 18, 21, 22]  # Offenbach
+
+# Streudiagramme
+plt.figure()
+plt.scatter(x, y1, marker='+', s=100, color='blue')
+plt.scatter(x, y2, marker='o', s=50, color='red')
+plt.xlabel('Wochentag')
+plt.ylabel('Temperatur [°C]')
+plt.title('Temperaturmessungen')
+plt.show()
+```
+
+Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
+`plt.scatter(x, y1, label='Frankfurt')`. Zuletzt verwendet man die Funktion
+`legend()`, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
+Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+werden.
+
+```{code-cell}
+# Daten
+x = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+y1 = [18, 22, 19, 21, 20, 23, 24]  # Frankfurt
+y2 = [16, 20, 17, 19, 18, 21, 22]  # Offenbach
+
+# Streudiagramme mit Legende
+plt.figure()
+plt.scatter(x, y1, marker='+', s=100, color='blue', label='Frankfurt')
+plt.scatter(x, y2, marker='o', s=50, color='red', label='Offenbach')
+plt.xlabel('Wochentag')
+plt.ylabel('Temperatur [°C]')
+plt.title('Temperaturmessungen in der Region')
+plt.legend()
+plt.show()
+```
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Denken Sie sich Werte für die Steigung m und den y-Achsenabschnitt b einer
-linearen Funktion aus. Erzeugen Sie einen Vektor mit 100 x-Werten von 1990 bis
-2018 und einen Vektor y mit $y = mx + b$. Lassen Sie diese lineare Funktion als
-durchgezogene rote Linie in den gleichen Plot wie die gepunkteten Messwerte
-zeichnen. Welche Werte für $m$ und $b$ müssen Sie wählen, damit die rote Linie
-passend zu den blauen Punkten ist? Spielen Sie mit $m$ und $b$ herum, bis es
-passen könnte.
-
-Tipp: `linspace(start, stopp, anzahl)` aus dem NumPy-Modul generiert `anzahl`
-Werte von `start` bis `stopp`. 
+Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:
+- x-Werte: Zahlen von 1 bis 20
+- y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie `np.random.uniform(10, 30, 20)`)
+- Marker: rote Dreiecke (marker='^')
+- Titel: "Zufällige Messwerte"
 ```
 
 ```{code-cell}
@@ -149,167 +257,36 @@ Werte von `start` bis `stopp`.
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
+import matplotlib.pyplot as plt
 import numpy as np
 
-x_modell = np.linspace(1990, 2018, 100)
+# Daten generieren
+np.random.seed(42)  # Für reproduzierbare Ergebnisse
+x = range(1, 21)    # Zahlen von 1 bis 20
+y = np.random.uniform(10, 30, 20)  # Zufallszahlen zwischen 10 und 30
 
-m = 0.0344
-b = -64.7516
-y_modell = m * x_modell + b
-
+# Streudiagramm erstellen
 plt.figure()
-plt.scatter(jahre,co2)
-plt.plot(x_modell, y_modell, color='red')
-plt.xlabel('Jahr') 
-plt.ylabel('Metrische Tonnen pro Einwohner')
-plt.title('Weltweiter CO2-Ausstoß von 1990 bis 2018')
-plt.show();
+plt.scatter(x, y, marker='^', color='red', s=60)
+plt.xlabel('Messung Nr.')
+plt.ylabel('Messwert')
+plt.title('Zufällige Messwerte')
+plt.show()
 ```
 ````
 
-Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, können wir den Wert
-in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von
-5.1 metrischen Tonnen pro Einwohner :-(
+## Wann verwendet man welchen Diagrammtyp?
 
-## Das Bestimmheitsmaß R²
-
-Woher wissen wir eigentlich, dass diese Steigung $m$ und dieser
-y-Achsenabschnitt $b$ am besten passen? Dazu berechnen wir, wie weit weg die
-Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der
-folgenden Grafik.
-
-```{figure} pics/fig10_regression.png
----
-name: fig10_regression
----
-Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)
-
-([Quelle:](https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate#/media/Datei:MDKQ1.svg) Autor: Christian Schirm, Lizenz: CC0)
-```
-
-Die rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir
-können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg
-ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen:
-
-$$r = y_{\text{blau}}-y_{\text{rot}}.$$
-
-Diese Differenz nennt man **Residuum**. Danach summieren wir die Fehler (also
-die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren,
-dass am Ende als Gesamtfehler 0 herauskommt, weil beispielsweise für den 1.
-Messpunkt die blaue y-Koordinate unter der roten y-Koordinate liegt und damit
-ein negatives Residuum herauskommt, aber für den 5. Messpunkt ein positives
-Residuum. Daher quadrieren wir die Residuen. Und damit nicht der Gesamtfehler
-größer wird nur, weil wir mehr Messpunkte dazunehmen, teilen wir noch durch die
-Anzahl der Messpunkte $N$. Mathematisch formuliert haben wir
-
-$$\frac{1}{N}\sum_{i=1}^{N} (y^{(i)} - f(x^{(i)})^2. $$
-
-Wir berechnen die Fehlerquadratsumme in Python mit der `sum()` Funktion aus
-NumPy. Insgesamt ergibt sich
-
-```{code-cell}
-import numpy as np
-
-# blaue y-Koordinaten = Messpunkte
-y_blau = co2
-
-# Berechnung der roten y-Koordinaten, indem wir x-Koordinaten der Messpunkte
-# in die Modellfunktion y = m*x + b einsetzen
-x = jahre
-y_rot = 0.0344 * x - 64.7516
-
-# Berechnung Gesamtfehler
-N = 29
-gesamtfehler = 1/N * np.sum( (y_blau - y_rot)**2 )
-
-print(f'Der Gesamtfehler ist {gesamtfehler}.')
-```
-
-Ist das jetzt groß oder klein? Liegt eine gute Modellfunktion vor, die die Daten
-gut nähert oder nicht? Um das zu beurteilen, berechnen wir, wie groß der Fehler
-wäre, wenn wir nicht die roten y-Koordinaten der Modellfunktion in die
-Fehlerformel einsetzen würden, sondern einfach nur den Mittelwert als
-Schätzwert, also
-
-$$\bar{y} = \frac{1}{N} \sum_{i=1}^{N} y^{(i)}.$$
-
-In Python ergibt sich der folgende Code:
-
-```{code-cell}
-y_mittelwert = y_blau.mean()
-gesamtfehler_mittelwert = 1/N * np.sum( (y_blau - y_mittelwert)**2 )
-
-print(f'Der Gesamtfehler für den Mittelwert als Schätzung ist {gesamtfehler_mittelwert}.')
-```
-
-Offensichtlich ist der Gesamtfehler für die Modellfunktion kleiner als wenn wir
-einfach nur immer den Mittelwert prognostizieren würden. Wir rechnen das in
-Prozent um:
-
-```{code-cell}
-relativer_fehler = gesamtfehler / gesamtfehler_mittelwert
-
-print(f'Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: {relativer_fehler:.4f}')
-print(f'In Prozent umgerechnet ist das: {relativer_fehler * 100:.2f} %.')
-```
-
-In der Statistik wurde diese Verhältnis (Gesamtfehler geteilt durch Gesamtfehler
-Mittelwert) als Qualitätkriterium für ein lineares Regressionsproblem
-festgelegt. Genaugenommen, rechnet man 1 - Gesamtfehler /  (Gesamtfehler
-Mittelwert) und nennt diese Zahl **Bestimmtheitsmaß $R^2$**. Details finden Sie
-bei [Wikipedia
-(Bestimmtheitsmaß)](https://de.wikipedia.org/wiki/Bestimmtheitsmaß). Die Formel
-lautet:
-
-$$R^2 =1-\frac{\sum_{i=1}^N (y^{(i)} - f(x^{(i)})^2}{\sum_{i=1}^N(y^{(i)}-\bar{y})^2}.$$
-
-Dabei kürzt sich das $\frac{1}{N}$ im Zähler und Nenner weg. Nachdem der
-$R^2$-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
-beurteilen:
-
-* Wenn $R^2 = 1$  ist, dann gibt es den perfekten linearen Zusammenhang und die
-  Modellfunktion ist eine sehr gute Anpassung an die Messdaten.
-* Wenn $R^2 = 0$ oder gar negativ ist, dann funktioniert die lineare
-  Modellfunktion überhaupt nicht.
-
-Für das Beispiel ergibt sich ein Bestimmtheitsmaß $R^2$ von
-
-```{code-cell}
-R2 = 1 - relativer_fehler
-print(f'R2 = {R2:.2f}')
-```
-
-Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
-nicht perfekt.
-
-Damit wir nicht händisch den R²-Core berechnen lassen müssen, verwenden wir das
-Modul Scikit-Learn.
-
-```{code-cell}
-from sklearn.metrics import r2_score
-R2 = r2_score(y_blau, y_rot)
-print(f'R2 aus Scikit-Learn: {R2:.2f}')
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise
-Auf der Seite [https://mathweb.de](https://mathweb.de) finden Sie eine Reihe von
-Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
-gibt es dort auch eine interaktive Demonstration des R²-Scores.
-
-Drücken Sie auf den zwei kreisförmigen Pfeile rechts oben. Dadurch wird ein
-neuer Datensatz erzeugt. Die Messdaten sind durch grüne Punkte dargestellt, das
-lineare Regressionsmodell durch eine blaue Gerade. Im Titel wird der aktuelle
-und der optimale R²-Wert angezeigt. Ziehen Sie an den weißen Punkten, um die
-Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
-Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.
-
-<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>
-```
+Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
+Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
+von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.
 
 ## Zusammenfassung und Ausblick
 
-In diesem Kapitel haben wir gelernt, was Regression bedeutet und wie das
-Regressionsergebnis mit dem R²-Score bewertet wird. Im nächsten Kapitel werden
-wir uns damit beschäftigen, die Steigung und den y-Achsenabschnitt einer
-linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.
+In diesem Kapitel haben wir die Grundlagen der Datenvisualisierung mit
+Matplotlib kennengelernt. Liniendiagramme eignen sich für kontinuierliche Daten,
+mathematische Funktionen und Zeitreihen, bei denen die Datenpunkte sinnvoll
+miteinander verbunden werden können. Streudiagramme sind ideal für diskrete
+Messpunkte, Korrelationsanalysen und Situationen, in denen die Einzelpunkte im
+Fokus stehen. Im nächsten Kapitel werden wir uns mit Balkendiagrammen und
+Histogrammen beschäftigen, die für andere Datentypen geeignet sind.

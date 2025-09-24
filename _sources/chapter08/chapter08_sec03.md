@@ -1,319 +1,420 @@
-# 8.3 Programmieren in MATLAB
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.8
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 
-Ein Programmierkurs in MATLAB erfordert eine ganze Vorlesung. In diesem Kapitel vergleichen wir nur die Programmierkonstrukte aus Python mit denen von MATLAB. Gerne können Sie Details in dem Vorlesungsskript
+# 8.3 OOP in der Praxis
 
-> [https://gramschs.github.io/book_matlab/](https://gramschs.github.io/book_matlab/intro.html)
-
-nachlesen.
+Mit Klassen, Objekten und Methoden haben wir die Grundlagen der
+objektorientierten Programmierung kennengelernt. In diesem Kapitel schauen wir
+uns an, wie wir diese Konzepte in der Praxis anwenden: Wir verwalten mehrere
+Objekte in Listen und sorgen dafür, dass unsere Objekte sich schön ausgeben
+lassen.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich
-* Eingabe
-* Verarbeitung (Variablen und Datentypen)
-* Ausgabe
-* Funktionen
-* Vergleiche
-* Programmverzweigungen
-* Schleifen
-* Diagramme
-* Regression
+* Sie können Objekte in Listen speichern und verwalten.
+* Sie können Listen von Objekten durchlaufen und durchsuchen.
+* Sie verstehen die `__str__`-Methode und können sie implementieren.
+* Sie können ein vollständiges objektorientiertes Programm zur Datenverwaltung erstellen.
+* Sie verstehen, wie OOP bei der Lösung praktischer Probleme hilft.
 ```
 
-## Eingabe, Verarbeitung und Ausgabe
+## Listen von Objekten verwalten
 
-Die Eingabe erfolgt in MATLAB mit der Funktion `input()`. Im Unterschied zu
-Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
-wird oft mit indirekten Abfrgaen gearbeitet wie beispielsweise: "Haben Sie einen
-Führerschein? Geben Sie 0 ein für Nein und 1 für Ja."
+In der Praxis arbeiten wir selten mit nur einem Objekt. Angenommen, wir müssten
+die Daten aller Studierenden eines Kurses verwalten. Mit einzelnen Variablen
+wäre das ein Albtraum, aber mit Listen von Objekten wird es elegant und
+übersichtlich. Listen können nicht nur Zahlen oder Strings enthalten, sondern
+auch Objekte. Das macht sie zu einem mächtigen Werkzeug für die Datenverwaltung.
 
-Für die Ausgabe gibt es zwei Funktionen. Die Funktion `disp()` gibt den Inhalt
-einer Variablen direkt aus. Die Funktion `fprintf()` ermöglicht weitere
-Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
-f-Strings. Es wird in den String ein Platzhalter `%f` eingesetzt und dann,
-nachdem der String abgeschlossen wurde, nach einem Komma die Variable.
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
 
-Das folgende Beispiel fragt nach einem Nettpreis und gibt dann den Bruttopreis
-mit einem Mehrwertsteuersatz von 19 %.
+# Liste mit mehreren Studierenden erstellen
+studierende = [
+    Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678"),
+    Student("Berliner", "Bob", "Maschinenbau", 5, "87654321"),
+    Student("Colorado", "Charlie", "Elektrotechnik", 2, "11223344"),
+    Student("Dietrich", "Diana", "Maschinenbau", 1, "99887766")
+]
 
-```matlab
-nettopreis = input('Bitte geben Sie den Nettopreis ein: ')
-bruttopreis = nettopreis + 0.19 * nettopreis
-fprintf('Der Bruttopreis ist %f EUR.', bruttopreis)
+print(f"Anzahl Studierende: {len(studierende)}")
 ```
 
-Zwischenrechnungen werden von MATLAB automatisch am Bildschirm ausgegeben. Wenn
-das nicht gewünscht ist, kann die Ausgabe durch ein Semikolon am Ende der Zeile
-unterdrückt werden.
+Mit for-Schleifen können wir einfach über alle Objekte in der Liste iterieren:
 
-## Funktionen
+```{code-cell} ipython3
+# Alle Studierenden begrüßen
+for student in studierende:
+    print(f"Hallo {student.vorname} {student.nachname}!")
 
-In MATLAB werden häufig Funktionen gebraucht. Zunächst einmal sind Funktionen in
-MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
-implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
-stellen sie meist "echte" mathematische Funktionen mit einer Eingabe und einer
-Ausgabe dar.
+print()
 
-Die Grundstruktur einer Funktion in MATLAB ist wie folgt:
-
-```matlab
-function [ergebnis1, ergebnis2,...] = funktionsname(input1, input2,...)
-    % Anweisungen
-    ergebnis1 = ...
-    ergebnis2 = ...
-end
+# Nur die Namen ausgeben
+for student in studierende:
+    print(f"{student.vorname} {student.nachname} ({student.studiengang})")
 ```
 
-Die Funktion wird mit dem Schlüsselwort `function` eingeleitet. Danach kommen
-die Variablen, deren Werte von der Funktion zurückgegeben werden sollen. Das
-wird durch den Zuweisungsoperator `=` deutlich gemacht. Zuletzt folgt der
-Funktionsname mit den Eingabeparametern. Die Anweisungen im Inneren der Funktion
-werden durch das `end` abgeschlossen.
+Oft müssen wir bestimmte Objekte aus einer Liste herausfiltern oder suchen:
 
-Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
-Fläche und gibt beide Werte zurück.
+```{code-cell} ipython3
+# Nach einem bestimmten Nachnamen suchen
+gesuchter_name = "Berliner"
+for student in studierende:
+    if student.nachname == gesuchter_name:
+        print(f"Gefunden: {student.vorname} {student.nachname}")
+        break
 
-```matlab
-function [umfang, flaeche] = berechne_umfang_flaeche(radius)
-    umfang = 2 * pi * radius;
-    flaeche = pi * radius^2;
-end
+print()
+
+# Alle Maschinenbau-Studierenden finden
+maschinenbauer = []
+for student in studierende:
+    if student.studiengang == "Maschinenbau":
+        maschinenbauer.append(student)
+
+print("Maschinenbau-Studierende:")
+for student in maschinenbauer:
+    print(f"- {student.vorname} {student.nachname}")
 ```
 
-Sie muss unter dem Namen `berechne_umfang_flaeche.m` abgespeichert werden, damit
-sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.
-
-```matlab
-[U, A] = berechne_umfang_flaeche(5)
+```{admonition} Mini-Übung
+:class: miniexercise
+Schreiben Sie Code, der alle Studierenden im 3. Semester oder höher findet und
+deren Namen ausgibt. Verwenden Sie die bereits erstellte `studierende`-Liste.
 ```
 
-Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-```{dropdown} Video zu "Matlab - 3.1 Einleitung Funktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-```{dropdown} Video zu "Matlab - 3.2 Input/Output bei Funktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/psyGbqwBD2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# Studierende im 3. Semester oder höher
+hoeheres_semester = []
+for student in studierende:
+    if student.semester >= 3:
+        hoeheres_semester.append(student)
+
+print("Studierende im 3. Semester oder höher:")
+for student in hoeheres_semester:
+    print(f"- {student.vorname} {student.nachname} ({student.semester}. Semester)")
+```
+````
+
+## Die __str__-Methode für schöne Ausgabe
+
+Wenn wir Objekte mit `print()` ausgeben, erhalten wir oft kryptische Meldungen
+statt nützlicher Informationen. Die `__str__`-Methode löst dieses Problem
+elegant.
+
+Schauen wir uns an, was passiert, wenn wir ein Objekt direkt ausgeben:
+
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+
+student = Student("Müller", "Max", "Maschinenbau", 3, "12345678")
+print(student)  # Kryptische Ausgabe wie <__main__.Student object at 0x...>
 ```
 
-```{dropdown} Video zu "Matlab - 3.3 Formale Definition von Funktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FMfTxKd3gOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Das ist nicht sehr hilfreich! Python zeigt nur den Objekttyp und eine
+Speicheradresse an.
+
+Die `__str__`-Methode ist eine spezielle Methode, die Python automatisch aufruft, wenn ein Objekt als String dargestellt werden soll:
+
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def __str__(self):
+        return f"{self.vorname} {self.nachname} ({self.studiengang}, {self.semester}. Semester)"
+
+student = Student("Müller", "Max", "Maschinenbau", 3, "12345678")
+print(student)  # Jetzt: Max Müller (Maschinenbau, 3. Semester)
 ```
 
-```{dropdown} Video zu "Matlab - 3.4 Unterfunktionen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i1c3IPCb82E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Der Unterschied wird besonders bei Listen von Objekten deutlich:
+
+```{code-cell} ipython3
+# Ohne __str__-Methode
+class StudentOhne:
+    def __init__(self, nachname, vorname):
+        self.nachname = nachname
+        self.vorname = vorname
+
+# Mit __str__-Methode  
+class StudentMit:
+    def __init__(self, nachname, vorname):
+        self.nachname = nachname
+        self.vorname = vorname
+    
+    def __str__(self):
+        return f"{self.vorname} {self.nachname}"
+
+student_ohne = StudentOhne("Schmidt", "Sarah")
+student_mit = StudentMit("Schmidt", "Sarah")
+
+print("Ohne __str__:")
+print(student_ohne)
+
+print("\nMit __str__:")
+print(student_mit)
+
+# Bei Listen wird der Unterschied noch deutlicher
+liste_ohne = [StudentOhne("Müller", "Max"), StudentOhne("Weber", "Lisa")]
+liste_mit = [StudentMit("Müller", "Max"), StudentMit("Weber", "Lisa")]
+
+print(f"\nListe ohne __str__: {liste_ohne}")
+print(f"Liste mit __str__: {liste_mit}")
 ```
 
-```{dropdown} Video zu "Matlab - 3.5 Geltungsbereich" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ebqojVhnPwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Eine gute `__str__`-Methode sollte:
+
+* kurz und informativ sein,
+* die wichtigsten Informationen** enthalten und
+* für Menschen lesbar sein.
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Erweitern Sie die Student-Klasse um eine `__str__`-Methode, die den Namen und
+das Semester in der Form "Anna Abendrot (3. Semester)" ausgibt. Testen Sie Ihre
+Lösung mit mindestens zwei Objekten.
 ```
 
-## Programmverzweigungen
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-MATLAB kennt ebenfalls Vergleiche und den booleschen Datentyp. Die
-Vergleichsoperatoren sind mit Ausnahme des "ungleich"-Operators auch identisch:
-
-* `<` kleiner
-* `<=` kleiner oder gleich
-* `>` größer
-* `>=` größer oder gleich
-* `==` gleich
-* `~=` ungleich
-
-Das Ergebnis eines Vergleichs ist entweder `true` oder `false`. MATLAB verwendet
-hier also Kleinbuchstaben im Vergleich zu Python mit `True` und `False`.
-
-Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
-entsprechende Verzweigungskonstrukt lautet
-
-```matlab
-if x < 10
-    disp('Die Zahl ist kleiner als 10.')
-elseif x < 15
-    disp('Die Zahl ist nicht kleiner als 10, aber kleiner als 15.')
-else
-    disp('Die Zahl ist größer oder gleich 15.')
-end
 ```
 
-Wie Sie sehen, werden nach den Bedingungen keine Doppelpunkte gesetzt. Die
-Verzweigung wird mit einem `end` abgeschlossen.
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def __str__(self):
+        return f"{self.vorname} {self.nachname} ({self.semester}. Semester)"
 
-```{dropdown} Video zu "Matlab - 4.1 if else elseif" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9FA1RP4vj6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+# Test der Lösung
+student1 = Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678")
+student2 = Student("Berliner", "Bob", "Elektrotechnik", 1, "87654321")
+
+print(student1)  # Anna Abendrot (3. Semester)
+print(student2)  # Bob Berliner (1. Semester)
+```
+````
+
+## Ein vollständiges Beispiel: Kursverwaltung
+
+Jetzt bringen wir alles zusammen: Eine vollständige Student-Klasse mit allen
+gelernten Methoden und eine praktische Kursverwaltung, die zeigt, wie mächtig
+OOP in der Praxis ist.
+
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+        self.noten = []
+    
+    def __str__(self):
+        return f"{self.vorname} {self.nachname} ({self.studiengang}, {self.semester}. Sem)"
+    
+    def vollstaendiger_name(self):
+        return f"{self.vorname} {self.nachname}"
+    
+    def note_hinzufuegen(self, note):
+        self.noten.append(note)
+    
+    def notendurchschnitt(self):
+        if len(self.noten) == 0:
+            return 0.0
+        return sum(self.noten) / len(self.noten)
+    
+    def semester_erhoehen(self):
+        self.semester += 1
 ```
 
-In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
-gibt. Die sogenannte `switch`-Verzweigung ist vor allem dann interessant, wenn
-sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
-if-elseif-else ersetzt werden.
+Wir erstellen nun den Kurs mit den teilnehmenden Studierenden und lassen alle
+anzeigen.
 
-```{dropdown} Video zu "Matlab - 4.2 switch - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{code-cell} ipython3
+# Kurs erstellen und mit Studierenden füllen
+python_kurs = [
+    Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678"),
+    Student("Berliner", "Bob", "Maschinenbau", 5, "87654321"),
+    Student("Colorado", "Charlie", "Elektrotechnik", 2, "11223344"),
+    Student("Dietrich", "Diana", "Informatik", 1, "99887766"),
+    Student("Eberhard", "Emil", "Maschinenbau", 4, "55443322")
+]
+
+# Alle Kursteilnehmer anzeigen
+print("=== Python-Kurs Teilnehmer ===")
+for student in python_kurs:
+    print(f"- {student}")
+
+print(f"\nGesamtzahl: {len(python_kurs)} Studierende")
 ```
 
-## Schleifen
+Wir können nun nach dem Studiengang filtern, das durchschnittliche Semester
+berechnen oder Noten verwalten.
 
-Natürlich kennt MATLAB auch Schleifen. Sowohl die while-Schleife als auch die
-for-Schleife können in MATLAB benutzt werden.
+```{code-cell} ipython3
+# Nach Studiengang filtern
+def studierende_nach_studiengang(studierende, studiengang):
+    gefunden = []
+    for student in studierende:
+        if student.studiengang == studiengang:
+            gefunden.append(student)
+    return gefunden
 
-Eine Schleife mit Bedingung wird mit `while` eingeleitet. Wir setzen einen
-Zähler auf Eins und erhöhen in jedem Schleifendurchgang den Wert des Zählers um
-Eins, solange wie der Zähler kleiner gleich 10 ist.
+maschinenbauer = studierende_nach_studiengang(python_kurs, "Maschinenbau")
+print(f"\n=== Maschinenbau-Studierende ({len(maschinenbauer)}) ===")
+for student in maschinenbauer:
+    print(f"- {student}")
 
-```matlab
-zaehler = 1;
-while zaehler <= 10
-    disp(zaehler)
-    zaehler = zaehler + 1;
-end
+# Durchschnittliches Semester berechnen
+semester_summe = 0
+for student in python_kurs:
+    semester_summe = semester_summe + student.semester
+durchschnitt_semester = semester_summe / len(python_kurs)
+print(f"\nDurchschnittliches Semester: {durchschnitt_semester:.1f}")
+
+# Noten verwalten (Beispiel)
+print("\n=== Noten eintragen ===")
+python_kurs[0].note_hinzufuegen(1.7)  # Anna
+python_kurs[0].note_hinzufuegen(2.3)
+python_kurs[1].note_hinzufuegen(2.0)  # Bob
+
+print(f"{python_kurs[0].vollstaendiger_name()}: Durchschnitt {python_kurs[0].notendurchschnitt():.1f}")
+print(f"{python_kurs[1].vollstaendiger_name()}: Durchschnitt {python_kurs[1].notendurchschnitt():.1f}")
 ```
 
-```{dropdown} Video zu "Matlab - 4.3 while-Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSw9QKAjESE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Interessant für eine Kursverwaltung sind statistische Auswertungen.
+
+```{code-cell} ipython3
+# Hilfsfunktionen für die Kursverwaltung
+def kurs_statistik(studierende):
+    """Zeigt eine Übersicht über den Kurs"""
+    print("=== KURS-STATISTIK ===")
+    print(f"Teilnehmer gesamt: {len(studierende)}")
+    
+    # Maschinenbau-Studierende zählen
+    maschinenbau_anzahl = 0
+    for student in studierende:
+        if student.studiengang == "Maschinenbau":
+            maschinenbau_anzahl = maschinenbau_anzahl + 1
+    
+    print(f"Maschinenbau-Studierende: {maschinenbau_anzahl}")
+    
+    # Niedrigstes und höchstes Semester finden
+    semester_min = studierende[0].semester
+    semester_max = studierende[0].semester
+    for student in studierende:
+        if student.semester < semester_min:
+            semester_min = student.semester
+        if student.semester > semester_max:
+            semester_max = student.semester
+    
+    print(f"Semester-Spanne: {semester_min}. bis {semester_max}. Semester")
+
+def student_suchen(studierende, nachname):
+    """Sucht einen Studierenden nach Nachname"""
+    for student in studierende:
+        if student.nachname.lower() == nachname.lower():
+            return student
+    return None
+
+# Statistik anzeigen
+kurs_statistik(python_kurs)
+
+# Student suchen
+print("\n=== SUCHE ===")
+gefunden = student_suchen(python_kurs, "Berliner")
+if gefunden:
+    print(f"Gefunden: {gefunden}")
+    print(f"Matrikelnummer: {gefunden.matrikelnummer}")
+else:
+    print("Student nicht gefunden")
 ```
 
-Bei der for-Schleife wird eine Liste von Zahlen abgearbeitet oder ein
-Zahlenbereich durchlaufen. Das folgende Code-Beispiel gibt nacheinander die
-Zahlen 2, 6, 8 und -1 auf dem Bildschirm aus.
+Mit wenigen Zeilen Code haben wir ein funktionsfähiges Verwaltungssystem
+erstellt und schließen das Beispiel mit der nächsten Mini-Übung ab.
 
-```matlab
-for zahl = [2, 6, 8, -1]
-    disp(zahl)
-end
+```{admonition} Mini-Übung
+:class: miniexercise
+Schreiben Sie eine Funktion `erstsemester_finden(studierende)`, die eine Liste
+aller Studierenden im 1. Semester zurückgibt. Testen Sie die Funktion mit dem
+`python_kurs`.
 ```
 
-Wieder wird die Schleife nicht durch einen Doppelpunkt eingeleitet. Die Schleife
-wird durch das `end` beendet. Alternativ kann der Doppelpunktoperator genutzt
-werden, um eine Liste mit Zahlen nach einem Muster zu generieren. Der folgende
-Code zählt von 10 runter.
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-```matlab
-for zahl = 10: -1 : 0
-    disp(zahl)
-end
-disp('Die Rakete startet...')
 ```
 
-```{dropdown} Video zu "Matlab - 4.4 for - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2qGElJdocnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+def erstsemester_finden(studierende):
+    """Findet alle Studierenden im 1. Semester"""
+    erstsemester = []
+    for student in studierende:
+        if student.semester == 1:
+            erstsemester.append(student)
+    return erstsemester
+
+# Test der Funktion
+erstsemester = erstsemester_finden(python_kurs)
+print(f"Erstsemester ({len(erstsemester)}):")
+for student in erstsemester:
+    print(f"- {student}")
 ```
+````
 
-In beiden Schleifen-Varianten sind `continue` und `break` möglich, um die
-Schleife vorzeitig zu einem neuen Schleifendurchgang zu veranlassen oder die
-Schleife vorzeitig abzubrechen. Wer an Details interessiert ist, findet sie in
-den folgenden Videos.
+## Zusammenfassung und Ausblick
 
-```{dropdown} Video zu "Matlab - 4.5 continue - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VdHhQhIjasg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-```{dropdown} Video zu "Matlab - 4.6 break - Anweisung" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bIXuZXPSblU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-## Diagramme
-
-Bei der Einführung in die Datenvisualisierung mit Matplotlib in Python haben wir
-absichtlich die zustandsorientierte Schnittstelle der Bibliothek genutzt. Diese
-wurde nach dem Vorbild von MATLAB gestaltet, so dass Diagramme mit den uns
-bekannten Anweisungen funktionieren.
-
-```matlab
-x = linspace(-3, 3, 100);
-y = 3 .* x + 7;
-
-figure();
-plot(x,y);
-xlabel('Ursache');
-ylabel('Wirkung');
-title('Liniendiagramm');
-```
-
-Auch das Balkendiagramm mit `bar()` und das Streudiagramm mit `scatter()`
-funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
-bestehen. Die Verarbeitung von Strings ist in MATLAB etwas komplizierter, so
-dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
-umzusetzen sind.
-
-Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
-gemeinsam dargestellt werden sollen. Dann muss nach dem ersten Diagramm der
-Befehl `hold on` ausgeführt werden, damit die nachfolgenden Diagramme in
-dieselbe Grafik gezeichnet werden.
-
-```{dropdown} Video zu "Matlab - 5.1 Plot erstellen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2admMlXzlSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-## Regression
-
-Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
-betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
-als Streudiagramm visualisieren.
-
-```matlab
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
-
-figure()
-scatter(x,y)
-xlabel('Ursache')
-ylabel('Wirkung')
-title('Künstliche Messdaten');
-```
-
-Die Funktion zur Bestimmung eines Regressionspolynoms lautet `polyfit(x, y,
-grad)`. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
-die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
-Argument wird der gewünschte Polynomgrad übergeben. Wir probieren eine
-Regressionsparabel.
-
-```matlab
-p = polyfit(x, y, 2)
-```
-
-Mit `polyval(p, x)` werten wir ein Polynom `p` an der Stelle `x` aus. Um also
-die Regressionsparabel zusätzlich zu den Messwerten zu visualisieren, verwenden
-wir den folgenden Code.
-
-```matlab
-% Künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5];
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586];
-
-% Regression
-p = polyfit(x, y, 2);
-x_modell = linspace(-1, 5, 100);
-y_modell = polyval(p, x_modell);
-
-% Visualisierung
-figure();
-scatter(x,y);
-hold on;
-plot(x_modell, y_modell);
-xlabel('Ursache');
-ylabel('Wirkung');
-title('Künstliche Messdaten');
-```
-
-In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
-Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
-Kommentarzeichen in MATLAB ein Prozentzeichen `%`.
-
-## Weiteres Lehrmaterial
-
-Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript
-
-> [https://gramschs.github.io/book_matlab/intro.html](https://gramschs.github.io/book_matlab/intro.html)
-
-nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
-anderen empfehle ich die YouTube-Playlist
-
-> [So lernst Du
-> Matlab](https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY)
-
-von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
-auch noch anderen Themen behandelt.
+Listen kombiniert mit Objekten sind ein mächtiges Werkzeug zur Verwaltung von
+Daten. Dabei ist es hilfreich, vordefinierte Methoden wie beispielsweise
+`__str__` zu implementieren, um die Objekte benutzerfreundlich zu machen. Mit
+diesem Kapitel schließen wir die Objektorientierte Programmierung ab, um uns den
+Themen Matlab und Simulink zu widmen.

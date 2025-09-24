@@ -12,193 +12,89 @@ kernelspec:
   name: python3
 ---
 
-# 11.2 Diskrete Daten und Häufigkeiten
+# 11.2 Arbeiten mit Tabellendaten
+
+Eine Tabellenkalkulationssoftware wie LibreOffice Calc, Excel oder Number ist
+nicht nur nützlich, um Daten zu sammeln, sondern auch um sie zu bearbeiten. In
+diesem Kapitel geht es darum zu lernen, wie mit Pandas auf einzelne Zeilen,
+Spalten oder Zellen zugegriffen wird.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können diskrete Daten als **Balkendiagramm** visualisieren.
-* Sie können kontinuierliche Daten als **Histogramm** darstellen.
-* Sie verstehen den Unterschied zwischen Balkendiagrammen und Histogrammen.
-* Sie können die **Anzahl der Bins** bei Histogrammen anpassen.
-* Sie können Balken- und Histogramme mit **Farben** gestalten.
+* Sie können auf ganze Zeilen und Spalten zugreifen:
+  * Zugriff auf eine einzelne Zeile oder Spalte, indem ein Index spezifiziert wird
+  * Zugriff auf mehrere zusammenhängende Zeilen oder Spalten (Slice) 
+  * Zugriff auf mehrere unzusammenhängende Zeilen oder Spalten (Selektion)
+* Sie können auf einzelne oder mehrere Zellen der Tabelle zugreifen.
+* Sie können ein DataFrame-Objekt nach einer Eigenschaft filtern.
 ```
 
-## Balkendiagramme
+## Zugriff auf Spalten
 
-Ein Balkendiagramm wird mit der Funktion `bar()` erstellt. Balkendiagramme
-eignen sich zur Darstellung von diskreten, kategorialen Daten. Angenommen, wir
-möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter Notebooks
-zum Download zugegriffen haben:
-
-| Woche | Anzahl Nutzer/innen |
-| --- | --- |
-| 2 | 14 |
-| 3 | 12 |
-| 4 | 10 |
-| 5 | 10 |
-| 6 | 9  |
-
-Dann wird das Balkendiagramm mit folgendem Code erzeugt:
+Für die folgenden Demonstrationen wollen wir wiederum die Spielerdaten der
+Top7-Fußballvereine der Bundesligasaison 2020/21 verwenden. Importieren Sie
+bitte vorab die Daten und verwenden Sie die 1. Spalte (= Namen) als Zeilenindex.
 
 ```{code-cell}
-import matplotlib.pyplot as plt
-
-# Daten
-x = [2, 3, 4, 5, 6]
-y = [14, 12, 10, 10, 9]
-
-# Balkendiagramm
-plt.figure()
-plt.bar(x, y)
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22')
-plt.show()
+import pandas as pd
+data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
+data.head(10)
 ```
 
-Farben können mit dem optionalen Argument `color=` eingestellt werden. Dabei
-funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
-Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
-RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
-Blau-Anteil. Details finden Sie in der Matplotlib-Dokumentation:
+### Einzelne Spalte
 
-> <https://matplotlib.org/stable/tutorials/colors/colors.html>
+Der Zugriff auf Spalten wird am häufigsten gebraucht, da üblicherweise in den
+Spalten die Merkmale der Datenobjekte stehen. Daher bietet Pandas dafür einen
+direkten Zugriff über die eckigen Klammern `[ ]` an.
 
-Im folgenden Balkendiagramm sind die Balken grau dargestellt.
+```{figure} pics/tabelle_spalte_einzeln.png
+:name: fig08_04
+:alt: Einzelne Spalte einer Tabelle
+:align: center
+:width: 50%
+
+Auf eine einzelne Spalte der Tabelle wird mit `[spaltenindex]` zugegriffen. 
+```
+
+Das Alter der Fußballspieler erhalten wir somit mit dem Spaltenindex `Age`.
 
 ```{code-cell}
-# Daten
-x = [2, 3, 4, 5, 6]
-y = [14, 12, 10, 10, 9]
-
-# Balkendiagramm mit Farbe
-plt.figure()
-plt.bar(x, y, color='gray')
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22')
-plt.show()
+alter = data['Age']
+print(alter)
 ```
 
-Balkendiagramme eignen sich besonders gut für den Vergleich von Kategorien. Hier
-ein weiteres Beispiel mit verschiedenen Programmiersprachen und ihrer
-Beliebtheit. Bei diesem Beispiel färben wir auch noch die Balken ein. Dazu
-übergeben wir dem Argument `color` eine Liste mit Strings, die die Farben
-Hex-Code spezifiziert. Mehr Details zu Hex-Codes für Farben finden Sie hier:
-[https://www.color-hex.com](https://www.color-hex.com).
+### Selektion Spalten per Liste
+
+Wir möchten nun die Anzahl der Spiele (`Matches`) und die Anzahl der gespielten
+Minuten in der kompletten Saison (`Mins`) auswerten, um beispielsweise die
+durchschnittliche Minutenzahl pro Spiel zu ermitteln. Da die Spalten nicht
+nebeneinander liegen, müssen wir eine Liste benutzen, um sie zu selektieren. Die
+Auswahl der Spalten wird in der Fachsprache **Selektion** genannt.
+
+```{figure} pics/tabelle_spalte_selektion.png
+:name: fig08_06
+:alt: Selektion von Spalten einer Tabelle
+:align: center
+:width: 50%
+
+Auf mehrere unzusammenhängende Spalten der Tabelle wird mit `[list]`
+zugegriffen. Das nennt man Selektion.
+```
+
+Das folgende Code-Beispiel demonstriert die Selektion zweier Spalten.
 
 ```{code-cell}
-# Daten (fiktive Umfrage)
-sprachen = ['Python', 'Java', 'C++', 'JavaScript', 'C#']
-beliebtheit = [85, 78, 65, 82, 58]
-
-# Balkendiagramm
-plt.figure()
-plt.bar(sprachen, beliebtheit, color=['#3776ab', '#f89820', '#00599c', '#f7df1e', '#239120'])
-plt.xlabel('Programmiersprache')
-plt.ylabel('Beliebtheit (%)')
-plt.title('Beliebtheit von Programmiersprachen unter Studierenden')
-plt.show()
-```
-
-```{admonition} Mini-Übung
-:class: miniexercise 
-Hier ist eine Tabelle mit den Zugriffszahlen auf die Jupyter Notebooks in der
-Vorlesung Angewandte Informatik. Bitte stellen Sie die Daten als Balkendiagramm
-inklusive Beschriftungen dar. Färben Sie die Balken schwarz.
-
-|Woche |Anzahl Nutzer/innen|
-| --- | --- |
-| 3 | 9  |
-| 4 | 17 |
-| 5 | 15 |
-| 6 | 10 |
-| 7 | 11 |
-```
-
-```{code-cell}
-# Hier Ihr Code:
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-import matplotlib.pyplot as plt
-
-x = [3, 4, 5, 6, 7]
-y = [9, 17, 15, 10, 11]
-
-plt.figure()
-plt.bar(x, y, color='black')
-plt.xlabel('Woche')
-plt.ylabel('Anzahl Nutzer/innen')
-plt.title('Zugriffszahlen Jupyter Notebooks - Angewandte Informatik')
-plt.show()
-```
-````
-
-## Histogramme
-
-Während Balkendiagramme für diskrete, kategoriale Daten verwendet werden,
-dienen Histogramme zur Darstellung der Verteilung kontinuierlicher Daten.
-Ein Histogramm zeigt, wie häufig bestimmte Wertebereiche in einem Datensatz
-vorkommen.
-
-Der wichtigste Unterschied: Bei Balkendiagrammen sind die Kategorien fest
-vorgegeben (z.B. Wochentage, Programmiersprachen), bei Histogrammen werden
-die kontinuierlichen Daten in Intervalle (sogenannte "Bins") unterteilt.
-
-Erstellen wir zunächst einen Datensatz mit kontinuierlichen Daten:
-
-```{code-cell}
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Simuliere Körpergrößen von 1000 Personen (normalverteilt)
-np.random.seed(42)  # Für reproduzierbare Ergebnisse
-koerpergroessen = np.random.normal(175, 8, 1000)  # Mittelwert 175cm, Standardabweichung 8cm
-
-# Histogramm erstellen
-plt.figure()
-plt.hist(koerpergroessen, bins=30)
-plt.xlabel('Körpergröße [cm]')
-plt.ylabel('Häufigkeit')
-plt.title('Verteilung der Körpergrößen')
-plt.show()
-```
-
-Die Funktion `hist()` nimmt die Rohdaten und erstellt automatisch ein
-Histogramm. Der Parameter `bins` bestimmt, in wie viele Intervalle die Daten
-aufgeteilt werden. Mehr Bins führen zu einer feineren Aufteilung, weniger Bins
-zu einer gröberen.
-
-Schauen wir uns den Effekt verschiedener Bin-Anzahlen an. Zusätzlich nutzen wir
-noch die Optionen `alpha` (Transparenzgrad), `color` (Farbe) und `edgecolor`
-(Farbe des Rahmens um die Balken), um die Bins besser zu visualisieren.
-
-```{code-cell}
-# Verschiedene Bin-Anzahlen vergleichen
-anzahl_bins = [10, 20, 50, 100]
-titel = ['10 Bins', '20 Bins', '50 Bins', '100 Bins']
-
-for i in range(4):
-  plt.figure()
-  plt.hist(koerpergroessen, bins=anzahl_bins[i], alpha=0.7, color='skyblue', edgecolor='black')
-  plt.xlabel('Körpergröße [cm]')
-  plt.ylabel('Häufigkeit')
-  plt.title(titel[i])
+spiele_minuten = data[['Matches', 'Mins']]
+print(spiele_minuten)
 ```
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Erstellen Sie ein Histogramm für simulierte Reaktionszeiten:
-- Generieren Sie 500 Zufallszahlen mit Mittelwert 0.25 und Standardabweichung 0.05
-- Verwenden Sie 25 Bins
-- Färben Sie das Histogramm orange
-- Beschriften Sie die Achsen: x-Achse "Reaktionszeit [s]", y-Achse "Häufigkeit"
-- Titel: "Verteilung der Reaktionszeiten"
+Lassen Sie sich die folgenden Spalten anzeigen:
+* Nationality
+* Nationality, Age und Matches
 ```
 
 ```{code-cell}
@@ -208,67 +104,301 @@ Erstellen Sie ein Histogramm für simulierte Reaktionszeiten:
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
-import numpy as np
-import matplotlib.pyplot as plt
+data_spalte = data['Nationality']
+data_selektion = data[['Nationality','Age', 'Matches']]
 
-# Daten generieren
-np.random.seed(42)
-reaktionszeiten = np.random.normal(0.25, 0.05, 500)
-
-# Histogramm erstellen
-plt.figure()
-plt.hist(reaktionszeiten, bins=25, color='orange', alpha=0.7, edgecolor='black')
-plt.xlabel('Reaktionszeit [s]')
-plt.ylabel('Häufigkeit')
-plt.title('Verteilung der Reaktionszeiten')
-plt.grid(True, alpha=0.3)
-plt.show()
+print(data_spalte)
+print(data_selektion)
 ```
 ````
 
-## Was ist der Unterschied zwischen Balkendiagramm und Histogramm?
+## Zugriff auf Zeilen
 
-Um den Unterschied zwischen Balkendiagramm und Histogramm zu verdeutlichen,
-schauen wir uns Daten von Autos als Beispiel an.
+Der Zugriff auf Zeilen erfordert eine Erweiterung der Syntax. Über das Attribut
+`loc[]` stellt Pandas nicht nur den Zugriff auf Zeilen zur Verfügung, sondern
+ermöglicht auch fortgeschritte Zugriffsmöglichkeiten wie beispielsweise das
+Slicing, wie wir später sehen werden. Aber zunächst starten wir mit dem Zugriff
+auf einzelne Zeilen.
 
-Mit dem Balkendiagramm visualisieren wir diskrete Daten wie beispielsweise die
-Anzahl der verkauften Autos pro Marke.
+### Einzelne Zeile
 
-```{code-cell}
-# Anzahl verkaufter Autos pro Marke (diskrete Kategorien)
-marken = ['BMW', 'Mercedes', 'Audi', 'VW', 'Ford']
-verkaufte_autos = [45, 38, 52, 67, 23]
+Uns interessieren die Spielerdaten von Thomas Müller näher.
 
-plt.figure()
-plt.bar(marken, verkaufte_autos)
-plt.xlabel('Automarke')
-plt.ylabel('Anzahl verkaufter Autos')
-plt.title('Balkendiagramm: Diskrete Kategorien')
-plt.show();
+```{figure} pics/tabelle_zeile_einzeln.png
+:name: fig08_01
+:alt: Eine einzelne Zeile der Tabelle ist markiert.
+:align: center
+:width: 50%
+
+Auf eine einzelne Zeile der Tabelle wird mit `.loc[zeilenindex]` zugegriffen.
 ```
 
-Wenn es aber nun darum geht, darzustellen, wie viele Autos ein bestimmtes Alter
-in Jahren haben, ist ein Balkendiagramm unübersichtlich. Besser ist es, die Jahre
-zuerst zu clustern.
+Um eine ganze Zeile aus der Tabelle herauszugreifen, verwenden wir das Attribut
+`.loc[zeilenindex]` und geben in eckigen Klammern den Index der Zeile an, die
+wir betrachten wollen. Da wir beim Import die Namen als Zeileindex gesetzt
+haben, lautet der Zugriff also wie folgt:
 
 ```{code-cell}
-# Alter der Autos (kontinuierliche Daten)
-np.random.seed(123)
-alter = np.random.normal(12, 4, 100) 
+zeile = data.loc['Thomas Müller']
+print(zeile)
+```
 
-plt.figure()
-plt.hist(alter, bins=15, alpha=0.7, color='skyblue', edgecolor='black')
-plt.xlabel('Alter [Jahre]')
-plt.ylabel('Anzahl Autos')
-plt.title('Histogramm: Kontinuierliche Daten')
-plt.show();
+### Selektion Zeilen per Liste
+
+Wenn wir auf mehrere Zeilen zugreifen wollen, die nicht zusammenhängen, so nennt
+man das wie bei den Spalten ebenfalls Selektion.
+
+```{figure} pics/tabelle_zeile_selektion.png
+:name: fig08_03
+:alt: Slicing von Zeilen einer Tabelle
+:align: center
+:width: 50%
+
+Auf mehrere unzusammenhängende Zeilen der Tabelle wird mit `.loc[list]`
+zugegriffen. Das nennt man Selektion.
+```
+
+Um mehrere unzusammenhängende Zeilen zu selektieren, übergeben wir `.loc[]` eine
+Liste mit den gewünschten Zeilenindizes.
+
+```{code-cell}
+zeilen_selektion = data.loc[['Manuel Neuer', 'David Alaba']]
+print(zeilen_selektion)
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie sich die folgenden Zeilen anzeigen:
+* Kingsley Coman
+* Kingsley Coman bis Alphonso Davies
+* Robert Lewandowski, Kingsley Coman und Serge Gnabry
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+data_zeile = data.loc['Kingsley Coman']
+data_selektion = data.loc[['Robert Lewandowski','Kingsley Coman', 'Serge Gnabry']]
+
+print(data_zeile)
+print(data_selektion)
+```
+````
+
+## Slicing
+
+Wenn wir auf mehrere Zeilen oder Spalten gleichzeitig zugreifen wollen, gibt es
+zwei Möglichkeiten:
+
+1. Zwischen den einzelnen Zeilen/Spalten sind Lücken, wir haben eine
+   unzusammenhängende Selektion.
+2. Die Zeilen oder Spalten folgen direkt aufeinander, sind also zusammenhängend.
+
+Den ersten Fall haben wir bereits oben dargestellt. Bei Spalten wird die
+Selektion über eine Liste und eckige Klammern `[]` realisiert, bei Zeilen über
+eine Liste, die in `.loc[]` eingesetzt wird.
+
+Der Zugriff auf zusammenhängende Bereiche wird in der Informatik **Slicing**
+genannt. Wir werden uns die beiden Fälle
+
+* Slicing für Zeilen
+* Slicing für Spalten
+
+anschauen, aber zunächst betrachten wir das Slicing von Zeilen.
+
+### Slicing von Zeilen
+
+```{figure} pics/tabelle_zeile_slice.png
+:name: fig08_02
+:alt: Mehrere zusammenhängende Zeilen der Tabelle sind markiert.
+:align: center
+:width: 50%
+
+Auf mehrere zusammenhängende Zeilen der Tabelle wird mit `.loc[start:stopp]`
+zugegriffen. Das nennt man Slicing.
+```
+
+Bei der Angabe des Bereiches gibt man den Anfangsindex gefolgt von einem
+Doppelpunkt an und dann den Endindex der letzten Zeile, die "herausgeschnitten"
+werden soll.
+
+```{code-cell} ipython3
+zeilen_slice = data.loc['Thomas Müller' : 'Jérôme Boateng']
+print(zeilen_slice)
+```
+
+Beim Slicing können wir den Angangsindex oder den Endindex oder sogar beides
+weglassen. Wenn wir den Anfangsindex weglassen, fängt Pandas bei der ersten
+Zeile an. Lassen wir den Endindex weg, geht der Slice automatisch bis zum Ende.
+
+Im folgenden Beispiel startet der Slice bei 'Robert Lewandowski'und geht bis zur
+letzten Zeile. Obwohl nicht alle Zeilendargestellt werden, erkennen wir das an
+der Anzahl der Zeilen: 173 rows (und 15 Spalten columns). Zur Erinnerung, es
+sind insgesamt 177 Zeilen.
+
+```{code-cell} ipython3
+data_slice_from_lewandowski = data.loc['Robert Lewandowski': ]
+print(data_slice_from_lewandowski)
+```
+
+### Slicing von Spalten
+
+Wenden wir uns nun dem Slicing von Spalten zu. Möchten wir beispielsweise die
+Anzahl der Spiele (`Matches`), die ein Spieler in der Saison absolviert hat, mit
+der Anzahl der Spiele, in denen er vom Anfang an auf dem Platz stand (`Starts`)
+vergleichen, so können wir die beiden aufeinanderfolgenden Spalten 'Matches' und
+'Starts' als sogenannten **Slice** ausschneiden. Dazu müssen wir jedoch das
+Attribut `.loc[]` verwenden, das uns fortgeschrittene Techniken des Zugriffs
+bietet. Allerdings müssen wir Python mitteilen, dass diesmal Spalten und nicht
+Zeilen gemeint sind. Die Dokumentation von `loc[]` zeigt uns, dass Spalten nach
+einem Komma angegeben werden. Damit alle Zeilen dabei sind, brauchen wir als
+erstes Argument den Doppelpunkt.
+
+```{figure} pics/tabelle_spalte_slice.png
+:name: fig08_05
+:alt: Slice von Spalten einer Tabelle
+:align: center
+:width: 50%
+
+Auf mehrere zusammenhängende Spalten der Tabelle wird mit `.loc[:, start:stopp]`
+zugegriffen. Das nennt man Slicing.
+```
+
+Das folgende Beispiel zeigt das Slicing zweier Spalten.
+
+```{code-cell} ipython3
+spiele = data.loc[:, 'Matches' : 'Starts']
+print(spiele)
+```
+
+## Zugriff auf Zellen
+
+Es kann auch vorkommen, dass man gezielt auf eine einzelne Zelle oder einen
+Bereich von Zellen zugreifen möchte. Auch dazu benutzen wir das Attribut
+`.loc[]`.
+
+Eine Zelle ist ein einzelnes Element der Tabelle, sozusagen der Kreuzungspunkt
+zwischen Zeile und Spalte. Die Zelle mit dem Zeilenindex `Thomas Müller` und dem
+Spaltenindex `Age` enthält das Alter von Thomas Müller.
+
+```{figure} pics/tabelle_zelle_einzeln.png
+:name: fig08_07
+:alt: Einzelne Zelle einer Tabelle
+:align: center
+:width: 50%
+
+Auf ein einzelne Zelle der Tabelle wird mit `.loc[zeilenindex, spaltenindex]` zugegriffen.
+```
+
+Der Trick ist nun, die drei Möglichkeiten (einzeln, Slice und Selektion per
+Liste) für die Zeilen mit den gleichen drei Möglichkeiten des Zugriffes für
+Spalten zu kombinieren.
+
+Wollen wir beispielsweise das Alter von Thomas Müller aus der Tabelle
+heraussuchen, so gehen wir folgendermaßen vor.
+
+```{code-cell} ipython3
+alter_mueller = data.loc['Thomas Müller', 'Age']
+print(f'Thomas Müller ist {alter_mueller} Jahre alt.')
+```
+
+Wollen wir Beispielsweise das Alter der Fußballprofis von 'David Alaba' bis
+'Robert Lewandowski' wissen, so gehen wir folgendermaßen vor:
+
+```{code-cell} ipython3
+alter_slice = data.loc['David Alaba' : 'Robert Lewandowski', 'Age']
+print(alter_slice)
+```
+
+Und möchten wir von den Herren Thomas Müller und Joshua Kimmich sowhl die
+Nationalität als auch das Alter selektieren, so gehen wir wie folgt vor:
+
+```{code-cell} ipython3
+spezialauswahl = data.loc[ ['Thomas Müller', 'Joshua Kimmich'], ['Nationality', 'Age'] ]
+print(spezialauswahl)
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie sich das Alter von Robert Lewandowski und Thomas Müller anzeigen.
+```
+
+```{code-cell} ipython3
+# Hier Ihr Code
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+alter = data.loc[['Robert Lewandowski', 'Thomas Müller'], 'Age']
+print(alter)
+```
+````
+
+## Filtern
+
+Vielleicht haben Sie sich schon gefragt, warum wir nur Bayern-Spieler analysiert
+haben. Die Antwort ist simpel, Bayern stand im Datensatz oben in den ersten
+Zeilen. Tatsächlich sind aber die Spielerdaten von sieben Vereinen im Datensatz
+enthalten. Wir können uns die verschiedenen Werte einer Spalte mit der Methode
+`.unique()` ansehen.
+
+In einem ersten Schritt lesen wir die Spalte mit den Vereinen aus (Spalte
+'Club'). Dann wenden wir auf das Ergnis die Methode `.unique()` an.
+
+```{code-cell} ipython3
+vereine = data.loc[:, 'Club']
+vereinsnamen = vereine.unique()
+print(vereinsnamen)
+```
+
+Wenn man möchte, kann man auch beide Schritte in einem Schritt ausführen:
+
+```{code-cell} ipython3
+vereinsnamen = data.loc[:, 'Club'].unique()
+print(vereinsnamen)
+```
+
+Jetzt wo wir wissen, dass auch Eintracht Frankfurt dabei ist, würden wir den
+Datensatz gerne nach Eintracht Frankfurt filtern. Dazu benutzen wir einen
+Vergleich und speichern das Ergebnis des Vergleichs in einer Variablen.
+
+```{code-cell} ipython3
+filter_eintracht = data.loc[:, 'Club'] == 'Eintracht Frankfurt'
+print(filter_eintracht)
+```
+
+Das Ergebnis des Vergleichs, der in der Variablen `filter_eintracht` gespeichert
+ist, ist ein Pandas-Series-Objekt, das für jede Zeile gespeichert hat, ob der
+Vergleich wahr (True) oder falsch (False) ist. Ist in einer Zeile der Club
+gleich 'Eintracht Frankfurt', so ist in dem booleschen Objekt an dieser Stelle
+True eingetragen und ansonsten False. Der Datenyp dtype wird mit `bool`
+angegeben.
+
+Wir können nun anstatt einer Liste diesen booleschen Index nutzen, um Zeilen zu
+selektieren. Steht in einer Zeile des booleschen Series-Objektes `True`, so wird
+diese Zeile ausgewählt. Ansonsten wird die Zeile übersprungen. Damit erhalten
+wir alle Spielerdaten, die zu Eintracht Frankfurt gehören.
+
+```{code-cell} ipython3
+eintracht_frankfurt = data.loc[filter_eintracht, :]
+print(eintracht_frankfurt)
+```
+
+Da der print()-Befehl nicht alle Einträge anzeigt, gehen wir jetzt Zeile für
+Zeile durch. Den Zeilenindex erhalten wir über das Attribut `.index`:
+
+```{code-cell} ipython3
+for zeilenindex in eintracht_frankfurt.index:
+    print(zeilenindex)
 ```
 
 ## Zusammenfassung und Ausblick
 
-In diesem Kapitel haben wir zwei wichtige Visualisierungstypen für verschiedene
-Datenarten kennengelernt. Balkendiagramme eignen sich für diskrete, kategoriale
-Daten und ermöglichen den direkten Vergleich zwischen verschiedenen Kategorien.
-Histogramme zeigen die Verteilung kontinuierlicher Daten und helfen dabei,
-Muster und Häufigkeiten in großen Datensätzen zu erkennen. Im nächsten Kapitel
-werden wir lernen, wie wir diese Techniken auf reale Datensätze anwenden können.
+In diesem Abschnitt konnten wir nur die Basis-Funktionalitäten streifen.
+Natürlich ist auch möglich, Bereiche zu sortieren oder gruppieren. Im nächsten
+Abschnitt erarbeiten wir uns erste statistische Analysen mit Pandas.

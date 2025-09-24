@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.1 Kontinuierliche Daten visualisieren &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>11.1 Series und DataFrame &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -61,13 +61,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter11/chapter11_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.2 Diskrete Daten und Häufigkeiten" href="chapter11_sec02.html" />
-    <link rel="prev" title="11. Visualisierung mit Matplotlib" href="chapter11_sec00.html" />
+    <link rel="next" title="11.2 Arbeiten mit Tabellendaten" href="chapter11_sec02.html" />
+    <link rel="prev" title="11. Pandas anstatt Excel" href="chapter11_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,47 +223,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Pandas anstatt Excel</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -484,7 +489,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.1 Kontinuierliche Daten visualisieren</h1>
+    <h1>11.1 Series und DataFrame</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -495,9 +500,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liniendiagramme">Liniendiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streudiagramme">Streudiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wann-verwendet-man-welchen-diagrammtyp">Wann verwendet man welchen Diagrammtyp?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-fur-tabellen-erzeugen">DataFrames für Tabellen erzeugen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-aus-csv-dateien">Import von Tabellen aus csv-Dateien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -510,137 +516,135 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="kontinuierliche-daten-visualisieren">
-<h1>11.1 Kontinuierliche Daten visualisieren<a class="headerlink" href="#kontinuierliche-daten-visualisieren" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="series-und-dataframe">
+<h1>11.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Link to this heading">#</a></h1>
+<p>Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
+effizient zu speichern. Dazu benutzen Data Scientists Pandas. Pandas ist eine
+Bibliothek zur Verarbeitung und Analyse von Daten in Form von Datenreihen und
+Tabellen. Die beiden grundlegenden Datenstrukturen sind Series und DataFrame.
+Dabei wird <strong>Series</strong> für Datenreihen genommen und ist damit die
+Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Die Datenstruktur
+<strong>DataFrame</strong> repräsentiert Tabellen, also sozusagen Matrizen bzw.
+verallgemeinerte zweidimensionale Arrays.</p>
+<p>Daher werden wir uns in diesem Kapitel mit diesen beiden Datenstrukturen
+beschäftigen. Darüber hinaus lernen wir das häufig verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code>
+kennen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können <strong>Matplotlib</strong> mit der üblichen Abkürzung <strong>plt</strong> importieren.</p></li>
-<li><p>Sie können Funktionen als <strong>Liniendiagramm</strong> visualisieren.</p></li>
-<li><p>Sie können Messwerte als <strong>Streudiagramm</strong> darstellen.</p></li>
-<li><p>Sie verstehen den Unterschied zwischen Linien- und Streudiagrammen.</p></li>
+<li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung <strong>pd</strong> importieren.</p></li>
+<li><p>Sie können aus einer Liste das Datenobjekt <strong>Series</strong> erzeugen.</p></li>
+<li><p>Sie kennen das <strong>csv-Dateiformat</strong>.</p></li>
+<li><p>Sie können eine csv-Datei mit <strong>read_csv()</strong> einlesen.</p></li>
+<li><p>Sie können mit <strong>.info()</strong> sich einen Überblick über die importierten Daten
+verschaffen.</p></li>
 </ul>
 </div>
 </section>
-<section id="liniendiagramme">
-<h2>Liniendiagramme<a class="headerlink" href="#liniendiagramme" title="Link to this heading">#</a></h2>
-<p>Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
-sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
-wenn die Daten von einer mathematischen Funktion stammen oder wenn Messungen über
-die Zeit erfasst werden. Obwohl die Daten theoretisch für jeden x-Wert vorliegen
-und wir daher Millionen von (x,y)-Punkten zeichnen könnten, benutzen wir eine
-Wertetabelle mit wenigen (x,y)-Paaren. Die Anzahl der (x,y)-Paare bestimmt dann,
-wie “glatt” die Visualisierung wirkt.</p>
-<p>Erzeugen wir eine Liste mit x-Werten und dazugehörigen y-Werten.</p>
+<section id="series-aus-liste-erzeugen">
+<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Link to this heading">#</a></h2>
+<p>Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
+ist üblich, dabei dem Modul die Abkürzung <strong>pd</strong> zu geben, damit wir nicht immer
+pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
-wir das Modul <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, genauer gesagt nur einen Teil dieses Moduls namens
-<code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
+<p>Die Datenstruktur Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
+Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
+über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, das die
+Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
+Liste, also <code class="docutils literal notranslate"><span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> und initialisieren über <code class="docutils literal notranslate"><span class="pre">pd.Series()</span></code> die
+Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
-zu benutzen. Die erste Schnittstelle ist <strong>zustandsorientiert</strong>, die zweite
-<strong>objektorientiert</strong>. Die zustandsorientierte Schnittstelle ist älter. Die
-Entwicklerinnen und Entwickler des Matplotlib-Moduls orientierten sich zunächst
-an der kommerziellen Software MATLAB und griffen erst in einer späteren Phase
-auf Objektorientierung zurück.</p>
-<p>Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
-das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
-in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
-gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
-die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten.</p>
-<p>Zunächst werden wir die zustandsorientierte Schnittstelle benutzen, um den
-Vorteil auszunutzen, MATLAB-ähnliche Syntax verwenden zu können.</p>
-<p>Zunächst erstellen wir ein Liniendiagramm mit der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>. Zuvor
-öffnen wir mit <code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code> eine neue Zeichenfläche, die Figure genannt wird.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/139f711e555fe85cca7e78270c16fd338c5f483e42b176a900d0ab49bc514d71.png" src="../_images/139f711e555fe85cca7e78270c16fd338c5f483e42b176a900d0ab49bc514d71.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    25
+1    22
+2    43
+3    37
+dtype: int64
+</pre></div>
 </div>
 </div>
-<p>Aber zurück zum Plot, sieht krakelig aus. Eigentlich sollte dies eine Parabel im
-Intervall [-2,2] werden. Mit nur fünf Punkten und der Tatsache, dass diese fünf
-Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus. Besser
-wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand erzeugen. Wir
-verwenden das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> für numerisches Python, das wir wieder einmal zuerst
-laden müssen.</p>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(a,</span> <span class="pre">b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall [a,b] und
-zwar genauso viele, wie durch die Option <code class="docutils literal notranslate"><span class="pre">Anzahl</span></code> vorgegeben werden. Damit
-können wir jetzt eine feiner aufgelöste Wertetabelle erstellen und
-visualisieren.</p>
+</div>
+<p>Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
+bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
+Numpy-Array nehmen? Der wichtigste Unterschied zwischen der Datenstruktur Series
+und einer Liste ist der <strong>Index</strong>.</p>
+<p>Bei einer Liste oder einem Numpy-Array ist der Index <em>implizit</em> definiert. Damit
+ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, …
+angelegt wird. Wenn bei einer Liste <code class="docutils literal notranslate"><span class="pre">liste</span> <span class="pre">=</span> <span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> auf das zweite
+Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
+Python zählt ab 0) und schreiben</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2. Element der Liste: </span><span class="si">{</span><span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c224a840742956266a22ca034c61866c180897cbc09247b227a18939f6a1e856.png" src="../_images/c224a840742956266a22ca034c61866c180897cbc09247b227a18939f6a1e856.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste: 22
+</pre></div>
 </div>
 </div>
-<p>Als nächstes beschäftigen wir uns mit Beschriftungen. Mit den Funktionen
-<code class="docutils literal notranslate"><span class="pre">xlabel()</span></code> und <code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> beschriften wir die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">title()</span></code> wird
-der Titel gesetzt.</p>
+</div>
+<p>Die Datenstruktur Series ermöglich es aber, einen <em>expliziten Index</em> zu setzen.
+Über den optionalen Parameter <code class="docutils literal notranslate"><span class="pre">index=</span></code> speichern wir als Zusatzinformation noch
+ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
+Personen Alice, Bob, Charlie und Dora.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># Visualisierung</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b494f1ea47b1c9e0e93ab1e5bfff45f01cb2896ada364ad11301f38967df22a3.png" src="../_images/b494f1ea47b1c9e0e93ab1e5bfff45f01cb2896ada364ad11301f38967df22a3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice      25
+Bob        22
+Charlie    43
+Dora       30
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jetzt ist auch klar, warum beim ersten Mal, als wir <code class="docutils literal notranslate"><span class="pre">print(alter)</span></code> ausgeführt
+haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
+Series-Objekt noch einen impliziten Index wie eine Liste.</p>
+<p>Wenden wir uns nun der letzten Zeile der Ausgabe zu: <code class="docutils literal notranslate"><span class="pre">dtype:</span> <span class="pre">int64</span></code>. Für das
+Series-Objekt <code class="docutils literal notranslate"><span class="pre">alter</span></code> wird automatisch der Datentyp der enthaltenen Werte
+ermittelt. In unserem Fall haben wir das Alter als vier Integers gespeichert,
+weshalb <code class="docutils literal notranslate"><span class="pre">int64</span></code> als Attribut <code class="docutils literal notranslate"><span class="pre">dtype</span></code> gespeichert wird. Auf dieses Attribut kann
+auch direkt mit dem Punktoperator zugegegriffen werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int64
+</pre></div>
+</div>
 </div>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Plotten Sie folgende Funktionen:</p>
-<ul class="simple">
-<li><p>lineare Funktion, z.B. f(x) = 3x + 7</p></li>
-<li><p>Sinus,</p></li>
-<li><p>Kosinus,</p></li>
-<li><p>Exponentialfunktion und</p></li>
-<li><p>Wurzelfunktion.</p></li>
-</ul>
-<p>Bei welcher Funktion müssen Sie besonders auf das Definitionsgebiet der
-Funktion achten?</p>
+<p>Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
+Vorlesungs/Übungs-Stunden an diesem Wochentag.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,179 +655,842 @@ Funktion achten?</p>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">7</span>
-
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
-<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
-
-<span class="n">x4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x4</span><span class="p">)</span>
-
-<span class="n">x5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="n">y5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x5</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x5</span><span class="p">,</span><span class="n">y5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-Achse&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y-Achse&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mini-Übung&#39;</span><span class="p">);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stundenplan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Montag&quot;</span><span class="p">,</span> <span class="s2">&quot;Dienstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Mittwoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Donnerstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Freitag&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stundenplan</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Bei der Wurzelfunktion muss man auf das Definitionsgebiet achten, da sie nur für
-<span class="math notranslate nohighlight">\(x &gt;= 0\)</span> definiert ist.</p>
 </div>
 </section>
-<section id="streudiagramme">
-<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Link to this heading">#</a></h2>
-<p>Bei Streudiagrammen werden nicht die Punkte (x₁,y₁) mit (x₂,y₂) mit
-(x₃,y₃) usw. durch Linien verbunden, sondern jeder Punkt wird einzeln an seiner
-Koordinatenstelle dargestellt. Ob dazu ein Punkt, Kreis, Dreieck oder
-Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
-Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
-Matplotlib-Funktion auch <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Daten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># Streudiagramm</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sinus-Funktion als Streudiagramm&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/2d59e138b3572be5f65aab4e08adae212abca52458f58186bc7927e91cfba39e.png" src="../_images/2d59e138b3572be5f65aab4e08adae212abca52458f58186bc7927e91cfba39e.png" />
-</div>
-</div>
-<p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span></code> lässt sich das Symbol einstellen, mit dem das
-Streudiagramm erzeugt wird. Voreingestellt ist ein ausgefüllter Kreis. Weitere
-Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:</p>
-<blockquote>
-<div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
-</div></blockquote>
-<p>Die Farbe der Marker oder auch der Linien lässt sich mit dem optionalen Argument
-<code class="docutils literal notranslate"><span class="pre">color=</span></code> einstellen.</p>
-<p>Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
-bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
-Dazu werden wir unterschiedliche Marker und unterschiedliche Farben verwenden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten - simulierte Temperaturmessungen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>  <span class="c1"># Frankfurt</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Offenbach</span>
-
-<span class="c1"># Streudiagramme</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wochentag&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatur [°C]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperaturmessungen&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/63860f4f79171bf87026d4682b78db43d5a8669f32b7dd3346e15bbb111a36f8.png" src="../_images/63860f4f79171bf87026d4682b78db43d5a8669f32b7dd3346e15bbb111a36f8.png" />
-</div>
-</div>
-<p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
-man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
-<code class="docutils literal notranslate"><span class="pre">plt.scatter(x,</span> <span class="pre">y1,</span> <span class="pre">label='Frankfurt')</span></code>. Zuletzt verwendet man die Funktion
-<code class="docutils literal notranslate"><span class="pre">legend()</span></code>, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
-Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+<section id="dataframes-fur-tabellen-erzeugen">
+<h2>DataFrames für Tabellen erzeugen<a class="headerlink" href="#dataframes-fur-tabellen-erzeugen" title="Link to this heading">#</a></h2>
+<p>Bei Auswertung von Messungen kommt es häufig vor, dass die Daten in Form einer
+Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man sie
+beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl die Zeilen als
+auch die Spalten haben einen Index. Typischerweise werden die Daten in der
+Tabelle zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen
+Datensatz darstellt und die Eigenschaften der Daten als Spalte gespeichert
 werden.</p>
+<p>Bevor wir uns dem Import von Tabellen widmen, schauen wir uns kurz an, wie ein
+DataFrame-Objekt direkt erstellt werden kann. Dies ist besonders nützlich, wenn
+Sie kleinere Datensätze aus Berechnungen oder Messreihen zusammenstellen
+möchten.</p>
+<p>Die einfachste Methode ist die Erstellung aus einem Dictionary. Dabei entspricht
+jeder Schlüssel einer Spaltenüberschrift und die zugehörigen Werte bilden die
+Spalteninhalte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>  <span class="c1"># Frankfurt</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Offenbach</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Messdaten von Zugversuchen verschiedener Materialien</span>
+<span class="n">messdaten</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Material&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Stahl&#39;</span><span class="p">,</span> <span class="s1">&#39;Aluminium&#39;</span><span class="p">,</span> <span class="s1">&#39;Kupfer&#39;</span><span class="p">,</span> <span class="s1">&#39;Messing&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Zugfestigkeit_MPa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">400</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">380</span><span class="p">],</span>
+    <span class="s1">&#39;Streckgrenze_MPa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="s1">&#39;Bruchdehnung_Prozent&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="p">}</span>
 
-<span class="c1"># Streudiagramme mit Legende</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Offenbach&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wochentag&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatur [°C]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperaturmessungen in der Region&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">daten_zugversuch</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messdaten</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">daten_zugversuch</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" src="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Material  Zugfestigkeit_MPa  Streckgrenze_MPa  Bruchdehnung_Prozent
+0      Stahl                400               250                    25
+1  Aluminium                310               280                    12
+2     Kupfer                220                70                    45
+3    Messing                380               200                    15
+</pre></div>
 </div>
 </div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:</p>
-<ul class="simple">
-<li><p>x-Werte: Zahlen von 1 bis 20</p></li>
-<li><p>y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.random.uniform(10,</span> <span class="pre">30,</span> <span class="pre">20)</span></code>)</p></li>
-<li><p>Marker: rote Dreiecke (marker=‘^’)</p></li>
-<li><p>Titel: “Zufällige Messwerte”</p></li>
-</ul>
 </div>
+<p>Sie können auch explizit einen Index festlegen, beispielsweise die
+Probennummern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">daten_zugversuch</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">messdaten</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Probe_01&#39;</span><span class="p">,</span> <span class="s1">&#39;Probe_02&#39;</span><span class="p">,</span> <span class="s1">&#39;Probe_03&#39;</span><span class="p">,</span> <span class="s1">&#39;Probe_04&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">daten_zugversuch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Material  Zugfestigkeit_MPa  Streckgrenze_MPa  Bruchdehnung_Prozent
+Probe_01      Stahl                400               250                    25
+Probe_02  Aluminium                310               280                    12
+Probe_03     Kupfer                220                70                    45
+Probe_04    Messing                380               200                    15
 </pre></div>
 </div>
 </div>
 </div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<p>Alternativ können Sie ein DataFrame aus mehreren Series-Objekten erstellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">materialien</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Stahl&#39;</span><span class="p">,</span> <span class="s1">&#39;Aluminium&#39;</span><span class="p">,</span> <span class="s1">&#39;Kupfer&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Material&#39;</span><span class="p">)</span>
+<span class="n">zugfestigkeit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">220</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Zugfestigkeit_MPa&#39;</span><span class="p">)</span>
 
-<span class="c1"># Daten generieren</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Für reproduzierbare Ergebnisse</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>    <span class="c1"># Zahlen von 1 bis 20</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Zufallszahlen zwischen 10 und 30</span>
-
-<span class="c1"># Streudiagramm erstellen</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Messung Nr.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Messwert&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zufällige Messwerte&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df_aus_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Material&#39;</span><span class="p">:</span> <span class="n">materialien</span><span class="p">,</span> <span class="s1">&#39;Zugfestigkeit&#39;</span><span class="p">:</span> <span class="n">zugfestigkeit</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_aus_series</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Material  Zugfestigkeit
+0      Stahl            400
+1  Aluminium            310
+2     Kupfer            220
+</pre></div>
+</div>
+</div>
+</div>
+<p>In der Praxis werden wir DataFrames jedoch meist aus Dateien importieren, da
+größere Datensätze selten manuell erfasst werden. Dies betrachten wir im
+nächsten Abschnitt.</p>
+</section>
+<section id="import-von-tabellen-aus-csv-dateien">
+<h2>Import von Tabellen aus csv-Dateien<a class="headerlink" href="#import-von-tabellen-aus-csv-dateien" title="Link to this heading">#</a></h2>
+<p>Tabellen werden oft in demjenigen Dateiformat abgespeichert, das die jeweilige
+Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
+vorgibt. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in einem
+offenen Datenformat vorliegen und damit unabhängig von der verwendeten Software
+und dem verwendeten Betriebssystem sind.</p>
+<p>Das <strong>Dateiformat csv</strong> speichert Daten zeilenweise ab. Dabei steht csv für
+“comma-separated values”. Die Trennung der Spalten erfolgt durch ein
+Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
+gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
+der Nachkommastellen verwenden.</p>
+<p>Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
+<code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an (siehe
+<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">Dokumentation/read_csv</a>).
+Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
+ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
+übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.</p>
+<p>Betrachten wir die Funktionsweise von <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> mit einem Beispiel. Sollten Sie
+mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die Datei
+<a class="reference download external" download="" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">bundesliga_top7_offensive.csv</span></code></a> herunter und
+speichern Sie sie in denselben Ordner, in dem auch dieses JupyterNotebook liegt.
+Die csv-Datei stammt von
+<a class="reference external" href="https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv">Kaggle</a>.
+Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
+der Bundesligasaison 2020/21 enthalten.</p>
+<p>Führen Sie dann anschließend die folgende Code-Zelle aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
+trotzdem nicht. Dazu verwenden wir die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manuel Neuer</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas Müller</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David Alaba</td>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jérôme Boateng</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Robert Lewandowski</td>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code> zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
+beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
+Methode <code class="docutils literal notranslate"><span class="pre">.head(10)</span></code>mit dem Argument 10.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Manuel Neuer</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas Müller</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David Alaba</td>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jérôme Boateng</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Robert Lewandowski</td>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Joshua Kimmich</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Kingsley Coman</td>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Benjamin Pavard</td>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Alphonso Davies</td>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Serge Gnabry</td>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
+usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
+welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
+erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
+gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
+den Befehl mit <code class="docutils literal notranslate"><span class="pre">index_col=0</span></code>. Die Namen stehen in der 1. Spalte, was in
+Python-Zählweise einer 0 entspricht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Position</th>
+      <th>Age</th>
+      <th>Matches</th>
+      <th>Starts</th>
+      <th>Mins</th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Penalty_Goals</th>
+      <th>Penalty_Attempted</th>
+      <th>xG</th>
+      <th>xA</th>
+      <th>Yellow_Cards</th>
+      <th>Red_Cards</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Manuel Neuer</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>GK</td>
+      <td>34</td>
+      <td>33</td>
+      <td>33</td>
+      <td>2970</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Thomas Müller</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>30</td>
+      <td>32</td>
+      <td>31</td>
+      <td>2674</td>
+      <td>11</td>
+      <td>19</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.24</td>
+      <td>0.39</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>David Alaba</th>
+      <td>Bayern Munich</td>
+      <td>AUT</td>
+      <td>DF,MF</td>
+      <td>28</td>
+      <td>32</td>
+      <td>30</td>
+      <td>2675</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.04</td>
+      <td>0.08</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Jérôme Boateng</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>DF</td>
+      <td>31</td>
+      <td>29</td>
+      <td>29</td>
+      <td>2368</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Robert Lewandowski</th>
+      <td>Bayern Munich</td>
+      <td>POL</td>
+      <td>FW</td>
+      <td>31</td>
+      <td>29</td>
+      <td>28</td>
+      <td>2458</td>
+      <td>41</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1.16</td>
+      <td>0.13</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Joshua Kimmich</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>25</td>
+      <td>2194</td>
+      <td>4</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.10</td>
+      <td>0.27</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Kingsley Coman</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>FW,MF</td>
+      <td>24</td>
+      <td>29</td>
+      <td>23</td>
+      <td>1752</td>
+      <td>5</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pavard</th>
+      <td>Bayern Munich</td>
+      <td>FRA</td>
+      <td>DF</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>1943</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Alphonso Davies</th>
+      <td>Bayern Munich</td>
+      <td>CAN</td>
+      <td>DF</td>
+      <td>19</td>
+      <td>23</td>
+      <td>22</td>
+      <td>1763</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Serge Gnabry</th>
+      <td>Bayern Munich</td>
+      <td>GER</td>
+      <td>FW,MF</td>
+      <td>25</td>
+      <td>27</td>
+      <td>20</td>
+      <td>1644</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.44</td>
+      <td>0.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Import von Tabellen im xlsx-Format</p>
+<p>Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
+bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
+Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Der Befehl zum Import einer Excel-Datei <a class="reference download external" download="" href="https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">bundesliga_top7_offensive.xlsx</span></code></a> lautet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
+Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
+schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> nach.</p>
 </div>
 </section>
-<section id="wann-verwendet-man-welchen-diagrammtyp">
-<h2>Wann verwendet man welchen Diagrammtyp?<a class="headerlink" href="#wann-verwendet-man-welchen-diagrammtyp" title="Link to this heading">#</a></h2>
-<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
-Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
-von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.</p>
+<section id="ubersicht-verschaffen-mit-info">
+<h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Link to this heading">#</a></h2>
+<p>Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
+Datensatzes an, aber wie viele Daten insgesamt enthalten sind oder welche
+Vereine noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür
+stellt Pandas die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> zur Verfügung. Probieren wir es einfach aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 177 entries, Manuel Neuer to Joshua Mees
+Data columns (total 15 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   Club               177 non-null    object 
+ 1   Nationality        177 non-null    object 
+ 2   Position           177 non-null    object 
+ 3   Age                177 non-null    int64  
+ 4   Matches            177 non-null    int64  
+ 5   Starts             177 non-null    int64  
+ 6   Mins               177 non-null    int64  
+ 7   Goals              177 non-null    int64  
+ 8   Assists            177 non-null    int64  
+ 9   Penalty_Goals      177 non-null    int64  
+ 10  Penalty_Attempted  177 non-null    int64  
+ 11  xG                 177 non-null    float64
+ 12  xA                 177 non-null    float64
+ 13  Yellow_Cards       177 non-null    int64  
+ 14  Red_Cards          177 non-null    int64  
+dtypes: float64(2), int64(10), object(3)
+memory usage: 22.1+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">.info()</span></code> erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
+die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie <code class="docutils literal notranslate"><span class="pre">Name</span></code>
+selbsterklärend, aber was <code class="docutils literal notranslate"><span class="pre">xG</span></code> bedeutet, erschließt sich nicht von selbst. Dazu
+brauchen wir mehr Informationen von den Autor:innen der Daten.</p>
+<p>Weiterhin entnehmen wir der Ausgabe von <code class="docutils literal notranslate"><span class="pre">.info()</span></code>, dass in jeder Spalte 177
+Einträge sind, die <code class="docutils literal notranslate"><span class="pre">non-null</span></code> sind. Damit ist gemeint, dass diese Zellen beim
+Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
+angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
+Datentyp <code class="docutils literal notranslate"><span class="pre">object</span></code> angegeben. Beim Alter/Age wurden korrektweise Integers erkannt
+und die mittlere erwartete Anzahl von Toren pro Spiel ‘xG’ (= expected number of
+goals from the player in a match) wird als Float angegeben.</p>
 </section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>In diesem Kapitel haben wir die Grundlagen der Datenvisualisierung mit
-Matplotlib kennengelernt. Liniendiagramme eignen sich für kontinuierliche Daten,
-mathematische Funktionen und Zeitreihen, bei denen die Datenpunkte sinnvoll
-miteinander verbunden werden können. Streudiagramme sind ideal für diskrete
-Messpunkte, Korrelationsanalysen und Situationen, in denen die Einzelpunkte im
-Fokus stehen. Im nächsten Kapitel werden wir uns mit Balkendiagrammen und
-Histogrammen beschäftigen, die für andere Datentypen geeignet sind.</p>
+<p>In diesem Kapitel haben wir die beiden wichtigsten Pandas-Datenstrukturen
+kennengelernt: Series und DataFrame. Darüber hinaus haben wir uns damit
+beschäftigt, wie wir mir <code class="docutils literal notranslate"><span class="pre">.info()</span></code> und <code class="docutils literal notranslate"><span class="pre">.head()</span></code> uns einen ersten Überblick über
+die Daten verschaffen können. Wie wir auf Zeilen und Spalten zugreifen, lernen
+wir im nächsten Kapitel.</p>
 </section>
 </section>
 
@@ -863,7 +1530,7 @@ Histogrammen beschäftigen, die für andere Datentypen geeignet sind.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">11. Visualisierung mit Matplotlib</p>
+        <p class="prev-next-title">11. Pandas anstatt Excel</p>
       </div>
     </a>
     <a class="right-next"
@@ -871,7 +1538,7 @@ Histogrammen beschäftigen, die für andere Datentypen geeignet sind.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">11.2 Diskrete Daten und Häufigkeiten</p>
+        <p class="prev-next-title">11.2 Arbeiten mit Tabellendaten</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -893,9 +1560,10 @@ Histogrammen beschäftigen, die für andere Datentypen geeignet sind.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liniendiagramme">Liniendiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streudiagramme">Streudiagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wann-verwendet-man-welchen-diagrammtyp">Wann verwendet man welchen Diagrammtyp?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-fur-tabellen-erzeugen">DataFrames für Tabellen erzeugen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-aus-csv-dateien">Import von Tabellen aus csv-Dateien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.2 Überwachtes, unüberwachtes und verstärkendes Lernen &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>13.2 Lineare Regression mit polyfit und polyval &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -61,10 +61,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13/chapter13_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="13.1 Was ist maschinelles Lernen?" href="chapter13_sec01.html" />
+    <link rel="next" title="13.3 Polynomiale Regression" href="chapter13_sec03.html" />
+    <link rel="prev" title="13.1 Theorie Regression" href="chapter13_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -222,47 +225,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter13_sec00.html">13. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -481,7 +491,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</h1>
+    <h1>13.2 Lineare Regression mit polyfit und polyval</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -492,13 +502,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uberwachtes-lernen-supervised-learning">Überwachtes Lernen (Supervised Learning)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klassifikation">Klassifikation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unuberwachtes-lernen-unsupervised-learning">Unüberwachtes Lernen (Unsupervised Learning)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verstarkendes-lernen-reinforcement-learning">Verstärkendes Lernen (Reinforcement Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koeffizienten-der-regressionsgerade-berechnen-mit-polyfit">Koeffizienten der Regressionsgerade berechnen mit polyfit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionsgerade-aus-koeffizienten-mit-polyval-auswerten">Regressionsgerade aus Koeffizienten mit polyval auswerten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendung-auf-co2-daten">Anwendung auf CO2-Daten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -511,209 +517,225 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="uberwachtes-unuberwachtes-und-verstarkendes-lernen">
-<h1>13.2 Überwachtes, unüberwachtes und verstärkendes Lernen<a class="headerlink" href="#uberwachtes-unuberwachtes-und-verstarkendes-lernen" title="Link to this heading">#</a></h1>
-<p>Nachdem im letzten Kapitel erklärt wurde, was machinelles Lernen überhaupt
-ist, betrachten wir in diesem Kapitel die drei großen Kategorien von
-ML-Modellen: überwachtes Lernen (Supervised Learning), unüberwachtes Lernen
-(Unsupervised Learning) und verstärkendes Lernen (Reinforcement Learning).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lineare-regression-mit-polyfit-und-polyval">
+<h1>13.2 Lineare Regression mit polyfit und polyval<a class="headerlink" href="#lineare-regression-mit-polyfit-und-polyval" title="Link to this heading">#</a></h1>
+<p>Nachdem wir im letzten Kapitel uns mit der Theorie der linearen Regression
+beschäftigt haben, möchten wir nun konkret eine Regressionsgerade an Messdaten
+anpassen. Umgangssprachlich wird auch gesagt, dass wir einen Fit durchführen
+bzw. eine Gerade an die Messdaten anfitten.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können anhand eines Beispiels erklären, was die Fachbegriffe</p>
-<ul>
-<li><p><strong>überwachtes Lernen (Supervised Learning)</strong>,</p></li>
-<li><p><strong>unüberwachtes Lernen (Unsupervised Learning)</strong> und</p></li>
-<li><p><strong>verstärkendes Lernen (Reinforcement Learning)</strong> bedeuten.</p></li>
-</ul>
-</li>
-<li><p>Sie können beim überwachten Lernen zwischen <strong>Regression</strong> und
-<strong>Klassifikation</strong> unterscheiden.</p></li>
+<li><p>Sie können mit <strong>polyfit</strong> die Koeffizienten einer Regressionsgerade zu
+gegebenen Messwerten bestimmen.</p></li>
+<li><p>Sie können mit <strong>polyval</strong> aus den berechneten Koeffizienten die
+Regressionsgerade bestimmen.</p></li>
 </ul>
 </div>
 </section>
-<section id="uberwachtes-lernen-supervised-learning">
-<h2>Überwachtes Lernen (Supervised Learning)<a class="headerlink" href="#uberwachtes-lernen-supervised-learning" title="Link to this heading">#</a></h2>
-<p>Im letzten Kapitel haben wir im Video <a class="reference external" href="https://youtu.be/HmUzceKCI9I">»So lernen Maschinen:
-Algorithmen«</a> die Aufgabenstellung kennengelernt,
-auf Fotos Hunde von Katzen zu unterscheiden. Diese Art von Problemstellung ist
-typisch für <strong>überwachtes Lernen</strong>. Die Daten werden vorab gekennzeichnet, sie
-erhalten ein <strong>Label</strong>. So lernen auch Kinder. Stellen Sie sich vor, in einem
-Korb liegen Äpfel und Bananen und ein Kind soll den Unterschied erlernen. Jedes
-Stück Obst wird aus dem Korb genommen und dem Kind gezeigt. Dazu sagen wir dann
-entweder »Apfel« oder »Banane«. Das Kind hat also einen Lehrer oder Trainer. Mit
-der Zeit wird das Kind zwischen beiden Obstsorten unterscheiden können.</p>
-<div class="note admonition">
-<p class="admonition-title">Was ist … überwachtes Lernen?</p>
-<p>Überwachtes Lernen ist eine Kategorie des maschinellen Lernens. Beim überwachten
-Lernen liegen die Daten als Eingabe- und Ausgabedaten mit Labels vor. Ein
-maschineller Lernalgorithmus versucht ein Modell zu finden, das bestmöglich den
-Eingabedaten die Ausgabedaten zuordnet.</p>
+<section id="koeffizienten-der-regressionsgerade-berechnen-mit-polyfit">
+<h2>Koeffizienten der Regressionsgerade berechnen mit polyfit<a class="headerlink" href="#koeffizienten-der-regressionsgerade-berechnen-mit-polyfit" title="Link to this heading">#</a></h2>
+<p>Python bzw. das Modul NumPy unterstützt die Suche nach Regressionspolynomen mit
+der Funktion <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>. Eine detaillierte Beschreibung finden Sie in der
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit">NumPy-Dokumentation
+(polyfit)</a>.
+Mittlerweile gibt es modernere Methoden im Modul <code class="docutils literal notranslate"><span class="pre">numpy.polynomial</span></code>, aber wir
+bleiben in dieser Vorlesung dennoch beim klassischen <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>, um eine
+möglichst große Ähnlichkeit zu MATLAB zu wahren.</p>
+<p>Aufgerufen wird polyfit mit</p>
+<p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code></p>
+<p>Dabei sind x und y die Messdaten und <code class="docutils literal notranslate"><span class="pre">grad</span></code> ist ein Integer mit dem Polynomgrad.
+Für eine lineare Funktion setzen wir <code class="docutils literal notranslate"><span class="pre">grad</span> <span class="pre">=</span> <span class="pre">1</span></code>. Das Ergebnis ist ein
+sogenanntes NumPy-Array, das wir im Folgenden wie eine Liste benutzen. Das Array
+<code class="docutils literal notranslate"><span class="pre">p</span></code> enthält die Koeffizienten des Polynoms in absteigender Reihenfolge. Damit
+ist gemeint, dass die höchste Potenz zuerst kommt.</p>
+<p>Ist der Polynomgrad 1, dann ist <code class="docutils literal notranslate"><span class="pre">p[0]</span></code> die Steigung der linearen
+Regressionsgerade und der y-Achsenabschnitt ist in <code class="docutils literal notranslate"><span class="pre">p[1]</span></code> gespeichert:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = p[0] \cdot x + p[1].\]</div>
+<p>Um die Anwendung von <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> zu zeigen, werden zunächst die folgenden sieben
+Messpunkte visualisiert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.52</span><span class="p">,</span>  <span class="mf">0.85</span><span class="p">,</span>   <span class="mf">3.21</span><span class="p">,</span>  <span class="mf">7.19</span><span class="p">,</span>  <span class="mf">8.93</span><span class="p">,</span> <span class="mf">12.89</span><span class="p">,</span> <span class="mf">15.40</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten mit linearem Zusammenhang&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
-<p>Beim überwachten Lernen können die Prognosen des Modells für bekannte Daten mit
-den korrekten Ergebnissen (Labels) verglichen werden. Das Modell wird also
-überwacht.</p>
-<p>Prinzipiell werden dabei wiederum zwei Arten von Labels unterschieden:</p>
-<ul class="simple">
-<li><p>kontinuierliche Labels und</p></li>
-<li><p>diskrete Labels.</p></li>
-</ul>
-<p>Bei dem Beispiel mit den Hunde- und Katzenfotos sind die Labels diskret. Mit
-<strong>diskreten Labels</strong> ist gemeint, dass nur wenige verschiedene Labels existieren.
-In diesem Fall sind es genau zwei verschiedene Labels, nämlich zum einen das
-Label »Hund« und zum anderen das Label »Katze«. Ein anderes Beispiel für
-diskrete Labels sind die Schulnoten sehr gut, gut, befriedigend, ausreichend,
-mangelhaft und ungenügend. Es gibt nur sechs verschiedene Noten, die eine
-Schülerin oder ein Schüler in einem Test erreichen kann. Dabei müssen die
-diskreten Labels keine Texte sein. Die Schulnoten könnten wir auch mit den Labels
-1, 2, 3, 4, 5 und 6 kennzeichnen.</p>
-<p>Bei den <strong>kontinuierlichen Labels</strong> gibt es sehr viele, normalerweise unendliche
-viele verschiedene Labels. Textbezeichnungen sind dann nicht mehr sinnvoll, so
-dass kontinuierliche Labels durch Zahlen repräsentiert werden. Ein Beispiel für
-kontinuierliche Ausgabedaten ist der Verkaufspreis eines Autos abhängig vom
-Kilometerstand. Normalerweise kosten Neuwagen mit einem Kilometerstand von 0 km
-am meisten und der Preis sinkt, je mehr Kilometer das Auto bereits gefahren
-wurde. Die Verkaufspreise könnte man nun als ganze Zahlen darstellen, wenn man
-sie in ganzen Euros angibt, oder als Fließkommazahl, wenn der Preis auf den Cent
-genau angegeben wird. Es gibt nicht unendlich viele Verkaufspreise, aber sehr
-viele verschiedene mögliche Werte.</p>
-<p>Viele ML-Modelle funktionieren sowohl für diskrete als auch kontinuierliche
-Daten, aber nicht alle. Daher ist es notwendig, bereits zu Beginn zu
-entscheiden, ob das Modell für diskrete oder kontinuierliche Ausgabedaten
-eingesetzt werden soll.</p>
-<p>Das überwachte Lernen wird daher wiederum in zwei Arten unterteilt:</p>
-<ul class="simple">
-<li><p><strong>Regression</strong> für kontinuierliche Ausgabedaten und</p></li>
-<li><p><strong>Klassifikation</strong>  für diskrete Ausgabedaten.</p></li>
-</ul>
-<p>Auf beide Problemstellungen gehen die nächsten Videos ein.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “ML Tutorial - #3 Supervised Learning” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gaYYJAEt0zI?si=AvndIfnXrjUNiBbf" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details><section id="regression">
-<h3>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
-<div class="note admonition">
-<p class="admonition-title">Was ist … Regression?</p>
-<p>Regression ist das Teilgebiet des überwachten maschinellen Lernens, bei dem
-Modelle den Zusammenhang zwischen Eingabedaten und <em>kontinuierlichen</em> Ausgabedaten
-prognostizieren sollen.</p>
+<div class="cell_output docutils container">
+<img alt="../_images/2262e9589fe88df2fe5642319468c7210a1139576e02ed083c906cfeaec98672.png" src="../_images/2262e9589fe88df2fe5642319468c7210a1139576e02ed083c906cfeaec98672.png" />
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Überwachtes Lernen – Regression” von Plattform Lernende Systeme</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NCCctUdfA3E" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-</details></section>
-<section id="klassifikation">
-<h3>Klassifikation<a class="headerlink" href="#klassifikation" title="Link to this heading">#</a></h3>
-<div class="note admonition">
-<p class="admonition-title">Was ist … Klassifikation?</p>
-<p>Klassifikation ist das Teilgebiet des überwachten maschinellen Lernens, bei dem
-Modelle den Zusammenhang zwischen Eingabedaten und <em>diskreten</em> Ausgabedaten
-prognostizieren sollen.</p>
+<p>Als nächstes verwenden wir <code class="docutils literal notranslate"><span class="pre">polyfit</span></code>, um die Koeffizienten einer
+Regressionsgerade von Python berechnen zu lassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">)</span>
+</pre></div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Überwachtes Lernen – Klassifikation” von Plattform Lernende Systeme</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/g6zuVEDlAzo" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-</details></section>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.98428571 0.59571429]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die gefundene Regressionsgerade lautet also</p>
+<div class="math notranslate nohighlight">
+\[f(x) = 2.98\cdot x + 0.59.\]</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie zusätzlich zu den Messwerten die gefundene Regressionsgerade in der
+Farbe rot visualisieren.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wertetabelle für Regressionsgerade mit 50 Punkten</span>
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="mf">2.98</span> <span class="o">*</span> <span class="n">x_modell</span> <span class="o">+</span> <span class="mf">0.59</span>
+
+<span class="c1"># Visualisierung Messwerte und Regressionsgerade</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten mit linearem Zusammenhang&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="unuberwachtes-lernen-unsupervised-learning">
-<h2>Unüberwachtes Lernen (Unsupervised Learning)<a class="headerlink" href="#unuberwachtes-lernen-unsupervised-learning" title="Link to this heading">#</a></h2>
-<p>Beim überwachten Lernen liegen Eingabedaten und Ausgabedaten mit Labels vor. Die
-Prognosen eines Modells können für bekannte Paare von Eingabe- und Ausgabedaten
-überwacht werden. Das ist beim unüberwachten Lernen nicht der Fall. Beim
-<strong>unüberwachten Lernen (Unsupervised Learning)</strong> gibt es keine Ausgabedaten,
-also keine Labels. Stattdessen soll der maschinelle Lernalgorithmus eigenständig
-Muster erlernen und Strukturen in den Daten finden.</p>
-<div class="note admonition">
-<p class="admonition-title">Was ist … unüberwachtes Lernen (Unsupervised Learning)?</p>
-<p>Unüberwachtes Lernen ist ein Teilgebiet des maschinellen Lernens, bei dem ein
-Algorithmus versucht, Muster und Strukturen in Daten zu finden. Dabei sind die
-Daten nicht vorab in Eingabe- und Ausgabedaten aufgeteilt bzw. mit Labels
-gekennzeichnet.</p>
+<section id="regressionsgerade-aus-koeffizienten-mit-polyval-auswerten">
+<h2>Regressionsgerade aus Koeffizienten mit polyval auswerten<a class="headerlink" href="#regressionsgerade-aus-koeffizienten-mit-polyval-auswerten" title="Link to this heading">#</a></h2>
+<p>Eine weitere Funktion aus dem NumPy-Modul ist die Funktion <code class="docutils literal notranslate"><span class="pre">polyval()</span></code>. Die
+polyval-Funktion wird dazu benutzt, ein Polynom auszuwerten. Der Aufruf der
+polyval-Funktion sieht prinzipiell so aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>Ein Kind könnte auch selbstständig einen Obstkorb erkunden. Vielleicht würde das
-Kind mit der Zeit lernen, dass es Obst gibt, das ihm schmeckt, wohingegen
-anderes Obst dem Kind nicht schmeckt. Vielleicht würde das Kind das Obst auch in
-großes Obst und kleines Obst unterteilen oder nach Farbe sortieren. Das Kind
-gruppiert also Obst nach selbst gewählten Eigenschaften. Es bildet Cluster,
-dementsprechend heißt dieser Vorgang <strong>Clustering</strong>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Unüberwachtes Lernen: Clustering” von Plattform Lernende Systeme</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P2Qwc63iCVQ" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Dabei ist <code class="docutils literal notranslate"><span class="pre">koeffizienten</span></code> die Liste mit den Koeffizienten des Polynoms, die z.B.
+aus der Berechnung <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> stammen. Die Koeffizienten sind dabei wieder
+absteigend sortiert. Zuerst kommt der Koeffizient der höchsten Potenz. <code class="docutils literal notranslate"><span class="pre">x</span></code> ist
+eine Liste von Zahlen oder ein NumPy-Array, für die das Polynom ausgewertet
+werden soll.</p>
+<p>Wenn wir die Regressionsgerade des Beispiels an der Stelle <span class="math notranslate nohighlight">\(x = 2.5\)</span> auswerten
+wollen, so schreiben wir</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Regressionsgerade an der Stelle x = 2.5 ist </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “ML Tutorial - #4 Unsupervised Learning” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yKcGVt3xfiE?si=t0UP-8h12bFBjhyr" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details></section>
-<section id="verstarkendes-lernen-reinforcement-learning">
-<h2>Verstärkendes Lernen (Reinforcement Learning)<a class="headerlink" href="#verstarkendes-lernen-reinforcement-learning" title="Link to this heading">#</a></h2>
-<p>Wir schließen unsere Übersicht der maschinellen Lernverfahren mit dem
-verstärkendem Lernen ab.</p>
-<div class="note admonition">
-<p class="admonition-title">Was ist … verstärkendes Lernen (Reinforcement Learning)?</p>
-<p><strong>Verstärkendes Lernen (Reinforcement Learning)</strong> ist eine Art des maschinellen
-Lernens, bei dem ein ML-Algorithmus durch versuch und Irrtum erlernt, was das
-optimale Verhalten ist, um ein bestimmtes Ziel zu erreichen. Es werden Aktionen
-ausgeführt und entweder bestraft oder belohnt, je nachdem, ob durch diese
-Aktionen das Ziel besser oder schlechter erreicht wird.</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Regressionsgerade an der Stelle x = 2.5 ist 8.06.
+</pre></div>
 </div>
-<p>Ein Beispiel aus dem Alltag für verstärkendes Lernen ist das Training eines
-Haustieres, eines Hundes beispielsweise. Folgt der Hund dem Befehl »Sitz!«, so
-erhält er ein Leckerli. Mit der Zeit wird der Hund auf das Kommando »Sitz!«
-reagieren und sich setzen, auch wenn es nicht immer eine Belohnung dafür gibt.</p>
-<p>Ein bekanntes Beispiel aus dem Bereich Künstliche Intelligenz für verstärkendes
-Lernen sind Schachsysteme. Anfangs kennt das Schachsystem nur die grundlegenden
-Schachregeln, aber keinerlei Strategie. Durch das Spielen vieler Spiele, wobei
-der Computer bei jedem Sieg eine “Belohnung” erhält und bei jeder Niederlage
-eine “Strafe”, lernt das Schachsystem allmählich, welche Züge gewinnbringend
-sind und welche eher zu Niederlagen führen. Nach Tausenden oder sogar Millionen
-von Spielen kann das Schachsystem dann auf einem sehr hohen Niveau spielen -
-alles durch verstärkendes Lernen.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Verstärkendes Lernen” von Plattform Lernende Systeme</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5HhQgFCQGIY" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Vide zu “ML Tutorial - #5 Reinforcement Learning” von CodingWithMagga</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EAX12jlMlUw?si=yeV8S4zOT2pMlnBi" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details></section>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Lassen Sie die Regressionsgerade mit <code class="docutils literal notranslate"><span class="pre">polyval</span></code> aus den mit <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> für das
+Intervall <span class="math notranslate nohighlight">\([-1, 5]\)</span> auswerten und visualisieren Sie die Messwerte (in blau)
+zusammen mit der Regressionsgeraden (in rot).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wertetabelle für Regressionsgerade</span>
+<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung Messwerte und Regressionsgerade</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten mit linearem Zusammenhang&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="anwendung-auf-co2-daten">
+<h2>Anwendung auf CO2-Daten<a class="headerlink" href="#anwendung-auf-co2-daten" title="Link to this heading">#</a></h2>
+<p>Nachdem wir die NumPy-Funktionen <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> und <code class="docutils literal notranslate"><span class="pre">polyval()</span></code> kennengelernt
+haben, können wir diese nun auf unser CO2-Beispiel aus Kapitel 12.1 anwenden und
+dabei systematisch vorgehen. Anstatt die Parameter der Regressionsgeraden durch
+Ausprobieren zu finden, berechnen wir sie direkt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="c1"># Daten</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/co2_emissionen_worldwide.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">jahre</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
+<span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">]</span>
+
+<span class="c1"># Berechnung der optimalen Regressionskoeffizienten</span>
+<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span> <span class="n">co2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung m = </span><span class="si">{</span><span class="n">koeffizienten</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y-Achsenabschnitt b = </span><span class="si">{</span><span class="n">koeffizienten</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Erstellung der Modellfunktion</span>
+<span class="n">co2_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">jahre</span><span class="p">)</span>
+
+<span class="c1"># Berechnung des R2-Wertes zur Bewertung der Anpassungsqualität</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">co2_modell</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Steigung m = 0.0344
+y-Achsenabschnitt b = -64.7516
+R2 = 0.7701
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> erhalten wir eine Steigung von etwa 0.0344 und einen
+y-Achsenabschnitt von -64.75, was unseren durch Ausprobieren gefundenen Werten
+sehr nahe kommt. Der R²-Wert von 0.77 bestätigt, dass die lineare Regression die
+CO2-Emissionsdaten gut erklärt, aber nicht sehr gut. Dies macht die
+Regressionsgerade zu einem brauchbaren Modell für Prognosen, auch wenn die
+Abweichungen zeigen, dass andere Faktoren ebenfalls eine Rolle spielen.</p>
+</section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>In diesem Abschnitt haben Sie die drei wichtigsten Kategorien des maschinellen
-Lernens kennengelernt: überwachtes Lernen, unüberwachtes Lernen und
-verstärkendes Lernen. Für die Ingenieurwissenschaften ist vor allem das
-überwachte Lernen von Bedeutung. Dabei unterscheiden wir zwischen überwachtem
-Lernen für diskrete Ausgabedaten (= Klassen, Kategorien), das wir Klassifikation
-nennen, und überwachtem Lernen für kontinuierliche Ausgabedaten, das wir
-Regression nennen.</p>
+<p>In diesem Kapitel haben wir gelernt, eine lineare Funktion an Messdaten
+anzupassen. Im nächsten Kapitel werden wir uns mit dem Fit von Polynomen
+beschäftigen.</p>
 </section>
 </section>
 
@@ -753,8 +775,17 @@ Regression nennen.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">13.1 Was ist maschinelles Lernen?</p>
+        <p class="prev-next-title">13.1 Theorie Regression</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="chapter13_sec03.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">13.3 Polynomiale Regression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -774,13 +805,9 @@ Regression nennen.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uberwachtes-lernen-supervised-learning">Überwachtes Lernen (Supervised Learning)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klassifikation">Klassifikation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unuberwachtes-lernen-unsupervised-learning">Unüberwachtes Lernen (Unsupervised Learning)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verstarkendes-lernen-reinforcement-learning">Verstärkendes Lernen (Reinforcement Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koeffizienten-der-regressionsgerade-berechnen-mit-polyfit">Koeffizienten der Regressionsgerade berechnen mit polyfit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionsgerade-aus-koeffizienten-mit-polyval-auswerten">Regressionsgerade aus Koeffizienten mit polyval auswerten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendung-auf-co2-daten">Anwendung auf CO2-Daten</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

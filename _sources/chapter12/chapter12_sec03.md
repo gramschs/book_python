@@ -12,264 +12,323 @@ kernelspec:
   name: python3
 ---
 
-# 12.3 Polynomiale Regression
+# 12.3 DataFrames visualisieren
 
-Die in den vorangegangenen Regressionstechniken erweitern wir nun von linearen
-Regressiongeraden auf Regressionspolynome wie beispielsweise
-Regressionsparabeln.
+Bisher haben wir die Daten für die Visualisierung manuell erzeugt. In diesem
+Kapitel beschäftigen wir uns damit, wie Pandas-DataFrames professionell
+visualisiert werden. Wir lernen fortgeschrittene Techniken kennen, die beispielsweise für das Anfertigen einer Bachelorarbeit wichtig sind.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können mit **polyfit** zu gegebenen Messdaten die Koeffizienten eines
-  Regressionspolynoms bestimmen.
-* Sie können mit **polyval** aus den Koeffizienten ein Regressionspolynom
-  auswerten.
-* Sie wissen, was die Begriffe **Underfitting** und **Overfitting** bedeuten.
-* Sie können mit dem Bestimmtheitsmaß R² abschätzen, welcher Polynomgrad $n$ zu
-  den Daten passt.
+* Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus
+  einem DataFrame extrahieren.
+* Sie können den Text der Achsenbeschriftung drehen.
+* Sie können mit **axhline()** und **axvline()** Referenzlinien zu Plots hinzufügen.
+* Sie können **Subplots** für komplexere Visualisierungen erstellen.
+* Sie können **Korrelationsanalysen** graphisch aufbereiten.
+* Sie können Plots für Bachelorarbeiten und Präsentationen optimieren.
 ```
 
-## Regressionspolynome
+## Visualisierung von DataFrames
 
-Ein Regressionspolynom ist eine Möglichkeit der Regressionsanalyse, bei der die
-Beziehung zwischen einer unabhängigen/erklärenden Variablen $x$ und einer
-abhängigen Variablen $y$ durch ein Polynom modelliert wird. Damit erweitert die
-polynomiale Regression die einfache lineare Regression, indem sie einen
-quadratischen oder kubischen Anteil berücksichtigt. Theoretisch sind noch höhere
-Polynomgrade möglich.
+Aber wie kombinieren wir jetzt die Funktionalitäten des Pandas-Moduls mit denen
+des Matplotlib-Moduls? Der grundlegende Datentyp für Matplotlib ist das
+NumPy-Array und auch in den Pandas-Datenobjekten stecken im Kern NumPy-Arrays.
+Daher funktionieren die Plotting-Funktionalitäten von Matplotlib direkt.
+Wünschenswert wäre allerdings, den Zeilen- oder den Spaltenindex für die
+Beschriftung zu nehmen. Beides ist in dem DataFrame-Objekt abgespeichert. Wir
+können mit
 
-Ein Polynom 2. Grades hat die Form
+* `.index` auf den Zeilenindex und
+* `.columns` auf den Spaltenindex
 
-$$y = ax^2 + bx + c,$$
+zugreifen. Die Methode `.to_numpy()` liefert die Werte in der Tabelle als
+NumPy-Array zurück. Das brauchen wir für die Visualisierung jedoch nicht, denn die
+Tabellendaten können direkt visualisiert werden.
 
-ein Polynom 3. Grades
+Wir verwenden einen realistischen Datensatz und importieren den uns schon
+bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21 ([→
+Download](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)). Dann
+lassen wir den Zeilen- und Spaltenindex direkt anzeigen:
 
-$$y = ax^3 + bx^2 + cx + d.$$
+```{code-cell}
+import pandas as pd
+import numpy as np
 
-Die reellen Zahlen $a, b, c, d$ werden Koeffizienten des Polynoms genannt.
+data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
 
-## Beispiel Regressionsparabel
+print('Zeilenindex: ')
+print(data.index)
 
-Wir betrachten als Beispiel die folgenden künstlichen Messwerte.
+print('\nSpaltenindex:')
+print(data.columns)
+```
+
+Nun können wir die Daten aus dem Pandas-DataFrame extrahieren und visualisieren.
+Wenn wir beispielsweise wissen wollen, wie alt die Spieler der Eintracht
+Frankfurt sind, filtern wir zuerst nach Eintracht Frankfurt. Dann speichern wir
+die Namen der Spieler mit dem Zeilenindex in der Variablen `x` und das Alter
+`Age` in `y`.
+
+```{code-cell}
+# Daten filtern
+data_eintracht_frankfurt = data.loc[ data['Club'] == 'Eintracht Frankfurt' ]
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt['Age']
+```
+
+Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
+verwenden wir ein Balkendiagramm zur Visualisierung. Für eine ansprechende
+Darstellung nutzen wir ein vordefiniertes Theme, das wir über `matplotlib.style`
+importieren.
 
 ```{code-cell}
 import matplotlib.pyplot as plt
 
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
+# vordefiniertes Styling-Theme auswählen z.B. 'ggplot', 'seaborn-v0_8', 'dark_background'
+import matplotlib.style as style
+style.use('seaborn-v0_8') 
 
+# Visualisierung
 plt.figure()
-plt.scatter(x,y)
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
+plt.bar(x, y)
+plt.xlabel('Spieler')
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21')
+
+# Rotation der x-Achsenbeschriftung um 45 Grad mit rechtsbündiger Ausrichtung
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
 plt.show()
 ```
 
-Sieht nicht nach einer linearen Funktion, also einer Geraden aus. Wir probieren
-es mit einer quadratischen Funktion. Die Modellfunktion lautet
+Die Funktion `xticks()` manipuliert die Beschriftung der x-Achse. Im obigen
+Code-Beispiel wird der Beschriftungstext um 45 Grad gedreht und rechtsbündig
+ausgerichtet. `tight_layout()` führt zu weniger Abständen zwischen dem Plot der
+umgebenden Zeichenfläche.
 
-$$f(x)=ax^2 + bx + c$$
+## Referenzlinien hinzufügen
 
-mit den Parametern $a$, $b$  und $c$. Wir setzen in der `polyfit()`-Funktion den
-Polynomgrad auf `grad=2`.
+Als nächstes möchten wir in den Plot Zusatzinformationen einblenden. So würden
+wir gerne hervorheben, wo das Durchschnittsalter der Fußballspieler liegt.
+Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt liegt
+und welcher jünger als der Durchschnitt ist.
 
-```{code-cell}
-import numpy as np
-
-p = np.polyfit(x, y, 2)
-print(p)
-```
-
-Bei der Zuordnung der Koeffizienten müssen wir sorgsam auf die Sortierung
-achten. Unsere Modellfunktion beginnt beim quadratischen Anteil $ax^2$, dann
-kommt der lineare Anteil $bx$ und zuletzt der konstante Part $c$.
+Dazu müssen wir zunächst die Zusatzinformation, in diesem Beispiel den
+Mittelwert, aus den Daten berechnen.
 
 ```{code-cell}
-a = p[0]
-b = p[1]
-c = p[2]
-
-print(f'a = {a}')
-print(f'b = {b}')
-print(f'c = {c}')
+mittelwert_alter = data_eintracht_frankfurt['Age'].mean()
+print(f'Mittleres Alter der Spieler: {mittelwert_alter:.1f} Jahre')
 ```
 
-Wir erhalten also als Regressionsfunktion
-
-$$r(x)=-1.9 x^2 + 7.4 x + 14.5.$$
-
-Visualisieren wir die Modellfunktion zusammen mit den Messpunkten.
+Nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Wir zeichnen
+eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu verwenden wir
+die Funktion `axhline()`. Für vertikale Linien gibt es entsprechend `axvline()`.
+Zusätzlich fügen wir mit `legend()` eine Legende ein, um zu erklären, welche
+Bedeutung die Linie hat. Das sogenannte Label, also die Beschriftung der
+Legende, wir zuvor als Argument in `axhline()` übergeben. Auch die Formatierung
+der Linie mit roter Farbe `color='red'`, der Linienstil `linestyle='--'` und die
+Linienbreite `linewidth=2` werden an dieser Stelle als Argumente eingefügt, so
+dass wir insgesamt den folgenden Plot erhalten:
 
 ```{code-cell}
-plt.figure();
-plt.scatter(x,y);
+# Daten
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt['Age']
 
-x_plot = np.linspace(-1, 5, 100);
-y_plot = a * x_plot**2 + b * x_plot + c
-plt.plot(x_plot, y_plot, color='red')
-
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
-plt.show()
-```
-
-Alternativ kann die Funktion `polyval` dazu genutzt werden, um die Parabel auszuwerten.
-
-```{code-cell}
-plt.figure();
-plt.scatter(x,y);
-
-x_plot = np.linspace(-1, 5, 100);
-y_plot = np.polyval(p, x_plot)
-plt.plot(x_plot, y_plot, color='red')
-
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
-plt.show()
-```
-
-## Zu viel des Guten, höhere Polynomgrade sind nicht besser
-
-Regressionspolynome scheinen zunächst besser zu sein als Regressionsgeraden.
-Durch die zusätzlichen Terme können auch nichtlineare Beziehungen und komplexere
-Muster in den Daten erklärt werden. Allerdings birgt die Verwendung höherer
-Polynomgrade auch das Risiko des Overfittings. Der Begriff **Overfitting**
-bedeutet, dass das Regressionspolynom zu genau an die Daten angepasst wurde und
-neue Daten schlechter prognostiziert. Das Gegenteil davon ist **Underfitting**.
-Das Regressionspolynom hat einen zu kleinen/niedrigen Polynomgrad und kann daher
-die Daten kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr
-wichtig.
-
-```{admonition} Was ist Overfitting und Underfitting?
-:class: note
-Ist ein Modell zu stark an die Trainingsdaten angepasst und lässt es sich daher
-nicht mehr verallgemeinern, liegt **Overfitting** (Überanpassung) vor. Fehlen
-dahingegen erklärende Variablen, so dass die Komplexität der Daten nicht
-abgebildet werden kann, sprechen wir von **Underfitting** (Unteranpassung).
-```
-
-Wir betrachten dazu das Beispiel von oben und verändern den Polynomgrad.
-
-```{code-cell}
-# künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
-
+# Visualisierung
 plt.figure()
-plt.scatter(x,y, color='black')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
+plt.bar(x, y)
+plt.xlabel('Spieler')
+plt.ylabel('Alter')
+plt.title('Spielerdaten Eintracht Frankfurt 20/21')
 
-x_plot = np.linspace(-1,5)
+# Rotation der x-Achsenbeschriftung um 45 Grad mit rechtsbündiger Ausrichtung
+plt.xticks(rotation=45, ha='right')
 
-for grad in [1, 2, 3, 4]:
-  # berechne Regressionspolynom
-  p = np.polyfit(x, y, grad)
-  y_plot = np.polyval(p, x_plot)
-  # visualisiere zusätzlich das Regressionspolynon
-  plt.plot(x_plot, y_plot, label=f'Grad {grad}')
+# Horizontale Linie für den Mittelwert
+plt.axhline(mittelwert_alter, color='red', linestyle='--', linewidth=2, 
+            label=f'Durchschnittsalter: {mittelwert_alter:.1f} Jahre')
 plt.legend()
+plt.tight_layout()
 plt.show()
 ```
 
-Eine Regressionsgerade kann die Messdaten nicht gut erklären, aber die
-Regressionspolynome Grad 2 bis 4 passen sehr gut zu den künstlichen Messdaten
-des Beispiels. Probieren wir noch höhere Polynomgrade aus.
+```{admonition} Mini-Übung
+:class: miniexercise
+Berechnen Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
+Frankfurt durchschnittlich im Einsatz war. Erstellen Sie ein Balkendiagramm 
+der Spielzeiten und ergänzen Sie eine horizontale schwarze Linie für den Mittelwert.
+```
 
 ```{code-cell}
-# künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
+# Hier Ihr Code
+```
 
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+x = data_eintracht_frankfurt.index
+y = data_eintracht_frankfurt['Mins']
+min_durchschnitt = y.mean()
+
+# Visualisierung
 plt.figure()
-plt.scatter(x,y, color='black')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
-
-x_plot = np.linspace(-1,5, 200)
-
-for grad in [5, 6, 7, 8]:
-  # berechne Regressionspolynom
-  p = np.polyfit(x, y, grad)
-  y_plot = np.polyval(p, x_plot)
-  # visualisiere zusätzlich das Regressionspolynon
-  plt.plot(x_plot, y_plot, label=f'Grad {grad}')
+plt.bar(x, y)
+plt.axhline(min_durchschnitt, color='black', linestyle='--', linewidth=2, 
+            label=f'Durchschnitt: {min_durchschnitt:.0f} Min')
+plt.xlabel('Spieler')
+plt.ylabel('Minuten')
+plt.title('Spielzeiten Eintracht Frankfurt 20/21')
+plt.xticks(rotation=45, ha='right')
 plt.legend()
+plt.tight_layout()
+plt.show()
+```
+````
+
+## Subplots für komplexere Darstellungen
+
+Hier sehen wir eine wichtige Erweiterung zu den bisherigen Plots: Subplots
+ermöglichen es uns, mehrere Diagramme nebeneinander in einer Abbildung
+darzustellen. Der entscheidende Unterschied zu unseren bisherigen Plots ist,
+dass wir nun die Zeichenfläche mit
+
+```python
+fig, axes = plt.subplots(1, 2, figsize=(15, 10))
+```
+
+erzeugen und die *objektorientierte* Schnittstelle benutzen. Die obige
+Code-Zeile erstellt eine Abbildung (`fig`) mit 1 Zeile und 2 Spalten von Plots.
+Das `axes`-Array enthält die beiden einzelnen Plot-Bereiche. Auf die einzelnen
+Plots können wir folgendermaßen zugreifen:
+
+* `axes[0]`: der erste Plot (links)
+* `axes[1]`: der zweite Plot (rechts)
+
+Anstelle der gewohnten Funktion `plt.bar()` verwenden wir nun
+`axes[0].bar(...)`oder `axes[1].bar(...)`. Auch werden die Funktionen wir
+`plt.title()`zu Methoden, die sich auf das konkrete Objekt beziehen, wie
+`axes[0].set_title()`. Wir verwenden noch weitere Optionen zum Styling der
+Plots.
+
+```{code-cell}
+# Daten für Eintracht Frankfurt
+eintracht_frankfurt = data[data['Club'] == 'Eintracht Frankfurt']
+
+# 1x2 Subplot-Layout erstellen
+fig, axes = plt.subplots(1, 2, figsize=(15, 10))
+
+# Plot 1: Alter
+axes[0].bar(eintracht_frankfurt.index, eintracht_frankfurt['Age'],
+               color='skyblue', alpha=0.7)
+axes[0].set_title('Alter der Spieler')
+axes[0].set_ylabel('Alter')
+
+# Erst die Tick-Positionen setzen, dann die Labels
+axes[0].set_xticks(range(len(eintracht_frankfurt)))
+axes[0].set_xticklabels(eintracht_frankfurt.index, rotation=45, ha='right', fontsize=8)
+
+# Plot 2: Spielminuten
+axes[1].bar(eintracht_frankfurt.index, eintracht_frankfurt['Mins'],
+               color='lightgreen', alpha=0.7)
+axes[1].set_title('Spielminuten')
+axes[1].set_ylabel('Minuten')
+axes[1].set_xticks(range(len(eintracht_frankfurt)))
+axes[1].set_xticklabels(eintracht_frankfurt.index, rotation=45, ha='right', fontsize=8)
+
+plt.suptitle('Spielerstatistiken Eintracht Frankfurt 20/21', fontsize=16)
+plt.tight_layout()
 plt.show()
 ```
 
-Grad 5 ist schon gut, aber die Regressionspolynome Grad 6 bis 8 scheinen perfekt
-zu sein. Allerdings gibt es auch eine Warnung, denn wenn mehr
-Polynomkoeffizienten da sind als Messpunkte, ist die Bestimmung der
-Polynomkoeffizienten nicht mehr eindeutig. Bei $n$ Datenpunkten ist ein Polynom
-vom Grad $n-1$ bereits eindeutig bestimmt und interpoliert alle Punkte exakt.
+## Korrelationsanalyse mit Streudiagrammen
 
-Dennoch, jeder Messpunkt wird exakt von dem Regressionspolynom getroffen.
-Demnach müssten alle Residuen 0 sein und damit für das Bestimmtheitsmaß $R^2 =
-1$ gelten. Am besten lassen wir eine Tabelle für den Polynomgrad und das
-jeweilige Residuum ausgeben.
+Hier sehen wir eine wichtige statistische Methode: Korrelationsanalysen
+untersuchen, ob und wie stark zwei Variablen miteinander zusammenhängen. In
+unserem Beispiel fragen wir uns: Gibt es einen Zusammenhang zwischen
+Spielminuten und Toren? Oder zwischen Alter und Einsatzzeit?
 
 ```{code-cell}
-from sklearn.metrics import r2_score
+ig, axes = plt.subplots(2, 2, figsize=(12, 8))
 
-for grad in range(1,9):
-    p = np.polyfit(x, y, grad)
-    y_modell = np.polyval(p, x)
-    r2 = r2_score(y, y_modell)
-    print(f'Polynomgrad {grad}: R2 = {r2:.4f}')
-```
+# Streudiagramm: Spielminuten vs. Tore
+axes[0, 0].scatter(data['Mins'], data['Goals'], alpha=0.6, color='red')
+axes[0, 0].set_xlabel('Spielminuten')
+axes[0, 0].set_ylabel('Tore')
+axes[0, 0].set_title('Spielminuten vs. Tore')
 
-Die mathematische Theorie wird in der Praxis bestätigt. Der $R^2$-Score hat ab
-dem Polynomgrad 6 den Wert 1. Wenn wir den Polynomgrad noch höher treiben,
-passiert etwas Seltsames, was aber nicht im $R^2$-Score zu entdecken ist,
-sondern in der Visualisierung der Regressionspolynome.
+# Streudiagramm: Alter vs. Spielminuten
+axes[0, 1].scatter(data['Age'], data['Mins'], alpha=0.6, color='blue')
+axes[0, 1].set_xlabel('Alter')
+axes[0, 1].set_ylabel('Spielminuten')
+axes[0, 1].set_title('Alter vs. Spielminuten')
 
-```{code-cell}
-# künstliche Messdaten
-x = [-1, 0, 1, 2, 3, 4, 5]
-y = [5.4384, 14.3252, 19.2451, 23.3703, 18.2885, 13.8978, 3.7586]
+# Streudiagramm: Tore vs. Torvorbereitungen (= Assists)
+axes[1, 0].scatter(data['Goals'], data['Assists'], alpha=0.6, color='green')
+axes[1, 0].set_xlabel('Tore')
+axes[1, 0].set_ylabel('Assists')
+axes[1, 0].set_title('Tore vs. Assists')
 
-plt.figure()
-plt.scatter(x,y, color='black')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten')
+# Streudiagramm: Spielminuten vs. Torvorbereitungen (= Assists)
+axes[1, 1].scatter(data['Mins'], data['Assists'], alpha=0.6, color='orange')
+axes[1, 1].set_xlabel('Spielminuten')
+axes[1, 1].set_ylabel('Assists')
+axes[1, 1].set_title('Spielminuten vs. Assists')
 
-x_plot = np.linspace(-1,5, 200)
-
-for grad in [9, 10, 15, 25]:
-  # berechne Regressionspolynom
-  p = np.polyfit(x, y, grad)
-  y_plot = np.polyval(p, x_plot)
-  # visualisiere zusätzlich das Regressionspolynon
-  plt.plot(x_plot, y_plot, label=f'Grad {grad}')
-plt.legend()
+plt.suptitle('Korrelationsanalyse Bundesliga-Spieler', fontsize=16)
+plt.tight_layout()
 plt.show()
 ```
 
-Die Polynome beginnen zwischen $x=4$ und $x=5$ immer höher zu schwingen. Es ist
-unplausibel, dass diese Polynome die Messdaten gut erklären. Daher empfiehlt es
-sich, möglichst den kleinsten Polynomgrad zu nehmen, der sehr gut, aber nicht
-perfekt ist. Bei der Tabelle der R2-Werte haben wir gesehen, dass der R2-Wert
-von 0.0054 (Grad 1) auf 0.9834 (Grad 2) springt. Danach sind aber keine
-wesentlichen Verbesserungen mehr erkennbar. Daher wählen wir Grad 2 als
-Regressionspolynom.
+Hier sehen wir die wichtigsten Muster in Streudiagrammen:
 
-```{admonition} Tipp
-:class: note
-In der Ingenieurspraxis sollte immer das einfachste Modell gewählt werden, das
-die Daten ausreichend gut beschreibt. Dies folgt dem Prinzip »Ockhams
-Rasiermesser« (siehe [Wikipedia →  Ockhams
-Rasiermesser](https://de.wikipedia.org/wiki/Ockhams_Rasiermesser)).
+* **Positive Korrelation**: Die Punkte bilden eine aufsteigende Linie: je höher
+  die Ursache, desto höher die Wirkung. Beim Beispiel Spielminuten vs. Tore
+  können wir interpretieren: "Wer mehr spielt, erzielt tendenziell mehr Tore".
+* **Negative Korrelation**: Die Punkte bilden eine absteigende Linie: je höher
+  die Ursache, desto niedriger die Wirkung. Beim Beispiel Alter vs. Spielminuten
+  können wir interpretieren: "Ältere Spieler bekommen tendenziell weniger
+  Einsatzzeit".
+* **Keine Korrelation**: Die Punkte sind zufällig verteilt: kein erkennbares
+  Muster. Wir interpretieren: "Zwischen den Variablen gibt es keinen
+  systematischen Zusammenhang".
+
+## Export von Grafiken
+
+Für die Verwendung in Dokumenten oder Präsentationen müssen Grafiken exportiert
+werden:
+
+```{code-cell}
+# Beispiel-Plot erstellen
+plt.figure(figsize=(10, 6))
+verein_tore = data.groupby('Club')['Goals'].sum().sort_values(ascending=False)
+
+plt.bar(verein_tore.index, verein_tore.values, color='steelblue', alpha=0.8)
+plt.xlabel('Verein')
+plt.ylabel('Gesamtzahl Tore')
+plt.title('Tore pro Verein - Bundesliga 2020/21')
+plt.xticks(rotation=45, ha='right')
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+
+# Export in verschiedenen Formaten
+plt.savefig('bundesliga_tore.png', dpi=300, bbox_inches='tight')  # Für Web/Präsentationen
+plt.savefig('bundesliga_tore.pdf', bbox_inches='tight')           # Für LaTeX/Publikationen
+plt.savefig('bundesliga_tore.svg', bbox_inches='tight')           # Für Vektorgrafiken
+
+plt.show()
 ```
 
 ## Zusammenfassung und Ausblick
 
-In diesem Kapitel haben wir gelernt, Messdaten durch Regressionspolynome zu modellieren. Dabei ist die sorgsame Wahl des Polynomgrads sehr wichtig, um Overfitting und Underfitting zu vermeiden. Es gibt außer den Regressionsmodellen noch viele weitere Möglichkeiten, für Messdaten Modelle zu erstellen. Damit beschäftigt sich das maschinelle Lernen, das ein Teilgebiet der Künstlichen Intelligenz ist.
+In diesem Kapitel haben wir gelernt, wie man DataFrames professionell
+visualisiert. Diese Techniken bilden die Grundlage für die Datenvisualisierung
+in der Praxis. Mit DataFrames und Matplotlib können wir reale Datensätze
+ansprechend präsentieren. Mit der Korrelationsanalyse haben wir auch einen
+ersten Schritt Richtung Data Science gemacht. Wie wir Trends und Muster in Daten
+finden, werden wir im nächsten Kapitel lernen, wenn wir uns der Regression
+widmen.

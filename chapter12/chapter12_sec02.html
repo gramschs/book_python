@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12.2 Lineare Regression mit polyfit und polyval &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>12.2 Diskrete Daten und Häufigkeiten &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -61,13 +61,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/chapter12_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12.3 Polynomiale Regression" href="chapter12_sec03.html" />
-    <link rel="prev" title="12.1 Theorie Regression" href="chapter12_sec01.html" />
+    <link rel="next" title="12.3 DataFrames visualisieren" href="chapter12_sec03.html" />
+    <link rel="prev" title="12.1 Kontinuierliche Daten visualisieren" href="chapter12_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,47 +223,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter12_sec00.html">12. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -484,7 +489,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>12.2 Lineare Regression mit polyfit und polyval</h1>
+    <h1>12.2 Diskrete Daten und Häufigkeiten</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -495,9 +500,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koeffizienten-der-regressionsgerade-berechnen-mit-polyfit">Koeffizienten der Regressionsgerade berechnen mit polyfit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionsgerade-aus-koeffizienten-mit-polyval-auswerten">Regressionsgerade aus Koeffizienten mit polyval auswerten</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendung-auf-co2-daten">Anwendung auf CO2-Daten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balkendiagramme">Balkendiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogramme">Histogramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-der-unterschied-zwischen-balkendiagramm-und-histogramm">Was ist der Unterschied zwischen Balkendiagramm und Histogramm?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -510,90 +515,257 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lineare-regression-mit-polyfit-und-polyval">
-<h1>12.2 Lineare Regression mit polyfit und polyval<a class="headerlink" href="#lineare-regression-mit-polyfit-und-polyval" title="Link to this heading">#</a></h1>
-<p>Nachdem wir im letzten Kapitel uns mit der Theorie der linearen Regression
-beschäftigt haben, möchten wir nun konkret eine Regressionsgerade an Messdaten
-anpassen. Umgangssprachlich wird auch gesagt, dass wir einen Fit durchführen
-bzw. eine Gerade an die Messdaten anfitten.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="diskrete-daten-und-haufigkeiten">
+<h1>12.2 Diskrete Daten und Häufigkeiten<a class="headerlink" href="#diskrete-daten-und-haufigkeiten" title="Link to this heading">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können mit <strong>polyfit</strong> die Koeffizienten einer Regressionsgerade zu
-gegebenen Messwerten bestimmen.</p></li>
-<li><p>Sie können mit <strong>polyval</strong> aus den berechneten Koeffizienten die
-Regressionsgerade bestimmen.</p></li>
+<li><p>Sie können diskrete Daten als <strong>Balkendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können kontinuierliche Daten als <strong>Histogramm</strong> darstellen.</p></li>
+<li><p>Sie verstehen den Unterschied zwischen Balkendiagrammen und Histogrammen.</p></li>
+<li><p>Sie können die <strong>Anzahl der Bins</strong> bei Histogrammen anpassen.</p></li>
+<li><p>Sie können Balken- und Histogramme mit <strong>Farben</strong> gestalten.</p></li>
 </ul>
 </div>
 </section>
-<section id="koeffizienten-der-regressionsgerade-berechnen-mit-polyfit">
-<h2>Koeffizienten der Regressionsgerade berechnen mit polyfit<a class="headerlink" href="#koeffizienten-der-regressionsgerade-berechnen-mit-polyfit" title="Link to this heading">#</a></h2>
-<p>Python bzw. das Modul NumPy unterstützt die Suche nach Regressionspolynomen mit
-der Funktion <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>. Eine detaillierte Beschreibung finden Sie in der
-<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit">NumPy-Dokumentation
-(polyfit)</a>.
-Mittlerweile gibt es modernere Methoden im Modul <code class="docutils literal notranslate"><span class="pre">numpy.polynomial</span></code>, aber wir
-bleiben in dieser Vorlesung dennoch beim klassischen <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>, um eine
-möglichst große Ähnlichkeit zu MATLAB zu wahren.</p>
-<p>Aufgerufen wird polyfit mit</p>
-<p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code></p>
-<p>Dabei sind x und y die Messdaten und <code class="docutils literal notranslate"><span class="pre">grad</span></code> ist ein Integer mit dem Polynomgrad.
-Für eine lineare Funktion setzen wir <code class="docutils literal notranslate"><span class="pre">grad</span> <span class="pre">=</span> <span class="pre">1</span></code>. Das Ergebnis ist ein
-sogenanntes NumPy-Array, das wir im Folgenden wie eine Liste benutzen. Das Array
-<code class="docutils literal notranslate"><span class="pre">p</span></code> enthält die Koeffizienten des Polynoms in absteigender Reihenfolge. Damit
-ist gemeint, dass die höchste Potenz zuerst kommt.</p>
-<p>Ist der Polynomgrad 1, dann ist <code class="docutils literal notranslate"><span class="pre">p[0]</span></code> die Steigung der linearen
-Regressionsgerade und der y-Achsenabschnitt ist in <code class="docutils literal notranslate"><span class="pre">p[1]</span></code> gespeichert:</p>
-<div class="math notranslate nohighlight">
-\[f(x) = p[0] \cdot x + p[1].\]</div>
-<p>Um die Anwendung von <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> zu zeigen, werden zunächst die folgenden sieben
-Messpunkte visualisiert:</p>
+<section id="balkendiagramme">
+<h2>Balkendiagramme<a class="headerlink" href="#balkendiagramme" title="Link to this heading">#</a></h2>
+<p>Ein Balkendiagramm wird mit der Funktion <code class="docutils literal notranslate"><span class="pre">bar()</span></code> erstellt. Balkendiagramme
+eignen sich zur Darstellung von diskreten, kategorialen Daten. Angenommen, wir
+möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter Notebooks
+zum Download zugegriffen haben:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Woche</p></th>
+<th class="head"><p>Anzahl Nutzer/innen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Dann wird das Balkendiagramm mit folgendem Code erzeugt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.52</span><span class="p">,</span>  <span class="mf">0.85</span><span class="p">,</span>   <span class="mf">3.21</span><span class="p">,</span>  <span class="mf">7.19</span><span class="p">,</span>  <span class="mf">8.93</span><span class="p">,</span> <span class="mf">12.89</span><span class="p">,</span> <span class="mf">15.40</span><span class="p">]</span>
+<span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
+<span class="c1"># Balkendiagramm</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten mit linearem Zusammenhang&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2262e9589fe88df2fe5642319468c7210a1139576e02ed083c906cfeaec98672.png" src="../_images/2262e9589fe88df2fe5642319468c7210a1139576e02ed083c906cfeaec98672.png" />
+<img alt="../_images/2c4028de806b8e3470fb2e4340262d953103989e4b017a669dde9697c401b5b8.png" src="../_images/2c4028de806b8e3470fb2e4340262d953103989e4b017a669dde9697c401b5b8.png" />
 </div>
 </div>
-<p>Als nächstes verwenden wir <code class="docutils literal notranslate"><span class="pre">polyfit</span></code>, um die Koeffizienten einer
-Regressionsgerade von Python berechnen zu lassen.</p>
+<p>Farben können mit dem optionalen Argument <code class="docutils literal notranslate"><span class="pre">color=</span></code> eingestellt werden. Dabei
+funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
+Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
+RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
+Blau-Anteil. Details finden Sie in der Matplotlib-Dokumentation:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colors.html">https://matplotlib.org/stable/tutorials/colors/colors.html</a></p>
+</div></blockquote>
+<p>Im folgenden Balkendiagramm sind die Balken grau dargestellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="c1"># Balkendiagramm mit Farbe</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/90ca883384438d598021a4adc9a7dd7a020d5ea7cbc04e0efca9eca1d653598d.png" src="../_images/90ca883384438d598021a4adc9a7dd7a020d5ea7cbc04e0efca9eca1d653598d.png" />
+</div>
+</div>
+<p>Balkendiagramme eignen sich besonders gut für den Vergleich von Kategorien. Hier
+ein weiteres Beispiel mit verschiedenen Programmiersprachen und ihrer
+Beliebtheit. Bei diesem Beispiel färben wir auch noch die Balken ein. Dazu
+übergeben wir dem Argument <code class="docutils literal notranslate"><span class="pre">color</span></code> eine Liste mit Strings, die die Farben
+Hex-Code spezifiziert. Mehr Details zu Hex-Codes für Farben finden Sie hier:
+<a class="reference external" href="https://www.color-hex.com">https://www.color-hex.com</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten (fiktive Umfrage)</span>
+<span class="n">sprachen</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">,</span> <span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span> <span class="s1">&#39;C#&#39;</span><span class="p">]</span>
+<span class="n">beliebtheit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">58</span><span class="p">]</span>
+
+<span class="c1"># Balkendiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">sprachen</span><span class="p">,</span> <span class="n">beliebtheit</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#3776ab&#39;</span><span class="p">,</span> <span class="s1">&#39;#f89820&#39;</span><span class="p">,</span> <span class="s1">&#39;#00599c&#39;</span><span class="p">,</span> <span class="s1">&#39;#f7df1e&#39;</span><span class="p">,</span> <span class="s1">&#39;#239120&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Programmiersprache&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Beliebtheit (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Beliebtheit von Programmiersprachen unter Studierenden&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/520f3c019e30ba71a15878e40730b8647d65a9744f16392852bde8ee47a5eb56.png" src="../_images/520f3c019e30ba71a15878e40730b8647d65a9744f16392852bde8ee47a5eb56.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Hier ist eine Tabelle mit den Zugriffszahlen auf die Jupyter Notebooks in der
+Vorlesung Angewandte Informatik. Bitte stellen Sie die Daten als Balkendiagramm
+inklusive Beschriftungen dar. Färben Sie die Balken schwarz.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Woche</p></th>
+<th class="head"><p>Anzahl Nutzer/innen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>11</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Woche&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Nutzer/innen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zugriffszahlen Jupyter Notebooks - Angewandte Informatik&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="histogramme">
+<h2>Histogramme<a class="headerlink" href="#histogramme" title="Link to this heading">#</a></h2>
+<p>Während Balkendiagramme für diskrete, kategoriale Daten verwendet werden,
+dienen Histogramme zur Darstellung der Verteilung kontinuierlicher Daten.
+Ein Histogramm zeigt, wie häufig bestimmte Wertebereiche in einem Datensatz
+vorkommen.</p>
+<p>Der wichtigste Unterschied: Bei Balkendiagrammen sind die Kategorien fest
+vorgegeben (z.B. Wochentage, Programmiersprachen), bei Histogrammen werden
+die kontinuierlichen Daten in Intervalle (sogenannte “Bins”) unterteilt.</p>
+<p>Erstellen wir zunächst einen Datensatz mit kontinuierlichen Daten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">)</span>
+<span class="c1"># Simuliere Körpergrößen von 1000 Personen (normalverteilt)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Für reproduzierbare Ergebnisse</span>
+<span class="n">koerpergroessen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Mittelwert 175cm, Standardabweichung 8cm</span>
+
+<span class="c1"># Histogramm erstellen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">koerpergroessen</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Körpergröße [cm]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Häufigkeit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Verteilung der Körpergrößen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.98428571 0.59571429]
+<img alt="../_images/3918939e534cb2b0fb553539f9dd4dfc087d59a2339cab07e6fbd58979fcd63c.png" src="../_images/3918939e534cb2b0fb553539f9dd4dfc087d59a2339cab07e6fbd58979fcd63c.png" />
+</div>
+</div>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">hist()</span></code> nimmt die Rohdaten und erstellt automatisch ein
+Histogramm. Der Parameter <code class="docutils literal notranslate"><span class="pre">bins</span></code> bestimmt, in wie viele Intervalle die Daten
+aufgeteilt werden. Mehr Bins führen zu einer feineren Aufteilung, weniger Bins
+zu einer gröberen.</p>
+<p>Schauen wir uns den Effekt verschiedener Bin-Anzahlen an. Zusätzlich nutzen wir
+noch die Optionen <code class="docutils literal notranslate"><span class="pre">alpha</span></code> (Transparenzgrad), <code class="docutils literal notranslate"><span class="pre">color</span></code> (Farbe) und <code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>
+(Farbe des Rahmens um die Balken), um die Bins besser zu visualisieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verschiedene Bin-Anzahlen vergleichen</span>
+<span class="n">anzahl_bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">titel</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;10 Bins&#39;</span><span class="p">,</span> <span class="s1">&#39;20 Bins&#39;</span><span class="p">,</span> <span class="s1">&#39;50 Bins&#39;</span><span class="p">,</span> <span class="s1">&#39;100 Bins&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">koerpergroessen</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">anzahl_bins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Körpergröße [cm]&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Häufigkeit&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titel</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/0cbd7ccb51e9fc7b24ff5ad40b93904786fbbbf6614623b48af2d1d432f123fe.png" src="../_images/0cbd7ccb51e9fc7b24ff5ad40b93904786fbbbf6614623b48af2d1d432f123fe.png" />
+<img alt="../_images/56bfdadcf30282dbae3e69823e69a4098659bdd8329d4a19d257e6df65287782.png" src="../_images/56bfdadcf30282dbae3e69823e69a4098659bdd8329d4a19d257e6df65287782.png" />
+<img alt="../_images/b0ec9cb109e68d51a7ffd950f73d3ef660537bd15b73c94ad03fc24a92f631fc.png" src="../_images/b0ec9cb109e68d51a7ffd950f73d3ef660537bd15b73c94ad03fc24a92f631fc.png" />
+<img alt="../_images/bc7223098599cfc89a2d87f6dba81373db6c05be92eb5e56b128d785caf388d1.png" src="../_images/bc7223098599cfc89a2d87f6dba81373db6c05be92eb5e56b128d785caf388d1.png" />
 </div>
-<p>Die gefundene Regressionsgerade lautet also</p>
-<div class="math notranslate nohighlight">
-\[f(x) = 2.98\cdot x + 0.59.\]</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie zusätzlich zu den Messwerten die gefundene Regressionsgerade in der
-Farbe rot visualisieren.</p>
+<p>Erstellen Sie ein Histogramm für simulierte Reaktionszeiten:</p>
+<ul class="simple">
+<li><p>Generieren Sie 500 Zufallszahlen mit Mittelwert 0.25 und Standardabweichung 0.05</p></li>
+<li><p>Verwenden Sie 25 Bins</p></li>
+<li><p>Färben Sie das Histogramm orange</p></li>
+<li><p>Beschriften Sie die Achsen: x-Achse “Reaktionszeit [s]”, y-Achse “Häufigkeit”</p></li>
+<li><p>Titel: “Verteilung der Reaktionszeiten”</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -604,131 +776,81 @@ Farbe rot visualisieren.</p>
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wertetabelle für Regressionsgerade mit 50 Punkten</span>
-<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">y_modell</span> <span class="o">=</span> <span class="mf">2.98</span> <span class="o">*</span> <span class="n">x_modell</span> <span class="o">+</span> <span class="mf">0.59</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># Visualisierung Messwerte und Regressionsgerade</span>
+<span class="c1"># Daten generieren</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">reaktionszeiten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Histogramm erstellen</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten mit linearem Zusammenhang&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">reaktionszeiten</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Reaktionszeit [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Häufigkeit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Verteilung der Reaktionszeiten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="regressionsgerade-aus-koeffizienten-mit-polyval-auswerten">
-<h2>Regressionsgerade aus Koeffizienten mit polyval auswerten<a class="headerlink" href="#regressionsgerade-aus-koeffizienten-mit-polyval-auswerten" title="Link to this heading">#</a></h2>
-<p>Eine weitere Funktion aus dem NumPy-Modul ist die Funktion <code class="docutils literal notranslate"><span class="pre">polyval()</span></code>. Die
-polyval-Funktion wird dazu benutzt, ein Polynom auszuwerten. Der Aufruf der
-polyval-Funktion sieht prinzipiell so aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Dabei ist <code class="docutils literal notranslate"><span class="pre">koeffizienten</span></code> die Liste mit den Koeffizienten des Polynoms, die z.B.
-aus der Berechnung <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> stammen. Die Koeffizienten sind dabei wieder
-absteigend sortiert. Zuerst kommt der Koeffizient der höchsten Potenz. <code class="docutils literal notranslate"><span class="pre">x</span></code> ist
-eine Liste von Zahlen oder ein NumPy-Array, für die das Polynom ausgewertet
-werden soll.</p>
-<p>Wenn wir die Regressionsgerade des Beispiels an der Stelle <span class="math notranslate nohighlight">\(x = 2.5\)</span> auswerten
-wollen, so schreiben wir</p>
+<section id="was-ist-der-unterschied-zwischen-balkendiagramm-und-histogramm">
+<h2>Was ist der Unterschied zwischen Balkendiagramm und Histogramm?<a class="headerlink" href="#was-ist-der-unterschied-zwischen-balkendiagramm-und-histogramm" title="Link to this heading">#</a></h2>
+<p>Um den Unterschied zwischen Balkendiagramm und Histogramm zu verdeutlichen,
+schauen wir uns Daten von Autos als Beispiel an.</p>
+<p>Mit dem Balkendiagramm visualisieren wir diskrete Daten wie beispielsweise die
+Anzahl der verkauften Autos pro Marke.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Regressionsgerade an der Stelle x = 2.5 ist </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Regressionsgerade an der Stelle x = 2.5 ist 8.06.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Lassen Sie die Regressionsgerade mit <code class="docutils literal notranslate"><span class="pre">polyval</span></code> aus den mit <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> für das
-Intervall <span class="math notranslate nohighlight">\([-1, 5]\)</span> auswerten und visualisieren Sie die Messwerte (in blau)
-zusammen mit der Regressionsgeraden (in rot).</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wertetabelle für Regressionsgerade</span>
-<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">y_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">x_modell</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Anzahl verkaufter Autos pro Marke (diskrete Kategorien)</span>
+<span class="n">marken</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span> <span class="s1">&#39;Mercedes&#39;</span><span class="p">,</span> <span class="s1">&#39;Audi&#39;</span><span class="p">,</span> <span class="s1">&#39;VW&#39;</span><span class="p">,</span> <span class="s1">&#39;Ford&#39;</span><span class="p">]</span>
+<span class="n">verkaufte_autos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
 
-<span class="c1"># Visualisierung Messwerte und Regressionsgerade</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Künstliche Messdaten mit linearem Zusammenhang&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="anwendung-auf-co2-daten">
-<h2>Anwendung auf CO2-Daten<a class="headerlink" href="#anwendung-auf-co2-daten" title="Link to this heading">#</a></h2>
-<p>Nachdem wir die NumPy-Funktionen <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> und <code class="docutils literal notranslate"><span class="pre">polyval()</span></code> kennengelernt
-haben, können wir diese nun auf unser CO2-Beispiel aus Kapitel 12.1 anwenden und
-dabei systematisch vorgehen. Anstatt die Parameter der Regressionsgeraden durch
-Ausprobieren zu finden, berechnen wir sie direkt:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
-
-<span class="c1"># Daten</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/co2_emissionen_worldwide.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">jahre</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
-<span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">]</span>
-
-<span class="c1"># Berechnung der optimalen Regressionskoeffizienten</span>
-<span class="n">koeffizienten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span> <span class="n">co2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Steigung m = </span><span class="si">{</span><span class="n">koeffizienten</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y-Achsenabschnitt b = </span><span class="si">{</span><span class="n">koeffizienten</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="c1"># Erstellung der Modellfunktion</span>
-<span class="n">co2_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">koeffizienten</span><span class="p">,</span> <span class="n">jahre</span><span class="p">)</span>
-
-<span class="c1"># Berechnung des R2-Wertes zur Bewertung der Anpassungsqualität</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">co2_modell</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">marken</span><span class="p">,</span> <span class="n">verkaufte_autos</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Automarke&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl verkaufter Autos&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Balkendiagramm: Diskrete Kategorien&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Steigung m = 0.0344
-y-Achsenabschnitt b = -64.7516
-R2 = 0.7701
+<img alt="../_images/336c8b4e4d81e8ba0972a50974326d0b20dfde86777689cc6417f0b94a3fad9b.png" src="../_images/336c8b4e4d81e8ba0972a50974326d0b20dfde86777689cc6417f0b94a3fad9b.png" />
+</div>
+</div>
+<p>Wenn es aber nun darum geht, darzustellen, wie viele Autos ein bestimmtes Alter
+in Jahren haben, ist ein Balkendiagramm unübersichtlich. Besser ist es, die Jahre
+zuerst zu clustern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Alter der Autos (kontinuierliche Daten)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alter</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Alter [Jahre]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Autos&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogramm: Kontinuierliche Daten&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/eb083a32ef51d49238fdfeb7f22f295defb097e96f7fbc44e12867436a4a0d7a.png" src="../_images/eb083a32ef51d49238fdfeb7f22f295defb097e96f7fbc44e12867436a4a0d7a.png" />
 </div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> erhalten wir eine Steigung von etwa 0.0344 und einen
-y-Achsenabschnitt von -64.75, was unseren durch Ausprobieren gefundenen Werten
-sehr nahe kommt. Der R²-Wert von 0.77 bestätigt, dass die lineare Regression die
-CO2-Emissionsdaten gut erklärt, aber nicht sehr gut. Dies macht die
-Regressionsgerade zu einem brauchbaren Modell für Prognosen, auch wenn die
-Abweichungen zeigen, dass andere Faktoren ebenfalls eine Rolle spielen.</p>
+</div>
 </section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>In diesem Kapitel haben wir gelernt, eine lineare Funktion an Messdaten
-anzupassen. Im nächsten Kapitel werden wir uns mit dem Fit von Polynomen
-beschäftigen.</p>
+<p>In diesem Kapitel haben wir zwei wichtige Visualisierungstypen für verschiedene
+Datenarten kennengelernt. Balkendiagramme eignen sich für diskrete, kategoriale
+Daten und ermöglichen den direkten Vergleich zwischen verschiedenen Kategorien.
+Histogramme zeigen die Verteilung kontinuierlicher Daten und helfen dabei,
+Muster und Häufigkeiten in großen Datensätzen zu erkennen. Im nächsten Kapitel
+werden wir lernen, wie wir diese Techniken auf reale Datensätze anwenden können.</p>
 </section>
 </section>
 
@@ -768,7 +890,7 @@ beschäftigen.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">12.1 Theorie Regression</p>
+        <p class="prev-next-title">12.1 Kontinuierliche Daten visualisieren</p>
       </div>
     </a>
     <a class="right-next"
@@ -776,7 +898,7 @@ beschäftigen.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">12.3 Polynomiale Regression</p>
+        <p class="prev-next-title">12.3 DataFrames visualisieren</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -798,9 +920,9 @@ beschäftigen.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koeffizienten-der-regressionsgerade-berechnen-mit-polyfit">Koeffizienten der Regressionsgerade berechnen mit polyfit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressionsgerade-aus-koeffizienten-mit-polyval-auswerten">Regressionsgerade aus Koeffizienten mit polyval auswerten</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendung-auf-co2-daten">Anwendung auf CO2-Daten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balkendiagramme">Balkendiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogramme">Histogramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-der-unterschied-zwischen-balkendiagramm-und-histogramm">Was ist der Unterschied zwischen Balkendiagramm und Histogramm?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

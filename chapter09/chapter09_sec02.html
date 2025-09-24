@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.2 Simulink-Bibliothek &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>9.2 Numerisches Rechnen mit MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter09/chapter09_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.3 Ableitung, Integration und Differentialgleichung mit Simulink" href="chapter09_sec03.html" />
-    <link rel="prev" title="9.1 Simulink Einführung" href="chapter09_sec01.html" />
+    <link rel="next" title="9.3 Programmieren in MATLAB" href="chapter09_sec03.html" />
+    <link rel="prev" title="9.1 Einführung MATLAB" href="chapter09_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,47 +225,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter09_sec00.html">9. Simulink</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter09_sec00.html">9. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -316,55 +323,6 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter09/chapter09_sec02.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -388,23 +346,6 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/chapter09/chapter09_sec02.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -484,7 +425,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>9.2 Simulink-Bibliothek</h1>
+    <h1>9.2 Numerisches Rechnen mit MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -495,10 +436,21 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabeblocke-bzw-sources">Eingabeblöcke bzw. Sources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ausgabeblocke-oder-sinks">Ausgabeblöcke oder Sinks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitungsblocke">Verarbeitungsblöcke</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-lineare-funktion-als-eingangssignal">Beispiel: lineare Funktion als Eingangssignal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren">Vektoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-zeilenvektor">Erzeugung Zeilenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-spaltenvektor">Erzeugung Spaltenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator">Erzeugung eines Vektors mittels Doppelpunkt-Operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizen">Matrizen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-matrizen">Erzeugung von Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-speziellen-matrizen">Erzeugung von speziellen Matrizen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skripte">Skripte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-vektor-und-matrixelemente">Zugriff auf Vektor- und Matrixelemente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">Fortgeschrittene Rechenoperationen für Vektoren und Matrizen</a></li>
 </ul>
             </nav>
         </div>
@@ -510,151 +462,346 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulink-bibliothek">
-<h1>9.2 Simulink-Bibliothek<a class="headerlink" href="#simulink-bibliothek" title="Link to this heading">#</a></h1>
-<p>Simulink stellt viele Blöcke zur Verfügung. In diesem Kapitel gehen wir die Liste der wichtigsten Blöcke durch. Darüber hinaus betrachten wir Ableitungen und Integrale.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="numerisches-rechnen-mit-matlab">
+<h1>9.2 Numerisches Rechnen mit MATLAB<a class="headerlink" href="#numerisches-rechnen-mit-matlab" title="Link to this heading">#</a></h1>
+<p>MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
+ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenden Datentypen und
+Rechenoperationen für Vektoren und Matrizen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie kennen die wichtigsten Eingabe-, Verarbeitungs- und Ausgabeblöcke.</p></li>
-<li><p>Sie können ein Eingangssignal ableiten und integrieren.</p></li>
+<li><p>Sie können einen <strong>Vektor</strong> oder eine <strong>Matrix</strong> in MATLAB erzeugen.</p></li>
+<li><p>Sie wissen, wie Sie auf einzelne <strong>Elemente</strong> eines Vektors oder einer Matrix
+zugreifen.</p></li>
+<li><p>Sie beherrschen das <strong>Slicing</strong> in MATLAB.</p></li>
+<li><p>Sie können grundlegende <strong>Rechenoperationen</strong> mit Vektoren oder Matrizen
+ausführen.</p></li>
+<li><p>Sie können mit MATLAB das <strong>Skalarprodukt</strong> oder das <strong>Vektorprodukt</strong> von
+Vektoren berechnen.</p></li>
+<li><p>Sie können die <strong>Determinante</strong>, die <strong>Eigenwerte</strong> oder die <strong>Eigenvektoren</strong>
+einer Matrix berechnen.</p></li>
 </ul>
 </div>
 </section>
-<section id="eingabeblocke-bzw-sources">
-<h2>Eingabeblöcke bzw. Sources<a class="headerlink" href="#eingabeblocke-bzw-sources" title="Link to this heading">#</a></h2>
-<p>In der
-<a class="reference external" href="https://de.mathworks.com/help/simulink/sources.html">Simulink-Dokumentation</a>
-finden Sie eine Übersicht der möglichen Eingabeblöcke für Simulink. Die folgende
-Liste und vor allem die Beschreibungen sind von dort übernommen. Eingabeblöcke,
-die häufiger in der Regelungstechnik gebraucht werden, sind fett gedruckt.</p>
-<ul class="simple">
-<li><p><em>Band-Limited White Noise</em>: Dieser Block erzeugt normalverteilte Zufallszahlen
-(weißes Rauschen).</p></li>
-<li><p><em>Chirp Signal</em>: Dieser Block erzeugt eine Sinusfunktion, bei der die Frequenz
-ansteigt.</p></li>
-<li><p><em>Clock</em>: Dieser Block gibt bei jedem Simulationsschritt die aktuelle
-Simulationszeit aus. Dieser Block ist nützlich für andere Blöcke, die die
-Simulationszeit benötigen.</p></li>
-<li><p><strong>Constant</strong>: Diser Block erzeugt ein reelles oder komplexes konstantes
-Signal. Verwenden Sie diesen Block, um einen konstanten Signaleingang
-bereitzustellen.</p></li>
-<li><p><em>Counter Free-Running</em>: Dieser Block zählt hoch und beginnt wieder bei 0,
-nachdem der Wert <span class="math notranslate nohighlight">\(2^N+1\)</span> überschritten wurde, dabei ist <span class="math notranslate nohighlight">\(N\)</span> die Anzahl der
-Bits</p></li>
-<li><p><em>Counter Limited</em>: Dieser Block zählt hoch und beginnt wieder bei 0, nachdem
-ein vorher festgelegter maximaler Wert überschritten wurde</p></li>
-<li><p><em>Digital Clock</em>: Dieser Block gibt ebenfalls die Simuationszeit aus, aber nur
-zu bestimmten Zeiten.</p></li>
-<li><p><em>Enumerated Constant</em>: Dieser Block erzeugt eine Aufzählungskonstante.</p></li>
-<li><p><strong>From File</strong>: Mit diesem Block laden Sie Daten aus einer MAT-Datei in das
-Simulink-Modell.</p></li>
-<li><p><em>From Spreadsheet</em>: Dieser Block liest Daten aus einer Tabelle.</p></li>
-<li><p><strong>From Workspace</strong>: Dieser Block lädt Signaldaten aus dem MATLAB-Workspace in
-das Simulink-Modell.</p></li>
-<li><p><em>Ground</em>: Dieser Block erdet nicht verbundene Eingangssignale.</p></li>
-<li><p><em>In Bus Element</em>: Dieser Block ermöglicht die Auswahl von Eingaben eines
-externen Ports.</p></li>
-<li><p><em>Inport</em>: Inport-Blöcke verbinden Signale von außerhalb eines Systems mit dem
-System.</p></li>
-<li><p><em>Pulse Generator</em>: Der Impulsgeneratorblock erzeugt in regelmäßigen Abständen
-Rechteckimpulse.</p></li>
-<li><p><strong>Ramp</strong>: Der Rampenblock erzeugt ein Signal, das zu einem bestimmten
-Zeitpunkt und mit einem bestimmten Wert beginnt und sich mit einer bestimmten
-Rate ändert.</p></li>
-<li><p><em>Random Number</em>: Der Zufallszahlenblock erzeugt normalverteilte Zufallszahlen.</p></li>
-<li><p><em>Repeating Sequence</em>: Dieser Block gibt ein periodisches skalares Signal mit
-einer Wellenform aus, die Sie mit den Parametern Zeitwerte und Ausgangswerte
-festlegen.</p></li>
-<li><p><em>Repeating Sequence Interpolated</em>: Dieser Block gibt eine periodische
-zeitdiskrete Folge aus, die auf den Werten der Parameter “Vector of time
-values” und “Vector of output values” basiert.</p></li>
-<li><p><em>Repeating Sequence Stair</em>: Dieser Block gibt eine Treppenfolge aus und
-wiederholt sie.</p></li>
-<li><p><strong>Signal Builder</strong>: Mit diesem Block können Sie austauschbare Gruppen von
-stückweise linearen Signalquellen erstellen und in einem Modell verwenden.</p></li>
-<li><p><strong>Signal Editor</strong>: Dieser Block dient der Anzeige, Erstellung und Bearbeitung
-von austauschbaren Szenarien.</p></li>
-<li><p><em>Signal Generator</em>:  Dieser Block kann eine der folgenden vier verschiedenen
-Wellenformen erzeugen: Sinus, Rechteck, Sägezahn und Zufallsgenerator.</p></li>
-<li><p><em>Sine Wave</em>: Dieser Block gibt eine sinusförmige Wellenform aus.</p></li>
-<li><p><strong>Step</strong>: Dieser Block erzeugt eine Treppenfunktion mit zwei Stufen, der zu
-einer spezifizierten Zeit wechselt.</p></li>
-<li><p><em>Uniform Random Number</em>: Dieser Block erzeugt gleichmäßig verteilte
-Zufallszahlen in einem von Ihnen festgelegtem Intervall.</p></li>
-<li><p><em>Waveform Generator</em>: Dieser Block erzeugt wellenförmige Signale.</p></li>
-</ul>
+<section id="vektoren">
+<h2>Vektoren<a class="headerlink" href="#vektoren" title="Link to this heading">#</a></h2>
+<p>Vektoren sind sozusagen technisch gesehen Listen, die nur Zahlen enthalten, und
+für die die typischen Vektoroperationen definiert sind. Zunächst beschäftigen
+wir uns mit der Erzeugung von Vektoren.</p>
+<section id="erzeugung-zeilenvektor">
+<h3>Erzeugung Zeilenvektor<a class="headerlink" href="#erzeugung-zeilenvektor" title="Link to this heading">#</a></h3>
+<p>Ein Vektor wird in MATLAB durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[</span>&#160; <span class="pre">]</span></code> erzeugt. Sie finden das
+Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
+eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
+drücken, um die eckigen Klammern auf der Tastatur einzugeben.</p>
+<p>Betrachten wir ein Beispiel. Hier wird ein Vektor mit den Elementen 1, 2, 3, 4,
+5 erzeugt und dann anschließend in der Variablen <code class="docutils literal notranslate"><span class="pre">v</span></code> gespeichert. Zur Trennung
+der einzelnen Elemente des Vektors verwenden wir das Komma. Tatsächlich würde
+MATLAB auch ein Leerzeichen als Trennung akzeptieren. Im Zusammenhang mit
+Matrizen ist aber das Komma einprägsamer, so dass wir beim Komma bleiben.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
 </section>
-<section id="ausgabeblocke-oder-sinks">
-<h2>Ausgabeblöcke oder Sinks<a class="headerlink" href="#ausgabeblocke-oder-sinks" title="Link to this heading">#</a></h2>
-<p>Mit den folgenden Blöcken erzeugen Sie Ausgaben oder exportieren Ergebnisse.
-Diese Liste enststammt der
-<a class="reference external" href="https://de.mathworks.com/help/simulink/sinks.html">Simulink-Dokumentation</a>.</p>
-<ul class="simple">
-<li><p><em>Display</em>: Dieser Block zeigt den Wert der Eingangsdaten an.</p></li>
-<li><p><em>Floating Scope and Scope Viewer</em>: Der Simulink® Scope Viewer und der Floating
-Scope Block zeigen Zeitsignale abhängig von der Simulationszeit an. Der Scope
-Viewer und der Floating Scope-Block haben die gleiche Funktionalität wie der
-Scope-Block, sind aber nicht mit Signalleitungen verbunden.</p></li>
-<li><p><em>Out Bus Element</em>: Dieser Block kombiniert die Funktionalität eines
-Outport-Blocks und eines Bus-Creator-Blocks.</p></li>
-<li><p><em>Outport</em>: Diese Blöcke verbinden Signale aus einem System mit einem Ziel
-außerhalb des Systems.</p></li>
-<li><p><strong>Record, XY Graph</strong>: Sie können sowohl den Block Record oder den Block XY
-Graph verwenden, um Daten im Workspace, in einer Datei oder sowohl im
-Workspace als auch in einer Datei aufzuzeichnen.</p></li>
-<li><p><strong>Scope</strong>: Dieser Block zeigt alle Signale an, die mit ihm verbunden sind.</p></li>
-<li><p><em>Stop Simulation</em>: Dieser Block stoppt die Simulation, wenn der Eingang
-ungleich Null ist.</p></li>
-<li><p><em>Terminator</em>: Dieser Block wird verwendet, um Blöcke zu kappen, deren
-Ausgangsports nicht mit anderen Blöcken verbunden sind.</p></li>
-<li><p><em>To File</em>: Der To File-Block schreibt Eingangssignaldaten in eine MAT-Datei.T</p></li>
-<li><p><em>To Workspace</em>: Dieser Block protokolliert die an seinem Eingangsport
-angeschlossenen Daten im Workspace.</p></li>
-</ul>
+<section id="erzeugung-spaltenvektor">
+<h3>Erzeugung Spaltenvektor<a class="headerlink" href="#erzeugung-spaltenvektor" title="Link to this heading">#</a></h3>
+<p>Der Vektor, so wie wir ihn bisher erzeugt haben, ist ein Zeilenvektor. Möchten
+wir ihn in einen Spaltenvektor umwandeln, so müssen wir ihn transponieren. Dafür
+steht in MATLAB der einzelne Hochstrich <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">&#39;</span>
+</pre></div>
+</div>
+<p>Soll direkt ein Spaltenvektor erzeugt werden, so verwenden wir das Semikolon
+anstatt des Kommas.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">spaltenvektor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
 </section>
-<section id="verarbeitungsblocke">
-<h2>Verarbeitungsblöcke<a class="headerlink" href="#verarbeitungsblocke" title="Link to this heading">#</a></h2>
-<p>Um die Eingabesignale zu verarbeiten, gibt es ebenfalls eine lange Liste von
-Blöcken, siehe
-<a class="reference external" href="https://de.mathworks.com/help/simulink/block-libraries.html">Simulink-Dokumentation</a>.
-Ein erstes Beispiel haben wir mit dem Gain-Block schon kennengelernt, der ein
-Eingangssignal verstärkt und mathematisch gesehen eine multiplikativer Faktor
-ist. Die Liste der Verbeitungsblöcke ist zu lang, um sie hier eingehend zu
-behandeln. Wichtig sind jedoch die <a class="reference external" href="https://de.mathworks.com/help/simulink/math-operations.html">mathematischen
-Blöcke</a>
-zusammengefasst in dem Modul <strong>Maths Blocks</strong> und die sogenannten
-<a class="reference external" href="https://de.mathworks.com/help/simulink/continuous.html">kontinuierlichen
-Blöcke</a> aus dem Modul
-<strong>Continuous Blocks</strong>, das Ableitungen und Löser von Differentialgleichungen
-beinhaltet.</p>
+<section id="einfache-rechenoperationen">
+<h3>Einfache Rechenoperationen<a class="headerlink" href="#einfache-rechenoperationen" title="Link to this heading">#</a></h3>
+<p>Mit Vektoren kann auch direkt gerechnet werden. Natürlich müssen dabei die
+Dimensionen der Vektoren übereinstimmen. Bei der folgenden Addition</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7</span><span class="p">]</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.7</span><span class="p">]</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+<p>wird von MATLAB das Ergebnis <code class="docutils literal notranslate"><span class="pre">[-1.5,</span> <span class="pre">1,</span> <span class="pre">2]</span></code> berechnet und angezeigt. Die
+Subtraktion erfolgt analog.</p>
+<p>Die Multiplikation <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code> funktioniert jedoch nicht. Es erscheint eine
+Fehlermeldung. Das liegt daran, dass es eine direkte Multiplikation von Vektoren
+nicht gibt. Wir müssen erst entscheiden, ob elementweise multipliziert werden
+soll oder ob vielleicht das Skalarprodukt oder das Vektorprodukt gemeint ist.</p>
+<p>Bei der elementweisen Multiplikation wird dem Multiplikationsoperator <code class="docutils literal notranslate"><span class="pre">*</span></code> ein
+Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> vorangestellt, also <code class="docutils literal notranslate"><span class="pre">.*</span></code>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+<p>Das Ergebnis ist dann der Vektor <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">-2.0000,</span> <span class="pre">-6.2900]</span></code>. So funktioniert auch
+die elementweise Division. Dabei gibt es zwei Varianten:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">b</span>
+<span class="n">a</span><span class="w"> </span><span class="o">.\</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+<p>Bei der ersten Variante wird jedes Element des Vektors <code class="docutils literal notranslate"><span class="pre">a</span></code> durch das
+entsprechende Element des Vektors <code class="docutils literal notranslate"><span class="pre">b</span></code> geteilt. Das <code class="docutils literal notranslate"><span class="pre">b</span></code> steht in Nenner des
+Bruchstrichs <code class="docutils literal notranslate"><span class="pre">/</span></code>. Bei der zweiten Variante wird jedes Element des Vektors <code class="docutils literal notranslate"><span class="pre">b</span></code>
+durch die entsprechenden Elemente des Vektors <code class="docutils literal notranslate"><span class="pre">a</span></code> geteilt. Der Bruchstrich <code class="docutils literal notranslate"><span class="pre">\</span></code>
+zeigt an, dass <code class="docutils literal notranslate"><span class="pre">a</span></code> im Nenner stehen soll.</p>
 </section>
-<section id="beispiel-lineare-funktion-als-eingangssignal">
-<h2>Beispiel: lineare Funktion als Eingangssignal<a class="headerlink" href="#beispiel-lineare-funktion-als-eingangssignal" title="Link to this heading">#</a></h2>
-<p>Wollen wir die lineare Funktion <span class="math notranslate nohighlight">\(u(t) = 2\cdot t + 3\)</span> in Simulink modellieren,
-so brauchen wir zwei Eingangssignale, nämlich <span class="math notranslate nohighlight">\(t\)</span> und <span class="math notranslate nohighlight">\(1\)</span>. Daher ziehen wir
-zuerst die Sources-Blöcke <code class="docutils literal notranslate"><span class="pre">Ramp</span></code> und <code class="docutils literal notranslate"><span class="pre">Constant</span></code> aus der Simulink-Bibliothek auf
-den Arbeitsplatz. Die Eigenschaften beider Blöcke können durch Doppelklick
-angezeigt werden.</p>
-<p>Die Rampe ist eine Funktion, die Null ist und ab einem bestimmten Zeitpunkt
-linear ansteigt. Sowohl der Zeitpunkt, ab dem der lineare Anstieg beginnt, als
-auch die Steigung können eingestellt werden. Wir lassen die Voreinstellung
-<code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Time</span></code> auf Null. Normalerweise müssten wir jetzt die Steigung, also
-<code class="docutils literal notranslate"><span class="pre">Slope</span></code> auf den Wert 2 setzen, aber um den prinzipiellen Zusammenbau von Termen
-zu zeigen, benutzen wir erneut den Verstärker-Block <code class="docutils literal notranslate"><span class="pre">Gain</span></code>.</p>
-<p>Der Block <code class="docutils literal notranslate"><span class="pre">Constant</span></code> produziert ein konstantes Eingangssignal. Auch hier könnten
-wir den Wert 3 direkt eingeben, indem wir einen Doppelklick auf den Block machen
-und den <code class="docutils literal notranslate"><span class="pre">Constant</span> <span class="pre">Value</span></code> auf 3 abändern. Aber auch hier benutzen wir den
-Verstärker-Block <code class="docutils literal notranslate"><span class="pre">Gain</span></code>.</p>
-<p>Beide Terme müssen nach der Verstärkung mit 2 bzw. 3 noch summiert werden. Das
-erledigt der Mathematik-Block <code class="docutils literal notranslate"><span class="pre">Sum</span></code>. Die beiden verstärkten Signale werden mit
-den beiden Eingangports des <code class="docutils literal notranslate"><span class="pre">Sum</span></code>-Blocks verbunden. Den <code class="docutils literal notranslate"><span class="pre">Sum</span></code>-Block verbinden
-wir wiederum mit einer Ausgabe, dem Scope-Block. Dann können wir die Simulation
-laufen lassen.</p>
-<p><img alt="Screenshot des Simulink-Modells zu lineare Funktion" src="../_images/simulink_lineare_funktion.png" /></p>
+<section id="erzeugung-eines-vektors-mittels-doppelpunkt-operator">
+<h3>Erzeugung eines Vektors mittels Doppelpunkt-Operator<a class="headerlink" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator" title="Link to this heading">#</a></h3>
+<p>Python verfügt über die Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code>, um Listen mit Zahlen zu erzeugen,
+die einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
+gebraucht, dass sie sogar durch einen eigenen Operator anstatt einer Funktion
+erreicht wird, durch den Doppelpunkt-Operator <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Eine Liste mit den Zahlen von 5 bis 11 wird folgendermaßen generiert:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span>
+</pre></div>
+</div>
+<p>Auch hier ist eine Schrittweite versteckt enthalten. Der folgende Code erzeugt
+gerade Zahlen von 4 bis 12:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+</pre></div>
+</div>
+<p>So kann auch rückwärts gezählt werden.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>Das folgende Video fasst die obigen Erklärungen zusammen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 1.4 Vektoren” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
 </section>
+<section id="matrizen">
+<h2>Matrizen<a class="headerlink" href="#matrizen" title="Link to this heading">#</a></h2>
+<p>MATLAB würde nicht Matrix-Labor heißen, wenn es nicht einen eigenen Datentyp für
+Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrix ab. Ein
+Zeilenvektor ist eine <span class="math notranslate nohighlight">\(1\times N\)</span>-Matrix und ein Spaltenvektor eine <span class="math notranslate nohighlight">\(M\times
+1\)</span>-Matrix. Daher betrachten wir uns als nächstes, wie Matrizen in MATLAB erzeugt
+werden.</p>
+<section id="erzeugung-von-matrizen">
+<h3>Erzeugung von Matrizen<a class="headerlink" href="#erzeugung-von-matrizen" title="Link to this heading">#</a></h3>
+<p>Bei den Vektoren haben wir gelernt, Leerzeichen oder Komma, um Elemente eines
+Zeilenvektors aufzulisten, und Semikolon, um Elemente in einem Spaltenvektor
+voneinander abzugrenzen. Eine Matrix wird zeilenweise eingegeben. Das Semikolon
+markiert das Ende der Zeile.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="erzeugung-von-speziellen-matrizen">
+<h3>Erzeugung von speziellen Matrizen<a class="headerlink" href="#erzeugung-von-speziellen-matrizen" title="Link to this heading">#</a></h3>
+<p>Für Matrizen, die häufig gebraucht werden, hat MATLAB eigene
+Erzeugungsfunktionen. Beispielsweise generiert die Funktion</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>eine Matrix, die nur die Zahl Null enthält und die 5 Zeilen und 3 Spalten hat.
+Analog dazu funktioniert das Kommando</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>das eine Matrix mit Einsen erzeugt, die 5 Zeilen und 3 Spalten hat. Sehr häufig
+gebraucht wird auch die Einheitsmatrix. Mit der Funktion <code class="docutils literal notranslate"><span class="pre">eye(N)</span></code> wird sie
+erzeugt, wobei der Parameter <code class="docutils literal notranslate"><span class="pre">N</span></code> die Dimension der quadratischen Matrix angibt.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hier noch ein Video zu Matrizen in MATLAB.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 1.5 Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+</section>
+<section id="skripte">
+<h2>Skripte<a class="headerlink" href="#skripte" title="Link to this heading">#</a></h2>
+<p>Es ist umständlich, immer alles in das Kommandofenster einzugeben. Die
+Entwicklungsumgebung MATLAB bietet einen Texteditor, um ein sogenanntes Skript
+zu schreiben. Ein Skript ist wie ein Programm, also eine Aneinanderreihung von
+Anweisungen an den MATLAB-Interpreter. Es wird als Text abgespeichert und trägt
+die Dateiendung <code class="docutils literal notranslate"><span class="pre">.m</span></code>. Am einfachsten starten Sie den Editor, indem Sie auf <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Script</span></code> klicken.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/screenshot03.png"><img alt="Screenshot MATLAB mit &quot;New Script&quot;" src="../_images/screenshot03.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Screenshot MATLAB mit dem Button “New Script”</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Sobald MATLAB den Texteditor öffnet, verändert sich das Layout von MATLAB. Das
+Kommandofenster rutscht nach unten und wird kleiner, wohingegen der Texteditor
+nun den größten Raum einnimmt.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/screenshot04.png"><img alt="Screenshot MATLAB mit Texteditor" src="../_images/screenshot04.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem
+auf den Button “Run” geklickt wird (siehe 3)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Das Skript wird ausgeführt, indem Sie auf den Button “Run” klicken (siehe
+Screenshot, 3). Es ist ratsam, am Anfang des Skriptes den Befehl <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code>
+einzufügen. Diese Anweisung sorgt dafür, dass alle sich im Speicher befindlichen
+Variablen gelöscht werden.</p>
+<p>Ein weiteres Video zu Skripten in MATLAB finden Sie hier.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 1.6 Skripte” von Mathe? logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zugriff-auf-vektor-und-matrixelemente">
+<h2>Zugriff auf Vektor- und Matrixelemente<a class="headerlink" href="#zugriff-auf-vektor-und-matrixelemente" title="Link to this heading">#</a></h2>
+<p>Der Zugriff auf die Elemente eines Vektors erfolgt durch Angabe des Index des
+Elements in runden Klammern. Beachten Sie, dass MATLAB im Gegensatz zu vielen
+anderen Programmiersprachen einen Index verwendet, der bei 1 beginnt. Das
+folgende Beispiel zeigt, wie auf das dritte Element des Vektors zugegriffen
+wird.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+<span class="n">drittes_element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Soll hingegen auf Elemente einer Matrix zugegriffen werden, müssen wir die Zeile
+und die Spalte über den jeweiligen Index angeben. Auf die zweite Zeile und die
+dritte Spalte wird folgendermaßen zugegriffen.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span>
+<span class="n">element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Damit wird die <code class="docutils literal notranslate"><span class="pre">8</span></code> aus der Matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> extrahiert und kann weiter verarbeitet
+werden.</p>
+<p>Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu
+existiert das sogenannte <strong>Slicing</strong>. Mit Slicing ist gemeint, dass auf einen
+zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll.
+Wir betrachten die <span class="math notranslate nohighlight">\(3\times 5\)</span>-Matrix <span class="math notranslate nohighlight">\(A\)</span> von vorhin, also</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Um jetzt einen zusammenhängenden Bereich aus der Matrix zu extrahieren,
+verwenden wir den Doppelpunkt-Operator ‘:’. Mit</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span>
+</pre></div>
+</div>
+<p>greifen wir auf Elemente der ersten Zeile zu und gehen dabei in der Spalte von
+Anfang bis Ende, da vor dem Doppelpunkt und nach dem Doppelpunkt nichts steht.
+Das Ergebnis ist also die komplette erste Zeile <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>. Möchten wir
+in der ersten Zeile von der zweiten Spalte zur vierten Spalte auf die Elemente
+der Matrix zugreifen, schreiben wir den Startindex vor den Doppelpunkt und den
+Stoppindex nach dem Doppelpunkt.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Das Ergebnis sind die Elemente <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>. Diese Vorgehensweise funktioniert
+auch für die Zeile. Der folgende MATLAB-Code extrahiert die komplette zweite und
+dritte Zeile.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span>
+</pre></div>
+</div>
+<p>Das Ergebnis ist</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+11 &amp; 12 &amp; 13 &amp; 14 &amp; 15
+\end{pmatrix}.\end{split}\]</div>
+<p>Das Slicing kann auch verwendet werden, um Teile einer Matrix zu ändern. Nehmen
+wir an, wir möchten die zweite Spalte von A durch die Zahlen 102, 107 und 112
+ersetzen. Wir könnten durch den folgenden Code erreichen.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">102</span><span class="p">;</span><span class="w"> </span><span class="mi">107</span><span class="p">;</span><span class="w"> </span><span class="mi">112</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das
+Slicing zusammen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.1 Doppelpunkt- bzw. Colon-Operator” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.2 Zugriff auf Teile von Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">
+<h2>Fortgeschrittene Rechenoperationen für Vektoren und Matrizen<a class="headerlink" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen" title="Link to this heading">#</a></h2>
+<p>Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden Komponenten der Vektoren und die Summierung dieser Produkte berechnet.</p>
+<p>In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion <code class="docutils literal notranslate"><span class="pre">dot()</span></code> berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+<span class="n">skalarprodukt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">dot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Das Ergebnis ist <span class="math notranslate nohighlight">\(1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32\)</span>.</p>
+<p>Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.</p>
+<p>In MATLAB wird das Vektorprodukt mit der Funktion <code class="docutils literal notranslate"><span class="pre">cross()</span></code> berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+<span class="n">vektorprodukt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cross</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Das Vektorprodukt ist der Vektor <code class="docutils literal notranslate"><span class="pre">[-3,</span> <span class="pre">6,</span> <span class="pre">-3]</span></code>.</p>
+<p>Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.</p>
+<p>In MATLAB wird die Determinante einer Matrix mit der Funktion <code class="docutils literal notranslate"><span class="pre">det()</span></code> berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
+<span class="n">det_A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Die Determinante der obigen Matrix <span class="math notranslate nohighlight">\(A\)</span> ist <span class="math notranslate nohighlight">\(\det(A) = 1\cdot 4 - 3\cdot 2 = -2\)</span>.</p>
+<p>Eigenwerte und Eigenvektoren sind weitere wichtige Konzepte in der linearen
+Algebra, die in vielen Anwendungen, einschließlich der
+Maschinenbauingenieurwissenschaften, der Informatik und der Datenanalyse,
+nützlich sind. Die Eigenwerte einer Matrix sind die Lösungen der
+charakteristischen Gleichung</p>
+<div class="math notranslate nohighlight">
+\[\det(A-\lambda E) = 0,\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(E\)</span> die Einheitsmatrix der passenden Dimension ist. Zu jedem Eigenwert
+<span class="math notranslate nohighlight">\(\lambda\)</span> kann dann der Eigenvektor <span class="math notranslate nohighlight">\(\vec{v}\)</span> berechnet werden, der die
+Gleichung</p>
+<div class="math notranslate nohighlight">
+\[A\cdot \vec{v} = \lambda \vec{v}\]</div>
+<p>erfüllt. Ein Eigenvektor ist also ein Vektor, der sich bei der Anwendung einer
+linearen Transformation (repräsentiert durch die Matrix) nur um einen
+Skalierungsfaktor ändert.</p>
+<p>In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion <code class="docutils literal notranslate"><span class="pre">eig()</span></code>
+berechnet:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In diesem Beispiel gibt der Code die Matrix <code class="docutils literal notranslate"><span class="pre">V</span></code> der Eigenvektoren und die
+Diagonalmatrix <code class="docutils literal notranslate"><span class="pre">D</span></code> aus. Jede Spalte in V ist ein Eigenvektor, und die
+entsprechenden Eigenwerte sind die Elemente auf der Diagonale in D.</p>
+<p>Für weitere Betrachtungen empfehle ich die folgenden beiden Videos.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.3 Kombination und Transformation von Matrizen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video zu “Matlab - 2.4 Operationen auf Matrizen” Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -693,7 +840,7 @@ laufen lassen.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">9.1 Simulink Einführung</p>
+        <p class="prev-next-title">9.1 Einführung MATLAB</p>
       </div>
     </a>
     <a class="right-next"
@@ -701,7 +848,7 @@ laufen lassen.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</p>
+        <p class="prev-next-title">9.3 Programmieren in MATLAB</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -723,10 +870,21 @@ laufen lassen.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabeblocke-bzw-sources">Eingabeblöcke bzw. Sources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ausgabeblocke-oder-sinks">Ausgabeblöcke oder Sinks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitungsblocke">Verarbeitungsblöcke</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-lineare-funktion-als-eingangssignal">Beispiel: lineare Funktion als Eingangssignal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren">Vektoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-zeilenvektor">Erzeugung Zeilenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-spaltenvektor">Erzeugung Spaltenvektor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-eines-vektors-mittels-doppelpunkt-operator">Erzeugung eines Vektors mittels Doppelpunkt-Operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizen">Matrizen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-matrizen">Erzeugung von Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugung-von-speziellen-matrizen">Erzeugung von speziellen Matrizen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skripte">Skripte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-vektor-und-matrixelemente">Zugriff auf Vektor- und Matrixelemente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortgeschrittene-rechenoperationen-fur-vektoren-und-matrizen">Fortgeschrittene Rechenoperationen für Vektoren und Matrizen</a></li>
 </ul>
   </nav></div>
 

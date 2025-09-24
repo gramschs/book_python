@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.3 Programmieren in MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.3 OOP in der Praxis &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Übung" href="chapter08_sec04.html" />
-    <link rel="prev" title="8.2 Numerisches Rechnen mit MATLAB" href="chapter08_sec02.html" />
+    <link rel="next" title="Übungen" href="chapter08_sec04.html" />
+    <link rel="prev" title="8.2 Methoden und der self-Parameter" href="chapter08_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,47 +223,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Objektorientierte Programmierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -314,6 +321,55 @@
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec03.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -337,6 +393,23 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter08/chapter08_sec03.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
       
       
       
@@ -416,7 +489,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.3 Programmieren in MATLAB</h1>
+    <h1>8.3 OOP in der Praxis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,13 +500,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">Eingabe, Verarbeitung und Ausgabe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">Funktionen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen">Programmverzweigungen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schleifen">Schleifen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramme">Diagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lehrmaterial">Weiteres Lehrmaterial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-von-objekten-verwalten">Listen von Objekten verwalten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-str-methode-fur-schone-ausgabe">Die <strong>str</strong>-Methode für schöne Ausgabe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-vollstandiges-beispiel-kursverwaltung">Ein vollständiges Beispiel: Kursverwaltung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -445,305 +515,521 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="programmieren-in-matlab">
-<h1>8.3 Programmieren in MATLAB<a class="headerlink" href="#programmieren-in-matlab" title="Link to this heading">#</a></h1>
-<p>Ein Programmierkurs in MATLAB erfordert eine ganze Vorlesung. In diesem Kapitel vergleichen wir nur die Programmierkonstrukte aus Python mit denen von MATLAB. Gerne können Sie Details in dem Vorlesungsskript</p>
-<blockquote>
-<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/</a></p>
-</div></blockquote>
-<p>nachlesen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="oop-in-der-praxis">
+<h1>8.3 OOP in der Praxis<a class="headerlink" href="#oop-in-der-praxis" title="Link to this heading">#</a></h1>
+<p>Mit Klassen, Objekten und Methoden haben wir die Grundlagen der
+objektorientierten Programmierung kennengelernt. In diesem Kapitel schauen wir
+uns an, wie wir diese Konzepte in der Praxis anwenden: Wir verwalten mehrere
+Objekte in Listen und sorgen dafür, dass unsere Objekte sich schön ausgeben
+lassen.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
-<p>Sie kennen die wesentlichen Gemeinsamkeiten und Unterschiede zwischen Python und MATLAB hinsichtlich</p>
 <ul class="simple">
-<li><p>Eingabe</p></li>
-<li><p>Verarbeitung (Variablen und Datentypen)</p></li>
-<li><p>Ausgabe</p></li>
-<li><p>Funktionen</p></li>
-<li><p>Vergleiche</p></li>
-<li><p>Programmverzweigungen</p></li>
-<li><p>Schleifen</p></li>
-<li><p>Diagramme</p></li>
-<li><p>Regression</p></li>
+<li><p>Sie können Objekte in Listen speichern und verwalten.</p></li>
+<li><p>Sie können Listen von Objekten durchlaufen und durchsuchen.</p></li>
+<li><p>Sie verstehen die <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode und können sie implementieren.</p></li>
+<li><p>Sie können ein vollständiges objektorientiertes Programm zur Datenverwaltung erstellen.</p></li>
+<li><p>Sie verstehen, wie OOP bei der Lösung praktischer Probleme hilft.</p></li>
 </ul>
 </div>
 </section>
-<section id="eingabe-verarbeitung-und-ausgabe">
-<h2>Eingabe, Verarbeitung und Ausgabe<a class="headerlink" href="#eingabe-verarbeitung-und-ausgabe" title="Link to this heading">#</a></h2>
-<p>Die Eingabe erfolgt in MATLAB mit der Funktion <code class="docutils literal notranslate"><span class="pre">input()</span></code>. Im Unterschied zu
-Python liefert die input()-Abfrage eine Zahl zurück, keinen String. Tatsächlich
-wird oft mit indirekten Abfrgaen gearbeitet wie beispielsweise: “Haben Sie einen
-Führerschein? Geben Sie 0 ein für Nein und 1 für Ja.”</p>
-<p>Für die Ausgabe gibt es zwei Funktionen. Die Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> gibt den Inhalt
-einer Variablen direkt aus. Die Funktion <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> ermöglicht weitere
-Formatierungsmöglichkeiten ähnlich zu der print()-Funktion von Python mit
-f-Strings. Es wird in den String ein Platzhalter <code class="docutils literal notranslate"><span class="pre">%f</span></code> eingesetzt und dann,
-nachdem der String abgeschlossen wurde, nach einem Komma die Variable.</p>
-<p>Das folgende Beispiel fragt nach einem Nettpreis und gibt dann den Bruttopreis
-mit einem Mehrwertsteuersatz von 19 %.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">nettopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie den Nettopreis ein: &#39;</span><span class="p">)</span>
-<span class="n">bruttopreis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nettopreis</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.19</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nettopreis</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Der Bruttopreis ist %f EUR.&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">bruttopreis</span><span class="p">)</span>
+<section id="listen-von-objekten-verwalten">
+<h2>Listen von Objekten verwalten<a class="headerlink" href="#listen-von-objekten-verwalten" title="Link to this heading">#</a></h2>
+<p>In der Praxis arbeiten wir selten mit nur einem Objekt. Angenommen, wir müssten
+die Daten aller Studierenden eines Kurses verwalten. Mit einzelnen Variablen
+wäre das ein Albtraum, aber mit Listen von Objekten wird es elegant und
+übersichtlich. Listen können nicht nur Zahlen oder Strings enthalten, sondern
+auch Objekte. Das macht sie zu einem mächtigen Werkzeug für die Datenverwaltung.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+
+<span class="c1"># Liste mit mehreren Studierenden erstellen</span>
+<span class="n">studierende</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Colorado&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;11223344&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Dietrich&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;99887766&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anzahl Studierende: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">studierende</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Zwischenrechnungen werden von MATLAB automatisch am Bildschirm ausgegeben. Wenn
-das nicht gewünscht ist, kann die Ausgabe durch ein Semikolon am Ende der Zeile
-unterdrückt werden.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anzahl Studierende: 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mit for-Schleifen können wir einfach über alle Objekte in der Liste iterieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Alle Studierenden begrüßen</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hallo </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Nur die Namen ausgeben</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">studiengang</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Anna Abendrot!
+Hallo Bob Berliner!
+Hallo Charlie Colorado!
+Hallo Diana Dietrich!
+
+Anna Abendrot (Maschinenbau)
+Bob Berliner (Maschinenbau)
+Charlie Colorado (Elektrotechnik)
+Diana Dietrich (Maschinenbau)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oft müssen wir bestimmte Objekte aus einer Liste herausfiltern oder suchen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nach einem bestimmten Nachnamen suchen</span>
+<span class="n">gesuchter_name</span> <span class="o">=</span> <span class="s2">&quot;Berliner&quot;</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">nachname</span> <span class="o">==</span> <span class="n">gesuchter_name</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gefunden: </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Alle Maschinenbau-Studierenden finden</span>
+<span class="n">maschinenbauer</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">==</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">:</span>
+        <span class="n">maschinenbauer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maschinenbau-Studierende:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">maschinenbauer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gefunden: Bob Berliner
+
+Maschinenbau-Studierende:
+- Anna Abendrot
+- Bob Berliner
+- Diana Dietrich
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie Code, der alle Studierenden im 3. Semester oder höher findet und
+deren Namen ausgibt. Verwenden Sie die bereits erstellte <code class="docutils literal notranslate"><span class="pre">studierende</span></code>-Liste.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Studierende im 3. Semester oder höher</span>
+<span class="n">hoeheres_semester</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">hoeheres_semester</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Studierende im 3. Semester oder höher:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">hoeheres_semester</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="funktionen">
-<h2>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading">#</a></h2>
-<p>In MATLAB werden häufig Funktionen gebraucht. Zunächst einmal sind Funktionen in
-MATLAB ebenso Blöcke von Anweisungen, die eine bestimmte Funktionalität
-implementieren. Weil MATLAB aber mehr auf Mathematik hin ausgerichtet ist,
-stellen sie meist “echte” mathematische Funktionen mit einer Eingabe und einer
-Ausgabe dar.</p>
-<p>Die Grundstruktur einer Funktion in MATLAB ist wie folgt:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ergebnis1, ergebnis2,...] = funktionsname</span><span class="p">(</span>input1, input2,...<span class="p">)</span>
-<span class="w">    </span><span class="c">% Anweisungen</span>
-<span class="w">    </span><span class="n">ergebnis1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
-<span class="w">    </span><span class="n">ergebnis2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
-<span class="k">end</span>
+<section id="die-str-methode-fur-schone-ausgabe">
+<h2>Die <strong>str</strong>-Methode für schöne Ausgabe<a class="headerlink" href="#die-str-methode-fur-schone-ausgabe" title="Link to this heading">#</a></h2>
+<p>Wenn wir Objekte mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgeben, erhalten wir oft kryptische Meldungen
+statt nützlicher Informationen. Die <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode löst dieses Problem
+elegant.</p>
+<p>Schauen wir uns an, was passiert, wenn wir ein Objekt direkt ausgeben:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>  <span class="c1"># Kryptische Ausgabe wie &lt;__main__.Student object at 0x...&gt;</span>
 </pre></div>
 </div>
-<p>Die Funktion wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">function</span></code> eingeleitet. Danach kommen
-die Variablen, deren Werte von der Funktion zurückgegeben werden sollen. Das
-wird durch den Zuweisungsoperator <code class="docutils literal notranslate"><span class="pre">=</span></code> deutlich gemacht. Zuletzt folgt der
-Funktionsname mit den Eingabeparametern. Die Anweisungen im Inneren der Funktion
-werden durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
-<p>Die folgende Funktion berechnet zu einem gegebenen Radius den Umfang und die
-Fläche und gibt beide Werte zurück.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[umfang, flaeche] = berechne_umfang_flaeche</span><span class="p">(</span>radius<span class="p">)</span>
-<span class="w">    </span><span class="n">umfang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
-<span class="w">    </span><span class="n">flaeche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span>^<span class="mi">2</span><span class="p">;</span>
-<span class="k">end</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Student object at 0x105dec8c0&gt;
 </pre></div>
 </div>
-<p>Sie muss unter dem Namen <code class="docutils literal notranslate"><span class="pre">berechne_umfang_flaeche.m</span></code> abgespeichert werden, damit
-sie dann im Kommandofenster oder in einem anderen Skript benutzt werden kann.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">berechne_umfang_flaeche</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</div>
+</div>
+<p>Das ist nicht sehr hilfreich! Python zeigt nur den Objekttyp und eine
+Speicheradresse an.</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode ist eine spezielle Methode, die Python automatisch aufruft, wenn ein Objekt als String dargestellt werden soll:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester)&quot;</span>
+
+<span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>  <span class="c1"># Jetzt: Max Müller (Maschinenbau, 3. Semester)</span>
 </pre></div>
 </div>
-<p>Die folgenden Videos bieten eine ausführliche Einführung zum Thema Funktionen in MATLAB.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.1 Einleitung Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ifMkS0rnQ_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.2 Input/Output bei Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/psyGbqwBD2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max Müller (Maschinenbau, 3. Semester)
+</pre></div>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.3 Formale Definition von Funktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FMfTxKd3gOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.4 Unterfunktionen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i1c3IPCb82E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 3.5 Geltungsbereich” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ebqojVhnPwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>Der Unterschied wird besonders bei Listen von Objekten deutlich:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ohne __str__-Methode</span>
+<span class="k">class</span> <span class="nc">StudentOhne</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+
+<span class="c1"># Mit __str__-Methode  </span>
+<span class="k">class</span> <span class="nc">StudentMit</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">student_ohne</span> <span class="o">=</span> <span class="n">StudentOhne</span><span class="p">(</span><span class="s2">&quot;Schmidt&quot;</span><span class="p">,</span> <span class="s2">&quot;Sarah&quot;</span><span class="p">)</span>
+<span class="n">student_mit</span> <span class="o">=</span> <span class="n">StudentMit</span><span class="p">(</span><span class="s2">&quot;Schmidt&quot;</span><span class="p">,</span> <span class="s2">&quot;Sarah&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ohne __str__:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_ohne</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mit __str__:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_mit</span><span class="p">)</span>
+
+<span class="c1"># Bei Listen wird der Unterschied noch deutlicher</span>
+<span class="n">liste_ohne</span> <span class="o">=</span> <span class="p">[</span><span class="n">StudentOhne</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">),</span> <span class="n">StudentOhne</span><span class="p">(</span><span class="s2">&quot;Weber&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">)]</span>
+<span class="n">liste_mit</span> <span class="o">=</span> <span class="p">[</span><span class="n">StudentMit</span><span class="p">(</span><span class="s2">&quot;Müller&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">),</span> <span class="n">StudentMit</span><span class="p">(</span><span class="s2">&quot;Weber&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Liste ohne __str__: </span><span class="si">{</span><span class="n">liste_ohne</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Liste mit __str__: </span><span class="si">{</span><span class="n">liste_mit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-</details></section>
-<section id="programmverzweigungen">
-<h2>Programmverzweigungen<a class="headerlink" href="#programmverzweigungen" title="Link to this heading">#</a></h2>
-<p>MATLAB kennt ebenfalls Vergleiche und den booleschen Datentyp. Die
-Vergleichsoperatoren sind mit Ausnahme des “ungleich”-Operators auch identisch:</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ohne __str__:
+&lt;__main__.StudentOhne object at 0x10589deb0&gt;
+
+Mit __str__:
+Sarah Schmidt
+
+Liste ohne __str__: [&lt;__main__.StudentOhne object at 0x105945a30&gt;, &lt;__main__.StudentOhne object at 0x105dec680&gt;]
+Liste mit __str__: [&lt;__main__.StudentMit object at 0x105defbc0&gt;, &lt;__main__.StudentMit object at 0x105dec5c0&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eine gute <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode sollte:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> kleiner</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner oder gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> größer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer oder gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> gleich</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~=</span></code> ungleich</p></li>
+<li><p>kurz und informativ sein,</p></li>
+<li><p>die wichtigsten Informationen** enthalten und</p></li>
+<li><p>für Menschen lesbar sein.</p></li>
 </ul>
-<p>Das Ergebnis eines Vergleichs ist entweder <code class="docutils literal notranslate"><span class="pre">true</span></code> oder <code class="docutils literal notranslate"><span class="pre">false</span></code>. MATLAB verwendet
-hier also Kleinbuchstaben im Vergleich zu Python mit <code class="docutils literal notranslate"><span class="pre">True</span></code> und <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>Basierend auf dem Ergebnis eines Vergleichs kann Code ausgeführt werden. Das
-entsprechende Verzweigungskonstrukt lautet</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist kleiner als 10.&#39;</span><span class="p">)</span>
-<span class="k">elseif</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist nicht kleiner als 10, aber kleiner als 15.&#39;</span><span class="p">)</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist größer oder gleich 15.&#39;</span><span class="p">)</span>
-<span class="k">end</span>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erweitern Sie die Student-Klasse um eine <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode, die den Namen und
+das Semester in der Form “Anna Abendrot (3. Semester)” ausgibt. Testen Sie Ihre
+Lösung mit mindestens zwei Objekten.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
 </pre></div>
 </div>
-<p>Wie Sie sehen, werden nach den Bedingungen keine Doppelpunkte gesetzt. Die
-Verzweigung wird mit einem <code class="docutils literal notranslate"><span class="pre">end</span></code> abgeschlossen.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.1 if else elseif” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9FA1RP4vj6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details><p>In MATLAB gibt es noch eine Art der Programmverzeigung, die es in Python nicht
-gibt. Die sogenannte <code class="docutils literal notranslate"><span class="pre">switch</span></code>-Verzweigung ist vor allem dann interessant, wenn
-sehr viele Bedingungen überprüft werden sollen, kann aber jederzeit durch ein
-if-elseif-else ersetzt werden.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.2 switch - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bkXKQKux-Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</details></section>
-<section id="schleifen">
-<h2>Schleifen<a class="headerlink" href="#schleifen" title="Link to this heading">#</a></h2>
-<p>Natürlich kennt MATLAB auch Schleifen. Sowohl die while-Schleife als auch die
-for-Schleife können in MATLAB benutzt werden.</p>
-<p>Eine Schleife mit Bedingung wird mit <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Wir setzen einen
-Zähler auf Eins und erhöhen in jedem Schleifendurchgang den Wert des Zählers um
-Eins, solange wie der Zähler kleiner gleich 10 ist.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zaehler</span><span class="p">)</span>
-<span class="w">    </span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.3 while-Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSw9QKAjESE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><p>Bei der for-Schleife wird eine Liste von Zahlen abgearbeitet oder ein
-Zahlenbereich durchlaufen. Das folgende Code-Beispiel gibt nacheinander die
-Zahlen 2, 6, 8 und -1 auf dem Bildschirm aus.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-<p>Wieder wird die Schleife nicht durch einen Doppelpunkt eingeleitet. Die Schleife
-wird durch das <code class="docutils literal notranslate"><span class="pre">end</span></code> beendet. Alternativ kann der Doppelpunktoperator genutzt
-werden, um eine Liste mit Zahlen nach einem Muster zu generieren. Der folgende
-Code zählt von 10 runter.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Rakete startet...&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.4 for - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2qGElJdocnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><p>In beiden Schleifen-Varianten sind <code class="docutils literal notranslate"><span class="pre">continue</span></code> und <code class="docutils literal notranslate"><span class="pre">break</span></code> möglich, um die
-Schleife vorzeitig zu einem neuen Schleifendurchgang zu veranlassen oder die
-Schleife vorzeitig abzubrechen. Wer an Details interessiert ist, findet sie in
-den folgenden Videos.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.5 continue - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VdHhQhIjasg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 4.6 break - Anweisung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bIXuZXPSblU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="diagramme">
-<h2>Diagramme<a class="headerlink" href="#diagramme" title="Link to this heading">#</a></h2>
-<p>Bei der Einführung in die Datenvisualisierung mit Matplotlib in Python haben wir
-absichtlich die zustandsorientierte Schnittstelle der Bibliothek genutzt. Diese
-wurde nach dem Vorbild von MATLAB gestaltet, so dass Diagramme mit den uns
-bekannten Anweisungen funktionieren.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Semester)&quot;</span>
 
-<span class="nb">figure</span><span class="p">();</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Liniendiagramm&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Auch das Balkendiagramm mit <code class="docutils literal notranslate"><span class="pre">bar()</span></code> und das Streudiagramm mit <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>
-funktionieren wie gewohnt, solange die Daten rein numerisch, also aus Zahlen,
-bestehen. Die Verarbeitung von Strings ist in MATLAB etwas komplizierter, so
-dass Balkendiagramme mit Strings als Klassenbezeichnungen etwas umständlicher
-umzusetzen sind.</p>
-<p>Ein weiterer Unterschied tritt auf, wenn zwei Diagramme in einer Grafik
-gemeinsam dargestellt werden sollen. Dann muss nach dem ersten Diagramm der
-Befehl <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on</span></code> ausgeführt werden, damit die nachfolgenden Diagramme in
-dieselbe Grafik gezeichnet werden.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “Matlab - 5.1 Plot erstellen” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2admMlXzlSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="regression">
-<h2>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h2>
-<p>Als letztes Beispiel für MATLAB betrachten wir die Regression. Zunächst
-betrachten wir erneut ein künstliches Beispiel mit sieben Messwerten, die wir
-als Streudiagramm visualisieren.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">]</span>
+<span class="c1"># Test der Lösung</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="n">student2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">)</span>
 
-<span class="nb">figure</span><span class="p">()</span>
-<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="p">)</span>  <span class="c1"># Anna Abendrot (3. Semester)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student2</span><span class="p">)</span>  <span class="c1"># Bob Berliner (1. Semester)</span>
 </pre></div>
 </div>
-<p>Die Funktion zur Bestimmung eines Regressionspolynoms lautet <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">grad)</span></code>. Wie bei der entsprechenden Python-Funktion werden der Funktion zunächst
-die Messwerte übergeben (Ursache zuerst, Wirkung als zweites). Als drittes
-Argument wird der gewünschte Polynomgrad übergeben. Wir probieren eine
-Regressionsparabel.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
 </div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">polyval(p,</span> <span class="pre">x)</span></code> werten wir ein Polynom <code class="docutils literal notranslate"><span class="pre">p</span></code> an der Stelle <code class="docutils literal notranslate"><span class="pre">x</span></code> aus. Um also
-die Regressionsparabel zusätzlich zu den Messwerten zu visualisieren, verwenden
-wir den folgenden Code.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Künstliche Messdaten</span>
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5.4384</span><span class="p">,</span><span class="w"> </span><span class="mf">14.3252</span><span class="p">,</span><span class="w"> </span><span class="mf">19.2451</span><span class="p">,</span><span class="w"> </span><span class="mf">23.3703</span><span class="p">,</span><span class="w"> </span><span class="mf">18.2885</span><span class="p">,</span><span class="w"> </span><span class="mf">13.8978</span><span class="p">,</span><span class="w"> </span><span class="mf">3.7586</span><span class="p">];</span>
-
-<span class="c">% Regression</span>
-<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
-<span class="n">x_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-<span class="n">y_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">x_modell</span><span class="p">);</span>
-
-<span class="c">% Visualisierung</span>
-<span class="nb">figure</span><span class="p">();</span>
-<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span><span class="w"> </span><span class="n">y_modell</span><span class="p">);</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Ursache&#39;</span><span class="p">);</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Wirkung&#39;</span><span class="p">);</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Künstliche Messdaten&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>In diesem Beispiel haben wir Kommentare benutzt, um die einzelnen
-Code-Abschnitte besser kenntlich zu machen. Wie Sie sehen ist das
-Kommentarzeichen in MATLAB ein Prozentzeichen <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
 </section>
-<section id="weiteres-lehrmaterial">
-<h2>Weiteres Lehrmaterial<a class="headerlink" href="#weiteres-lehrmaterial" title="Link to this heading">#</a></h2>
-<p>Wer an weiteren Details zu MATLAB interessiert ist, kann das Vorlesungsskript</p>
-<blockquote>
-<div><p><a class="reference external" href="https://gramschs.github.io/book_matlab/intro.html">https://gramschs.github.io/book_matlab/intro.html</a></p>
-</div></blockquote>
-<p>nutzen, um anhand von Mini-Übungen die MATLAB-Kenntnisse zu vertiefen. Zum
-anderen empfehle ich die YouTube-Playlist</p>
-<blockquote>
-<div><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLbvyqE-qsk65zQMPD6zlek3WfCz-e1BKY">So lernst Du
-Matlab</a></p>
-</div></blockquote>
-<p>von Mathe? Logisch!, aus der auch die bisher verlinkten Videos stammen, die aber
-auch noch anderen Themen behandelt.</p>
+<section id="ein-vollstandiges-beispiel-kursverwaltung">
+<h2>Ein vollständiges Beispiel: Kursverwaltung<a class="headerlink" href="#ein-vollstandiges-beispiel-kursverwaltung" title="Link to this heading">#</a></h2>
+<p>Jetzt bringen wir alles zusammen: Eine vollständige Student-Klasse mit allen
+gelernten Methoden und eine praktische Kursverwaltung, die zeigt, wie mächtig
+OOP in der Praxis ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noten</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">semester</span><span class="si">}</span><span class="s2">. Sem)&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">vollstaendiger_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">note_hinzufuegen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">note</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">notendurchschnitt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noten</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">semester_erhoehen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir erstellen nun den Kurs mit den teilnehmenden Studierenden und lassen alle
+anzeigen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kurs erstellen und mit Studierenden füllen</span>
+<span class="n">python_kurs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Colorado&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;11223344&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Dietrich&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Informatik&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;99887766&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Eberhard&quot;</span><span class="p">,</span> <span class="s2">&quot;Emil&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;55443322&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Alle Kursteilnehmer anzeigen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Python-Kurs Teilnehmer ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">python_kurs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gesamtzahl: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">python_kurs</span><span class="p">)</span><span class="si">}</span><span class="s2"> Studierende&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Python-Kurs Teilnehmer ===
+- Anna Abendrot (Maschinenbau, 3. Sem)
+- Bob Berliner (Maschinenbau, 5. Sem)
+- Charlie Colorado (Elektrotechnik, 2. Sem)
+- Diana Dietrich (Informatik, 1. Sem)
+- Emil Eberhard (Maschinenbau, 4. Sem)
+
+Gesamtzahl: 5 Studierende
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir können nun nach dem Studiengang filtern, das durchschnittliche Semester
+berechnen oder Noten verwalten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nach Studiengang filtern</span>
+<span class="k">def</span> <span class="nf">studierende_nach_studiengang</span><span class="p">(</span><span class="n">studierende</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">):</span>
+    <span class="n">gefunden</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">==</span> <span class="n">studiengang</span><span class="p">:</span>
+            <span class="n">gefunden</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gefunden</span>
+
+<span class="n">maschinenbauer</span> <span class="o">=</span> <span class="n">studierende_nach_studiengang</span><span class="p">(</span><span class="n">python_kurs</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Maschinenbau-Studierende (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">maschinenbauer</span><span class="p">)</span><span class="si">}</span><span class="s2">) ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">maschinenbauer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Durchschnittliches Semester berechnen</span>
+<span class="n">semester_summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">python_kurs</span><span class="p">:</span>
+    <span class="n">semester_summe</span> <span class="o">=</span> <span class="n">semester_summe</span> <span class="o">+</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span>
+<span class="n">durchschnitt_semester</span> <span class="o">=</span> <span class="n">semester_summe</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">python_kurs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Durchschnittliches Semester: </span><span class="si">{</span><span class="n">durchschnitt_semester</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Noten verwalten (Beispiel)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Noten eintragen ===&quot;</span><span class="p">)</span>
+<span class="n">python_kurs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">note_hinzufuegen</span><span class="p">(</span><span class="mf">1.7</span><span class="p">)</span>  <span class="c1"># Anna</span>
+<span class="n">python_kurs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">note_hinzufuegen</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
+<span class="n">python_kurs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">note_hinzufuegen</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>  <span class="c1"># Bob</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">python_kurs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">()</span><span class="si">}</span><span class="s2">: Durchschnitt </span><span class="si">{</span><span class="n">python_kurs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">notendurchschnitt</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">python_kurs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">vollstaendiger_name</span><span class="p">()</span><span class="si">}</span><span class="s2">: Durchschnitt </span><span class="si">{</span><span class="n">python_kurs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">notendurchschnitt</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Maschinenbau-Studierende (3) ===
+- Anna Abendrot (Maschinenbau, 3. Sem)
+- Bob Berliner (Maschinenbau, 5. Sem)
+- Emil Eberhard (Maschinenbau, 4. Sem)
+
+Durchschnittliches Semester: 3.0
+
+=== Noten eintragen ===
+Anna Abendrot: Durchschnitt 2.0
+Bob Berliner: Durchschnitt 2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interessant für eine Kursverwaltung sind statistische Auswertungen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hilfsfunktionen für die Kursverwaltung</span>
+<span class="k">def</span> <span class="nf">kurs_statistik</span><span class="p">(</span><span class="n">studierende</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zeigt eine Übersicht über den Kurs&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== KURS-STATISTIK ===&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Teilnehmer gesamt: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">studierende</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Maschinenbau-Studierende zählen</span>
+    <span class="n">maschinenbau_anzahl</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">==</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">:</span>
+            <span class="n">maschinenbau_anzahl</span> <span class="o">=</span> <span class="n">maschinenbau_anzahl</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maschinenbau-Studierende: </span><span class="si">{</span><span class="n">maschinenbau_anzahl</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Niedrigstes und höchstes Semester finden</span>
+    <span class="n">semester_min</span> <span class="o">=</span> <span class="n">studierende</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">semester</span>
+    <span class="n">semester_max</span> <span class="o">=</span> <span class="n">studierende</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">semester</span>
+    <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span> <span class="o">&lt;</span> <span class="n">semester_min</span><span class="p">:</span>
+            <span class="n">semester_min</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span>
+        <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span> <span class="o">&gt;</span> <span class="n">semester_max</span><span class="p">:</span>
+            <span class="n">semester_max</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Semester-Spanne: </span><span class="si">{</span><span class="n">semester_min</span><span class="si">}</span><span class="s2">. bis </span><span class="si">{</span><span class="n">semester_max</span><span class="si">}</span><span class="s2">. Semester&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">student_suchen</span><span class="p">(</span><span class="n">studierende</span><span class="p">,</span> <span class="n">nachname</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sucht einen Studierenden nach Nachname&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">nachname</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">student</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1"># Statistik anzeigen</span>
+<span class="n">kurs_statistik</span><span class="p">(</span><span class="n">python_kurs</span><span class="p">)</span>
+
+<span class="c1"># Student suchen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== SUCHE ===&quot;</span><span class="p">)</span>
+<span class="n">gefunden</span> <span class="o">=</span> <span class="n">student_suchen</span><span class="p">(</span><span class="n">python_kurs</span><span class="p">,</span> <span class="s2">&quot;Berliner&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gefunden</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gefunden: </span><span class="si">{</span><span class="n">gefunden</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrikelnummer: </span><span class="si">{</span><span class="n">gefunden</span><span class="o">.</span><span class="n">matrikelnummer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Student nicht gefunden&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== KURS-STATISTIK ===
+Teilnehmer gesamt: 5
+Maschinenbau-Studierende: 3
+Semester-Spanne: 1. bis 5. Semester
+
+=== SUCHE ===
+Gefunden: Bob Berliner (Maschinenbau, 5. Sem)
+Matrikelnummer: 87654321
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mit wenigen Zeilen Code haben wir ein funktionsfähiges Verwaltungssystem
+erstellt und schließen das Beispiel mit der nächsten Mini-Übung ab.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">erstsemester_finden(studierende)</span></code>, die eine Liste
+aller Studierenden im 1. Semester zurückgibt. Testen Sie die Funktion mit dem
+<code class="docutils literal notranslate"><span class="pre">python_kurs</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Geben Sie nach diesem Kommentar Ihren Code ein:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">erstsemester_finden</span><span class="p">(</span><span class="n">studierende</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Findet alle Studierenden im 1. Semester&quot;&quot;&quot;</span>
+    <span class="n">erstsemester</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">student</span><span class="o">.</span><span class="n">semester</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">erstsemester</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">erstsemester</span>
+
+<span class="c1"># Test der Funktion</span>
+<span class="n">erstsemester</span> <span class="o">=</span> <span class="n">erstsemester_finden</span><span class="p">(</span><span class="n">python_kurs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erstsemester (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">erstsemester</span><span class="p">)</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">erstsemester</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Listen kombiniert mit Objekten sind ein mächtiges Werkzeug zur Verwaltung von
+Daten. Dabei ist es hilfreich, vordefinierte Methoden wie beispielsweise
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code> zu implementieren, um die Objekte benutzerfreundlich zu machen. Mit
+diesem Kapitel schließen wir die Objektorientierte Programmierung ab, um uns den
+Themen Matlab und Simulink zu widmen.</p>
 </section>
 </section>
 
@@ -783,7 +1069,7 @@ auch noch anderen Themen behandelt.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8.2 Numerisches Rechnen mit MATLAB</p>
+        <p class="prev-next-title">8.2 Methoden und der self-Parameter</p>
       </div>
     </a>
     <a class="right-next"
@@ -791,7 +1077,7 @@ auch noch anderen Themen behandelt.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Übung</p>
+        <p class="prev-next-title">Übungen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -813,13 +1099,10 @@ auch noch anderen Themen behandelt.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eingabe-verarbeitung-und-ausgabe">Eingabe, Verarbeitung und Ausgabe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">Funktionen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmverzweigungen">Programmverzweigungen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schleifen">Schleifen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramme">Diagramme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lehrmaterial">Weiteres Lehrmaterial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-von-objekten-verwalten">Listen von Objekten verwalten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-str-methode-fur-schone-ausgabe">Die <strong>str</strong>-Methode für schöne Ausgabe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-vollstandiges-beispiel-kursverwaltung">Ein vollständiges Beispiel: Kursverwaltung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

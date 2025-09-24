@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12.1 Theorie Regression &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>12.1 Kontinuierliche Daten visualisieren &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12/chapter12_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12.2 Lineare Regression mit polyfit und polyval" href="chapter12_sec02.html" />
-    <link rel="prev" title="12. Messwerte und Regression" href="chapter12_sec00.html" />
+    <link rel="next" title="12.2 Diskrete Daten und Häufigkeiten" href="chapter12_sec02.html" />
+    <link rel="prev" title="12. Visualisierung mit Matplotlib" href="chapter12_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,47 +225,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Objektorientierte Programmierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter12_sec00.html">12. Messwerte und Regression</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -484,7 +491,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>12.1 Theorie Regression</h1>
+    <h1>12.1 Kontinuierliche Daten visualisieren</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -495,9 +502,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-kommt-aus-der-statistik">Regression kommt aus der Statistik</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-weltweiter-co2-ausstosz">Beispiel: weltweiter CO2-Ausstoß</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-bestimmheitsmasz-r2">Das Bestimmheitsmaß R²</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liniendiagramme">Liniendiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streudiagramme">Streudiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wann-verwendet-man-welchen-diagrammtyp">Wann verwendet man welchen Diagrammtyp?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -510,262 +517,276 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="theorie-regression">
-<h1>12.1 Theorie Regression<a class="headerlink" href="#theorie-regression" title="Link to this heading">#</a></h1>
-<p>In der Analyse technischer und physikalischer Daten ist die Methode der
-Regression ein fundamentales Werkzeug. Sie ist ein statistisches Verfahren, das
-den Zusammenhang zwischen Variablen ermittelt. In diesem Kapitel beschäftigen
-wir uns zunächst mit der Theorie von Regressionsverfahren.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="kontinuierliche-daten-visualisieren">
+<h1>12.1 Kontinuierliche Daten visualisieren<a class="headerlink" href="#kontinuierliche-daten-visualisieren" title="Link to this heading">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie wissen, was <strong>Regression</strong> ist.</p></li>
-<li><p>Sie wissen, was das <strong>Bestimmtheitsmaß</strong> <span class="math notranslate nohighlight">\(R^2\)</span> ist und können es für <strong>lineare Regression</strong> interpretieren:</p>
-<ul>
-<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 1\)</span>  ist, dann gibt es den perfekten linearen Zusammenhang und die
-Modellfunktion ist eine sehr gute Anpassung an die Messdaten.</p></li>
-<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 0\)</span> oder gar negativ ist, dann funktioniert die lineare
-Modellfunktion überhaupt nicht.</p></li>
-</ul>
-</li>
+<li><p>Sie können <strong>Matplotlib</strong> mit der üblichen Abkürzung <strong>plt</strong> importieren.</p></li>
+<li><p>Sie können Funktionen als <strong>Liniendiagramm</strong> visualisieren.</p></li>
+<li><p>Sie können Messwerte als <strong>Streudiagramm</strong> darstellen.</p></li>
+<li><p>Sie verstehen den Unterschied zwischen Linien- und Streudiagrammen.</p></li>
 </ul>
 </div>
 </section>
-<section id="regression-kommt-aus-der-statistik">
-<h2>Regression kommt aus der Statistik<a class="headerlink" href="#regression-kommt-aus-der-statistik" title="Link to this heading">#</a></h2>
-<p>In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker damit,
-Analyseverfahren zu entwickeln, mit denen experimentelle Daten gut erklärt
-werden können. Falls wir eine “erklärende” Variable haben und versuchen, die
-Abhängigkeit einer Messgröße von der erklärenden Variable zu beschreiben, nennen
-wir das Regressionsanalyse oder kurz <strong>Regression</strong>. Bei vielen Problemen suchen
-wir nach einem linearen Zusammenhang und sprechen daher von <strong>linearer
-Regression</strong>. Mehr Details finden Sie auch bei <a class="reference external" href="https://de.wikipedia.org/wiki/Regressionsanalyse">Wikipedia →
-Regressionsanalyse</a>.</p>
-<p>Etwas präziser formuliert ist lineare Regression ein Verfahren, bei dem es eine
-Einflussgröße <span class="math notranslate nohighlight">\(x\)</span> und eine Zielgröße <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(N\)</span> Paaren von dazugehörigen
-Messwerten <span class="math notranslate nohighlight">\((x^{(1)},y^{(1)})\)</span>, <span class="math notranslate nohighlight">\((x^{(2)},y^{(2)})\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>,
-<span class="math notranslate nohighlight">\((x^{(N)},y^{(N)})\)</span> gibt. Dann sollen zwei Parameter <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span> geschätzt
-werden, so dass möglichst für alle Datenpunkte <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> die lineare
-Gleichung <span class="math notranslate nohighlight">\(y^{(i)} = m\cdot x^{(i)}+ b\)</span> gilt. Geometrisch ausgedrückt: durch die
-Daten soll eine Gerade gelegt werden. Da bei den Messungen auch Messfehler
-auftreten, werden wir die Gerade nicht perfekt treffen, sondern kleine Fehler
-machen, die wir hier mit <span class="math notranslate nohighlight">\(\varepsilon^{(i)}\)</span> bezeichnen. Wir suchen also die
-beiden Parameter <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span>, so dass</p>
-<div class="math notranslate nohighlight">
-\[y^{(i)} =  m \cdot x^{(i)} + b + \varepsilon^{(i)}.\]</div>
-<p>Die folgende Grafik veranschaulicht das lineare Regressionsmodell. Die Paare von
-Daten sind in blau gezeichnet, das lineare Regressionsmodell in rot.</p>
-<figure class="align-default" id="fig-linear-regression">
-<img alt="../_images/Linear_regression.svg" src="../_images/Linear_regression.svg" /><figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Lineare Regression: die erklärende Variable (= Input oder unabhängige Variable oder Ursache) ist auf der x-Achse, die
-abhängige Variable (= Output oder Wirkung) ist auf der y-Achse aufgetragen, Paare von Messungen sind in blau
-gekennzeichnet, das Modell in rot.</span><a class="headerlink" href="#fig-linear-regression" title="Link to this image">#</a></p>
-<div class="legend">
-<p>(<a class="reference external" href="https://en.wikipedia.org/wiki/Linear_regression#/media/File:Linear_regression.svg">Quelle:</a> “Example of simple linear regression, which has one independent variable” von Sewaqu. Lizenz: Public domain))</p>
-</div>
-</figcaption>
-</figure>
-<p>Zu einer Regressionsanalyse gehört mehr als nur die Regressionskoeffizienten zu
-bestimmen. Daten müssen vorverarbeitet werden, unter mehreren unabhängigen
-Variablen (Inputs) müssen diejenigen ausgewählt werden, die tatsächlich die
-Wirkung erklären. Das lineare Regressionsmodell muss trainiert werden, d.h. die
-Parameter geschätzt werden und natürlich muss das Modell dann auch getestet
-werden. Bei den meisten Regressionsmodellen gibt es noch Modellparameter, die
-feinjustiert werden können, um die Prognosefähigkeit verbessern.</p>
-<p>Im Folgenden erkunden wir einen realistischen Datensatz, um daran zu erklären,
-wie lineare Regression funktioniert.</p>
-</section>
-<section id="beispiel-weltweiter-co2-ausstosz">
-<h2>Beispiel: weltweiter CO2-Ausstoß<a class="headerlink" href="#beispiel-weltweiter-co2-ausstosz" title="Link to this heading">#</a></h2>
-<p>Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
-Einwohner (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz">hier Download</a>).</p>
+<section id="liniendiagramme">
+<h2>Liniendiagramme<a class="headerlink" href="#liniendiagramme" title="Link to this heading">#</a></h2>
+<p>Liniendiagramme werden zur Visualisierung benutzt, wenn die Daten kontinuierlich
+sind und zu jedem x-Wert ein y-Wert vorliegt. Am häufigsten ist dies der Fall,
+wenn die Daten von einer mathematischen Funktion stammen oder wenn Messungen über
+die Zeit erfasst werden. Obwohl die Daten theoretisch für jeden x-Wert vorliegen
+und wir daher Millionen von (x,y)-Punkten zeichnen könnten, benutzen wir eine
+Wertetabelle mit wenigen (x,y)-Paaren. Die Anzahl der (x,y)-Paare bestimmt dann,
+wie “glatt” die Visualisierung wirkt.</p>
+<p>Erzeugen wir eine Liste mit x-Werten und dazugehörigen y-Werten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/co2_emissionen_worldwide.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Metrische_Tonnen_pro_Einwohner</th>
-    </tr>
-    <tr>
-      <th>Jahr</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1990</th>
-      <td>3.902952</td>
-    </tr>
-    <tr>
-      <th>1991</th>
-      <td>3.874590</td>
-    </tr>
-    <tr>
-      <th>1992</th>
-      <td>3.804011</td>
-    </tr>
-    <tr>
-      <th>1993</th>
-      <td>3.769328</td>
-    </tr>
-    <tr>
-      <th>1994</th>
-      <td>3.732385</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Wir verschaffen uns mit den Funktionen <code class="docutils literal notranslate"><span class="pre">info()</span></code> und <code class="docutils literal notranslate"><span class="pre">describe()</span></code> einen Überblick
-über den Datensatz. Wie üblich benutzen wir <code class="docutils literal notranslate"><span class="pre">info()</span></code> zuerst.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Index: 29 entries, 1990 to 2018
-Data columns (total 1 columns):
- #   Column                          Non-Null Count  Dtype  
----  ------                          --------------  -----  
- 0   Metrische_Tonnen_pro_Einwohner  29 non-null     float64
-dtypes: float64(1)
-memory usage: 464.0 bytes
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Offensichtlich enthält der Datensatz 29 Zeilen (= Jahre) mit gültigen Einträgen
-zu den metrischen Tonnen CO2-Ausstoß pro Einwohner. Die statistischen Kennzahlen
-sind:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Metrische_Tonnen_pro_Einwohner</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>29.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>4.126993</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>0.324550</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>3.732385</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>3.812655</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>4.092267</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>4.435536</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>4.606487</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Nun folgt noch die Visualisierung der Daten.</p>
+<p>Danach lassen wir den Python-Interpreter diese Werte zeichnen. Dazu benötigen
+wir das Modul <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, genauer gesagt nur einen Teil dieses Moduls namens
+<code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. Daher laden wir es zuerst mit der typischen Abkürzung <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">jahre</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
-<span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metrische Tonnen / Einwohner&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter C02-Ausstoß&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Matplotlib bietet zwei Schnittstellen an, die Funktionen und Methoden des Moduls
+zu benutzen. Die erste Schnittstelle ist <strong>zustandsorientiert</strong>, die zweite
+<strong>objektorientiert</strong>. Die zustandsorientierte Schnittstelle ist älter. Die
+Entwicklerinnen und Entwickler des Matplotlib-Moduls orientierten sich zunächst
+an der kommerziellen Software MATLAB und griffen erst in einer späteren Phase
+auf Objektorientierung zurück.</p>
+<p>Bei der zustandsorientierten Schnittstelle werden Funktionen benutzt, die auf
+das aktuelle Objekt wirken. Das hat Nachteile, wenn beispielsweise mehrere Plots
+in einer Grafik gegenübergestellt werden. Dann ist es schwierig zuzuordnen, was
+gerade das aktuelle Objekt ist. Daher hilft die zweite Matplotlib-Schnittstelle,
+die objektorientierte Schnittstelle, mehrere Objekte auseinanderzuhalten.</p>
+<p>Zunächst werden wir die zustandsorientierte Schnittstelle benutzen, um den
+Vorteil auszunutzen, MATLAB-ähnliche Syntax verwenden zu können.</p>
+<p>Zunächst erstellen wir ein Liniendiagramm mit der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>. Zuvor
+öffnen wir mit <code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code> eine neue Zeichenfläche, die Figure genannt wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a31663bb52e892e114e1f35e2a34e1bbfebe680f4ae3a7a83279dc6ead5530d2.png" src="../_images/a31663bb52e892e114e1f35e2a34e1bbfebe680f4ae3a7a83279dc6ead5530d2.png" />
+<img alt="../_images/139f711e555fe85cca7e78270c16fd338c5f483e42b176a900d0ab49bc514d71.png" src="../_images/139f711e555fe85cca7e78270c16fd338c5f483e42b176a900d0ab49bc514d71.png" />
 </div>
 </div>
-<p>Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
-einer linearen Funktion. Die “erklärende” Variable ist in dem Beispiel das Jahr.
-Wir versuchen, die Abhängigkeit einer Messgröße (hier die CO2-Emissionen pro
-Einwohner) von der erklärenden Variable als lineare Funktion zu beschreiben.</p>
+<p>Aber zurück zum Plot, sieht krakelig aus. Eigentlich sollte dies eine Parabel im
+Intervall [-2,2] werden. Mit nur fünf Punkten und der Tatsache, dass diese fünf
+Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus. Besser
+wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand erzeugen. Wir
+verwenden das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code> für numerisches Python, das wir wieder einmal zuerst
+laden müssen.</p>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(a,</span> <span class="pre">b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall [a,b] und
+zwar genauso viele, wie durch die Option <code class="docutils literal notranslate"><span class="pre">Anzahl</span></code> vorgegeben werden. Damit
+können wir jetzt eine feiner aufgelöste Wertetabelle erstellen und
+visualisieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c224a840742956266a22ca034c61866c180897cbc09247b227a18939f6a1e856.png" src="../_images/c224a840742956266a22ca034c61866c180897cbc09247b227a18939f6a1e856.png" />
+</div>
+</div>
+<p>Als nächstes beschäftigen wir uns mit Beschriftungen. Mit den Funktionen
+<code class="docutils literal notranslate"><span class="pre">xlabel()</span></code> und <code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> beschriften wir die x- und y-Achse. Mit <code class="docutils literal notranslate"><span class="pre">title()</span></code> wird
+der Titel gesetzt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b494f1ea47b1c9e0e93ab1e5bfff45f01cb2896ada364ad11301f38967df22a3.png" src="../_images/b494f1ea47b1c9e0e93ab1e5bfff45f01cb2896ada364ad11301f38967df22a3.png" />
+</div>
+</div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Mini-Übung</p>
-<p>Denken Sie sich Werte für die Steigung m und den y-Achsenabschnitt b einer
-linearen Funktion aus. Erzeugen Sie einen Vektor mit 100 x-Werten von 1990 bis
-2018 und einen Vektor y mit <span class="math notranslate nohighlight">\(y = mx + b\)</span>. Lassen Sie diese lineare Funktion als
-durchgezogene rote Linie in den gleichen Plot wie die gepunkteten Messwerte
-zeichnen. Welche Werte für <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span> müssen Sie wählen, damit die rote Linie
-passend zu den blauen Punkten ist? Spielen Sie mit <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(b\)</span> herum, bis es
-passen könnte.</p>
-<p>Tipp: <code class="docutils literal notranslate"><span class="pre">linspace(start,</span> <span class="pre">stopp,</span> <span class="pre">anzahl)</span></code> aus dem NumPy-Modul generiert <code class="docutils literal notranslate"><span class="pre">anzahl</span></code>
-Werte von <code class="docutils literal notranslate"><span class="pre">start</span></code> bis <code class="docutils literal notranslate"><span class="pre">stopp</span></code>.</p>
+<p>Plotten Sie folgende Funktionen:</p>
+<ul class="simple">
+<li><p>lineare Funktion, z.B. f(x) = 3x + 7</p></li>
+<li><p>Sinus,</p></li>
+<li><p>Kosinus,</p></li>
+<li><p>Exponentialfunktion und</p></li>
+<li><p>Wurzelfunktion.</p></li>
+</ul>
+<p>Bei welcher Funktion müssen Sie besonders auf das Definitionsgebiet der
+Funktion achten?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="mi">7</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+
+<span class="n">x4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x4</span><span class="p">)</span>
+
+<span class="n">x5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">y5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x5</span><span class="p">,</span><span class="n">y5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-Achse&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y-Achse&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mini-Übung&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bei der Wurzelfunktion muss man auf das Definitionsgebiet achten, da sie nur für
+<span class="math notranslate nohighlight">\(x &gt;= 0\)</span> definiert ist.</p>
+</div>
+</section>
+<section id="streudiagramme">
+<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Link to this heading">#</a></h2>
+<p>Bei Streudiagrammen werden nicht die Punkte (x₁,y₁) mit (x₂,y₂) mit
+(x₃,y₃) usw. durch Linien verbunden, sondern jeder Punkt wird einzeln an seiner
+Koordinatenstelle dargestellt. Ob dazu ein Punkt, Kreis, Dreieck oder
+Quadrat oder ein anderes Symbol verwendet wird, bleibt dem Anwender überlassen.
+Streudiagramme heißen im Englischen Scatter-Plot, daher lautet die entsprechende
+Matplotlib-Funktion auch <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Streudiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sinus-Funktion als Streudiagramm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2d59e138b3572be5f65aab4e08adae212abca52458f58186bc7927e91cfba39e.png" src="../_images/2d59e138b3572be5f65aab4e08adae212abca52458f58186bc7927e91cfba39e.png" />
+</div>
+</div>
+<p>Über die Option <code class="docutils literal notranslate"><span class="pre">marker=</span></code> lässt sich das Symbol einstellen, mit dem das
+Streudiagramm erzeugt wird. Voreingestellt ist ein ausgefüllter Kreis. Weitere
+Optionen für die Marker-Symbole sind in der Matplotlib-Dokumentation gelistet:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers</a></p>
+</div></blockquote>
+<p>Die Farbe der Marker oder auch der Linien lässt sich mit dem optionalen Argument
+<code class="docutils literal notranslate"><span class="pre">color=</span></code> einstellen.</p>
+<p>Wenn wir beispielsweise an jedem Wochentag die Temperatur an zwei Orten messen,
+bietet es sich an, beide Messreihen in einem Diagramm zu visualisieren.
+Dazu werden wir unterschiedliche Marker und unterschiedliche Farben verwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten - simulierte Temperaturmessungen</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>  <span class="c1"># Frankfurt</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Offenbach</span>
+
+<span class="c1"># Streudiagramme</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wochentag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatur [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperaturmessungen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/63860f4f79171bf87026d4682b78db43d5a8669f32b7dd3346e15bbb111a36f8.png" src="../_images/63860f4f79171bf87026d4682b78db43d5a8669f32b7dd3346e15bbb111a36f8.png" />
+</div>
+</div>
+<p>Dann ist es aber auch gut, die Visualisierung zu beschriften. Dazu kennzeichnet
+man jeden einzelnen Plot-Aufruf mit einem sogenannten Label, z.B.
+<code class="docutils literal notranslate"><span class="pre">plt.scatter(x,</span> <span class="pre">y1,</span> <span class="pre">label='Frankfurt')</span></code>. Zuletzt verwendet man die Funktion
+<code class="docutils literal notranslate"><span class="pre">legend()</span></code>, die eine Legende mit allen Label-Einträgen erzeugt, bei denen die
+Farben der Kurven und die Marker korrekt zu den Namen (Labels) zugeordnet
+werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daten</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mo&#39;</span><span class="p">,</span> <span class="s1">&#39;Di&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi&#39;</span><span class="p">,</span> <span class="s1">&#39;Do&#39;</span><span class="p">,</span> <span class="s1">&#39;Fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>  <span class="c1"># Frankfurt</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Offenbach</span>
+
+<span class="c1"># Streudiagramme mit Legende</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Offenbach&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wochentag&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatur [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperaturmessungen in der Region&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" src="../_images/9f57ac5420812123bd517616ccf8bc27fb9ab18e5c6de0660fde79ca42775697.png" />
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Erstellen Sie ein Streudiagramm mit folgenden Spezifikationen:</p>
+<ul class="simple">
+<li><p>x-Werte: Zahlen von 1 bis 20</p></li>
+<li><p>y-Werte: Zufallszahlen zwischen 10 und 30 (verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.random.uniform(10,</span> <span class="pre">30,</span> <span class="pre">20)</span></code>)</p></li>
+<li><p>Marker: rote Dreiecke (marker=‘^’)</p></li>
+<li><p>Titel: “Zufällige Messwerte”</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,198 +797,40 @@ Werte von <code class="docutils literal notranslate"><span class="pre">start</sp
 </div>
 <div class="miniexercise toggle admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">x_modell</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Daten generieren</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Für reproduzierbare Ergebnisse</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>    <span class="c1"># Zahlen von 1 bis 20</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Zufallszahlen zwischen 10 und 30</span>
 
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.0344</span>
-<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">64.7516</span>
-<span class="n">y_modell</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">x_modell</span> <span class="o">+</span> <span class="n">b</span>
-
+<span class="c1"># Streudiagramm erstellen</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">jahre</span><span class="p">,</span><span class="n">co2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_modell</span><span class="p">,</span> <span class="n">y_modell</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahr&#39;</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metrische Tonnen pro Einwohner&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weltweiter CO2-Ausstoß von 1990 bis 2018&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Messung Nr.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Messwert&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zufällige Messwerte&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<p>Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, können wir den Wert
-in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von
-5.1 metrischen Tonnen pro Einwohner :-(</p>
 </section>
-<section id="das-bestimmheitsmasz-r2">
-<h2>Das Bestimmheitsmaß R²<a class="headerlink" href="#das-bestimmheitsmasz-r2" title="Link to this heading">#</a></h2>
-<p>Woher wissen wir eigentlich, dass diese Steigung <span class="math notranslate nohighlight">\(m\)</span> und dieser
-y-Achsenabschnitt <span class="math notranslate nohighlight">\(b\)</span> am besten passen? Dazu berechnen wir, wie weit weg die
-Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der
-folgenden Grafik.</p>
-<figure class="align-default" id="fig10-regression">
-<img alt="../_images/fig10_regression.png" src="../_images/fig10_regression.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)</span><a class="headerlink" href="#fig10-regression" title="Link to this image">#</a></p>
-<div class="legend">
-<p>(<a class="reference external" href="https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate#/media/Datei:MDKQ1.svg">Quelle:</a> Autor: Christian Schirm, Lizenz: CC0)</p>
-</div>
-</figcaption>
-</figure>
-<p>Die rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir
-können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg
-ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen:</p>
-<div class="math notranslate nohighlight">
-\[r = y_{\text{blau}}-y_{\text{rot}}.\]</div>
-<p>Diese Differenz nennt man <strong>Residuum</strong>. Danach summieren wir die Fehler (also
-die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren,
-dass am Ende als Gesamtfehler 0 herauskommt, weil beispielsweise für den 1.
-Messpunkt die blaue y-Koordinate unter der roten y-Koordinate liegt und damit
-ein negatives Residuum herauskommt, aber für den 5. Messpunkt ein positives
-Residuum. Daher quadrieren wir die Residuen. Und damit nicht der Gesamtfehler
-größer wird nur, weil wir mehr Messpunkte dazunehmen, teilen wir noch durch die
-Anzahl der Messpunkte <span class="math notranslate nohighlight">\(N\)</span>. Mathematisch formuliert haben wir</p>
-<div class="math notranslate nohighlight">
-\[\frac{1}{N}\sum_{i=1}^{N} (y^{(i)} - f(x^{(i)})^2. \]</div>
-<p>Wir berechnen die Fehlerquadratsumme in Python mit der <code class="docutils literal notranslate"><span class="pre">sum()</span></code> Funktion aus
-NumPy. Insgesamt ergibt sich</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># blaue y-Koordinaten = Messpunkte</span>
-<span class="n">y_blau</span> <span class="o">=</span> <span class="n">co2</span>
-
-<span class="c1"># Berechnung der roten y-Koordinaten, indem wir x-Koordinaten der Messpunkte</span>
-<span class="c1"># in die Modellfunktion y = m*x + b einsetzen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">jahre</span>
-<span class="n">y_rot</span> <span class="o">=</span> <span class="mf">0.0344</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">64.7516</span>
-
-<span class="c1"># Berechnung Gesamtfehler</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">29</span>
-<span class="n">gesamtfehler</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">y_blau</span> <span class="o">-</span> <span class="n">y_rot</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Gesamtfehler ist </span><span class="si">{</span><span class="n">gesamtfehler</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Gesamtfehler ist 0.02248906646562731.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ist das jetzt groß oder klein? Liegt eine gute Modellfunktion vor, die die Daten
-gut nähert oder nicht? Um das zu beurteilen, berechnen wir, wie groß der Fehler
-wäre, wenn wir nicht die roten y-Koordinaten der Modellfunktion in die
-Fehlerformel einsetzen würden, sondern einfach nur den Mittelwert als
-Schätzwert, also</p>
-<div class="math notranslate nohighlight">
-\[\bar{y} = \frac{1}{N} \sum_{i=1}^{N} y^{(i)}.\]</div>
-<p>In Python ergibt sich der folgende Code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_mittelwert</span> <span class="o">=</span> <span class="n">y_blau</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">gesamtfehler_mittelwert</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">y_blau</span> <span class="o">-</span> <span class="n">y_mittelwert</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der Gesamtfehler für den Mittelwert als Schätzung ist </span><span class="si">{</span><span class="n">gesamtfehler_mittelwert</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Gesamtfehler für den Mittelwert als Schätzung ist 0.10170059696116414.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Offensichtlich ist der Gesamtfehler für die Modellfunktion kleiner als wenn wir
-einfach nur immer den Mittelwert prognostizieren würden. Wir rechnen das in
-Prozent um:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">relativer_fehler</span> <span class="o">=</span> <span class="n">gesamtfehler</span> <span class="o">/</span> <span class="n">gesamtfehler_mittelwert</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: </span><span class="si">{</span><span class="n">relativer_fehler</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;In Prozent umgerechnet ist das: </span><span class="si">{</span><span class="n">relativer_fehler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> %.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: 0.2211
-In Prozent umgerechnet ist das: 22.11 %.
-</pre></div>
-</div>
-</div>
-</div>
-<p>In der Statistik wurde diese Verhältnis (Gesamtfehler geteilt durch Gesamtfehler
-Mittelwert) als Qualitätkriterium für ein lineares Regressionsproblem
-festgelegt. Genaugenommen, rechnet man 1 - Gesamtfehler /  (Gesamtfehler
-Mittelwert) und nennt diese Zahl <strong>Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2\)</span></strong>. Details finden Sie
-bei <a class="reference external" href="https://de.wikipedia.org/wiki/Bestimmtheitsma%C3%9F">Wikipedia
-(Bestimmtheitsmaß)</a>. Die Formel
-lautet:</p>
-<div class="math notranslate nohighlight">
-\[R^2 =1-\frac{\sum_{i=1}^N (y^{(i)} - f(x^{(i)})^2}{\sum_{i=1}^N(y^{(i)}-\bar{y})^2}.\]</div>
-<p>Dabei kürzt sich das <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span> im Zähler und Nenner weg. Nachdem der
-<span class="math notranslate nohighlight">\(R^2\)</span>-Wert ausgerechnet wurde, können wir nun die Qualität der Anpassung
-beurteilen:</p>
-<ul class="simple">
-<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 1\)</span>  ist, dann gibt es den perfekten linearen Zusammenhang und die
-Modellfunktion ist eine sehr gute Anpassung an die Messdaten.</p></li>
-<li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 0\)</span> oder gar negativ ist, dann funktioniert die lineare
-Modellfunktion überhaupt nicht.</p></li>
-</ul>
-<p>Für das Beispiel ergibt sich ein Bestimmtheitsmaß <span class="math notranslate nohighlight">\(R^2\)</span> von</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">relativer_fehler</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 = </span><span class="si">{</span><span class="n">R2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 = 0.78
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die lineare Regressionsgerade erklärt die CO2-Messwerte ganz gut, aber eben
-nicht perfekt.</p>
-<p>Damit wir nicht händisch den R²-Core berechnen lassen müssen, verwenden wir das
-Modul Scikit-Learn.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_blau</span><span class="p">,</span> <span class="n">y_rot</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R2 aus Scikit-Learn: </span><span class="si">{</span><span class="n">R2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 aus Scikit-Learn: 0.78
-</pre></div>
-</div>
-</div>
-</div>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Auf der Seite <a class="reference external" href="https://mathweb.de">https://mathweb.de</a> finden Sie eine Reihe von
-Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
-gibt es dort auch eine interaktive Demonstration des R²-Scores.</p>
-<p>Drücken Sie auf den zwei kreisförmigen Pfeile rechts oben. Dadurch wird ein
-neuer Datensatz erzeugt. Die Messdaten sind durch grüne Punkte dargestellt, das
-lineare Regressionsmodell durch eine blaue Gerade. Im Titel wird der aktuelle
-und der optimale R²-Wert angezeigt. Ziehen Sie an den weißen Punkten, um die
-Gerade zu verändern. Schaffen Sie es, den optimalen R²-Score zu treffen?
-Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
-<iframe width="560" height="315" src="https://lti.mint-web.de/examples/index.php?id=01010320"  allowfullscreen></iframe>
-</div>
+<section id="wann-verwendet-man-welchen-diagrammtyp">
+<h2>Wann verwendet man welchen Diagrammtyp?<a class="headerlink" href="#wann-verwendet-man-welchen-diagrammtyp" title="Link to this heading">#</a></h2>
+<p>Für bekannte Funktionen wie Sinus oder Kosinus würde man normalerweise
+Liniendiagramme verwenden. Streudiagramme eignen sich eher für die Visualisierung
+von Messungen oder wenn man Korrelationen zwischen zwei Variablen untersuchen möchte.</p>
 </section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
-<p>In diesem Kapitel haben wir gelernt, was Regression bedeutet und wie das
-Regressionsergebnis mit dem R²-Score bewertet wird. Im nächsten Kapitel werden
-wir uns damit beschäftigen, die Steigung und den y-Achsenabschnitt einer
-linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.</p>
+<p>In diesem Kapitel haben wir die Grundlagen der Datenvisualisierung mit
+Matplotlib kennengelernt. Liniendiagramme eignen sich für kontinuierliche Daten,
+mathematische Funktionen und Zeitreihen, bei denen die Datenpunkte sinnvoll
+miteinander verbunden werden können. Streudiagramme sind ideal für diskrete
+Messpunkte, Korrelationsanalysen und Situationen, in denen die Einzelpunkte im
+Fokus stehen. Im nächsten Kapitel werden wir uns mit Balkendiagrammen und
+Histogrammen beschäftigen, die für andere Datentypen geeignet sind.</p>
 </section>
 </section>
 
@@ -1007,7 +870,7 @@ linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">12. Messwerte und Regression</p>
+        <p class="prev-next-title">12. Visualisierung mit Matplotlib</p>
       </div>
     </a>
     <a class="right-next"
@@ -1015,7 +878,7 @@ linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">12.2 Lineare Regression mit polyfit und polyval</p>
+        <p class="prev-next-title">12.2 Diskrete Daten und Häufigkeiten</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1037,9 +900,9 @@ linearen Funktion zu bestimmen, die möglichst gut die Meswerte erklärt.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-kommt-aus-der-statistik">Regression kommt aus der Statistik</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-weltweiter-co2-ausstosz">Beispiel: weltweiter CO2-Ausstoß</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-bestimmheitsmasz-r2">Das Bestimmheitsmaß R²</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liniendiagramme">Liniendiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streudiagramme">Streudiagramme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wann-verwendet-man-welchen-diagrammtyp">Wann verwendet man welchen Diagrammtyp?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

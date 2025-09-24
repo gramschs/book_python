@@ -12,280 +12,130 @@ kernelspec:
   name: python3
 ---
 
-# 10.1 Series und DataFrame
+# 10.1 Simulink Einführung
 
-Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
-effizient zu speichern. Dazu benutzen Data Scientists Pandas. Pandas ist eine
-Bibliothek zur Verarbeitung und Analyse von Daten in Form von Datenreihen und
-Tabellen. Die beiden grundlegenden Datenstrukturen sind Series und DataFrame.
-Dabei wird **Series** für Datenreihen genommen und ist damit die
-Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Die Datenstruktur
-**DataFrame** repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays.
+MATLAB bietet neben einer Reihe von Toolboxen auch eine Zusatzsoftware an, die
+es Ingenieur:innen erleichtert, technische Systeme zu modellieren. Diese
+Software heißt Simulink und benötigt MATLAB. Detaillierte Informationen zu
+Simulink finden Sie auf der Produktseite von
+[MATLAB](https://de.mathworks.com/products/simulink.html). Die Besonderheit von
+Simulink ist, dass die Modellierung grafisch mit Blöcken erfolgt.
 
-Daher werden wir uns in diesem Kapitel mit diesen beiden Datenstrukturen
-beschäftigen. Darüber hinaus lernen wir das häufig verwendete Datenformat `csv`
-kennen.
+In diesem Kapitel werden wir uns zunächst mit der Modellierung technischer
+Systeme beschäftigen und uns dann die ersten grundlegenden Schritte in Simulink
+erarbeiten.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können **Pandas** mit der üblichen Abkürzung **pd** importieren.
-* Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
-* Sie kennen das **csv-Dateiformat**.
-* Sie können eine csv-Datei mit **read_csv()** einlesen.
-* Sie können mit **.info()** sich einen Überblick über die importierten Daten
-  verschaffen.
+* Sie können Simulink starten.
+* Sie kennen den Unterschied zwischen **Sources** (Quellen) und **Sinks**
+  Senken.
+* Sie können ein Simulink-Signal mit Hilfe des **Scope**-Blocks visualisieren.
+* Sie können ein Signal mit dem **Gain**-Block verstärken.
+* Sie können ein Simulink-Modell abspeichern.
 ```
 
-## Series aus Liste erzeugen
+## Was ist Modellierung?
 
-Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
-ist üblich, dabei dem Modul die Abkürzung **pd** zu geben, damit wir nicht immer
-pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.
+Das erste Modell, das Sie vermutlich hatten, war eine Modelleisenbahn oder eine
+Playmobil-Spiellandschaft – vielleicht haben Sie aber auch aus Legosteinen ein
+Auto gebaut? Ein Modell beschreibt die reale Welt in vereinfachter und meist
+verkleinerter Form. In den Natur- und Ingenieurwissenschaften sind Modelle die
+Grundlage des wissenschaftlichen Arbeitens.
 
-```{code-cell} ipython3
-import pandas as pd # kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen
-```
+**Modellierung** beschreibt nun den Prozess, ein geeignetes Modell zu finden, um
+eine bestimmte Fragestellung zu beantworten. Normalerweise ist kein Modell so
+komplex wie die Wirklichkeit. Die Modellierer:innen müssen sich also
+entscheiden, welche Details wichtig sind und welche sie weglassen können.
+Beispielsweise werden sehr häufig bei Spielzeugfiguren die einzelnen Finger
+weggelassen. Aber auch bei Experimenten müssen solche Entscheidungen getroffen
+werden. Einmal angenommen, ich möchte wissen, wie lange ich mein Eis in die
+Sonne legen kann, bevor es komplett geschmolzen ist. Dann kann ich die
+Sonneneinstrahlung oder die Temperatur messen, verschiedene Eissorten nehmen und
+die Zeitdauer messen, bis wann das Eis geschmolzen ist. Aber es ist nicht
+sinnvoll zusätzlich die Information zu erheben, wie viele Eisbären am Nordpol
+gerade einen Fisch gefangen haben.
 
-Die Datenstruktur Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
-Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode `pd.Series(liste)` ein neues Series-Objekt erzeugt, das die
-Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
-Liste, also `[25, 22, 43, 37]` und initialisieren über `pd.Series()` die
-Variable `alter`:
+In den Ingenieurwissenschaften versuchen die Forscher:innen dann aus den Daten
+oder den vermuteten Zusammenhängen eine Funktion zu basteln, die hilft die
+Zusammenhänge zu verstehen oder Prognosen zu treffen. Wenn diese Modellierung
+rein datenbasiert erfolgt, so benutzen wir Methoden der Statistik oder des
+maschinellen Lernens. Wenn stattdessen oder zusätzlich prinzipielle
+Zusammenhänge einfließen, verwenden wir Gleichungen oder
+Differentialgleichungen. Bei Simulink legen wir den Schwerpunkt der Modellierung
+auf die Differentialgleichungen.
 
-```{code-cell} ipython3
-alter = pd.Series([25, 22, 43, 37])
-print(alter)
-```
+## Start von Simulink
 
-Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
-bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
-Numpy-Array nehmen? Der wichtigste Unterschied zwischen der Datenstruktur Series
-und einer Liste ist der **Index**.
+Da Simulink ein Zusatzprogramm von MATLAB ist, öffnen Sie zuerst MATLAB. Es kann
+sein, dass Sie Simulink erst nachinstallieren müssen. Wenn Simulink installiert
+ist, finden Sie im Hauptmenü von MATLAB einen Button mit Simulink. Starten Sie
+Simulink, legen Sie ein `Blank Model` an und öffnen Sie die Bibliothek mit den
+Blockdiagrammen. Die folgende Animationen zeigt Ihnen die notwendigen Schritte.
 
-Bei einer Liste oder einem Numpy-Array ist der Index *implizit* definiert. Damit
-ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, ...
-angelegt wird. Wenn bei einer Liste `liste = [25, 22, 43, 37]` auf das zweite
-Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
-Python zählt ab 0) und schreiben
+![Screencast Start von Simulink](screencasts/part10_start_simulink.gif)
 
-```{code-cell}
-liste = [25, 22, 43, 37]
-print(f'2. Element der Liste: {liste[1]}')
-```
+## Quellen und Senken
 
-Die Datenstruktur Series ermöglich es aber, einen *expliziten Index* zu setzen.
-Über den optionalen Parameter `index=` speichern wir als Zusatzinformation noch
-ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
-Personen Alice, Bob, Charlie und Dora.
+Als ein erstes einfaches Beispiel simulieren wir ein System, das durch die
+mathematische Funktion $f(x)=2\sin(x)$ beschrieben wird. Damit betrachten wir
+zwar noch keine Differentialgleichung, sondern nur eine einfache
+Funktionsgleichung, aber können schon die wichtigsten Prinzipien in Simulink
+kennenlernen, nämlich die grafische Block-Modellierung. In Simulink wird jede
+Eingabe, jeder Verarbeitungsschritt und jede Ausgabe durch einen Block
+beschrieben. Diese Blöcke können dann seriell (hintereinander) oder parallel
+zusammengebaut werden. Die Idee hinter den zusammengeschalteten Blöcken erinnert
+an einen Fluss und seine Nebenflüsse, der letztendlich ins Meer fließt wie
+beispielsweise der Rhein. Nur wird in Simulink nicht Wasser transportiert,
+sondern Informationen.
 
-```{code-cell}
-alter = pd.Series([25, 22, 43, 30], index=["Alice", "Bob", "Charlie", "Dora"])
-print(alter)
-```
+![Bild des Rhein](pics/part10_rhein_small.jpg)
 
-Jetzt ist auch klar, warum beim ersten Mal, als wir `print(alter)` ausgeführt
-haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
-Series-Objekt noch einen impliziten Index wie eine Liste.
+Die Quelle an Informationen wird in Simulink **Source**, so wie der englische
+Begriff. Die weiteren Informationen wie beispielsweise Anfangswerte oder
+Randbedingungen sind ebenfalls Quellen, also Sources und fließen wie die
+Nebenflüsse in den Hauptfluss. Der Abfluss, die Senke oder das Spülbecken heißen
+auf Englisch **Sink**. Unter den Sink-Blöcken finden Sie also das Ergebnis, die
+Ausgabe der Simulation. Wir wollen uns nun das Beispiel
 
-Wenden wir uns nun der letzten Zeile der Ausgabe zu: `dtype: int64`. Für das
-Series-Objekt `alter` wird automatisch der Datentyp der enthaltenen Werte
-ermittelt. In unserem Fall haben wir das Alter als vier Integers gespeichert,
-weshalb `int64` als Attribut `dtype` gespeichert wird. Auf dieses Attribut kann
-auch direkt mit dem Punktoperator zugegegriffen werden.
+$$f(x)=2\sin(x)$$
 
-```{code-cell}
-print(alter.dtype)
-```
+in Simulink ansehen. Die Quelle/Source ist die rechte Seite, genauer gesagt die
+Sinusfunktion $\sin(x)$. Die Quelle wird noch verstärkt. Verstärker heißt auf
+Englisch Gain, also wird noch ein Gain-Block zur Verstärkung dazgeschaltet. Am
+Ende mündet alles in eine Visualisierung. Der entsprechende Sink-Block Scope
+zeigt das Ergebnis $f(x)$.
 
-```{admonition} Mini-Übung
-:class: miniexercise 
-Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
-Vorlesungs/Übungs-Stunden an diesem Wochentag.
-```
+Die Blöcke werden in der Bibliothek gesucht. Zur leichteren Navigation dient die
+linke Seitenleiste der Library. Dort wird Sink oder Source ausgewählt, um den
+Eingabeblock Sinus oder den Ausgabeblock Scope auszuwählen. Der Verstärkerblock
+Gain befindet sich bei den häufig genutzten Blöcken. Am einfachsten ist es, die
+Blöcke anzuklicken und auf den Arbeitsplatz zu ziehen, wie in dem folgenden
+Screencast gezeigt wird.
 
-```{code-cell}
-# Hier Ihr Code:
-```
+![Screencast erstes Projekt in Simulink](screencasts/part10_simulink_firstproject.gif)
 
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-stundenplan = pd.Series([4, 0, 4, 6, 8], index=["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"])
-print(stundenplan)
-```
-````
+## Layout und Speichern
 
-## DataFrames für Tabellen erzeugen
+Die genaue Anordnung der Blöcke ist nicht wichtig, da durch das Routing
+(Verbinden der Blöcke) die Fließrichtung definiert ist. Dennoch empfiehlt es
+sich, das Layout übersichtlich zu halten. Der folgende Screencast zeigt, wie die
+Blöcke mit der Maus verschoben werden, bis das Verbindungssignal horizontal
+ausgerichtet ist. Danach wird gezeigt, wie das erste Projekt unter dem Namen
+"firstProject" gespeichert wird.
 
-Bei Auswertung von Messungen kommt es häufig vor, dass die Daten in Form einer
-Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man sie
-beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl die Zeilen als
-auch die Spalten haben einen Index. Typischerweise werden die Daten in der
-Tabelle zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen
-Datensatz darstellt und die Eigenschaften der Daten als Spalte gespeichert
-werden.
+![Screencast Speichern](screencasts/part10_simulink_saveing.gif)
 
-Bevor wir uns dem Import von Tabellen widmen, schauen wir uns kurz an, wie ein
-DataFrame-Objekt direkt erstellt werden kann. Dies ist besonders nützlich, wenn
-Sie kleinere Datensätze aus Berechnungen oder Messreihen zusammenstellen
-möchten.
+## Die erste Simulation
 
-Die einfachste Methode ist die Erstellung aus einem Dictionary. Dabei entspricht
-jeder Schlüssel einer Spaltenüberschrift und die zugehörigen Werte bilden die
-Spalteninhalte:
+Nun können wir die Simulation laufen lassen. Im folgenden Screencast werden zwei
+Möglichkeiten gezeigt. Zum einen wird direkt aus dem Hautmenü die Simulation
+gestartet. Anschließend wird durch Doppelklick auf den Scope-Block die
+Visualisierung eingeblendet. Zum anderen kann auch der Scope-Block zuerst
+geöffnet werden und von dort aus die Simulation gestartet werden. Zuletzt wird
+moch gezeigt, wie die Verdopplung des Verstärkungsfaktors von 1 auf 2 dazu
+führt, dass die Sinusfunktion Funktionswerte zwischen -2 und 2 annimmt.
 
-```{code-cell}
-# Messdaten von Zugversuchen verschiedener Materialien
-messdaten = {
-    'Material': ['Stahl', 'Aluminium', 'Kupfer', 'Messing'],
-    'Zugfestigkeit_MPa': [400, 310, 220, 380],
-    'Streckgrenze_MPa': [250, 280, 70, 200],
-    'Bruchdehnung_Prozent': [25, 12, 45, 15]
-}
-
-daten_zugversuch = pd.DataFrame(messdaten)
-print(daten_zugversuch)
-```
-
-Sie können auch explizit einen Index festlegen, beispielsweise die
-Probennummern:
-
-```{code-cell}
-daten_zugversuch = pd.DataFrame(messdaten, index=['Probe_01', 'Probe_02', 'Probe_03', 'Probe_04'])
-print(daten_zugversuch)
-```
-
-Alternativ können Sie ein DataFrame aus mehreren Series-Objekten erstellen:
-
-```{code-cell}
-materialien = pd.Series(['Stahl', 'Aluminium', 'Kupfer'], name='Material')
-zugfestigkeit = pd.Series([400, 310, 220], name='Zugfestigkeit_MPa')
-
-df_aus_series = pd.DataFrame({'Material': materialien, 'Zugfestigkeit': zugfestigkeit})
-print(df_aus_series)
-```
-
-In der Praxis werden wir DataFrames jedoch meist aus Dateien importieren, da
-größere Datensätze selten manuell erfasst werden. Dies betrachten wir im
-nächsten Abschnitt.
-
-## Import von Tabellen aus csv-Dateien
-
-Tabellen werden oft in demjenigen Dateiformat abgespeichert, das die jeweilige
-Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-vorgibt. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in einem
-offenen Datenformat vorliegen und damit unabhängig von der verwendeten Software
-und dem verwendeten Betriebssystem sind.
-
-Das **Dateiformat csv** speichert Daten zeilenweise ab. Dabei steht csv für
-"comma-separated values". Die Trennung der Spalten erfolgt durch ein
-Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
-gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nachkommastellen verwenden.
-
-Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
-`read_csv` an (siehe
-[Dokumentation/read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)).
-Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
-ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
-übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.
-
-Betrachten wir die Funktionsweise von `read_csv` mit einem Beispiel. Sollten Sie
-mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die Datei
-{download}`Download bundesliga_top7_offensive.csv
-<https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL>` herunter und
-speichern Sie sie in denselben Ordner, in dem auch dieses JupyterNotebook liegt.
-Die csv-Datei stammt von
-[Kaggle](https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv).
-Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
-der Bundesligasaison 2020/21 enthalten.
-
-Führen Sie dann anschließend die folgende Code-Zelle aus.
-
-```{code-cell}
-import pandas as pd
-data = pd.read_csv('bundesliga_top7_offensive.csv')
-```
-
-Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
-trotzdem nicht. Dazu verwenden wir die Methode `.head()`.
-
-```{code-cell}
-data.head()
-```
-
-Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
-beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
-Methode `.head(10)`mit dem Argument 10.
-
-```{code-cell}
-data.head(10)
-```
-
-Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
-usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
-welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
-erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
-gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
-den Befehl mit `index_col=0`. Die Namen stehen in der 1. Spalte, was in
-Python-Zählweise einer 0 entspricht.
-
-```{code-cell}
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-data.head(10)
-```
-
-````{admonition} Import von Tabellen im xlsx-Format
-:class: warning
-Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
-bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
-Dateiendung `.xlsx`. Der Befehl zum Import einer Excel-Datei {download}`Download bundesliga_top7_offensive.xlsx
-<https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm>` lautet:
-
-```python
-data = pd.read_excel('bundesliga_top7_offensive.xlsx', index_col=0)
-data.head(5)
-```
-
-Vermutlich erhalten Sie zunächst eine Fehlermeldung: `Missing optional
-dependency 'openpyxl'.  Use pip or conda to install openpyxl.` Falls das der
-Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
-schreiben zu können, installieren Sie bitte das Modul `openpyxl` mit `!conda
-install openpyxl` oder `!pip install openpyxl` nach.
-````
-
-## Übersicht verschaffen mit info
-
-Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
-Datensatzes an, aber wie viele Daten insgesamt enthalten sind oder welche
-Vereine noch kommen, können wir mit der `.head()`-Methode nicht erfassen. Dafür
-stellt Pandas die Methode `.info()` zur Verfügung. Probieren wir es einfach aus.
-
-```{code-cell}
-data.info()
-```
-
-Mit `.info()` erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
-die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie `Name`
-selbsterklärend, aber was `xG` bedeutet, erschließt sich nicht von selbst. Dazu
-brauchen wir mehr Informationen von den Autor:innen der Daten.
-
-Weiterhin entnehmen wir der Ausgabe von `.info()`, dass in jeder Spalte 177
-Einträge sind, die `non-null` sind. Damit ist gemeint, dass diese Zellen beim
-Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
-angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
-Datentyp `object` angegeben. Beim Alter/Age wurden korrektweise Integers erkannt
-und die mittlere erwartete Anzahl von Toren pro Spiel 'xG' (= expected number of
-goals from the player in a match) wird als Float angegeben.
-
-## Zusammenfassung und Ausblick
-
-In diesem Kapitel haben wir die beiden wichtigsten Pandas-Datenstrukturen
-kennengelernt: Series und DataFrame. Darüber hinaus haben wir uns damit
-beschäftigt, wie wir mir `.info()` und `.head()` uns einen ersten Überblick über
-die Daten verschaffen können. Wie wir auf Zeilen und Spalten zugreifen, lernen
-wir im nächsten Kapitel.
+![Screencast Visualisierung mit dem Scope-Block](screencasts/part10_simulink_scope.gif)

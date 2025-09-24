@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.1 Einführung MATLAB &#8212; Python für Studierende der Ingenieurwissenschaften</title>
+    <title>8.1 Was sind Klassen und Objekte? &#8212; Python für Studierende der Ingenieurwissenschaften</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.2 Numerisches Rechnen mit MATLAB" href="chapter08_sec02.html" />
-    <link rel="prev" title="8. MATLAB" href="chapter08_sec00.html" />
+    <link rel="next" title="8.2 Methoden und der self-Parameter" href="chapter08_sec02.html" />
+    <link rel="prev" title="8. Objektorientierte Programmierung" href="chapter08_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,47 +223,54 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. MATLAB</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Einführung MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Numerisches Rechnen mit MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Programmieren in MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übung</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Objektorientierte Programmierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Was sind Klassen und Objekte?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 OOP in der Praxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Simulink Einführung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Simulink-Bibliothek</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Programmieren in MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Ableitung, Integration und Differentialgleichung mit Simulink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Kontinuierliche Daten visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Diskrete Daten und Häufigkeiten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 DataFrames visualisieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">11.3 Statistik mit Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">12. Visualisierung mit Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">12.1 Kontinuierliche Daten visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">12.2 Diskrete Daten und Häufigkeiten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">12.3 DataFrames visualisieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Übungen</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter13/chapter13_sec00.html">13. Messwerte und Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec01.html">13.1 Theorie Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec02.html">13.2 Lineare Regression mit polyfit und polyval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec03.html">13.3 Polynomiale Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter13/chapter13_sec04.html">Übungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter14/chapter14_sec00.html">14. Grundbegriffe Künstliche Intelligenz</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec01.html">14.1 Was ist maschinelles Lernen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter14/chapter14_sec02.html">14.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -314,6 +321,55 @@
 <div class="article-header-buttons">
 
 
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/gramschs/book_python/main?urlpath=lab/tree/docs/chapter08/chapter08_sec01.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 <a href="https://github.com/gramschs/book_python" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
@@ -337,6 +393,23 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter08/chapter08_sec01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
       
       
       
@@ -416,7 +489,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.1 Einführung MATLAB</h1>
+    <h1>8.1 Was sind Klassen und Objekte?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,9 +500,11 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden">MATLAB starten und die Entwicklungsumgebung erkunden</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-als-taschenrechner">MATLAB als Taschenrechner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilfe">Hilfe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konzept">Konzept</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-losung-eine-klasse-fur-studierende">Die Lösung: Eine Klasse für Studierende</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-die-daten-eines-objekts">Zugriff auf die Daten eines Objekts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorteile-der-objektorientierten-losung">Vorteile der objektorientierten Lösung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -441,107 +516,324 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="einfuhrung-matlab">
-<h1>8.1 Einführung MATLAB<a class="headerlink" href="#einfuhrung-matlab" title="Link to this heading">#</a></h1>
-<p>Was ist überhaupt MATLAB? Wikipedia erklärt MATLAB folgendermaßen (siehe
-<a class="reference external" href="https://de.wikipedia.org/wiki/Matlab">https://de.wikipedia.org/wiki/Matlab</a>):</p>
-<blockquote>
-<div><p>“Matlab (Eigenschreibweise: MATLAB) ist eine kommerzielle Software des
-US-amerikanischen Unternehmens MathWorks zur Lösung mathematischer Probleme
-und zur grafischen Darstellung der Ergebnisse. Matlab ist vor allem für
-numerische Berechnungen mithilfe von Matrizen ausgelegt, woher sich auch der
-Name ableitet: MATrix LABoratory.”</p>
-</div></blockquote>
+  <section class="tex2jax_ignore mathjax_ignore" id="was-sind-klassen-und-objekte">
+<h1>8.1 Was sind Klassen und Objekte?<a class="headerlink" href="#was-sind-klassen-und-objekte" title="Link to this heading">#</a></h1>
+<p>100 Studierende mit jeweils fünf Eigenschaften verwalten? Das wären 500 einzelne
+Variablen, ein Albtraum! Die objektorientierte Programmierung löst dieses
+Problem: Anstatt Daten und Funktionen getrennt zu behandeln, bündeln wir sie in
+Objekten. In diesem Kapitel lernen wir, wie das funktioniert.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können MATLAB starten.</p></li>
-<li><p>Sie können MATLAB als Taschenrechner benutzen.</p></li>
-<li><p>Sie können die Dokumentation mit der Anweisung <strong>doc</strong> aufrufen.</p></li>
+<li><p>Sie verstehen das Konzept der objektorientierten Programmierung (OOP).</p></li>
+<li><p>Sie können zwischen einer <strong>Klasse</strong> und einem <strong>Objekt</strong> unterscheiden.</p></li>
+<li><p>Sie können eine einfache Klasse selbst implementieren.</p></li>
+<li><p>Sie wissen, was ein <strong>Attribut</strong> ist und können darauf lesend und schreibend
+zugreifen.</p></li>
 </ul>
 </div>
 </section>
-<section id="matlab-starten-und-die-entwicklungsumgebung-erkunden">
-<h2>MATLAB starten und die Entwicklungsumgebung erkunden<a class="headerlink" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden" title="Link to this heading">#</a></h2>
-<p>Im Folgenden benutzen wir MATLAB in der Cloud. Registrieren Sie sich zuerst bei
-der Firma MathWorks</p>
-<blockquote>
-<div><p><a class="reference external" href="https://de.mathworks.com/mwaccount/register?uri=https%3A%2F%2Fde.mathworks.com%2Fmwaccount%2F">Registrierung
-MathWorks</a></p>
-</div></blockquote>
-<p>Sollten Sie Studentin oder Student einer Hochschule sein, verfügt Ihre
-Hochschule vielleicht über eine Campuslizenz. In diesem Fall reicht es, bei der
-Registrierung Ihre studentische E-Mail-Adresse anzugeben.</p>
-<p>Klicken Sie dann auf die folgende URL</p>
-<blockquote>
-<div><p><a class="reference external" href="https://matlab.mathworks.com">https://matlab.mathworks.com</a></p>
-</div></blockquote>
-<p>um sich mit Ihrem neuen Account anzumelden. Starten Sie danach MATLAB Online wie
-in der folgenden Abbildung gezeigt.</p>
-<figure class="align-center" id="id1">
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/screenshot01.png"><img alt="Screenshot des Startbildschirms von MATLAB Online" class="bg-primary mb-1" src="../_images/screenshot01.png" style="width: 75%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Screenshot des Startbildschirms von MATLAB Online</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Danach wird die MATLAB-Entwicklungsumgebung gestartet. Vorerst belassen wir es
-bei den Standardeinstellungen. In dem folgenden Video werden die einzelnen
-Bestandteile der Entwicklungsumgebung vorgestellt.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “1.1 Matlab - Umgebung” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HXyMG9gy4Oo"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</details></section>
-<section id="matlab-als-taschenrechner">
-<h2>MATLAB als Taschenrechner<a class="headerlink" href="#matlab-als-taschenrechner" title="Link to this heading">#</a></h2>
-<figure class="align-center" id="id2">
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/screenshot02.png"><img alt="Screenshot des Kommandofensters" class="bg-primary mb-1" src="../_images/screenshot02.png" style="width: 75%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Screenshot des MATLAB Kommandofensters</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Auch wenn MATLAB also zunächst von der Firma MathWorks für numerische
-Berechnungen ausgelegt wurde, können wir es wie einen Taschenrechner benutzen.
-In dem sogenannten <strong>Kommandofenster</strong> können wir nach dem Prompt (das sind die
-zwei spitzen Klammern &gt;&gt;) unsere Anweisungen an MATLAB eingeben. Durch das
-Drücken von Return wird die Eingabe abgeschlossen und MATLAB führt die Anweisung
-aus.</p>
-<p>Probieren Sie es aus:</p>
+<section id="konzept">
+<h2>Konzept<a class="headerlink" href="#konzept" title="Link to this heading">#</a></h2>
+<p>Bei der bisherigen prozeduralen Programmierung haben wir Funktionen und Daten
+getrennt. Daten speichern wir in Variablen. Funktionen arbeiten dabei nach dem
+EVA-Prinzip: Eingabe – Verarbeitung – Ausgabe. In der Regel erwartet eine
+Funktion eine Eingabe von Daten, verarbeitet diese Daten und gibt Daten zurück.
+In vielen Fällen ist die prozedurale Programmierung völlig ausreichend. Diese
+Herangehensweise stößt an ihre Grenzen, wenn es darum geht, die reale Welt durch
+komplexere Modelle nachzubilden.</p>
+<p>Angenommen, wir wollten ein Programm zur Verwaltung von Studierenden schreiben,
+die an einer Python-Vorlesung teilnehmen. Bereits vor Beginn der Vorlesung
+müssen sich die Studierenden anmelden, um an der Vorlesung teilnehmen zu können.
+In dem Formular werden</p>
 <ul class="simple">
-<li><p>Addition: 2+3</p></li>
-<li><p>Subtraktion: 2-3</p></li>
-<li><p>Multiplikation: 2*4</p></li>
-<li><p>Division: 8/2</p></li>
-<li><p>Potenzierung: 3^2</p></li>
+<li><p>Nachname</p></li>
+<li><p>Vorname</p></li>
+<li><p>Studiengang</p></li>
+<li><p>Semester</p></li>
+<li><p>Matrikelnummer</p></li>
 </ul>
-<p>Selbstverständlich beherrscht MATLAB auch Klammerregeln. Probieren Sie es doch
-einmal selbst aus!</p>
+<p>abgefragt. Angenommen, es melden sich 20 Studierende für die Python-Vorlesung
+an. Welchen Datentyp benutzen wir nun zur Erfassung der Anmeldedaten?</p>
+<p>Eine naheliegende Lösung wäre, für jeden Studierenden separate Variablen
+anzulegen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Studierende 1</span>
+<span class="n">nachname_1</span> <span class="o">=</span> <span class="s2">&quot;Abendrot&quot;</span>
+<span class="n">vorname_1</span> <span class="o">=</span> <span class="s2">&quot;Anna&quot;</span>
+<span class="n">studiengang_1</span> <span class="o">=</span> <span class="s2">&quot;Maschinenbau&quot;</span>
+<span class="n">semester_1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">matrikelnummer_1</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+
+<span class="c1"># Studierende 2</span>
+<span class="n">nachname_2</span> <span class="o">=</span> <span class="s2">&quot;Berliner&quot;</span>
+<span class="n">vorname_2</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
+<span class="n">studiengang_2</span> <span class="o">=</span> <span class="s2">&quot;Maschinenbau&quot;</span>
+<span class="n">semester_2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">matrikelnummer_2</span> <span class="o">=</span> <span class="s2">&quot;87654321&quot;</span>
+
+<span class="c1"># ... und so weiter für alle 20 Studierenden.</span>
+</pre></div>
+</div>
+<p>Für 20 Studierende benötigen wir 100 Variablen! Das ist nicht nur
+unübersichtlich, sondern auch unpraktisch. Was passiert, wenn wir später weitere
+Informationen speichern möchten, wie beispielsweise die Klausurnote? Dann
+müssten wir 20 weitere Variablen hinzufügen.</p>
+<p>Eine andere Möglichkeit wäre die Verwendung von Listen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nachnamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Colorado&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">vornamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">studiengänge</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">semester</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">matrikelnummern</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;12345678&quot;</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">,</span> <span class="s2">&quot;11223344&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Auch hier entstehen Probleme: Der Zusammenhang zwischen den Daten kann leicht
+verloren gehen. Wenn wir beispielsweise einen Studierenden aus der Liste
+entfernen möchten, müssen wir daran denken, den entsprechenden Eintrag in
+allen fünf Listen zu löschen. Vergessen wir eine Liste, stimmen die Daten
+nicht mehr überein.</p>
+<p>Eine weitere Möglichkeit wäre, für jeden Studierenden ein Dictionary zu
+verwenden. Damit könnten wir die Daten folgendermaßen zusammenfassen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nachname&quot;</span><span class="p">:</span> <span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;studiengang&quot;</span><span class="p">:</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;semester&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;matrikelnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Dictionaries sind zwar praktischer als viele einzelne Variablen oder parallele
+Listen, haben aber auch Grenzen: Wir können zwar Daten bündeln, aber es gibt
+keine feste Struktur. Tippfehler bei Schlüsseln oder fehlende Einträge fallen
+erst zur Laufzeit auf. Außerdem können wir Funktionen zwar separat schreiben,
+sie sind aber nicht automatisch mit den Daten verbunden.</p>
+<p>Genau hier setzt die objektorientierte Programmierung an. Die Grundidee besteht
+darin, Daten und die dazugehörigen Funktionen in einer gemeinsamen Struktur zu
+bündeln.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “1.2 Taschenrechner” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IKKAK0mHArA"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<span class="sd-summary-text">Video zu “Konzept der Objektorientierung” von Programmieren lernen</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/46yolPy-2VQ" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
 </details></section>
-<section id="hilfe">
-<h2>Hilfe<a class="headerlink" href="#hilfe" title="Link to this heading">#</a></h2>
-<p>MATLAB ist nur in Englisch verfügbar. Alle Anweisungen an MATLAB basieren auf
-der englischen Sprache. Dafür besitzt MATLAB eine gute Dokumentation. Mit dem
-Kommando <strong>doc</strong> wird die entsprechende Webseite im Browser geladen.</p>
+<section id="die-losung-eine-klasse-fur-studierende">
+<h2>Die Lösung: Eine Klasse für Studierende<a class="headerlink" href="#die-losung-eine-klasse-fur-studierende" title="Link to this heading">#</a></h2>
+<p>Die objektorientierte Programmierung löst dieses Problem elegant. Wir erstellen
+eine sogenannte Klasse, die wie ein Formular oder ein Bauplan funktioniert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mit dieser Klasse können wir nun ganz einfach einzelne Studierende erstellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einzelne Studierende erstellen (= Objekte)</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+<span class="n">student2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">)</span>
+<span class="n">student3</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Colorado&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;11223344&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die <strong>Klasse</strong> ist also vergleichbar mit einem Formular, das die Studierenden
+zur Anmeldung ausfüllen müssen. Das Formular legt fest, welche Daten erhoben
+werden. Zur Anmeldung wird die Klausurnote beispielsweise nicht abgefragt, auch
+wenn sich Studierende das vielleicht wünschen würden. Ein <strong>Objekt</strong> dieser
+Klasse ist dann jeder einzelne Studierende wie beispielsweise <code class="docutils literal notranslate"><span class="pre">student1</span></code> oder
+<code class="docutils literal notranslate"><span class="pre">student2</span></code> mit den konkreten Daten. Die Eigenschaften, die in diesen Objekten
+gemäß dem Bauplan gespeichert sind, werden <strong>Attribute</strong> genannt.</p>
+<p>In diesem Kapitel konzentrieren wir uns zunächst auf Klassen, Objekte und
+Attribute. Auf Methoden gehen wir im nächsten Kapitel genauer ein, geben aber in
+der folgenden Zusammenfassung der Grundbegriffe der objektorientierten
+Programmierung (OOP) schon einmal einen Ausblick auf den Fachbegriff Methode.</p>
+<div class="note admonition">
+<p class="admonition-title">Grundbegriffe der objektorientierten Programmierung</p>
+<ul class="simple">
+<li><p>Eine <strong>Klasse</strong> ist dabei wie ein Bauplan oder ein Formular: Sie legt fest,
+welche Daten und welche Funktionen zu einem bestimmten Typ von Dingen gehören.</p></li>
+<li><p>Ein <strong>Objekt</strong> ist eine konkrete Ausprägung einer Klasse, sozusagen ein
+Exemplar nach dem Bauplan. Ein Objekt »Studierender« enthält also die echten
+Angaben einer Person wie Nachname, Vorname und Matrikelnummer.</p></li>
+<li><p>Die einzelnen Daten, die ein Objekt speichert, nennt man <strong>Attribute</strong>.</p></li>
+<li><p>Neben Attributen können Klassen auch <strong>Methoden</strong> enthalten. Das sind
+Funktionen, die speziell für die Arbeit mit den Objekten gedacht sind.</p></li>
+</ul>
+</div>
+</section>
+<section id="zugriff-auf-die-daten-eines-objekts">
+<h2>Zugriff auf die Daten eines Objekts<a class="headerlink" href="#zugriff-auf-die-daten-eines-objekts" title="Link to this heading">#</a></h2>
+<p>Nachdem wir ein Objekt erstellt haben, können wir auf seine Attribute (=
+gespeicherte Daten) zugreifen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Objekt erstellen</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lesender Zugriff auf Attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">nachname</span><span class="p">)</span>       <span class="c1"># Ausgabe: Abendrot</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">vorname</span><span class="p">)</span>        <span class="c1"># Ausgabe: Anna</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">semester</span><span class="p">)</span>       <span class="c1"># Ausgabe: 3</span>
+
+<span class="c1"># Schreibender Zugriff - Werte ändern</span>
+<span class="n">student1</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="mi">4</span>          <span class="c1"># Anna ist jetzt im 4. Semester</span>
+<span class="n">student1</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="s2">&quot;Anna-Lena&quot;</span> <span class="c1"># Vorname ändern</span>
+
+<span class="c1"># Überprüfung der Änderung</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">semester</span><span class="p">)</span>       <span class="c1"># Ausgabe: 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">vorname</span><span class="p">)</span>        <span class="c1"># Ausgabe: Anna-Lena</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abendrot
+Anna
+3
+4
+Anna-Lena
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um auf ein Attribut zuzugreifen, verwenden wir die <strong>Punkt-Notation</strong> bzw. den
+<strong>Punkt-Operator</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">objektname</span><span class="o">.</span><span class="n">attributname</span>
+</pre></div>
+</div>
+<p>Jedes Objekt hat seine eigenen Attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">nachname</span><span class="p">)</span>  <span class="c1"># &quot;Abendrot&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student2</span><span class="o">.</span><span class="n">nachname</span><span class="p">)</span>  <span class="c1"># &quot;Berliner&quot;</span>
+<span class="c1"># student1 und student2 sind völlig unabhängig voneinander</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abendrot
+Berliner
+</pre></div>
+</div>
+</div>
+</div>
+<p>Schauen wir uns nun die Vorteile an, die Objekte in der Programmierung mit sich
+bringen.</p>
+</section>
+<section id="vorteile-der-objektorientierten-losung">
+<h2>Vorteile der objektorientierten Lösung<a class="headerlink" href="#vorteile-der-objektorientierten-losung" title="Link to this heading">#</a></h2>
+<p><strong>1. Zusammengehörige Daten sind gebündelt:</strong>
+Alle Informationen zu einem Studierenden sind in einem Objekt gespeichert. Es
+kann nichts “durcheinander geraten”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">nachname</span><span class="p">)</span>       <span class="c1"># &quot;Abendrot&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">vorname</span><span class="p">)</span>        <span class="c1"># &quot;Anna&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">studiengang</span><span class="p">)</span>    <span class="c1"># &quot;Maschinenbau&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abendrot
+Anna-Lena
+Maschinenbau
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2. Einfache Erweiterung:</strong>
+Neue Eigenschaften können leicht hinzugefügt werden, ohne bestehenden Code
+zu ändern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">vorname</span><span class="p">,</span> <span class="n">studiengang</span><span class="p">,</span> <span class="n">semester</span><span class="p">,</span> <span class="n">matrikelnummer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nachname</span> <span class="o">=</span> <span class="n">nachname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vorname</span> <span class="o">=</span> <span class="n">vorname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studiengang</span> <span class="o">=</span> <span class="n">studiengang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semester</span> <span class="o">=</span> <span class="n">semester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matrikelnummer</span> <span class="o">=</span> <span class="n">matrikelnummer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">klausurnote</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Neue Eigenschaft</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da wir nicht wollen, dass die Klausurnote durch die Studierenden bei der
+Anmeldung gesetzt wird, haben wir diese Eigenschaft im <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>-Abschnitt
+bewusst weggelassen. Da die Klausurnote erst später vergeben wird, setzen wir
+sie initial auf <code class="docutils literal notranslate"><span class="pre">None</span></code> (= kein Wert). Es bleibt also bei der alten Methode, ein
+konkretes Objekt zu erzeugen, wie der folgende Code-Abschnitt zeigt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">klausurnote</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3. Übersichtliche Verwaltung vieler Objekte:</strong>
+Anstatt 100 einzelner Variablen verwenden wir einfach eine Liste von Objekten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Liste mit Studierenden anlegen</span>
+<span class="n">studierende</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Abendrot&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;12345678&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Berliner&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Maschinenbau&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;87654321&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Colorado&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Elektrotechnik&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;11223344&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># alle Namen ausgeben</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">studierende</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">vorname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">student</span><span class="o">.</span><span class="n">nachname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anna Abendrot
+Bob Berliner
+Charlie Colorado
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>4. Wiederverwendbarkeit:</strong>
+Die Klasse kann in verschiedenen Programmen wiederverwendet werden.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Video zu “1.3 Hilfe” von Mathe? Logisch!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FasuEz-bC40"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<span class="sd-summary-text">Video zu “Klassen und Objekte” von Programmieren lernen</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XxCZrT7Z3G4" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
 </details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir das Grundkonzept der objektorientierten
+Programmierung kennengelernt. Wir haben gesehen, dass eine Klasse wie ein
+Bauplan oder ein Formular funktioniert und daraus Objekte mit konkreten Daten
+entstehen. Die gespeicherten Informationen heißen Attribute. Im nächsten Kapitel
+lernen wir die Methoden kennen, also Funktionen, die direkt zu einer Klasse
+gehören.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -580,7 +872,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></ifr
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8. MATLAB</p>
+        <p class="prev-next-title">8. Objektorientierte Programmierung</p>
       </div>
     </a>
     <a class="right-next"
@@ -588,7 +880,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></ifr
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8.2 Numerisches Rechnen mit MATLAB</p>
+        <p class="prev-next-title">8.2 Methoden und der self-Parameter</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -610,9 +902,11 @@ encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></ifr
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-starten-und-die-entwicklungsumgebung-erkunden">MATLAB starten und die Entwicklungsumgebung erkunden</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-als-taschenrechner">MATLAB als Taschenrechner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilfe">Hilfe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konzept">Konzept</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-losung-eine-klasse-fur-studierende">Die Lösung: Eine Klasse für Studierende</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zugriff-auf-die-daten-eines-objekts">Zugriff auf die Daten eines Objekts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorteile-der-objektorientierten-losung">Vorteile der objektorientierten Lösung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
