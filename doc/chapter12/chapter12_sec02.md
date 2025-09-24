@@ -12,83 +12,193 @@ kernelspec:
   name: python3
 ---
 
-# 12.2 Lineare Regression mit polyfit und polyval
-
-Nachdem wir im letzten Kapitel uns mit der Theorie der linearen Regression
-beschäftigt haben, möchten wir nun konkret eine Regressionsgerade an Messdaten
-anpassen. Umgangssprachlich wird auch gesagt, dass wir einen Fit durchführen
-bzw. eine Gerade an die Messdaten anfitten.
+# 12.2 Diskrete Daten und Häufigkeiten
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können mit **polyfit** die Koeffizienten einer Regressionsgerade zu
-  gegebenen Messwerten bestimmen.
-* Sie können mit **polyval** aus den berechneten Koeffizienten die
-  Regressionsgerade bestimmen.
+* Sie können diskrete Daten als **Balkendiagramm** visualisieren.
+* Sie können kontinuierliche Daten als **Histogramm** darstellen.
+* Sie verstehen den Unterschied zwischen Balkendiagrammen und Histogrammen.
+* Sie können die **Anzahl der Bins** bei Histogrammen anpassen.
+* Sie können Balken- und Histogramme mit **Farben** gestalten.
 ```
 
-## Koeffizienten der Regressionsgerade berechnen mit polyfit
+## Balkendiagramme
 
-Python bzw. das Modul NumPy unterstützt die Suche nach Regressionspolynomen mit
-der Funktion `polyfit()`. Eine detaillierte Beschreibung finden Sie in der
-[NumPy-Dokumentation
-(polyfit)](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit).
-Mittlerweile gibt es modernere Methoden im Modul `numpy.polynomial`, aber wir
-bleiben in dieser Vorlesung dennoch beim klassischen `polyfit()`, um eine
-möglichst große Ähnlichkeit zu MATLAB zu wahren.
+Ein Balkendiagramm wird mit der Funktion `bar()` erstellt. Balkendiagramme
+eignen sich zur Darstellung von diskreten, kategorialen Daten. Angenommen, wir
+möchten auswerten, wie viele Nutzer/innen in campUAS auf die Jupyter Notebooks
+zum Download zugegriffen haben:
 
-Aufgerufen wird polyfit mit
+| Woche | Anzahl Nutzer/innen |
+| --- | --- |
+| 2 | 14 |
+| 3 | 12 |
+| 4 | 10 |
+| 5 | 10 |
+| 6 | 9  |
 
-`p = polyfit(x, y, grad)`
-
-Dabei sind x und y die Messdaten und `grad` ist ein Integer mit dem Polynomgrad.
-Für eine lineare Funktion setzen wir `grad = 1`. Das Ergebnis ist ein
-sogenanntes NumPy-Array, das wir im Folgenden wie eine Liste benutzen. Das Array
-`p` enthält die Koeffizienten des Polynoms in absteigender Reihenfolge. Damit
-ist gemeint, dass die höchste Potenz zuerst kommt.
-
-Ist der Polynomgrad 1, dann ist `p[0]` die Steigung der linearen
-Regressionsgerade und der y-Achsenabschnitt ist in `p[1]` gespeichert:
-
-$$f(x) = p[0] \cdot x + p[1].$$
-
-Um die Anwendung von `polyfit()` zu zeigen, werden zunächst die folgenden sieben
-Messpunkte visualisiert:
+Dann wird das Balkendiagramm mit folgendem Code erzeugt:
 
 ```{code-cell}
 import matplotlib.pyplot as plt
 
-x = [-1, 0, 1, 2,  3, 4, 5]
-y = [-2.52,  0.85,   3.21,  7.19,  8.93, 12.89, 15.40]
+# Daten
+x = [2, 3, 4, 5, 6]
+y = [14, 12, 10, 10, 9]
 
+# Balkendiagramm
 plt.figure()
-plt.scatter(x,y)
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten mit linearem Zusammenhang')
+plt.bar(x, y)
+plt.xlabel('Woche')
+plt.ylabel('Anzahl Nutzer/innen')
+plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22')
 plt.show()
 ```
 
-Als nächstes verwenden wir `polyfit`, um die Koeffizienten einer
-Regressionsgerade von Python berechnen zu lassen.
+Farben können mit dem optionalen Argument `color=` eingestellt werden. Dabei
+funktionieren häufig einfach die englischen Bezeichnungen für grundlegende
+Farben wie beispielsweise red, green, blue. Eine Alternative dazu ist, den
+RGB-Wert zu spezifizieren, also den Rot-Anteil, den Grün-Anteil und den
+Blau-Anteil. Details finden Sie in der Matplotlib-Dokumentation:
+
+> <https://matplotlib.org/stable/tutorials/colors/colors.html>
+
+Im folgenden Balkendiagramm sind die Balken grau dargestellt.
+
+```{code-cell}
+# Daten
+x = [2, 3, 4, 5, 6]
+y = [14, 12, 10, 10, 9]
+
+# Balkendiagramm mit Farbe
+plt.figure()
+plt.bar(x, y, color='gray')
+plt.xlabel('Woche')
+plt.ylabel('Anzahl Nutzer/innen')
+plt.title('Zugriff auf Jupyter Notebooks zum Download WiSe 2021/22')
+plt.show()
+```
+
+Balkendiagramme eignen sich besonders gut für den Vergleich von Kategorien. Hier
+ein weiteres Beispiel mit verschiedenen Programmiersprachen und ihrer
+Beliebtheit. Bei diesem Beispiel färben wir auch noch die Balken ein. Dazu
+übergeben wir dem Argument `color` eine Liste mit Strings, die die Farben
+Hex-Code spezifiziert. Mehr Details zu Hex-Codes für Farben finden Sie hier:
+[https://www.color-hex.com](https://www.color-hex.com).
+
+```{code-cell}
+# Daten (fiktive Umfrage)
+sprachen = ['Python', 'Java', 'C++', 'JavaScript', 'C#']
+beliebtheit = [85, 78, 65, 82, 58]
+
+# Balkendiagramm
+plt.figure()
+plt.bar(sprachen, beliebtheit, color=['#3776ab', '#f89820', '#00599c', '#f7df1e', '#239120'])
+plt.xlabel('Programmiersprache')
+plt.ylabel('Beliebtheit (%)')
+plt.title('Beliebtheit von Programmiersprachen unter Studierenden')
+plt.show()
+```
+
+```{admonition} Mini-Übung
+:class: miniexercise 
+Hier ist eine Tabelle mit den Zugriffszahlen auf die Jupyter Notebooks in der
+Vorlesung Angewandte Informatik. Bitte stellen Sie die Daten als Balkendiagramm
+inklusive Beschriftungen dar. Färben Sie die Balken schwarz.
+
+|Woche |Anzahl Nutzer/innen|
+| --- | --- |
+| 3 | 9  |
+| 4 | 17 |
+| 5 | 15 |
+| 6 | 10 |
+| 7 | 11 |
+```
+
+```{code-cell}
+# Hier Ihr Code:
+```
+
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+import matplotlib.pyplot as plt
+
+x = [3, 4, 5, 6, 7]
+y = [9, 17, 15, 10, 11]
+
+plt.figure()
+plt.bar(x, y, color='black')
+plt.xlabel('Woche')
+plt.ylabel('Anzahl Nutzer/innen')
+plt.title('Zugriffszahlen Jupyter Notebooks - Angewandte Informatik')
+plt.show()
+```
+````
+
+## Histogramme
+
+Während Balkendiagramme für diskrete, kategoriale Daten verwendet werden,
+dienen Histogramme zur Darstellung der Verteilung kontinuierlicher Daten.
+Ein Histogramm zeigt, wie häufig bestimmte Wertebereiche in einem Datensatz
+vorkommen.
+
+Der wichtigste Unterschied: Bei Balkendiagrammen sind die Kategorien fest
+vorgegeben (z.B. Wochentage, Programmiersprachen), bei Histogrammen werden
+die kontinuierlichen Daten in Intervalle (sogenannte "Bins") unterteilt.
+
+Erstellen wir zunächst einen Datensatz mit kontinuierlichen Daten:
 
 ```{code-cell}
 import numpy as np
+import matplotlib.pyplot as plt
 
-koeffizienten = np.polyfit(x,y, 1)
-print(koeffizienten)
+# Simuliere Körpergrößen von 1000 Personen (normalverteilt)
+np.random.seed(42)  # Für reproduzierbare Ergebnisse
+koerpergroessen = np.random.normal(175, 8, 1000)  # Mittelwert 175cm, Standardabweichung 8cm
+
+# Histogramm erstellen
+plt.figure()
+plt.hist(koerpergroessen, bins=30)
+plt.xlabel('Körpergröße [cm]')
+plt.ylabel('Häufigkeit')
+plt.title('Verteilung der Körpergrößen')
+plt.show()
 ```
 
-Die gefundene Regressionsgerade lautet also
+Die Funktion `hist()` nimmt die Rohdaten und erstellt automatisch ein
+Histogramm. Der Parameter `bins` bestimmt, in wie viele Intervalle die Daten
+aufgeteilt werden. Mehr Bins führen zu einer feineren Aufteilung, weniger Bins
+zu einer gröberen.
 
-$$f(x) = 2.98\cdot x + 0.59.$$
+Schauen wir uns den Effekt verschiedener Bin-Anzahlen an. Zusätzlich nutzen wir
+noch die Optionen `alpha` (Transparenzgrad), `color` (Farbe) und `edgecolor`
+(Farbe des Rahmens um die Balken), um die Bins besser zu visualisieren.
+
+```{code-cell}
+# Verschiedene Bin-Anzahlen vergleichen
+anzahl_bins = [10, 20, 50, 100]
+titel = ['10 Bins', '20 Bins', '50 Bins', '100 Bins']
+
+for i in range(4):
+  plt.figure()
+  plt.hist(koerpergroessen, bins=anzahl_bins[i], alpha=0.7, color='skyblue', edgecolor='black')
+  plt.xlabel('Körpergröße [cm]')
+  plt.ylabel('Häufigkeit')
+  plt.title(titel[i])
+```
 
 ```{admonition} Mini-Übung
 :class: miniexercise
-Lassen Sie zusätzlich zu den Messwerten die gefundene Regressionsgerade in der
-Farbe rot visualisieren.
+Erstellen Sie ein Histogramm für simulierte Reaktionszeiten:
+- Generieren Sie 500 Zufallszahlen mit Mittelwert 0.25 und Standardabweichung 0.05
+- Verwenden Sie 25 Bins
+- Färben Sie das Histogramm orange
+- Beschriften Sie die Achsen: x-Achse "Reaktionszeit [s]", y-Achse "Häufigkeit"
+- Titel: "Verteilung der Reaktionszeiten"
 ```
 
 ```{code-cell}
@@ -98,112 +208,67 @@ Farbe rot visualisieren.
 ````{admonition} Lösung
 :class: miniexercise, toggle
 ```python
-# Wertetabelle für Regressionsgerade mit 50 Punkten
-x_modell = np.linspace(-1, 5)
-y_modell = 2.98 * x_modell + 0.59
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Visualisierung Messwerte und Regressionsgerade
+# Daten generieren
+np.random.seed(42)
+reaktionszeiten = np.random.normal(0.25, 0.05, 500)
+
+# Histogramm erstellen
 plt.figure()
-plt.scatter(x,y)
-plt.plot(x_modell, y_modell, color='red')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten mit linearem Zusammenhang')
+plt.hist(reaktionszeiten, bins=25, color='orange', alpha=0.7, edgecolor='black')
+plt.xlabel('Reaktionszeit [s]')
+plt.ylabel('Häufigkeit')
+plt.title('Verteilung der Reaktionszeiten')
+plt.grid(True, alpha=0.3)
 plt.show()
 ```
 ````
 
-## Regressionsgerade aus Koeffizienten mit polyval auswerten
+## Was ist der Unterschied zwischen Balkendiagramm und Histogramm?
 
-Eine weitere Funktion aus dem NumPy-Modul ist die Funktion `polyval()`. Die
-polyval-Funktion wird dazu benutzt, ein Polynom auszuwerten. Der Aufruf der
-polyval-Funktion sieht prinzipiell so aus:
+Um den Unterschied zwischen Balkendiagramm und Histogramm zu verdeutlichen,
+schauen wir uns Daten von Autos als Beispiel an.
 
-```python
-y = np.polyval(koeffizienten, x)
-```
-
-Dabei ist `koeffizienten` die Liste mit den Koeffizienten des Polynoms, die z.B.
-aus der Berechnung `polyfit()` stammen. Die Koeffizienten sind dabei wieder
-absteigend sortiert. Zuerst kommt der Koeffizient der höchsten Potenz. `x` ist
-eine Liste von Zahlen oder ein NumPy-Array, für die das Polynom ausgewertet
-werden soll.
-
-Wenn wir die Regressionsgerade des Beispiels an der Stelle $x = 2.5$ auswerten
-wollen, so schreiben wir
+Mit dem Balkendiagramm visualisieren wir diskrete Daten wie beispielsweise die
+Anzahl der verkauften Autos pro Marke.
 
 ```{code-cell}
-y = np.polyval(koeffizienten, 2.5)
-print(f'Die Regressionsgerade an der Stelle x = 2.5 ist {y:.2f}.')
-```
+# Anzahl verkaufter Autos pro Marke (diskrete Kategorien)
+marken = ['BMW', 'Mercedes', 'Audi', 'VW', 'Ford']
+verkaufte_autos = [45, 38, 52, 67, 23]
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Lassen Sie die Regressionsgerade mit `polyval` aus den mit `polyfit` für das
-Intervall $[-1, 5]$ auswerten und visualisieren Sie die Messwerte (in blau)
-zusammen mit der Regressionsgeraden (in rot).
-```
-
-```{code-cell}
-# Hier Ihr Code
-```
-
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-# Wertetabelle für Regressionsgerade
-x_modell = np.linspace(-1, 5)
-y_modell = np.polyval(koeffizienten, x_modell)
-
-# Visualisierung Messwerte und Regressionsgerade
 plt.figure()
-plt.scatter(x,y)
-plt.plot(x_modell, y_modell, color='red')
-plt.xlabel('Ursache')
-plt.ylabel('Wirkung')
-plt.title('Künstliche Messdaten mit linearem Zusammenhang')
-plt.show()
+plt.bar(marken, verkaufte_autos)
+plt.xlabel('Automarke')
+plt.ylabel('Anzahl verkaufter Autos')
+plt.title('Balkendiagramm: Diskrete Kategorien')
+plt.show();
 ```
-````
 
-## Anwendung auf CO2-Daten
-
-Nachdem wir die NumPy-Funktionen `polyfit()` und `polyval()` kennengelernt
-haben, können wir diese nun auf unser CO2-Beispiel aus Kapitel 12.1 anwenden und
-dabei systematisch vorgehen. Anstatt die Parameter der Regressionsgeraden durch
-Ausprobieren zu finden, berechnen wir sie direkt:
+Wenn es aber nun darum geht, darzustellen, wie viele Autos ein bestimmtes Alter
+in Jahren haben, ist ein Balkendiagramm unübersichtlich. Besser ist es, die Jahre
+zuerst zu clustern.
 
 ```{code-cell}
-import pandas as pd
-from sklearn.metrics import r2_score
+# Alter der Autos (kontinuierliche Daten)
+np.random.seed(123)
+alter = np.random.normal(12, 4, 100) 
 
-# Daten
-data = pd.read_csv('data/co2_emissionen_worldwide.csv', skiprows=1, index_col=0)
-jahre = data.index
-co2 = data['Metrische_Tonnen_pro_Einwohner']
-
-# Berechnung der optimalen Regressionskoeffizienten
-koeffizienten = np.polyfit(jahre, co2, 1)
-print(f'Steigung m = {koeffizienten[0]:.4f}')
-print(f'y-Achsenabschnitt b = {koeffizienten[1]:.4f}')
-
-# Erstellung der Modellfunktion
-co2_modell = np.polyval(koeffizienten, jahre)
-
-# Berechnung des R2-Wertes zur Bewertung der Anpassungsqualität
-r2 = r2_score(co2_modell, co2)
-print(f'R2 = {r2:.4f}')
+plt.figure()
+plt.hist(alter, bins=15, alpha=0.7, color='skyblue', edgecolor='black')
+plt.xlabel('Alter [Jahre]')
+plt.ylabel('Anzahl Autos')
+plt.title('Histogramm: Kontinuierliche Daten')
+plt.show();
 ```
-
-Mit `polyfit()` erhalten wir eine Steigung von etwa 0.0344 und einen
-y-Achsenabschnitt von -64.75, was unseren durch Ausprobieren gefundenen Werten
-sehr nahe kommt. Der R²-Wert von 0.77 bestätigt, dass die lineare Regression die
-CO2-Emissionsdaten gut erklärt, aber nicht sehr gut. Dies macht die
-Regressionsgerade zu einem brauchbaren Modell für Prognosen, auch wenn die
-Abweichungen zeigen, dass andere Faktoren ebenfalls eine Rolle spielen.
 
 ## Zusammenfassung und Ausblick
 
-In diesem Kapitel haben wir gelernt, eine lineare Funktion an Messdaten
-anzupassen. Im nächsten Kapitel werden wir uns mit dem Fit von Polynomen
-beschäftigen.
+In diesem Kapitel haben wir zwei wichtige Visualisierungstypen für verschiedene
+Datenarten kennengelernt. Balkendiagramme eignen sich für diskrete, kategoriale
+Daten und ermöglichen den direkten Vergleich zwischen verschiedenen Kategorien.
+Histogramme zeigen die Verteilung kontinuierlicher Daten und helfen dabei,
+Muster und Häufigkeiten in großen Datensätzen zu erkennen. Im nächsten Kapitel
+werden wir lernen, wie wir diese Techniken auf reale Datensätze anwenden können.

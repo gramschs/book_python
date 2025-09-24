@@ -32,7 +32,7 @@ import numpy as np
 data = pd.read_csv('schlaf_gesundheit_lifestyle_datensatz.csv')
 ```
 
-```{admonition} Übung 11.1: Streudiagramme
+```{admonition} Übung 12.1: Streudiagramme
 :class: miniexercise
 Laden Sie die Datei `schlaf_gesundheit_lifestyle_datensatz.csv` herunter.
 
@@ -85,7 +85,7 @@ plt.show()
 ```
 ````
 
-```{admonition} Übung 11.2: Balkendiagramme und Histogramme
+```{admonition} Übung 12.2: Balkendiagramme und Histogramme
 :class: miniexercise
 1. Erstellen Sie ein Balkendiagramm für eine Auswahl von 5 Personen aus dem
    Datensatz. Filtern Sie die ersten 5 Zeilen mit `data.head(5)` und stellen Sie
@@ -137,7 +137,7 @@ plt.show()
 ```
 ````
 
-```{admonition} Übung 11.3 Subplots
+```{admonition} Übung 12.3 Subplots
 :class: miniexercise
 Analysieren Sie die durchschnittliche Schlafqualität nach Berufsgruppen.
 
@@ -201,7 +201,7 @@ plt.show()
 ```
 ````
 
-```{admonition} Übung 11.4: Dashboard für Schlafanalyse
+```{admonition} Übung 12.4: Dashboard für Schlafanalyse
 :class: miniexercise
 Erstellen Sie ein 2x2 Subplot-Dashboard mit folgenden Visualisierungen:
 
@@ -265,7 +265,7 @@ plt.show()
 ```
 ````
 
-```{admonition} Übung 11.5: Random Walk
+```{admonition} Übung 12.5: Random Walk
 :class: miniexercise
 Teilaufgabe 1:
    

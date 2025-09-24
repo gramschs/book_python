@@ -12,323 +12,242 @@ kernelspec:
   name: python3
 ---
 
-# 11.3 DataFrames visualisieren
-
-Bisher haben wir die Daten für die Visualisierung manuell erzeugt. In diesem
-Kapitel beschäftigen wir uns damit, wie Pandas-DataFrames professionell
-visualisiert werden. Wir lernen fortgeschrittene Techniken kennen, die beispielsweise für das Anfertigen einer Bachelorarbeit wichtig sind.
+# 11.3 Statistik mit Pandas
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können den Zeilenindex **.index** und den Spaltenindex **.columns** aus
-  einem DataFrame extrahieren.
-* Sie können den Text der Achsenbeschriftung drehen.
-* Sie können mit **axhline()** und **axvline()** Referenzlinien zu Plots hinzufügen.
-* Sie können **Subplots** für komplexere Visualisierungen erstellen.
-* Sie können **Korrelationsanalysen** graphisch aufbereiten.
-* Sie können Plots für Bachelorarbeiten und Präsentationen optimieren.
+* Sie können sich mit **describe** eine Übersicht über statistische Kennzahlen
+  verschaffen.
+* Sie wissen, wie Sie die Anzahl der gültigen Einträge mit **count** ermitteln.
+* Sie kennen die statistischen Kennzahlen Mittelwert und Standardabweichung und
+  wissen, wie diese mit **mean** und **std** berechnet werden.
+* Sie können das Minimum und das Maximum mit **min** und **max** bestimmen.
+* Sie wissen wie ein Quantil interpretiert wird und wie es mit **quantile**
+  berechnet wird.
 ```
 
-## Visualisierung von DataFrames
+## Schnelle Übersicht mit .describe()
 
-Aber wie kombinieren wir jetzt die Funktionalitäten des Pandas-Moduls mit denen
-des Matplotlib-Moduls? Der grundlegende Datentyp für Matplotlib ist das
-NumPy-Array und auch in den Pandas-Datenobjekten stecken im Kern NumPy-Arrays.
-Daher funktionieren die Plotting-Funktionalitäten von Matplotlib direkt.
-Wünschenswert wäre allerdings, den Zeilen- oder den Spaltenindex für die
-Beschriftung zu nehmen. Beides ist in dem DataFrame-Objekt abgespeichert. Wir
-können mit
+So wie die Methode `.info()` uns einen schnellen Überblick über die Daten eines
+DataFrame-Objektes gibt, so liefert die Methode `.describe()` eine schnelle
+Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
+Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21.
 
-* `.index` auf den Zeilenindex und
-* `.columns` auf den Spaltenindex
-
-zugreifen. Die Methode `.to_numpy()` liefert die Werte in der Tabelle als
-NumPy-Array zurück. Das brauchen wir für die Visualisierung jedoch nicht, denn die
-Tabellendaten können direkt visualisiert werden.
-
-Wir verwenden einen realistischen Datensatz und importieren den uns schon
-bekannten Datensatz der Top7-Fußballvereine der Bundesliga 2020/21 ([→
-Download](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)). Dann
-lassen wir den Zeilen- und Spaltenindex direkt anzeigen:
-
-```{code-cell}
+```{code-cell} ipython3
 import pandas as pd
-import numpy as np
 
 data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-
-print('Zeilenindex: ')
-print(data.index)
-
-print('\nSpaltenindex:')
-print(data.columns)
+data.head(10)
 ```
 
-Nun können wir die Daten aus dem Pandas-DataFrame extrahieren und visualisieren.
-Wenn wir beispielsweise wissen wollen, wie alt die Spieler der Eintracht
-Frankfurt sind, filtern wir zuerst nach Eintracht Frankfurt. Dann speichern wir
-die Namen der Spieler mit dem Zeilenindex in der Variablen `x` und das Alter
-`Age` in `y`.
+Die Anwendung der `.describe()`-Methode liefert folgende Ausgabe:
 
-```{code-cell}
-# Daten filtern
-data_eintracht_frankfurt = data.loc[ data['Club'] == 'Eintracht Frankfurt' ]
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt['Age']
+```{code-cell} ipython3
+data.describe()
 ```
 
-Da es sich bei den Spielern um Kategorien, also diskrete Daten handelt,
-verwenden wir ein Balkendiagramm zur Visualisierung. Für eine ansprechende
-Darstellung nutzen wir ein vordefiniertes Theme, das wir über `matplotlib.style`
-importieren.
+Da es sich eingebürgert hat, Daten zeilenweise abzuspeichern und die Eigenschaft
+pro einzelnem Datensatz in den Spalten zu speichern, wertet `.describe()` jede
+Spalte für sich aus. Für jede Eigenschaft werden dann die statistischen
+Kennzahlen
 
-```{code-cell}
-import matplotlib.pyplot as plt
+* count
+* mean
+* std
+* min
+* max
+* Quantile 25 %, 50 % und 75 %
+* max
 
-# vordefiniertes Styling-Theme auswählen z.B. 'ggplot', 'seaborn-v0_8', 'dark_background'
-import matplotlib.style as style
-style.use('seaborn-v0_8') 
+ausgegeben.
 
-# Visualisierung
-plt.figure()
-plt.bar(x, y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21')
+Die Bedeutung der Kennzahlen wird in der
+[Pandas-Dokumentation/DataFrame.describe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html)
+erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.
 
-# Rotation der x-Achsenbeschriftung um 45 Grad mit rechtsbündiger Ausrichtung
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
+## Anzahl count
+
+Mit `.count()` wird die Anzahl der Einträge bestimmt, die *nicht* 'NA' sind. Der
+Begriff 'NA' stammt dabei aus dem Bereich Data Science. Gemeint sind fehlende
+Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:
+
+* NA = not available (der Messsensor hat versagt)
+* NA = not applicable (es ist sinnlos bei einem Mann nachzufragen, ob er
+  schwanger ist)
+* NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)
+
+Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
+wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
+Methode `.count()` direkt auf den kompletten DataFrame angewendet, so erhalten
+wir ein Pandas-Series-Objekt.
+
+```{code-cell} ipython3
+print(data.count())
 ```
 
-Die Funktion `xticks()` manipuliert die Beschriftung der x-Achse. Im obigen
-Code-Beispiel wird der Beschriftungstext um 45 Grad gedreht und rechtsbündig
-ausgerichtet. `tight_layout()` führt zu weniger Abständen zwischen dem Plot der
-umgebenden Zeichenfläche.
+Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
+erst die Spalte mit dem Alter heraussgreifen und darauf `.count()` anwenden.
 
-## Referenzlinien hinzufügen
-
-Als nächstes möchten wir in den Plot Zusatzinformationen einblenden. So würden
-wir gerne hervorheben, wo das Durchschnittsalter der Fußballspieler liegt.
-Dadurch können wir schnell ablesen, welcher Spieler über dem Durchschnitt liegt
-und welcher jünger als der Durchschnitt ist.
-
-Dazu müssen wir zunächst die Zusatzinformation, in diesem Beispiel den
-Mittelwert, aus den Daten berechnen.
-
-```{code-cell}
-mittelwert_alter = data_eintracht_frankfurt['Age'].mean()
-print(f'Mittleres Alter der Spieler: {mittelwert_alter:.1f} Jahre')
+```{code-cell} ipython3
+methode01 = data.loc[:, 'Age'].count()
+print(methode01)
 ```
 
-Nun ergänzen wir den Plot der Altersangaben mit dem Mittelwert. Wir zeichnen
-eine horizontale Linie mit der Höhe des Altersdurchschnitts. Dazu verwenden wir
-die Funktion `axhline()`. Für vertikale Linien gibt es entsprechend `axvline()`.
-Zusätzlich fügen wir mit `legend()` eine Legende ein, um zu erklären, welche
-Bedeutung die Linie hat. Das sogenannte Label, also die Beschriftung der
-Legende, wir zuvor als Argument in `axhline()` übergeben. Auch die Formatierung
-der Linie mit roter Farbe `color='red'`, der Linienstil `linestyle='--'` und die
-Linienbreite `linewidth=2` werden an dieser Stelle als Argumente eingefügt, so
-dass wir insgesamt den folgenden Plot erhalten:
+Oder wir wenden zuerst `.count()`an und wählen dann im Series-Objekt das Alter
+'Age' aus.
 
-```{code-cell}
-# Daten
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt['Age']
-
-# Visualisierung
-plt.figure()
-plt.bar(x, y)
-plt.xlabel('Spieler')
-plt.ylabel('Alter')
-plt.title('Spielerdaten Eintracht Frankfurt 20/21')
-
-# Rotation der x-Achsenbeschriftung um 45 Grad mit rechtsbündiger Ausrichtung
-plt.xticks(rotation=45, ha='right')
-
-# Horizontale Linie für den Mittelwert
-plt.axhline(mittelwert_alter, color='red', linestyle='--', linewidth=2, 
-            label=f'Durchschnittsalter: {mittelwert_alter:.1f} Jahre')
-plt.legend()
-plt.tight_layout()
-plt.show()
+```{code-cell} ipython3
+methode02 = data.count().loc['Age']
+print(methode02)
 ```
 
-```{admonition} Mini-Übung
-:class: miniexercise
-Berechnen Sie jetzt den Mittelwert der Minuten, die ein Spieler der Eintracht
-Frankfurt durchschnittlich im Einsatz war. Erstellen Sie ein Balkendiagramm 
-der Spielzeiten und ergänzen Sie eine horizontale schwarze Linie für den Mittelwert.
+## Mittelwert mean
+
+Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode `.mean()` den Mittelwert der Einträge in jeder Spalte berechnet.
+
+```{code-cell} ipython3
+mittelwert = data.mean(numeric_only=True)
+print(mittelwert)
 ```
 
-```{code-cell}
-# Hier Ihr Code
+An der Stelle ist es wichtig, die Option `numeric_only=True` zu setzen, damit
+nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.
+
+Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
+Jahre alt sind und 1321.6 Minuten im Einsatz waren.
+
+Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
+wollen, können Sie folgendes Video ansehen.
+
+```{dropdown} Video "Mittelwert" von Datatab
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-````{admonition} Lösung
-:class: miniexercise, toggle
-```python
-x = data_eintracht_frankfurt.index
-y = data_eintracht_frankfurt['Mins']
-min_durchschnitt = y.mean()
+## Standardabweichung std
 
-# Visualisierung
-plt.figure()
-plt.bar(x, y)
-plt.axhline(min_durchschnitt, color='black', linestyle='--', linewidth=2, 
-            label=f'Durchschnitt: {min_durchschnitt:.0f} Min')
-plt.xlabel('Spieler')
-plt.ylabel('Minuten')
-plt.title('Spielzeiten Eintracht Frankfurt 20/21')
-plt.xticks(rotation=45, ha='right')
-plt.legend()
-plt.tight_layout()
-plt.show()
-```
-````
+Das 'st' in `.std()` steht für Standard. Der dritte Buchstabe 'd' kommt von
+'deviation', also Abweichung. Somit ist wiederum die Methode nach dem englischen
+Fachbegriff 'standard deviation' benannt.  Welche Standardabweichung erhalten
+wir beim Alter?
 
-## Subplots für komplexere Darstellungen
-
-Hier sehen wir eine wichtige Erweiterung zu den bisherigen Plots: Subplots
-ermöglichen es uns, mehrere Diagramme nebeneinander in einer Abbildung
-darzustellen. Der entscheidende Unterschied zu unseren bisherigen Plots ist,
-dass wir nun die Zeichenfläche mit
-
-```python
-fig, axes = plt.subplots(1, 2, figsize=(15, 10))
+```{code-cell} ipython3
+standardabweichung = data.std(numeric_only=True)
+print(standardabweichung)
 ```
 
-erzeugen und die *objektorientierte* Schnittstelle benutzen. Die obige
-Code-Zeile erstellt eine Abbildung (`fig`) mit 1 Zeile und 2 Spalten von Plots.
-Das `axes`-Array enthält die beiden einzelnen Plot-Bereiche. Auf die einzelnen
-Plots können wir folgendermaßen zugreifen:
+Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelesen. Wenn wir den Wert
+extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
+dann `.std()` oder erst `.std()` und dann Selektion nach 'Age'. Probieren wir es
+aus.
 
-* `axes[0]`: der erste Plot (links)
-* `axes[1]`: der zweite Plot (rechts)
-
-Anstelle der gewohnten Funktion `plt.bar()` verwenden wir nun
-`axes[0].bar(...)`oder `axes[1].bar(...)`. Auch werden die Funktionen wir
-`plt.title()`zu Methoden, die sich auf das konkrete Objekt beziehen, wie
-`axes[0].set_title()`. Wir verwenden noch weitere Optionen zum Styling der
-Plots.
-
-```{code-cell}
-# Daten für Eintracht Frankfurt
-eintracht_frankfurt = data[data['Club'] == 'Eintracht Frankfurt']
-
-# 1x2 Subplot-Layout erstellen
-fig, axes = plt.subplots(1, 2, figsize=(15, 10))
-
-# Plot 1: Alter
-axes[0].bar(eintracht_frankfurt.index, eintracht_frankfurt['Age'],
-               color='skyblue', alpha=0.7)
-axes[0].set_title('Alter der Spieler')
-axes[0].set_ylabel('Alter')
-
-# Erst die Tick-Positionen setzen, dann die Labels
-axes[0].set_xticks(range(len(eintracht_frankfurt)))
-axes[0].set_xticklabels(eintracht_frankfurt.index, rotation=45, ha='right', fontsize=8)
-
-# Plot 2: Spielminuten
-axes[1].bar(eintracht_frankfurt.index, eintracht_frankfurt['Mins'],
-               color='lightgreen', alpha=0.7)
-axes[1].set_title('Spielminuten')
-axes[1].set_ylabel('Minuten')
-axes[1].set_xticks(range(len(eintracht_frankfurt)))
-axes[1].set_xticklabels(eintracht_frankfurt.index, rotation=45, ha='right', fontsize=8)
-
-plt.suptitle('Spielerstatistiken Eintracht Frankfurt 20/21', fontsize=16)
-plt.tight_layout()
-plt.show()
+```{code-cell} ipython3
+alter_std = data.loc[:, 'Age'].std()
+print(alter_std) 
 ```
 
-## Korrelationsanalyse mit Streudiagrammen
+Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
+Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.
 
-Hier sehen wir eine wichtige statistische Methode: Korrelationsanalysen
-untersuchen, ob und wie stark zwei Variablen miteinander zusammenhängen. In
-unserem Beispiel fragen wir uns: Gibt es einen Zusammenhang zwischen
-Spielminuten und Toren? Oder zwischen Alter und Einsatzzeit?
-
-```{code-cell}
-ig, axes = plt.subplots(2, 2, figsize=(12, 8))
-
-# Streudiagramm: Spielminuten vs. Tore
-axes[0, 0].scatter(data['Mins'], data['Goals'], alpha=0.6, color='red')
-axes[0, 0].set_xlabel('Spielminuten')
-axes[0, 0].set_ylabel('Tore')
-axes[0, 0].set_title('Spielminuten vs. Tore')
-
-# Streudiagramm: Alter vs. Spielminuten
-axes[0, 1].scatter(data['Age'], data['Mins'], alpha=0.6, color='blue')
-axes[0, 1].set_xlabel('Alter')
-axes[0, 1].set_ylabel('Spielminuten')
-axes[0, 1].set_title('Alter vs. Spielminuten')
-
-# Streudiagramm: Tore vs. Torvorbereitungen (= Assists)
-axes[1, 0].scatter(data['Goals'], data['Assists'], alpha=0.6, color='green')
-axes[1, 0].set_xlabel('Tore')
-axes[1, 0].set_ylabel('Assists')
-axes[1, 0].set_title('Tore vs. Assists')
-
-# Streudiagramm: Spielminuten vs. Torvorbereitungen (= Assists)
-axes[1, 1].scatter(data['Mins'], data['Assists'], alpha=0.6, color='orange')
-axes[1, 1].set_xlabel('Spielminuten')
-axes[1, 1].set_ylabel('Assists')
-axes[1, 1].set_title('Spielminuten vs. Assists')
-
-plt.suptitle('Korrelationsanalyse Bundesliga-Spieler', fontsize=16)
-plt.tight_layout()
-plt.show()
+```{dropdown} Video "Standardabweichung" von Datatab
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-Hier sehen wir die wichtigsten Muster in Streudiagrammen:
+## Minimum und Maximum mit min und max
 
-* **Positive Korrelation**: Die Punkte bilden eine aufsteigende Linie: je höher
-  die Ursache, desto höher die Wirkung. Beim Beispiel Spielminuten vs. Tore
-  können wir interpretieren: "Wer mehr spielt, erzielt tendenziell mehr Tore".
-* **Negative Korrelation**: Die Punkte bilden eine absteigende Linie: je höher
-  die Ursache, desto niedriger die Wirkung. Beim Beispiel Alter vs. Spielminuten
-  können wir interpretieren: "Ältere Spieler bekommen tendenziell weniger
-  Einsatzzeit".
-* **Keine Korrelation**: Die Punkte sind zufällig verteilt: kein erkennbares
-  Muster. Wir interpretieren: "Zwischen den Variablen gibt es keinen
-  systematischen Zusammenhang".
+Die Namen der Methoden `.min()` und `max()` sind fast schon wieder
+selbsterklärend. Die Methode `.min()` liefert den kleinsten Werte zurück, der in
+einer Spalte gefunden wird. Umgekehrt liefert `.max()` den größten Eintrag, der
+in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
+vorkommen, ist dabei egal.
 
-## Export von Grafiken
+Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
+(haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
+Anzahl von Toren ist.
 
-Für die Verwendung in Dokumenten oder Präsentationen müssen Grafiken exportiert
-werden:
+```{code-cell} ipython3
+tore_min = data.loc[:, 'Goals'].min()
+print(tore_min)
 
-```{code-cell}
-# Beispiel-Plot erstellen
-plt.figure(figsize=(10, 6))
-verein_tore = data.groupby('Club')['Goals'].sum().sort_values(ascending=False)
+tore_max = data.loc[:, 'Goals'].max()
+print(tore_max)
+```
 
-plt.bar(verein_tore.index, verein_tore.values, color='steelblue', alpha=0.8)
-plt.xlabel('Verein')
-plt.ylabel('Gesamtzahl Tore')
-plt.title('Tore pro Verein - Bundesliga 2020/21')
-plt.xticks(rotation=45, ha='right')
-plt.grid(True, alpha=0.3)
-plt.tight_layout()
+Wenig verwunderlich ist die minimale Anzahl an Toren 0. Die maximale Anzahl an
+Toren, die ein oder mehrere Spieler der Top7 in der Saison 2020/21 geschossen
+haben, war 41\. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore
+geschafft hat, natürlich Lewandowski).
 
-# Export in verschiedenen Formaten
-plt.savefig('bundesliga_tore.png', dpi=300, bbox_inches='tight')  # Für Web/Präsentationen
-plt.savefig('bundesliga_tore.pdf', bbox_inches='tight')           # Für LaTeX/Publikationen
-plt.savefig('bundesliga_tore.svg', bbox_inches='tight')           # Für Vektorgrafiken
+Von Verteidigern wird nicht erwartet, Tore zu schießen, sondern von Stürmern.
+Was ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
+Spalte 'Position'. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
+Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
+manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
+bei denen nur 'FW' eingetragen ist.  
 
-plt.show()
+```{code-cell} ipython3
+filter = data.loc[:, 'Position'] == 'FW'
+stuermer = data.loc[filter, 'Goals']
+
+print('Stürmer')
+print(stuermer)
+
+print('==============')
+print(f'Minimale Tore: {stuermer.min()}')
+```
+
+## Quantil mit quantile
+
+Das Quantil $p \%$ ist der Wert, bei dem $p %$ der Einträge kleiner oder gleich
+als diese Zahl sind und $100 \% - p \%$ sind größer. Meist werden nicht
+Prozentzahlen verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 %
+steht.
+
+Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
+Karten wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus
+den Daten holen.
+
+```{code-cell} ipython3
+gelbe_karten_50prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.5)
+print(gelbe_karten_50prozent_quantil)
+```
+
+Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
+weniger als 2 gelbe Karten oder genau 2 gelbe Karten kassiert. Und 50 % aller
+Spieler haben 2 oder mehr gelbe Karten kassiert. Wir schauen uns jetzt das 75 %
+Quantil an.
+
+```{code-cell} ipython3
+gelbe_karten_75prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.75)
+print(gelbe_karten_75prozent_quantil)
+```
+
+75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. Schauen wir uns
+die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
+sind?
+
+```{code-cell} ipython3
+filter = data.loc[:, 'Yellow_Cards'] > 4.0
+gelbkarten_spieler = data.loc[filter, ['Position', 'Yellow_Cards']]
+print(gelbkarten_spieler.sort_values(by='Yellow_Cards', ascending=False))
 ```
 
 ## Zusammenfassung und Ausblick
 
-In diesem Kapitel haben wir gelernt, wie man DataFrames professionell
-visualisiert. Diese Techniken bilden die Grundlage für die Datenvisualisierung
-in der Praxis. Mit DataFrames und Matplotlib können wir reale Datensätze
-ansprechend präsentieren. Mit der Korrelationsanalyse haben wir auch einen
-ersten Schritt Richtung Data Science gemacht. Wie wir Trends und Muster in Daten
-finden, werden wir im nächsten Kapitel lernen, wenn wir uns der Regression
-widmen.
+In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
+beschäftigt, die Pandas mit der Methode `.describe()` zusammenfasst, die aber
+auch einzeln über
+
+* `.count()`
+* `.mean()`
+* `.std()`
+* `.min()` und `.max()`
+* `.quantile()`
+
+berechnet und ausgegeben werden können. Im nächsten Kapitel werden wir lernen,
+die Daten zu visualisieren.

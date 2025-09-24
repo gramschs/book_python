@@ -1,398 +1,389 @@
-# 8.2 Numerisches Rechnen mit MATLAB
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.8
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
 
-MATLAB ist als Matrix-Labor vor allem für das Rechnen mit Vektoren und Matrizen
-ausgelegt. Daher erkunden wir in diesem Kapitel die grundlegenden Datentypen und
-Rechenoperationen für Vektoren und Matrizen.
+# 8.2 Methoden und der self-Parameter
+
+Bisher haben wir gelernt, wie wir Daten in Objekten speichern können. Aber
+Objekte können mehr als nur Daten speichern, sonst könnten wir auch Dictionaries
+nehmen. Ihren großen Vorteil erlangen Objekte durch Methoden.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können einen **Vektor** oder eine **Matrix** in MATLAB erzeugen.
-* Sie wissen, wie Sie auf einzelne **Elemente** eines Vektors oder einer Matrix
-  zugreifen.
-* Sie beherrschen das **Slicing** in MATLAB.
-* Sie können grundlegende **Rechenoperationen** mit Vektoren oder Matrizen
-  ausführen.
-* Sie können mit MATLAB das **Skalarprodukt** oder das **Vektorprodukt** von
-  Vektoren berechnen.
-* Sie können die **Determinante**, die **Eigenwerte** oder die **Eigenvektoren**
-  einer Matrix berechnen.
+* Sie verstehen, was Methoden sind und wie sie sich von normalen Funktionen
+  unterscheiden.
+* Sie können einfache Methoden in einer Klasse implementieren und aufrufen.
+* Sie verstehen den `self`-Parameter und wissen, warum er benötigt wird.
+* Sie können über `self` auf Objektattribute zugreifen und diese verändern.
+* Sie können Methoden schreiben, die mit den Daten des jeweiligen Objekts
+  arbeiten.
 ```
 
-## Vektoren
+## Methoden sind Funktionen, die zu einer Klasse gehören
 
-Vektoren sind sozusagen technisch gesehen Listen, die nur Zahlen enthalten, und
-für die die typischen Vektoroperationen definiert sind. Zunächst beschäftigen
-wir uns mit der Erzeugung von Vektoren.
+Eine **Methode** ist im Grunde eine Funktion, die direkt zu einer Klasse gehört.
+Statt die Funktion separat zu schreiben, definieren wir sie innerhalb der
+Klasse. Dadurch kann die Funktion direkt mit den Daten des Objekts arbeiten.
 
-### Erzeugung Zeilenvektor
+Schauen wir uns ein Beispiel an. Angenommen, wir möchten für einen Studierenden
+den vollständigen Namen ausgeben. Bisher würden wir das so machen:
 
-Ein Vektor wird in MATLAB durch eckige Klammern `[  ]` erzeugt. Sie finden das
-Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die
-eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr
-drücken, um die eckigen Klammern auf der Tastatur einzugeben.
+```python
+# Ohne Methoden, d.h. mit normaler Funktion
+def vollstaendiger_name(student):
+    return f"{student.vorname} {student.nachname}"
 
-Betrachten wir ein Beispiel. Hier wird ein Vektor mit den Elementen 1, 2, 3, 4,
-5 erzeugt und dann anschließend in der Variablen `v` gespeichert. Zur Trennung
-der einzelnen Elemente des Vektors verwenden wir das Komma. Tatsächlich würde
-MATLAB auch ein Leerzeichen als Trennung akzeptieren. Im Zusammenhang mit
-Matrizen ist aber das Komma einprägsamer, so dass wir beim Komma bleiben.
-
-```matlab
-v = [1, 2, 3, 4, 5]
+student1 = Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678")
+print(vollstaendiger_name(student1))  # Anna Abendrot
 ```
 
-### Erzeugung Spaltenvektor
+Mit einer Methode können wir das eleganter lösen:
 
-Der Vektor, so wie wir ihn bisher erzeugt haben, ist ein Zeilenvektor. Möchten
-wir ihn in einen Spaltenvektor umwandeln, so müssen wir ihn transponieren. Dafür
-steht in MATLAB der einzelne Hochstrich `'`.
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    # Das ist eine Methode!
+    def vollstaendiger_name(self):
+        return f"{self.vorname} {self.nachname}"
 
-```matlab
-a'
+# Objekt erstellen
+student1 = Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678")
+
+# Methode aufrufen
+print(student1.vollstaendiger_name())  # Anna Abendrot
 ```
 
-Soll direkt ein Spaltenvektor erzeugt werden, so verwenden wir das Semikolon
-anstatt des Kommas.
+Der wichtigste Unterschied zwischen Funktionen und Methoden ist, wo und wie wir
+sie aufrufen:
 
-```matlab
-spaltenvektor = [1; 2; 3]
+Normale Funktion:
+
+```python
+# Funktion wird separat definiert
+def vollstaendiger_name(student):
+    return f"{student.vorname} {student.nachname}"
+
+# Aufruf: funktion(objekt)
+ergebnis = vollstaendiger_name(student1)
 ```
 
-### Einfache Rechenoperationen
+Methode:
 
-Mit Vektoren kann auch direkt gerechnet werden. Natürlich müssen dabei die
-Dimensionen der Vektoren übereinstimmen. Bei der folgenden Addition  
+```python
+# Methode wird in der Klasse definiert
+class Student:
+    def vollstaendiger_name(self):
+        return f"{self.vorname} {self.nachname}"
 
-```matlab
-a = [-1.5, 2, 3.7]
-b = [0, -1, -1.7]
-a + b
+# Aufruf: objekt.methode()
+ergebnis = student1.vollstaendiger_name()
 ```
 
-wird von MATLAB das Ergebnis `[-1.5, 1, 2]` berechnet und angezeigt. Die
-Subtraktion erfolgt analog.
+Nicht nur der Ort (in oder außerhalb der Klasse) unterscheidet sich, sondern
+auch die Syntax beim Aufruf:
 
-Die Multiplikation `a * b` funktioniert jedoch nicht. Es erscheint eine
-Fehlermeldung. Das liegt daran, dass es eine direkte Multiplikation von Vektoren
-nicht gibt. Wir müssen erst entscheiden, ob elementweise multipliziert werden
-soll oder ob vielleicht das Skalarprodukt oder das Vektorprodukt gemeint ist.
+* Normale Funktion: `funktion(objekt)`
+* Methode: `objekt.methode()`
 
-Bei der elementweisen Multiplikation wird dem Multiplikationsoperator `*` ein
-Punkt `.` vorangestellt, also `.*`:
+Erweitern wir unsere Klasse Student um eine weitere nützliche Methode:
 
-```matlab
-a .* b
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def vollstaendiger_name(self):
+        return f"{self.vorname} {self.nachname}"
+    
+    def begruessung(self):
+        return f"Hallo, ich bin {self.vorname} und studiere {self.studiengang}."
+
+# Ausprobieren
+student1 = Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678")
+student2 = Student("Berliner", "Bob", "Maschinenbau", 1, "87654321")
+
+print(student1.vollstaendiger_name())  # Anna Abendrot
+print(student1.begruessung())          # Hallo, ich bin Anna und studiere Maschinenbau.
+print()
+print(student2.vollstaendiger_name())  # Bob Berliner
+print(student2.begruessung())          # Hallo, ich bin Bob und studiere Maschinenbau.
 ```
 
-Das Ergebnis ist dann der Vektor `[0, -2.0000, -6.2900]`. So funktioniert auch
-die elementweise Division. Dabei gibt es zwei Varianten:
+Anhand des obigen Beispiels stellen wir fest:
 
-```matlab
-a ./ b
-a .\ b
+1. Der `self`-Parameter: Jede Methode hat als ersten Parameter `self`. Dieser
+Parameter bezieht sich auf das konkrete Objekt, für das die Methode aufgerufen
+wird. Mehr dazu lernen wir im nächsten Abschnitt.
+2. Zugriff auf Attribute: Innerhalb einer Methode greifen wir mit
+`self.attributname` auf die Attribute des Objekts zu.
+3. Jedes Objekt ruft seine eigene Methode auf: Obwohl beide Objekte die gleiche
+   Methode `begruessung()` verwenden, geben sie unterschiedliche Ergebnisse
+   zurück, je nach ihren eigenen Daten.
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Versuchen Sie selbst, eine Methode zu schreiben! Erweitern Sie die
+Klasse Student um eine Methode `studieninfo()`, die eine Zeile wie "Anna
+Abendrot studiert Maschinenbau im 3. Semester" zurückgibt.
 ```
 
-Bei der ersten Variante wird jedes Element des Vektors `a` durch das
-entsprechende Element des Vektors `b` geteilt. Das `b` steht in Nenner des
-Bruchstrichs `/`. Bei der zweiten Variante wird jedes Element des Vektors `b`
-durch die entsprechenden Elemente des Vektors `a` geteilt. Der Bruchstrich `\`
-zeigt an, dass `a` im Nenner stehen soll.
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-### Erzeugung eines Vektors mittels Doppelpunkt-Operator
-
-Python verfügt über die Funktion `range()`, um Listen mit Zahlen zu erzeugen,
-die einem bestimmten Muster folgen. Diese Funktion wird in MATLAB so häufig
-gebraucht, dass sie sogar durch einen eigenen Operator anstatt einer Funktion
-erreicht wird, durch den Doppelpunkt-Operator `:`.
-
-Eine Liste mit den Zahlen von 5 bis 11 wird folgendermaßen generiert:
-
-```matlab
-a = 5 : 11
 ```
 
-Auch hier ist eine Schrittweite versteckt enthalten. Der folgende Code erzeugt
-gerade Zahlen von 4 bis 12:
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def vollstaendiger_name(self):
+        return f"{self.vorname} {self.nachname}"
+    
+    def studieninfo(self):
+        return f"{self.vollstaendiger_name()} studiert {self.studiengang} im {self.semester}. Semester"
 
-```matlab
-a = 4 : 2 : 12
+# Test der neuen Methode
+student1 = Student("Müller", "Max", "Maschinenbau", 3, "12345678")
+print(student1.studieninfo())  # Max Müller studiert Maschinenbau im 3. Semester
+```
+In dieser Musterlösung rufen wir in der `studieninfo()`-Methode die andere
+Methode `vollstaendiger_name()` auf. Das geht mit `self.vollstaendiger_name()`.
+Auch Methoden können andere Methoden der gleichen Klasse verwenden!
+````
+
+Im nächsten Abschnitt schauen wir uns genauer an, was es mit diesem mysteriösen
+`self`-Parameter auf sich hat.
+
+```{dropdown} Video zu "Methoden in Klassen" von Programmieren lernen
+<iframe width="560" height="315" src="https://www.youtube.com/embed/58IjjwHs_4A" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 ```
 
-So kann auch rückwärts gezählt werden.
+## Der self-Parameter
 
-```matlab
-a = 12 : -2 :  4
+Im vorigen Abschnitt haben wir gesehen, dass jede Methode einen `self`-Parameter
+hat. In diesem Abschnitt klären wir, was self ist, warum wir es brauchen und wie
+es funktioniert.
+
+`self` ist ein Verweis auf das konkrete Objekt, für das eine Methode aufgerufen
+wird. Angenommen, wir haben mehrere Studierende und jeder soll sich vorstellen.
+Woher weiß die Methode `begruessung()`, ob sie "Hallo, ich bin Anna" oder
+"Hallo, ich bin Bob" sagen soll? Genau hier kommt `self` ins Spiel.
+
+Schauen wir uns ein Beispiel an:
+
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def begruessung(self):
+        # self bezieht sich auf das Objekt, das diese Methode aufruft
+        print(f"Hallo, ich bin {self.vorname} {self.nachname}")
+        print(f"Meine Matrikelnummer ist {self.matrikelnummer}")
+
+# Zwei verschiedene Objekte erstellen
+student1 = Student("Abendrot", "Anna", "Maschinenbau", 3, "12345678")
+student2 = Student("Berliner", "Bob", "Elektrotechnik", 1, "87654321")
+
+# Gleiche Methode, aber verschiedene Objekte
+student1.begruessung()
+print()
+student2.begruessung()
 ```
 
-Das folgende Video fasst die obigen Erklärungen zusammen.
+Wenn wir `student1.begruessung()` aufrufen, dann ist `self` in der Methode eine
+Referenz auf `student1`. Bei `student2.begruessung()` bezieht sich `self` auf
+`student2`. Ohne `self` wüsste eine Methode nicht, auf welches Objekt sie sich
+bezieht.
 
-```{dropdown} Video zu "Matlab - 1.4 Vektoren" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zse9DvJPxHI"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def zeige_semester(self):
+        print(f"{self.vorname} ist im {self.semester}. Semester")
+
+# Verschiedene Studierende in verschiedenen Semestern
+studierende = [
+    Student("Müller", "Max", "Maschinenbau", 3, "12345678"),
+    Student("Schmidt", "Sarah", "Elektrotechnik", 1, "87654321"),
+    Student("Weber", "Tim", "Informatik", 5, "11111111")
+]
+
+# Für jeden Studierenden die Methode aufrufen
+for studi in studierende:
+    studi.zeige_semester()  # self wird automatisch gesetzt!
 ```
 
-## Matrizen
+Mit self können wir auf alle Attribute des aktuellen Objekts zugreifen. Die
+Syntax ist einfach: `self.attributname`.
 
-MATLAB würde nicht Matrix-Labor heißen, wenn es nicht einen eigenen Datentyp für
-Matrizen gäbe. Tatsächlich speichert MATLAB intern Vektoren als Matrix ab. Ein
-Zeilenvektor ist eine $1\times N$-Matrix und ein Spaltenvektor eine $M\times
-1$-Matrix. Daher betrachten wir uns als nächstes, wie Matrizen in MATLAB erzeugt
-werden.
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def alle_infos_anzeigen(self):
+        print("--- Studierendendaten ---")
+        print(f"Name: {self.vorname} {self.nachname}")
+        print(f"Studiengang: {self.studiengang}")
+        print(f"Semester: {self.semester}")
+        print(f"Matrikelnummer: {self.matrikelnummer}")
 
-### Erzeugung von Matrizen
-
-Bei den Vektoren haben wir gelernt, Leerzeichen oder Komma, um Elemente eines
-Zeilenvektors aufzulisten, und Semikolon, um Elemente in einem Spaltenvektor
-voneinander abzugrenzen. Eine Matrix wird zeilenweise eingegeben. Das Semikolon
-markiert das Ende der Zeile.
-
-```matlab
-A = [1, 2, 3; 4, 5, 6; 7, 8, 9]
+student = Student("Johnson", "Lisa", "Maschinenbau", 2, "98765432")
+student.alle_infos_anzeigen()
 ```
 
-### Erzeugung von speziellen Matrizen
+Hier kommt der "magische Teil": Obwohl jede Methode `self` als ersten Parameter
+hat, übergeben wir beim Aufruf keinen Wert dafür. Python macht das automatisch!
+Wir schreiben:
 
-Für Matrizen, die häufig gebraucht werden, hat MATLAB eigene
-Erzeugungsfunktionen. Beispielsweise generiert die Funktion
-
-```matlab
-A = zeros(5,3)
+```python
+student.alle_infos_anzeigen()
 ```
 
-eine Matrix, die nur die Zahl Null enthält und die 5 Zeilen und 3 Spalten hat.
-Analog dazu funktioniert das Kommando
+Python macht daraus intern:
 
-```matlab
-A = ones(5,3)
+```python
+Student.alle_infos_anzeigen(student)
 ```
 
-das eine Matrix mit Einsen erzeugt, die 5 Zeilen und 3 Spalten hat. Sehr häufig
-gebraucht wird auch die Einheitsmatrix. Mit der Funktion `eye(N)` wird sie
-erzeugt, wobei der Parameter `N` die Dimension der quadratischen Matrix angibt.
+Das bedeutet: Wenn wir `objekt.methode()` schreiben, übergibt Python automatisch
+das Objekt als ersten Parameter `(self)` an die Methode.
 
-```matlab
-E = eye(5)
+`self` ermöglicht es uns nicht nur, Attribute zu lesen, sondern auch zu
+verändern:
+
+```{code-cell} ipython3
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+    
+    def semester_erhoehen(self):
+        """Erhöht das Semester um 1 (für den Semesterübergang)"""
+        self.semester = self.semester + 1
+        print(f"{self.vorname} ist jetzt im {self.semester}. Semester")
+    
+    def aktuelles_semester_anzeigen(self):
+        print(f"{self.vorname} ist im {self.semester}. Semester")
+
+# Ausprobieren
+student = Student("Müller", "Max", "Maschinenbau", 3, "12345678")
+student.aktuelles_semester_anzeigen()  # Max ist im 3. Semester
+
+student.semester_erhoehen()            # Max ist jetzt im 4. Semester
+student.aktuelles_semester_anzeigen()  # Max ist im 4. Semester
 ```
 
-Hier noch ein Video zu Matrizen in MATLAB.
+```{admonition} Mini-Übung
+:class: miniexercise
+Erweitern Sie die Klasse Student um zwei neue Methoden:
+1. `note_eintragen(note)` - fügt eine Note zur Notenliste hinzu (verwenden Sie
+   eine Liste `self.noten`)
+2. `notendurchschnitt()` - berechnet und gibt den Durchschnitt aller Noten
+   zurück
 
-```{dropdown} Video zu "Matlab - 1.5 Matrizen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bjGYz8eWN3A"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Tipp: Initialisieren Sie die Notenliste in `__init__` als leere Liste. Falls
+noch keine Noten vorhanden sind, soll die Methode den Durchschnitt 0.0
+zurückgeben.
 ```
 
-## Skripte
+```{code-cell} ipython3
+# Geben Sie nach diesem Kommentar Ihren Code ein:
 
-Es ist umständlich, immer alles in das Kommandofenster einzugeben. Die
-Entwicklungsumgebung MATLAB bietet einen Texteditor, um ein sogenanntes Skript
-zu schreiben. Ein Skript ist wie ein Programm, also eine Aneinanderreihung von
-Anweisungen an den MATLAB-Interpreter. Es wird als Text abgespeichert und trägt
-die Dateiendung `.m`. Am einfachsten starten Sie den Editor, indem Sie auf `New
-Script` klicken.
-
-```{figure} pics/screenshot03.png
-:alt: Screenshot MATLAB mit "New Script"
-:width: 75%
-:align: center
-Screenshot MATLAB mit dem Button "New Script"
 ```
 
-Sobald MATLAB den Texteditor öffnet, verändert sich das Layout von MATLAB. Das
-Kommandofenster rutscht nach unten und wird kleiner, wohingegen der Texteditor
-nun den größten Raum einnimmt.
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+class Student:
+    def __init__(self, nachname, vorname, studiengang, semester, matrikelnummer):
+        self.nachname = nachname
+        self.vorname = vorname
+        self.studiengang = studiengang
+        self.semester = semester
+        self.matrikelnummer = matrikelnummer
+        self.noten = []  # Leere Liste für Noten
+    
+    def note_eintragen(self, note):
+        """Fügt eine Note zur Notenliste hinzu"""
+        self.noten.append(note)
+        print(f"Note {note} für {self.vorname} eingetragen")
+    
+    def notendurchschnitt(self):
+        """Berechnet den Durchschnitt aller Noten"""
+        if len(self.noten) == 0:
+            return 0.0
+        return sum(self.noten) / len(self.noten)
 
-```{figure} pics/screenshot04.png
-:alt: Screenshot MATLAB mit Texteditor
-:width: 75%
-:align: center
-Screenshot MATLAB mit geöffnetem Texteditor; ein Skript wird ausgeführt, indem
-auf den Button "Run" geklickt wird (siehe 3)
+# Test der neuen Methoden
+student = Student("Müller", "Max", "Maschinenbau", 3, "12345678")
+student.note_eintragen(2.3)  # Note 2.3 für Max eingetragen
+student.note_eintragen(1.7)  # Note 1.7 für Max eingetragen
+student.note_eintragen(2.0)  # Note 2.0 für Max eingetragen
+
+print(f"Durchschnitt: {student.notendurchschnitt()}")  # Durchschnitt: 2.0
+```
+````
+
+```{dropdown} Video zu "Der self Parameter" von Programmieren lernen
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CLoK-_qNTnU" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 ```
 
-Das Skript wird ausgeführt, indem Sie auf den Button "Run" klicken (siehe
-Screenshot, 3). Es ist ratsam, am Anfang des Skriptes den Befehl `clear all`
-einzufügen. Diese Anweisung sorgt dafür, dass alle sich im Speicher befindlichen
-Variablen gelöscht werden.
+## Zusammenfassung und Ausblick
 
-Ein weiteres Video zu Skripten in MATLAB finden Sie hier.
-
-```{dropdown} Video zu "Matlab - 1.6 Skripte" von Mathe? logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hx26vljCKWQ"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-## Zugriff auf Vektor- und Matrixelemente
-
-Der Zugriff auf die Elemente eines Vektors erfolgt durch Angabe des Index des
-Elements in runden Klammern. Beachten Sie, dass MATLAB im Gegensatz zu vielen
-anderen Programmiersprachen einen Index verwendet, der bei 1 beginnt. Das
-folgende Beispiel zeigt, wie auf das dritte Element des Vektors zugegriffen
-wird.
-
-```matlab
-a = [1, 2, 3, 4, 5]
-drittes_element = a(3)
-```
-
-Soll hingegen auf Elemente einer Matrix zugegriffen werden, müssen wir die Zeile
-und die Spalte über den jeweiligen Index angeben. Auf die zweite Zeile und die
-dritte Spalte wird folgendermaßen zugegriffen.
-
-```matlab
-A = [1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15]
-element = A(2,3)
-```
-
-Damit wird die `8` aus der Matrix `A` extrahiert und kann weiter verarbeitet
-werden.
-
-Was aber, wenn wir auf ganze Zeilen oder ganze Spalten zugreifen möchten? Dazu
-existiert das sogenannte **Slicing**. Mit Slicing ist gemeint, dass auf einen
-zusammenhängenden Bereich des Vektors oder der Matrix zugegriffen werden soll.
-Wir betrachten die $3\times 5$-Matrix $A$ von vorhin, also
-
-```matlab
-A = [1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15]
-```
-
-Um jetzt einen zusammenhängenden Bereich aus der Matrix zu extrahieren,
-verwenden wir den Doppelpunkt-Operator ':'. Mit
-
-```matlab
-A(1, :)
-```
-
-greifen wir auf Elemente der ersten Zeile zu und gehen dabei in der Spalte von
-Anfang bis Ende, da vor dem Doppelpunkt und nach dem Doppelpunkt nichts steht.
-Das Ergebnis ist also die komplette erste Zeile `[1, 2, 3, 4, 5]`. Möchten wir
-in der ersten Zeile von der zweiten Spalte zur vierten Spalte auf die Elemente
-der Matrix zugreifen, schreiben wir den Startindex vor den Doppelpunkt und den
-Stoppindex nach dem Doppelpunkt.
-
-```matlab
-A(1, 2:4)
-```
-
-Das Ergebnis sind die Elemente `[2, 3, 4]`. Diese Vorgehensweise funktioniert
-auch für die Zeile. Der folgende MATLAB-Code extrahiert die komplette zweite und
-dritte Zeile.
-
-```matlab
-A(2:3, :)
-```
-
-Das Ergebnis ist
-
-$$\begin{pmatrix}
-6 & 7 & 8 & 9 & 10 \\
-11 & 12 & 13 & 14 & 15
-\end{pmatrix}.$$
-
-Das Slicing kann auch verwendet werden, um Teile einer Matrix zu ändern. Nehmen
-wir an, wir möchten die zweite Spalte von A durch die Zahlen 102, 107 und 112
-ersetzen. Wir könnten durch den folgenden Code erreichen.
-
-```matlab
-A(:, 2) = [102; 107; 112]
-```
-
-Die folgenden beiden Videos fassen zunächst den Doppelpunktoperator und dann das
-Slicing zusammen.
-
-```{dropdown} Video zu "Matlab - 2.1 Doppelpunkt- bzw. Colon-Operator" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eX2RM355fSM"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-```{dropdown} Video zu "Matlab - 2.2 Zugriff auf Teile von Matrizen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m6t5YuavGkI"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-## Fortgeschrittene Rechenoperationen für Vektoren und Matrizen
-
-Das Skalarprodukt ist eine grundlegende Operation in der linearen Algebra. Das Skalarprodukt zweier Vektoren wird durch die Multiplikation der entsprechenden Komponenten der Vektoren und die Summierung dieser Produkte berechnet.
-
-In MATLAB wird das Skalarprodukt von zwei Vektoren mit der Funktion `dot()` berechnet:
-
-```matlab
-v = [1, 2, 3]
-w = [4, 5, 6]
-skalarprodukt = dot(v, w)
-```
-
-Das Ergebnis ist $1\cdot 4 + 2\cdot 5 + 3\cdot 6 = 32$.
-
-Das Vektorprodukt, auch bekannt als Kreuzprodukt, ist eine weitere wichtige Operation in der linearen Algebra, die speziell auf dreidimensionale Vektoren angewendet wird. Das Vektorprodukt von zwei Vektoren ist ein Vektor, dessen Länge/Betrag dem Flächeninhalt des Rechtecks entspricht, das durch die beiden Vektoren aufgespannt wird. Die Richtung des Vektorprodukts ist dadurch definiert, dass der Vektor senkrecht zu beiden Vektoren steht und mit ihnen ein Rechtssystem bildet.
-
-In MATLAB wird das Vektorprodukt mit der Funktion `cross()` berechnet:
-
-```matlab
-v = [1, 2, 3]
-w = [4, 5, 6]
-vektorprodukt = cross(v, w)
-```
-
-Das Vektorprodukt ist der Vektor `[-3, 6, -3]`.
-
-Die Determinante ist ein spezieller Wert, der nur für quadratische Matrizen definiert ist. Sie ist ein nützlicher Indikator für viele Eigenschaften der Matrix, einschließlich der Frage, ob die Matrix invertierbar ist und ob das lineare Gleichungssystem, das sie repräsentiert, Lösungen hat.
-
-In MATLAB wird die Determinante einer Matrix mit der Funktion `det()` berechnet:
-
-```matlab
-A = [1, 2; 3, 4]
-det_A = det(A)
-```
-
-Die Determinante der obigen Matrix $A$ ist $\det(A) = 1\cdot 4 - 3\cdot 2 = -2$.
-
-Eigenwerte und Eigenvektoren sind weitere wichtige Konzepte in der linearen
-Algebra, die in vielen Anwendungen, einschließlich der
-Maschinenbauingenieurwissenschaften, der Informatik und der Datenanalyse,
-nützlich sind. Die Eigenwerte einer Matrix sind die Lösungen der
-charakteristischen Gleichung
-
-$$\det(A-\lambda E) = 0,$$
-
-wobei $E$ die Einheitsmatrix der passenden Dimension ist. Zu jedem Eigenwert
-$\lambda$ kann dann der Eigenvektor $\vec{v}$ berechnet werden, der die
-Gleichung
-
-$$A\cdot \vec{v} = \lambda \vec{v}$$
-
-erfüllt. Ein Eigenvektor ist also ein Vektor, der sich bei der Anwendung einer
-linearen Transformation (repräsentiert durch die Matrix) nur um einen
-Skalierungsfaktor ändert.
-
-In MATLAB werden Eigenwerte und Eigenvektoren mit der Funktion `eig()`
-berechnet:
-
-```matlab
-A = [1, 2; 3, 4]
-[V, D] = eig(A)
-```
-
-In diesem Beispiel gibt der Code die Matrix `V` der Eigenvektoren und die
-Diagonalmatrix `D` aus. Jede Spalte in V ist ein Eigenvektor, und die
-entsprechenden Eigenwerte sind die Elemente auf der Diagonale in D.
-
-Für weitere Betrachtungen empfehle ich die folgenden beiden Videos.
-
-```{dropdown} Video zu "Matlab - 2.3 Kombination und Transformation von Matrizen" von Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mh8Auf1eOpA"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-```{dropdown} Video zu "Matlab - 2.4 Operationen auf Matrizen" Mathe? Logisch!
-<iframe width="560" height="315" src="https://www.youtube.com/embed/enUeKd-IMcw"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
+Methoden sind Funktionen, die zu einer Klasse gehören und direkt mit Objektdaten
+arbeiten können. Der `self`-Parameter ermöglicht jeder Methode den Zugriff auf das
+konkrete Objekt, das sie aufruft.

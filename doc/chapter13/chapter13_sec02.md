@@ -5,213 +5,205 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.15.2
+    jupytext_version: 1.13.8
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-# 13.2 Überwachtes, unüberwachtes und verstärkendes Lernen
+# 13.2 Lineare Regression mit polyfit und polyval
 
-Nachdem im letzten Kapitel erklärt wurde, was machinelles Lernen überhaupt
-ist, betrachten wir in diesem Kapitel die drei großen Kategorien von
-ML-Modellen: überwachtes Lernen (Supervised Learning), unüberwachtes Lernen
-(Unsupervised Learning) und verstärkendes Lernen (Reinforcement Learning).
+Nachdem wir im letzten Kapitel uns mit der Theorie der linearen Regression
+beschäftigt haben, möchten wir nun konkret eine Regressionsgerade an Messdaten
+anpassen. Umgangssprachlich wird auch gesagt, dass wir einen Fit durchführen
+bzw. eine Gerade an die Messdaten anfitten.
 
 ## Lernziele
 
 ```{admonition} Lernziele
 :class: goals
-* Sie können anhand eines Beispiels erklären, was die Fachbegriffe
-  * **überwachtes Lernen (Supervised Learning)**,
-  * **unüberwachtes Lernen (Unsupervised Learning)** und
-  * **verstärkendes Lernen (Reinforcement Learning)** bedeuten.
-* Sie können beim überwachten Lernen zwischen **Regression** und
-  **Klassifikation** unterscheiden.
+* Sie können mit **polyfit** die Koeffizienten einer Regressionsgerade zu
+  gegebenen Messwerten bestimmen.
+* Sie können mit **polyval** aus den berechneten Koeffizienten die
+  Regressionsgerade bestimmen.
 ```
 
-## Überwachtes Lernen (Supervised Learning)
+## Koeffizienten der Regressionsgerade berechnen mit polyfit
 
-Im letzten Kapitel haben wir im Video [»So lernen Maschinen:
-Algorithmen«](https://youtu.be/HmUzceKCI9I) die Aufgabenstellung kennengelernt,
-auf Fotos Hunde von Katzen zu unterscheiden. Diese Art von Problemstellung ist
-typisch für **überwachtes Lernen**. Die Daten werden vorab gekennzeichnet, sie
-erhalten ein **Label**. So lernen auch Kinder. Stellen Sie sich vor, in einem
-Korb liegen Äpfel und Bananen und ein Kind soll den Unterschied erlernen. Jedes
-Stück Obst wird aus dem Korb genommen und dem Kind gezeigt. Dazu sagen wir dann
-entweder »Apfel« oder »Banane«. Das Kind hat also einen Lehrer oder Trainer. Mit
-der Zeit wird das Kind zwischen beiden Obstsorten unterscheiden können.
+Python bzw. das Modul NumPy unterstützt die Suche nach Regressionspolynomen mit
+der Funktion `polyfit()`. Eine detaillierte Beschreibung finden Sie in der
+[NumPy-Dokumentation
+(polyfit)](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit).
+Mittlerweile gibt es modernere Methoden im Modul `numpy.polynomial`, aber wir
+bleiben in dieser Vorlesung dennoch beim klassischen `polyfit()`, um eine
+möglichst große Ähnlichkeit zu MATLAB zu wahren.
 
-```{admonition} Was ist ... überwachtes Lernen?
-:class: note
-Überwachtes Lernen ist eine Kategorie des maschinellen Lernens. Beim überwachten
-Lernen liegen die Daten als Eingabe- und Ausgabedaten mit Labels vor. Ein
-maschineller Lernalgorithmus versucht ein Modell zu finden, das bestmöglich den
-Eingabedaten die Ausgabedaten zuordnet.
+Aufgerufen wird polyfit mit
+
+`p = polyfit(x, y, grad)`
+
+Dabei sind x und y die Messdaten und `grad` ist ein Integer mit dem Polynomgrad.
+Für eine lineare Funktion setzen wir `grad = 1`. Das Ergebnis ist ein
+sogenanntes NumPy-Array, das wir im Folgenden wie eine Liste benutzen. Das Array
+`p` enthält die Koeffizienten des Polynoms in absteigender Reihenfolge. Damit
+ist gemeint, dass die höchste Potenz zuerst kommt.
+
+Ist der Polynomgrad 1, dann ist `p[0]` die Steigung der linearen
+Regressionsgerade und der y-Achsenabschnitt ist in `p[1]` gespeichert:
+
+$$f(x) = p[0] \cdot x + p[1].$$
+
+Um die Anwendung von `polyfit()` zu zeigen, werden zunächst die folgenden sieben
+Messpunkte visualisiert:
+
+```{code-cell}
+import matplotlib.pyplot as plt
+
+x = [-1, 0, 1, 2,  3, 4, 5]
+y = [-2.52,  0.85,   3.21,  7.19,  8.93, 12.89, 15.40]
+
+plt.figure()
+plt.scatter(x,y)
+plt.xlabel('Ursache')
+plt.ylabel('Wirkung')
+plt.title('Künstliche Messdaten mit linearem Zusammenhang')
+plt.show()
 ```
 
-Beim überwachten Lernen können die Prognosen des Modells für bekannte Daten mit
-den korrekten Ergebnissen (Labels) verglichen werden. Das Modell wird also
-überwacht.
+Als nächstes verwenden wir `polyfit`, um die Koeffizienten einer
+Regressionsgerade von Python berechnen zu lassen.
 
-Prinzipiell werden dabei wiederum zwei Arten von Labels unterschieden:
+```{code-cell}
+import numpy as np
 
-* kontinuierliche Labels und
-* diskrete Labels.
-
-Bei dem Beispiel mit den Hunde- und Katzenfotos sind die Labels diskret. Mit
-**diskreten Labels** ist gemeint, dass nur wenige verschiedene Labels existieren.
-In diesem Fall sind es genau zwei verschiedene Labels, nämlich zum einen das
-Label »Hund« und zum anderen das Label »Katze«. Ein anderes Beispiel für
-diskrete Labels sind die Schulnoten sehr gut, gut, befriedigend, ausreichend,
-mangelhaft und ungenügend. Es gibt nur sechs verschiedene Noten, die eine
-Schülerin oder ein Schüler in einem Test erreichen kann. Dabei müssen die
-diskreten Labels keine Texte sein. Die Schulnoten könnten wir auch mit den Labels
-1, 2, 3, 4, 5 und 6 kennzeichnen.
-
-Bei den **kontinuierlichen Labels** gibt es sehr viele, normalerweise unendliche
-viele verschiedene Labels. Textbezeichnungen sind dann nicht mehr sinnvoll, so
-dass kontinuierliche Labels durch Zahlen repräsentiert werden. Ein Beispiel für
-kontinuierliche Ausgabedaten ist der Verkaufspreis eines Autos abhängig vom
-Kilometerstand. Normalerweise kosten Neuwagen mit einem Kilometerstand von 0 km
-am meisten und der Preis sinkt, je mehr Kilometer das Auto bereits gefahren
-wurde. Die Verkaufspreise könnte man nun als ganze Zahlen darstellen, wenn man
-sie in ganzen Euros angibt, oder als Fließkommazahl, wenn der Preis auf den Cent
-genau angegeben wird. Es gibt nicht unendlich viele Verkaufspreise, aber sehr
-viele verschiedene mögliche Werte.
-
-Viele ML-Modelle funktionieren sowohl für diskrete als auch kontinuierliche
-Daten, aber nicht alle. Daher ist es notwendig, bereits zu Beginn zu
-entscheiden, ob das Modell für diskrete oder kontinuierliche Ausgabedaten
-eingesetzt werden soll.
-
-Das überwachte Lernen wird daher wiederum in zwei Arten unterteilt:
-
-* **Regression** für kontinuierliche Ausgabedaten und
-* **Klassifikation**  für diskrete Ausgabedaten.
-
-Auf beide Problemstellungen gehen die nächsten Videos ein.
-
-```{dropdown} Video zu "ML Tutorial - #3 Supervised Learning" von CodingWithMagga
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gaYYJAEt0zI?si=AvndIfnXrjUNiBbf" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+koeffizienten = np.polyfit(x,y, 1)
+print(koeffizienten)
 ```
 
-### Regression
+Die gefundene Regressionsgerade lautet also
 
-```{admonition} Was ist ... Regression?
-:class: note
-Regression ist das Teilgebiet des überwachten maschinellen Lernens, bei dem
-Modelle den Zusammenhang zwischen Eingabedaten und *kontinuierlichen* Ausgabedaten
-prognostizieren sollen.
+$$f(x) = 2.98\cdot x + 0.59.$$
+
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie zusätzlich zu den Messwerten die gefundene Regressionsgerade in der
+Farbe rot visualisieren.
 ```
 
-```{dropdown} Video zu "Überwachtes Lernen – Regression" von Plattform Lernende Systeme
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NCCctUdfA3E" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{code-cell}
+# Hier Ihr Code
 ```
 
-### Klassifikation
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# Wertetabelle für Regressionsgerade mit 50 Punkten
+x_modell = np.linspace(-1, 5)
+y_modell = 2.98 * x_modell + 0.59
 
-```{admonition} Was ist ... Klassifikation?
-:class: note
-Klassifikation ist das Teilgebiet des überwachten maschinellen Lernens, bei dem
-Modelle den Zusammenhang zwischen Eingabedaten und *diskreten* Ausgabedaten
-prognostizieren sollen.
+# Visualisierung Messwerte und Regressionsgerade
+plt.figure()
+plt.scatter(x,y)
+plt.plot(x_modell, y_modell, color='red')
+plt.xlabel('Ursache')
+plt.ylabel('Wirkung')
+plt.title('Künstliche Messdaten mit linearem Zusammenhang')
+plt.show()
+```
+````
+
+## Regressionsgerade aus Koeffizienten mit polyval auswerten
+
+Eine weitere Funktion aus dem NumPy-Modul ist die Funktion `polyval()`. Die
+polyval-Funktion wird dazu benutzt, ein Polynom auszuwerten. Der Aufruf der
+polyval-Funktion sieht prinzipiell so aus:
+
+```python
+y = np.polyval(koeffizienten, x)
 ```
 
-```{dropdown} Video zu "Überwachtes Lernen – Klassifikation" von Plattform Lernende Systeme
-<iframe width="560" height="315" src="https://www.youtube.com/embed/g6zuVEDlAzo" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Dabei ist `koeffizienten` die Liste mit den Koeffizienten des Polynoms, die z.B.
+aus der Berechnung `polyfit()` stammen. Die Koeffizienten sind dabei wieder
+absteigend sortiert. Zuerst kommt der Koeffizient der höchsten Potenz. `x` ist
+eine Liste von Zahlen oder ein NumPy-Array, für die das Polynom ausgewertet
+werden soll.
+
+Wenn wir die Regressionsgerade des Beispiels an der Stelle $x = 2.5$ auswerten
+wollen, so schreiben wir
+
+```{code-cell}
+y = np.polyval(koeffizienten, 2.5)
+print(f'Die Regressionsgerade an der Stelle x = 2.5 ist {y:.2f}.')
 ```
 
-## Unüberwachtes Lernen (Unsupervised Learning)
-
-Beim überwachten Lernen liegen Eingabedaten und Ausgabedaten mit Labels vor. Die
-Prognosen eines Modells können für bekannte Paare von Eingabe- und Ausgabedaten
-überwacht werden. Das ist beim unüberwachten Lernen nicht der Fall. Beim
-**unüberwachten Lernen (Unsupervised Learning)** gibt es keine Ausgabedaten,
-also keine Labels. Stattdessen soll der maschinelle Lernalgorithmus eigenständig
-Muster erlernen und Strukturen in den Daten finden.
-
-```{admonition} Was ist ... unüberwachtes Lernen (Unsupervised Learning)?
-:class: note
-Unüberwachtes Lernen ist ein Teilgebiet des maschinellen Lernens, bei dem ein
-Algorithmus versucht, Muster und Strukturen in Daten zu finden. Dabei sind die
-Daten nicht vorab in Eingabe- und Ausgabedaten aufgeteilt bzw. mit Labels
-gekennzeichnet.
+```{admonition} Mini-Übung
+:class: miniexercise
+Lassen Sie die Regressionsgerade mit `polyval` aus den mit `polyfit` für das
+Intervall $[-1, 5]$ auswerten und visualisieren Sie die Messwerte (in blau)
+zusammen mit der Regressionsgeraden (in rot).
 ```
 
-Ein Kind könnte auch selbstständig einen Obstkorb erkunden. Vielleicht würde das
-Kind mit der Zeit lernen, dass es Obst gibt, das ihm schmeckt, wohingegen
-anderes Obst dem Kind nicht schmeckt. Vielleicht würde das Kind das Obst auch in
-großes Obst und kleines Obst unterteilen oder nach Farbe sortieren. Das Kind
-gruppiert also Obst nach selbst gewählten Eigenschaften. Es bildet Cluster,
-dementsprechend heißt dieser Vorgang **Clustering**.
-
-```{dropdown} Video zu "Unüberwachtes Lernen: Clustering" von Plattform Lernende Systeme
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P2Qwc63iCVQ" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{code-cell}
+# Hier Ihr Code
 ```
 
-```{dropdown} Video zu "ML Tutorial - #4 Unsupervised Learning" von CodingWithMagga
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yKcGVt3xfiE?si=t0UP-8h12bFBjhyr" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+````{admonition} Lösung
+:class: miniexercise, toggle
+```python
+# Wertetabelle für Regressionsgerade
+x_modell = np.linspace(-1, 5)
+y_modell = np.polyval(koeffizienten, x_modell)
+
+# Visualisierung Messwerte und Regressionsgerade
+plt.figure()
+plt.scatter(x,y)
+plt.plot(x_modell, y_modell, color='red')
+plt.xlabel('Ursache')
+plt.ylabel('Wirkung')
+plt.title('Künstliche Messdaten mit linearem Zusammenhang')
+plt.show()
+```
+````
+
+## Anwendung auf CO2-Daten
+
+Nachdem wir die NumPy-Funktionen `polyfit()` und `polyval()` kennengelernt
+haben, können wir diese nun auf unser CO2-Beispiel aus Kapitel 12.1 anwenden und
+dabei systematisch vorgehen. Anstatt die Parameter der Regressionsgeraden durch
+Ausprobieren zu finden, berechnen wir sie direkt:
+
+```{code-cell}
+import pandas as pd
+from sklearn.metrics import r2_score
+
+# Daten
+data = pd.read_csv('data/co2_emissionen_worldwide.csv', skiprows=1, index_col=0)
+jahre = data.index
+co2 = data['Metrische_Tonnen_pro_Einwohner']
+
+# Berechnung der optimalen Regressionskoeffizienten
+koeffizienten = np.polyfit(jahre, co2, 1)
+print(f'Steigung m = {koeffizienten[0]:.4f}')
+print(f'y-Achsenabschnitt b = {koeffizienten[1]:.4f}')
+
+# Erstellung der Modellfunktion
+co2_modell = np.polyval(koeffizienten, jahre)
+
+# Berechnung des R2-Wertes zur Bewertung der Anpassungsqualität
+r2 = r2_score(co2_modell, co2)
+print(f'R2 = {r2:.4f}')
 ```
 
-## Verstärkendes Lernen (Reinforcement Learning)
-
-Wir schließen unsere Übersicht der maschinellen Lernverfahren mit dem
-verstärkendem Lernen ab.
-
-```{admonition} Was ist ... verstärkendes Lernen (Reinforcement Learning)?
-:class: note
- **Verstärkendes Lernen (Reinforcement Learning)** ist eine Art des maschinellen
-Lernens, bei dem ein ML-Algorithmus durch versuch und Irrtum erlernt, was das
-optimale Verhalten ist, um ein bestimmtes Ziel zu erreichen. Es werden Aktionen
-ausgeführt und entweder bestraft oder belohnt, je nachdem, ob durch diese
-Aktionen das Ziel besser oder schlechter erreicht wird.
-```
-
-Ein Beispiel aus dem Alltag für verstärkendes Lernen ist das Training eines
-Haustieres, eines Hundes beispielsweise. Folgt der Hund dem Befehl »Sitz!«, so
-erhält er ein Leckerli. Mit der Zeit wird der Hund auf das Kommando »Sitz!«
-reagieren und sich setzen, auch wenn es nicht immer eine Belohnung dafür gibt.
-
-Ein bekanntes Beispiel aus dem Bereich Künstliche Intelligenz für verstärkendes
-Lernen sind Schachsysteme. Anfangs kennt das Schachsystem nur die grundlegenden
-Schachregeln, aber keinerlei Strategie. Durch das Spielen vieler Spiele, wobei
-der Computer bei jedem Sieg eine "Belohnung" erhält und bei jeder Niederlage
-eine "Strafe", lernt das Schachsystem allmählich, welche Züge gewinnbringend
-sind und welche eher zu Niederlagen führen. Nach Tausenden oder sogar Millionen
-von Spielen kann das Schachsystem dann auf einem sehr hohen Niveau spielen -
-alles durch verstärkendes Lernen.
-
-```{dropdown} Video zu "Verstärkendes Lernen" von Plattform Lernende Systeme
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5HhQgFCQGIY" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-```
-
-```{dropdown} Vide zu "ML Tutorial - #5 Reinforcement Learning" von CodingWithMagga
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EAX12jlMlUw?si=yeV8S4zOT2pMlnBi" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
+Mit `polyfit()` erhalten wir eine Steigung von etwa 0.0344 und einen
+y-Achsenabschnitt von -64.75, was unseren durch Ausprobieren gefundenen Werten
+sehr nahe kommt. Der R²-Wert von 0.77 bestätigt, dass die lineare Regression die
+CO2-Emissionsdaten gut erklärt, aber nicht sehr gut. Dies macht die
+Regressionsgerade zu einem brauchbaren Modell für Prognosen, auch wenn die
+Abweichungen zeigen, dass andere Faktoren ebenfalls eine Rolle spielen.
 
 ## Zusammenfassung und Ausblick
 
-In diesem Abschnitt haben Sie die drei wichtigsten Kategorien des maschinellen
-Lernens kennengelernt: überwachtes Lernen, unüberwachtes Lernen und
-verstärkendes Lernen. Für die Ingenieurwissenschaften ist vor allem das
-überwachte Lernen von Bedeutung. Dabei unterscheiden wir zwischen überwachtem
-Lernen für diskrete Ausgabedaten (= Klassen, Kategorien), das wir Klassifikation
-nennen, und überwachtem Lernen für kontinuierliche Ausgabedaten, das wir
-Regression nennen.
+In diesem Kapitel haben wir gelernt, eine lineare Funktion an Messdaten
+anzupassen. Im nächsten Kapitel werden wir uns mit dem Fit von Polynomen
+beschäftigen.

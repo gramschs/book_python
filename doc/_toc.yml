@@ -48,42 +48,47 @@ parts:
     - file: chapter07/chapter07_sec02.md
     - file: chapter07/chapter07_sec03.md
     - file: chapter07/chapter07_sec04.md
-- caption: Software Automatisierungstechnik
-  chapters:
   - file: chapter08/chapter08_sec00.md
     sections:
     - file: chapter08/chapter08_sec01.md
     - file: chapter08/chapter08_sec02.md
     - file: chapter08/chapter08_sec03.md
     - file: chapter08/chapter08_sec04.md
+- caption: Software Automatisierungstechnik
+  chapters:
   - file: chapter09/chapter09_sec00.md
     sections:
     - file: chapter09/chapter09_sec01.md
     - file: chapter09/chapter09_sec02.md
     - file: chapter09/chapter09_sec03.md
     - file: chapter09/chapter09_sec04.md
-- caption: Einführung Data Science
-  chapters:
   - file: chapter10/chapter10_sec00.md
     sections:
     - file: chapter10/chapter10_sec01.md
     - file: chapter10/chapter10_sec02.md
     - file: chapter10/chapter10_sec03.md 
     - file: chapter10/chapter10_sec04.md 
+- caption: Einführung Data Science
+  chapters:
   - file: chapter11/chapter11_sec00.md
     sections:
     - file: chapter11/chapter11_sec01.md
     - file: chapter11/chapter11_sec02.md
     - file: chapter11/chapter11_sec03.md
-    - file: chapter11/chapter11_sec05.md
+    - file: chapter11/chapter11_sec04.md
   - file: chapter12/chapter12_sec00.md
     sections:
       - file: chapter12/chapter12_sec01.md        
       - file: chapter12/chapter12_sec02.md
       - file: chapter12/chapter12_sec03.md
-      - file: chapter12/chapter12_sec04.md
+      - file: chapter12/chapter12_sec05.md
   - file: chapter13/chapter13_sec00.md
     sections:
       - file: chapter13/chapter13_sec01.md        
       - file: chapter13/chapter13_sec02.md
-#      - file: chapter13/chapter13_sec03.md
+      - file: chapter13/chapter13_sec03.md
+      - file: chapter13/chapter13_sec04.md
+  - file: chapter14/chapter14_sec00.md
+    sections:
+      - file: chapter14/chapter14_sec01.md        
+      - file: chapter14/chapter14_sec02.md

@@ -14,7 +14,7 @@ kernelspec:
 
 # Übungen
 
-````{admonition} Übung 12.1
+````{admonition} Übung 13.1
 :class: miniexercise
 Gegeben ist der folgende Code mit Zeilennummern, um Messdaten zu visualisieren.
 Suchen Sie die darin enthaltenen Fehler. Korrigieren Sie anschließend den Code.
@@ -163,7 +163,7 @@ plt.show()
 ```
 ````
 
-```{admonition} Übung 12.3
+```{admonition} Übung 13.3
 :class: miniexercise
 Laden Sie die Biersteuerstatistik
 ([→ hier Download](https://nextcloud.frankfurt-university.de/s/Ejc2LFEW3Hz3mA9))
@@ -236,7 +236,7 @@ plt.show()
 Das Modell ist mit einem $R^2$-Score von 0.8 gut.
 ````
 
-```{admonition} Übung 12.4
+```{admonition} Übung 13.4
 :class: miniexercise
 Verwenden Sie die Bierstatistik-Daten von 2021 aus Übung 12.3 und vergleichen Sie Regressionspolynome der Grade 1, 2, 3 und 4. 
 
@@ -346,7 +346,7 @@ Bei 12 Datenpunkten ist ein Polynom 11. Grades fast eine Interpolation und
 praktisch unbrauchbar für Prognosen.
 ````
 
-```{admonition} Übung 12.5
+```{admonition} Übung 13.5
 :class: miniexercise
 Laden Sie den Datensatz `stromverbrauch_hessen.csv` ([→ hier
 Download](https://nextcloud.frankfurt-university.de/s/ddfDzAAnJtJ4FZQ)) herunter
