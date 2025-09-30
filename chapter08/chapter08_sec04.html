@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -170,7 +170,7 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec02.html">1.2 Programmieren</a></li>
@@ -220,9 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
-<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Objektorientierte Programmierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec01.html">8.1 Was sind Klassen und Objekte?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Methoden und der self-Parameter</a></li>
@@ -230,6 +227,9 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Übungen</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Automatisierungstechnik</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. MATLAB</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Einführung MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Numerisches Rechnen mit MATLAB</a></li>
@@ -237,9 +237,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Übung</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Simulink</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Simulink Einführung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Simulink-Bibliothek</a></li>
@@ -247,6 +244,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung Data Science</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">11. Pandas anstatt Excel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">11.1 Series und DataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">11.2 Arbeiten mit Tabellendaten</a></li>
@@ -503,11 +503,501 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ubungen">
 <h1>Übungen<a class="headerlink" href="#ubungen" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Hinweise zur Vorlesung Objektorientierte Programmierung im WiSe 2025/26</p>
-<p>Dieses Vorlesungsskript wird gerade umgebaut.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.1</p>
+<p>Erstellen Sie eine Klasse <code class="docutils literal notranslate"><span class="pre">Auto</span></code> zur Verwaltung von Fahrzeuginformationen. Die Klasse soll folgende Attribute haben:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">marke</span></code> (z.B. “VW”, “BMW”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modell</span></code> (z.B. “Golf”, “320i”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baujahr</span></code> (z.B. 2020)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kilometerstand</span></code> (z.B. 45000)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Implementieren Sie die <code class="docutils literal notranslate"><span class="pre">__init__</span></code>-Methode, die alle vier Attribute beim Erstellen eines Objekts initialisiert.</p></li>
+<li><p>Erstellen Sie zwei Auto-Objekte mit unterschiedlichen Daten.</p></li>
+<li><p>Geben Sie für beide Autos die Marke und den Kilometerstand aus.</p></li>
+<li><p>Erhöhen Sie den Kilometerstand des ersten Autos um 1500 km und geben Sie den neuen Wert aus.</p></li>
+</ol>
 </div>
-<p>TODO</p>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Auto</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marke</span><span class="p">,</span> <span class="n">modell</span><span class="p">,</span> <span class="n">baujahr</span><span class="p">,</span> <span class="n">kilometerstand</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marke</span> <span class="o">=</span> <span class="n">marke</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modell</span> <span class="o">=</span> <span class="n">modell</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">baujahr</span> <span class="o">=</span> <span class="n">baujahr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kilometerstand</span> <span class="o">=</span> <span class="n">kilometerstand</span>
+
+
+<span class="c1"># Zwei Auto-Objekte erstellen</span>
+<span class="n">auto1</span> <span class="o">=</span> <span class="n">Auto</span><span class="p">(</span><span class="s2">&quot;VW&quot;</span><span class="p">,</span> <span class="s2">&quot;Golf&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">45000</span><span class="p">)</span>
+<span class="n">auto2</span> <span class="o">=</span> <span class="n">Auto</span><span class="p">(</span><span class="s2">&quot;BMW&quot;</span><span class="p">,</span> <span class="s2">&quot;320i&quot;</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">82000</span><span class="p">)</span>
+
+<span class="c1"># Marke und Kilometerstand ausgeben</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Auto 1: </span><span class="si">{</span><span class="n">auto1</span><span class="o">.</span><span class="n">marke</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">auto1</span><span class="o">.</span><span class="n">kilometerstand</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Auto 2: </span><span class="si">{</span><span class="n">auto2</span><span class="o">.</span><span class="n">marke</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">auto2</span><span class="o">.</span><span class="n">kilometerstand</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+
+<span class="c1"># Kilometerstand erhöhen</span>
+<span class="n">auto1</span><span class="o">.</span><span class="n">kilometerstand</span> <span class="o">=</span> <span class="n">auto1</span><span class="o">.</span><span class="n">kilometerstand</span> <span class="o">+</span> <span class="mi">1500</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Auto 1 nach der Fahrt: </span><span class="si">{</span><span class="n">auto1</span><span class="o">.</span><span class="n">kilometerstand</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.2</p>
+<p>Erweitern Sie die Klasse <code class="docutils literal notranslate"><span class="pre">Auto</span></code> aus Übung 8.1 um zwei Methoden:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fahre(kilometer)</span></code>: Diese Methode erhält die gefahrenen Kilometer als Parameter und erhöht den Kilometerstand des Autos entsprechend.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info()</span></code>: Diese Methode gibt eine Zeile mit allen wichtigen Informationen zum Auto zurück, z.B. “VW Golf (Baujahr 2020): 45000 km”.</p></li>
+</ol>
+<p>Testen Sie beide Methoden mit mindestens einem Auto-Objekt.</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Auto</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marke</span><span class="p">,</span> <span class="n">modell</span><span class="p">,</span> <span class="n">baujahr</span><span class="p">,</span> <span class="n">kilometerstand</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marke</span> <span class="o">=</span> <span class="n">marke</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modell</span> <span class="o">=</span> <span class="n">modell</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">baujahr</span> <span class="o">=</span> <span class="n">baujahr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kilometerstand</span> <span class="o">=</span> <span class="n">kilometerstand</span>
+    
+    <span class="k">def</span> <span class="nf">fahre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kilometer</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Erhöht den Kilometerstand um die gefahrenen Kilometer&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kilometerstand</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kilometerstand</span> <span class="o">+</span> <span class="n">kilometer</span>
+    
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gibt eine formatierte Info-Zeile zum Auto zurück&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">marke</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">modell</span><span class="si">}</span><span class="s2"> (Baujahr </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">baujahr</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">kilometerstand</span><span class="si">}</span><span class="s2"> km&quot;</span>
+
+
+<span class="c1"># Test der Methoden</span>
+<span class="n">auto1</span> <span class="o">=</span> <span class="n">Auto</span><span class="p">(</span><span class="s2">&quot;VW&quot;</span><span class="p">,</span> <span class="s2">&quot;Golf&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">45000</span><span class="p">)</span>
+
+<span class="c1"># Info ausgeben</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">auto1</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="c1"># Eine Strecke fahren</span>
+<span class="n">auto1</span><span class="o">.</span><span class="n">fahre</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nach 250 km Fahrt: </span><span class="si">{</span><span class="n">auto1</span><span class="o">.</span><span class="n">info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Noch eine Strecke fahren</span>
+<span class="n">auto1</span><span class="o">.</span><span class="n">fahre</span><span class="p">(</span><span class="mi">1800</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nach weiteren 1800 km: </span><span class="si">{</span><span class="n">auto1</span><span class="o">.</span><span class="n">info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.3</p>
+<p>Erstellen Sie eine Klasse <code class="docutils literal notranslate"><span class="pre">Artikel</span></code> für eine Einkaufsliste mit folgenden Attributen:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (z.B. “Milch”, “Brot”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preis</span></code> (Preis pro Stück in Euro)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">menge</span></code> (Anzahl der Artikel)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Implementieren Sie die <code class="docutils literal notranslate"><span class="pre">__init__</span></code>-Methode.</p></li>
+<li><p>Schreiben Sie eine Methode <code class="docutils literal notranslate"><span class="pre">gesamtpreis()</span></code>, die den Gesamtpreis für diesen Artikel berechnet (Preis × Menge) und zurückgibt.</p></li>
+<li><p>Schreiben Sie eine Methode <code class="docutils literal notranslate"><span class="pre">menge_aendern(neue_menge)</span></code>, die die Menge des Artikels auf einen neuen Wert setzt.</p></li>
+<li><p>Testen Sie Ihre Klasse: Erstellen Sie einen Artikel, geben Sie den Gesamtpreis aus, ändern Sie die Menge und geben Sie den neuen Gesamtpreis aus.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Artikel</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">preis</span><span class="p">,</span> <span class="n">menge</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">=</span> <span class="n">preis</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menge</span> <span class="o">=</span> <span class="n">menge</span>
+    
+    <span class="k">def</span> <span class="nf">gesamtpreis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Berechnet den Gesamtpreis (Preis × Menge)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">menge</span>
+    
+    <span class="k">def</span> <span class="nf">menge_aendern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neue_menge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ändert die Menge des Artikels&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menge</span> <span class="o">=</span> <span class="n">neue_menge</span>
+
+
+<span class="c1"># Test der Klasse</span>
+<span class="n">artikel1</span> <span class="o">=</span> <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Milch&quot;</span><span class="p">,</span> <span class="mf">1.29</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Artikel: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gesamtpreis für </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">menge</span><span class="si">}</span><span class="s2"> Stück: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menge ändern</span>
+<span class="n">artikel1</span><span class="o">.</span><span class="n">menge_aendern</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Nach Mengenänderung:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gesamtpreis für </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">menge</span><span class="si">}</span><span class="s2"> Stück: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.4</p>
+<p>Erweitern Sie die Klasse <code class="docutils literal notranslate"><span class="pre">Artikel</span></code> aus Übung 8.3 um eine Methode <code class="docutils literal notranslate"><span class="pre">rabatt_anwenden(prozent)</span></code>, die einen prozentualen Rabatt auf den Preis anwendet.</p>
+<p>Beispiel: Bei einem Artikel mit Preis 10.00 Euro und einem Rabatt von 20% soll der neue Preis 8.00 Euro betragen.</p>
+<ol class="arabic simple">
+<li><p>Implementieren Sie die Methode <code class="docutils literal notranslate"><span class="pre">rabatt_anwenden(prozent)</span></code>, die den Preis des Artikels entsprechend reduziert.</p></li>
+<li><p>Schreiben Sie eine weitere Methode <code class="docutils literal notranslate"><span class="pre">ist_guenstig()</span></code>, die <code class="docutils literal notranslate"><span class="pre">True</span></code> zurückgibt, wenn der Gesamtpreis unter 5.00 Euro liegt, sonst <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>Testen Sie beide Methoden mit einem Artikel-Objekt.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Artikel</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">preis</span><span class="p">,</span> <span class="n">menge</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">=</span> <span class="n">preis</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menge</span> <span class="o">=</span> <span class="n">menge</span>
+    
+    <span class="k">def</span> <span class="nf">gesamtpreis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Berechnet den Gesamtpreis (Preis × Menge)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">menge</span>
+    
+    <span class="k">def</span> <span class="nf">menge_aendern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neue_menge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ändert die Menge des Artikels&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menge</span> <span class="o">=</span> <span class="n">neue_menge</span>
+    
+    <span class="k">def</span> <span class="nf">rabatt_anwenden</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prozent</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wendet einen prozentualen Rabatt auf den Preis an&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prozent</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">ist_guenstig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prüft, ob der Gesamtpreis unter 5 Euro liegt&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.0</span>
+
+
+<span class="c1"># Test der Methoden</span>
+<span class="n">artikel1</span> <span class="o">=</span> <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Schokolade&quot;</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Artikel: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Preis pro Stück: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">preis</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gesamtpreis: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ist günstig? </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">ist_guenstig</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Rabatt anwenden</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">20% Rabatt wird angewendet...&quot;</span><span class="p">)</span>
+<span class="n">artikel1</span><span class="o">.</span><span class="n">rabatt_anwenden</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Neuer Preis pro Stück: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">preis</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Neuer Gesamtpreis: </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ist günstig? </span><span class="si">{</span><span class="n">artikel1</span><span class="o">.</span><span class="n">ist_guenstig</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.5</p>
+<p>Erstellen Sie eine Klasse <code class="docutils literal notranslate"><span class="pre">Buch</span></code> zur Verwaltung Ihrer persönlichen Bibliothek mit folgenden Attributen:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">titel</span></code> (z.B. “1984”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autor</span></code> (z.B. “George Orwell”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seiten</span></code> (z.B. 328)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gelesen</span></code> (Boolean: True oder False)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Implementieren Sie die <code class="docutils literal notranslate"><span class="pre">__init__</span></code>-Methode. Das Attribut <code class="docutils literal notranslate"><span class="pre">gelesen</span></code> soll standardmäßig auf <code class="docutils literal notranslate"><span class="pre">False</span></code> gesetzt werden.</p></li>
+<li><p>Schreiben Sie eine Methode <code class="docutils literal notranslate"><span class="pre">als_gelesen_markieren()</span></code>, die das Buch als gelesen markiert.</p></li>
+<li><p>Schreiben Sie eine Methode <code class="docutils literal notranslate"><span class="pre">lesefortschritt(gelesene_seiten)</span></code>, die berechnet und zurückgibt, wie viel Prozent des Buches bereits gelesen wurden.</p></li>
+<li><p>Testen Sie Ihre Klasse mit mindestens einem Buch.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Buch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">titel</span><span class="p">,</span> <span class="n">autor</span><span class="p">,</span> <span class="n">seiten</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">titel</span> <span class="o">=</span> <span class="n">titel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autor</span> <span class="o">=</span> <span class="n">autor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seiten</span> <span class="o">=</span> <span class="n">seiten</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Standardmäßig noch nicht gelesen</span>
+    
+    <span class="k">def</span> <span class="nf">als_gelesen_markieren</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Markiert das Buch als gelesen&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">def</span> <span class="nf">lesefortschritt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gelesene_seiten</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Berechnet den Lesefortschritt in Prozent&quot;&quot;&quot;</span>
+        <span class="n">prozent</span> <span class="o">=</span> <span class="p">(</span><span class="n">gelesene_seiten</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">seiten</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="n">prozent</span>
+
+
+<span class="c1"># Test der Klasse</span>
+<span class="n">buch1</span> <span class="o">=</span> <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">,</span> <span class="mi">328</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Buch: </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">titel</span><span class="si">}</span><span class="s2"> von </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">autor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Seiten: </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">seiten</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gelesen: </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">gelesen</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lesefortschritt prüfen</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Lesefortschritt bei 100 Seiten: </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">lesefortschritt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lesefortschritt bei 250 Seiten: </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">lesefortschritt</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="c1"># Als gelesen markieren</span>
+<span class="n">buch1</span><span class="o">.</span><span class="n">als_gelesen_markieren</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Buch wurde fertig gelesen: </span><span class="si">{</span><span class="n">buch1</span><span class="o">.</span><span class="n">gelesen</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.6</p>
+<p>Implementieren Sie für die Klasse <code class="docutils literal notranslate"><span class="pre">Buch</span></code> aus Übung 8.5 die <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode, damit Bücher schön formatiert ausgegeben werden können.</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode soll eine Zeile im folgenden Format zurückgeben:</p>
+<ul class="simple">
+<li><p>Wenn das Buch noch nicht gelesen wurde: “Titel von Autor (Seiten S.) - noch nicht gelesen”</p></li>
+<li><p>Wenn das Buch gelesen wurde: “Titel von Autor (Seiten S.) - ✓ gelesen”</p></li>
+</ul>
+<p>Testen Sie Ihre Implementierung mit zwei Büchern: einem gelesenen und einem ungelesenen.</p>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Buch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">titel</span><span class="p">,</span> <span class="n">autor</span><span class="p">,</span> <span class="n">seiten</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">titel</span> <span class="o">=</span> <span class="n">titel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autor</span> <span class="o">=</span> <span class="n">autor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seiten</span> <span class="o">=</span> <span class="n">seiten</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gibt eine formatierte Beschreibung des Buches zurück&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;✓ gelesen&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;noch nicht gelesen&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">titel</span><span class="si">}</span><span class="s2"> von </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">autor</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seiten</span><span class="si">}</span><span class="s2"> S.) - </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">als_gelesen_markieren</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Markiert das Buch als gelesen&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">def</span> <span class="nf">lesefortschritt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gelesene_seiten</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Berechnet den Lesefortschritt in Prozent&quot;&quot;&quot;</span>
+        <span class="n">prozent</span> <span class="o">=</span> <span class="p">(</span><span class="n">gelesene_seiten</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">seiten</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="n">prozent</span>
+
+
+<span class="c1"># Test der __str__-Methode</span>
+<span class="n">buch1</span> <span class="o">=</span> <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">,</span> <span class="mi">328</span><span class="p">)</span>
+<span class="n">buch2</span> <span class="o">=</span> <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;Der Prozess&quot;</span><span class="p">,</span> <span class="s2">&quot;Franz Kafka&quot;</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+
+<span class="c1"># Buch 2 als gelesen markieren</span>
+<span class="n">buch2</span><span class="o">.</span><span class="n">als_gelesen_markieren</span><span class="p">()</span>
+
+<span class="c1"># Ausgabe mit print (verwendet automatisch __str__)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">buch1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">buch2</span><span class="p">)</span>
+
+<span class="c1"># Auch in einer Liste funktioniert es</span>
+<span class="n">meine_buecher</span> <span class="o">=</span> <span class="p">[</span><span class="n">buch1</span><span class="p">,</span> <span class="n">buch2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Meine Bücher:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">buch</span> <span class="ow">in</span> <span class="n">meine_buecher</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">buch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.7</p>
+<p>Erstellen Sie eine kleine Bücherverwaltung mit Listen von Objekten. Verwenden Sie dafür die Klasse <code class="docutils literal notranslate"><span class="pre">Buch</span></code> aus den vorherigen Übungen.</p>
+<ol class="arabic simple">
+<li><p>Erstellen Sie eine Liste mit mindestens 5 verschiedenen Büchern. Markieren Sie einige davon als gelesen.</p></li>
+<li><p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">finde_buch_nach_titel(buecher,</span> <span class="pre">titel)</span></code>, die in der Liste nach einem Buch mit dem angegebenen Titel sucht und das Buch-Objekt zurückgibt (oder <code class="docutils literal notranslate"><span class="pre">None</span></code>, falls nicht gefunden).<br>
+Tipp: Mit der Methode <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> können Sie einen String in Kleinbuchstaben umwandeln, was Vergleiche vereinfacht.</p></li>
+<li><p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">ungelesene_buecher(buecher)</span></code>, die eine neue Liste mit allen noch nicht gelesenen Büchern zurückgibt.</p></li>
+<li><p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">dicke_buecher(buecher,</span> <span class="pre">min_seiten)</span></code>, die alle Bücher zurückgibt, die mindestens die angegebene Seitenzahl haben.</p></li>
+<li><p>Testen Sie alle drei Funktionen mit Ihrer Bücherliste.</p></li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Buch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">titel</span><span class="p">,</span> <span class="n">autor</span><span class="p">,</span> <span class="n">seiten</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">titel</span> <span class="o">=</span> <span class="n">titel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autor</span> <span class="o">=</span> <span class="n">autor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seiten</span> <span class="o">=</span> <span class="n">seiten</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;✓ gelesen&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;noch nicht gelesen&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">titel</span><span class="si">}</span><span class="s2"> von </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">autor</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seiten</span><span class="si">}</span><span class="s2"> S.) - </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">als_gelesen_markieren</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gelesen</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="k">def</span> <span class="nf">finde_buch_nach_titel</span><span class="p">(</span><span class="n">buecher</span><span class="p">,</span> <span class="n">titel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sucht ein Buch nach Titel&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">buch</span> <span class="ow">in</span> <span class="n">buecher</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">buch</span><span class="o">.</span><span class="n">titel</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">titel</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">buch</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">ungelesene_buecher</span><span class="p">(</span><span class="n">buecher</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gibt eine Liste aller ungelesenen Bücher zurück&quot;&quot;&quot;</span>
+    <span class="n">ungelesen</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">buch</span> <span class="ow">in</span> <span class="n">buecher</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">buch</span><span class="o">.</span><span class="n">gelesen</span><span class="p">:</span>
+            <span class="n">ungelesen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buch</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ungelesen</span>
+
+
+<span class="k">def</span> <span class="nf">dicke_buecher</span><span class="p">(</span><span class="n">buecher</span><span class="p">,</span> <span class="n">min_seiten</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gibt alle Bücher zurück, die mindestens min_seiten haben&quot;&quot;&quot;</span>
+    <span class="n">dick</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">buch</span> <span class="ow">in</span> <span class="n">buecher</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">buch</span><span class="o">.</span><span class="n">seiten</span> <span class="o">&gt;=</span> <span class="n">min_seiten</span><span class="p">:</span>
+            <span class="n">dick</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buch</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dick</span>
+
+
+<span class="c1"># Bücherliste erstellen</span>
+<span class="n">bibliothek</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">,</span> <span class="mi">328</span><span class="p">),</span>
+    <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;Der Prozess&quot;</span><span class="p">,</span> <span class="s2">&quot;Franz Kafka&quot;</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+    <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;Die Verwandlung&quot;</span><span class="p">,</span> <span class="s2">&quot;Franz Kafka&quot;</span><span class="p">,</span> <span class="mi">96</span><span class="p">),</span>
+    <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;J.K. Rowling&quot;</span><span class="p">,</span> <span class="mi">336</span><span class="p">),</span>
+    <span class="n">Buch</span><span class="p">(</span><span class="s2">&quot;Der Hobbit&quot;</span><span class="p">,</span> <span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span> <span class="mi">310</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Einige als gelesen markieren</span>
+<span class="n">bibliothek</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">als_gelesen_markieren</span><span class="p">()</span>  <span class="c1"># Der Prozess</span>
+<span class="n">bibliothek</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">als_gelesen_markieren</span><span class="p">()</span>  <span class="c1"># Die Verwandlung</span>
+<span class="n">bibliothek</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">als_gelesen_markieren</span><span class="p">()</span>  <span class="c1"># Der Hobbit</span>
+
+<span class="c1"># Test: Buch nach Titel suchen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== SUCHE NACH TITEL ===&quot;</span><span class="p">)</span>
+<span class="n">gesuchtes_buch</span> <span class="o">=</span> <span class="n">finde_buch_nach_titel</span><span class="p">(</span><span class="n">bibliothek</span><span class="p">,</span> <span class="s2">&quot;1984&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gesuchtes_buch</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gefunden: </span><span class="si">{</span><span class="n">gesuchtes_buch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Buch nicht gefunden&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test: Ungelesene Bücher finden</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== UNGELESENE BÜCHER ===&quot;</span><span class="p">)</span>
+<span class="n">ungelesen</span> <span class="o">=</span> <span class="n">ungelesene_buecher</span><span class="p">(</span><span class="n">bibliothek</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anzahl ungelesener Bücher: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ungelesen</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">buch</span> <span class="ow">in</span> <span class="n">ungelesen</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">buch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test: Dicke Bücher finden (mindestens 300 Seiten)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== BÜCHER MIT MINDESTENS 300 SEITEN ===&quot;</span><span class="p">)</span>
+<span class="n">dick</span> <span class="o">=</span> <span class="n">dicke_buecher</span><span class="p">(</span><span class="n">bibliothek</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">buch</span> <span class="ow">in</span> <span class="n">dick</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">buch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung 8.8</p>
+<p>Erstellen Sie ein vollständiges Programm zur Verwaltung einer Einkaufsliste mit der Klasse <code class="docutils literal notranslate"><span class="pre">Artikel</span></code> aus den vorherigen Übungen.</p>
+<p>Anforderungen:</p>
+<ol class="arabic simple">
+<li><p>Erweitern Sie die Klasse <code class="docutils literal notranslate"><span class="pre">Artikel</span></code> um die <code class="docutils literal notranslate"><span class="pre">__str__</span></code>-Methode, die einen Artikel im Format “Name: Menge × Preis Euro = Gesamtpreis Euro” ausgibt (z.B. “Milch: 3 × 1.29 Euro = 3.87 Euro”).</p></li>
+<li><p>Erstellen Sie eine Liste mit mindestens 5 verschiedenen Artikeln für Ihren Einkauf.</p></li>
+<li><p>Schreiben Sie folgende Funktionen:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zeige_einkaufsliste(artikel_liste)</span></code>: Gibt alle Artikel formatiert aus</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gesamtkosten(artikel_liste)</span></code>: Berechnet die Gesamtkosten aller Artikel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">teuerster_artikel(artikel_liste)</span></code>: Findet den Artikel mit dem höchsten Gesamtpreis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">artikel_unter_preis(artikel_liste,</span> <span class="pre">max_preis)</span></code>: Gibt alle Artikel zurück, deren Gesamtpreis unter dem angegebenen Maximalpreis liegt</p></li>
+</ul>
+</li>
+<li><p>Testen Sie Ihr Programm:</p>
+<ul class="simple">
+<li><p>Zeigen Sie die komplette Einkaufsliste an.</p></li>
+<li><p>Geben Sie die Gesamtkosten aus.</p></li>
+<li><p>Finden und zeigen Sie den teuersten Artikel.</p></li>
+<li><p>Listen Sie alle Artikel auf, die weniger als 5 Euro kosten.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="miniexercise toggle admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Artikel</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">preis</span><span class="p">,</span> <span class="n">menge</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">=</span> <span class="n">preis</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menge</span> <span class="o">=</span> <span class="n">menge</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Formatierte Ausgabe des Artikels&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">menge</span><span class="si">}</span><span class="s2"> × </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">preis</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">gesamtpreis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Berechnet den Gesamtpreis (Preis × Menge)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">menge</span>
+    
+    <span class="k">def</span> <span class="nf">menge_aendern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neue_menge</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ändert die Menge des Artikels&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menge</span> <span class="o">=</span> <span class="n">neue_menge</span>
+    
+    <span class="k">def</span> <span class="nf">rabatt_anwenden</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prozent</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wendet einen prozentualen Rabatt auf den Preis an&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preis</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prozent</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">zeige_einkaufsliste</span><span class="p">(</span><span class="n">artikel_liste</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gibt alle Artikel formatiert aus&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== EINKAUFSLISTE ===&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">artikel_liste</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">artikel</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">gesamtkosten</span><span class="p">(</span><span class="n">artikel_liste</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Berechnet die Gesamtkosten aller Artikel&quot;&quot;&quot;</span>
+    <span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">artikel_liste</span><span class="p">:</span>
+        <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">artikel</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">summe</span>
+
+
+<span class="k">def</span> <span class="nf">teuerster_artikel</span><span class="p">(</span><span class="n">artikel_liste</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Findet den Artikel mit dem höchsten Gesamtpreis&quot;&quot;&quot;</span>
+    <span class="n">teuerster</span> <span class="o">=</span> <span class="n">artikel_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">artikel_liste</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">artikel</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">teuerster</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">():</span>
+            <span class="n">teuerster</span> <span class="o">=</span> <span class="n">artikel</span>
+    <span class="k">return</span> <span class="n">teuerster</span>
+
+
+<span class="k">def</span> <span class="nf">artikel_unter_preis</span><span class="p">(</span><span class="n">artikel_liste</span><span class="p">,</span> <span class="n">max_preis</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gibt alle Artikel zurück, deren Gesamtpreis unter max_preis liegt&quot;&quot;&quot;</span>
+    <span class="n">guenstige</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">artikel_liste</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">artikel</span><span class="o">.</span><span class="n">gesamtpreis</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">max_preis</span><span class="p">:</span>
+            <span class="n">guenstige</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">artikel</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">guenstige</span>
+
+
+<span class="c1"># Einkaufsliste erstellen</span>
+<span class="n">einkaufsliste</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Milch&quot;</span><span class="p">,</span> <span class="mf">1.29</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Brot&quot;</span><span class="p">,</span> <span class="mf">2.49</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Butter&quot;</span><span class="p">,</span> <span class="mf">2.99</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Äpfel&quot;</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+    <span class="n">Artikel</span><span class="p">(</span><span class="s2">&quot;Käse&quot;</span><span class="p">,</span> <span class="mf">3.99</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Komplette Einkaufsliste anzeigen</span>
+<span class="n">zeige_einkaufsliste</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">)</span>
+
+<span class="c1"># Gesamtkosten berechnen und ausgeben</span>
+<span class="n">gesamt</span> <span class="o">=</span> <span class="n">gesamtkosten</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gesamtkosten: </span><span class="si">{</span><span class="n">gesamt</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+
+<span class="c1"># Teuersten Artikel finden</span>
+<span class="n">teuerster</span> <span class="o">=</span> <span class="n">teuerster_artikel</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Teuerster Artikel: </span><span class="si">{</span><span class="n">teuerster</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Günstige Artikel finden (unter 5 Euro)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== ARTIKEL UNTER 5 EURO ===&quot;</span><span class="p">)</span>
+<span class="n">guenstige</span> <span class="o">=</span> <span class="n">artikel_unter_preis</span><span class="p">(</span><span class="n">einkaufsliste</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">guenstige</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">artikel</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
