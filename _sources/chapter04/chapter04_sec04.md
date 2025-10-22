@@ -160,7 +160,7 @@ laengen = np.random.normal(mittelwert, stdabw, anzahl)
 # Berechnung des Mittelwerts mit for-Schleife
 summe = 0
 for laenge in laengen:
-    summe += laenge
+    summe = summe + laenge
 
 mittelwert = summe / anzahl
 print(f"Berechneter Mittelwert der Schrauben-Längen: {mittelwert:.2f} mm")

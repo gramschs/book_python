@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0a82a4d9" />
@@ -633,7 +633,7 @@ berechnen. Lassen Sie ihn auf 2 Nachkommastellen genau ausgeben.</p></li>
 <span class="c1"># Berechnung des Mittelwerts mit for-Schleife</span>
 <span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">laenge</span> <span class="ow">in</span> <span class="n">laengen</span><span class="p">:</span>
-    <span class="n">summe</span> <span class="o">+=</span> <span class="n">laenge</span>
+    <span class="n">summe</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">+</span> <span class="n">laenge</span>
 
 <span class="n">mittelwert</span> <span class="o">=</span> <span class="n">summe</span> <span class="o">/</span> <span class="n">anzahl</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Berechneter Mittelwert der Schrauben-Längen: </span><span class="si">{</span><span class="n">mittelwert</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm&quot;</span><span class="p">)</span>
