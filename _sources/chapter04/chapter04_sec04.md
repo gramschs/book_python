@@ -39,7 +39,8 @@ for i in range(12):
 
 ```{admonition} Übung 4.2
 :class: miniexercise
-Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei eine for-Schleife.
+Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei
+eine for-Schleife.
 ```
 
 ````{admonition} Lösung
@@ -57,7 +58,9 @@ for i in range(4):
 
 ```{admonition} Übung 4.3
 :class: miniexercise
-Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden. Testen Sie anschließend ein Dreieck und ein Siebeneck.
+Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu
+lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden.
+Testen Sie anschließend ein Dreieck und ein Siebeneck.
 ```
 
 ````{admonition} Lösung
@@ -77,7 +80,9 @@ for i in range(anzahl_seiten):
 
 ```{admonition} Übung 4.4
 :class: miniexercise
-Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in der Liste mithilfe einer for-Schleife berechnen und ausgeben.
+Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in
+einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in
+der Liste mithilfe einer for-Schleife berechnen und ausgeben.
 ```
 
 ````{admonition} Lösung
@@ -89,7 +94,7 @@ zahlen = []
 # Eingabe der 5 Zahlen durch einen Benutzer
 for i in range(5):
     zahl = int(input("Bitte geben Sie eine Zahl ein: "))
-    zahlen.append(zahl)
+    zahlen = zahlen + [zahl]
 
 # Verarbeitung: Berechnung der Summe
 summe = 0
@@ -99,6 +104,18 @@ for zahl in zahlen:
 # Ausgabe
 print(f'Die Summe der Zahlen ist: {summe}.')
 ```
+Hinweise: Alternativ zu der Code-Zeile `zahlen = zahlen + [zahl]` können wir
+auch
+```python
+zahlen.append(zahl)
+```
+benutzen, um die Zahl an das Ende der Liste einzufügen. Auch können wir etwas
+kürzer `summe = summe + zahl` als
+```python
+summe += zahl
+```
+formulieren, um die Zahl `zahl` direkt zu der Summe `summe` zu addieren und
+zu speichern.
 ````
 
 ```{admonition} Übung 4.5
@@ -107,9 +124,12 @@ In der Mathematik gibt es die Schreibweise
 
 $$n! = n \cdot (n-1) \cdot ... \cdot 2 \cdot 1$$
 
-So wird zum Beispiel $5!$ durch $5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$ berechnet. Dies wird in der Mathematik als Fakultät von 5 bezeichnet.
+So wird zum Beispiel $5!$ durch $5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$
+berechnet. Dies wird in der Mathematik als Fakultät von 5 bezeichnet.
 
-Schreiben Sie ein Programm, das vom Benutzer die Zahl n abfragt, für die die Fakultät $n!$ berechnet werden soll. Das Programm soll dann die Fakultät berechnen und am Ende den Text
+Schreiben Sie ein Programm, das vom Benutzer die Zahl n abfragt, für die die
+Fakultät $n!$ berechnet werden soll. Das Programm soll dann die Fakultät
+berechnen und am Ende den Text
 
 Die Fakultät von XX ist XX, also XX! = XX.
 
@@ -131,6 +151,10 @@ for i in range(n, 1, -1):
 
 # Ausgabe
 print(f'Die Fakultät von {n} ist {ergebnis}, also {n}! = {ergebnis}.') 
+```
+Hinweis: Auch hier können wir für den Ausruck `ergebnis = ergebnis * i` eine kürzere Schreibweise benutzen:
+```python
+ergebnis *= i
 ```
 ````
 

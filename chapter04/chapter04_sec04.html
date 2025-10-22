@@ -526,7 +526,8 @@ Februar ist der 2. Monat im Jahr. <br>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 4.2</p>
-<p>Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei eine for-Schleife.</p>
+<p>Verwenden Sie das Turtle-Modul, um ein Quadrat zu zeichnen. Verwenden Sie dabei
+eine for-Schleife.</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -542,7 +543,9 @@ Februar ist der 2. Monat im Jahr. <br>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 4.3</p>
-<p>Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden. Testen Sie anschließend ein Dreieck und ein Siebeneck.</p>
+<p>Verwenden Sie das Turtle-Modul und eine for-Schleife, um ein n-Eck zeichnen zu
+lassen. Dabei soll die Anzahl der Seiten zuvor vom Benutzer abgefragt werden.
+Testen Sie anschließend ein Dreieck und ein Siebeneck.</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -560,7 +563,9 @@ Februar ist der 2. Monat im Jahr. <br>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 4.4</p>
-<p>Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in der Liste mithilfe einer for-Schleife berechnen und ausgeben.</p>
+<p>Schreiben Sie ein Programm, das den Benutzer nach 5 Zahlen fragt und diese in
+einer Liste speichert. Anschließend soll das Programm die Summe der Zahlen in
+der Liste mithilfe einer for-Schleife berechnen und ausgeben.</p>
 </div>
 <div class="minisolution toggle admonition">
 <p class="admonition-title">Lösung</p>
@@ -570,7 +575,7 @@ Februar ist der 2. Monat im Jahr. <br>
 <span class="c1"># Eingabe der 5 Zahlen durch einen Benutzer</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte geben Sie eine Zahl ein: &quot;</span><span class="p">))</span>
-    <span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+    <span class="n">zahlen</span> <span class="o">=</span> <span class="n">zahlen</span> <span class="o">+</span> <span class="p">[</span><span class="n">zahl</span><span class="p">]</span>
 
 <span class="c1"># Verarbeitung: Berechnung der Summe</span>
 <span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
@@ -581,14 +586,29 @@ Februar ist der 2. Monat im Jahr. <br>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Summe der Zahlen ist: </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Hinweise: Alternativ zu der Code-Zeile <code class="docutils literal notranslate"><span class="pre">zahlen</span> <span class="pre">=</span> <span class="pre">zahlen</span> <span class="pre">+</span> <span class="pre">[zahl]</span></code> können wir
+auch</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zahlen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>benutzen, um die Zahl an das Ende der Liste einzufügen. Auch können wir etwas
+kürzer <code class="docutils literal notranslate"><span class="pre">summe</span> <span class="pre">=</span> <span class="pre">summe</span> <span class="pre">+</span> <span class="pre">zahl</span></code> als</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">summe</span> <span class="o">+=</span> <span class="n">zahl</span>
+</pre></div>
+</div>
+<p>formulieren, um die Zahl <code class="docutils literal notranslate"><span class="pre">zahl</span></code> direkt zu der Summe <code class="docutils literal notranslate"><span class="pre">summe</span></code> zu addieren und
+zu speichern.</p>
 </div>
 <div class="miniexercise admonition">
 <p class="admonition-title">Übung 4.5</p>
 <p>In der Mathematik gibt es die Schreibweise</p>
 <div class="math notranslate nohighlight">
 \[n! = n \cdot (n-1) \cdot ... \cdot 2 \cdot 1\]</div>
-<p>So wird zum Beispiel <span class="math notranslate nohighlight">\(5!\)</span> durch <span class="math notranslate nohighlight">\(5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120\)</span> berechnet. Dies wird in der Mathematik als Fakultät von 5 bezeichnet.</p>
-<p>Schreiben Sie ein Programm, das vom Benutzer die Zahl n abfragt, für die die Fakultät <span class="math notranslate nohighlight">\(n!\)</span> berechnet werden soll. Das Programm soll dann die Fakultät berechnen und am Ende den Text</p>
+<p>So wird zum Beispiel <span class="math notranslate nohighlight">\(5!\)</span> durch <span class="math notranslate nohighlight">\(5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120\)</span>
+berechnet. Dies wird in der Mathematik als Fakultät von 5 bezeichnet.</p>
+<p>Schreiben Sie ein Programm, das vom Benutzer die Zahl n abfragt, für die die
+Fakultät <span class="math notranslate nohighlight">\(n!\)</span> berechnet werden soll. Das Programm soll dann die Fakultät
+berechnen und am Ende den Text</p>
 <p>Die Fakultät von XX ist XX, also XX! = XX.</p>
 <p>ausgeben. Dabei soll XX durch die korrekten Zahlen ersetzt werden. Beispiel</p>
 <p>Die Fakultät von 5 ist 120, also 5! = 120.</p>
@@ -605,6 +625,10 @@ Februar ist der 2. Monat im Jahr. <br>
 
 <span class="c1"># Ausgabe</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Die Fakultät von </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">, also </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">! = </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Hinweis: Auch hier können wir für den Ausruck <code class="docutils literal notranslate"><span class="pre">ergebnis</span> <span class="pre">=</span> <span class="pre">ergebnis</span> <span class="pre">*</span> <span class="pre">i</span></code> eine kürzere Schreibweise benutzen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ergebnis</span> <span class="o">*=</span> <span class="n">i</span>
 </pre></div>
 </div>
 </div>
